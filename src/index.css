@@ -319,7 +319,8 @@
   }
 
   .go-icon {
-    @apply inline-flex items-center transition-transform duration-200 ease-[cubic-bezier(.39,.575,.565,1)];
+    @apply inline-flex items-center;
+    transition-timing-function: cubic-bezier(.39,.575,.565,1);
   }
 
   .group:hover .go-icon {
