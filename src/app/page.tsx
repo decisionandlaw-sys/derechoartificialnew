@@ -92,8 +92,8 @@ export default function HomePage() {
                     <span className="font-display text-[11px] tracking-[0.15em] text-newsroom block mb-1.5">
                       {sectionLabelForUrl(post.url).toUpperCase()}
                     </span>
-                    <h3 className="font-display text-base md:text-lg leading-[1.15] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150">
-                      {post.title}
+                    <h3 className="font-display text-lg md:text-xl leading-[0.95] tracking-tight font-bold text-foreground group-hover:text-newsroom transition-colors duration-150">
+                      {post.frontmatter.title}
                     </h3>
                     <span className="text-[11px] text-[hsl(var(--text-caption))] mt-2 block">
                       {formatDate(post.dateMs)}
@@ -142,7 +142,7 @@ export default function HomePage() {
                               ? "text-2xl md:text-3xl"
                               : "text-lg md:text-xl"
                           }`}>
-                            {entry.title}
+                            {entry.frontmatter.title}
                           </h3>
                           {entry.excerpt && (
                             <p className="text-xs md:text-sm text-foreground/80 leading-relaxed mt-3 line-clamp-2">
