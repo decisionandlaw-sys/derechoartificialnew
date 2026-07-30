@@ -1,0 +1,87 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // ============================================
+  // 1. EXPERIMENTAL: Desabilitar ISR en memoria
+  // ============================================
+  experimental: {
+    // Esto es crucial para proyectos con muchos posts
+    // Impide que Next.js cachee todo el ISR en RAM
+    isrMemoryCacheSize: 0,
+    
+    // Optimizar compilación de SWC
+    swcMinify: true,
+  },
+
+  // ============================================
+  // 2. ON-DEMAND ENTRIES: Limitar archivos en buffer
+  // ============================================
+  onDemandEntries: {
+    // Mantener archivos en memoria solo 15 minutos inactivos
+    maxInactiveAge: 15 * 60 * 1000,
+    
+    // Buffer pequeño de páginas pre-compiladas
+    // (Reduce de 50 por defecto a 2)
+    pagesBufferLength: 2,
+  },
+
+  // ============================================
+  // 3. BUILD OPTIMIZATION: Compilación más eficiente
+  // ============================================
+  compress: true, // Comprimir assets
+
+  // Desabilitar source maps en build (ahorran memoria)
+  productionBrowserSourceMaps: false,
+
+  // ============================================
+  // 4. IMAGE OPTIMIZATION
+  // ============================================
+  images: {
+    // Cachear imágenes optimizadas
+    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 año
+
+    // Limitar formatos soportados (menos procesamiento)
+    formats: ['image/avif', 'image/webp'],
+
+    // No crear variantes innecesarias
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+
+  // ============================================
+  // 5. WEBPACK: Optimizar bundler
+  // ============================================
+  webpack: (config) => {
+    // Optimizaciones adicionales del bundler
+    config.optimization = {
+      ...config.optimization,
+      minimize: true,
+      nodeEnv: false,
+    };
+
+    return config;
+  },
+
+  // ============================================
+  // 6. SWCRC: Opciones del compilador SWC
+  // ============================================
+  swcMinify: true,
+
+  // ============================================
+  // 7. SI ESTÁS EN PROBLEMAS SEVEROS, DESCOMENTAR:
+  // ============================================
+  // Descomentar estas líneas SOLO si los pasos anteriores no funcionan
+  // y ya validaste que no hay errores en local
+
+  // eslint: {
+  //   // Ignora eslint en build (ahorra memoria)
+  //   ignoreDuringBuilds: true,
+  // },
+
+  // typescript: {
+  //   // Ignora type-checking en build (ahorra memoria)
+  //   // ⚠️ Solo si pasas checks en local primero
+  //   ignoreBuildErrors: true,
+  // },
+};
+
+export default nextConfig;

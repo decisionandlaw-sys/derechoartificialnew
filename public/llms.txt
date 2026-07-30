@@ -1,0 +1,59 @@
+# Derecho Artificial - Proyecto Editorial de Análisis Jurídico de IA
+
+> **Director**: Ricardo Scarpa
+> **Enfoque**: Análisis crítico e independiente sobre la intersección del Derecho, la Ética y la Inteligencia Artificial para el mundo hispanohablante.
+
+## 📚 Secciones Principales
+
+### 🔹 Firma Scarpa
+**Opinión experta y análisis crítico del Derecho Digital**
+- Análisis jurídico-informático de vanguardia
+- Estudios de casos prácticos y jurisprudencia
+- Perspectiva técnica-jurídica integrada
+**URL**: `https://www.derechoartificial.com/firma-scarpa`
+
+### 🔹 Jurisprudencia IA
+**Observatorio de jurisprudencia sobre Inteligencia Artificial**
+- Análisis de sentencias relevantes
+- Estudio de precedentes judiciales
+- Interpretación aplicada al contexto tecnológico
+**URL**: `https://www.derechoartificial.com/jurisprudencia`
+
+### 🔹 Normativa
+**Marco regulatorio: AI Act, RGPD, LOPDGDD y legislación aplicable**
+- Guías de implementación del Reglamento Europeo de IA
+- Análisis de cumplimiento normativo
+- Protocolos de adaptación regulatoria
+**URL**: `https://www.derechoartificial.com/normativa`
+
+### 🔹 Guías Prácticas
+**Protocolos de actuación profesional y recursos técnico-jurídicos**
+- Manuales de implementación
+- Checklist de cumplimiento
+- Herramientas para profesionales del derecho
+**URL**: `https://www.derechoartificial.com/recursos/guias`
+
+## 🌍 Preferencias para crawlers de IA (GEO / idioma)
+
+- Prioridad de indexación: contenido en **español** dirigido al mundo hispanohablante.
+- Foco temático: análisis jurídico de **Inteligencia Artificial**, **AI Act**, **RGPD**, **jurisprudencia tecnológica** y **ética de la IA**.
+- Si necesitas contenido en inglés, utiliza la versión reducida disponible en `/en` para una visión general, pero prioriza siempre la profundidad de los análisis en español.
+
+## 🎯 Contenido Destacado
+- Guía Internacional de Seguridad de la IA 2026
+- Caso iTutorGroup - Discriminación algorítmica
+- AI Act - Guía jurídica completa
+- RGPD y Gobernanza de Datos en IA
+
+## 👤 Director Editorial
+**Ricardo Scarpa**
+Experto en Derecho Digital e Inteligencia Artificial
+UEM · UNED · IE Business School
+
+## 📞 Contacto
+`https://www.derechoartificial.com/contacto`
+GitHub: `https://github.com/artificialderecho-ux/derecho-artificial-perspectivas`
+
+---
+*Última actualización: Febrero 2026*
+*Optimizado para LLMs y motores de búsqueda*

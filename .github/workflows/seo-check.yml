@@ -1,0 +1,355 @@
+name: 🔍 SEO Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'        # Se activa al publicar artículos
+      - 'src/app/**'        # Se activa al cambiar páginas
+      - 'public/**'         # Se activa al cambiar robots.txt, imágenes, etc.
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ─────────────────────────────────────────────────────────
+  # 1. FRONTMATTER SEO — Calidad de los metadatos de artículos
+  # ─────────────────────────────────────────────────────────
+  frontmatter-seo:
+    name: 📝 Metadatos SEO en artículos MDX
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Analizar frontmatter de todos los artículos
+        run: |
+          node << 'EOF'
+          const fs   = require('fs');
+          const path = require('path');
+
+          // ── Configuración ──────────────────────────────────────────
+          const CONTENT_DIR   = './content';
+          const MAX_TITLE_LEN = 70;
+          const MIN_TITLE_LEN = 30;
+          const MAX_DESC_LEN  = 160;
+          const MIN_DESC_LEN  = 80;
+          // ───────────────────────────────────────────────────────────
+
+          function findMdxFiles(dir, files = []) {
+            if (!fs.existsSync(dir)) return files;
+            fs.readdirSync(dir, { withFileTypes: true }).forEach(entry => {
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) findMdxFiles(full, files);
+              else if (/\.(mdx?|md)$/.test(entry.name)) files.push(full);
+            });
+            return files;
+          }
+
+          const archivos = findMdxFiles(CONTENT_DIR);
+          if (archivos.length === 0) {
+            console.log('⚠️  No se encontraron archivos MDX en /content');
+            process.exit(0);
+          }
+
+          let warnings = 0;
+          let errores  = 0;
+
+          archivos.forEach(file => {
+            const rel     = path.relative('.', file);
+            const content = fs.readFileSync(file, 'utf-8');
+            const fm      = content.match(/^---\n([\s\S]*?)\n---/);
+
+            if (!fm) {
+              console.log(`❌ Sin frontmatter: ${rel}`);
+              errores++;
+              return;
+            }
+
+            const raw = fm[1];
+
+            // ── Campos obligatorios ──────────────────────────────────
+            ['title', 'description', 'date'].forEach(campo => {
+              if (!new RegExp(`^${campo}:`, 'm').test(raw)) {
+                console.log(`❌ Falta '${campo}': ${rel}`);
+                errores++;
+              }
+            });
+
+            // ── Longitud del title ───────────────────────────────────
+            const titleM = raw.match(/^title:\s*["']?(.+?)["']?\s*$/m);
+            if (titleM) {
+              const t = titleM[1].trim();
+              if (t.length < MIN_TITLE_LEN) {
+                console.log(`⚠️  Title corto (${t.length} chars, mín ${MIN_TITLE_LEN}): ${rel}`);
+                warnings++;
+              } else if (t.length > MAX_TITLE_LEN) {
+                console.log(`⚠️  Title largo (${t.length} chars, máx ${MAX_TITLE_LEN}): ${rel}`);
+                warnings++;
+              }
+            }
+
+            // ── Longitud de description ──────────────────────────────
+            const descM = raw.match(/^description:\s*["']?([\s\S]+?)["']?\s*$/m);
+            if (descM) {
+              const d = descM[1].trim();
+              if (d === '...' || d === '') {
+                console.log(`❌ Description vacía: ${rel}`);
+                errores++;
+              } else if (d.length < MIN_DESC_LEN) {
+                console.log(`⚠️  Description corta (${d.length} chars, mín ${MIN_DESC_LEN}): ${rel}`);
+                warnings++;
+              } else if (d.length > MAX_DESC_LEN) {
+                console.log(`⚠️  Description larga (${d.length} chars, máx ${MAX_DESC_LEN}): ${rel}`);
+                warnings++;
+              }
+            }
+
+            // ── Formato de fecha ─────────────────────────────────────
+            const dateM = raw.match(/^date:\s*["']?(.+?)["']?\s*$/m);
+            if (dateM && !/^\d{4}-\d{2}-\d{2}$/.test(dateM[1].trim())) {
+              console.log(`⚠️  Fecha no está en formato YYYY-MM-DD: ${rel} → "${dateM[1].trim()}"`);
+              warnings++;
+            }
+
+            // ── Canonical / slug duplicados ──────────────────────────
+            const slugM = raw.match(/^slug:\s*["']?(.+?)["']?\s*$/m);
+            if (slugM && /[A-Z\s]/.test(slugM[1])) {
+              console.log(`⚠️  Slug con mayúsculas o espacios (malo para URLs): ${rel}`);
+              warnings++;
+            }
+          });
+
+          // ── Resumen ──────────────────────────────────────────────────
+          console.log('\n────────────────────────────────────────');
+          console.log(`📊 Archivos analizados : ${archivos.length}`);
+          console.log(`❌ Errores críticos     : ${errores}`);
+          console.log(`⚠️  Advertencias SEO    : ${warnings}`);
+          console.log('────────────────────────────────────────');
+
+          if (errores > 0) {
+            console.log('\n❌ Corrige los errores críticos antes de publicar.');
+            process.exit(1);
+          } else if (warnings > 0) {
+            console.log('\n⚠️  Hay advertencias SEO. El deploy continúa pero revísalas.');
+          } else {
+            console.log('\n✅ Todos los artículos tienen metadatos SEO correctos.');
+          }
+          EOF
+
+  # ─────────────────────────────────────────────────────────
+  # 2. SITEMAP — Existe y tiene contenido
+  # ─────────────────────────────────────────────────────────
+  sitemap:
+    name: 🗺️ Sitemap
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar que existe configuración de sitemap
+        run: |
+          SITEMAP_APP=$(find src/app -name "sitemap.ts" -o -name "sitemap.tsx" 2>/dev/null | head -1)
+          SITEMAP_PUB=$(find public -name "sitemap.xml" 2>/dev/null | head -1)
+
+          if [ -n "$SITEMAP_APP" ]; then
+            echo "✅ Sitemap dinámico encontrado: $SITEMAP_APP"
+          elif [ -n "$SITEMAP_PUB" ]; then
+            echo "✅ Sitemap estático encontrado: $SITEMAP_PUB"
+            # Contar URLs en el sitemap estático
+            URLS=$(grep -c "<url>" "$SITEMAP_PUB" || echo 0)
+            echo "   → $URLS URLs incluidas"
+            if [ "$URLS" -lt 5 ]; then
+              echo "⚠️  El sitemap tiene muy pocas URLs. ¿Está incluyendo todos los artículos?"
+            fi
+          else
+            echo "❌ No se encontró sitemap.ts ni sitemap.xml"
+            echo "   Google no podrá rastrear eficientemente el sitio."
+            exit 1
+          fi
+
+  # ─────────────────────────────────────────────────────────
+  # 3. ROBOTS.TXT — No bloquea a Google
+  # ─────────────────────────────────────────────────────────
+  robots:
+    name: 🤖 robots.txt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar robots.txt no bloquea indexación
+        run: |
+          ROBOTS_PUB="public/robots.txt"
+          ROBOTS_APP=$(find src/app -name "robots.ts" -o -name "robots.tsx" 2>/dev/null | head -1)
+
+          if [ -f "$ROBOTS_PUB" ]; then
+            echo "📄 robots.txt encontrado en /public"
+            cat "$ROBOTS_PUB"
+            echo ""
+
+            # Detectar bloqueos globales
+            if grep -q "Disallow: /$" "$ROBOTS_PUB"; then
+              echo "❌ CRÍTICO: robots.txt bloquea TODO el sitio (Disallow: /)"
+              echo "   Google no puede indexar ninguna página."
+              exit 1
+            fi
+
+            if grep -q "noindex" "$ROBOTS_PUB"; then
+              echo "⚠️  Se encontró 'noindex' en robots.txt — verifica que es intencionado"
+            fi
+
+            # Comprobar que apunta al sitemap
+            if grep -qi "sitemap" "$ROBOTS_PUB"; then
+              echo "✅ robots.txt incluye referencia al sitemap"
+            else
+              echo "⚠️  robots.txt no menciona el sitemap. Añade:"
+              echo "   Sitemap: https://www.derechoartificial.com/sitemap.xml"
+            fi
+
+          elif [ -n "$ROBOTS_APP" ]; then
+            echo "✅ robots.ts dinámico encontrado: $ROBOTS_APP"
+          else
+            echo "⚠️  No se encontró robots.txt ni robots.ts"
+            echo "   Se recomienda crear public/robots.txt"
+          fi
+
+  # ─────────────────────────────────────────────────────────
+  # 4. IMÁGENES — Alt text y uso de next/image
+  # ─────────────────────────────────────────────────────────
+  imagenes:
+    name: 🖼️ Imágenes y Accesibilidad
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detectar imágenes sin alt text
+        run: |
+          echo "🔍 Buscando imágenes sin atributo alt..."
+          ERRORES=0
+
+          # <img> sin alt
+          while IFS= read -r line; do
+            echo "❌ <img> sin alt: $line"
+            ERRORES=$((ERRORES + 1))
+          done < <(grep -rn "<img " src/ --include="*.tsx" --include="*.jsx" | grep -v 'alt=' | grep -v '//' || true)
+
+          # <Image> de next/image sin alt
+          while IFS= read -r line; do
+            echo "❌ <Image> sin alt: $line"
+            ERRORES=$((ERRORES + 1))
+          done < <(grep -rn "<Image " src/ --include="*.tsx" --include="*.jsx" | grep -v 'alt=' | grep -v '//' || true)
+
+          if [ "$ERRORES" -eq 0 ]; then
+            echo "✅ Todas las imágenes tienen atributo alt"
+          else
+            echo ""
+            echo "⚠️  $ERRORES imagen(s) sin alt text."
+            echo "   El alt text es importante para accesibilidad y SEO."
+          fi
+
+      - name: Detectar uso de <img> nativa en lugar de next/image
+        run: |
+          IMG_NATIVA=$(grep -rn "<img " src/ --include="*.tsx" --include="*.jsx" | grep -v '//' || true)
+          if [ -n "$IMG_NATIVA" ]; then
+            echo "⚠️  Etiquetas <img> nativas detectadas (usa <Image> de next/image):"
+            echo "$IMG_NATIVA"
+          else
+            echo "✅ Todas las imágenes usan next/image"
+          fi
+
+  # ─────────────────────────────────────────────────────────
+  # 5. OPEN GRAPH — Comprobaciones de metadatos sociales
+  # ─────────────────────────────────────────────────────────
+  open-graph:
+    name: 📣 Open Graph y Metadatos sociales
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar implementación de Open Graph en layout
+        run: |
+          echo "🔍 Buscando configuración de Open Graph..."
+
+          # Buscar metadataBase (necesario para OG absolutos en Next.js)
+          if grep -rn "metadataBase" src/ --include="*.ts" --include="*.tsx" | head -1; then
+            echo "✅ metadataBase configurado"
+          else
+            echo "⚠️  No se encontró metadataBase en el layout"
+            echo "   Sin esto, las URLs de Open Graph serán relativas y no funcionarán en redes sociales."
+            echo "   Añade en app/layout.tsx:"
+            echo "   metadataBase: new URL('https://www.derechoartificial.com')"
+          fi
+
+          # Verificar que hay openGraph configurado
+          if grep -rn "openGraph" src/ --include="*.ts" --include="*.tsx" | head -1; then
+            echo "✅ openGraph configurado"
+          else
+            echo "⚠️  No se encontró configuración openGraph"
+            echo "   Sin esto, los artículos no mostrarán previsualización al compartir en LinkedIn/Twitter."
+          fi
+
+          # Verificar twitter card
+          if grep -rn "twitter:" src/ --include="*.ts" --include="*.tsx" | head -1; then
+            echo "✅ Twitter/X card configurada"
+          else
+            echo "⚠️  No se encontró configuración de Twitter card"
+          fi
+
+      - name: Verificar JSON-LD (datos estructurados para Google)
+        run: |
+          if grep -rn "application/ld+json" src/ --include="*.tsx" --include="*.ts" | head -1; then
+            echo "✅ JSON-LD encontrado — Google puede mostrar rich snippets"
+          else
+            echo "⚠️  No se encontró JSON-LD (Schema.org)"
+            echo "   Sin esto, Google no puede mostrar rich snippets en los resultados de búsqueda."
+            echo "   Considera añadir Article schema en las páginas de artículo."
+          fi
+
+  # ─────────────────────────────────────────────────────────
+  # 6. HREFLANG — Sitio bilingüe ES/EN
+  # ─────────────────────────────────────────────────────────
+  hreflang:
+    name: 🌍 Hreflang ES/EN
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar configuración de idiomas
+        run: |
+          echo "🔍 Verificando configuración bilingüe..."
+
+          # Buscar alternates con languages en metadata
+          if grep -rn "languages" src/ --include="*.ts" --include="*.tsx" | head -1; then
+            echo "✅ Configuración de idiomas (hreflang) encontrada"
+          else
+            echo "⚠️  No se encontró hreflang en la configuración de metadata"
+            echo "   El sitio tiene versión /en pero Google puede no saber cuándo mostrar cada idioma."
+            echo "   Añade en generateMetadata:"
+            echo "   alternates: { languages: { 'es': url_es, 'en': url_en } }"
+          fi
+
+          # Comprobar que existe la carpeta /en
+          if [ -d "src/app/en" ]; then
+            echo "✅ Carpeta /en encontrada para la versión inglesa"
+          else
+            echo "⚠️  No se encontró src/app/en — ¿dónde está la versión en inglés?"
+          fi
+
+  # ─────────────────────────────────────────────────────────
+  # 7. RESUMEN FINAL
+  # ─────────────────────────────────────────────────────────
+  resumen-seo:
+    name: 📊 Resumen SEO
+    runs-on: ubuntu-latest
+    needs: [frontmatter-seo, sitemap, robots, imagenes, open-graph, hreflang]
+    if: always()
+    steps:
+      - name: Resumen
+        run: |
+          echo "════════════════════════════════════════════"
+          echo "  INFORME SEO — derechoartificial.com"
+          echo "════════════════════════════════════════════"
+          echo ""
+          echo "  ✅ Verde  = Todo correcto"
+          echo "  ⚠️  Amarillo = Advertencia (no bloquea deploy)"
+          echo "  ❌ Rojo   = Error crítico (bloquea deploy)"
+          echo ""
+          echo "  Revisa cada job para ver el detalle."
+          echo "════════════════════════════════════════════"

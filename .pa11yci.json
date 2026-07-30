@@ -1,0 +1,24 @@
+{
+  "urls": [
+    "https://derechoartificial.com",
+    "https://derechoartificial.com/jurisprudencia",
+    "https://derechoartificial.com/firma-scarpa",
+    "https://derechoartificial.com/recursos/guias",
+    "https://derechoartificial.com/etica-ia",
+    "https://derechoartificial.com/propiedad-intelectual-ia"
+  ],
+  "standard": "WCAG2.2AA",
+  "ignore": [
+    "notice",
+    "warning"
+  ],
+  "threshold": 0,
+  "chromeLaunchConfig": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
+  "reporters": [
+    ["html", { "dest": "a11y-reports/report.html" }],
+    ["json", { "dest": "a11y-reports/report.json" }],
+    ["csv", { "dest": "a11y-reports/report.csv" }]
+  ]
+}

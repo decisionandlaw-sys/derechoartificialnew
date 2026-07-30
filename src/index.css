@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=PT+Serif:wght@400;400i;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground antialiased text-base;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  p {
+    @apply text-left;
+  }
+
+  :root {
+    --background: 0 0% 2.4%;
+    --foreground: 0 0% 89%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 89%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 89%;
+    --primary: 0 0% 89%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 89%;
+    --muted: 0 0% 11%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 16.9%;
+    --accent-foreground: 0 0% 89%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 89%;
+    --radius: 0rem;
+    --text-body: 0 0% 75%;
+    --text-caption: 0 0% 55%;
+    --divider: 0 0% 15%;
+    --highlight: 0 0% 10%;
+  }
+
+  .light {
+    --background: 0 0% 89%;
+    --foreground: 0 0% 2.4%;
+    --card: 0 0% 93%;
+    --card-foreground: 0 0% 2.4%;
+    --popover: 0 0% 93%;
+    --popover-foreground: 0 0% 2.4%;
+    --primary: 0 0% 89%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 82%;
+    --secondary-foreground: 0 0% 2.4%;
+    --muted: 0 0% 82%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 75%;
+    --accent-foreground: 0 0% 2.4%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 65%;
+    --input: 0 0% 65%;
+    --ring: 0 0% 2.4%;
+    --radius: 0rem;
+    --text-body: 0 0% 20%;
+    --text-caption: 0 0% 45%;
+    --divider: 0 0% 75%;
+    --highlight: 0 0% 85%;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .font-serif-custom {
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  }
+
+  .border-thin {
+    border-width: 0.5px;
+  }
+
+  .border-thin-y {
+    border-top-width: 0.5px;
+    border-bottom-width: 0.5px;
+  }
+
+  .border-thin-b {
+    border-bottom-width: 0.5px;
+  }
+
+  .border-thin-t {
+    border-top-width: 0.5px;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  .container-narrow {
+    @apply container mx-auto px-4 md:px-6 max-w-3xl;
+  }
+
+  .container-wide {
+    @apply container mx-auto px-4 md:px-6 max-w-7xl;
+  }
+
+  .container-editorial {
+    @apply container mx-auto px-4 md:px-6 max-w-4xl;
+  }
+
+  .prose-editorial {
+    @apply prose prose-invert max-w-none
+    prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
+    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
+    prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
+    prose-a:text-[hsl(var(--foreground))] prose-a:no-underline prose-a:border-b prose-a:border-[hsl(var(--border))] hover:prose-a:border-[hsl(var(--foreground))]
+    prose-blockquote:border-l-2 prose-blockquote:border-[hsl(var(--foreground))] prose-blockquote:pl-6 prose-blockquote:italic
+    prose-strong:text-[hsl(var(--foreground))]
+    prose-img:rounded-none
+    prose-table:w-full prose-table:border-collapse
+    prose-th:bg-[hsl(var(--muted))] prose-th:p-3 prose-th:text-left prose-th:font-bold
+    prose-td:p-3 prose-tr:border-b prose-tr:border-[hsl(var(--border))];
+  }
+
+  .light .prose-editorial,
+  .prose-editorial-light {
+    @apply prose prose-neutral max-w-none
+    prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
+    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
+    prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
+    prose-a:text-[hsl(var(--foreground))] prose-a:no-underline prose-a:border-b prose-a:border-[hsl(var(--border))] hover:prose-a:border-[hsl(var(--foreground))]
+    prose-blockquote:border-l-2 prose-blockquote:border-[hsl(var(--foreground))] prose-blockquote:pl-6 prose-blockquote:italic
+    prose-strong:text-[hsl(var(--foreground))]
+    prose-img:rounded-none
+    prose-table:w-full prose-table:border-collapse
+    prose-th:bg-[hsl(var(--muted))] prose-th:p-3 prose-th:text-left prose-th:font-bold
+    prose-td:p-3 prose-tr:border-b prose-tr:border-[hsl(var(--border))];
+  }
+
+  .prose-lg {
+    h1, h2, h3, h4 {
+      font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+    }
+    p, li {
+      font-family: "PT Serif", Georgia, "Times New Roman", serif;
+    }
+    strong {
+      color: hsl(var(--foreground));
+    }
+  }
+
+  .prose-slate {
+    --tw-prose-body: hsl(var(--text-body));
+    --tw-prose-headings: hsl(var(--foreground));
+    --tw-prose-links: hsl(var(--foreground));
+    --tw-prose-bold: hsl(var(--foreground));
+    --tw-prose-quotes: hsl(var(--foreground));
+    --tw-prose-code: hsl(var(--foreground));
+    --tw-prose-hr: hsl(var(--border));
+    --tw-prose-th-borders: hsl(var(--border));
+    --tw-prose-td-borders: hsl(var(--border));
+  }
+
+  /* Article page overrides for inline bg-slate classes used in PDF buttons */
+  .article-pdf-box {
+    @apply border border-divider/30 bg-[hsl(var(--card))] p-6;
+  }
+
+  .article-pdf-btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-[hsl(var(--foreground))] text-[hsl(var(--background))] text-xs font-semibold tracking-wide uppercase hover:opacity-80 transition-opacity;
+  }
+
+  /* Dark theme global overrides — replaces light-themed utility classes */
+  .bg-slate-50, .bg-slate-50\/50 {
+    background-color: hsl(var(--card)) !important;
+  }
+  .border-slate-200 {
+    border-color: hsl(var(--divider)) !important;
+  }
+  .bg-slate-900 {
+    background-color: hsl(var(--foreground)) !important;
+  }
+  .text-slate-700, .text-slate-600, .text-slate-500 {
+    color: hsl(var(--text-body)) !important;
+  }
+  .text-slate-900, .text-slate-800 {
+    color: hsl(var(--foreground)) !important;
+  }
+  .text-slate-400 {
+    color: hsl(var(--text-caption)) !important;
+  }
+  .text-white.\!text-white {
+    /* preserve explicit !text-white */
+  }
+  .bg-slate-100 {
+    background-color: hsl(var(--muted)) !important;
+  }
+  .border-t.border-slate-200 {
+    border-top-color: hsl(var(--divider)) !important;
+  }
+  .hover\:border-slate-400:hover {
+    border-color: hsl(var(--divider)) !important;
+  }
+  .hover\:text-blue-600:hover {
+    color: hsl(var(--foreground)) !important;
+  }
+  .hover\:bg-slate-800:hover {
+    background-color: hsl(var(--muted)) !important;
+  }
+  .hover\:text-white:hover {
+    color: hsl(var(--foreground)) !important;
+  }
+  .bg-slate-900\/5 {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  /* Serif headings → display font in page content areas */
+  h1.font-serif, h2.font-serif, h3.font-serif, h4.font-serif {
+    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 0.95 !important;
+  }
+
+  /* Dark theme override: bg-white → card */
+  .bg-white {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  /* Dark theme override: bg-gray-50 → card */
+  .bg-gray-50 {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  /* Dark theme override: blue light backgrounds → card */
+  .bg-blue-50, .bg-blue-50\/50, .bg-blue-100 {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  /* Dark theme override: blue-600 buttons → foreground */
+  .bg-blue-600 {
+    background-color: hsl(var(--foreground)) !important;
+    color: hsl(var(--background)) !important;
+  }
+  .hover\:bg-blue-700:hover {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  /* Dark theme override: green/red form messages → card */
+  .bg-green-50 {
+    background-color: hsl(var(--card)) !important;
+  }
+  .bg-red-50 {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  /* Dark theme override: colored text → body */
+  .text-blue-600, .text-blue-700, .text-blue-800, .text-blue-900 {
+    color: hsl(var(--foreground)) !important;
+  }
+  .text-green-800 {
+    color: var(--text-body) !important;
+  }
+  .text-red-800 {
+    color: var(--text-body) !important;
+  }
+  .hover\:text-blue-600:hover {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Dark theme override: amber/blue border colors → divider */
+  .border-amber-200, .border-blue-200, .border-green-200, .border-red-200 {
+    border-color: hsl(var(--divider)) !important;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium transition-colors hover:text-[hsl(var(--foreground))] relative py-2;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[0.5px] bg-[hsl(var(--foreground))] scale-x-0 transition-transform duration-300 origin-right;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+
+  .card-elevated {
+    @apply bg-[hsl(var(--card))] border border-[hsl(var(--divider)/0.5)];
+  }
+
+  .go-icon {
+    @apply inline-flex items-center transition-transform duration-200 ease-[cubic-bezier(.39,.575,.565,1)];
+  }
+
+  .group:hover .go-icon {
+    transform: translateX(4px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[hsl(var(--muted-foreground)/0.2)] rounded-full hover:bg-[hsl(var(--muted-foreground)/0.4)] transition-colors;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}

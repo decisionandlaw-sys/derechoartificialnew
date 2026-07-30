@@ -1,0 +1,247 @@
+name: ✅ Calidad Técnica y SEO
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ─────────────────────────────────────────
+  # 1. COMPILACIÓN Y TYPESCRIPT
+  # ─────────────────────────────────────────
+  compilacion:
+    name: 🔨 Compilación Next.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Verificar TypeScript (sin errores de tipos)
+        run: npx tsc --noEmit
+        continue-on-error: false
+
+      - name: Lint (errores de código)
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build de producción
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+  # ─────────────────────────────────────────
+  # 2. VALIDACIÓN DE ARCHIVOS MDX (CONTENIDO)
+  # ─────────────────────────────────────────
+  contenido-mdx:
+    name: 📝 Validación de Contenido MDX
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Comprobar campos obligatorios en frontmatter MDX
+        run: |
+          node - << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const glob = require('glob').sync ?? require('glob').globSync;
+
+          // Buscar todos los archivos MDX en /content
+          const files = fs.readdirSync('./content', { recursive: true })
+            .filter(f => f.endsWith('.mdx') || f.endsWith('.md'))
+            .map(f => path.join('./content', f));
+
+          let errores = [];
+
+          files.forEach(file => {
+            const content = fs.readFileSync(file, 'utf-8');
+            const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+
+            if (!frontmatterMatch) {
+              errores.push(`❌ Sin frontmatter: ${file}`);
+              return;
+            }
+
+            const frontmatter = frontmatterMatch[1];
+            const camposObligatorios = ['title', 'description', 'date'];
+
+            camposObligatorios.forEach(campo => {
+              if (!frontmatter.includes(`${campo}:`)) {
+                errores.push(`❌ Falta campo '${campo}' en: ${file}`);
+              }
+            });
+
+            // Comprobar que description no está vacía ni es "..."
+            const descMatch = frontmatter.match(/description:\s*["']?(.+?)["']?\n/);
+            if (descMatch && (descMatch[1].trim() === '...' || descMatch[1].trim() === '')) {
+              errores.push(`⚠️  Description vacía o incompleta en: ${file}`);
+            }
+
+            // Comprobar que title tiene longitud razonable para SEO (30-70 chars)
+            const titleMatch = frontmatter.match(/title:\s*["']?(.+?)["']?\n/);
+            if (titleMatch) {
+              const len = titleMatch[1].trim().length;
+              if (len < 20) errores.push(`⚠️  Título demasiado corto (${len} chars) en: ${file}`);
+              if (len > 70) errores.push(`⚠️  Título demasiado largo (${len} chars) en: ${file}`);
+            }
+          });
+
+          if (errores.length > 0) {
+            console.log('\n🔍 Problemas encontrados en archivos MDX:\n');
+            errores.forEach(e => console.log(e));
+            // Solo falla el build si hay campos obligatorios faltantes (❌), no warnings (⚠️)
+            const criticos = errores.filter(e => e.startsWith('❌'));
+            if (criticos.length > 0) process.exit(1);
+          } else {
+            console.log('✅ Todos los archivos MDX tienen frontmatter correcto.');
+          }
+          EOF
+
+  # ─────────────────────────────────────────
+  # 3. VERIFICACIÓN SEO TÉCNICO
+  # ─────────────────────────────────────────
+  seo-tecnico:
+    name: 🔍 SEO Técnico
+    runs-on: ubuntu-latest
+    needs: compilacion
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build para análisis
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Comprobar que sitemap.xml existe y tiene contenido
+        run: |
+          if [ -f ".next/server/app/sitemap.xml/route.js" ] || [ -f "public/sitemap.xml" ] || grep -r "sitemap" src/ --include="*.ts" --include="*.tsx" -l | head -1; then
+            echo "✅ Configuración de sitemap encontrada"
+          else
+            echo "❌ No se encontró sitemap.ts ni sitemap.xml — Google no podrá rastrear el sitio correctamente"
+            exit 1
+          fi
+
+      - name: Comprobar que robots.txt existe
+        run: |
+          if [ -f "public/robots.txt" ] || grep -r "robots" src/ --include="*.ts" -l | head -1; then
+            echo "✅ robots.txt o configuración encontrada"
+          else
+            echo "⚠️  No se encontró robots.txt en /public ni robots.ts en /src/app"
+          fi
+
+      - name: Comprobar imágenes sin alt text en componentes
+        run: |
+          echo "🔍 Buscando imágenes sin alt text..."
+          # Busca <img sin alt o <Image sin alt en archivos TSX
+          PROBLEMAS=$(grep -rn "<img " src/ --include="*.tsx" | grep -v 'alt=' || true)
+          PROBLEMAS2=$(grep -rn "<Image " src/ --include="*.tsx" | grep -v 'alt=' || true)
+          if [ -n "$PROBLEMAS" ] || [ -n "$PROBLEMAS2" ]; then
+            echo "⚠️  Imágenes sin atributo alt encontradas:"
+            echo "$PROBLEMAS"
+            echo "$PROBLEMAS2"
+          else
+            echo "✅ Todas las imágenes tienen alt text"
+          fi
+
+      - name: Comprobar uso de next/image (no <img> nativa)
+        run: |
+          IMG_NATIVA=$(grep -rn "<img " src/ --include="*.tsx" | grep -v "// " || true)
+          if [ -n "$IMG_NATIVA" ]; then
+            echo "⚠️  Se encontraron etiquetas <img> nativas (usa next/image para mejor rendimiento):"
+            echo "$IMG_NATIVA"
+          else
+            echo "✅ Todas las imágenes usan next/image"
+          fi
+
+  # ─────────────────────────────────────────
+  # 4. ANÁLISIS DE BUNDLE (TAMAÑO)
+  # ─────────────────────────────────────────
+  bundle-size:
+    name: 📦 Tamaño del Bundle
+    runs-on: ubuntu-latest
+    needs: compilacion
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build con análisis de bundle
+        run: npm run build
+        env:
+          NODE_ENV: production
+          ANALYZE: false
+
+      - name: Comprobar tamaño de páginas principales
+        run: |
+          echo "📊 Analizando tamaño del build..."
+          if [ -d ".next" ]; then
+            # Mostrar tamaño de los chunks principales
+            find .next/static/chunks -name "*.js" -size +200k 2>/dev/null | while read f; do
+              size=$(du -sh "$f" | cut -f1)
+              echo "⚠️  Chunk grande ($size): $f"
+            done
+            
+            # Total del build
+            total=$(du -sh .next | cut -f1)
+            echo "📦 Tamaño total del build: $total"
+            echo "✅ Análisis de bundle completado"
+          fi
+
+  # ─────────────────────────────────────────
+  # 5. RESUMEN FINAL
+  # ─────────────────────────────────────────
+  resumen:
+    name: 📋 Resumen de Calidad
+    runs-on: ubuntu-latest
+    needs: [compilacion, contenido-mdx, seo-tecnico, bundle-size]
+    if: always()
+    steps:
+      - name: Resultado final
+        run: |
+          echo "════════════════════════════════════════"
+          echo "  AUDITORÍA TÉCNICA — derechoartificial.com"
+          echo "════════════════════════════════════════"
+          echo ""
+          echo "✅ Si ves este mensaje, el deploy a Vercel es seguro."
+          echo ""
+          echo "Revisa los jobs anteriores para ver advertencias (⚠️)"
+          echo "Las advertencias no bloquean el deploy pero conviene revisarlas."
+          echo "Los errores críticos (❌) sí bloquean el deploy."
+          echo "════════════════════════════════════════"

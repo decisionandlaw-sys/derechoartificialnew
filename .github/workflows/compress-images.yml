@@ -1,0 +1,119 @@
+name: Compress images to AVIF and WebP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  compress-images:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install sharp
+        run: |
+          npm install sharp@0.33
+
+      - name: Convert images in public/images to AVIF/WebP
+        run: |
+          node - << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const sharp = require('sharp');
+
+          const rootDir = path.join(process.cwd(), 'public', 'images');
+
+          function collectImages(dir) {
+            if (!fs.existsSync(dir)) return [];
+            const entries = fs.readdirSync(dir, { withFileTypes: true });
+            let files = [];
+            for (const entry of entries) {
+              const fullPath = path.join(dir, entry.name);
+              if (entry.isDirectory()) {
+                files = files.concat(collectImages(fullPath));
+              } else if (entry.isFile()) {
+                const ext = path.extname(entry.name).toLowerCase();
+                if (ext === '.jpg' || ext === '.jpeg' || ext === '.png') {
+                  files.push(fullPath);
+                }
+              }
+            }
+            return files;
+          }
+
+          if (!fs.existsSync(rootDir)) {
+            console.log('public/images directory not found, nothing to optimize.');
+            process.exit(0);
+          }
+
+          const inputFiles = collectImages(rootDir);
+
+          if (inputFiles.length === 0) {
+            console.log('No JPG/PNG images found in public/images, nothing to optimize.');
+            process.exit(0);
+          }
+
+          (async () => {
+            console.log(\`Found \${inputFiles.length} images to optimize.\`);
+
+            for (const file of inputFiles) {
+              const ext = path.extname(file);
+              const base = path.basename(file, ext);
+              const dir = path.dirname(file);
+              const avifPath = path.join(dir, base + '.avif');
+              const webpPath = path.join(dir, base + '.webp');
+
+              console.log(\`Processing: \${file}\`);
+
+              const image = sharp(file);
+
+              await Promise.all([
+                image
+                  .clone()
+                  .avif({ quality: 75 })
+                  .toFile(avifPath),
+                image
+                  .clone()
+                  .webp({ quality: 80 })
+                  .toFile(webpPath),
+              ]);
+            }
+
+            console.log('Image optimization completed.');
+          })().catch((err) => {
+            console.error('Error optimizing images:', err);
+            process.exit(1);
+          });
+          EOF
+
+      - name: Check for changes
+        id: git_diff
+        run: |
+          if [[ -n "$(git status --porcelain public/images)" ]]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit optimized images
+        if: steps.git_diff.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/images
+          git commit -m "chore: optimize images (AVIF/WebP)"
+          git push
+

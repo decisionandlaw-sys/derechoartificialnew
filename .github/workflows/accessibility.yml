@@ -1,0 +1,157 @@
+name: Accessibility Checks
+
+# Se ejecuta en cada push y pull request
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checkout del código
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      # 2. Setup Node.js 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      # 3. Instalar dependencias con npm ci
+      - name: Install dependencies
+        run: npm ci
+        
+      # 4. Ejecutar ESLint con jsx-a11y para verificar accesibilidad estática
+      - name: Run ESLint with accessibility rules
+        run: npm run lint
+        continue-on-error: false
+        
+      # 5. Ejecutar tests de accesibilidad con jest-axe y cobertura
+      - name: Run accessibility tests
+        run: npm test -- --coverage
+        continue-on-error: false
+        
+      # 6. Verificar que no haya violaciones de accesibilidad
+      - name: Check accessibility violations
+        run: |
+          echo "🔍 Checking for accessibility violations..."
+          
+          # Verificar resultados de tests
+          if [ -d "coverage" ]; then
+            echo "✅ Coverage report generated successfully"
+            
+            # Mostrar resumen de cobertura
+            if [ -f "coverage/coverage-summary.json" ]; then
+              COVERAGE_PCT=$(node -e "
+                const fs = require('fs');
+                const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+                const total = summary.total;
+                console.log(Math.round(total.lines.pct));
+              ")
+              echo "📊 Test Coverage: ${COVERAGE_PCT}%"
+            fi
+          else
+            echo "❌ Coverage report not found"
+            exit 1
+          fi
+          
+          # Verificar que los tests pasaron
+          if [ $? -eq 0 ]; then
+            echo "✅ All accessibility tests passed"
+          else
+            echo "❌ Some accessibility tests failed"
+            exit 1
+          fi
+          
+      # 7. Mensaje final de éxito
+      - name: Accessibility checks passed
+        if: success()
+        run: |
+          echo "🎉 Accessibility checks passed ✅"
+          echo ""
+          echo "📋 Summary:"
+          echo "  ✅ ESLint with jsx-a11y rules: PASSED"
+          echo "  ✅ Jest-axe accessibility tests: PASSED"
+          echo "  ✅ Coverage report generated"
+          echo ""
+          echo "🚀 Ready to merge!"
+          
+      # 8. Upload de reporte de cobertura como artifact
+      - name: Upload coverage reports
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-coverage
+          path: coverage/
+          retention-days: 30
+          
+      # 9. Comentario en PR con resultados (solo en pull requests)
+      - name: Comment on PR with results
+        if: github.event_name == 'pull_request' && success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Leer resumen de cobertura si existe
+            let coverageText = '';
+            if (fs.existsSync('coverage/coverage-summary.json')) {
+              const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+              const total = summary.total;
+              coverageText = `\n📊 **Coverage:** ${Math.round(total.lines.pct)}%`;
+            }
+            
+            // Crear comentario
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🔍 Accessibility Check Results ✅
+              
+              ### ✅ Checks Passed
+              - **ESLint with jsx-a11y rules:** All accessibility rules passed
+              - **Jest-axe tests:** No accessibility violations found
+              - **Coverage:** Test coverage report generated${coverageText}
+              
+              ### 📊 Coverage Details
+              The coverage report has been generated and uploaded as an artifact.
+              
+              ---
+              
+              🤖 *This check was automated using GitHub Actions*`
+            });
+            
+  # Job adicional para verificar dependencias de seguridad
+  security-scan:
+    runs-on: ubuntu-latest
+    needs: accessibility
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Security audit
+        run: |
+          echo "🔒 Running security audit..."
+          npm audit --audit-level=moderate
+          if [ $? -eq 0 ]; then
+            echo "✅ No security vulnerabilities found"
+          else
+            echo "⚠️ Security vulnerabilities found - please review"
+            # No fallar el build por seguridad, solo advertir
+          fi

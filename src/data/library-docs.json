@@ -1,0 +1,132 @@
+[
+  {
+    "id": "aesia-1",
+    "title": "Guía Nacional de Notificación de Incidentes de IA",
+    "description": "Protocolo oficial para la comunicación de brechas de seguridad y fallos en sistemas de IA de alto riesgo.",
+    "date": "2025-01-10",
+    "url": "https://aesia.digital.gob.es/guias",
+    "source": "AESIA",
+    "language": "ES",
+    "tags": [
+      "#AESIA",
+      "#Seguridad"
+    ]
+  },
+  {
+    "id": "aesia-2",
+    "title": "Estatuto de la Agencia Española de Supervisión de la IA",
+    "description": "Marco legal y competencias de la AESIA como autoridad de vigilancia del mercado.",
+    "date": "2023-08-22",
+    "url": "https://boe.es/diario_boe/txt.php?id=BOE-A-2023-18903",
+    "source": "AESIA",
+    "language": "ES",
+    "tags": [
+      "#AESIA",
+      "#Estatuto"
+    ]
+  },
+  {
+    "id": "ec-1769264742288-njsya5f1e",
+    "title": "Estudio publicado en apoyo de la evaluación de las normas de la UE en materia de datos",
+    "description": "Documento oficial de la biblioteca de estrategia digital.",
+    "date": "2025-11-15",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/study-published-supporting-evaluation-eu-data-rules",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742294-al0ryrgij",
+    "title": "IA agente: Aprovechar el talento europeo en IA y los activos regulatorios para escalar la adopción",
+    "description": "La IA agente tiene el potencial de remodelar la forma en que operan las organizaciones. El presente informe examina la preparación de Europa para este cambio y describe los pasos necesarios para desplegar la IA agente de forma segura y a escala.",
+    "date": "2025-12-01",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/agentic-ai-leveraging-european-ai-talent-and-regulatory-assets-scale-adoption",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742295-8ktgrss66",
+    "title": "3D4CH Escuela de Invierno: de la estrategia a la práctica y a los proyectos prósperos financiados por la UE",
+    "description": "Descubra cómo la digitalización 3D está transformando el patrimonio cultural, desde experiencias inmersivas hasta colecciones digitales accesibles y de alta calidad en toda Europa.",
+    "date": "2025-10-20",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/3d4ch-winter-school-strategy-practice-and-thriving-eu-funded-projects",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742297-d9n07k0ry",
+    "title": "Evaluación de la Agencia de la Unión Europea para la Ciberseguridad (ENISA) y del Marco Europeo de Certificación de la Ciberseguridad (ECCF)",
+    "description": "La Comisión publicó una evaluación del impacto y la eficacia de ENISA y del ECCF, teniendo en cuenta la evolución del panorama tecnológico y reglamentario. Esta evaluación va acompañada de un documento de trabajo de los servicios de la Comisión y de un estudio de apoyo.",
+    "date": "2025-09-05",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/evaluation-european-union-agency-cybersecurity-enisa-and-european-cybersecurity-certification",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742297-j7gdi4fsn",
+    "title": "Propuesta de Reglamento relativo al Reglamento de Ciberseguridad de la UE",
+    "description": "La Comisión ha propuesto un nuevo paquete de ciberseguridad para seguir reforzando la resiliencia y las capacidades de ciberseguridad de la UE.",
+    "date": "2025-08-18",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/proposal-regulation-eu-cybersecurity-act",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742298-sijgcfawt",
+    "title": "Primeros modelos 3D ucranianos publicados en Europeana a través del proyecto 3D-4CH",
+    "description": "Los primeros modelos 3D ucranianos están en directo en Europeana a través de 3D-4CH, lo que marca un hito para la preservación y el patrimonio de Europa en peligro.",
+    "date": "2025-07-22",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/first-ukrainian-3d-models-published-europeana-through-3d-4ch-project",
+    "source": "Comisión Europea",
+    "language": "EN",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742298-rt4do9c0y",
+    "title": "El espacio común europeo de datos para el patrimonio cultural - Estrategia 2025-2030",
+    "description": "Este documento estratégico se centra en la creación de bases de datos de alta calidad, accesibles e interoperables para la evolución del espacio común europeo de datos para el patrimonio cultural de aquí a 2030.",
+    "date": "2025-06-10",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/common-european-data-space-cultural-heritage-strategy-2025-2030",
+    "source": "Comisión Europea",
+    "language": "ES",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  },
+  {
+    "id": "ec-1769264742299-mzmzx1n3q",
+    "title": "Sesión informativa: Continente AI (DIGITAL-2026-EDIH-AC-09) - Materiales disponibles",
+    "description": "Todas las presentaciones y la grabación de la sesión ya están disponibles.",
+    "date": "2025-05-15",
+    "url": "https://digital-strategy.ec.europa.eu/es/library/info-session-ai-continent-digital-2026-edih-ac-09-materials-available",
+    "source": "Comisión Europea",
+    "language": "EN",
+    "tags": [
+      "#ComisiónEuropea",
+      "#DigitalStrategy"
+    ]
+  }
+]
