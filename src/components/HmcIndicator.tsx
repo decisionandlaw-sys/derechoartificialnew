@@ -21,7 +21,7 @@ export function HmcIndicator({ type = "human-led-machine-oversight" }: HmcIndica
   return (
     <aside className="hmc-indicator mt-16 pt-8 border-t border-border/50">
       <div className="flex items-start gap-4">
-        <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 border border-border bg-muted/30 flex items-center justify-center p-1.5">
+        <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 border border-border bg-muted/30 flex items-center justify-center p-1.5 rounded-none">
           <Image
             src="/images/hmc-human-led-machine-oversight.svg"
             alt={config.title}
