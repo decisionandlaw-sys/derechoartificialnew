@@ -122,7 +122,7 @@ export default function HomePage() {
               <div key={sec.route} className="border border-[hsl(var(--divider)/0.5)]">
                 <div className="h-[3px] bg-newsroom" />
                 <div className="relative overflow-hidden bg-[hsl(var(--muted))] border-b border-[hsl(var(--divider)/0.3)]">
-                  <span className="absolute top-3 right-5 font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.85] tracking-[-0.08em] text-foreground/5 select-none pointer-events-none">
+                  <span className="absolute top-3 right-5 font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.85] tracking-[-0.08em] text-foreground/30 select-none pointer-events-none">
                     {String(secIdx + 1).padStart(2, "0")}
                   </span>
                   <Link href={sec.href} className="block px-5 md:px-6 py-5 md:py-6">
