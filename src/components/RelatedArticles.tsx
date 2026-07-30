@@ -58,11 +58,11 @@ function RelatedArticlesList({ articles, title }: { articles: any[]; title: stri
           <a
             key={item.url}
             href={item.url}
-            className="group block border border-[hsl(var(--divider)/0.3)] hover:border-[hsl(var(--accent))] transition-colors"
+            className="group block no-underline border border-[hsl(var(--divider)/0.3)] hover:border-[hsl(var(--accent))] transition-colors"
           >
             <div className="h-[2px] bg-[hsl(var(--accent))]" />
             <div className="p-5">
-              <h3 className="font-display font-bold text-base leading-[0.95] tracking-tight text-foreground group-hover:text-[hsl(var(--accent))] transition-colors mb-3 line-clamp-2">
+              <h3 className="font-display font-bold text-base leading-[0.95] tracking-tight text-foreground group-hover:text-[hsl(var(--accent))] group-hover:underline underline-offset-2 transition-colors mb-3 line-clamp-2">
                 {item.frontmatter.title}
                 <span className="inline-flex ml-2 text-foreground/30 group-hover:text-foreground transition-all duration-200 go-icon text-xs">→</span>
               </h3>
