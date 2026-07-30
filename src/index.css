@@ -101,8 +101,8 @@
     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
     prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
     prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
-    prose-a:text-[hsl(var(--foreground))] prose-a:no-underline prose-a:border-b prose-a:border-[hsl(var(--border))] hover:prose-a:border-[hsl(var(--foreground))]
-    prose-blockquote:border-l-2 prose-blockquote:border-[hsl(var(--foreground))] prose-blockquote:pl-6 prose-blockquote:italic
+    prose-a:text-[hsl(var(--accent))] prose-a:underline prose-a:underline-offset-2 prose-a:decoration-[hsl(var(--accent))] hover:prose-a:text-[hsl(var(--foreground))] hover:prose-a:decoration-[hsl(var(--foreground))]
+    prose-blockquote:border-l-[3px] prose-blockquote:border-[hsl(var(--accent))] prose-blockquote:pl-6 prose-blockquote:italic
     prose-strong:text-[hsl(var(--foreground))]
     prose-img:rounded-none
     prose-table:w-full prose-table:border-collapse
@@ -116,8 +116,8 @@
     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
     prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
     prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
-    prose-a:text-[hsl(var(--foreground))] prose-a:no-underline prose-a:border-b prose-a:border-[hsl(var(--border))] hover:prose-a:border-[hsl(var(--foreground))]
-    prose-blockquote:border-l-2 prose-blockquote:border-[hsl(var(--foreground))] prose-blockquote:pl-6 prose-blockquote:italic
+    prose-a:text-[hsl(var(--accent))] prose-a:underline prose-a:underline-offset-2 prose-a:decoration-[hsl(var(--accent))] hover:prose-a:text-[hsl(var(--foreground))] hover:prose-a:decoration-[hsl(var(--foreground))]
+    prose-blockquote:border-l-[3px] prose-blockquote:border-[hsl(var(--accent))] prose-blockquote:pl-6 prose-blockquote:italic
     prose-strong:text-[hsl(var(--foreground))]
     prose-img:rounded-none
     prose-table:w-full prose-table:border-collapse
@@ -137,6 +137,69 @@
     strong {
       color: hsl(var(--foreground));
     }
+  }
+
+  .prose-editorial sup,
+  .prose-editorial sup a {
+    color: hsl(var(--accent));
+    font-weight: 600;
+  }
+
+  .article-toc {
+    border-top: 1px solid hsl(var(--divider) / 0.5);
+    border-bottom: 1px solid hsl(var(--divider) / 0.5);
+    padding: 1.25rem 0;
+    margin: 2rem 0;
+  }
+
+  .article-toc-label {
+    font-family: var(--font-archivo), "Barlow Condensed", system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: hsl(var(--accent));
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .article-toc-item {
+    counter-increment: toc-counter;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+
+  .article-toc-item::before {
+    content: counter(toc-counter);
+    font-family: var(--font-archivo), "Barlow Condensed", system-ui, -apple-system, sans-serif;
+    font-size: 0.9rem;
+    color: hsl(var(--accent));
+    flex-shrink: 0;
+    min-width: 1.5rem;
+    text-align: right;
+  }
+
+  .article-toc-item a {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: color 0.15s ease;
+  }
+
+  .article-toc-item a:hover {
+    color: hsl(var(--accent));
+  }
+
+  .article-toc-sub {
+    margin-left: 1.5rem;
   }
 
   .prose-slate {
