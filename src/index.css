@@ -137,37 +137,27 @@
     }
   }
 
-  .prose-editorial a,
-  .prose-editorial .prose a,
-  .prose-editorial .prose-lg a {
+  .prose-editorial a {
     color: hsl(var(--accent));
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-color: hsl(var(--accent));
   }
-  .prose-editorial a:hover,
-  .prose-editorial .prose a:hover,
-  .prose-editorial .prose-lg a:hover {
+  .prose-editorial a:hover {
     color: hsl(var(--foreground));
     text-decoration-color: hsl(var(--foreground));
   }
 
-  .prose-editorial sup,
-  .prose-editorial .prose sup,
-  .prose-editorial .prose-lg sup {
+  .prose-editorial sup {
     color: hsl(var(--accent)) !important;
     font-weight: 600;
   }
-  .prose-editorial sup a,
-  .prose-editorial .prose sup a,
-  .prose-editorial .prose-lg sup a {
+  .prose-editorial sup a {
     color: hsl(var(--accent)) !important;
     font-weight: 600;
     text-decoration: none;
   }
-  .prose-editorial sup a:hover,
-  .prose-editorial .prose sup a:hover,
-  .prose-editorial .prose-lg sup a:hover {
+  .prose-editorial sup a:hover {
     color: hsl(var(--accent)) !important;
   }
 
