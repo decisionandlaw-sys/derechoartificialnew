@@ -10,6 +10,7 @@ const archivo = Archivo_Black({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
   variable: "--font-archivo",
 });
 
@@ -18,6 +19,7 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
 });
+
 import {
   StructuredData,
   createOrganizationJsonLd,

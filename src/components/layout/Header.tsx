@@ -73,14 +73,12 @@ function MegaNav({
   navigation,
   isEnglish,
   getAlternateRoute,
-  pathname,
 }: {
   open: boolean;
   onClose: () => void;
   navigation: { name: string; href: string }[];
   isEnglish: boolean;
   getAlternateRoute: () => string;
-  pathname: string;
 }) {
   return (
     <>
@@ -207,31 +205,30 @@ export function Header() {
         navigation={navigation}
         isEnglish={isEnglish}
         getAlternateRoute={getAlternateRoute}
-        pathname={pathname}
       />
 
       <header className="fixed top-0 z-30 w-full bg-background border-b border-[hsl(var(--divider))]">
         <div className="container-wide">
           <div className="flex items-center justify-between h-[52px]">
-            <Link href={isEnglish ? "/en" : "/"} className="flex items-center gap-3 group shrink-0">
-              <div className="w-8 h-8 bg-foreground text-background flex items-center justify-center font-display font-black text-xs leading-none">
+            <Link href={isEnglish ? "/en" : "/"} className="flex items-center gap-3 group shrink-0 mr-4">
+              <div className="w-8 h-8 bg-foreground text-background flex items-center justify-center font-display text-xs leading-none">
                 DA
               </div>
-              <span className="font-display text-xs tracking-[0.15em] text-foreground/70 group-hover:text-foreground transition-colors hidden sm:block">
+              <span className="font-display text-[10px] tracking-[0.18em] text-foreground/70 group-hover:text-foreground transition-colors hidden sm:block">
                 DERECHO ARTIFICIAL
               </span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-1">
-              {navigation.slice(0, 4).map((item) => {
+            <nav className="hidden md:flex items-center flex-1 overflow-x-auto scrollbar-none gap-0">
+              {navigation.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`font-display text-[11px] tracking-[0.12em] px-3 py-1.5 transition-colors ${
+                    className={`font-display text-[10px] tracking-[0.1em] px-2.5 py-1.5 whitespace-nowrap transition-colors shrink-0 ${
                       isActive
-                        ? "text-foreground bg-foreground/5"
+                        ? "text-foreground"
                         : "text-caption hover:text-foreground"
                     }`}
                   >
@@ -241,7 +238,7 @@ export function Header() {
               })}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <button
                 type="button"
                 className="text-caption hover:text-foreground transition-colors"
@@ -252,7 +249,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleLangToggle}
-                className="font-display text-[11px] tracking-[0.12em] text-caption hover:text-foreground transition-colors"
+                className="font-display text-[10px] tracking-[0.12em] text-caption hover:text-foreground transition-colors"
               >
                 {isEnglish ? "ES" : "EN"}
               </button>
@@ -263,29 +260,7 @@ export function Header() {
         </div>
       </header>
 
-      {/* Secondary subnav — category tabs */}
-      <div className="fixed top-[52px] z-20 w-full bg-background border-b border-[hsl(var(--divider))] overflow-x-auto scrollbar-none">
-        <div className="flex h-[32px] min-w-max">
-          {navigation.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`flex items-center justify-center px-4 font-display text-[10px] tracking-[0.15em] whitespace-nowrap transition-colors border-r border-[hsl(var(--divider)/0.5)] ${
-                  isActive
-                    ? "text-foreground border-b-2 border-b-newsroom"
-                    : "text-caption hover:text-foreground"
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="h-[84px]" />
+      <div className="h-[52px]" />
     </>
   );
 }

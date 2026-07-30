@@ -47,31 +47,52 @@ export default function HomePage() {
   return (
     <main>
       <section className="border-b border-[hsl(var(--divider))]">
-        <div className="container-wide py-20 md:py-28 lg:py-36">
-          <div className="max-w-[90%] lg:max-w-[80%]">
-            <span className="font-display text-xs tracking-[0.2em] text-newsroom mb-6 block">
-              DERECHO E INTELIGENCIA ARTIFICIAL
-            </span>
-            <h1 className="font-display text-[clamp(3rem,10vw,9rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
-              Derecho<br />Artificial
-            </h1>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:mt-10">
-            <div>
-              <p className="font-display text-xl md:text-2xl leading-[1.15] tracking-[-0.02em] text-foreground/85">
+        <div className="container-wide py-12 md:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+            <div className="lg:col-span-3">
+              <span className="font-display text-[10px] tracking-[0.25em] text-newsroom mb-5 block">
+                DERECHO E INTELIGENCIA ARTIFICIAL
+              </span>
+              <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
+                Derecho<br />Artificial
+              </h1>
+              <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground/80 mt-5 max-w-md">
                 Derecho, ética y regulación de la IA
               </p>
-              <p className="text-sm md:text-base text-body leading-relaxed mt-4 max-w-lg">
+              <p className="text-sm md:text-base text-body leading-relaxed mt-3 max-w-md">
                 Análisis jurídico del Reglamento IA y su impacto legal. Guías prácticas para abogados y profesionales del compliance.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                <Link href="/guias-ia" className="inline-flex items-center justify-center px-6 py-3 bg-newsroom text-white text-sm font-semibold tracking-wide uppercase rounded-none hover:bg-white hover:text-newsroom transition-all duration-150">
+                  Ver guías IA <span className="go-icon ml-2">→</span>
+                </Link>
+                <Link href="#secciones" className="inline-flex items-center justify-center px-6 py-3 border border-[hsl(var(--border))] text-foreground text-sm font-semibold tracking-wide uppercase rounded-none hover:bg-foreground hover:text-background transition-all duration-150">
+                  Explorar secciones <span className="go-icon ml-2">→</span>
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 items-start md:justify-end md:self-end">
-              <Link href="/guias-ia" className="inline-flex items-center px-6 py-3 bg-newsroom text-white text-sm font-semibold tracking-wide uppercase hover:opacity-85 transition-opacity">
-                Ver guías IA <span className="go-icon ml-2">→</span>
-              </Link>
-              <Link href="#secciones" className="inline-flex items-center px-6 py-3 border border-[hsl(var(--border))] text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-[hsl(var(--card))] transition-colors">
-                Explorar secciones <span className="go-icon ml-2">→</span>
-              </Link>
+
+            <div className="lg:col-span-2 border-l border-[hsl(var(--divider)/0.5)] pl-6 lg:pl-8 pt-1">
+              <span className="font-display text-[10px] tracking-[0.15em] text-caption block mb-4">
+                ÚLTIMOS ANÁLISIS
+              </span>
+              <div className="flex flex-col gap-0">
+                {posts.sort((a, b) => b.dateMs - a.dateMs).slice(0, 4).map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={post.url}
+                    className="group py-3 border-t border-[hsl(var(--divider)/0.3)] first:border-t-0"
+                  >
+                    <h3 className="font-display text-sm md:text-base leading-[1.15] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150 pr-1">
+                      {post.title}
+                      <span className="inline-flex ml-1.5 text-foreground/30 group-hover:text-newsroom transition-all duration-150 go-icon">→</span>
+                    </h3>
+                    <span className="text-[11px] text-caption mt-1.5 block">
+                      {formatDate(post.dateMs)}
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
