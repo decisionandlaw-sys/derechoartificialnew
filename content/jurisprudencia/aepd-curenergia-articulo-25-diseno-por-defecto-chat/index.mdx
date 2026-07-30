@@ -1,0 +1,61 @@
+---
+title: "AEPD confirma 500.000 € a CURENERGÍA por el diseño de su chat"
+description: "La AEPD desestima el recurso de CURENERGÍA y confirma que un fallo en el chat de atención al cliente infringe el art. 25 RGPD, no el art. 32."
+date: "2026-07-25"
+section: "jurisprudencia"
+category: "AEPD"
+slug: "aepd-curenergia-articulo-25-diseno-por-defecto-chat"
+tags: ["RGPD", "artículo 25", "protección de datos desde el diseño", "AEPD", "sanciones RGPD"]
+---
+
+Un cliente recibe, por error, la deuda de otro. El mensaje llega porque un agente de atención al cliente tenía dos conversaciones de chat abiertas a la vez y confundió un correo electrónico con otro. CURENERGÍA COMERCIALIZADOR DE ÚLTIMO RECURSO S.A.U. alegó que se trataba de un fallo humano puntual, inevitable en cualquier organización, y que como mucho podía reprochársele una insuficiencia de medidas de seguridad del artículo 32 del RGPD. La Agencia Española de Protección de Datos no lo vio así, y en su [resolución del recurso de reposición del expediente EXP202316394](https://www.aepd.es/informes-y-resoluciones/resoluciones) confirmó íntegramente la sanción de 500.000 euros, calificando el incumplimiento como un déficit sistémico del diseño del canal, encuadrable en el artículo 25 del RGPD.
+
+**Antes de entrar en el fondo, una precisión cronológica necesaria.** El procedimiento sancionador se inició y resolvió en primera instancia mediante resolución de 22 de diciembre de 2025. CURENERGÍA interpuso recurso de reposición contra esa resolución el 30 de enero de 2026. La resolución que desestima el recurso —la que aquí se analiza, identificada internamente por la AEPD como REPOSICION-PS-00190-2024— lleva fecha de firma de 22 de junio de 2026, no de diciembre de 2025. Conviene subrayarlo porque el propio expediente cita ambas resoluciones y es fácil confundir la fecha de la sanción original con la fecha de la resolución que la confirma en vía de reposición, que es el acto administrativo que agota la vía administrativa y frente al que cabe recurso contencioso-administrativo ante la Audiencia Nacional en dos meses, conforme al artículo 48.6 de la LOPDGDD.
+
+## Los hechos: dos conversaciones abiertas y un correo mal atribuido
+
+CURENERGÍA es una comercializadora de energía eléctrica que en abril de 2022 contaba con al menos 3 millones de clientes y más de 1.000 empleados, y cuyo volumen de negocio en 2024 ascendió a 1.339.789.000 euros. Hasta su supresión en 2024, la entidad gestionaba un canal de atención al cliente por chat que en 2023 registró 15.030 interacciones. El sistema permitía que un mismo agente mantuviera al menos dos conversaciones activas de forma simultánea, alternando entre clientes que respondían con intervalos de minutos, horas, o que directamente no llegaban a responder.
+
+En ese contexto se produjo el error: el correo electrónico de un cliente reclamante quedó atribuido, por confusión, a la información de un tercero, y el sistema envió a esa persona datos personales de otro cliente que revelaban su situación de impago. CURENERGÍA corrigió la vinculación el 6 de noviembre de 2023, una vez detectado el fallo, pero la AEPD constató que no existía ningún mecanismo capaz de prevenir o detectar el error antes de que produjera impacto sobre los derechos del afectado.
+
+La entidad defendió que sí disponía de controles: un "Manual de mantenimiento de clientes" de marzo de 2023 que activaba un aviso emergente cuando un dato coincidía en cinco registros distintos, y una "Guía informativa para el control de fraude" que bloqueaba el alta de un correo electrónico ya presente en otros siete clientes. La AEPD no niega la existencia de estos controles, pero les otorga un alcance limitado: solo se disparan cuando un dato se repite un número determinado de veces, por lo que no protegen frente al error puntual en la introducción de un correo electrónico, que es exactamente lo que ocurrió aquí.
+
+## Artículo 25, no artículo 32: la distinción que decide el caso
+
+El núcleo jurídico del recurso era la tipificación. CURENERGÍA sostenía que la AEPD, en realidad, estaba valorando la suficiencia de sus medidas de seguridad —terreno del artículo 32 RGPD— y disfrazándolo de un incumplimiento del artículo 25.
+
+La AEPD rechaza esa lectura apoyándose en la distinción dogmática entre ambos preceptos. El artículo 32 RGPD, bajo la rúbrica "Seguridad del tratamiento", obliga a garantizar un nivel de seguridad adecuado al riesgo mediante medidas como el cifrado o la capacidad de restaurar la disponibilidad de los datos tras un incidente: es una obligación de seguridad operacional, reactiva frente a amenazas externas o accidentales. El artículo 25 RGPD, "Protección de datos desde el diseño y por defecto", desarrollado en el Considerando 78, impone en cambio una carga proactiva que opera desde el momento en que se determinan los medios del tratamiento: integrar los principios de minimización, exactitud y confidencialidad en la propia arquitectura del sistema, no como una capa añadida después.
+
+Aplicado al caso, el razonamiento de la Agencia es que CURENERGÍA no fue sancionada por no cifrar datos ni por no repeler un ataque externo, sino por no haber evaluado, en la fase de diseño del canal de chat, el riesgo de que la atención concurrente a varios clientes generase confusiones en la atribución de datos de contacto. Esa omisión de análisis de riesgo previo —no la insuficiencia de una salvaguarda de seguridad concreta— es lo que la AEPD encuadra en el artículo 25.1 RGPD, tipificado como infracción muy grave en el artículo 83.5 RGPD. La Agencia respalda esta lectura citando la doctrina del Comité Europeo de Protección de Datos en sus Directrices 4/2019 sobre el artículo 25, que insisten en que la protección desde el diseño no es una obligación autónoma, sino que se proyecta transversalmente sobre todos los principios del artículo 5 RGPD.
+
+## "Simultáneo" o "sucesivo": un debate que la AEPD considera irrelevante
+
+Una parte significativa del recurso se dedicó a matizar que la atención no era realmente simultánea, sino sucesiva: como los clientes tardaban en responder, el agente gestionaba las conversaciones de forma secuencial, sin superposición efectiva. La AEPD desestima el argumento por intrascendente. Lo determinante, según la resolución, no es la etiqueta que se dé a la interacción, sino que la configuración del canal permitía la coexistencia de al menos dos conversaciones abiertas, con el consiguiente riesgo objetivo de confusión entre clientes, independientemente de si las respuestas llegaban con segundos o con horas de diferencia.
+
+## Presunción de inocencia y responsabilidad objetiva: la doctrina constitucional invocada
+
+CURENERGÍA alegó también vulneración de la presunción de inocencia del artículo 24.2 CE, por falta de prueba suficiente de un incumplimiento "sistemático". La AEPD responde citando la Sentencia del Tribunal Constitucional 76/1990, de 26 de abril, que exige que la sanción se apoye en pruebas de cargo, que la carga probatoria recaiga en quien acusa y que cualquier insuficiencia probatoria se traduzca en absolución. La Agencia considera satisfecho ese estándar: la propia configuración del sistema —admitida por CURENERGÍA— y la materialización efectiva del error constituyen, a su juicio, elementos de cargo suficientes.
+
+Sobre la alegada responsabilidad objetiva, CURENERGÍA invocó la doctrina que exige culpa o negligencia y rechazó que se le exigiera un "riesgo cero" inexistente en cualquier tratamiento de datos. La AEPD no niega que el riesgo residual exista en abstracto, pero responde que la pérdida de confidencialidad por un correo mal dirigido "no es un riesgo excepcional o de baja frecuencia, sino un riesgo habitual en las relaciones entre responsables y sus clientes", que por tanto debe preverse y mitigarse desde el diseño. La culpabilidad, según la resolución, se aprecia precisamente en la ausencia de ese análisis previo de riesgos, aunque la existencia de controles reactivos —los umbrales de cinco y siete repeticiones— sí fue valorada para no calificar la culpa como grave.
+
+## Error aislado frente a déficit sistémico
+
+El punto de mayor recorrido práctico de la resolución es la calificación del incumplimiento como sistémico y no como un incidente aislado. La AEPD sostiene que el canal de chat no era un mecanismo residual, sino accesible a la totalidad de la clientela, y que la ausencia de medidas para prevenir la confusión entre conversaciones afectaba al canal en su conjunto, no a un caso concreto. Bajo esta lógica, que un error concreto se materializara una sola vez no excluye que el diseño que lo hizo posible fuera estructuralmente deficiente para todos los usuarios del canal.
+
+## La cuantía: 500.000 euros y el agravante del volumen de negocio
+
+La sanción se sitúa dentro del marco del artículo 83.5 RGPD, que prevé multas de hasta 20 millones de euros o el 4% del volumen de negocio anual global, la cifra que resulte mayor. La AEPD aplica los criterios del artículo 83.2 RGPD y del artículo 76 LOPDGDD, y aprecia como agravante la vinculación de la actividad de CURENERGÍA con un tratamiento masivo de datos personales —los 3 millones de clientes y los más de 1.000 empleados de la entidad—, conforme al artículo 76.2.b) LOPDGDD en relación con el artículo 83.2.k) RGPD.
+
+Para respaldar la relevancia de ese criterio, la resolución cita la Sentencia de la Audiencia Nacional (Sala de lo Contencioso-Administrativo) de 13 de septiembre de 2024, que avaló como no desproporcionada una sanción tomando en cuenta la cifra de negocio y el número de empleados de la entidad sancionada en aquel caso. La AEPD rechaza además los atenuantes invocados por CURENERGÍA, distinguiendo expresamente el supuesto de otros escenarios —como la incorporación de datos a un sistema común de información crediticia, sometido a un régimen jurídico especial— que a su juicio no son equiparables a la difusión de una deuda de un cliente a otro a través del chat.
+
+La resolución se inscribe, según el propio razonamiento de la AEPD, en una línea de exigencia sobre el artículo 25 RGPD que la Agencia ya había aplicado en otros expedientes: la sanción a Orange España (PS/00332/2023) por falta de verificación de identidad en la expedición de SIM duplicadas, la sanción a CaixaBank de marzo de 2026 por fugas de información derivadas de defectos estructurales de diseño, y la sanción a INCIBE de noviembre de 2025 por una configuración por defecto inadecuada en su plataforma Moodle.
+
+## Lo que se puede extraer para el diseño de canales de atención multicanal
+
+- El artículo 25 RGPD no se satisface con controles reactivos basados en umbrales de repetición de datos; exige un análisis de riesgo realizado desde la concepción del sistema, anticipando errores humanos previsibles en la operativa diaria.
+- La calificación de "simultánea" o "sucesiva" de una atención multicanal es irrelevante si la arquitectura del sistema permite, en abstracto, la coexistencia de conversaciones con distintos clientes.
+- Un incidente que se materializa una única vez puede calificarse como infracción sistémica si el diseño que lo permitió afecta potencialmente a la totalidad de usuarios del canal.
+- La existencia de medidas correctivas o de detección de fraude no exime de responsabilidad por el artículo 25, aunque puede moderar la gravedad de la culpa apreciada.
+- El volumen de negocio y el número de clientes de la entidad siguen operando como agravante objetivo en la graduación de la sanción, en línea con la jurisprudencia de la Audiencia Nacional.
+
+La resolución agota la vía administrativa. CURENERGÍA dispone de la vía contencioso-administrativa ante la Audiencia Nacional para impugnarla, de modo que la última palabra sobre este criterio de la AEPD —y sobre la frontera exacta entre el artículo 25 y el artículo 32 RGPD en entornos de atención al cliente— podría no estar todavía escrita.

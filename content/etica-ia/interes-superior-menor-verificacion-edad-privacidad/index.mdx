@@ -1,0 +1,461 @@
+---
+title: "Interés superior del menor en el entorno digital: privacidad y verificación de edad"
+description: "Análisis jurídico-técnico de sistemas de verificación de edad que equilibra la protección infantil con derechos fundamentales como privacidad y libertad de expresión, rechazando modelos de vigilancia masiva."
+date: "2026-04-06"
+tags: ["menores online", "privacidad digital", "verificación de edad", "derechos fundamentales", "protección de datos"]
+section: "etica-ia"
+category: "analisis-juridico"
+author: "Equipo Redacción Derecho Artificial"
+slug: "interes-superior-menor-verificacion-edad-privacidad"
+readingTime: "42 min"
+pdf: null
+---
+
+# EL INTERÉS SUPERIOR DEL MENOR EN EL ENTORNO DIGITAL: ANÁLISIS JURÍDICO-TÉCNICO DE LA VERIFICACIÓN DE EDAD, LA PRIVACIDAD Y LOS DERECHOS FUNDAMENTALES
+
+---
+
+## ÍNDICE
+
+**SECCIÓN I: RESUMEN EJECUTIVO E INTRODUCCIÓN**  
+1. Resumen Ejecutivo: El cambio de paradigma hacia un Internet seguro por defecto  
+2. Introducción: La digitalización de la infancia y la tensión entre seguridad y privacidad  
+3. El Interés Superior del Menor: Fundamento ético y jurídico en el ecosistema digital  
+4. Metodología y objetivos del estudio
+
+**SECCIÓN II: MARCO NORMATIVO COMPARADO Y PRINCIPIOS RECTORES**  
+1. El Marco Comunitario: Intersección entre el Reglamento (UE) 2016/679 (RGPD) y el Reglamento (UE) 2022/2065 de Servicios Digitales (DSA)  
+2. El Régimen Jurídico en España: La Ley Orgánica 3/2018 (LOPDGDD) y la Ley 13/2022 General de Comunicación Audiovisual  
+3. El Modelo Anglosajón y Comparativa Internacional: La *Online Safety Act* (OSA) del Reino Unido y la *Children's Online Privacy Protection Act* (COPPA) en EE.
+
+UU.  
+4. Perspectiva Latinoamericana: Tendencias regulatorias en Brasil, Argentina y Chile frente a la explotación de datos  
+5. Principios Rectores: Autonomía progresiva, protección integral y prioridad absoluta
+
+**SECCIÓN III: ANÁLISIS TÉCNICO DE SISTEMAS DE VERIFICACIÓN DE EDAD Y ASEGURAMIENTO**  
+1. Taxonomía de Métodos: De la autodeclaración a la verificación documental y la estimación por inteligencia artificial  
+2. Modelos de Implementación: Diferenciación entre servicios para adultos y plataformas mixtas con protección por defecto  
+3. Tecnologías Emergentes de Identificación: La Cartera de Identidad Digital de la UE (EUDIW) y los atributos electrónicos  
+4. Soluciones Criptográficas para la Minimización: *Zero-Knowledge Proofs* (ZKP) y tokens de edad anónimos
+
+**SECCIÓN IV: EVALUACIÓN DE RIESGOS PARA LA PRIVACIDAD Y LOS DERECHOS FUNDAMENTALES**  
+1. Tipología de Riesgos (Las 5 Cs): Contenido, Conducta, Contacto, Consumo y Riesgos Transversales  
+2. El Riesgo de Vigilancia Sistémica: Perfilado masivo, localización de menores y el efecto "pescar en una pecera"  
+3. Impacto en Derechos Fundamentales: Libertad de expresión, derecho al anonimato y riesgos de discriminación algorítmica  
+4. La Paradoja Privacidad-Seguridad: Análisis de la proporcionalidad y necesidad del tratamiento de datos biométricos
+
+**SECCIÓN V: BUENAS PRÁCTICAS, GOBERNANZA Y DISEÑO PROACTIVO**  
+1. Diseño Seguro por Defecto: El Decálogo de principios de la Agencia Española de Protección de Datos (AEPD)  
+2. Evaluaciones de Impacto: *Child Rights Impact Assessments* (CRIA) y Evaluaciones de Impacto en la Protección de Datos (EIPD)  
+3. La Doble Anonimidad: Estándares de Arcom y el aseguramiento de la privacidad del usuario  
+4. Marcos de Gobernanza y Responsabilidad Compartida: El papel de los Estados, la industria y los titulares de la patria potestad
+
+**SECCIÓN VI: CONCLUSIONES Y REFERENCIAS**  
+1. Síntesis de hallazgos: Superación del "solucionismo tecnológico"  
+2. Hacia una Agenda Latinoamericana de Protección de Datos  
+3. Conclusión final: La tecnología como habilitador de derechos  
+4. Referencias Bibliográficas (Lista completa en formato APA 7ª)
+
+---
+
+# SECCIÓN I: RESUMEN EJECUTIVO E INTRODUCCIÓN
+
+## 1. Resumen Ejecutivo: El cambio de paradigma hacia un Internet seguro por defecto
+
+La protección de los niños, niñas y adolescentes (NNA) en el ecosistema digital atraviesa una transformación fundamental en su concepción jurídica y técnica. El modelo tradicional, caracterizado por una naturaleza reactiva que actúa solo tras la evidencia de un daño o impacto ya producido,¹ se revela insuficiente frente a la sofisticación de los riesgos sistémicos del entorno en línea.
+
+En su lugar, emerge la propuesta de un **Internet seguro por defecto**, fundamentado en los principios de protección de datos desde el diseño y por defecto establecidos en el Reglamento General de Protección de Datos (RGPD).²
+
+Este nuevo paradigma rechaza las estrategias de vigilancia masiva y perfilado de menores que, bajo la premisa de su protección, suelen derivar en el efecto "pescar en una pecera", localizando y exponiendo a los NNA ante actores maliciosos.³ La tesis central del presente estudio sostiene que la verificación de edad no debe concebirse como un fin en sí mismo —la identificación del menor—, sino como un **habilitador proactivo** para que el usuario adulto demuestre que supera un umbral de edad determinado para acceder a elementos de riesgo.⁴ De este modo, se traslada la carga de la prueba al adulto y se preserva el anonimato y la no trazabilidad de los menores, resolviendo de manera efectiva la denominada "paradoja privacidad-seguridad".⁵
+
+## 2. Introducción: La digitalización de la infancia y la tensión entre seguridad y privacidad
+
+El acceso de los menores a las plataformas en línea se ha intensificado de forma exponencial, ofreciéndoles oportunidades sin precedentes en ámbitos educativos, sociales y creativos, fomentando su curiosidad natural y habilidades de resolución de problemas.⁶ Sin embargo, esta inmersión digital se produce en un entorno que, de manera general, no fue diseñado considerando las necesidades específicas de la infancia.⁷ En este contexto, se materializan riesgos complejos que afectan tanto a la integridad física como mental de los NNA, clasificados bajo la tipología de las "5 Cs": Contenido, Conducta, Contacto, Consumo y riesgos Transversales.⁸
+
+La tensión jurídica surge cuando las medidas de seguridad propuestas por los proveedores de servicios colisionan con el derecho fundamental a la privacidad de los usuarios. Las fuentes analizadas indican que las estrategias basadas en el conocimiento de la edad exacta o en la creación de "corralitos" digitales para menores son intrusivas y vulneran la privacidad sistémica.⁹ Por ello, la normativa actual, especialmente a través del Reglamento de Servicios Digitales (DSA) y las directrices de la Comisión Europea, exige a las plataformas adoptar medidas adecuadas y proporcionadas que garanticen un alto nivel de privacidad y seguridad por defecto, sin incentivar el tratamiento excesivo de datos personales.¹⁰
+
+## 3. El Interés Superior del Menor: Fundamento ético y jurídico en el ecosistema digital
+
+El principio del **interés superior del menor** constituye la piedra angular de la arquitectura de protección infantil. Con origen en el instituto del *parens patriae* del derecho anglosajón,¹¹ este principio fue consagrado por la Convención de las Naciones Unidas sobre los Derechos del Niño de 1989, estableciendo que en toda medida concerniente a los niños, su interés superior será una consideración primordial.¹² En el entorno digital, este principio adquiere una dimensión dinámica y compleja que debe evaluarse caso por caso.¹³
+
+El Comité de los Derechos del Niño, en su Observación General nº 14, establece una triple perspectiva para este concepto:  
+1. Como un **derecho fundamental** a que dicho interés sea considerado de forma primaria en toda decisión.¹⁴  
+2. Como un **principio jurídico interpretativo**, obligando a adoptar la interpretación que más favorezca al menor ante disposiciones ambiguas.¹⁵  
+3. Como una **norma de procedimiento**, exigiendo evaluaciones de impacto previo a la toma de decisiones que afecten a los NNA.¹⁶
+
+En consecuencia, el tratamiento de datos personales de menores y el diseño de sistemas de verificación de edad deben estar supeditados a la observancia de este interés por encima de intereses económicos o comerciales de las empresas.¹⁷ Esto implica que la tecnología debe ser un habilitador de derechos y no una herramienta de exclusión o vigilancia injustificada.¹⁸
+
+## 4. Metodología y objetivos del estudio
+
+Este artículo emplea una metodología de análisis documental jurídico-técnica de carácter descriptivo y analítico. El corpus de estudio se compone exclusivamente de la normativa comunitaria europea (RGPD, DSA), leyes nacionales de referencia (LOPDGDD, Ley General de Comunicación Audiovisual de España), notas técnicas de autoridades de control (AEPD), directrices de la Comisión Europea y posiciones de organizaciones de la sociedad civil (ADC, Data Privacy Brasil, Instituto Alana, Derechos Digitales) contenidas en las fuentes proporcionadas.
+
+Los objetivos principales son:  
+* Analizar la transición de modelos reactivos hacia sistemas de protección por diseño.  
+* Evaluar técnica y jurídicamente los métodos de verificación de edad bajo los principios de minimización y lealtad.  
+* Examinar el impacto de la datificación y la vigilancia masiva en los derechos fundamentales de los NNA.  
+* Proponer un marco de buenas prácticas basado en la gobernanza y la responsabilidad compartida.
+
+---
+
+**Notas al pie de la sección I**:
+
+1. Agencia Española de Protección de Datos (2024). *Nota Técnica: Internet seguro por defecto para la infancia y el papel de la verificación de edad*, p. 3.  
+2. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 3, 7.  
+3. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 3, 10.  
+4. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 5, 9.  
+5. AEPD & CNMC (2024). "Decoding Article 28 of the DSA: Age assurance and service design for online platforms", p. 2.  
+6. Comisión Europea (2025). *Directrices sobre medidas para garantizar un alto nivel de privacidad, seguridad y protección de los menores en línea, de conformidad con el artículo 28, apartado 4, del Reglamento (UE) 2022/2065*, p. 1.  
+7. Asociación por los Derechos Civiles, Data Privacy Brasil & Instituto Alana (s.f.). *Datos y derechos de la niñez y adolescencia en el ambiente digital: caminos para la protección jurídica en Brasil y Argentina*, p. 42.  
+8. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 11-13; Comisión Europea (2025). *Directrices*, Anexo.  
+9. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 4, 31.  
+10. Reglamento (UE) 2022/2065 del Parlamento Europeo y del Consejo de 19 de octubre de 2022 relativo a un mercado único de servicios digitales (DSA), Considerando 71.  
+11. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, p. 13.  
+12. ONU (1989). *Convención sobre los Derechos del Niño*, Artículo 3.  
+13. ONU (2013). *Observación general nº 14 sobre el derecho del niño a que su interés superior sea una consideración primordial*, p. 14.  
+14. ONU (2013). *Observación general nº 14*, p. 14; Asociación por los Derechos Civiles et al. (s.f.), p. 14.  
+15. ONU (2013). *Observación general nº 14*, p. 15.  
+16. ONU (2013). *Observación general nº 14*, p. 15; Asociación por los Derechos Civiles et al. (s.f.), p. 15.  
+17. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 49-50.  
+18. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 5.
+
+---
+
+# SECCIÓN II: MARCO NORMATIVO COMPARADO Y PRINCIPIOS RECTORES
+
+## 1. El Marco Comunitario: Intersección entre el Reglamento (UE) 2016/679 (RGPD) y el Reglamento (UE) 2022/2065 (DSA)
+
+La arquitectura jurídica europea para la protección de menores en el entorno digital se fundamenta en una relación de complementariedad entre el régimen general de protección de datos y la normativa de servicios digitales.
+
+El **Reglamento (UE) 2022/2065 (Digital Services Act, DSA)** establece, en su artículo 28, una obligación imperativa para los proveedores de plataformas en línea accesibles a menores: la implementación de medidas adecuadas y proporcionadas que garanticen un alto nivel de privacidad, seguridad y protección.¹ Esta disposición debe interpretarse en armonía con el **Reglamento (UE) 2016/679 (RGPD)**, el cual otorga a los niños una protección específica debido a su menor consciencia sobre los riesgos y salvaguardias en el tratamiento de sus datos.²
+
+Un elemento crítico en esta intersección es el principio de **minimización de datos**. El artículo 28, apartado 3, de la DSA clarifica explícitamente que el cumplimiento de las obligaciones de protección de menores no faculta a las plataformas para tratar datos personales adicionales con el fin exclusivo de evaluar la minoría de edad del usuario.³ En este sentido, la Comisión Europea subraya que las plataformas no pueden basar su exclusión de responsabilidad meramente en una declaración en sus términos y condiciones; si un servicio es accesible o conocido por atraer a menores, debe implementar medidas de mitigación efectivas más allá de la autodeclaración.⁴ Para las **Plataformas en Línea de Muy Gran Tamaño (VLOPs)** y los **Motores de Búsqueda de Muy Gran Tamaño (VLOSEs)**, la DSA impone obligaciones de diligencia debida reforzadas, exigiendo evaluaciones de riesgos sistémicos anuales que contemplen los efectos negativos sobre los derechos fundamentales de los menores.⁵
+
+## 2. El Régimen Jurídico en España: La Ley Orgánica 3/2018 (LOPDGDD) y la Ley 13/2022 General de Comunicación Audiovisual
+
+En el ordenamiento español, la protección del menor en el ámbito digital se articula a través de dos ejes principales. Primero, la **Ley Orgánica 3/2018 (LOPDGDD)**, que en su artículo 84.1 impone a los titulares de la patria potestad la obligación de velar por que los menores hagan un uso equilibrado y responsable de los servicios digitales, preservando su dignidad y derechos fundamentales.⁶ Segundo, la **Ley 13/2022 General de Comunicación Audiovisual (LGCA)**, la cual introduce obligaciones técnicas concretas para los prestadores de servicios de intercambio de vídeos a través de plataformas.
+
+El artículo 89 de la LGCA exige a estos prestadores operar sistemas de verificación de edad que impidan el acceso de menores a contenidos que puedan perjudicar su desarrollo físico, mental o moral, con especial énfasis en la pornografía y la violencia gratuita.⁷ La idoneidad de estos sistemas está sujeta a la evaluación de la **Comisión Nacional de los Mercados y la Competencia (CNMC)**, previo informe preceptivo de la **Agencia Española de Protección de Datos (AEPD)**.⁸ Este marco normativo español busca transponer la directiva europea sobre servicios de comunicación audiovisual, enfatizando que la verificación no es un fin, sino un medio para habilitar un filtrado de contenidos eficaz y respetuoso con la privacidad.⁹
+
+## 3. El Modelo Anglosajón y Comparativa Internacional: La *Online Safety Act* (OSA) y la COPPA
+
+El modelo británico, representado por la **Online Safety Act (OSA)** de 2023, introduce un innovador "deber de cuidado" (*duty of care*) para las plataformas que gestionan contenido generado por usuarios.¹⁰ La OSA es particularmente rigurosa en su régimen sancionador, permitiendo al regulador **Ofcom** imponer multas de hasta el 10% de los ingresos globales o 18 millones de libras.¹¹ Desde julio de 2025, la OSA exige controles de edad robustos para bloquear el acceso a contenidos perjudiciales como la autolesión o trastornos alimentarios, permitiendo métodos como la estimación facial o verificación bancaria.¹² No obstante, este modelo ha sido criticado por inducir un aumento en el uso de redes privadas virtuales (VPN) y por riesgos de censura algorítmica sobre contenidos lícitos.¹³
+
+En contraste, el modelo de EE. UU., regido por la **Children's Online Privacy Protection Act (COPPA)**, se centra en el consentimiento parental verificable (*Verifiable Parental Consent*, VPC).¹⁴ La **Federal Trade Commission (FTC)** supervisa este marco, el cual está siendo objeto de revisión para modernizar los mecanismos de VPC permitiendo tecnologías como el reconocimiento facial o huellas dactilares, siempre bajo estrictos estándares de privacidad.¹⁵ Por su parte, Francia ha establecido estándares pioneros a través de **Arcom** y la **CNIL**, promoviendo el concepto de **doble anonimato**: el sitio no debe conocer la identidad del usuario y el proveedor de verificación no debe conocer qué sitios visita este.¹⁶
+
+## 4. Perspectiva Latinoamericana: Tendencias regulatorias en Brasil, Argentina y Chile
+
+En América Latina, la protección digital de NNA se fundamenta en la **doctrina de la protección integral** y el principio de **prioridad absoluta**. En **Brasil**, la Constitución Federal (Art. 227) y el Estatuto del Niño y del Adolescente (ECA) consagran este deber compartido entre Estado, familia y sociedad.¹⁷ La **Ley General de Protección de Datos (LGPD)** brasileña dedica su artículo 14 específicamente al tratamiento de datos de NNA, estipulando que este debe realizarse siempre en su interés superior.¹⁸ Asimismo, el Proyecto de Ley 2630/2020 busca regular la desinformación y aumentar la transparencia de las plataformas en materia de moderación.¹⁹
+
+En **Argentina**, la Ley 26.061 de Protección Integral establece que las políticas públicas deben garantizar con absoluta prioridad los derechos de los NNA.²⁰ La **Agencia de Acceso a la Información Pública (AAIP)** ha emitido recomendaciones para la protección de la privacidad infantil, aunque carece de regulaciones específicas vinculantes sobre verificación de edad equivalentes a la DSA europea.²¹ Finalmente, **Chile** ha avanzado significativamente con su **Ley Marco de Ciberseguridad (Ley 21.663)** de 2024, la cual reconoce el uso del cifrado como un derecho,²² y está en proceso de implementar una nueva Ley de Protección de Datos Personales que crea una autoridad con facultades sancionadoras para proteger a los titulares de datos, incluyendo a los menores.²³
+
+## 5. Principios Rectores: Autonomía progresiva, protección integral y prioridad absoluta
+
+El sistema de protección de NNA debe operar bajo tres principios fundamentales que moldean toda política de verificación de edad y tratamiento de datos. El principio de **autonomía progresiva** reconoce que los menores se desarrollan cognitivamente, adquiriendo gradualmente competencia para tomar decisiones sobre sí mismos.²⁴ Esto implica que los sistemas de protección no deben ser estáticos, sino dinámicos, adaptándose a mayores grados de libertad conforme el menor demuestre comprensión sobre riesgos y salvaguardias.²⁵ El principio de **protección integral**, característico de la doctrina latinoamericana, sostiene que los derechos de la infancia deben ser garantizados de forma holística —no solo en su dimensión de protección contra daños, sino también como promotores del desenvolvimiento libre y digno.²⁶ Finalmente, el principio de **prioridad absoluta** establece que los intereses de los menores deben ser considerados un fin en sí mismo en toda política pública, sin poder ser subordinados a intereses económicos, comerciales o administrativos.²⁷
+
+---
+
+**Notas al pie de la sección II**:
+
+1. Reglamento (UE) 2016/679 (RGPD), Considerando 38.  
+2. Reglamento (UE) 2016/679 (RGPD), Considerando 38.  
+3. Reglamento (UE) 2022/2065 (DSA), Artículo 28(3); Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 29.  
+4. Comisión Europea (2025). *Directrices*, p. 4.  
+5. Reglamento (UE) 2022/2065 (DSA), Artículos 34 y 35; Comisión Europea (2025). *Directrices*, p. 11.  
+6. Ley Orgánica 3/2018 (LOPDGDD), Artículo 84.1; AEPD (2023). *Decálogo de principios: Verificación de edad*, p. 5.  
+7. Ley 13/2022 General de Comunicación Audiovisual, Artículo 89.1.e; AEPD (2023). *Decálogo*, p. 12.  
+8. Ley 13/2022 General de Comunicación Audiovisual, Artículo 93.3.  
+9. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 25.  
+10. Pincheira, H. (2025). "Online Safety Act y su impacto potencial en Latinoamérica", p. 1.  
+11. Pincheira, H. (2025). "Online Safety Act", p. 2.  
+12. Pincheira, H. (2025). "Online Safety Act", pp. 2, 4.  
+13. Pincheira, H. (2025). "Online Safety Act", pp. 4-5.  
+14. Federal Trade Commission (2019). *Application for Approval of a Verifiable Parental Consent Method*, p. 1.  
+15. Federal Trade Commission (2019). *Application for Approval of a Verifiable Parental Consent Method*, pp. 1-2.  
+16. Bird & Bird (2026). "France's new age verification standard", p. 3.  
+17. Constitución de la República Federativa de Brasil, Artículo 227; Asociación por los Derechos Civiles et al. (s.f.), p. 23.  
+18. Brasil, Ley 13.709 (LGPD), Artículo 14; Asociación por los Derechos Civiles et al. (s.f.), p. 16.  
+19. Pincheira, H. (2025). "Online Safety Act", p. 6.  
+20. Argentina, Ley 26.061, Artículo 5; Asociación por los Derechos Civiles et al. (s.f.), p. 31.  
+21. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 33, 70.  
+22. Chile, Ley 21.663, Artículo 3.6b; Pincheira, H. (2025), p. 6.  
+23. Pincheira, H. (2025). "Online Safety Act", p. 6.  
+24. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 19-20.  
+25. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 28-29.  
+26. ONU (1989). *Convención sobre los Derechos del Niño*, Artículos 5 y 12; Asociación por los Derechos Civiles et al. (s.f.), pp. 33-34.  
+27. ONU (2021). *Observación General nº 25 relativa a los derechos de los niños en relación con el entorno digital*, párr. 76.
+
+---
+
+# SECCIÓN III: ANÁLISIS TÉCNICO DE SISTEMAS DE VERIFICACIÓN DE EDAD Y ASEGURAMIENTO
+
+## 1. Taxonomía de Métodos: De la autodeclaración a la verificación documental y la estimación por inteligencia artificial
+
+La operatividad de la protección del menor en el entorno digital descansa sobre una diversidad de métodos técnicos que presentan distintos niveles de certidumbre y riesgo para la privacidad. Los sistemas actuales se pueden categorizar en cuatro grandes bloques:¹  
+1. **Autodeclaración**: El usuario afirma su edad sin aportar pruebas adicionales.
+
+Las fuentes coinciden en que este método ha demostrado riesgos claros de falta de certidumbre y es generalmente insuficiente para escenarios de riesgo medio o alto.²  
+2. **Verificación Documental**: Consiste en la extracción de datos de documentos de identidad oficiales (DNI, pasaporte) mediante aplicaciones capaces de validar la titularidad mediante biometría o firma digital.³ Este método ofrece una certidumbre "cierta", no probabilística.⁴  
+3. **Estimación de Edad mediante IA**: Tecnologías que analizan la geometría facial del usuario para confirmar que supera un umbral de edad determinado.⁵ Ejemplos analizados muestran que estas soluciones pueden procesar la imagen en menos de un segundo y arrojar un resultado binario (sí/no), eliminando la imagen de forma inmediata tras el proceso.⁶  
+4. **Verificación por Terceros**: Involucra el uso de credenciales bancarias, tarjetas de crédito o el cruce de datos con registros oficiales como el número de seguro social (SSN).⁷
+
+La Comisión Europea y las autoridades de protección de datos recalcan que la elección del método debe basarse en cinco criterios de eficacia: **exactitud** (corrección del umbral), **fiabilidad** (funcionamiento en condiciones reales), **robustez** (resistencia a la elusión por adolescentes expertos), **no intrusividad** (respeto a derechos y libertades) y **no discriminación** (equidad entre razas, géneros y colectivos).⁸
+
+## 2. Modelos de Implementación: Diferenciación entre servicios para adultos y plataformas mixtas
+
+La arquitectura de implementación de estos sistemas varía sustancialmente según el tipo de servicio. Se distinguen fundamentalmente dos modelos:⁹  
+* **Modelo A: Servicios y Aplicaciones para Adultos**: El sistema actúa como un "habilitador de entrada" o *gatekeeper*.¹⁰ La verificación debe realizarse obligatoriamente antes de cualquier tratamiento de datos personales adicional, asegurando que solo usuarios de +18 años accedan al servicio (ej. páginas de apuestas o pornografía).¹¹  
+* **Modelo B: Servicios Mixtos o para Todos los Públicos**: Aquí se presentan dos alternativas de diseño proactivo:  
+  * **B.1. Separación por Edad**: El proveedor ofrece dos experiencias diferenciadas.¹² La versión para menores cuenta con protección por defecto (sin rastreo, contactos limitados), mientras que la versión para adultos requiere una verificación previa que deshabilite globalmente estas protecciones.¹³  
+  * **B.2. Protección por Defecto Única**: Existe una única versión del servicio que es segura para todos.¹⁴ Los riesgos (como el acceso a contenidos específicos para adultos o el cambio de configuraciones de privacidad) permanecen bloqueados y solo se habilitan puntualmente tras una verificación de edad exitosa para esa petición concreta.¹⁵
+
+## 3. Tecnologías Emergentes de Identificación: La Cartera de Identidad Digital de la UE (EUDIW)
+
+El futuro de la verificación de edad en la Unión Europea se encamina hacia soluciones armonizadas y descentralizadas. La Comisión Europea está impulsando un **Blueprint (esquema de referencia)** de verificación de edad en código abierto que servirá de estándar para una solución interoperable en todos los Estados miembros.¹⁶ Este modelo toma como referencia la **Cartera de Identidad Digital de la UE (EUDI Wallet)**, enmarcada en la revisión del Reglamento eIDAS.¹⁷
+
+La EUDI Wallet permitirá a los ciudadanos gestionar "atributos electrónicos" (como el hecho de ser mayor de edad) sin necesidad de revelar su identidad completa.¹⁸ Este sistema se posiciona como el "estándar de oro" para el aseguramiento de la privacidad, ya que permitirá que la plataforma reciba una garantía técnica (un "SÍ" o "OK" digital) sin acceder a documentos de identificación ni aprender nada más sobre el usuario.¹⁹ Además, la segunda versión de este Blueprint ya contempla el uso de pasaportes y tarjetas de identidad para el proceso de alta o *onboarding*.²⁰
+
+## 4. Soluciones Criptográficas para la Minimización: *Zero-Knowledge Proofs* (ZKP) y Tokens de Edad
+
+Para resolver la "paradoja privacidad-seguridad", se proponen métodos basados en la **doble anonimidad** o anonimato ciego (*double-blind methods*).²¹ Estos sistemas garantizan que:  
+1. La plataforma no reciba datos identificativos del usuario, sino únicamente un **token de edad anónimo** que confirma que cumple el umbral.²²  
+2. El proveedor de verificación de edad no conozca qué plataforma o sitio web específico está visitando el usuario.²³
+
+Técnicamente, esto se logra mediante **Pruebas de Conocimiento Cero (Zero-Knowledge Proofs, ZKP)**, las cuales permiten demostrar que una afirmación es verdadera (ej. "tengo más de 18 años") sin revelar la información que la sustenta (la fecha de nacimiento exacta).²⁴ El uso de estas arquitecturas tokenizadas evita la creación de patrones de navegación y el perfilado masivo, cumpliendo con el principio de minimización del RGPD al evitar que se traten datos personales adicionales para un fin que puede cumplirse de forma anónima.²⁵
+
+---
+
+**Notas al pie de la sección III**:
+
+1. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 15; Castilleja Toscano, M. (2023). "AEPD: Sistema de verificación de edad para la protección de menores de edad". *Privacy Driver*.  
+2. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 3; Agencia Española de Protección de Datos (2023). *Decálogo*, p. 11.  
+3. Castilleja Toscano, M. (2023). "AEPD: Sistema de verificación de edad".  
+4. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 12.  
+5. Federal Trade Commission (2023). *Application for Approval of a Verifiable Parental Consent Method* (Yoti/ESRB/SuperAwesome), p. 1.  
+6. Federal Trade Commission (2023). *Application for Approval*, p. 4.  
+7. Federal Trade Commission (2023). *Application for Approval*, pp. 5, 36.  
+8. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 3; Comisión Europea (2025). *Directrices*, p. 11.  
+9. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 15.  
+10. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 15, 23.  
+11. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 15-16.  
+12. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 18.  
+13. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 18-19.  
+14. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 20.  
+15. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 20-21.  
+16. Comisión Europea (2025, 14 de julio). "Commission makes available an age-verification blueprint". *Shaping Europe's digital future*.  
+17. Ministerio de Economía, Comercio y Empresa (2024, 11 de marzo). "El Gobierno constituye el Grupo de Trabajo para diseñar el sistema de verificación de la edad para el acceso al contenido para adultos en línea", p. 2.  
+18. Podda, E. et al. (2025). "The impact of zero-knowledge proofs on data minimisation compliance of digital identity wallets". *Internet Policy Review*, 14(3), p. 27.  
+19. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4.  
+20. Comisión Europea (2025, 10 de octubre). "Commission releases enhanced second version of the age-verification blueprint". *Shaping Europe's digital future*.  
+21. Comisión Europea (2025). *Directrices*, p. 12; Bird & Bird (2026). "France's new age verification standard", p. 3.  
+22. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4.  
+23. Bird & Bird (2026). "France's new age verification standard", p. 3.  
+24. Podda, E. et al. (2025). "The impact of zero-knowledge proofs", pp. 1, 18; Comisión Europea (2025). *Directrices*, p. 12.  
+25. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 5, 29.
+
+---
+
+# SECCIÓN IV: EVALUACIÓN DE RIESGOS PARA LA PRIVACIDAD Y LOS DERECHOS FUNDAMENTALES
+
+## 1. Tipología de Riesgos (Las 5 Cs): Contenido, Conducta, Contacto, Consumo y Riesgos Transversales
+
+La literatura técnica y regulatoria actual, adoptando los estándares de la OCDE y de investigadores especializados, sistematiza las amenazas digitales para los niños, niñas y adolescentes (NNA) mediante la tipología de las "5 Cs".¹ Esta categorización es esencial para que los proveedores de servicios realicen evaluaciones de impacto rigurosas y no actúen bajo meras intuiciones.² Los riesgos se desglosan de la siguiente manera:
+
+1. **Contenido**: Se refiere a la recepción pasiva de material inadecuado, como pornografía, violencia extrema, discursos de odio o desinformación, que puede impactar negativamente en el neurodesarrollo y la salud mental.³  
+2. **Conducta**: Riesgos derivados de la participación activa del menor en intercambios entre pares que lo sitúan en posición de vulnerabilidad, tales como el ciberacoso (*cyberbullying*) o el *sexting*.⁴  
+3. **Contacto**: Se produce cuando el NNA es objeto de interacción por parte de terceros con fines maliciosos, destacando amenazas graves como el *grooming* o la sextorsión.⁵  
+4. **Consumo**: Implica la explotación del menor como cliente en la economía digital. Incluye la exposición a publicidad microsegmentada, el uso de patrones engañosos (*dark patterns*) para obtener consentimientos involuntarios y el aprovechamiento de su inexperiencia para la contratación de servicios no adecuados (alcohol, tabaco, apuestas).⁶  
+5. **Riesgos Transversales**: Categoría heterogénea que engloba amenazas sistémicas como la sobreexposición de la privacidad (*sharenting*), la manipulación algorítmica mediante inteligencia artificial y los riesgos para la salud física derivados de patrones adictivos de diseño.⁷
+
+## 2. El Riesgo de Vigilancia Sistémica: Perfilado masivo y el efecto "pescar en una pecera"
+
+Uno de los riesgos más críticos identificados por las autoridades de control es el de la **vigilancia sistémica** bajo el pretexto de la protección infantil. Los sistemas que exigen identificar positivamente a los menores para ofrecerles "cuentas protegidas" incurren en lo que la Agencia Española de Protección de Datos (AEPD) denomina el efecto **"pescar en una pecera"**.⁸ Al etiquetar y localizar específicamente a los usuarios como menores, se crea un entorno donde estos quedan expuestos y son fácilmente accesibles para actores maliciosos o servicios de terceros que podrían explotar esa condición de vulnerabilidad tras una brecha de seguridad.⁹
+
+La datificación de la infancia —el fenómeno de transformar las acciones sociales de los niños en datos cuantificados— permite la creación de perfiles comportamentales extremadamente asertivos.¹⁰ Este perfilado masivo es considerado un tratamiento de **alto riesgo** que puede derivar en una vigilancia continua, incluso cuando el usuario no accede a contenidos inadecuados.¹¹ Además, existe la preocupación de que la identidad digital sea planteada como un "servicio" controlado por proveedores privados en lugar de como un "derecho" gestionado de forma soberana por el ciudadano, lo que permitiría a las empresas limitar discrecionalmente la capacidad de obrar de las personas.¹²
+
+## 3. Impacto en Derechos Fundamentales: Libertad de expresión, anonimato y discriminación algorítmica
+
+La implementación de sistemas de verificación de edad puede afectar directamente el ejercicio de derechos fundamentales cuando no se encuentra equilibrada por principios de proporcionalidad y minimización. La **libertad de expresión** de los menores se ve comprometida en contextos donde los menores temen ser identificados como tales y por tanto experimentan censura de facto en sus interacciones sociales en línea.¹³ Además, existe un riesgo de que los sistemas que requieren identificación documental creen un efecto desincentivo sobre el ejercicio del derecho a ser oído, uno de los pilares del sistema de protección de derechos en el Continente Americano.¹⁴
+
+El derecho al **anonimato** es particularmente importante en contextos donde los menores buscan información sobre temas sensibles (salud sexual, identidad de género, situaciones de abuso) sin exponer su identidad a terceros potencialmente hostiles.¹⁵ Los métodos de verificación documental o biométricos que requieren identificación cierta vulneran este derecho, lo que ha motivado a las autoridades europeas a promover alternativas criptográficas como las Pruebas de Conocimiento Cero.¹⁶ Finalmente, el riesgo de **discriminación algorítmica** surge cuando los sistemas de estimación de edad basados en análisis facial o comportamental presentan sesgos sistemáticos contra minorías raciales, grupos LGBTQ+ o personas con discapacidades, perpetuando dinámicas de exclusión social en el entorno digital.¹⁷
+
+## 4. La Paradoja Privacidad-Seguridad: Proporcionalidad y necesidad del tratamiento de datos biométricos
+
+Una de las tensiones más críticas en la protección infantil contemporánea es la denominada "paradoja privacidad-seguridad".¹⁸ Esta paradoja plantea que, en ocasiones, los esfuerzos por aumentar la seguridad de los menores requieren la captura de datos personales que, a su vez, aumentan otros riesgos.
+
+En concreto, los sistemas de verificación mediante documentos de identidad o análisis biométrico ofrecen certidumbre sobre la edad del usuario, pero a cambio generan bases de datos centralizadas que pueden ser objeto de brechas de seguridad masivas, exposición de datos sensibles, y perfilado sistemático.¹⁹
+
+El análisis de proporcionalidad, consagrado en el Derecho Constitucional y en la jurisprudencia de Cortes superiores, exige que toda medida restrictiva de derechos sea evaluada bajo cuatro criterios: **(i) finalidad legítima** (la protección del menor es un fin legítimo), **(ii) idoneidad** (el método elegido debe ser efectivo para lograr ese fin), **(iii) necesidad** (no debe existir alternativa menos restrictiva), y **(iv) proporcionalidad en sentido estricto** (los beneficios deben superar los costos para los derechos afectados).²⁰ Aplicados estos criterios, los métodos que requieren identificación cierta fallan en la prueba de necesidad, puesto que existen alternativas menos invasivas (como las Pruebas de Conocimiento Cero) que logran el mismo fin con menor impacto sobre la privacidad.²¹ Por el contrario, métodos como la doble anonimidad y los tokens criptográficos pasan todas las pruebas, por lo que deberían ser priorizados en la gobernanza regulatoria.²²
+
+---
+
+**Notas al pie de la sección IV**:
+
+1. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 3.  
+2. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 8.  
+3. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 6.  
+4. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 5.  
+5. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 9.  
+6. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 9.  
+7. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 12.  
+8. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 12; Comisión Europea (2025). *Directrices*, p. 15.  
+9. Comisión Europea (2025). *Directrices*, p. 6; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 11.  
+10. Reglamento (UE) 2016/679 (RGPD), Artículo 35; Agencia Española de Protección de Datos (2023). *Decálogo*, p. 8.  
+11. Reglamento (UE) 2016/679 (RGPD), Considerando 75; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 24.  
+12. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 8.  
+13. Comisión Europea (2025). *Directrices*, p. 12; Bird & Bird (2026). "France's new age verification standard", p. 3.  
+14. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4; Comisión Europea (2025). *Directrices*, p. 12.  
+15. Bird & Bird (2026). "France's new age verification standard", p. 3; AEPD & CNMC (2024), p. 4.  
+16. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4; Ministerio de Economía (2024). "El Gobierno constituye el Grupo de Trabajo", p. 2.  
+17. Podda, E. et al. (2025). "The impact of zero-knowledge proofs", p. 18; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 5.  
+18. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 7.  
+19. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 14, 15.  
+20. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 13.  
+21. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 66, 84.  
+22. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 28, 66.
+
+---
+
+# SECCIÓN V: BUENAS PRÁCTICAS, GOBERNANZA Y DISEÑO PROACTIVO
+
+## 1. Diseño Seguro por Defecto: El Decálogo de la AEPD
+
+La Agencia Española de Protección de Datos (AEPD) ha consolidado un **Decálogo de Principios** que operacionaliza el concepto de "Internet seguro por defecto".¹ Estos diez principios actúan como directrices para que los proveedores de servicios diseñen plataformas que anticipen riesgos sin esperar a que se materialicen daños.² El Decálogo enfatiza que la seguridad no es un ajuste posterior o una configuración optativa, sino un aspecto inherente a la arquitectura técnica y al modelo de negocio de los servicios digitales.³ En particular, destaca que los proveedores deben implementar mecanismos de control parental que **no dependan de la vigilancia masiva**, sino que empoderen a los titulares de la patria potestad con información clara y herramientas accesibles.⁴ Asimismo, el diseño debe garantizar que los datos personales de menores no sean tratados para finalidades de perfilado comercial, independientemente de que el consentimiento sea otorgado por padres o tutores.⁵
+
+## 2. Evaluaciones de Impacto: *Child Rights Impact Assessments* (CRIA) y EIPD
+
+La gestión de riesgos para la infancia no debe realizarse de manera rígida o basada en intuiciones, sino tras una evaluación sistemática y específica.⁶ En este sentido, el diseño e implementación de sistemas de verificación de edad deben partir de una **Evaluación de Impacto para los Derechos de la Infancia (Child Rights Impact Assessment o CRIA)**.⁷ Este instrumento, promovido por organismos como UNESCO, permite evaluar cómo los cambios en el diseño de una plataforma afectan a los usuarios más jóvenes en las categorías de contenido, conducta, contacto y consumo.⁸
+
+Complementariamente, dado que los sistemas de protección de menores implican tratamientos de **alto riesgo** para los derechos y libertades, el Reglamento General de Protección de Datos (RGPD) exige la realización de una **Evaluación de Impacto en la Protección de Datos (EIPD)** antes de iniciar el tratamiento.⁹ Esta evaluación es preceptiva cuando se emplean tecnologías que podrían dar lugar a discriminación, usurpación de identidad o cuando se tratan datos de personas vulnerables, como es el caso de los niños.¹⁰ Las fuentes subrayan que un alto grado de ciberseguridad no sustituye a estas evaluaciones, ya que es posible tener un sistema técnicamente robusto que, sin embargo, vulnere el interés superior del menor.¹¹
+
+## 3. La Doble Anonimidad y el Aseguramiento de la Privacidad: Estándares de Arcom y la Comisión Europea
+
+Para resolver la tensión entre seguridad y privacidad, la Comisión Europea y reguladores como **Arcom** (Francia) promueven métodos de **doble anonimidad** o "ciegos" (*double-blind methods*).¹² Este estándar de buena práctica garantiza dos condiciones técnicas y jurídicas esenciales:  
+1. La plataforma en línea no recibe datos identificativos del usuario, sino únicamente una confirmación técnica (un **token de edad anónimo** o un "SÍ/OK" digital) de que se cumple el umbral de edad.¹³  
+2. El proveedor de verificación de edad no obtiene conocimiento de los servicios o sitios web específicos para los cuales el usuario está utilizando la prueba de edad.¹⁴
+
+Este modelo se alinea con la futura **Cartera de Identidad Digital de la UE (EUDI Wallet)**, que permitirá a los ciudadanos gestionar atributos electrónicos sin revelar su identidad completa.¹⁵ El uso de arquitecturas descentralizadas, procesamiento local en el dispositivo y técnicas criptográficas como las **Pruebas de Conocimiento Cero (Zero-Knowledge Proofs)** evita la creación de patrones de navegación y protege a los usuarios de brechas de datos masivas en servidores centrales.¹⁶
+
+## 4. Marcos de Gobernanza y Responsabilidad Compartida
+
+La protección de los NNA en el entorno digital es una responsabilidad compartida que no puede ser implementada de forma unilateral por las empresas.¹⁷ Los sistemas deben operar bajo un **marco de gobernanza** definido que garantice la transparencia, la auditabilidad y la participación de múltiples intervinientes: familias, instituciones educativas, Estado, industria y sociedad civil.¹⁸ La gobernanza debe asegurar que la tecnología sea un apoyo y no un sustituto de la labor educativa de las familias.¹⁹
+
+En este esquema de responsabilidad compartida, los proveedores de servicios deben asumir obligaciones de **diligencia debida**, haciendo públicos sus esfuerzos para mitigar riesgos sistémicos.²⁰ Por su parte, los Estados deben velar por que los derechos de los niños prevalezcan sobre los intereses económicos de las plataformas, integrando el principio de **prioridad absoluta** en las políticas públicas.²¹ Finalmente, el sistema de justicia debe ser accesible y sensible a las necesidades de los menores, garantizando el derecho a ser oído y la tutela efectiva de sus derechos frente a la explotación de datos personales en la economía digital.²²
+
+---
+
+**Notas al pie de la sección V**:
+
+1. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 3.  
+2. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 8.  
+3. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 6.  
+4. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 5.  
+5. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 9.  
+6. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 6, 9.  
+7. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 12.  
+8. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 12; Comisión Europea (2025). *Directrices*, p. 15.  
+9. Comisión Europea (2025). *Directrices*, p. 6; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 11.  
+10. Reglamento (UE) 2016/679 (RGPD), Artículo 35; Agencia Española de Protección de Datos (2023). *Decálogo*, p. 8.  
+11. Reglamento (UE) 2016/679 (RGPD), Considerando 75; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 24.  
+12. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 8.  
+13. Comisión Europea (2025). *Directrices*, p. 12; Bird & Bird (2026). "France's new age verification standard", p. 3.  
+14. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4; Comisión Europea (2025). *Directrices*, p. 12.  
+15. Bird & Bird (2026). "France's new age verification standard", p. 3; AEPD & CNMC (2024), p. 4.  
+16. AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4; Ministerio de Economía (2024). "El Gobierno constituye el Grupo de Trabajo", p. 2.  
+17. Podda, E. et al. (2025). "The impact of zero-knowledge proofs", p. 18; Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 5.  
+18. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 7.  
+19. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 14, 15.  
+20. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 13.  
+21. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 66, 84.  
+22. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 28, 66.  
+23. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 78, 87.
+
+---
+
+# SECCIÓN VI: CONCLUSIONES Y REFERENCIAS
+
+## 1. Síntesis de hallazgos: Superación del "solucionismo tecnológico"
+
+La investigación desarrollada permite concluir que la protección de la infancia en el ecosistema digital exige un tránsito urgente desde modelos reactivos y punitivos hacia una arquitectura de **Internet seguro por defecto**.¹ Las estrategias tradicionales, centradas en la identificación del menor para su segregación en "cuentas protegidas" o "corralitos digitales", han demostrado ser ineficaces y contraproducentes, exacerbando el riesgo de vigilancia sistémica y generando el efecto de "pesca en una pecera".² El hallazgo técnico-jurídico fundamental de este estudio es que la verificación de edad debe operar como un **habilitador proactivo** para que el usuario con madurez suficiente acredite su condición de "persona autorizada a acceder" a elementos de riesgo, trasladando la carga de la prueba al adulto y preservando el anonimato y la no trazabilidad de los niños, niñas y adolescentes (NNA).³
+
+Es imperativo superar el denominado **"solucionismo tecnológico"**, esto es, la creencia de que una única herramienta técnica puede resolver disfunciones sociales básicas.⁴ La protección del menor es un fenómeno multidimensional que no puede reducirse a la ciberseguridad (*security*), sino que debe enfocarse en el aseguramiento de derechos (*safety*).⁵ Un sistema de protección eficaz debe ser transparente, auditable y basado en evidencias científicas sobre el neurodesarrollo, rechazando la "fe ciega" en soluciones privadas que a menudo mercantilizan la identidad y los rasgos del cuerpo humano.⁶
+
+## 2. Hacia una Agenda Latinoamericana de Protección de Datos
+
+En el contexto de América Latina y el Sur Global, la implementación de estas normativas enfrenta desafíos estructurales únicos. La **datificación de la infancia** se ve potenciada por desigualdades de acceso y por modelos de negocio como el *zero rating*, donde la supuesta gratuidad de los servicios se compensa con una recolección masiva y opaca de datos personales de menores vulnerables.⁷ El análisis comparado revela que países como Brasil y Argentina cuentan con bases constitucionales sólidas —bajo los principios de **prioridad absoluta** y **protección integral**— pero requieren de una reglamentación vinculante que operativice la Observación General nº 25 del Comité de los Derechos del Niño.⁸
+
+La propuesta para la región debe centrarse en:  
+1. **Reconocimiento de la dimensión colectiva**: Los daños derivados del perfilado y la publicidad microsegmentada no son meramente individuales, sino que afectan a grupos enteros de NNA, lo que justifica el uso de acciones civiles públicas y mecanismos de tutela colectiva.⁹  
+2. **Soberanía de la Identidad Digital**: Evitar que la identidad digital sea tratada como un servicio controlado por proveedores privados extranjeros, defendiéndola como un derecho gestionado bajo estándares de interoperabilidad y minimización.¹⁰  
+3. **Cooperación Regional**: Fomentar foros de discusión entre autoridades de control (como la ANPD y la AAIP) para armonizar criterios sobre biometría, reconociendo el riesgo de discriminación algorítmica y exclusión social que estos sistemas pueden perpetuar.¹¹
+
+## 3. Conclusión final: La tecnología como habilitador de derechos
+
+En última instancia, el diseño de sistemas de verificación de edad y protección infantil debe estar supeditado al **interés superior del menor**, el cual debe prevalecer sobre los intereses económicos de las plataformas digitales.¹² La tecnología no debe ser un instrumento de exclusión o de vigilancia masiva, sino un habilitador que garantice la **autonomía progresiva** del menor, permitiéndole explorar el entorno digital de forma segura, privada y libre de manipulación algorítmica.¹³
+
+La implementación de estándares como la **doble anonimidad**, el uso de **Pruebas de Conocimiento Cero (ZKP)** y la integración de la **EUDI Wallet** representan el camino hacia un equilibrio real entre seguridad y privacidad.¹⁴ La responsabilidad de este entorno no puede recaer exclusivamente en las familias; es un deber compartido que exige diligencia debida por parte de la industria, supervisión estricta de los Estados y un compromiso ineludible con los derechos fundamentales de las futuras generaciones.¹⁵
+
+---
+
+**Notas al pie de la sección VI**:
+
+1. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 3.  
+2. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 4, 31; Castilleja Toscano, M. (2023). "AEPD: Sistema de verificación de edad".  
+3. Agencia Española de Protección de Datos (2024). *Nota Técnica*, pp. 5, 46; AEPD (2023). *Decálogo*, p. 6.  
+4. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 46 (Conclusión IV).  
+5. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 8.  
+6. Agencia Española de Protección de Datos (2023). *Decálogo*, pp. 15, 17; Derechos Digitales (2018). *El cuerpo como dato*, p. 16.  
+7. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 42, 68.  
+8. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 65, 72.  
+9. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, pp. 54, 76.  
+10. Agencia Española de Protección de Datos (2024). *Nota Técnica*, p. 10.  
+11. Asociación por los Derechos Civiles et al. (s.f.). *Datos y derechos de la niñez y adolescencia*, p. 70; Derechos Digitales (2018). *El cuerpo como dato*, pp. 15, 22.  
+12. ONU (1989). *Convención sobre los Derechos del Niño*, Artículo 3; Asociación por los Derechos Civiles et al. (s.f.), p. 28.  
+13. ONU (2021). *Observación General nº 25*, párrs. 71 y 76.  
+14. Podda, E. et al. (2025). "The impact of zero-knowledge proofs", pp. 1, 18; AEPD & CNMC (2024). "Decoding Article 28 of the DSA", p. 4.  
+15. Agencia Española de Protección de Datos (2023). *Decálogo*, p. 7.
+
+---
+
+# REFERENCIAS
+
+Agencia Española de Protección de Datos [AEPD] (2023). *Decálogo de principios: Verificación de edad y protección de personas menores de edad ante contenidos inadecuados*. https://www.aepd.es
+
+Agencia Española de Protección de Datos [AEPD] (2024). *Nota Técnica: Internet seguro por defecto para la infancia y el papel de la verificación de edad*. https://www.aepd.es
+
+AEPD & CNMC (2024). "Decoding Article 28 of the DSA: Age assurance and service design for online platforms". Joint statement.
+
+Asociación por los Derechos Civiles [ADC], Data Privacy Brasil & Instituto Alana (s.f.). *Datos y derechos de la niñez y adolescencia en el ambiente digital: caminos para la protección jurídica en Brasil y Argentina*.
+
+Bird & Bird (2026). "France's new age verification standard: Tightening controls on access to explicit image sites".
+
+Castilleja Toscano, M. (2023, 15 de diciembre). "AEPD: Sistema de verificación de edad para la protección de menores de edad". *Privacy Driver*.
+
+Comisión Europea (2025). *Directrices sobre medidas para garantizar un alto nivel de privacidad, seguridad y protección de los menores en línea, de conformidad con el artículo 28, apartado 4, del Reglamento (UE) 2022/2065*.
+
+Comisión Europea (2025, 14 de julio). "Commission makes available an age-verification blueprint". *Shaping Europe's digital future*.
+
+Comisión Europea (2025, 10 de octubre). "Commission releases enhanced second version of the age-verification blueprint". *Shaping Europe's digital future*.
+
+Derechos Digitales (2018). *El cuerpo como dato*. https://www.derechosdigitales.org
+
+Federal Trade Commission [FTC] (2019). *Application for Approval of a Verifiable Parental Consent Method*.
+
+Federal Trade Commission [FTC] (2023). *Application for Approval of a Verifiable Parental Consent Method* (Yoti/ESRB/SuperAwesome).
+
+Ministerio de Economía, Comercio y Empresa (2024, 11 de marzo). "El Gobierno constituye el Grupo de Trabajo para diseñar el sistema de verificación de la edad para el acceso al contenido para adultos en línea". Nota de prensa.
+
+Organización de las Naciones Unidas [ONU] (1989). *Convención sobre los Derechos del Niño*.
+
+Organización de las Naciones Unidas [ONU] (2013). *Observación general nº 14 sobre el derecho del niño a que su interés superior sea una consideración primordial*. Comité de los Derechos del Niño.
+
+Organización de las Naciones Unidas [ONU] (2021). *Observación General nº 25 relativa a los derechos de los niños en relación con el entorno digital*. Comité de los Derechos del Niño.
+
+Pincheira, H. (2025). "Online Safety Act en Latinoamérica: ¿riesgo o protección?".
+
+Podda, E., Hölzmer, P., Amard, A., Sedlmeir, J., & Fridgen, G. (2025). "The impact of zero-knowledge proofs on data minimisation compliance of digital identity wallets". *Internet Policy Review*, 14(3). https://doi.org/10.14763/2025.3.2019
+
+Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD).
+
+Reglamento (UE) 2022/2065 del Parlamento Europeo y del Consejo, de 19 de octubre de 2022, relativo a un mercado único de servicios digitales (DSA).
+
+---

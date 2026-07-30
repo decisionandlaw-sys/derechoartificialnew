@@ -1,0 +1,94 @@
+---
+title: "Thomson Reuters v. Ross Intelligence: el caso que define el copyright en la IA jurídica"
+date: "2026-02-20"
+category: "propiedad-intelectual-ia"
+tags:
+  - "Thomson Reuters v Ross Intelligence"
+  - "copyright inteligencia artificial"
+  - "headnotes Westlaw"
+  - "fair use IA"
+  - "entrenamiento modelos IA"
+  - "legaltech derechos de autor"
+  - "copia intermedia IA"
+  - "propiedad intelectual IA"
+  - "LegalEase"
+  - "AI training data copyright"
+pdf: "/fuentes/20-613_5.pdf"
+author: "Ricardo Scarpa"
+description: "El Tribunal de Delaware declara que entrenar una IA con headnotes de Westlaw sin licencia infringe el copyright. Lo que este fallo significa para el legaltech y la IA generativa."
+image: "propiedad-intelectual-ia"
+seoTitle: "Thomson Reuters 2026: v. Ross claves | Derecho Artificial"
+seoDescription: "El Tribunal de Delaware declara que entrenar una IA con."
+keywords: ["Thomson Reuters", "Thomson Reuters V Ross Intelligence", "Copyright Inteligencia Artificial"]
+seoKeyword: "Thomson Reuters"
+---
+
+## ¿Puede una IA entrenarse con contenidos jurídicos de terceros sin pagar derechos de autor?
+
+La respuesta, al menos cuando esos contenidos son editorialmente creativos y el modelo compite con su creador, es no. Eso es lo que acaba de establecer el Tribunal Federal de Delaware en su opinión revisada del 11 de febrero de 2025 en el caso *Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence Inc.* (No. 1:20-cv-613-SB).
+
+Esta sentencia es, probablemente, la más relevante dictada hasta la fecha sobre copyright e inteligencia artificial en el sector legal. Y no solo por lo que decide, sino por cómo lo decide: un juez que revisa su propio error de 2023, lo admite públicamente y construye un razonamiento sólido con implicaciones globales.
+
+[Leer análisis doctrinal completo en Firma Scarpa](/propiedad-intelectual-ia/20-613_5_seo)
+
+## Qué ocurrió: el conflicto en tres líneas
+
+Thomson Reuters es propietaria de Westlaw, la mayor plataforma de investigación jurídica de EE. Ross Intelligence desarrolló un motor de búsqueda jurídico basado en IA, competidor directo de Westlaw. Para entrenar su IA, Ross necesitaba una base de datos de preguntas y respuestas jurídicas. Thomson Reuters se negó a licenciarle su contenido.
+
+Ross contrató entonces a un tercero —LegalEase— que elaboró ~25.000 "Bulk Memos" usando los *headnotes* de Westlaw como guía. Ross entrenó su IA con esos memos.
+
+Thomson Reuters demandó. El resultado: 2.243 headnotes declarados infringidos. La defensa de fair use, rechazada.
+
+## Qué son los headnotes y por qué importa que sean protegibles
+
+Un *headnote* es una síntesis editorial del punto jurídico central de una resolución judicial. Los abogados-editores de Westlaw leen cientos de páginas de sentencias y las condensan en frases precisas que capturan la regla de derecho aplicada. El texto de las sentencias no está protegido por copyright en EE.UU. —son obras gubernamentales—. Pero, ¿lo están los headnotes?
+
+El juez Bibas responde con una analogía memorable: la del escultor. Un bloque de mármol no tiene copyright, pero la escultura que surge de él, sí. El editor jurídico que identifica qué fragmento de una sentencia de 200 páginas constituye el punto de derecho relevante está ejerciendo una creatividad equivalente: elige qué conservar y qué eliminar.
+
+Esa elección tiene suficiente "chispa creativa" para ser protegible, aunque el headnote reproduzca literalmente el texto de la opinión.
+
+Consecuencia práctica: las bases de datos editoriales jurídicas —y, por extensión, cualquier compilación que requiera selección y síntesis creativa— están protegidas frente a su uso como datos de entrenamiento sin licencia.
+
+## El argumento que Ross perdió: la copia intermedia
+
+Ross argumentó que su copia fue "intermedia": los headnotes no aparecen en el producto que el usuario final ve; solo sirvieron para entrenar al modelo. Y citó precedentes del Tribunal Supremo y del Noveno Circuito que permiten la copia intermedia de código informático cuando es necesaria para acceder a elementos no protegibles del programa.
+
+El juez desmontó el argumento con precisión: esos precedentes se refieren a **código informático**, cuya naturaleza funcional justifica un tratamiento especial. Los headnotes son texto escrito. Y, además, la copia de código era *necesaria* para acceder a elementos no protegibles; aquí, Ross podría haber creado sus propios materiales de entrenamiento sin tocar los de Thomson Reuters.
+
+El marco aplicado es el de *Andy Warhol Foundation v. Goldsmith* (2023): cuando el uso secundario tiene el mismo propósito sustancial que el original y es comercial, no hay transformación y el fair use no aplica. Westlaw usa los headnotes para facilitar la investigación jurídica. Ross también. Fin del debate.
+
+## ¿Qué significa esto para ti?
+
+Si desarrollas, financias o asesoras jurídicamente a empresas de IA que usan contenidos de terceros para entrenar sus modelos, esta sentencia te afecta directamente:
+
+**Si eres desarrollador o empresa de legaltech:** Audita tu pipeline de datos de entrenamiento. Si usaste materiales editoriales de bases de datos jurídicas (resúmenes, headnotes, taxonomías, anotaciones) sin licencia expresa, tu modelo puede estar construido sobre una infracción de copyright.
+
+**Si eres inversor o directivo:** El valor de una startup de IA que no puede acreditar la licitud de sus datos de entrenamiento es estructuralmente frágil. Esta sentencia convierte la auditoría de datos en una obligación de due diligence, no en una opción.
+
+**Si eres abogado o compliance officer:** El análisis del Tribunal sobre el mercado potencial de licenciamiento de datos para IA es vinculante: ese mercado existe jurídicamente aunque aún no esté consolidado. Las políticas de compliance de IA deben incluir ya una verificación de la cadena de derechos de los datos de entrenamiento.
+
+**Si estás en Europa:** La Directiva DSM (art. 4) y el AI Act (arts. 53 y 96) abordan esta cuestión desde ángulos distintos, pero la doctrina norteamericana está consolidándose más rápido. La excepción de Text and Data Mining tiene límites que este caso ayuda a clarificar.
+
+## Conclusiones y próximos pasos
+
+*Thomson Reuters v. Ross Intelligence* establece que el entrenamiento de una IA con contenidos editoriales protegidos, incluso de forma indirecta y sin que esos contenidos aparezcan en el output final, puede constituir infracción de copyright si el propósito es competir con el titular de esos contenidos.
+
+Queda pendiente para juicio la cuantificación de daños, la validez de algunos copyrights específicos y otras cuestiones de responsabilidad. Pero el marco doctrinal está fijado.
+
+El caso que venía siendo seguido por toda la industria del legaltech global tiene ya su primera respuesta de fondo. Y esa respuesta es clara: los datos de entrenamiento no son tierra de nadie.
+
+---
+
+## Preguntas frecuentes (FAQ)
+
+**¿Qué son los headnotes de Westlaw y por qué tienen copyright?**
+Los headnotes son síntesis editoriales de los puntos jurídicos clave de las sentencias judiciales, elaboradas por abogados-editores de Thomson Reuters. El tribunal declaró que, aunque el texto de las sentencias no es protegible, la selección y síntesis creativa de ese texto por parte del editor sí lo es, al superar el umbral mínimo de originalidad exigido por la ley de copyright de EE.UU.
+
+**¿Puede una empresa de IA alegar fair use si los datos de entrenamiento no aparecen en el producto final?**
+Según esta sentencia, no necesariamente. El tribunal rechazó el argumento de la "copia intermedia" al tratarse de texto escrito (no código informático) y al concurrir un propósito competitivo idéntico al del original. La invisibilidad del dato en el output no lo convierte en uso transformativo.
+
+**¿Afecta esta sentencia a las empresas europeas de IA?**
+Directamente, no: es derecho estadounidense. Pero establece un precedente doctrinal relevante para la interpretación de la excepción de Text and Data Mining de la Directiva DSM y las obligaciones de transparencia sobre datos de entrenamiento del AI Act, especialmente cuando el uso compite con el titular de los contenidos.
+```
+
+---

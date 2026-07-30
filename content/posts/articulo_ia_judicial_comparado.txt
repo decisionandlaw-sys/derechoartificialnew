@@ -1,0 +1,220 @@
+---
+title: "Inteligencia Artificial en la Administración de Justicia: Análisis Comparado de los Modelos Regulatorios Español y Británico"
+date: "2026-02-22"
+category: firma-scarpa
+tags:
+  - inteligencia-artificial-judicial
+  - regulacion-ia-justicia
+  - instruccion-2-2026-cgpj
+  - ai-guidance-judicial-uk
+  - reglamento-ia-europeo
+  - independencia-judicial
+  - transparencia-procesal-ia
+  - alucinaciones-algoritmicas
+author: "Ricardo Scarpa"
+description: "Análisis comparado de la Instrucción 2/2026 del CGPJ y la AI Guidance británica sobre uso de IA en la justicia: principios, riesgos, transparencia y lagunas regulatorias (España-Reino Unido 2026)."
+image: "/images/sections/firma-scarpa.jpg"
+pdf:
+---
+
+**INTELIGENCIA ARTIFICIAL EN LA ADMINISTRACIÓN DE JUSTICIA:**
+
+**ANÁLISIS COMPARADO DE LOS MODELOS REGULATORIOS ESPAÑOL Y BRITÁNICO**
+
+**Ricardo Scarpa (derechoartificial.com)**
+
+## I. Introducción
+
+La integración de sistemas de inteligencia artificial (IA) en la administración de justicia constituye uno de los desafíos normativos más relevantes del presente decenio. A diferencia de contextos previos de transformación digital —como la informatización de los registros judiciales o la implantación de la firma electrónica—, la IA generativa introduce capacidades que operan directamente sobre el núcleo de la función jurisdiccional: la valoración de la prueba, la interpretación del derecho y la redacción de resoluciones. Esta circunstancia confiere a la regulación de la IA judicial una dimensión constitucional que trasciende la mera eficiencia administrativa.
+
+En este contexto, dos instrumentos normativos de reciente aprobación ofrecen perspectivas divergentes pero complementarias sobre cómo encauzar jurídicamente el uso de la IA por parte de los titulares de órganos jurisdiccionales. De un lado, la *Instrucción 2/2026*, de 28 de enero, del Pleno del Consejo General del Poder Judicial (CGPJ), publicada en el Boletín Oficial del Estado el 30 de enero de 2026, constituye la primera norma vinculante española —y una de las primeras en el ámbito europeo— dirigida específicamente a regular el empleo de sistemas de IA por jueces y magistrados en el ejercicio de sus funciones jurisdiccionales. De otro lado, la *AI Guidance for Judicial Office Holders*, publicada por la Courts and Tribunals Judiciary de England and Wales el 31 de octubre de 2025, representa la versión actualizada del enfoque no vinculante anglosajón para la misma problemática, al actualizar y sustituir a la guidance de abril de 2025.
+
+La elección de estos dos instrumentos como objeto de análisis comparativo no es casual. Ambos son contemporáneos, fueron elaborados ante la misma presión tecnológica —la proliferación de herramientas de IA generativa como ChatGPT, Google Gemini y Meta AI— y abordan los mismos desafíos sustantivos: las alucinaciones algorítmicas, la protección de datos judiciales, la preservación de la independencia judicial y la asignación de responsabilidad por los resultados generados. Sin embargo, sus opciones metodológicas y regulatorias difieren de manera significativa, reflejando tradiciones jurídicas distintas y contextos institucionales divergentes.
+
+La tesis central de este artículo es que la divergencia entre ambos instrumentos no es meramente formal —derecho vinculante frente a orientación voluntaria— sino también sustantiva: mientras el modelo español apuesta por un sistema cerrado de autorización previa de sistemas y de supervisión institucional centralizada en el CGPJ, el modelo inglés adopta un enfoque abierto de principios y responsabilidad individual, compatible con la tradición common law de autorregulación profesional. Esta distinción tiene consecuencias prácticas relevantes para la justiciabilidad de los derechos de las partes, la rendición de cuentas de los jueces y la potencial armonización regulatoria en el marco del derecho de la Unión Europea.
+
+## II. Marco Normativo de Referencia
+
+### A. El marco español: la IA judicial en el derecho duro europeo y nacional
+
+La *Instrucción 2/2026* no nace en el vacío normativo. Su preámbulo construye un denso entramado de fundamentos jurídicos que conviene sistematizar. En el plano europeo, el instrumento pivota sobre el Reglamento (UE) 2024/1689, de 13 de junio de 2024 (Reglamento de Inteligencia Artificial), que establece normas armonizadas en materia de IA e impone obligaciones específicas respecto de los sistemas de alto riesgo. En lo que atañe al ámbito judicial, el apartado 8.a) del Anexo III del citado Reglamento incluye expresamente los sistemas destinados a ser utilizados por una autoridad judicial para ayudar en la investigación e interpretación de los hechos y de la ley, así como en la garantía del cumplimiento del Derecho. Adicionalmente, el apartado 6 del mismo Anexo comprende otros sistemas con potencial incidencia judicial, como los destinados a evaluar el riesgo de victimización, a actuar como polígrafos, a valorar la fiabilidad de las pruebas o a evaluar el riesgo de comisión o reincidencia delictiva.
+
+La designación de autoridades de vigilancia del mercado constituye otro elemento central del marco europeo. El preámbulo de la *Instrucción 2/2026* señala que el CGPJ solicitó, el 31 de octubre de 2024, que se le atribuyera la condición de autoridad de vigilancia del mercado respecto de los sistemas de IA que puedan afectar a la Administración de Justicia, solicitud acogida por el Anteproyecto de Ley para el buen uso y la gobernanza de la Inteligencia Artificial, aprobado por el Consejo de Ministros el 11 de marzo de 2025, al incorporar en su artículo 5.7 la designación de la Dirección de Supervisión y Control de Protección de Datos del CGPJ para ese cometido.
+
+En el plano interno, la norma invoca el Real Decreto-ley 6/2023, de 19 de diciembre, cuyo artículo 35.1.k) incluye expresamente la aplicación de técnicas de IA como instrumento de apoyo a fines jurisdiccionales, y cuyo artículo 57 regula las actuaciones asistidas, definiéndolas como aquellas en las que el sistema genera un borrador que puede servir de fundamento o apoyo a una resolución, subrayando que dicho borrador *"no constituye por sí mismo resolución judicial o procesal"* y que su eficacia queda condicionada a la validación por la autoridad competente. Completan el marco institucional el Real Decreto 729/2023, de 22 de agosto, que aprueba el Estatuto de la Agencia Española de Supervisión de Inteligencia Artificial (AESIA), y el Real Decreto 817/2023, de 8 de noviembre, que establece un entorno controlado de pruebas para sistemas de IA de alto riesgo.
+
+El instrumento cita igualmente, como marco de referencia en el plano del soft law internacional, la Carta Europea de Ética sobre el uso de la IA en los sistemas judiciales y su entorno, adoptada por la CEPEJ en su 31.ª reunión plenaria de diciembre de 2018, con sus cinco principios —derechos fundamentales, no discriminación, calidad y seguridad, transparencia, imparcialidad y justicia, y control del usuario—, así como las Directrices sobre el uso de la inteligencia artificial generativa para los tribunales, aprobadas en la 45.ª sesión plenaria de la CEPEJ en diciembre de 2025 [CEPEJ (2025) 18 Final]. La habilitación legal para dictar la instrucción se encuentra en el artículo 230.1 de la Ley Orgánica del Poder Judicial.
+
+### B. El marco del Reino Unido: principios post-Brexit y autorregulación
+
+La *AI Guidance for Judicial Office Holders*, publicada el 31 de octubre de 2025, actualiza y sustituye a la guidance de abril de 2025. A diferencia del instrumento español, el documento no cita norma alguna de derecho positivo como fundamento jurídico. Su única referencia normativa es la obligación genérica de que *"any use of AI by or on behalf of the judiciary must be consistent with the judiciary's overarching obligation to protect the integrity of the administration of justice."* [El Reino Unido no ha adoptado, tras el Brexit, un instrumento equivalente al Reglamento de IA europeo, optando por un enfoque sectorial y de principios.]
+
+Este contraste es metodológicamente significativo: el instrumento inglés no proporciona sistema de citas normativas, sino que opera mediante principios y recomendaciones de conducta profesional, en coherencia con la tradición de regulación judicial por medio de guidelines y bench books. La guidance se publica en línea expresamente "to promote transparency, open justice and public confidence," lo que añade una dimensión pública a su función orientadora que trasciende la relación interna entre el Poder Judicial y sus miembros.
+
+## III. Análisis Comparativo
+
+### A. Ámbito de aplicación y destinatarios
+
+**Issue:** ¿A quiénes vinculan ambos instrumentos y qué sistemas de IA comprenden sus respectivos ámbitos de aplicación?
+
+**Rule:** La *Instrucción 2/2026* declara en su Ordinal Segundo que resulta *"de aplicación a todos los sistemas de IA que puedan ser utilizados por los jueces, juezas, magistrados y magistradas para el ejercicio de la actividad jurisdiccional, incluidas las herramientas de IA generativa."* El ámbito subjetivo se circunscribe, por tanto, a los titulares de órganos jurisdiccionales. La guidance inglesa adopta un enfoque subjetivo más amplio, aplicándose a *"all judicial office holders under the Lady Chief Justice and Senior President of Tribunal's responsibility, their clerks, judicial assistants, legal advisers/officers and other support staff."*
+
+**Application:** La extensión subjetiva de la guidance inglesa a clerks y asistentes judiciales responde a una realidad práctica que el instrumento español no aborda directamente: la posibilidad de que sea el personal de apoyo quien utilice la IA para asistir al juez, trasladando al titular la responsabilidad sobre el resultado. Esta diferencia es relevante desde una perspectiva de gestión del riesgo institucional. En cuanto al ámbito objetivo, la guidance inglesa menciona expresamente la Technology Assisted Review (TAR) para la gestión documental, calificándola como herramienta ya integrada en la práctica procesal, mientras que la Instrucción 2/2026 no distingue entre tipos de sistemas más allá de la categoría de herramientas de IA generativa.
+
+### B. Principios rectores
+
+**Issue:** ¿Qué principios gobiernan el uso de la IA judicial en cada sistema y cómo se articulan entre sí?
+
+**Rule:** La *Instrucción 2/2026* codifica nueve principios vinculantes en su Ordinal Cuarto: (a) control humano efectivo; (b) no sustitución de los jueces; (c) responsabilidad judicial; (d) independencia judicial; (e) respeto a los derechos fundamentales; (f) confidencialidad y seguridad; (g) prevención de sesgos algorítmicos; (h) proporcionalidad y uso limitado; e (i) formación y capacitación. Estos principios tienen carácter normativo, y su incumplimiento puede generar las responsabilidades previstas en la LOPJ conforme al Ordinal Undécimo.
+
+La guidance inglesa estructura sus principios en seis secciones: (I) comprensión de la IA y sus limitaciones; (II) confidencialidad y privacidad; (III) exactitud y rendición de cuentas; (IV) sesgo; (V) responsabilidad personal; y (VI) conciencia del uso de IA por los usuarios del tribunal. Estos principios no tienen denominación formal ni jerarquía explícita, y funcionan como recomendaciones de buenas prácticas sin consecuencias jurídicas directas.
+
+### C. Usos permitidos y usos prohibidos
+
+**Issue:** ¿Qué actividades judiciales pueden ser asistidas por IA y cuáles quedan vedadas en cada sistema?
+
+**Rule:** El Ordinal Sexto de la *Instrucción 2/2026* establece un numerus clausus de usos permitidos: búsqueda y localización de información jurídica; análisis, clasificación y estructuración de información; elaboración de esquemas, resúmenes o borradores de trabajo interno sin carácter decisorio; y apoyo a tareas organizativas o auxiliares. El Ordinal Séptimo añade la posibilidad de utilizar borradores de resoluciones generados mediante IA, pero únicamente si provienen de sistemas facilitados por las Administraciones o el CGPJ y siempre con *"revisión y validación personal, completa y crítica"* del juez o magistrada. El Ordinal Octavo tipifica seis categorías de usos no permitidos, incluyendo la sustitución o automatización de decisiones judiciales, el condicionamiento de la independencia judicial, la incorporación de contenidos sin validación crítica, el tratamiento de datos especialmente protegidos fuera de supuestos autorizados, y el perfilado de personas fuera de supuestos autorizados.
+
+La guidance inglesa distingue entre *"potentially useful tasks"* —resúmenes de grandes volúmenes de texto, redacción de presentaciones y tareas administrativas— y *"tasks not recommended"* —investigación jurídica y análisis jurídico—, calificando esta última categoría con la advertencia de que *"the current public AI chatbots do not produce convincing analysis or reasoning."*
+
+## IV. Puntos de Convergencia y Divergencia
+
+El análisis comparativo desarrollado en la sección precedente permite identificar tres ámbitos de convergencia sustantiva y cuatro ámbitos de divergencia estructural entre ambos instrumentos. La siguiente tabla sintetiza los resultados comparativos en cada dimensión analizada:
+
+| **Dimensión** | **España (Instrucción 2/2026)** | **Reino Unido (Guidance oct. 2025)** |
+|---|---|---|
+| **Naturaleza jurídica** | Norma vinculante (hard law). Incumplimiento genera responsabilidad LOPJ. | Orientación no vinculante (soft law). Sin consecuencias jurídicas formales. |
+| **Destinatarios** | Jueces y magistrados exclusivamente. | Jueces, clerks, asistentes, letrados y personal de apoyo. |
+| **Sistemas autorizados** | Solo los facilitados por Administraciones competentes o CGPJ. Lista positiva cerrada. | Ningún sistema excluido formalmente. Herramientas públicas desaconsejadas para investigación jurídica. |
+| **Modelo de supervisión** | Centralizado en el CGPJ. Auditoría previa de sistemas. | Individual y reactivo. Reporte al leadership judge si hay incidente. |
+| **Borradores de resoluciones** | Permitidos solo desde sistemas institucionales. Exige revisión personal completa y crítica. | Generative AI calificada como "potentially useful secondary tool" con las precauciones oportunas. |
+| **Litigantes que usan IA** | No tratado. | Sección específica. Especial atención a litigantes sin representación. |
+| **Deepfakes / White text** | No mencionados. | Mencionados expresamente como riesgos procesales emergentes. |
+| **Transparencia a las partes** | Sin deber de información a las partes. | Sin deber de información a las partes. |
+| **Formación** | CGPJ ofertará actividades formativas (Ordinal 13.º). | No se prevé programa formativo formal. |
+
+### Convergencias
+
+En lo que respecta a las convergencias, los dos instrumentos comparten, en primer lugar, el principio de supervisión humana efectiva e irrenunciable como límite absoluto al uso de la IA en la toma de decisiones judiciales. Aunque la formulación difiere —imperativa y codificada en España, recomendatoria pero inequívoca en el Reino Unido—, el contenido normativo es funcionalmente equivalente: la IA nunca puede sustituir al criterio del juez. En segundo lugar, ambos instrumentos reconocen la legitimidad del uso de la IA como herramienta auxiliar o de apoyo, siempre que no sustituya el criterio judicial. En tercer lugar, la protección de la confidencialidad de los datos procesales se configura en ambos casos como condición inderogable del uso de la IA.
+
+### Divergencias
+
+Las divergencias estructurales son, sin embargo, más profundas que las convergencias formales. La primera y más fundamental es la naturaleza jurídica del instrumento: hard law con consecuencias disciplinarias en España frente a soft law sin consecuencias jurídicas formales en el Reino Unido. La segunda divergencia es el modelo de autorización de sistemas: cerrado y de lista positiva en España, abierto y basado en principios en el Reino Unido. La tercera divergencia es el modelo de supervisión: centralizado e institucional en el CGPJ en España, individual y reactivo en el Reino Unido. La cuarta divergencia —quizás la más innovadora desde el punto de vista del acceso a la justicia— es el tratamiento de los litigantes que usan IA: completamente ignorado en la Instrucción 2/2026, abordado con específica atención a los litigantes vulnerables en la guidance inglesa.
+
+Las razones de estas divergencias son tanto estructurales como contextuales. En el plano estructural, España opera dentro del ordenamiento de la Unión Europea, cuyo Reglamento IA impone obligaciones de hard law que el CGPJ incorpora y desarrolla. El Reino Unido, fuera del ámbito de aplicación del Reglamento IA tras el Brexit, dispone de mayor libertad para elegir su modelo regulatorio. En el plano contextual, la tradición common law de responsabilidad profesional individual ha condicionado la elección de un modelo orientativo, mientras que la tradición continental de codificación normativa explica la opción española por un sistema de principios vinculantes y auditoría institucional.
+
+## V. Valoración Crítica
+
+### A. Fortalezas y debilidades del modelo español
+
+La principal fortaleza de la Instrucción 2/2026 es su inserción coherente en el marco normativo europeo del Reglamento IA, lo que le proporciona sistematicidad y previsibilidad. La exigencia de que los sistemas utilizados hayan sido previamente auditados por el CGPJ ofrece a las partes una garantía institucional de la calidad y seguridad de las herramientas empleadas. La codificación de nueve principios vinculantes —con la posibilidad de responsabilidad disciplinaria por incumplimiento— dota al sistema de una capacidad de exigibilidad que refuerza la confianza en la administración de justicia. La obligación de que los borradores de resoluciones sean íntegramente modificables y se generen solo a demanda del juez constituye una exigencia técnica innovadora que anticipa los estándares que el Reglamento IA europeo pretende generalizar.
+
+Sin embargo, el modelo español presenta dos debilidades significativas. La primera es su rigidez operativa: al circunscribir los sistemas de IA permitidos a los facilitados por las Administraciones o el CGPJ, la instrucción crea una dependencia institucional que puede ralentizar la adopción de nuevas herramientas y generar asimetrías entre jurisdicciones con capacidades tecnológicas desiguales. La segunda debilidad —compartida con el modelo inglés— es la ausencia de mecanismos de transparencia hacia las partes: la instrucción no prevé el deber de informar a los litigantes cuando se ha utilizado IA en la tramitación de su asunto.
+
+### B. Fortalezas y debilidades del modelo inglés
+
+La principal fortaleza de la guidance inglesa es su pragmatismo y adaptabilidad tecnológica. Al no construir un sistema de autorización previa, permite a los jueces beneficiarse de la evolución tecnológica sin esperar a la actualización de una lista de sistemas aprobados. Su taxonomía del riesgo es más rica y empíricamente orientada, y su atención a los litigantes vulnerables que utilizan chatbots de IA sin capacidad de verificación denota una sensibilidad sistémica sobre el acceso a la justicia que el instrumento español no desarrolla. La publicación en línea del documento, destinada a promover la transparencia y la confianza pública, añade una dimensión institucional que trasciende la mera orientación interna.
+
+Sus debilidades son, no obstante, igualmente evidentes. La ausencia de consecuencias jurídicas formales para el incumplimiento de las recomendaciones reduce el nivel de cumplimiento esperado y hace que la protección de los derechos de las partes descanse enteramente en la conciencia individual de cada juez. La falta de un sistema de auditoría previa de herramientas deja sin respuesta la pregunta de qué ocurre cuando una herramienta de IA utilizada por un juez —sin restricción formal alguna— produce un resultado erróneo que influye en la resolución.
+
+### C. Lagunas regulatorias comunes
+
+Ambos instrumentos presentan una laguna compartida de notable importancia: la ausencia de un régimen de transparencia procesal sobre el uso de IA. Ninguno establece el deber del juez de informar a las partes cuando ha utilizado un sistema de IA para preparar o redactar una resolución, ni les reconoce el derecho a conocer qué sistema se empleó, con qué datos fue entrenado o cómo influyó en el resultado. Esta laguna es especialmente grave en el caso de los borradores de resoluciones judiciales generados mediante IA, donde la influencia del sistema en el contenido de la decisión puede ser directa y sustancial.
+
+Una segunda laguna, específica de la Instrucción 2/2026, es la omisión de cualquier referencia al fenómeno de los deepfakes y del white text como riesgos procesales emergentes, que la guidance inglesa sí contempla expresamente. A medida que estas técnicas se sofistiquen, la ausencia de orientaciones específicas al respecto puede comprometer la integridad del material probatorio en procedimientos judiciales.
+
+## VI. Conclusiones
+
+El análisis comparativo de la Instrucción 2/2026 del CGPJ y la AI Guidance for Judicial Office Holders de la Courts and Tribunals Judiciary de England and Wales permite extraer tres conclusiones de alcance general.
+
+La primera es que la divergencia entre ambos instrumentos no es meramente formal sino filosófica y constitucional. El modelo español refleja la tradición jurídica continental de codificación normativa y supervisión institucional, coherente con su integración en el marco del Reglamento IA europeo. El modelo inglés refleja la tradición common law de responsabilidad profesional individual y regulación por principios, coherente con el enfoque post-Brexit de autonomía regulatoria. Esta distinción tendrá consecuencias duraderas sobre la evolución del régimen de responsabilidad judicial por el uso de IA y sobre la justiciabilidad de los derechos de las partes en ambos sistemas.
+
+La segunda conclusión es que ambos instrumentos son insuficientes en materia de transparencia procesal. La ausencia de un deber de información a las partes sobre el uso de IA en la tramitación de sus asuntos constituye la laguna regulatoria más grave detectada en el análisis comparativo, y su corrección debe considerarse prioritaria tanto desde la perspectiva del derecho a un juicio justo como desde la del derecho a la protección de datos y la explicabilidad algorítmica.
+
+La tercera conclusión es que el diálogo entre ambos modelos puede ser mutuamente enriquecedor. España podría incorporar la taxonomía del riesgo orientada al comportamiento individual que ofrece el modelo inglés, así como su atención específica a los litigantes vulnerables que utilizan IA sin capacidad de verificación. El Reino Unido, por su parte, podría beneficiarse de la mayor sistematicidad y exigibilidad del modelo español, especialmente en lo que respecta a la auditoría previa de los sistemas utilizados y a la centralización de la supervisión en un órgano independiente.
+
+Desde una perspectiva de política regulatoria internacional, ambos instrumentos confirman que la regulación de la IA judicial requiere un tratamiento específico que va más allá de la aplicación subsidiaria de los marcos generales de protección de datos o de responsabilidad civil. La creación de estándares internacionales mínimos —cuya semilla puede encontrarse en la Carta CEPEJ de 2018 y en las Directrices de diciembre de 2025— constituye el horizonte normativo hacia el que debería orientarse el esfuerzo armonizador de los próximos años.
+
+## VII. Auditoría de Fuentes
+
+A continuación se relacionan todas las afirmaciones de hecho y normativas contenidas en el artículo, con indicación del documento de origen y la página o sección exacta donde se sustenta cada una.
+
+1. Instrucción 2/2026, del Pleno del CGPJ, publicada en el BOE núm. 27, de 30 de enero de 2026 → PDF España → Encabezado y Ordinal Decimocuarto.
+
+2. AI Guidance for Judicial Office Holders, 31 October 2025 → PDF UK → Sección 1, párr. 1: "It updates and replaces the guidance document issued in April 2025."
+
+3. Ibid. → PDF UK → Sección 2, Definiciones: "Publicly available examples are ChatGPT, Google Gemini and Meta AI."
+
+4. Preámbulo I de la Instrucción 2/2026 → PDF España → Pág. 14480: "El Reglamento (UE) 2024/1689, de 13 de junio de 2024 (Reglamento de Inteligencia Artificial) establece normas armonizadas en materia de IA…"
+
+5. Preámbulo I de la Instrucción 2/2026 → PDF España → Pág. 14480: referencia al Anexo III, apartados 8.a) y 6 del Reglamento IA.
+
+6. Preámbulo I de la Instrucción 2/2026 → PDF España → Pág. 14480: solicitud del CGPJ de 31 de octubre de 2024 y Anteproyecto de Ley, art. 5.7, aprobado por el Consejo de Ministros el 11 de marzo de 2025.
+
+7. Preámbulo II de la Instrucción 2/2026 → PDF España → Pág. 14481: referencia al Real Decreto-ley 6/2023, artículos 35 y 57.
+
+8. Preámbulo III de la Instrucción 2/2026 → PDF España → Pág. 14481: Real Decreto 729/2023 (AESIA) y Real Decreto 817/2023 (entorno controlado de pruebas).
+
+9. Preámbulo VI de la Instrucción 2/2026 → PDF España → Pág. 14482: Carta CEPEJ, 31.ª reunión plenaria, diciembre de 2018, cinco principios.
+
+10. Preámbulo VI de la Instrucción 2/2026 → PDF España → Pág. 14483: "Directrices sobre el uso de la inteligencia artificial generativa para los tribunales [CEPEJ (2025) 18 Final]", aprobadas en diciembre de 2025.
+
+11. Preámbulo VI de la Instrucción 2/2026 → PDF España → Pág. 14483: "al amparo de lo dispuesto en el artículo 230.1 de la Ley Orgánica del Poder Judicial."
+
+12. AI Guidance → PDF UK → Sección 1, párr. 1.
+
+13. AI Guidance → PDF UK → Sección 1, párr. 3.
+
+14. Instrucción 2/2026, Ordinal Segundo → PDF España → Pág. 14483.
+
+15. AI Guidance → PDF UK → Sección 1, párr. 4.
+
+16. Instrucción 2/2026, Ordinal Cuarto, apartados (a) a (i) → PDF España → Págs. 14484-14485.
+
+17. Instrucción 2/2026, Ordinal Undécimo → PDF España → Pág. 14487.
+
+18. AI Guidance → PDF UK → Sección 3, subsecciones I a VI, págs. 4-6 del documento.
+
+19. Instrucción 2/2026, Ordinal Cuarto (a) → PDF España → Pág. 14484; AI Guidance, Sección 3.V → PDF UK → Pág. 6.
+
+20. AI Guidance → PDF UK → Sección 3.IV: "You may be particularly assisted by reference to the Equal Treatment Bench Book."
+
+21. Instrucción 2/2026, Ordinal Sexto, apartado 3 (a) a (d) → PDF España → Pág. 14485.
+
+22. Instrucción 2/2026, Ordinal Séptimo, apartado 2 → PDF España → Pág. 14485-14486.
+
+23. Instrucción 2/2026, Ordinal Octavo, apartados (a) a (f) → PDF España → Pág. 14486.
+
+24. AI Guidance → PDF UK → Sección 4, "Tasks not recommended": "the current public AI chatbots do not produce convincing analysis or reasoning."
+
+25. AI Guidance → PDF UK → Sección 3.V: "there is no reason why generative AI could not be a potentially useful secondary tool."
+
+26. AI Guidance → PDF UK → Sección 3.VI: "They may be the only source of advice or assistance some litigants receive… Litigants rarely have the skills independently to verify legal information…"
+
+27. Instrucción 2/2026, Ordinales Cuarto, Sexto, Séptimo y Décimo → PDF España → Págs. 14484-14487.
+
+28. AI Guidance → PDF UK → Sección 3.III y 3.V.
+
+29. Instrucción 2/2026, Ordinal Séptimo, apartado 4 → PDF España → Pág. 14486.
+
+30. Instrucción 2/2026, Ordinal Cuarto (e) → PDF España → Pág. 14484.
+
+31. AI Guidance → PDF UK → Sección 3.VI.
+
+32. Instrucción 2/2026, Ordinal Quinto, apartado 2 → PDF España → Pág. 14485.
+
+33. Instrucción 2/2026, Ordinal Duodécimo → PDF España → Pág. 14487.
+
+34. Instrucción 2/2026, Ordinal Undécimo → PDF España → Pág. 14487.
+
+35. AI Guidance → PDF UK → Sección 3.II: "you should contact your leadership judge and the Judicial Office… the disclosure should be reported as a data incident."
+
+36. Instrucción 2/2026, Ordinal Noveno, apartados 1, 2 y 3 → PDF España → Pág. 14486.
+
+37. AI Guidance → PDF UK → Sección 2, Definición "Hallucination": "AI hallucinations are incorrect or misleading results that AI models generate. These errors can be caused by a variety of factors, including insufficient training data, the model's statistical nature, incorrect assumptions made by the model, or biases in the data…"
+
+38. AI Guidance → PDF UK → Sección 3.VI: "AI tools are now being used to produce fake material, including text, images and video" (deepfakes); Sección 3.V: white text como texto invisible al lector humano.
+
+---
+
+*Fin del artículo*

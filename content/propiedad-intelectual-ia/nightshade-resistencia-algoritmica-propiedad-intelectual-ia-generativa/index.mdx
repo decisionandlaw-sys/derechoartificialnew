@@ -1,0 +1,261 @@
+---
+title: "Nightshade y el Derecho de Autor ante la IA Generativa: Resistencia Algorítmica y Licenciamiento Forzoso"
+description: "El envenenamiento de datos como mecanismo de autodefensa frente al raspado masivo: análisis técnico-jurídico de Nightshade, sus implicaciones bajo el AI Act y el marco de *lege ferenda*."
+date: "2026-04-29"
+tags: ["nightshade", "propiedad intelectual", "data poisoning", "IA generativa", "derecho de autor", "AI Act", "raspado de datos"]
+section: "propiedad-intelectual-ia"
+category: "propiedad-intelectual-ia"
+author: "Ricardo Scarpa"
+slug: "nightshade-resistencia-algoritmica-propiedad-intelectual-ia-generativa"
+readingTime: 14
+---
+
+## El artista como atacante: inversión del paradigma de autoprotección intelectual
+
+La narrativa canónica del derecho de propiedad intelectual descansa sobre una premisa que la IA generativa ha erosionado con una velocidad sin precedentes: la idea de que el titular de derechos dispone de mecanismos eficaces para hacer valer su exclusiva frente a quienes explotan su obra sin autorización. La irrupción masiva de modelos de difusión como Stable Diffusion, Midjourney y DALL-E ha reconfigurado ese presupuesto de manera estructural.
+
+Estos sistemas, capaces de generar imágenes complejas a partir de instrucciones de texto (*prompts*), se fundamentan en el raspado indiscriminado de miles de millones de obras protegidas por derechos de autor, extraídas sin consentimiento, sin crédito y sin compensación de sus creadores originales.¹
+
+Ante este escenario, el Laboratorio SAND de la Universidad de Chicago, bajo el liderazgo del profesor Ben Zhao y el investigador Shawn Shan, ha desarrollado una respuesta técnica que invierte el paradigma defensivo convencional: en lugar de esperar que los mecanismos jurídicos existentes protejan las obras *ex post*, Nightshade introduce perturbaciones algorítmicas en los propios datos de entrenamiento para degradar la funcionalidad de los modelos que los utilizan sin autorización. Presentado formalmente en el Simposio de Seguridad y Privacidad de la IEEE en 2024, Nightshade es, en el vocabulario del Laboratorio SAND, una "espada" que complementa el "escudo" que constituye Glaze, herramienta anterior destinada a proteger el estilo artístico individual frente a la mimesis algorítmica.²
+
+El informe completo de Ricardo Scarpa —*Resistencia Algorítmica: Nightshade y la Defensa de la Propiedad Intelectual frente al Raspado de Datos de la Inteligencia Artificial Generativa* (abril de 2026)— está disponible para descarga en [este enlace](/fuentes/Nightshade_y_la_Defensa_de_la_Propiedad_Intelectual.pdf).
+
+La tesis que articula este análisis es que Nightshade no puede ser comprendido ni evaluado jurídicamente como un mero acto de sabotaje técnico. Es, con mayor precisión conceptual, un mecanismo de *resistencia algorítmica* que opera en el vacío regulatorio creado por la ineficacia sistémica de los instrumentos clásicos de autoprotección y la ausencia de un marco de licenciamiento obligatorio para el entrenamiento de modelos de IA.
+
+Su valoración jurídica exige recorrer tres planos analíticos distintos pero interdependientes: el técnico, el ético y el normativo, tanto en su dimensión de *lex lata* como de *lege ferenda*.
+
+---
+
+## La infraestructura del extractivismo: LAION, Common Crawl y la quiebra del consentimiento
+
+Para comprender la racionalidad jurídica de Nightshade es indispensable describir con precisión la arquitectura técnica que sustenta el extractivismo de datos sobre el que opera la IA generativa contemporánea.
+
+La infraestructura que alimenta modelos como Stable Diffusion depende de la recolección masiva de datos mediante el *web scraping*: el conjunto de datos LAION-5B, núcleo del entrenamiento de varios modelos de vanguardia, contiene aproximadamente 5.850 millones de pares de imagen y texto.
+
+Estas entradas son recopiladas originalmente por Common Crawl, una entidad que busca indexar una copia gratuita de la red para fines de investigación y análisis.³ Sin embargo, este proceso captura indiscriminadamente obras protegidas procedentes de plataformas como Pinterest, DeviantArt, Wordpress y sitios de fotografía de archivo como Getty Images, a menudo sin que los autores originales tengan conocimiento del uso de sus creaciones.
+
+Frente a este extractivismo, los mecanismos de protección tradicionales han demostrado ser meras formalidades sin capacidad de ejecución real. Los sistemas de exclusión voluntaria (*opt-out*) y las directivas en archivos *robots.txt* son herramientas calificadas como "voluntarias" cuya observancia queda enteramente a discreción de los desarrolladores de modelos.⁴ Aunque empresas como OpenAI han sugerido el uso de estas etiquetas para bloquear rastreadores como GPTBot, su eficacia es nula si el artista no controla el servidor de alojamiento o si el rastreador decide ignorar la directiva.
+
+Asimismo, el uso de etiquetas HTML como "noai", implementadas por plataformas como DeviantArt y ArtStation, depende de la "buena conducta" de los rastreadores, una noción jurídicamente inconcreta cuya inobservancia no genera repercusiones legales o técnicas inmediatas.⁵
+
+Lo que estas limitaciones revelan no es un problema puntual de ejecución, sino una asimetría de poder estructural: los artistas individuales carecen de los medios financieros y técnicos para litigar contra gigantes tecnológicos, la velocidad con que la IA inunda los mercados digitales desplaza la visibilidad de los creadores humanos, y la capacidad de los modelos para realizar mimesis estilística mediante *fine-tuning* con apenas diez o veinte obras amenaza directamente la viabilidad económica de las carreras artísticas.
+
+En este entorno, la adopción de herramientas de resistencia técnica como Nightshade no es una elección voluntaria: es una necesidad estructural.
+
+---
+
+## Arquitectura del veneno: *concept sparsity*, *bleed-through* e implosión del modelo
+
+La comprensión jurídica de Nightshade requiere un examen suficientemente preciso de su arquitectura técnica, pues las implicaciones legales varían sustancialmente según el mecanismo de acción de la herramienta.
+
+A diferencia de los ataques de envenenamiento tradicionales, que buscan degradar el rendimiento general de un clasificador inyectando una masa crítica de datos erróneos, Nightshade explota la forma en que los modelos de difusión vinculan conceptos lingüísticos con características visuales mediante ataques dirigidos a instrucciones específicas (*prompt-specific poisoning*).⁶ El objetivo es corromper un concepto específico "C" (por ejemplo, "perro") para que el modelo genere imágenes de un concepto destino "A" (por ejemplo, "gato").
+
+Para lograrlo, el sistema genera perturbaciones en imágenes naturales de C que, aunque invisibles para el ojo humano, desplazan la representación de la imagen en el espacio de características del extractor visual del modelo hacia el concepto A.
+
+La viabilidad técnica de este mecanismo descansa en un hallazgo empírico fundamental: la "escasez de conceptos" (*concept sparsity*) en los conjuntos de datos a gran escala. Aunque un modelo como Stable Diffusion se entrena con miles de millones de imágenes, la densidad de datos para conceptos individuales es sorprendentemente baja.
+
+Tras analizar el conjunto LAION-Aesthetic, los investigadores del Laboratorio SAND determinaron que más del 92 % de los conceptos (sustantivos únicos) aparecen en menos del 0,04 % de las muestras.⁷ Esta dispersión semántica significa que un atacante no necesita millones de muestras envenenadas: inyectar apenas un centenar de imágenes optimizadas puede ser suficiente para contrarrestar la influencia de las muestras limpias y forzar al modelo a adoptar la asociación incorrecta.
+
+Para maximizar el impacto de cada muestra envenenada, Nightshade emplea técnicas de optimización adversaria multicriterio que utilizan "imágenes ancla" representativas del concepto destino A para guiar la perturbación de la imagen original de C. Con el fin de garantizar que los cambios sean imperceptibles para los artistas y curadores humanos, Nightshade utiliza la métrica LPIPS (*Learned Perceptual Image Patch Similarity*), que emula la percepción visual humana mediante redes neuronales profundas.
+
+El repositorio de código abierto también admite la métrica de norma infinita (L∞) para asegurar que ningún píxel individual cambie drásticamente, aunque el uso de LPIPS permite perturbaciones más potentes y robustas frente a procesos de compresión o reescalado de imágenes en la web.⁸
+
+Dos propiedades adicionales elevan significativamente el potencial disruptivo de Nightshade. La primera es el efecto *bleed-through*: cuando un artista envenena el concepto "perro", el daño no se limita a esa palabra exacta, sino que se propaga en el espacio de incrustación de texto (*text embedding space*) hacia términos semánticamente cercanos como "cachorro", "husky" o "lobo", e incluso hacia estilos artísticos asociados.
+
+Ataques dirigidos al estilo "fantasía" han demostrado afectar la generación de "dragones" o las obras asociadas al nombre del artista Michael Whelan, sin que estas palabras figuraran en los datos del ataque original.⁹ Esta propagación semántica hace que el envenenamiento sea robusto y difícil de filtrar mediante simples listas negras de palabras o reetiquetados superficiales.
+
+La segunda propiedad es la composibilidad y la posibilidad de "implosión del modelo" (*model collapse*). Los ataques son componibles: múltiples envenenamientos independientes pueden coexistir en un mismo modelo sin anularse entre sí. Sin embargo, al alcanzar un umbral crítico de conceptos envenenados, la estructura interna del modelo comienza a degradarse de manera irreversible.
+
+Se ha observado que, tras envenenar aproximadamente 250 conceptos independientes, la capacidad de la IA para generar imágenes coherentes disminuye drásticamente, situándose en niveles de calidad inferiores a los de modelos de hace una década.
+
+Si el número de conceptos atacados alcanza los 500, el sistema implosiona totalmente, produciendo únicamente ruido visual o píxeles aleatorios ante cualquier instrucción, lo que invalida el modelo para cualquier uso comercial.¹⁰
+
+Los experimentos han validado esta eficacia en los modelos de código abierto más avanzados, incluyendo Stable Diffusion V2, Stable Diffusion XL (SD-XL) y DeepFloyd. En el caso de SD-XL, se pueden corromper conceptos específicos con menos de 100 muestras envenenadas, logrando que el modelo ignore las instrucciones originales y genere el concepto destino.
+
+A pesar de que los modelos pre-entrenados ya poseen un conocimiento consolidado de los conceptos, la inyección de tan solo un 2 % de datos envenenados respecto al volumen semántico del concepto es suficiente para anular la influencia de miles de muestras limpias.¹¹
+
+---
+
+## Glaze y Nightshade: escudo y espada en un ecosistema de resistencia integral
+
+El Laboratorio SAND inauguró su intervención técnica en defensa de los creadores con el lanzamiento de Glaze en 2023, una herramienta concebida como un "escudo" defensivo diseñado específicamente para combatir la mimesis estilística.
+
+Glaze opera explotando los "puntos ciegos" o ejemplos adversarios en los extractores de características de la IA: al aplicar perturbaciones mínimas en la capa de píxeles, el software engaña al modelo haciéndole creer que la obra pertenece a un estilo radicalmente distinto, preservando así la integridad de la marca personal del creador frente a usuarios que intenten generar imágenes "al estilo de" un artista protegido.¹²
+
+La distinción conceptual entre ambas herramientas es jurídicamente relevante: Glaze actúa sobre la *superficie estilística* individual para proteger la identidad visual del artista, asumiendo que el daño del raspado ya ha ocurrido; Nightshade, en cambio, tiene como objetivo envenenar el proceso de entrenamiento *general* para todos los usuarios del modelo, alterando no la percepción del estilo sino la comprensión semántica que la IA tiene de los objetos y conceptos.
+
+Glaze protege la "voz" del artista; Nightshade sabotea el "diccionario" visual de la IA que ignora los derechos de autor.¹³
+
+El equipo del Laboratorio SAND subraya que ambas herramientas no son excluyentes, sino componentes de un ecosistema integral de resistencia. La recomendación técnica oficial establece que el artista debe aplicar primero Nightshade a la imagen original y, posteriormente, procesar el archivo resultante a través de Glaze.
+
+Aunque este proceso doble puede incrementar la presencia de artefactos visuales visibles, se considera el mecanismo más robusto para restaurar la agencia del creador, actuando simultáneamente como una medida de protección personal y como un acto de desincentivo colectivo contra el extractivismo de datos.¹⁴
+
+---
+
+## Nightshade ante el ordenamiento jurídico: ¿autodefensa legítima o sabotaje punible?
+
+La calificación jurídica de Nightshade bajo el derecho vigente es el nudo gordiano del análisis. La pregunta que el ordenamiento no responde con claridad es si el envenenamiento de datos por parte de un titular de derechos de autor constituye un ejercicio lícito de autoprotección de la propiedad intelectual o si, por el contrario, infringe normas de derecho informático o competencia desleal.
+
+Desde la perspectiva del derecho de autor, la posición más sólida es que Nightshade opera *ex ante* del momento en que se consuma la infracción: la perturbación se introduce en la propia obra antes de que sea publicada y potencialmente raspada sin autorización. No existe, en ese momento, un acto positivo de "daño" a un tercero, sino una medida técnica de protección incorporada al objeto de la propiedad intelectual.
+
+Esta construcción es análoga, aunque no idéntica, a las medidas tecnológicas de protección (*technical protection measures* o TPMs) contempladas en el artículo 6 de la Directiva 2001/29/CE sobre derechos de autor en la sociedad de la información, que los Estados miembros están obligados a proteger frente a la elusión.¹⁵
+
+La analogía, sin embargo, tiene límites precisos. Las TPMs clásicas operan impidiendo el acceso o la copia no autorizados; Nightshade, en cambio, permite el acceso y la copia, pero contamina el valor derivado de esa apropiación. Es, en términos técnicos, una medida de protección de *segunda generación*: no impide el raspado, sino que lo hace contraproducente.
+
+Esta distinción tiene implicaciones para su calificación como "medida tecnológica eficaz" en el sentido del artículo 6.3 de la citada Directiva, pues la eficacia se mide en términos de la restricción de actos no autorizados, y el envenenamiento opera precisamente sobre el uso posterior de los datos, no sobre su captura inicial.
+
+El análisis bajo el Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo (Reglamento de IA o RIA) añade una capa de complejidad adicional.¹⁶ El RIA no regula directamente el *data poisoning* como práctica de los titulares de derechos, pero sus disposiciones sobre robustez y seguridad de los sistemas de IA de alto riesgo (artículos 9 y 15) y sobre el gobierno de los datos de entrenamiento (artículo 10) podrían interpretarse de forma que la distribución de datos envenenados a gran escala plantee interrogantes sobre la diligencia debida de los proveedores de modelos en la validación de sus conjuntos de entrenamiento.
+
+Dicho de otro modo: si Nightshade se convierte en una práctica extendida, los desarrolladores de modelos podrían verse obligados, bajo el RIA, a implementar procesos más rigurosos de verificación de la procedencia y la integridad de los datos, lo que tendría el efecto *indirecto* de incentivar el licenciamiento.
+
+La dimensión más controvertida se sitúa en el derecho estadounidense, que es el ordenamiento primariamente relevante dado que los principales modelos y empresas implicados tienen sede en EE. La *Computer Fraud and Abuse Act* (CFAA) es el instrumento que con más frecuencia se invoca para cuestionar la legalidad del *data poisoning* activo.
+
+La CFAA prohíbe acceder o dañar un ordenador protegido sin autorización, pero la jurisprudencia dominante, incluyendo *hiQ Labs v. LinkedIn* (9.º Circuito, 2022), ha establecido que la mera publicación de datos en una plataforma de acceso público no equivale a una autorización para cualquier uso, pero tampoco implica que el acceso a esos datos constituya una violación de la CFAA.
+
+Aplicada a Nightshade, la CFAA resultaría en principio inaplicable, puesto que el artista no accede al sistema informático del desarrollador de IA: introduce perturbaciones en sus *propias* obras antes de publicarlas, sin intervenir en los sistemas de la empresa demandada.¹⁷
+
+El análisis bajo la doctrina del *fair use* (artículo 107 del *Copyright Act* estadounidense) resulta pertinente aunque estructuralmente inverso al habitual: no es el artista quien invoca el *fair use* para usar la obra ajena, sino que es el desarrollador de IA quien podría invocarlo para justificar el entrenamiento sobre obras protegidas.
+
+En ese contexto, la legalidad o ilegalidad del raspado es la cuestión determinante para evaluar si Nightshade opera como respuesta proporcionada a una infracción previa o como sabotaje gratuito.
+
+El caso *Andersen et al. v. Stability AI Ltd. et al.*, presentado en enero de 2023 ante el Tribunal del Distrito Norte de California, es el litigio de mayor impacto en este ecosistema.¹⁸ En agosto de 2024, el juez de distrito William Orrick emitió un fallo parcial significativo al permitir que las reclamaciones por infracción directa de derechos de autor siguieran adelante, validando la teoría de que los modelos de difusión podrían contener "copias comprimidas" de las obras de entrenamiento.
+
+Esta resolución refuerza *indirectamente* la legitimidad de herramientas como Nightshade, pues si el entrenamiento sobre obras protegidas sin licencia se confirma como infracción, la introducción de perturbaciones en esas obras constituiría una respuesta defensiva frente a un acto ilícito preexistente.
+
+---
+
+## La carrera armamentista algorítmica y sus implicaciones regulatorias
+
+La efectividad de Nightshade ha propiciado una respuesta inmediata desde la comunidad de investigación en ciberseguridad, inaugurando una "carrera armamentista" algorítmica entre creadores y desarrolladores de IA.
+
+En este contexto, un equipo internacional liderado por la Universidad de Cambridge presentó **LightShed**, un sistema diseñado específicamente para identificar y neutralizar las protecciones basadas en perturbaciones.¹⁹ LightShed opera mediante un proceso de tres etapas: primero, detecta si una imagen ha sido alterada mediante técnicas de envenenamiento; segundo, emplea ingeniería inversa para modelar las características de la perturbación utilizando un autoencoder; y finalmente, elimina el "veneno" mediante la sustracción del patrón identificado.
+
+En pruebas experimentales, LightShed logró detectar imágenes protegidas por Nightshade con una precisión del 99,98 %, restaurando la utilidad de los datos para el entrenamiento sin degradar visualmente la calidad de las obras.²⁰
+
+Más allá de LightShed, investigadores de la ETH Zurich y Google DeepMind han argumentado que herramientas como Glaze y Nightshade proporcionan una "falsa sensación de seguridad", ya que pueden ser eludidas mediante técnicas de purificación relativamente sencillas.
+
+Entre estas técnicas destaca el **reescalado ruidoso** (*noisy upscaling*), que combina la adición de ruido gaussiano con modelos de superresolución para "limpiar" los artefactos adversarios.
+
+Las protecciones actuales sufren, según estos expertos, de la desventaja estructural del "primer movimiento": una vez que un artista publica una obra protegida, el atacante tiene el beneficio de la adaptación *offline*, pudiendo probar múltiples métodos de desintoxicación hasta romper la defensa.
+
+Ataques de purificación basados en difusión pueden restaurar la precisión de los modelos del 23 % al 94 % utilizando solo un pequeño conjunto de imágenes no protegidas como referencia.²¹
+
+Esta dinámica de acción-reacción tiene una consecuencia regulatoria de primera importancia: pone de manifiesto que la resistencia técnica, por sofisticada que sea, no puede por sí sola resolver la asimetría estructural entre creadores y desarrolladores de IA.
+
+El Laboratorio SAND y otros académicos convergen en que la resistencia algorítmica debe complementarse con un marco legal robusto que desincentive el raspado de datos, transformando estas herramientas de soluciones definitivas en mecanismos de fricción necesaria que eleven el coste de la apropiación ilicita.
+
+---
+
+## El marco de *lege ferenda*: hacia un sistema de licenciamiento obligatorio
+
+El informe de la Oficina del Derecho de Autor de los Estados Unidos (USCO), cuya segunda entrega fue publicada en enero de 2025, ha reafirmado que la creatividad humana es el "cimiento fundamental" del derecho de autor, concluyendo que las obras generadas únicamente mediante instrucciones de texto no son elegibles para protección, aunque sí se admite la protección de elementos específicos cuando un humano realiza arreglos creativos o modificaciones sustanciales sobre el resultado algorítmico.²² El debate más crítico se reserva para la tercera parte del informe, aún en desarrollo, que abordará las implicaciones legales del entrenamiento de modelos con obras protegidas, un área donde herramientas como Nightshade buscan imponer un marco de "licenciamiento forzoso" mediante la resistencia técnica.
+
+En el plano legislativo, en abril de 2024 se introdujo en el Congreso de EE. UU. la **Ley de Divulgación de Derechos de Autor de IA Generativa** (*Generative AI Copyright Disclosure Act*), la cual obligaría a los desarrolladores a presentar resúmenes detallados de todas las obras protegidas utilizadas en sus conjuntos de datos de entrenamiento.²³ Expertos legales sugieren que este marco debería complementarse con un sistema de *opt-in* obligatorio, donde el uso de datos para entrenamiento sea ilegal a menos que medie una autorización expresa del creador.
+
+En este contexto, organizaciones como *Fairly Trained* han comenzado a certificar modelos que se entrenan exclusivamente con datos de dominio público o bajo licencia, ofreciendo una alternativa ética al extractivismo de datos.
+
+Estas certificaciones podrían actuar como un puerto seguro legal, incentivando a las empresas a evitar los riesgos de degradación semántica asociados con el raspado indiscriminado y el envenenamiento por Nightshade.
+
+La dimensión internacional del problema no es menor. Mientras que el Reglamento de IA de la Unión Europea propone reglas estrictas de transparencia que obligan a los desarrolladores a divulgar los materiales protegidos por derechos de autor utilizados en el entrenamiento, otros países como Japón han adoptado posturas más laxas, sugiriendo que el entrenamiento de modelos no constituye una infracción *per se*.
+
+Esta disparidad ha generado la preocupación de una "brecha global de IA", donde las corporaciones podrían migrar sus procesos de entrenamiento a jurisdicciones con protecciones mínimas.
+
+Sin embargo, el despliegue masivo de Nightshade en plataformas globales como Cara o ArtStation introduce una forma de "regulación técnica transfronteriza": al estar el veneno incrustado en la obra misma, la protección viaja con el dato independientemente de la jurisdicción donde sea raspado.
+
+De este modo, la resistencia algorítmica podría forzar la creación de un estándar internacional de facto basado en el respeto a la autonomía del creador y la compensación justa.²⁴
+
+---
+
+## La controversia sobre el peritaje y la colonización del espacio técnico-jurídico
+
+Una dimensión inusual de la batalla legal merece análisis separado. En el marco del caso *Andersen*, surgió un conflicto cuando los demandantes propusieron al profesor Ben Zhao para examinar el código fuente confidencial de las empresas de IA como perito judicial.
+
+Los demandados se opusieron enérgicamente, argumentando que Zhao no es un observador neutral, sino un "adversario" técnico que ha desarrollado herramientas de envenenamiento de datos diseñadas explícitamente para sabotear sus sistemas.
+
+Ante este bloqueo, el tribunal sugirió como alternativa a la Dra. Emily Wenger, exalumna de Zhao; sin embargo, las empresas de tecnología condicionaron su aceptación a que Wenger suspendiera toda investigación académica durante tres años, una exigencia que los demandantes calificaron de inaceptable y punitiva para un académico de carrera.²⁵
+
+Esta disputa sobre la idoneidad pericial revela una dinámica inquietante: las empresas de IA están intentando utilizar el proceso judicial para colonizar el espacio técnico-académico, neutralizando a los investigadores que desarrollan herramientas de resistencia mediante la amenaza implícita de excluirlos de los tribunales si continúan su labor científica.
+
+Esta estrategia, de consolidarse, tendría efectos sistémicos devastadores sobre la independencia de la investigación técnica sobre IA. Que OpenAI llegara a calificar el uso de Nightshade por parte de los artistas como una forma de "abuso" de sus sistemas es, a la luz de estos hechos, una postura que los defensores de la propiedad intelectual consideran irónica dado el origen del entrenamiento de esos mismos modelos.²⁶
+
+---
+
+## Conclusiones: la resistencia técnica como catalizador de un nuevo contrato social digital
+
+El análisis precedente permite formular las siguientes conclusiones operativas con pretensión de sistematicidad doctrinal:
+
+La calificación de Nightshade como sabotaje jurídicamente reprochable es, bajo el derecho vigente, tanto en el ordenamiento estadounidense como en el europeo, difícilmente sostenible cuando el envenenamiento se introduce por el propio titular en su propia obra, antes de su publicación, como respuesta a una práctica sistemática de apropiación de datos sin licencia.
+
+La analogía con las medidas tecnológicas de protección del artículo 6 de la Directiva 2001/29/CE es imperfecta pero funcional: Nightshade es una TPM de segunda generación que actúa sobre el valor derivado de la apropiación, no sobre el acceso.
+
+La carrera armamentista algorítmica evidenciada por LightShed demuestra que ninguna solución técnica puede, por sí sola, resolver la asimetría estructural entre creadores y desarrolladores de IA.
+
+La resistencia algorítmica tiene valor sistémico no como solución definitiva, sino como mecanismo de fricción que eleva el coste de la apropiación ilícita y genera los incentivos económicos para que la obtención de licencias directas sea la alternativa más racional para los desarrolladores de modelos.
+
+La posición de *lege ferenda* más coherente con los principios fundacionales del derecho de autor es la adopción de un sistema de *opt-in* obligatorio para el entrenamiento de modelos de IA, complementado con obligaciones de divulgación y transparencia sobre los conjuntos de datos utilizados.
+
+El Reglamento de IA de la UE ha establecido un precedente relevante en esta dirección, aunque su articulación concreta con el sistema de derechos de autor requiere un desarrollo normativo específico que la Comisión y los Estados miembros aún no han completado.
+
+Finalmente, el caso *Andersen* y la disputa sobre la idoneidad pericial de Ben Zhao ilustran cómo el conflicto sobre el entrenamiento de IA se ha desplazado ya del plano abstracto de la política regulatoria al terreno concreto de las estrategias procesales.
+
+En este contexto, Nightshade ha transformado a sus creadores en figuras centrales de la resistencia legal y técnica, convirtiendo la investigación académica en un actor político de primer orden en la configuración del futuro régimen de propiedad intelectual aplicable a la IA generativa.
+
+---
+
+> **Descarga el informe completo:** [Resistencia Algorítmica: Nightshade y la Defensa de la Propiedad Intelectual frente al Raspado de Datos de la IA Generativa](/fuentes/Nightshade_y_la_Defensa_de_la_Propiedad_Intelectual.pdf) — Ricardo Scarpa, abril de 2026.
+
+---
+
+**Notas**
+
+¹ Shawn Shan, et al., "Nightshade: Prompt-Specific Poisoning Attacks on Text-to-Image Generative Models," *Proceedings of the 45th IEEE Symposium on Security and Privacy* (2024): 1-2; Lucas Mearian, "'Data poisoning' anti-AI theft tools emerge — but are they ethical?," *Computerworld*, 30 de octubre de 2023, párr. 3.
+
+² Shiloh Miller, "Poisoning the machine," *The University of Chicago Magazine*, 7 de mayo de 2025, párr. 4; Shan, "Nightshade," 1-2.
+
+³ "Navigating Uncharted Seas: A Deep Dive into Authorship and Fair Use," *Virginia Journal of Law & Technology* 28, no. 2 (2024): 9-10.
+
+⁴ Shan, "Nightshade," 14.
+
+⁵ *Virginia Journal of Law & Technology*, "Navigating Uncharted Seas," 16-17.
+
+⁶ Shan, "Nightshade," 3.
+
+⁷ Shan, "Nightshade," 14-15.
+
+⁸ Shan, "Nightshade," 16-18; Richard Zhang, et al., "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric," *Proceedings of CVPR* (2018), citado en Shan, "Nightshade," 17.
+
+⁹ Shan, "Nightshade," 22-24.
+
+¹⁰ Miller, "Poisoning the machine," párr. 10; Shan, "Nightshade," 25-26.
+
+¹¹ Shan, "Nightshade," 21-22.
+
+¹² Shawn Shan, et al., "Glaze: Protecting Artists from Style Mimicry by Text-to-Image Models," *USENIX Security* (2023), citado en *Virginia Journal of Law & Technology*, "Navigating Uncharted Seas," 19.
+
+¹³ *Virginia Journal of Law & Technology*, "Navigating Uncharted Seas," 19; Shan, "Nightshade," 4.
+
+¹⁴ Universidad de Chicago, "Nightshade Software User Guide," última actualización 18 de enero de 2024, https://nightshade.cs.uchicago.edu/userguide.html.
+
+¹⁵ Directiva 2001/29/CE del Parlamento Europeo y del Consejo, de 22 de mayo de 2001, relativa a la armonización de determinados aspectos de los derechos de autor y derechos afines a los derechos de autor en la sociedad de la información, DO L 167, 22 de junio de 2001, art. 6.
+
+¹⁶ Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, relativo a los requisitos de la Inteligencia Artificial [en adelante, RIA], DO L, 12 de julio de 2024, arts. 9, 10 y 15.
+
+¹⁷ *hiQ Labs, Inc. v. LinkedIn Corp.*, 31 F.4th 1180 (9th Cir. 2022).
+
+¹⁸ McKool Smith, "AI Infringement Case Updates: June 23, 2025" (2025), sección 10; Richard Whiddington, "Artists Land a Win in Class Action Lawsuit Against A.I. Companies," *Artnet News*, 15 de agosto de 2024, párr. 3-5.
+
+¹⁹ Hanna Foerster, et al., "LightShed: Defeating Perturbation-based Image Copyright Protections," *USENIX Security* (2025): 1-2.
+
+²⁰ Foerster, "LightShed," 14.
+
+²¹ Robert Hönig, et al., "Adversarial Perturbations Cannot Reliably Protect Artists from Generative AI," *ICLR Proceedings* (2024): 2, 10-11, 28.
+
+²² Copyright Office, "Copyright Office Releases Part 2 of Artificial Intelligence Report," Library of Congress, 2025, párr. 1-6.
+
+²³ Nathan Seth Lowell, "AI Create: The Brave New World and Copyright Implications of AI-Generated Artwork," *Virginia Journal of Law & Technology* 28, no. 2 (2024): 46-48.
+
+²⁴ Arts Law Centre of Australia, "Glaze and Nightshade: How artists are taking arms against AI scraping," 23 de diciembre de 2024, párr. 14; *Virginia Journal of Law & Technology*, "Navigating Uncharted Seas," 49.
+
+²⁵ McKool Smith, "AI Infringement Case Updates," sección 10.
+
+²⁶ Daily.dev, "Protecting Artists: Glaze and Nightshade in the Fight Against Exploitative AI," 13 de noviembre de 2024, párr. 4.

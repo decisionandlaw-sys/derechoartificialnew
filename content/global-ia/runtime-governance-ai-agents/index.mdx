@@ -1,0 +1,167 @@
+---
+title: "Runtime Governance for AI Agents: La formalización que el EU AI Act exige"
+description: "Paper de Eindhoven University + Kyvvu formaliza gobernanza de agentes en ejecución. Demuestra por qué prompts y access control fallan contra violaciones basadas en secuencias."
+date: "2026-03-20"
+tags: [\"AI agents\", \"runtime governance\", \"compliance\", \"EU AI Act\", \"execution paths\"]
+section: "global-ia"
+category: "global-ia"
+author: "Redacción"
+slug: "runtime-governance-ai-agents"
+readingtime: "14 min"
+pdf: "/fuentes/runtime-governance-ai-agents-2603.16586v1.pdf"
+---
+## El problema invisible: gobernanza de agentes que ejecutan miles de caminos diferentes
+
+Un agente de IA puede ejecutar 10.000 secuencias diferentes para la misma tarea. Leer un CRM, acceder a datos financieros, buscar competencia en la web, enviar un email. Cada paso individual es legal. Pero la secuencia completa viola la política de privacidad.
+
+El problema: **nadie hasta ahora ha formalizado precisamente por qué todos los mecanismos existentes fallan contra violaciones que son propiedades de secuencias de acciones, no de acciones aisladas.**
+
+Un nuevo paper de Eindhoven University of Technology y Kyvvu B.V. acaba de hacerlo. Y sus implicaciones para cumplimiento del EU AI Act (efectivo agosto 2026) son profundas.
+
+## Las cinco propiedades que hacen de los agentes un problema gobernanza completamente nuevo
+
+El paper de Kaptein, Khan y Podstavnychy identifica con precisión por qué los agentes rompen cada mecanismo de control que las organizaciones conocen:
+
+**1. No-determinismo.** El mismo agente, la misma tarea, produce ejecuciones diferentes cada vez. No hay "comportamiento único" que verificar en diseño. Es constitutivo de su utilidad, pero imposible de gobernar a priori.
+
+**2. Uso dinámico de herramientas.** El agente decide en runtime qué APIs llamar, en qué orden, con qué argumentos. No es una secuencia predefinida en código. Un sistema tradicional ejecuta: API1 → API2 → API3 en orden fijo. Un agente decide basándose en lo que observó.
+
+**3. Caminos de longitud variable.** Diferentes ejecuciones requieren diferente número de pasos. La "superficie de decisión" que debe gobernar cambia en cada run.
+
+**4. Auto-modificación.** Agentes con ejecución de código pueden escribir funciones nuevas, modificar sus propios prompts, crear herramientas persistentes en runtime. Pueden alterar sus capacidades de formas que no fueron anticipadas en diseño.
+
+**5. Interacción multi-agente.** Agentes delegan a otros agentes, comparten espacios de trabajo. Si un agente de advisory accede a datos pendientes de un deal y luego delega a un agente de trading, ese trading-agent puede responder con información adyacente al deal que el advisory-agent ahora posee junto a datos restringidos. **Ninguno violó una regla; la violación es propiedad de la interacción.**
+
+Lo más relevante: estas propiedades **interactúan**. Un agente que no-determinísticamente decide traer datos externos, luego escribe un script para procesarlos, luego delega a otro agente para un resumen, ha producido un camino cuya gobernanza no pudo especificarse en diseño, cuya longitud no era predecible, y cuya conformidad depende de la secuencia completa incluyendo interacciones.
+
+## Por qué cada mecanismo existente es un caso especial (o no un caso en absoluto)
+
+El paper es brutalmente honesto sobre lo que **cada mecanismo puede y no puede hacer**:
+
+### Prompts y "system prompts"
+
+Reducen probabilísticamente que el agente viole política. No garantizan nada. Un agente puede ignorar, malinterpretar, o ser manipulado para saltarse instrucciones (prompt injection).
+
+**Lo fundamental:** No hay mecanismo que prevenga una acción si el agente decide tomarla. Los prompts cambian la distribución sobre caminos posibles; no los hacen valer. Dicen "no envíes emails sin aprobación" y el agente es estadísticamente menos probable que lo haga. Pero si decide hacerlo, nadie lo detiene.
+
+**Conclusión del paper:** Prompting no instantía la policy function en absoluto.
+
+### Access control (RBAC, IAM, tool whitelisting)
+
+Esto sí es enforcement real. Un agente sin permisos de email no puede enviar emails. Punto.
+
+Pero es **context-free**: no sabe, y no puede condicionar en, qué hizo antes. Un agente con permisos de "lectura de base de datos" + "envío de email" tiene todo lo que necesita para exfiltración de datos. Access control no puede distinguir el uso inocuo del problemático.
+
+Previene **categorías de acciones**; no previene **secuencias de acciones**.
+
+**Conclusión del paper:** Access control es una instancia degenerada de la policy function — usa solo identidad de agente y tipo de acción, ignorando el camino completo.
+
+### Guardrails a nivel de agente
+
+Filtros de output, clasificadores de contenido, pasos de auto-crítica. Operan bajo la autoridad del propio agente. Para agentes con ejecución de código, es una limitación fundamental: pueden escribir código que bypasee sus propios guardrails.
+
+Incluso sin auto-modificación: no pueden auditarse, actualizarse, o imponerse independientemente del agente.
+
+**Conclusión del paper:** No es gobernanza; es auto-regulación.
+
+### Filtrado de contenido
+
+Puede interceptar el contenido de pasos individuales: detectar PII, discurso de odio, desinformación. Resuelve un problema diferente.
+
+Un filtro detecta que un email contiene un número de seguro social. No detecta que ese email se envió después de que el agente leyó datos confidenciales de una base de datos restringida. La violación verdadera **está en la trayectoria**, no en el contenido de un paso aislado.
+
+### Aprobación humana
+
+Útil, genuinamente. Un humano que ve el contexto acumulado del camino del agente puede ejercer juicio. Pero no es un mecanismo de gobernanza en sí mismo; es una **acción que un mecanismo de gobernanza puede invocar**.
+
+La política que decide **cuándo** solicitar aprobación, **qué contexto** mostrar, **qué desbloquea** en pasos posteriores: **esa es donde vive el trabajo de gobernanza**. Aprobación sin esa estructura es no-escalable, incompleta (el camino previo puede ya contener violación), y gameable (un agente puede ser manipulado para llegar a aprobación vía secuencia de pasos individuales inocuos que juntos constituyen violación).
+
+## La formalización: gobernanza como función sobre trayectorias
+
+El paper propone que todo se reduce a una función:
+
+**πⱼ(A, Pᵢ, s*, Σ) → [0,1]**
+
+Donde:
+- **A** = identidad del agente (metadatos registrados)
+- **Pᵢ** = ejecución parcial hasta el paso i (qué ha hecho el agente hasta ahora)
+- **s*** = acción propuesta siguiente
+- **Σ** = estado de gobernanza compartido organizacional (qué datos han sido accedidos, barreras de información activadas, quién delegó a quién)
+
+El output es la **probabilidad de que ejecutar s* viole la política j**.
+
+**Esto es el punto central:** Esta función puede tomar en cuenta todo. El camino completo. El contexto organizacional. El estado compartido entre agentes.
+
+Access control usa solo A y el tipo de acción, ignorando Pᵢ y Σ. Es una instancia **degenerada**.
+
+Prompting modifica la distribución sobre caminos sin evaluarlos. No es una instancia de la función en absoluto.
+
+La evaluación en runtime — evaluando la función completa antes de cada acción — es el **caso general**. Y es la única forma de hacer valer políticas que dependen de lo que pasó antes.
+
+### La Policy Engine: el componente organizacional que ejecuta la gobernanza
+
+Algo debe evaluar estas funciones, actuar basándose en los resultados, y mantener Σ. El paper lo llama **Policy Engine**: el componente organizacional que:
+
+1. Intercepta cada acción propuesta s*
+2. Evalúa todas las políticas aplicables
+3. Mantiene el estado de gobernanza Σ (qué datos fueron accedidos, dónde, por quién)
+4. Aplica una función de decisión δ: Pass, Steer (pausa para aprobación humana), o Block
+
+### La métrica: risk budget a nivel de fleet
+
+El objetivo de gobernanza es explícito:
+
+**Maximizar utilidad esperada de tareas completadas sujeto a: E[violaciones terminales] ≤ B**
+
+Donde B es el presupuesto de riesgo organizacional.
+
+Esto hace el tradeoff explícito: una Policy Engine que bloquea todo logra E[violaciones] = 0 pero E[utilidad] = 0. B = 0.1 significa la organización tolera 0.1 tareas violaroras completándose en promedio. Es directamente interpretable y monitoreable en tiempo real.
+
+## Políticas concretas (inspiradas en EU AI Act)
+
+El paper instantía su framework en políticas reales:
+
+- **Agent integrity:** Compara hash de definición del agente contra hash registrado (detecta auto-modificación)
+- **PII predecessor requirement:** Retorna 1 si s* accedería datos personales pero no hay PII_Check en Pᵢ (previene prompt injection)
+- **Approval before external actions:** Bloquea acciones externas (emails, mensajes) si no hay Human_Approval en Pᵢ para agentes high-risk
+- **Data exfiltration prevention:** Retorna puntuación graduada basada en sensibilidad máxima de datos accedidos si s* envía datos externamente
+- **Information barrier:** Si A accedió datos de un lado de una barrera nominada, bloquea si s* implica el otro lado (requiere Σ — no puede evaluarse solo desde el camino de A)
+- **Execution bounds:** Score aumenta linealmente con número de pasos, alcanza 1 en máximo configurado
+
+## Implicaciones para EU AI Act (agosto 2026)
+
+El paper mapea su framework directamente a requisitos del Reglamento:
+
+**Article 9 (Risk management throughout lifecycle):** La evaluación continua de vT contra presupuesto B es instanciación en runtime de lifecycle risk management.
+
+**Article 12 (Automatic logging):** El audit trail registra cada paso, evaluación de política, score, decisión. Crucialmente: registra no solo qué hizo el agente, sino qué decidió el sistema de gobernanza.
+
+**Article 14 (Human oversight):** Intervención de pausa-para-aprobación-humana es implementación directa. Pero el caveat crítico: human oversight es solo meaningful si la capa de gobernanza que decide **cuándo** invocarla está bien calibrada.
+
+**Articles 13, 16 (Transparency, documentation):** Políticas que requieren documented purpose, risk classification, ownership como precondiciones para registro de agente. Un agente que no puede pasar la policy de documentación no puede correr.
+
+**Article 15 (Accuracy, robustness, cybersecurity):** La capa de gobernanza en runtime proporciona robustez contra adversarial inputs (prompt injection, etc) que design-time measures no pueden anticipar.
+
+## Los problemas abiertos que el framework NO resuelve
+
+El paper es honesto sobre lo que queda pendiente:
+
+- **Risk calibration:** La función retorna [0,1] interpretado como probabilidad. Pero ¿está calibrada? ¿Realmente corresponde a 70% probabilidad de violación o es solo un "severity score" arbitrario? Requiere labeled execution traces a escala. Actualmente no disponible.
+
+- **Strategic circumvention:** El framework asume agentes no modelan la capa de gobernanza y planean caminos para quedarse bajo thresholds. Para agentes de generación actual es razonable. Para agentes futuros con memoria a largo plazo y acceso a sus propios policy scores: frágil.
+
+- **Completeness of enforced compliance:** Prospective interception asume el agente opera dentro del governed execution environment. Agentes con code execution pueden violar esto spawneando procesos, haciendo raw API calls. Es constraint arquitectónico, no invariante probado.
+
+- **Behavioral drift:** Degradación gradual en sistemas multi-agente sobre interacciones extendidas. Agentes cuyo comportamiento se desvía en formas que individually parecen dentro de tolerancia pero cumulativamente representan desviación significativa. Per-step evaluation con políticas fijas puede no detectar esto.
+
+- **Delegation provenance:** Cuando un agente delega a sub-agente, qué debería propagarse desde el sub-path al estado del primario no es obvio. Mínimamente: nivel de sensibilidad máxima y barreras activadas. Pero ¿debería el violation score del sub-agente contribuir al del primario?
+
+## Lo que importa
+
+Este paper formaliza con precisión el problema que nadie más ha articulado bien: **la gobernanza de agentes reduce a evaluar trayectorias de ejecución, no acciones aisladas.**
+
+Demuestra que cada mecanismo existente es un caso especial (o no un caso en absoluto) de una policy function más general.
+
+Para organizaciones desplegando agentes bajo presión regulatoria antes de agosto 2026: proporciona maquinaria precisa para registrar, evaluar, y hacer valer decisiones de gobernanza de forma reproducible y auditable, independientemente de qué interpretación del EU AI Act finalmente prevalezca.
+
+Es lectura obligatoria para arquitectos de compliance, risk officers, y engineers deployando agentes en contextos de high-risk.

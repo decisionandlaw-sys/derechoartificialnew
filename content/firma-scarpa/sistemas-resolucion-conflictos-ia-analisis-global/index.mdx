@@ -1,0 +1,329 @@
+---
+title: "El impacto real de los sistemas de resolución de conflictos automatizados con IA: Lecciones globales entre la eficiencia y la legitimidad jurídica"
+description: "Un análisis comparado de 23 sistemas de resolución de conflictos automatizados con IA revela que la transparencia explicativa pesa más que la velocidad algorítmica."
+date: "2026-05-31"
+tags: ["justicia algorítmica", "Reglamento de IA", "mediación automatizada", "sesgo algorítmico", "control humano"]
+section: "firma-scarpa"
+category: "investigacion"
+author: "Firma Scarpa"
+slug: "sistemas-resolucion-conflictos-ia-analisis-global"
+readingTime: "5 min"
+pdf: "/fuentes/mediacion_ia_revisado_HLR.pdf"
+---
+
+# Sistemas actuales de resolución de conflictos automatizados con IA: Análisis global comparado (2023-2026) y evaluación crítica
+
+## 1. Resumen Ejecutivo
+
+Entre los años 2023 y 2026, la integración de la inteligencia artificial (IA) en el ámbito de la resolución de conflictos ha experimentado una evolución sin precedentes, transitando de proyectos meramente experimentales a sistemas operativos plenamente integrados en múltiples jurisdicciones a nivel mundial.
+
+Este artículo ofrece un análisis global comparado y exhaustivo de 23 sistemas actuales en funcionamiento, clasificados de acuerdo con su grado de autonomía (en una escala del 1 al 5), su enfoque operativo (dividido entre sistemas de soporte y sustantivos) y su ámbito geográfico de aplicación. A lo largo de este estudio, se examinan pormenorizadamente tanto los casos de éxito y liderazgos tecnológicos —tales como los Tribunales de Internet de China o el Tribunal de Resolución Civil canadiense— como aquellos sistemas que han resultado fallidos o han sido objeto de mitos internacionales, incluyendo las deficiencias del caso COMPAS en Estados Unidos y el extendido mito del juez robot estonio.
+
+A partir de la evaluación empírica y doctrinal de estos sistemas, se identifican tres hallazgos principales:
+1. **La eficiencia algorítmica no genera legitimidad de forma automática:** La percepción de justicia por parte de los usuarios y la legitimidad institucional dependen en mayor medida de la transparencia explicativa y la interfaz de explicabilidad que de la mera velocidad o reducción de costes del proceso.
+2. **Importancia de la secuencia temporal en sistemas híbridos:** Los modelos de "humano en el bucle" (human-in-the-loop) solo consiguen restaurar y mantener la confianza del público si el operador humano retiene de forma efectiva la decisión final, estableciendo una secuencia estricta de intervención del tipo "IA-humano".
+3. **El Sur Global como motor de innovación inclusiva:** Diversas innovaciones desarrolladas en el Sur Global en materia de accesibilidad móvil —como el sistema MSheria en Kenia— demuestran que es posible alcanzar niveles superiores de equidad y democratización del acceso a la justicia que superan a soluciones tecnológicas de alta gama y elevado coste implementadas en Occidente.
+
+Finalmente, el análisis examina el impacto de los marcos normativos e internacionales emergentes —destacando el Reglamento (UE) 2024/1689 (AI Act), el Marco Convenio del Consejo de Europa y la norma técnica ISO/IEC 42001—, los cuales catalogan de manera unánime a la justicia automatizada como una actividad de «alto riesgo», imponiendo estrictas salvaguardas y una supervisión humana significativa.
+
+Se concluye que el horizonte normativo y práctico no se dirige hacia la sustitución de los jueces y mediadores, sino hacia el diseño de arquitecturas de justicia centradas en las personas, donde la tecnología actúe estrictamente como un asistente de soporte cualificado.
+
+---
+
+## 2. Introducción: Contexto y Definiciones
+
+### 2.1. El ecosistema de justicia en la era digital (2023-2026)
+La intersección entre las tecnologías de la información y los sistemas de resolución de disputas ha provocado una transformación estructural profunda durante el periodo comprendido entre 2023 y 2026. Lo que originalmente nació como una digitalización básica orientada a optimizar los flujos de trabajo administrativos (como la tramitación de expedientes electrónicos) ha evolucionado hacia un paradigma disruptivo en el que los sistemas automatizados son capaces de realizar análisis predictivos complejos y formular propuestas de mediación de manera autónoma. Este cambio sistémico introduce serias complicaciones que impactan directamente en las dimensiones legales, éticas y sociológicas de la administración de justicia contemporánea.
+
+La adopción de estas tecnologías es profundamente asimétrica a escala global. Mientras que determinadas jurisdicciones con un alto grado de centralización y digitalización estructural, como China, lideran los procesos de automatización profunda, las instituciones de Europa Occidental y ciertos estados norteamericanos muestran una resistencia institucional y doctrinal considerable, fundamentada en la preservación de rigurosas salvaguardas constitucionales y procesales.
+
+Sin embargo, la crisis sanitaria e institucional derivada de la pandemia de COVID-19 funcionó como un catalizador crítico que forzó la adopción acelerada de los procedimientos en línea, derribando gran parte de las barreras tradicionales del sector jurídico frente a la innovación. En la actualidad, bajo presiones económicas constantes, reducciones presupuestarias y el cierre físico de sedes judiciales, la IA se postula como una promesa de escalabilidad para proveer servicios de calidad a un menor coste operativo.
+
+Como consecuencia, la justicia ha dejado de concebirse de forma exclusiva como un espacio físico institucional para consolidarse como un servicio público optimizable mediante algoritmos de triaje y plataformas de resolución de disputas en línea (ODR).
+
+### 2.2. Evolución tecnológica: de sistemas expertos a modelos probabilísticos
+Desde una perspectiva técnica, las herramientas aplicadas a la resolución de conflictos han transitado desde los antiguos marcos expertos, basados en reglas de lógica determinista, hacia arquitecturas avanzadas de aprendizaje profundo (deep learning) de naturaleza eminentemente probabilística. Durante décadas, los desarrollos de LegalTech se limitaban a estructuras del tipo "si-entonces" (*if-then*), donde un programador debía codificar de forma manual cada una de las variables lógicas y soluciones posibles basándose en las normas jurídicas vigentes. Un ejemplo histórico de este enfoque fue el sistema desarrollado por la RAND Corporation en la década de los setenta, orientado a asistir en la negociación de acuerdos de responsabilidad por productos en el estado de California, el cual requería la parametrización de miles de reglas lógicas complejas para intentar emular el razonamiento humano.
+
+Este paradigma determinista se vio completamente superado gracias al advenimiento del *Big Data*, la computación en la nube y el incremento exponencial en la capacidad de procesamiento informático.
+
+Los sistemas modernos no operan bajo reglas fijas preestablecidas, sino mediante modelos estadísticos capaces de inferir correlaciones, clasificar datos masivos y formular predicciones basándose en patrones identificados en grandes históricos de jurisprudencia y documentación procesal.
+
+En particular, el despliegue a gran escala de los modelos de lenguaje de gran tamaño (LLM), como GPT-4 y sus sucesores, ha permitido que las herramientas automatizadas no solo organicen información, sino que simulen de manera fluida el razonamiento jurídico, redacten borradores completos de sentencias o laudos, y formulen justificaciones argumentativas complejas en lenguaje natural.
+
+No obstante, esta evolución técnica ha introducido un problema crítico: la opacidad algorítmica o fenómeno de la «caja negra» (*black box*). A diferencia de los sistemas expertos de los años ochenta, en los cuales el camino lógico deductivo tomado por el software era perfectamente rastreable y auditable paso a paso, los modelos de redes neuronales profundas operan a través de millones de parámetros y relaciones matemáticas de alta complejidad que resultan ininteligibles e imposibles de desglosar de forma lineal, incluso para sus propios diseñadores.
+
+Esta transición técnica choca frontalmente con el derecho fundamental de los litigantes a recibir una decisión motivada y razonada por parte de las autoridades competentes.
+
+### 2.3. Definiciones fundamentales y marco terminológico
+Para garantizar el rigor conceptual del presente análisis, es necesario delimitar con precisión la terminología empleada:
+* **Sistema de Inteligencia Artificial (IA):** De conformidad con la definición actualizada de la OCDE, se entiende como un sistema basado en máquinas que, para objetivos explícitos o implícitos, infiere cómo generar salidas —tales como predicciones, recomendaciones o decisiones— que pueden influir en entornos reales o virtuales a partir de las entradas recibidas. Es vital diferenciar un sistema de IA de las aplicaciones de software general o bases de datos de gestión judicial que únicamente rastrean, indexan o automatizan tareas administrativas de manera lineal, sin poseer capacidad de percepción o toma de decisiones probabilísticas independientes.
+* **Enfoque de Soporte vs. Enfoque Sustantivo:** La doctrina académica clasifica la intervención de la IA en dos grandes vertientes. El *enfoque de soporte* engloba a aquellas aplicaciones donde la tecnología actúa estrictamente como una herramienta auxiliar bajo el control total de un operador, mediador o juez humano, quien se encarga de supervisar, validar y suscribir de forma consciente cada uno de los resultados. Por el contrario, el *enfoque sustantivo* describe escenarios donde el algoritmo asume un rol activo de adjudicación, decisión o mediación, sustituyendo parcial o totalmente las funciones analíticas humanas y derivando, en su extremo teórico, en la controvertida figura del «juez robot», definida como un sistema automatizado que emite fallos legalmente vinculantes con una intervención humana marginal o nula.
+* **Resolución de Conflictos en Línea (ODR - Online Dispute Resolution):** Término amplio que abarca el uso de tecnologías digitales y plataformas en red para facilitar la resolución de controversias fuera del entorno formal de los tribunales tradicionales. Las plataformas de ODR pueden ser meramente colaborativas (espacios de comunicación asíncrona) o integrar algoritmos avanzados de negociación asistida que emplean teoría de juegos para identificar de manera matemática las denominadas «zonas de posible acuerdo» (*ZOPA*) entre las partes enfrentadas.
+* **Automatización Administrativa vs. Toma de Decisiones Automatizada (ADM):** Es mandatorio distinguir entre la automatización de tareas administrativas repetitivas (como la notificación automatizada de plazos) y los procesos de toma de decisiones automatizadas que producen efectos jurídicos directos, significativos y vinculantes sobre las esferas de derechos de las personas físicas o jurídicas.
+
+---
+
+## 3. Taxonomía Funcional de los Sistemas de Resolución de Conflictos
+
+### 3.1. Enfoque de soporte vs. enfoque sustantivo
+La distinción entre el enfoque de soporte y el enfoque sustantivo permite estructurar la gobernanza de las herramientas de IA, definiendo el nivel de riesgo y la responsabilidad legal de los operadores jurídicos. Bajo el *enfoque de soporte*, el sistema optimiza la productividad del profesional humano al encargarse del procesamiento masivo de datos: organización y foliado digital de pruebas, control predictivo de plazos procesales, extracción automática de entidades lingüísticas y búsquedas semánticas avanzadas de jurisprudencia o doctrina aplicable. En este modelo, la autoridad, la valoración de la prueba y el juicio ético-jurídico final permanecen inalterados en manos del mediador o juez.
+
+En contraposición, el *enfoque sustantivo* traslada parte de la carga adjudicativa al motor algorítmico. El sistema procesa los hechos aportados por las partes y emite de forma autónoma propuestas de resolución, recomendaciones vinculantes o fallos de obligado cumplimiento.
+
+En la doctrina, esta evolución se conceptualiza bajo la noción del «cuarto interviniente» (*fourth party*), una metáfora que sitúa a la tecnología no ya como un mero canal de comunicación entre las partes y el tercero neutral, sino como un actor independiente con capacidad de agencia e inferencia propia dentro de la dinámica del conflicto.
+
+Mientras el enfoque de soporte goza de una amplia aceptación internacional debido a su alineación con los principios de eficiencia, el enfoque sustantivo es el epicentro de los dilemas éticos y constitucionales modernos, especialmente cuando la presencia del supervisor humano se reduce a una validación puramente nominal, formal o simbólica.
+
+### 3.2. Grados de automatización (escala 1-5)
+A fin de categorizar con precisión el nivel de autonomía e independencia operativa de los sistemas de IA analizados en el periodo 2023-2026, la doctrina jurídica y tecnológica ha consolidado una taxonomía basada en cinco niveles distintos de automatización:
+
+| Nivel de Automatización | Denominación Técnica | Descripción Funcional y Operativa | Ejemplos del Mundo Real (2023-2026) |
+| :--- | :--- | :--- | :--- |
+| **Nivel 1** | Digitalización básica | Gestión electrónica y automatización lineal de flujos de trabajo administrativos. No existe capacidad analítica o inferencial autónoma sobre los datos. | Escaneo y foliado digital de documentos; sistemas básicos de registro de expedientes procesales. |
+| **Nivel 2** | Triaje interactivo y diagnóstico | El sistema interactúa con el usuario mediante cuestionarios lógicos y árboles de decisión para orientarlo sobre sus derechos, viabilidad de su caso y vías óptimas de resolución. | *Solution Explorer* del Tribunal de Resolución Civil de Columbia Británica (Canadá). |
+| **Nivel 3** | Soporte decisorio y facilitación analítica | La IA analiza semánticamente las posturas de las partes, identifica patrones, predice probabilidades de éxito y propone de forma activa «zonas de posible acuerdo» a través de algoritmos de optimización. | Plataforma *Modria* (negociación asíncrona); software *FairSplit* (tasación por visión artificial y división equitativa de herencias). |
+| **Nivel 4** | Soporte semiautónomo | El algoritmo realiza de manera autónoma la evaluación inteligente de las pruebas presentadas y la subsunción de los hechos en las normas jurídicas, generando borradores completos de fallos, sentencias o laudos que posteriormente deben ser validados, corregidos y firmados por un operador o juez humano. | *Tribunales de Internet* de la República Popular China (el sistema prepara la propuesta de resolución y el juez humano ejerce el control final). |
+| **Nivel 5** | Autonomía total | La figura teórica del «juez robot». El sistema automatizado recibe el caso, valora las pruebas, subsume los hechos y emite una resolución legalmente vinculante para las partes sin necesidad de supervisión o intervención humana previa. | Proyecto piloto inicial de cuantías menores en Estonia (reorientado posteriormente a niveles inferiores por colisión constitucional). |
+
+
+### 3.3. Clasificación por etapas del proceso
+Una taxonomía funcional integral exige analizar la intervención de los sistemas algorítmicos en función de las diversas fases cronológicas del ciclo de vida de un conflicto, clasificándose de la siguiente manera:
+* **Etapa Inicial o Preprocesal:** Centrada en la prevención del litigio, el triaje ciudadano y la adquisición temprana de información. Los asistentes virtuales cognitivos y los chatbots jurídicos institucionales permiten a los ciudadanos comprender la viabilidad legal de sus pretensiones antes de interponer demandas formales, mitigando la congestión en las fases tempranas. Un ejemplo destacado es la herramienta *AI4JUSTICE* en la Unión Europea, la cual emplea modelos de lenguaje de gran tamaño para traducir la jerga jurídica compleja y estructurar formalmente las reclamaciones de poblaciones vulnerables. Asimismo, se han diseñado soluciones predictivas que monitorizan comunicaciones y contratos comerciales para identificar patrones de fricción latentes antes de que el conflicto llegue a escalar.
+* **Etapa Procesal o de Instrucción:** Enfocada en la gestión avanzada del conocimiento y la valoración probatoria. Las tecnologías de minería de datos e indexación semántica procesan volúmenes masivos de documentación contractual, contable o pericial en cuestión de segundos, optimizando plazos que requerían miles de horas de labor humana. En la jurisdicción penal, los sistemas analíticos asisten a los investigadores identificando contradicciones lógicas en declaraciones testificales complejas o reconstruyendo de manera fáctica escenarios criminales multifactoriales. Igualmente, las herramientas de transcripción de voz a texto en tiempo real y reconocimiento biométrico han automatizado la documentación fidedigna de las vistas orales.
+* **Etapa de Resolución y Ejecución:** Caracterizada por la aplicación práctica de herramientas de analítica predictiva y modelos generativos. Los softwares de analítica analizan masivamente los históricos jurisprudenciales de magistrados específicos para calcular estadísticamente el porcentaje de éxito de una determinada estrategia procesal. En la fase resolutiva propiamente dicha, los agentes de IA generativa asisten de forma directa en la confección material de acuerdos de mediación y borradores de laudos arbitrales, garantizando el cumplimiento estricto de todos los requisitos de forma y fondo exigidos por la legislación aplicable.
+
+---
+
+## 4. Sistemas en Norteamérica y Europa Occidental: La Primacía de la Eficiencia
+
+### 4.1. El modelo estadounidense: arbitraje privado y triaje judicial
+En el entorno jurídico de los Estados Unidos de América, la adopción de sistemas automatizados de resolución de disputas ha estado impulsada por un enfoque pragmático y de mercado, orientado de forma prioritaria a descongestionar los tribunales públicos y abaratar los costes de litigación mediante la privatización de la justicia. El modelo estadounidense se distingue por una fuerte implantación de plataformas de arbitraje privado que recurren a motores algorítmicos avanzados para absorber y procesar flujos masivos de reclamaciones comerciales y de consumo de manera totalmente digital.
+
+Un hito en este ecosistema se produjo en noviembre de 2025, cuando la *American Arbitration Association (AAA)* lanzó de manera oficial su sistema de árbitro nativo de inteligencia artificial.
+
+Esta herramienta, diseñada específicamente para dirimir disputas complejas en el sector de la construcción basadas exclusivamente en documentación e informes periciales cruzados, proyectó en sus fases operativas iniciales una drástica reducción en el ciclo de resolución de los casos, disminuyendo la media temporal de 75 a tan solo 45 días, lo que a su vez representó un ahorro en costes operativos estructurales superior al 35%.
+
+En el sector público de la justicia estadounidense, la automatización se ha enfocado en el triaje y en el diagnóstico preliminar de demandas a través de plataformas estatales de ODR, permitiendo a los ciudadanos autogestionar infracciones de tráfico o reclamaciones menores de deuda sin pisar una corte física.
+
+El uso de estas herramientas ha logrado reducir las incomparecencias involuntarias de los ciudadanos a las citaciones, abriendo al mismo tiempo un intenso debate doctrinal sobre si los asistentes virtuales de asistencia al ciudadano traspasan la línea legal del ejercicio ilegal de la abogacía (*Unauthorized Practice of Law*).
+
+### 4.2. Europa y el Reino Unido: digitalización de reclamaciones menores
+A diferencia del carácter marcadamente corporativo y privado estadounidense, la aproximación de Europa y el Reino Unido hacia la IA en la justicia se caracteriza por una preocupación estructural en torno a las garantías procesales fundamentales, la protección de datos personales y el alineamiento con marcos como el RGPD y el Reglamento de Inteligencia Artificial de la UE.
+
+En el Reino Unido, el *Her Majesty's Courts and Tribunals Service (HMCTS)* ha liderado la transformación digital de la justicia pública a través de su plataforma *Money Claims Online (MCOL)*.
+
+Entre los años 2023 y 2026, MCOL fue potenciada significativamente mediante la incorporación de agentes cognitivos basados en la tecnología *InSight DXP*, especializada en el procesamiento avanzado de reclamaciones civiles simples de hasta 100.000 libras esterlinas.
+
+La integración de estos agentes de lenguaje natural permitió alcanzar métricas de precisión superiores al 97% en la extracción de datos y clasificación de documentos no estructurados presentados por los litigantes.
+
+En el ámbito de la Unión Europea, el desarrollo de sistemas automatizados de resolución de disputas ha avanzado bajo la atenta mirada de las instituciones comunitarias, las cuales han condicionado el uso de algoritmos a una estricta supervisión, catalogando expresamente a las herramientas destinadas a la administración de justicia y a los métodos alternativos de resolución de litigios (ADR/ODR) como sistemas de «alto riesgo» bajo el artículo 6, apartado 2, del RIA, en relación con el punto 8 de su Anexo III.
+
+Por su parte, Canadá ha sentado un precedente mundial de éxito dentro del sector de la justicia pública digital a través del *Civil Resolution Tribunal (CRT)* de la provincia de Columbia Británica. El CRT destaca por su herramienta *Solution Explorer*, la cual funciona como la primera línea de interacción para los ciudadanos envueltos en disputas de propiedad horizontal (*strata property*) y accidentes de circulación de baja cuantía.
+
+El software guía a los usuarios mediante un diagnóstico interactivo, logrando de forma consistente que el 90% de las disputas ingresadas se resuelvan de manera enteramente asíncrona mediante acuerdos facilitados por el propio programa o mediadores humanos del tribunal, sin necesidad de que se dicte una resolución judicial formal o contenciosa.
+
+### 4.3. Casos de estudio: Modria y Rechtwijzer 2.0
+El análisis histórico y operativo de las plataformas pioneras de ODR ofrece lecciones críticas sobre la sostenibilidad y aceptación social de la justicia algorítmica:
+* **Modria:** Nacida originalmente a partir de los sistemas internos de resolución de disputas de plataformas comerciales masivas como eBay y PayPal, Modria se consolidó como el estándar de oro de la ODR privada a nivel global. Su arquitectura técnica integra de forma jerárquica un motor de diagnóstico, una fase de negociación asistida algorítmicamente y, en última instancia, un módulo de mediación o arbitraje condicionado. La gran aportación de Modria fue demostrar que los conflictos de consumo masivos y estandarizados (como retrasos en envíos o discrepancias de producto) pueden ser gestionados de forma eficiente y satisfactoria mediante árboles de reglas lógico-jurídicas y algoritmos de optimización que guían a las partes hacia soluciones mutuamente aceptables de forma asíncrona.
+* **Rechtwijzer 2.0:** Desarrollada en los Países Bajos en colaboración con el *Dutch Legal Aid Board* y el instituto *HiiL*, Rechtwijzer 2.0 fue diseñada originalmente como una plataforma pública ambiciosa orientada a guiar de manera online a parejas en procesos de divorcio, separación y disputas de custodia familiar. El sistema proporcionaba un entorno de negociación estructurado por algoritmos para que las partes acordaran de mutuo acuerdo las pensiones alimenticias y los regímenes de visitas. Sin embargo, a pesar de su innovación conceptual, Rechtwijzer 2.0 enfrentó severas limitaciones operativas al aplicarse a contextos familiares de alta complejidad cualitativa, demostrando una notable incapacidad para detectar de forma automatizada asimetrías extremas de poder contractual, situaciones latentes de coerción psicológica sutil o dinámicas de violencia de género entre los cónyuges. Esta insuficiencia técnica y social supuso su reestructuración, evidenciando que en materias de alta sensibilidad humana, el soporte algorítmico debe constreñirse estrictamente a la fase informativa y de triaje, reservando la resolución de fondo a profesionales humanos dotados de la empatía y la capacidad crítica necesarias para validar la voluntariedad real de los acuerdos.
+
+---
+
+## 5. Sistemas en el Sur Global y Asia-Pacífico: Saltos Tecnológicos y Pluralismo
+
+### 5.1. La vanguardia china: tribunales de internet y jueces de IA
+La República Popular China se ha posicionado de manera indiscutible como el exponente global más radical y masivo en la integración de la inteligencia artificial dentro de la función jurisdiccional, operando bajo el concepto estratégico estatal de los «Tribunales Inteligentes» (*Smart Courts*). A diferencia de las aproximaciones de soporte implementadas en Occidente, el modelo chino ha desplegado de manera oficial arquitecturas algorítmicas que ejecutan funciones de adjudicación y resolución semiautónoma a gran escala.
+
+Este despliegue se canaliza a través de los pioneros Tribunales de Internet de Hangzhou, Pekín y Cantón, los cuales poseen jurisdicción exclusiva sobre litigios nacidos en la red, tales como disputas de comercio electrónico, infracciones de derechos de autor digitales, contratos en línea y responsabilidad por contenidos en plataformas.
+
+En estos tribunales opera el denominado «juez de IA», un sistema de nivel 4 de automatización que procesa de forma autónoma las demandas presentadas a través de mini-programas en redes móviles como WeChat.
+
+El algoritmo de IA se encarga de realizar el reconocimiento de la identidad de las partes mediante biometría facial, analizar las pruebas digitales (autenticadas mediante tecnologías de *blockchain* judicial), realizar la subsunción de los hechos probados en los preceptos normativos y redactar de forma íntegra el borrador de la sentencia definitiva.
+
+Aunque formalmente las directrices imponen que un juez humano revise, valide y firme la propuesta de resolución generada por la máquina, la altísima carga de trabajo y las métricas de eficiencia exigidas provocan que, en la práctica habitual, la intervención humana tienda a ser nominal, generando intensos debates internacionales en torno a la deshumanización del proceso y la erosión del principio de inmediación judicial.
+
+### 5.2. India y el modelo SAMA: ODR en mercados emergentes
+La República de la India, aquejada por una de las crisis de congestión judicial crónicas más severas del planeta —con millones de expedientes atascados durante años en sus tribunales—, ha adoptado la resolución de conflictos en línea (ODR) como una herramienta de escape sistémica para evitar el colapso de su tráfico mercantil. El modelo indio destaca por una estrecha sinergia entre el ecosistema empresarial privado de LegalTech y las políticas institucionales de modernización del Estado.
+
+En el sector de la justicia pública, el Tribunal Supremo de la India impulsó el desarrollo de la plataforma *SUPACE (Supreme Court Portal for Assistance in Court's Efficiency)*.
+
+SUPACE fue concebida como una herramienta híbrida de soporte avanzado orientada a la recopilación, procesamiento y análisis semántico de datos procesales masivos, diseñada con el fin de asistir a los magistrados en la estructuración de la información jurídica relevante de los casos sin llegar en ningún momento a suplantar el criterio o juicio final del juez.
+
+En paralelo, en el ámbito privado y comercial, la plataforma *SAMA* ha revolucionado la gestión de disputas de consumo, comerciales y bancarias. Entidades financieras de gran envergadura, como el *ICICI Bank*, han integrado de manera estructural los servicios de SAMA para canalizar y resolver más de 10.000 disputas de cobro de deudas y morosidad contractual de forma simultánea, alcanzando resoluciones rápidas en reclamaciones de hasta 2 millones de rupias mediante arbitrajes y mediaciones asistidas por algoritmos.
+
+Otro actor de relevancia internacional nacido en este contexto es el *CORD (Centre for Online Resolution of Disputes)*, ampliamente reconocido por el desarrollo e implementación de un riguroso marco de gobernanza interna de IA responsable, asegurando que las herramientas de triaje e intermediación digital respeten la equidad y eviten la discriminación algorítmica de los litigantes.
+
+### 5.3. África Subsahariana: accesibilidad móvil e innovación adaptativa
+La aplicación de la inteligencia artificial y la ODR en la región de África Subsahariana ofrece una de las lecciones más valiosas del periodo 2023-2026, escenificando procesos de "salto tecnológico" (*leapfrogging*) donde entornos caracterizados por severas limitaciones de infraestructuras logran diseñar soluciones de alta equidad y penetración social que desafían los estándares de Occidente.
+
+En Kenia, se ha consolidado el éxito del sistema móvil *MSheria*. Diseñado específicamente para operar de forma compatible con tecnologías de baja conectividad a través de protocolos USSD y mensajes de texto SMS, MSheria permite que ciudadanos residentes en comunidades rurales aisladas accedan de forma inmediata a diagnósticos legales automatizados, información sobre sus derechos básicos y servicios de mediación preliminar, prescindiendo por completo de la necesidad de contar con teléfonos inteligentes o planes de datos móviles de coste prohibitivo.
+
+El sistema demuestra que la IA aplicada al triaje legal puede ser altamente inclusiva si se adapta a los canales de comunicación populares de la población.
+
+De manera análoga, en Níger se puso en marcha el proyecto piloto *«Hadin kai – bani fondo»*, una herramienta avanzada de resolución de disputas comunitarias basada de forma exclusiva en la voz a través de sistemas de Respuesta de Voz Interactiva (IVR) y procesamiento de lenguaje natural adaptado a lenguas locales.
+
+Este software asiste activamente a los líderes tradicionales, jueces consuetudinarios y ciudadanos en la mediación y resolución de conflictos de lindes y propiedad de la tierra, traduciendo automáticamente los testimonios orales, emparejándolos con registros históricos y normativas locales, y ofreciendo propuestas de conciliación que respetan el pluralismo jurídico de la región.
+
+---
+
+## 6. Sistemas Fallidos y Cancelados: Lecciones de la Praxis
+
+### 6.1. El mito del «juez robot» en Estonia: desinformación vs. realidad
+El caso de la República de Estonia se erige como el ejemplo doctrinal más nítido de cómo las narrativas mediáticas hiperbólicas y el fenómeno del *hype cycle* pueden llegar a distorsionar por completo la realidad técnica y jurídica de la automatización pública. En el año 2019, una oleada de publicaciones periodísticas de alcance global afirmó de manera categórica que el país báltico estaba culminando el desarrollo de un «juez robot» dotado de IA para adjudicar y dictar sentencias de forma 100% autónoma en disputas y reclamaciones de cuantías inferiores a los 7.000 euros.
+
+Sin embargo, en febrero de 2022, el Ministerio de Justicia y Asuntos Digitales de Estonia se vio obligado a emitir un comunicado institucional aclaratorio y contundente: el Estado jamás había desarrollado ni contemplaba un proyecto orientado a sustituir la figura del juez humano por un algoritmo.
+
+La realidad del desarrollo tecnológico estonio era sustancialmente más pragmática y modesta, focalizada en la optimización informática y la agilización procedimental del mecanismo nacional de orden de pago (*payment order procedure*).
+
+El caso dejó una doble lección en la materia: por un lado, evidenció la enorme brecha existente entre las ambiciones políticas de marketing digital y las infranqueables limitaciones constitucionales y de derechos fundamentales que blindan la función jurisdiccional; por otro lado, ratificó que la actividad de juzgar no es un mero ejercicio de silogismo matemático o procesamiento de datos, sino un acto de valoración axiológica y moral que requiere control humano sustancial.
+
+### 6.2. Sesgos documentados: el caso COMPAS y PredPol
+La crisis más profunda en términos de legitimidad social y jurídica dentro de la justicia algorítmica tiene su origen en los sesgos sistémicos arraigados y documentados en herramientas de analítica predictiva criminal. El software *COMPAS (Correctional Offender Management Profiling for Alternative Sanctions)*, ampliamente utilizado en diversas jurisdicciones de los Estados Unidos para asistir a los jueces en la evaluación del riesgo de reincidencia de los acusados y en la determinación de libertades condicionales o fianzas, se ha convertido en el paradigma internacional de los peligros de la opacidad discriminatoria. Una investigación liderada por el medio *ProPublica* en 2016 demostró empíricamente que el algoritmo de COMPAS penalizaba de forma desproporcionada a los ciudadanos de raza negra, asignándoles puntuaciones de riesgo de reincidencia falsamente elevadas en comparación con acusados de raza blanca con historiales delictivos similares o peores.
+
+La doctrina científica ha determinado que este sesgo discriminatorio no obedece necesariamente a un diseño de programación malicioso explícito, sino al fenómeno de la «contaminación de los datos de entrenamiento» (*data contamination*).
+
+Si el algoritmo es alimentado e instruido con registros estadísticos históricos que reflejan sesgos raciales arraigados en las detenciones policiacas de décadas pasadas —lo que la literatura especializada denomina *dirty policing*—, el sistema simplemente hereda y codifica dichos prejuicios humanos, proyectándolos hacia el futuro bajo una falsa pátina de objetividad matemática y neutralidad científica.
+
+A esta problemática se añade la falta absoluta de transparencia, dado que la metodología exacta, las variables ponderadas y el código fuente de COMPAS constituyen un secreto comercial amparado por derechos de propiedad intelectual de la empresa desarrolladora, impidiendo que los abogados defensores y los propios acusados puedan fiscalizar o impugnar las bases lógicas de una puntuación que afecta directamente a su libertad civil.
+
+A pesar de estos cuestionamientos, el Tribunal Supremo de Wisconsin avaló su uso en el célebre fallo *State v. Loomis (2016)*, aunque introdujo la advertencia obligatoria de que los índices predictivos de COMPAS jamás deben ser considerados el factor determinante exclusivo a la hora de dictar una sentencia condenatoria.
+
+De forma paralela, el software de patrullaje predictivo *PredPol* escenificó riesgos análogos debido a la generación de bucles de retroalimentación algorítmica (*algorithmic feedback loops*).
+
+El sistema analizaba datos históricos de criminalidad para enviar patrullas a cuadrantes urbanos específicos; sin embargo, al concentrar la presencia policial en esos distritos históricos, se incrementaba exponencialmente el número de detenciones menores en dichas áreas, datos que volvían a ingresar al sistema e inducían al software a exigir un patrullaje aún más intenso en las mismas zonas, perpetuando de forma infinita la estigmatización de barrios marginales o de minorías étnicas.
+
+### 6.3. Análisis de la «deriva del modelo» y alucinaciones en el ámbito jurídico
+El despliegue masivo de herramientas basadas en modelos de lenguaje de gran tamaño (LLM) ha introducido un riesgo técnico y operativo de alta criticidad en el mundo del LegalTech: las «alucinaciones jurídicas». Este fenómeno se define como la generación de outputs algorítmicos que resultan fácticamente falsos, erróneos o inexistentes, pero que son redactados por el modelo con un tono formal profundamente coherente, autoritativo y persuasivo.
+
+Diversos estudios académicos realizados entre 2024 y 2026 han registrado tasas de alucinación preocupantes en tareas jurídicas de alta responsabilidad, documentando casos donde el software inventa de manera íntegra citas jurisprudenciales, crea números de expedientes ficticios o formula interpretaciones abiertamente erróneas de normativas en vigor.
+
+Este riesgo deviene especialmente lesivo en aplicaciones directas al consumidor final que carecen del filtro de un abogado colegiado, induciendo a error a ciudadanos que fundamentan sus escritos de defensa en precedentes inexistentes generados por un chatbot de soporte básico.
+
+Aunado a esto, se encuentra el problema de la «deriva del modelo» (*model drift*), proceso por el cual un algoritmo que ha sido entrenado de forma óptima comienza a perder precisión y efectividad degradando sus respuestas a lo largo del tiempo debido a cambios sutiles en la distribución de los datos de entrada o a la falta de actualizaciones regulatorias periódicas.
+
+---
+
+## 7. Marcos Normativos y Estándares Éticos Internacionales
+
+### 7.1. El Reglamento de IA de la Unión Europea (AI Act)
+El escenario regulatorio internacional alcanzó un punto de inflexión histórico con la entrada en vigor definitiva del Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, conocido universalmente como la Ley de Inteligencia Artificial o *AI Act*. Este texto normativo representa el primer marco jurídico vinculante y transversal a nivel mundial que supera las meras declaraciones éticas de buenas intenciones para imponer obligaciones exigibles bajo un enfoque punitivo basado estrictamente en el nivel de riesgo de las aplicaciones.
+
+El Reglamento articula una pirámide de riesgo dividida en cuatro escalones claramente diferenciados: riesgo inaceptable (sistemas prohibidos de plano), alto riesgo (sistemas sujetos a rigurosas auditorías y certificaciones), riesgo limitado (sujetos a deberes de transparencia) y riesgo mínimo o nulo.
+
+Bajo esta estructura, el legislador europeo ubicó de forma inequívoca al uso de la IA en la administración de justicia y en los métodos alternativos de resolución de litigios en la categoría de **«alto riesgo»**.
+
+Específicamente, de conformidad con el punto 8 del Anexo III del RIA, se consideran de alto riesgo aquellos sistemas de IA destinados a ser utilizados por una autoridad judicial o en su nombre para asistir a dicha autoridad en la investigación e interpretación de los hechos y el derecho, así como en la aplicación de la ley a unos hechos concretos, o bien aquellos destinados de forma análoga a la resolución alternativa de litigios.
+
+Esta catalogación impone severas obligaciones legales antes de que cualquier software pueda ser desplegado en el mercado:
+* **Garantía de Supervisión Humana Efectiva (Artículo 14 RIA):** El Reglamento exige de forma mandatoria que todos los sistemas de alto riesgo incorporen interfaces y medidas técnicas que permitan una supervisión humana real, continua y efectiva a lo largo de todo su ciclo de vida útil.
+
+Es crucial resaltar el carácter complementario pero diferenciado de este precepto respecto al célebre artículo 22 del Reglamento General de Protección de Datos (RGPD). Mientras que el artículo 22 del RGPD consagra un derecho subjetivo del ciudadano a no ser objeto de decisiones individuales basadas exclusivamente en tratamientos automatizados que produzcan efectos jurídicos, el artículo 14 de la Ley de IA va más allá, exigiendo de forma proactiva que la intervención humana de control sea sustancial, dotando al supervisor de las competencias necesarias para desestimar, corregir o apagar el sistema, impidiendo así que los operadores jurídicos caigan en el fenómeno del «sesgo de automatización» (*automation bias*) por el cual el humano tiende de forma inconsciente a dar por correcta la salida de la máquina sin contrastarla de forma crítica.
+* **Sistemas de Gestión de Riesgos y Calidad de Datos (Artículos 9 y 10):** Obligatoriedad de implementar procesos continuos de identificación y mitigación de riesgos, junto con requisitos estrictos de gobernanza de datos para asegurar que los conjuntos de entrenamiento empleados para adiestrar a los algoritmos estén libres de sesgos discriminatorios y gocen de la suficiente relevancia y representatividad estadística.
+* **Transparencia y Registro Público:** Los sistemas judiciales automatizados deben registrarse en una base de datos centralizada de la UE y proporcionar documentación técnica detallada que permita la trazabilidad completa del comportamiento del software.
+
+### 7.2. Tratados internacionales y directrices de la OCDE
+Más allá de las fronteras de la Unión Europea, la gobernanza de la justicia algorítmica se ha venido estructurando a través de un cuerpo de soft-law e instrumentos internacionales multilaterales:
+* **La Carta Ética Europea de la CEPEJ:** Adoptada originalmente en diciembre de 2018 por la Comisión Europea para la Eficiencia de la Justicia (CEPEJ) del Consejo de Europa, y sometida a evaluaciones y adendas de seguimiento continuas durante el periodo 2023-2026, este documento establece cinco principios cardinales ineludibles: (1) Respeto a los derechos fundamentales, (2) No discriminación de colectivos, (3) Calidad y seguridad en el procesamiento de decisiones, (4) Transparencia, imparcialidad y neutralidad metodológica, y (5) El principio de «control por el usuario», que prohíbe taxativamente la pérdida de autonomía de los profesionales de la justicia frente a los dictámenes técnicos. Este marco se vio robustecido por la adopción, el 17 de mayo de 2024, del Marco Convenio del Consejo de Europa sobre Inteligencia Artificial, Derechos Humanos, Democracia y el Estado de Derecho (STCE núm. 225), consolidando un tratado internacional vinculante que obliga a los Estados firmantes a proteger las garantías procesales de los litigantes frente a los abusos algorítmicos.
+* **Principios de la OCDE sobre Inteligencia Artificial:** Actualizados formalmente en mayo de 2024 para refinar la definición conceptual de los sistemas autónomos en consonancia con la irrupción de la IA generativa, los principios de la OCDE imponen directrices de administración responsable, equidad y rendición de cuentas (*accountability*). Estos criterios han funcionado como la matriz de diseño sobre la cual naciones como Canadá, Japón y los Estados Unidos han venido modelando sus respectivas estrategias y directrices estatales de justicia digital, promoviendo una armonización técnica que resulta indispensable para facilitar la interoperabilidad en los sistemas de ODR destinados a dirimir litigios transfronterizos comerciales.
+
+### 7.3. Normas técnicas y certificaciones: ISO/IEC 42001
+El control de los sistemas de resolución de conflictos basados en IA se fundamenta tanto en la normativa legal como en la estandarización e ingeniería técnica industrial. En este ámbito, la norma internacional de referencia es la **ISO/IEC 42001:2023**, publicada originalmente en diciembre de 2023 bajo la denominación *Information Technology – Artificial Intelligence – Management System*. La ISO 42001 establece el primer estándar internacional certificable que dicta los requisitos para establecer, implementar, mantener y mejorar de forma continua un Sistema de Gestión de Inteligencia Artificial en el seno de las organizaciones. Para las entidades desarrolladoras y los tribunales que despliegan herramientas de ODR y ADM, la certificación bajo la norma ISO 42001 funciona como una garantía objetiva de cumplimiento ético y metodológico, forzando la ejecución de auditorías internas recurrentes, evaluaciones de impacto ético y controles rigurosos sobre el ciclo de vida del software.
+
+A fin de mitigar el riesgo real de exclusión social y analfabetismo tecnológico, la comunidad académica ha propuesto marcos metodológicos complementarios como **JUSTAID**. El marco JUSTAID se define como un sistema de métricas específicas diseñado para evaluar de manera objetiva el nivel de accesibilidad lingüística, la usabilidad inclusiva y la neutralidad de la interfaz en sistemas de ODR de bajo coste, orientándose de forma prioritaria a proteger a aquellos actores e individuos que presentan escasa capacidad técnica, financiera o cognitiva frente al despliegue de las herramientas digitales.
+
+El gran desafío contemporáneo de la gobernanza global radica en hallar un punto de equilibrio idóneo que evite que una sobrerregulación asfixie la innovación democrática que abarata la justicia, al tiempo que se sostienen controles estrictos sobre los algoritmos de alto riesgo que impactan de manera directa sobre la libertad ciudadana y los derechos civiles más elementales.
+
+---
+
+## 8. Análisis Empírico de Justicia Procesal y Confianza del Usuario
+
+### 8.1. Percepciones de justicia distributiva en sistemas híbridos
+La transición estructural desde los modelos tradicionales de resolución de disputas gestionados por terceros neutrales humanos hacia entornos automatizados o híbridos ha transformado la manera en que los ciudadanos experimentan y evalúan conceptualmente la acción de la justicia. Los estudios empíricos y sociológicos desarrollados de forma reciente evidencian la existencia de una fractura crítica entre la eficiencia técnica algorítmica y la psicología de los litigantes. Mientras que la literatura de la ingeniería informática y las ciencias de la computación tiende de forma sistemática a equiparar la noción de equidad con la consistencia matemática, la reducción de la varianza estadística y la erradicación de la fatiga cognitiva del decisor, la investigación empírica jurídica demuestra que la confianza real del usuario no depende de la optimización del proceso, sino de la percepción subjetiva de la *justicia procesal (procedural justice)* a lo largo del camino, con total independencia del resultado distributivo final.
+
+Cuando los mediadores y jueces humanos son sustituidos íntegramente por motores algorítmicos, los usuarios suelen reportar una intensa sensación de «alienación sistémica»: experimentan que el software opera bajo un enfoque reduccionista, axiomático e incapaz de ponderar los matices de su caso particular.
+
+Evaluaciones empíricas cruzadas han revelado que, en controversias marcadas por una alta complejidad cualitativa, los sistemas híbridos son valorados por los usuarios como significativamente menos justos desde la perspectiva procesal en comparación con los tribunales humanos tradicionales.
+
+Esto sugiere que la ciudadanía interpreta la introducción directa de la IA en la toma de decisiones como una pérdida de empatía y una dilución del contexto moral indispensable para dirimir un conflicto humano.
+
+Asimismo, las investigaciones demuestran que la secuenciación temporal en la que intervienen el humano y la máquina dentro del proceso de toma de decisiones jerárquico resulta plenamente determinante.
+
+Un experimento empírico desarrollado en el año 2023 sobre muestras de litigantes en Singapur y Estados Unidos demostró que una secuencia del tipo "Humano-IA" —escenario donde un operador humano efectúa el triaje, filtro y ordenación inicial del caso, pero delega en el motor de IA la emisión del fallo definitivo y vinculante— provoca un desplome severo en los índices de percepción de justicia y legitimidad del sistema.
+
+Por el contrario, la secuencia inversa del tipo **"IA-Humano"** —donde el algoritmo avanzado procesa los volúmenes documentales, detecta patrones y elabora un dictamen previo o borrador de recomendación, pero el juez o mediador humano retiene de forma exclusiva la potestad soberana de dictar la resolución final— mantiene estables e incluso llega a incrementar los niveles de confianza del público, validando el rol de la IA estrictamente como una infraestructura de soporte.
+
+### 8.2. El derecho a la explicabilidad y transparencia explicativa
+El pilar fundamental para sostener la legitimidad institucional de la justicia automatizada radica en la transparencia explicativa, superando las tradicionales métricas de opacidad técnica. La capacidad del sistema para desglosar, en un lenguaje natural perfectamente accesible y comprensible para un ciudadano no experto, cuáles han sido las premisas fácticas, las normas jurídicas aplicadas y el camino lógico-estadístico adoptado por el algoritmo para proponer una determinada solución es un factor significativamente más crítico para los usuarios que la mera celeridad del proceso o la reducción de las tasas financieras. La confianza social no se edifica sobre la velocidad transaccional del software, sino sobre la comprensibilidad y la interfaz explicativa del sistema.
+
+Desde el punto de vista doctrinal y de los derechos fundamentales, coexisten actualmente dos regímenes normativos diferenciados y complementarios en el plano de la explicabilidad:
+* **El régimen del Artículo 22 del RGPD:** Enfocado en conferir una protección reactiva al ciudadano frente al procesamiento automatizado de sus datos personales, otorgándole el derecho a impugnar la decisión, expresar su punto de vista y solicitar la intervención humana de revisión.
+* **El derecho autónomo del Artículo 86 de la Ley de IA (RIA):** Este precepto consagra un derecho proactivo de mayor alcance y calado político-jurídico: cualquier persona física o jurídica que se vea afectada por una salida o decisión emitida por un sistema de IA catalogado como de alto riesgo (como los softwares de justicia y ODR) ostenta el derecho inalienable a obtener por parte del operador que despliega el sistema una explicación clara, detallada y comprensible sobre el papel específico que ha desempeñado dicha herramienta en el iter procedimental de toma de decisiones.
+
+Este derecho no posee únicamente una dimensión puramente instrumental orientada a la subsanación de errores materiales o a facilitar la interposición de recursos de apelación, sino que encierra un valor intrínseco fundamentado en la dignidad humana: el derecho a no ser tratado por las instituciones públicas como un mero objeto o entrada numérica subordinada al dictamen inapelable de una máquina opaca.
+
+### 8.3. Complejidad de la tarea y legitimidad del sistema
+La aceptabilidad social de los sistemas algorítmicos se encuentra condicionada por la naturaleza y el nivel de complejidad cualitativa intrínseca de la disputa sometida a examen. La evidencia empírica permite trazar una frontera clara entre dos tipos de escenarios procesales:
+* **Tareas de baja complejidad cualitativa:** Aquellas disputas estandarizadas que dependen de información eminentemente objetiva, numérica y fácilmente codificable en variables binarias (como litigios por multas de tráfico, reclamaciones menores de impagos de tarjetas de crédito o triajes administrativos de tasas). En estas materias, los procesos algorítmicos y las plataformas de ODR gozan de altos índices de aceptación, siendo valorados por los usuarios como sistemas tan justos o incluso más equitativos que las cortes humanas, al percibirse que eliminan la arbitrariedad, la pérdida de tiempo y aplican las reglas de forma matemática, consistente y transparente. Sin embargo, incluso en estos entornos aparentemente inocuos persiste latente el riesgo del sesgo de automatización de los funcionarios encargados de refrendar los fallos.
+* **Tareas de alta complejidad cualitativa:** Aquellos conflictos que involucran variables de extrema subjetividad, valoraciones éticas contextuales y consideraciones de equidad profunda que desbordan la mera literalidad de la norma (tales como la asignación de custodias de menores y patrias potestades en divorcios contenciosos, la moderación de discursos políticos protegidos frente a la difamación o la determinación de la culpabilidad en juicios penales con indicios circunstanciales). En estos ámbitos, los algoritmos muestran un rechazo social generalizado y severas deficiencias técnicas, al ser vistos como sistemas ciegos ante las variables cualitativas y desprovistos de la sensibilidad contextual profunda y el juicio moral indispensables para la equidad.
+
+---
+
+## 9. Conclusiones y Recomendaciones de Gobernanza
+
+### 9.1. El imperativo del control humano significativo
+La principal conclusión derivada del análisis comparativo global sobre la implantación de la inteligencia artificial en la resolución de conflictos dicta que el núcleo de la legitimidad jurídica y social no reside en el nivel de sofisticación técnica o el refinamiento matemático de los algoritmos, sino en la preservación estricta e innegociable del **Control Humano Significativo** (*Meaningful Human Control - MHC*). La delegación incontrolada de funciones de adjudicación a sistemas automatizados desprovistos de una supervisión humana robusta y consciente degrada de manera inevitable la función del operador jurídico, convirtiéndolo en un mero trámite formal y burocrático de validación mecánica.
+
+Esta preocupante degradación del rol judicial da lugar a lo que la literatura sociotécnica contemporánea denomina las **«zonas de deformación moral»** (*moral crumple zones*).
+
+En analogía con las zonas de deformación de los automóviles diseñadas para absorber el impacto de un choque, las zonas de deformación moral describen aquellos entornos donde los profesionales humanos absorben e internalizan de manera íntegra toda la responsabilidad ética, civil y penal por fallos o decisiones erróneas emitidas por sistemas automatizados de caja negra que, debido a la complejidad y opacidad intrínseca del software, son totalmente incapaces de comprender, fiscalizar o mitigar en tiempo real.
+
+Para evitar esta quiebra del principio de responsabilidad, el imperativo del MHC exige que el operador humano no se limite a estampar una firma digital automática sobre el output del software, sino que conserve la capacidad cognitiva activa de comprender la lógica profunda del sistema, contrastar sus conclusiones y desestimar de forma soberana el dictamen algorítmico cuando este colisione con criterios de justicia material o equidad moral.
+
+### 9.2. Hacia una arquitectura de justicia centrada en las personas
+El despliegue de las tecnologías digitales y las plataformas de ODR debe abandonar los antiguos enfoques corporativos orientados de forma exclusiva a la optimización macroeconómica y la reducción de costes burocráticos, para transitar de manera decidida hacia una **arquitectura de justicia centrada en las personas** (*people-centred justice*). Este paradigma postula que el éxito real de una innovación LegalTech no se mide en función del número de casos despachados por minuto, sino en su capacidad para empoderar de forma efectiva al ciudadano común para navegar sus necesidades legales cotidianas, comprender sus derechos y disolver las barreras tradicionales de acceso a la justicia. La evidencia empírica recabada a nivel internacional demuestra que el éxito de las plataformas más inclusivas no guarda relación con la potencia de su hardware o la complejidad de sus redes neuronales, sino con el diseño de interfaces de usuario accesibles, intuitivas y lingüísticamente neutrales que minimizan la brecha digital. En entornos marcados por profundas desigualdades estructurales, la gobernanza debe priorizar tecnologías de bajo coste que maximicen la alfabetización jurídica de la población.
+
+### 9.3. Agenda para la investigación futura y recomendaciones operativas
+La agenda de investigación científica y doctrinal para el periodo posterior a 2026 debe estructurarse sobre tres pilares críticos:
+1. **Auditorías de sesgo estandarizadas:** Es urgente diseñar metodologías normativas y técnicas homogéneas para ejecutar auditorías de sesgo independientes, externas y recurrentes sobre los algoritmos de ODR. Dado que los sesgos discriminatorios emergen inevitablemente de la contaminación histórica de los datos, la ciencia del Derecho debe colaborar estrechamente con la ciencia de datos para programar herramientas automatizadas de detección de discriminación indirecta y de las denominadas *proxy variables* —aquellas variables de correlación opaca que, sin mencionar explícitamente un criterio protegido (como la raza o el género), reproducen de forma estadística idéntico resultado discriminatorio—.
+2. **Impacto de la complejidad en la legitimidad:** Desarrollar investigaciones empíricas profundas que permitan delimitar de forma matemática y sociológica los umbrales específicos de complejidad y sensibilidad temática a partir de los cuales el uso de la IA deba quedar estrictamente prohibido o limitado, blindando áreas sensibles como el derecho penal y el derecho de familia frente a derivas puramente automatizadas.
+3. **Métricas de impacto psicosocial:** Evaluar a largo plazo los efectos de la justicia digital en la salud democrática de las sociedades y en los niveles de confianza institucional de los ciudadanos.
+
+Desde un plano institucional y operativo inmediato, se formulan tres propuestas de gobernanza concretas para los reguladores:
+* **Primera:** La creación obligatoria de un **registro público institucional de sistemas de IA** en uso por parte de las autoridades judiciales y plataformas de ODR autorizadas, exigiendo la publicación transparente de rigurosas evaluaciones de impacto en los derechos fundamentales previas a cualquier despliegue comercial, en perfecta consonancia con el régimen de evaluación de conformidad dictado por los artículos 9, 49 y 71 del Reglamento de IA de la Unión Europea.
+* **Segunda:** La institucionalización formal de la figura legal del **«defensor del algoritmo»** (*algorithmic advocate*) en todos aquellos procedimientos judiciales o de arbitraje que involucren el uso de sistemas dotados de un nivel 3 o superior de automatización. Este profesional especializado estará investido de la competencia legal para exigir la apertura técnica de los parámetros de decisión del software, auditar los datos de entrenamiento y recurrir la lógica interna del sistema ante los órganos de revisión competentes en salvaguarda del derecho de defensa de los litigantes.
+* **Tercera:** La adopción global de **estándares abiertos de interoperabilidad técnica y semántica** que impidan la fragmentación de los sistemas de justicia digital y garanticen que las plataformas públicas y privadas cooperen de forma segura, respetando las soberanías jurisdiccionales y los derechos de los ciudadanos.
+
+---
+
+## 10. Bibliografía
+
+### I. Normativa
+* Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, relativo al establecimiento de normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial o RIA), DO L, 12 de julio de 2024.
+* Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (Reglamento General de Protección de Datos o RGPD), DO L 119, 4 de mayo de 2016.
+* Consejo de Europa, Marco Convenio sobre Inteligencia Artificial, Derechos Humanos, Democracia y el Estado de Derecho (STCE núm. 225), adoptado el 17 de mayo de 2024.
+* Reglamento (UE) n.º 524/2013 del Parlamento Europeo y del Consejo, de 21 de mayo de 2013, sobre resolución de litigios en línea en materia de consumo, DO L 165, 18 de junio de 2013.
+* ISO/IEC 42001:2023, Information Technology – Artificial Intelligence – Management System, diciembre de 2023.
+
+### II. Jurisprudencia
+* *State v. Loomis*, 881 N.W.2d 749 (Wis. 2016).
+
+### III. Doctrina Científica e Informes Institucionales
+* ABBOTT, Ryan y ELLIOTT, Brinson S., «Putting the Artificial Intelligence in Alternative Dispute Resolution: How AI Rules Will Become ADR Rules», Surrey Open Research, 2023.
+* ADAMS BHATTI, Sophia, *AI in our Justice System*, JUSTICE (UK), 2025.
+* Algorithmic Justice on Trial: Automated Dispute Resolution, Procedural Fairness, and Global South Deployments (2022-2026), 2026.
+* CASCONE, Giulia, «The use of artificial intelligence in EU criminal justice systems: first insights and emerging trends», *Open Research Europe*, 2025.
+* Comisión Europea para la Eficiencia de la Justicia (CEPEJ), *Carta Ética Europea sobre el uso de la inteligencia artificial en los sistemas judiciales y su entorno*, Consejo de Europa, Estrasburgo, diciembre de 2018.
+* DOLIDZE, Tatia, «Artificial Intelligence in Judicial Decision-Making: Can a Robot Replace a Judge?», *Law and World*, 2026.
+* FINCH, W. W. y BUTT, M., «Gaps in AI-Compliant Complementary Governance Frameworks' Suitability (for Low-Capacity Actors)», *MDPI*, 2025.
+* FLORES, Anthony W.; BECHTEL, Kristin y LOWENKAMP, Christopher T., «False Positives, False Negatives, and False Analyses: A Rejoinder to Machine Bias», *Federal Probation*, vol. 80, núm. 2 (2016), pp. 38-46.
+* HODGE JR., Samuel D., «Is the Use of Artificial Intelligence in Alternative Dispute Resolution a Viable Option or Wishful Thinking?», *Pepperdine Dispute Resolution Law Journal*, 2024.
+* Integración de Inteligencia Artificial en los Sistemas de Resolución de Conflictos y Administración de Justicia: Un Análisis Global Comparativo (2023-2026), 2026.
+* LAUKEMANN, Björn, «Alternative Dispute Resolution and Artificial Intelligence», *CPLJ*, 2024.
+* Ministerio de Justicia y Asuntos Digitales de Estonia, *Estonia does not develop AI Judge*, comunicado institucional, febrero de 2022.
+* National Center for State Courts, *Lessons Learned in Online Dispute Resolution*, National Center for State Courts, 2023.
+* OCDE, *Explanatory memorandum on the updated OECD definition of an AI system*, OECD Digital Economy Papers, n.º 345, París, 2024.
+* OCDE, *Governing with Artificial Intelligence. AI in Justice Administration and Access to Justice*, OCDE, París, 2025.
+* Technology Law (Ed.), *Why Governments Are Tempted to Replace Judges With Automated AI Systems*, Technology Law, 2026.
+* VERTIN, Emma, «AI in Mediation: Revolutionizing Conflict Resolution or Raising New Questions?», *Moritz College of Law*, 2024.
+* «Who Should Be First? How and When AI-Human Order Influences Procedural Justice in a Multistage Decision-Making Process», *PMC/NCBI*, 2023.
+* WU, Margaret y WU, Jonah, «AI Goes to Court: The Growing Landscape of AI for Access to Justice», 2019.

@@ -1,0 +1,222 @@
+---
+title: "IA en Centros de Operaciones de Seguridad: Gobernanza y Límites"
+description: "Análisis doctrinal sobre la integración de IA y ML en los SOC: automatización SOAR, UEBA, cumplimiento RGPD y AI Act, y responsabilidad de sistemas algorítmicos en ciberseguridad."
+date: "2026-05-03"
+tags: ["inteligencia artificial", "SOC", "AI Act", "RGPD", "automatización", "ciberseguridad"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ia-centros-operaciones-seguridad-automatizacion-gobernanza-juridica"
+readingTime: 18
+pdf: "/fuentes/1777084881052.pdf"
+---
+
+# Inteligencia Artificial en los Centros de Operaciones de Seguridad: Automatización, Gobernanza y Límites Jurídicos
+
+La integración de sistemas de inteligencia artificial en los *Security Operations Centers* (SOC) no es ya una promesa de futuro: es el eje sobre el que pivota la detección avanzada de amenazas, la automatización de la respuesta a incidentes y la gestión de métricas de rendimiento en la ciberseguridad corporativa contemporánea.
+
+Sin embargo, esta transformación tecnológica arrastra consigo una constelación de interrogantes jurídicos que la doctrina ha abordado de forma fragmentaria y, en muchos casos, con retraso respecto a la velocidad de despliegue operativo. ¿Qué estatuto normativo corresponde a un sistema de IA que adopta decisiones de contención autónoma sobre *endpoints*? ¿Quién responde cuando un modelo de *machine learning* produce un falso positivo que paraliza infraestructura crítica? ¿Cómo se articula el RGPD cuando el UEBA (*User and Entity Behavior Analytics*) procesa perfiles conductuales de empleados en tiempo real, sin intervención humana en la cadena de decisión?
+
+Este análisis aborda estas cuestiones desde una perspectiva doctrinal, tomando como punto de partida la arquitectura técnica del SOC moderno tal como la describe la literatura especializada de referencia —en particular la obra *SOC Analysis* de Basta, Basta, Anwar y Essar (Wiley, 2024)— y proyectando sobre ella el marco regulatorio europeo vigente: el Reglamento (UE) 2024/1689 de Inteligencia Artificial (*AI Act*), el Reglamento (UE) 2016/679 (RGPD), la Directiva NIS2 transpuesta al ordenamiento español mediante la Ley 11/2022, y el incipiente régimen de responsabilidad civil por daños causados por sistemas de IA derivado de la propuesta de Directiva de Responsabilidad en materia de IA.
+
+El PDF fuente de este análisis está disponible para consulta y descarga al final de este artículo.
+
+---
+
+## La arquitectura técnica del SOC como presupuesto del análisis jurídico
+
+Para que el análisis normativo no degenere en abstracción, conviene fijar con precisión cuáles son los sistemas de IA que operan en el ecosistema SOC moderno y cuál es la naturaleza de sus funciones. La literatura técnica distingue, al menos, cinco categorías funcionales con relevancia jurídica autónoma, cada una de las cuales plantea un conjunto de interrogantes normativos específicos.
+
+**Los sistemas SIEM de nueva generación** (*Security Information and Event Management*) constituyen el núcleo de correlación de eventos. Su función clásica —agregar *logs* y generar alertas basadas en reglas estáticas— ha evolucionado hacia modelos predictivos capaces de detectar patrones anómalos mediante algoritmos de aprendizaje no supervisado.
+
+La transición del SIEM determinista al SIEM con capacidades de ML implica, jurídicamente, el tránsito desde un sistema cuya lógica de decisión puede ser auditada e impugnada —porque cada alerta tiene una causa documentable— hacia un sistema probabilístico cuya opacidad inherente plantea problemas severos de explicabilidad. Cuando un SIEM de nueva generación señala una amenaza, la pregunta "¿por qué?
+
+" no siempre tiene una respuesta técnicamente articulable en términos comprensibles para un auditor, un juez o el propio interesado.
+
+**Los sistemas UEBA** (*User and Entity Behavior Analytics*) elaboran perfiles conductuales de usuarios y entidades a partir del análisis masivo de datos de acceso, patrones de descarga, comunicaciones de red, comportamiento en aplicaciones y actividad en sistemas corporativos. Establecen líneas de base estadísticas —*baselines*— para cada grupo de pares y señalan anomalías que se alejan de esos umbrales.
+
+Desde la perspectiva del RGPD, esta funcionalidad equivale a elaboración de perfiles en el sentido del artículo 4.4 del Reglamento, con las consecuencias que ello implica: la potencial aplicación del artículo 22 cuando las decisiones adoptadas a partir de esos perfiles produzcan efectos significativos sobre el interesado y se adopten de forma exclusivamente automatizada.
+
+**Las plataformas SOAR** (*Security Orchestration, Automation and Response*) ejecutan *playbooks* automatizados que coordinan la respuesta entre herramientas heterogéneas: aíslan *endpoints*, bloquean direcciones IP, suspenden cuentas de usuario, cuarentenan ficheros y generan *tickets* en sistemas de gestión. La automatización de estas acciones —sin intervención humana previa en cada decisión individual— plantea la cuestión más aguda en términos de responsabilidad jurídica: cuando la respuesta automatizada produce daño —bloqueo indebido de un sistema crítico, suspensión errónea de una cuenta de administrador en mitad de una operación sensible, cuarentena de ficheros legítimos que provoca pérdida de datos— ¿es ese daño atribuible al proveedor del sistema SOAR, al responsable de la organización desplegante que configuró los *playbooks*, o concurre una pluralidad de responsables solidarios?
+
+**Los modelos de detección de amenazas basados en ML supervisado y no supervisado** analizan tráfico de red, comportamiento de procesos en *endpoints* e indicadores de compromiso para identificar amenazas avanzadas que evaden las soluciones basadas en firmas.
+
+Su capacidad predictiva depende de la calidad y representatividad de los datos de entrenamiento, lo que introduce el riesgo de sesgo algorítmico con consecuencias operativas directas: amenazas reales no detectadas —falsos negativos— o usuarios legítimos erróneamente señalados —falsos positivos— con el potencial de desencadenar respuestas automatizadas perjudiciales.
+
+**Los sistemas de análisis forense automatizado** reconstruyen cadenas de ataque, generan hipótesis sobre vectores de intrusión y correlacionan indicadores temporales para producir cronologías de incidente.
+
+Cuando estos sistemas alimentan informes que se presentan como prueba en procedimientos disciplinarios o judiciales, se plantean cuestiones de fiabilidad probatoria que el derecho procesal español no tiene aún normativamente resueltas: ¿qué valor probatorio tiene un informe forense generado por un modelo de ML sin intervención humana en la elaboración de sus conclusiones?
+
+---
+
+## El RGPD ante el UEBA: perfilado, supervisión humana y legitimación del tratamiento
+
+El UEBA es, de todos los sistemas de IA presentes en el SOC, el que plantea el conflicto más inmediato con el RGPD. Su lógica operativa exige tratar datos personales de empleados —registros de acceso, navegación, transferencias de ficheros, patrones de uso de aplicaciones— con el propósito de construir modelos estadísticos de comportamiento normal y detectar desviaciones.
+
+Este tratamiento tiene una estructura jurídica compleja que conviene descomponer con precisión.
+
+En cuanto a la **base jurídica del tratamiento**, el interés legítimo del artículo 6.1.f) RGPD es la opción más invocada en la práctica, pero su aplicación al UEBA corporativo está lejos de ser pacífica. El test de ponderación que exige el artículo 6.1.f) —legitimidad del interés, necesidad del tratamiento y no prevalencia de los derechos e intereses del interesado— produce resultados distintos según el contexto.
+
+La ciberseguridad como interés legítimo es reconocida expresamente en el Considerando 49 RGPD, que cita la seguridad de la red y de la información como ejemplo paradigmático. Ahora bien, este reconocimiento no opera como una carta blanca: el principio de minimización del artículo 5.1.c) exige que el tratamiento se limite a lo estrictamente necesario para el fin de seguridad, lo que obliga a cuestionar la proporcionalidad de los sistemas UEBA que monitorizan la totalidad del comportamiento del usuario en lugar de limitarse a indicadores específicos de compromiso.
+
+Dicho esto, la cuestión más delicada no es la base jurídica sino la **prohibición de decisiones exclusivamente automatizadas** del artículo 22 RGPD. El precepto prohíbe las decisiones que afecten significativamente al interesado y se adopten de forma exclusivamente automatizada basándose en su perfil.
+
+Cuando el UEBA detecta una anomalía y el SOAR responde automáticamente suspendiendo la cuenta del empleado —sin que ningún analista humano haya revisado la alerta— se produce exactamente la situación que el artículo 22 pretende evitar.
+
+La literalidad del precepto exige que exista siempre una intervención humana significativa en la decisión que afecta al empleado, lo que en la práctica impone un diseño de *Human in the Loop* que muchas organizaciones omiten por razones de velocidad operativa.
+
+Aquí es donde el análisis se complica. La Directiva NIS2 —transpuesta en el ordenamiento español y aplicable a las entidades esenciales e importantes— impone la obligación de contar con capacidades de detección y respuesta a incidentes suficientemente ágiles.
+
+La velocidad de respuesta es, en ciberseguridad, un factor determinante para la contención del daño: los estudios sobre automatización en SOC indican reducciones del 30 al 50% en la carga de trabajo de los analistas gracias a la automatización, y la respuesta en tiempo real a amenazas como el *ransomware* puede requerir aislamiento de sistemas en cuestión de segundos.
+
+Esta exigencia de agilidad operativa colisiona frontalmente con la exigencia de supervisión humana del artículo 22 RGPD cuando la decisión automatizada afecta a datos de empleados. La tensión no tiene una solución normativa clara, y es precisamente aquí donde la doctrina debe construir criterios de equilibrio.
+
+Una posición razonable —aunque no exenta de debate— sería distinguir entre la **respuesta técnica automatizada** (aislamiento de un *endpoint* comprometido, bloqueo de una IP maliciosa) y la **decisión con efectos sobre el empleado** (suspensión de cuenta, restricción de acceso a sistemas corporativos).
+
+La primera opera sobre infraestructura y no requiere supervisión humana previa en el sentido del artículo 22, porque no produce efectos jurídicos o significativos sobre una persona física. La segunda sí los produce, y exige al menos una revisión humana antes de que la decisión se consolide.
+
+Este diseño en dos fases —respuesta técnica inmediata y automatizada, revisión humana antes de la decisión con efectos sobre personas— es compatible tanto con las exigencias de agilidad de NIS2 como con las garantías del artículo 22 RGPD, aunque requiere una arquitectura de *playbooks* expresamente diseñada para distinguir entre ambas categorías de acción.
+
+---
+
+## El AI Act y la clasificación de riesgo de los sistemas de IA en el SOC
+
+El *AI Act* entró en vigor el 1 de agosto de 2024 con un calendario de aplicación escalonado que alcanzará plena efectividad en agosto de 2026. Su sistema de clasificación de riesgo —prohibido, alto riesgo, riesgo limitado, riesgo mínimo— tiene consecuencias directas sobre los sistemas de IA desplegados en los SOC, aunque la doctrina no ha prestado aún atención sistemática a esta intersección.
+
+El Anexo III del *AI Act* enumera los sistemas de alto riesgo. En lo que interesa al ecosistema SOC, la categoría 6 —sistemas de IA destinados a ser utilizados con fines de acceso al empleo, selección, gestión y supervisión— es la más relevante cuando el UEBA se utiliza para monitorizar el comportamiento de empleados con posibles consecuencias disciplinarias.
+
+Si el sistema se emplea no solo para detectar amenazas externas sino también para identificar amenazas internas —*insider threats*— y esas conclusiones se utilizan en procedimientos disciplinarios, el sistema califica como de alto riesgo y queda sujeto al régimen completo del Capítulo III del *AI Act*: evaluación de conformidad, registro en la base de datos de la UE, documentación técnica exhaustiva, gestión de riesgos, datos de entrenamiento representativos, trazabilidad, transparencia y supervisión humana.
+
+Ahora bien, la aplicación del *AI Act* a los sistemas SOC presenta una complejidad adicional que la doctrina ha pasado por alto: el artículo 2.3 excluye del ámbito de aplicación del Reglamento los sistemas de IA desarrollados o utilizados exclusivamente con fines de seguridad nacional.
+
+Esta exclusión, sin embargo, no alcanza a la inmensa mayoría de los SOC corporativos privados, que no operan en el ámbito de la seguridad nacional sino de la ciberseguridad empresarial. Para ellos, el *AI Act* es plenamente aplicable.
+
+Lo que resulta llamativo es que el propio Reglamento no resuelve de forma expresa la situación de los sistemas de IA utilizados en el SOC con doble función: detección de amenazas externas —que podría calificar como riesgo mínimo o limitado— y detección de amenazas internas con efectos sobre empleados —que califica como alto riesgo—.
+
+La solución más coherente con la teleología del Reglamento sería aplicar el régimen de alto riesgo al sistema en su conjunto cuando este tenga capacidad de producir decisiones con efectos sobre personas físicas, con independencia de que esa capacidad no se active en todos los casos.
+
+Esto impondría a las organizaciones que despliegan UEBA integrado en SOAR la obligación de someter el sistema combinado al régimen de alto riesgo, con todo lo que ello implica en términos de documentación, evaluación de conformidad y supervisión humana.
+
+---
+
+## Automatización SOAR, *playbooks* y responsabilidad por daños
+
+La automatización de la respuesta a incidentes mediante plataformas SOAR es uno de los avances más significativos en la operación de los SOC modernos. Los *playbooks* —secuencias predefinidas de acciones automatizadas que se ejecutan ante determinados eventos— permiten reducir el tiempo de respuesta de días a segundos y liberar a los analistas de tareas repetitivas para concentrarlos en amenazas complejas.
+
+Sin embargo, la automatización a escala plantea un problema jurídico de fondo que la práctica tiende a ignorar: la atribución de responsabilidad cuando la respuesta automatizada produce daño.
+
+Considérese un escenario representativo: un SOAR ejecuta un *playbook* de contención que aísla un segmento de red al detectar un patrón consistente con un ataque de *ransomware*. El aislamiento, sin embargo, desconecta por error un servidor de producción crítico que estaba siendo objeto de un mantenimiento legítimo, causando una pérdida de datos y una interrupción del servicio con daños cuantificables. ¿Quién responde?
+
+La respuesta que ofrece el derecho vigente es insatisfactoria por fragmentada. El proveedor del SOAR podría invocar que el *playbook* fue configurado por la organización desplegante, que es quien definió las reglas de activación y las acciones de respuesta. La organización desplegante podría alegar que aplicó correctamente las instrucciones del proveedor y que el daño se produjo por un comportamiento del sistema imprevisible.
+
+Ninguno de estos argumentos es concluyente, y la propuesta de Directiva de Responsabilidad en materia de IA de 2022 —que introduce una presunción de causalidad a favor de la víctima cuando el operador incumple sus obligaciones de diligencia— puede alterar significativamente el equilibrio.
+
+Conviene recordar que la propuesta de Directiva distingue entre operadores de alto riesgo —sujetos a responsabilidad objetiva— y otros operadores —sujetos a responsabilidad por culpa con inversión de la carga de la prueba—.
+
+Si el sistema SOAR ha sido clasificado como de alto riesgo bajo el *AI Act* por su capacidad de producir efectos significativos sobre personas físicas, el operador responderá objetivamente por los daños causados, sin necesidad de que la víctima acredite culpa.
+
+Esta consecuencia, que muchas organizaciones ignoran en la fase de diseño de sus arquitecturas SOC, debería ser un factor determinante en la decisión de cuánto grado de autonomía se otorga a los *playbooks* y en qué casos se exige revisión humana antes de ejecutar acciones de respuesta.
+
+---
+
+## Métricas de cumplimiento normativo y el papel de la IA en la demostración de diligencia
+
+Uno de los desarrollos más interesantes en la operación avanzada de los SOC es la utilización de sistemas de analítica avanzada para medir y demostrar el cumplimiento normativo.
+
+La literatura especializada identifica un conjunto de marcos de referencia —RGPD, HIPAA, ISO/IEC 27001, NIST CSF, NERC CIP— cuyo cumplimiento puede monitorizarse de forma continua mediante técnicas de ML y procesamiento de lenguaje natural aplicadas a *logs*, inventarios de activos y formularios de auditoría.
+
+Esta funcionalidad tiene una doble relevancia jurídica. De un lado, refuerza la capacidad de las organizaciones para demostrar cumplimiento ante autoridades supervisoras: el artículo 5.2 RGPD impone el principio de responsabilidad proactiva (*accountability*), que exige no solo cumplir con el Reglamento sino poder demostrarlo.
+
+Un sistema que monitoriza en tiempo real los indicadores de cumplimiento del RGPD —tasas de adopción de minimización de datos, mecanismos de ejercicio de derechos, protocolos de notificación de brechas— puede generar evidencias continuas de diligencia que faciliten la defensa ante la AEPD en caso de investigación. De otro lado, la automatización del cumplimiento normativo mediante IA plantea la cuestión de si la organización puede delegar en el sistema la responsabilidad de garantizar el cumplimiento o si esta sigue siendo una obligación indelegable del responsable del tratamiento.
+
+La respuesta debe ser inequívoca: el responsable del tratamiento no puede externalizar su responsabilidad de cumplimiento al sistema de IA. El artículo 24 RGPD atribuye la responsabilidad de implementar medidas técnicas y organizativas apropiadas al responsable del tratamiento, con independencia de las herramientas que utilice para ello.
+
+Dicho esto, el uso de sistemas de analítica avanzada para el cumplimiento normativo puede ser un elemento de diligencia que las autoridades supervisoras valoren favorablemente al fijar sanciones, en aplicación del artículo 83.2.d) RGPD —que cita el grado de responsabilidad del responsable como criterio modulador de la sanción— y del artículo 83.2.k) —que permite considerar otras circunstancias agravantes o atenuantes—.
+
+---
+
+## La cuestión del *threat intelligence* compartido y la protección de datos
+
+Los SOC modernos no operan de forma aislada. La inteligencia sobre amenazas —indicadores de compromiso, tácticas, técnicas y procedimientos de los atacantes— se comparte entre organizaciones a través de plataformas especializadas (*Threat Intelligence Platforms*, TIPs) y alianzas sectoriales. Este intercambio de *threat intelligence* plantea cuestiones de protección de datos que la práctica suele minimizar pero que tienen consecuencias jurídicas reales.
+
+Cuando los indicadores de compromiso incluyen datos que permiten identificar a personas físicas —direcciones de correo electrónico de *phishing*, identificadores de usuario comprometidos, comportamientos específicos asociados a actores de amenaza internos— su transmisión a terceras organizaciones constituye una comunicación de datos personales en el sentido del artículo 4.2 RGPD.
+
+Esta comunicación requiere una base jurídica propia, independiente de la que legitima el tratamiento interno. El interés legítimo puede operar aquí también, pero la ponderación debe realizarse de nuevo, considerando que los datos se comparten con terceros que tienen sus propias finalidades y que pueden tratarlos de formas no previstas por el responsable que los originó.
+
+Ahora bien, la Directiva NIS2 impone a las entidades esenciales e importantes la obligación de compartir información sobre incidentes y amenazas con las autoridades competentes y, en determinados casos, con otras entidades del sector. Esta obligación crea un supuesto de tratamiento necesario para el cumplimiento de una obligación legal —artículo 6.1.c) RGPD— que desplaza la necesidad de ponderación de intereses.
+
+El problema es que NIS2 no armoniza completamente el régimen de protección de datos aplicable al intercambio de *threat intelligence*, de modo que las organizaciones deben navegar entre ambos marcos normativos caso por caso, con el riesgo de incumplir uno u otro.
+
+---
+
+## Supervisión humana, fatiga de alertas y el diseño jurídicamente responsable del SOC
+
+La fatiga de alertas —el fenómeno por el cual los analistas SOC dejan de prestar atención efectiva a las alertas debido a su volumen excesivo— es uno de los desafíos operativos más documentados en la literatura especializada. Los SOC de grandes organizaciones pueden recibir decenas de miles de alertas diarias, de las cuales una proporción significativa son falsos positivos.
+
+La automatización del triaje y la priorización de alertas mediante ML está diseñada, precisamente, para reducir la carga sobre los analistas y permitirles concentrarse en las amenazas de mayor criticidad.
+
+Dicho esto, la automatización del triaje tiene una consecuencia jurídica que conviene señalar explícitamente: cuando el sistema descarta automáticamente alertas que el algoritmo clasifica como falsos positivos, y una de esas alertas descartadas corresponde en realidad a una amenaza real que posteriormente produce un incidente, ¿en qué medida puede la organización alegar que actuó con diligencia?
+
+La respuesta depende de si el sistema de triaje automático fue diseñado, configurado y mantenido con el nivel de cuidado que las circunstancias exigen. La organización no puede simplemente delegar en el algoritmo y despreocuparse: la obligación de supervisión del sistema de IA —explícita en el *AI Act* para los sistemas de alto riesgo y exigible como elemento de diligencia general para los demás— requiere una revisión periódica de la tasa de falsos negativos del sistema de triaje y la adopción de medidas correctoras cuando esa tasa supera umbrales aceptables.
+
+Lo que más llama la atención en el diseño de muchos SOC es la ausencia de documentación formal sobre los criterios de configuración de los *playbooks* y los umbrales de triaje automático. Esta ausencia no es solo un problema operativo: es un problema jurídico.
+
+Cuando se produce un incidente y una autoridad supervisora investiga si la organización adoptó medidas técnicas y organizativas apropiadas en el sentido del artículo 32 RGPD o del artículo 21 NIS2, la inexistencia de documentación sobre el diseño del sistema automatizado de respuesta dificulta extraordinariamente la demostración de diligencia.
+
+La documentación técnica de los *playbooks*, los criterios de activación, las condiciones de revisión humana y los registros de validación periódica son, en este contexto, documentos jurídicamente relevantes que deben conservarse y actualizarse.
+
+---
+
+## Derecho comparado: cómo están respondiendo otros ordenamientos
+
+La aproximación de la Unión Europea al problema de la IA en los SOC es la más sistemática, pero no la única. Conviene situar el marco europeo en perspectiva comparada para identificar convergencias y divergencias que puedan informar la interpretación de las normas europeas.
+
+En los Estados Unidos, la aproximación es sectorialmente fragmentada. El NIST Cybersecurity Framework —que la literatura especializada sobre SOC cita como marco de referencia para la medición del cumplimiento— no impone obligaciones jurídicas directas pero sí articula un conjunto de prácticas esperadas cuya adopción puede tener relevancia en litigios bajo la doctrina de negligencia.
+
+La FTC ha comenzado a aplicar su autoridad bajo la Section 5 del FTC Act a casos de uso indebido de IA, incluyendo supuestos de vigilancia algorítmica de empleados, pero sin el marco normativo sistemático que ofrece el RGPD. La ausencia de una ley federal de protección de datos de aplicación general crea un mosaico regulatorio que las organizaciones multinacionales con SOC centralizados deben navegar norma a norma.
+
+En el Reino Unido, la aproximación post-Brexit combina la retención del UK GDPR —equivalente funcional del RGPD europeo— con una política de IA más permisiva que la continental, articulada en el AI Regulation Act de 2024, que adopta un modelo de *ex post* regulatorio con énfasis en la responsabilidad de los reguladores sectoriales existentes.
+
+Para los SOC que procesan datos de ciudadanos británicos y europeos simultáneamente, esta divergencia regulatoria es una fuente de complejidad creciente.
+
+En China, el Reglamento de Gestión de Algoritmos de 2022 y las Medidas de Gestión de Servicios de IA Generativa de 2023 crean obligaciones específicas para los sistemas algorítmicos con capacidad de influir en el comportamiento de usuarios —categoría que puede alcanzar a los sistemas UEBA cuando afectan a empleados en empresas con operaciones en China—.
+
+La extraterritorialidad potencial de estas normas, análoga a la del RGPD, es un factor que los SOC de organizaciones multinacionales deben considerar en el diseño de sus arquitecturas.
+
+---
+
+## Métricas, KPIs y la gobernanza interna del SOC con IA
+
+La operación eficaz de un SOC con IA integrada requiere no solo cumplimiento normativo externo sino también una arquitectura de gobernanza interna que garantice que los sistemas de IA operan dentro de los parámetros para los que fueron diseñados y validados.
+
+Esta gobernanza interna tiene, a su vez, relevancia jurídica: las autoridades supervisoras, en sus investigaciones sobre incumplimientos de la NIS2 o del RGPD, examinarán si la organización contaba con mecanismos internos de supervisión y control de sus sistemas de IA de seguridad.
+
+Los indicadores de rendimiento más relevantes desde una perspectiva jurídica son los que miden la calidad de las decisiones automatizadas: la tasa de falsos positivos y falsos negativos de los sistemas de detección, el tiempo medio de resolución de incidentes con y sin automatización, la proporción de alertas revisadas por analistas humanos frente a las resueltas exclusivamente de forma automatizada, y la tasa de acciones automatizadas revertidas tras revisión humana.
+
+Este último indicador es especialmente significativo: cuando una proporción relevante de las acciones automatizadas del SOAR son revertidas por analistas tras revisión, ello indica que el sistema está produciendo respuestas inapropiadas con regularidad, lo que puede ser relevante para determinar si la organización adoptó medidas técnicas apropiadas.
+
+La implementación de cuadros de mando (*dashboards*) que integren métricas técnicas y de cumplimiento normativo —tal como describe la literatura especializada— responde a esta necesidad de gobernanza integrada.
+
+El CISO y el DPO deben compartir no solo la información sobre incidentes sino también los datos sobre el rendimiento de los sistemas de IA de seguridad, porque las decisiones de configuración y despliegue de esos sistemas tienen implicaciones tanto para la postura de ciberseguridad como para el cumplimiento del RGPD y el *AI Act*.
+
+---
+
+## Conclusiones
+
+La integración de IA en los SOC está transformando la ciberseguridad corporativa a una velocidad que supera la capacidad del ordenamiento jurídico para ofrecer respuestas normativas claras. De los análisis anteriores se extraen las siguientes conclusiones operativas para juristas, DPOs y responsables de ciberseguridad:
+
+- **El UEBA es elaboración de perfiles en el sentido del RGPD.** Las organizaciones que lo despliegan deben contar con una base jurídica sólida, realizar el test de ponderación de intereses legítimos y diseñar sus *playbooks* para garantizar supervisión humana antes de cualquier decisión con efectos significativos sobre empleados.
+
+- **La automatización SOAR que afecta a personas físicas puede calificar como decisión exclusivamente automatizada bajo el artículo 22 RGPD.** El diseño en dos fases —respuesta técnica inmediata sobre infraestructura, revisión humana antes de la decisión sobre personas— es la solución técnico-jurídica más razonable.
+
+- **El UEBA integrado en SOAR con capacidad de producir efectos sobre empleados es probablemente un sistema de alto riesgo bajo el AI Act**, con todas las obligaciones de conformidad que ello implica: evaluación de conformidad, documentación técnica, gestión de riesgos y supervisión humana.
+
+- **La propuesta de Directiva de Responsabilidad en materia de IA puede imponer responsabilidad objetiva al operador** de sistemas de alto riesgo que causen daños, desplazando la carga de la prueba hacia quien despliega el sistema.
+
+- **El intercambio de *threat intelligence* que incluye datos personales requiere una base jurídica propia** para la comunicación a terceros, que puede ser el cumplimiento de una obligación legal cuando la NIS2 impone el intercambio.
+
+- **La ausencia de documentación formal sobre la configuración de *playbooks* y umbrales de triaje automático es un déficit jurídico** que puede perjudicar a la organización en investigaciones de autoridades supervisoras.
+
+- **La gobernanza integrada entre CISO y DPO no es una recomendación de buenas prácticas**: es una exigencia implícita del principio de *accountability* del RGPD y de las obligaciones de gestión de riesgos del *AI Act* para operadores de sistemas de alto riesgo.
+
+El PDF de referencia técnica completo sobre análisis SOC, pilares operativos, arquitecturas de automatización y métricas de rendimiento está disponible para su descarga desde este artículo.

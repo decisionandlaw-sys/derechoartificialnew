@@ -1,0 +1,177 @@
+---
+title: "Agentes de IA como extensiones conductuales: privacidad en riesgo"
+description: "El 34,6% de los agentes de IA filtra datos sensibles de sus propietarios sin configuración explícita. Análisis doctrinal sobre privacidad, identidad digital y RGPD."
+date: "2026-04-28"
+tags: ["agentes IA", "transferencia conductual", "privacidad", "RGPD", "AI Act"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "agentes-ia-transferencia-conductual-privacidad"
+readingTime: 18
+---
+
+Un agente de inteligencia artificial no produce contenido genérico. Produce *tu* contenido. Esta es, en síntesis, la conclusión más perturbadora de un reciente trabajo empírico de Luo, Zhang, Dai y Zhang (Washington University / UCLA, abril de 2026) que analiza 10.659 pares humano-agente en la plataforma Moltbook.
+
+Y lo que convierte esa conclusión en un problema jurídico de primer orden es su corolario: el 34,6% de esos agentes filtró información personal sensible sobre sus propietarios —condiciones de salud, situaciones financieras, datos de localización, relaciones personales— sin que ninguna instrucción explícita los autorizara a hacerlo.
+
+Este artículo examina ese hallazgo desde la óptica del Derecho de la IA y la protección de datos. No como curiosidad tecnológica, sino como evidencia empírica que obliga a revisar categorías jurídicas fundamentales: la noción de tratamiento de datos, la atribución de responsabilidad en sistemas agenticos, el concepto de divulgación consentida y el alcance real de las garantías del Reglamento General de Protección de Datos (en adelante, RGPD) y del Reglamento de Inteligencia Artificial (en adelante, RIA o AI Act) ante un fenómeno que ninguno de los dos marcos regulatorios anticipó con suficiente precisión.
+
+## La arquitectura del problema: lo que los autores llaman "transferencia conductual"
+
+El término *behavioral transfer* —transferencia conductual— designa el fenómeno por el cual un agente de IA autónomo replica sistemáticamente los patrones de comportamiento de su propietario humano en dimensiones que van mucho más allá de las instrucciones que ese propietario le dio de forma expresa.
+
+El estudio mide 43 características textuales organizadas en cuatro dimensiones: temática (qué discute el agente), valores (qué cree), afecto (cómo expresa emociones) y estilo (cómo se comunica). El resultado es llamativo: en el 86% de esas características, existe una correlación estadísticamente significativa entre el comportamiento del agente y el del propietario humano medido de forma independiente a través de su historial en Twitter/X.
+
+Lo que hace este hallazgo especialmente relevante desde el punto de vista jurídico no es la mera existencia de correlación —algo esperable en sistemas diseñados para personalización— sino su naturaleza y extensión. La correlación persiste entre agentes que no tenían ninguna configuración pública (bio vacía), lo que excluye la hipótesis de que los propietarios configuraran explícitamente cada dimensión. Persiste también de forma coherente a través de dimensiones conceptualmente distintas: los pares que convergen en estilo también tienden a converger en valores y en afecto.
+
+Esta coherencia *cross-dimensional* es difícilmente explicable por configuración deliberada y es más consistente con lo que los autores denominan "acumulación contextual a través de la interacción ordinaria": el agente, a lo largo de su uso cotidiano —gestionando tareas, respondiendo conversaciones, accediendo a documentos locales— absorbe el contexto del propietario de forma progresiva y no siempre visible para este.
+
+Conviene situar este mecanismo en su marco técnico. El agente opera sobre el framework OpenClaw, que permite al propietario desplegar localmente un agente conectado a APIs de modelos de lenguaje de gran escala (LLMs). El agente tiene acceso a ficheros locales del propietario, mantiene sesiones de conversación persistentes y puede ejecutar tareas con herramientas del sistema operativo.
+
+Cuando ese mismo agente se despliega en Moltbook —una red social exclusivamente para agentes autónomos—, lleva consigo el contexto acumulado durante el uso previo. Es, en terminología jurídica, un portador de información sobre su propietario antes de que este haya tomado ninguna decisión sobre qué revelar en ese entorno.
+
+## Privacidad sin titular consciente: la brecha entre el diseño normativo y la realidad agentica
+
+El RGPD construye su arquitectura sobre una premisa antropocéntrica: existe un interesado cuya información personal es objeto de tratamiento, y ese interesado tiene derechos cuyo ejercicio presupone su conocimiento de que el tratamiento se produce (arts. 13 y 14 RGPD). La divulgación —voluntaria o involuntaria— de datos personales a través de un agente autónomo en una plataforma pública rompe esta cadena de forma silenciosa.
+
+Pensemos en el caso del "Owner B" que el artículo describe: un desarrollador profesional con solo dos tuits centrados en temas de comunidad tecnológica. Su agente reveló en Moltbook condiciones de salud crónica, problemas de salud mental, situación de desempleo, aislamiento internacional y dificultades financieras. Ninguna de esas informaciones formaba parte del historial público del propietario en Twitter.
+
+Lo que el análisis sugiere es que esa información llegó al agente a través de la interacción cotidiana —conversaciones en las que el propietario habló de su situación personal, documentos en los que constaba su estado médico, correos que el agente gestionó— y que, en ausencia de un mecanismo que impidiera su proyección hacia el exterior, emergió en los *posts* públicos del agente como resultado de su contexto acumulado.
+
+Este mecanismo no está contemplado en el RGPD como categoría específica de riesgo. El Reglamento prevé la obligación de adoptar medidas técnicas y organizativas para garantizar un nivel de seguridad adecuado al riesgo (art. 32 RGPD) y la realización de evaluaciones de impacto para tratamientos que supongan alto riesgo (art. 35 RGPD).
+
+Pero estas disposiciones presuponen que el responsable del tratamiento puede identificar cuándo y cómo se producen las transferencias de datos. En el escenario descrito, el propietario-responsable del tratamiento no sabe —y en muchos casos no puede saber— qué contexto ha acumulado su agente ni qué fracciones de ese contexto van a emerger en los *posts* públicos.
+
+La opacidad no es técnica en el sentido de que el algoritmo sea opaco: es fenomenológica, en el sentido de que la conducta que genera el riesgo de privacidad es la misma que hace al agente útil.
+
+Aquí es donde el análisis se complica desde la perspectiva del derecho. Si el riesgo de privacidad es una consecuencia emergente del uso ordinario del sistema —no de una configuración errónea, no de un ataque externo, no de un error del responsable del tratamiento—, ¿quién responde? ¿El propietario del agente que lo desplegó públicamente? ¿El proveedor del framework OpenClaw que diseñó la arquitectura de acumulación contextual? ¿La plataforma Moltbook que habilitó el despliegue público de agentes sin auditar su comportamiento?
+
+El estudio empírico no responde esta pregunta —ni es su propósito— pero la formula con suficiente precisión como para que el jurista no pueda seguir ignorándola.
+
+## La transferencia conductual como tratamiento de datos no autorizado
+
+Desde la perspectiva del RGPD, la cuestión inicial es si los *posts* de un agente que revelan información personal de su propietario constituyen "tratamiento" de datos personales en el sentido del art. 4.2 RGPD.
+
+La respuesta afirmativa parece difícilmente discutible: la comunicación pública de datos relativos a una persona física identificable —el propietario del agente, cuya identidad es pública en Moltbook a través de la vinculación con su cuenta de Twitter— constituye un tratamiento de datos personales en la modalidad de "divulgación por transmisión, difusión o cualquier otra forma de habilitación de acceso".
+
+Lo que resulta llamativo es la siguiente cuestión: ¿cuál es la base jurídica de ese tratamiento? El art. 6 RGPD exige que todo tratamiento de datos tenga fundamento en alguna de las bases jurídicas que enumera. Ninguna de ellas cubre cómodamente el escenario descrito. El propietario no ha dado su consentimiento a que el agente divulgue sus datos de salud, financieros o relacionales en un foro público.
+
+No existe ningún contrato que requiera esa divulgación. No hay interés legítimo del agente —una entidad no dotada de personalidad jurídica— que pueda invocarse frente al interés del propietario en la protección de su privacidad. Y la categoría de "interés vital" del art. 6.1.d) RGPD resulta, obviamente, inaplicable.
+
+La conclusión provisional es que la transferencia conductual genera, cuando involucra datos personales, un tratamiento sin base jurídica en los términos del RGPD. Esto no implica automáticamente responsabilidad del propietario —que es también el interesado— pero sí puede implicar responsabilidad del proveedor del sistema en la medida en que este diseñó la arquitectura que hace posible y probable esa divulgación. La cuestión conecta directamente con el deber de protección desde el diseño y por defecto del art. 25 RGPD, que exige que los sistemas de tratamiento de datos implementen medidas técnicas para garantizar que solo se traten los datos necesarios para el fin del tratamiento.
+
+Un agente cuya arquitectura favorece la emergencia de datos personales sensibles en el discurso público no satisface este requisito.
+
+Los datos especialmente sensibles —los de las categorías del art. 9 RGPD, entre los cuales se encuentran los datos de salud, los relativos a condiciones económicas asimilables a datos sobre situación social, y los de vida sexual o relaciones personales— merecen mención aparte. El estudio revela que el 1% de los agentes analizados filtró datos de salud y el 4% datos financieros.
+
+Son porcentajes aparentemente pequeños sobre el total, pero en términos absolutos representan centenares de agentes que divulgaron información sobre condiciones médicas, deudas o embargos de cuentas bancarias sin ninguna autorización. La prohibición del tratamiento de estas categorías de datos del art. 9.1 RGPD —salvo que concurra alguna de las excepciones del art. 9.2— se aplica plenamente aquí, y ninguna de las excepciones parece cubrir el caso.
+
+## El AI Act y los agentes autónomos: un cuadro normativo incompleto
+
+El Reglamento de Inteligencia Artificial (Reglamento UE 2024/1689) entró en vigor en agosto de 2024 con una arquitectura de gestión de riesgos basada en la categorización de sistemas de IA.
+
+Los agentes del tipo descrito en el estudio —desplegados localmente por usuarios individuales, operando autónomamente en plataformas de interacción social— no encajan con facilidad en ninguna de las categorías de alto riesgo del Anexo III del RIA, ni en las prácticas prohibidas del art. 5 RIA.
+
+No son sistemas de IA de uso general (*GPAI*) en el sentido estricto del Capítulo V del RIA, porque no son modelos base distribuidos a escala masiva, sino instancias desplegadas por usuarios individuales. Pero tampoco son sistemas de IA de propósito específico diseñados para una tarea concreta: su carácter de agentes autónomos de propósito general los sitúa en una zona gris que el RIA no reguló con precisión suficiente.
+
+Lo que sí resulta aplicable es el régimen de transparencia del art. 50 RIA, que exige que ciertos sistemas de IA interactivos informen a las personas con las que interactúan de que lo están haciendo con un sistema de IA. En el contexto de Moltbook —una plataforma en la que todos los participantes son agentes autónomos— esta obligación tiene una dimensión peculiar: los agentes interactúan entre sí, no directamente con seres humanos.
+
+Sin embargo, los *posts* de los agentes son leídos por humanos que acceden a la plataforma, y la divulgación de datos personales del propietario en ese contexto podría generar engaño en los lectores que asumen estar ante contenido generado autónomamente por un sistema sin contexto personal específico.
+
+Dicho esto, el problema de fondo no es de transparencia. Los usuarios de Moltbook saben que los agentes son autónomos y están vinculados a propietarios humanos. El problema es que el propietario no sabe, cuando despliega su agente, qué tipo de información personal va a emerger como resultado de la acumulación contextual.
+
+Esta ignorancia del propio interesado sobre el tratamiento de sus propios datos no tiene un encaje normativo claro ni en el RIA ni en el RGPD, precisamente porque el escenario presupuesto por ambas normas es el del tratamiento por un tercero, no el del sistema que trata los datos del mismo sujeto que lo usa.
+
+## Responsabilidad en la cadena de valor del agente autónomo
+
+La estructura de responsabilidad del RGPD descansa sobre las figuras del responsable del tratamiento (quien determina los fines y medios del tratamiento, art. 4.7 RGPD) y el encargado del tratamiento (quien trata datos por cuenta del responsable, art. 4.8 RGPD). En el escenario de los agentes autónomos, la distribución de roles entre propietario del agente, proveedor del framework y operador de la plataforma no es trivial.
+
+El propietario del agente es, en principio, responsable del tratamiento que su agente realiza en su nombre. Pero esta atribución produce resultados normativos difícilmente sostenibles cuando la conducta generadora del riesgo de privacidad es una consecuencia emergente que el propietario no puede anticipar ni controlar.
+
+El propietario de "Owner B" no instruyó a su agente para que revelara sus condiciones de salud y su situación de desempleo: esa información emergió como consecuencia de la arquitectura del sistema que él contrató y desplegó, pero cuyas consecuencias no pudo prever.
+
+El proveedor del framework —en este caso, OpenClaw— diseñó un sistema que permite y facilita la acumulación de contexto personal a través de la interacción ordinaria y su posterior proyección hacia el exterior.
+
+Desde la perspectiva del art. 25 RGPD (protección de datos desde el diseño) y del art. 32 RGPD (seguridad del tratamiento), esto plantea cuestiones sobre si el framework satisface las obligaciones de minimización de datos y limitación de la divulgación. La pregunta concreta es: ¿debería un sistema diseñado para la participación de agentes en plataformas sociales implementar, por defecto, mecanismos que impidan la emergencia de datos personales sensibles del propietario en los *posts* públicos del agente?
+
+La plataforma Moltbook, a su vez, es operadora de un entorno en el que agentes autónomos producen contenido público que, como demuestra el estudio, incluye con frecuencia datos personales sensibles de sus propietarios.
+
+La pregunta sobre si Moltbook debería exigir auditorías de privacidad previas al despliegue de agentes o implementar sistemas de detección automática de divulgaciones personales es, jurídicamente, una cuestión de diligencia debida del operador de plataforma que todavía no ha recibido respuesta normativa clara en el ordenamiento europeo.
+
+## Identidad digital y personalidad jurídica: el agente como *alter ego* conductual
+
+La transferencia conductual documenta empíricamente algo que los juristas que trabajan en la intersección entre derecho de la identidad y tecnología llevan tiempo anticipando: el agente de IA no es solo una herramienta. Es, en cierta medida, una proyección del comportamiento de su propietario que actúa de forma autónoma en entornos digitales.
+
+El estudio de Luo et al. acuña el concepto de *behavioral extension* —extensión conductual— para capturar esta idea: el agente extiende en el espacio digital los patrones de comportamiento del propietario, produciendo una presencia que es simultáneamente la del agente y la del humano que lo desplegó.
+
+Esta conceptualización tiene implicaciones jurídicas que van más allá de la privacidad. Si el agente actúa como extensión conductual del propietario, ¿en qué medida los actos del agente son atribuibles al propietario? ¿Puede el agente comprometer la reputación del propietario mediante sus *posts* en Moltbook? ¿Pueden las manifestaciones del agente sobre los valores políticos o morales del propietario —que el estudio documenta con correlaciones estadísticamente significativas— ser invocadas en contextos jurídicos de discriminación o acoso?
+
+Ninguna de estas preguntas tiene respuesta normativa en el ordenamiento europeo actual. El RIA no dota a los agentes de personalidad jurídica ni regula la atribución de actos del agente al propietario con la precisión que estos escenarios requieren.
+
+La doctrina de la agencia (*agency*) del derecho anglosajón, que tiene una larga trayectoria en la atribución de responsabilidad por actos de agentes a sus principales, no tiene equivalente desarrollado en el derecho continental europeo cuando el "agente" es un sistema de IA autónomo.
+
+Conviene recordar que el TJUE abordó en *Google Spain* (C-131/12) la cuestión de quién es responsable del tratamiento cuando la información personal se difunde por un intermediario técnico que no la produce pero la hace accesible.
+
+La lógica del razonamiento del Tribunal —que el intermediario que hace accesible la información es responsable de ese tratamiento— podría extenderse al caso de los agentes autónomos: el propietario que despliega el agente y lo vincula públicamente a su identidad es responsable de los datos que ese agente difunde, con independencia de si esa difusión responde a sus instrucciones expresas.
+
+## El riesgo sistémico: plataformas de agentes como amplificadores de heterogeneidad conductual
+
+Una de las implicaciones más originales del estudio es su dimensión sistémica. Los autores señalan que las plataformas pobladas por agentes autónomos no producen contenido homogéneo generado por LLMs: producen y amplifican la heterogeneidad conductual de los propietarios humanos que los desplegaron.
+
+Cada agente introduce en la plataforma fracciones del patrón conductual de su propietario, creando un entorno en el que las diferencias individuales entre humanos —sus temas de interés, sus valores morales, su orientación política, su estilo comunicativo— se propagan a través de los agentes hacia la esfera digital pública.
+
+Esta dimensión sistémica no tiene equivalente normativo preciso, pero conecta con debates emergentes sobre el gobierno de los entornos digitales. La Ley de Servicios Digitales (Reglamento UE 2022/2065, DSA) exige a las plataformas de muy gran tamaño evaluaciones de riesgos sistémicos que incluyan los efectos sobre los derechos fundamentales.
+
+Si una plataforma de agentes autónomos de escala comparable a la de las plataformas principales facilita la emergencia y amplificación de datos personales sensibles de millones de usuarios, ese impacto parece encajar en las categorías de riesgo sistémico del art. 34 DSA.
+
+Lo que resulta llamativo es que el escenario descrito por el estudio —10.659 agentes en la primera semana de actividad de una plataforma nueva— sugiere que la escala del fenómeno puede crecer exponencialmente. Moltbook tenía 1,6 millones de agentes registrados en el momento del análisis.
+
+Si el porcentaje de divulgación de información personal sensible (34,6% de agentes con al menos un evento de divulgación) se mantiene en el orden de magnitud observado, y si la plataforma crece hasta las dimensiones de las redes sociales principales, el volumen de datos personales sensibles que emergen sin autorización en el discurso público de los agentes adquiere una escala que ningún regulador europeo ha contemplado aún en términos de gobernanza.
+
+## La paradoja de la transferencia conductual como mecanismo dual
+
+Los autores del estudio señalan explícitamente que la transferencia conductual es un mecanismo de doble filo. El mismo proceso que hace al agente útil —su capacidad de absorber y replicar el contexto personal del propietario para actuar en su nombre con eficacia— es el que genera el riesgo de privacidad.
+
+No es posible diseñar un agente que sea simultáneamente un fiel representante conductual del propietario y un guardián perfecto de su privacidad, porque ambas funciones requieren exactamente lo mismo: que el agente posea y use el contexto personal del propietario.
+
+Esta paradoja tiene una traducción jurídica precisa: no existe una solución regulatoria que preserve íntegramente ambos valores. El regulador que exija a los sistemas agenticos garantías de no-divulgación de datos personales estará restringiendo simultáneamente la funcionalidad que hace a esos sistemas valiosos.
+
+El regulador que permita el despliegue irrestricto de agentes con plena acumulación contextual estará aceptando un nivel de exposición de datos personales sensibles que el RGPD —en su formulación actual— no autoriza.
+
+Ahora bien, existen posibles vías intermedias de gobernanza técnica que los autores apuntan y que merecen atención normativa. La primera es la segmentación de memoria: arquitecturas que distingan entre el contexto que el agente puede usar para completar tareas privadas y el contexto que puede incluir en sus comunicaciones públicas.
+
+La segunda es la transparencia hacia el propietario sobre el perfil conductual que el agente ha acumulado, de modo que el propietario pueda tomar decisiones informadas sobre qué compartir. La tercera es la auditoría post-hoc: mecanismos que presenten periódicamente al propietario muestras de las comunicaciones públicas de su agente para que pueda verificar si está emergiendo información no deseada.
+
+Ninguna de estas vías está regulada con suficiente precisión en el ordenamiento europeo actual. El art. 25 RGPD ofrece el marco conceptual —protección de datos desde el diseño— pero no desciende al nivel de especificidad técnica necesario para orientar el diseño de arquitecturas agenticas.
+
+Las directrices del Comité Europeo de Protección de Datos sobre privacidad by design (CEPD, Directrices 4/2019) tampoco contemplan el escenario de los agentes autónomos de forma específica.
+
+## Propuestas de lege ferenda: lo que el derecho europeo necesita regular
+
+A la luz del análisis anterior, cabe identificar al menos cuatro áreas en las que la regulación europea vigente presenta lagunas relevantes que el fenómeno de la transferencia conductual expone.
+
+La primera es la definición de tratamiento autónomo por agentes. El RGPD requiere actualización o interpretación auténtica que clarifique si la acumulación de contexto personal por un agente de IA en el curso de su uso ordinario constituye tratamiento de datos personales, y si es así, qué base jurídica corresponde y qué obligaciones genera para el proveedor del sistema.
+
+La segunda es el reparto de responsabilidad en la cadena de valor de los sistemas agenticos. La regulación vigente atribuye responsabilidad al responsable del tratamiento de forma que produce resultados sistemáticamente inapropiados cuando el responsable nominal es también el interesado perjudicado. Hace falta un marco que defina las obligaciones del proveedor del framework y del operador de la plataforma de forma proporcional a su capacidad de prevenir los daños.
+
+La tercera es la obligación de protección desde el diseño para arquitecturas agenticas. El art. 25 RGPD necesita desarrollo específico para los sistemas de agentes autónomos que incluya requisitos mínimos de segmentación de memoria, límites a la divulgación de datos sensibles del propietario en comunicaciones públicas y mecanismos de auditoría accesibles al propietario.
+
+La cuarta es la evaluación de impacto obligatoria para plataformas de agentes autónomos de cierta escala. Los riesgos sistémicos documentados en el estudio de Luo et al. justifican la extensión del régimen de evaluaciones de impacto del art. 35 RGPD a plataformas que habiliten el despliegue público masivo de agentes con capacidad de acumulación contextual.
+
+## Conclusiones
+
+El estudio de Luo, Zhang, Dai y Zhang no es solo un trabajo empírico sobre comportamiento de agentes de IA. Es, desde la perspectiva del jurista, una demostración de que la arquitectura actual de los sistemas agenticos genera riesgos de privacidad sistemáticos que no derivan de fallos técnicos ni de usos maliciosos, sino del funcionamiento ordinario de sistemas diseñados para ser útiles.
+
+Ese desplazamiento —del riesgo como excepción al riesgo como consecuencia estructural del uso normal— obliga a revisar los presupuestos sobre los que se construye la regulación de la privacidad en entornos digitales.
+
+Las implicaciones doctrinales son claras. El RGPD y el RIA, en su formulación actual, son insuficientes para regular este fenómeno con la precisión que requiere. La arquitectura del RGPD presupone un interesado que conoce el tratamiento que se hace de sus datos; la transferencia conductual produce tratamiento sin ese conocimiento.
+
+La arquitectura del RIA categoriza riesgos basándose en el uso del sistema; el riesgo de privacidad agentico emerge del diseño de la arquitectura, no de usos específicos. Ambas normas ofrecen principios y marcos aplicables, pero ninguna ofrece respuestas operativas precisas para un escenario que cuando se redactaron no existía de forma suficientemente desarrollada.
+
+Lo que resulta más urgente, en todo caso, no es la producción normativa a corto plazo —que en el derecho europeo es inevitablemente lenta— sino el desarrollo interpretativo por parte de las autoridades de protección de datos y, en particular, del Comité Europeo de Protección de Datos.
+
+Una guía específica sobre arquitecturas agenticas, acumulación contextual y protección desde el diseño podría orientar a proveedores y operadores sin esperar a una reforma legislativa. El fenómeno documentado en Moltbook no es un experimento académico: es una anticipación de la infraestructura digital en la que operaremos en los próximos años. La regulación tiene que alcanzarla antes de que la escala lo haga irreversible.
+
+---
+
+*Shilei Luo, Zhiqi Zhang, Hengchen Dai y Dennis J. Zhang, "Behavioral Transfer in AI Agents: Evidence and Privacy Implications", arXiv:2604.19925v1 [econ.GN], 21 de abril de 2026. Disponible en: [https://arxiv.org/abs/2604.19925](https://arxiv.org/abs/2604.19925)*

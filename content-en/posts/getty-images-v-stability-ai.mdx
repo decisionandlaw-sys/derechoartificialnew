@@ -1,0 +1,84 @@
+---
+title: "The Getty Images v. Stability AI Case Under the EU Artificial Intelligence Regulation"
+date: "2026-02-06"
+category: "scarpa-firm"
+tags: ["getty-images", "stability-ai", "ai-act", "gpai", "intellectual-property"]
+pdf: ""
+author: "Ricardo Scarpa"
+seoTitle: "Getty-images 2026: The Getty Images Case | Artificial Intelligence Law"
+seoDescription: "The Getty Images v. Stability AI Case Under the EU Artificial Intelligence Regulation."
+keywords: ["Getty-images", "Stability-ia", "Ia-act"]
+seoKeyword: "Getty-images"
+---
+
+# The Getty Images v. Stability AI Case Under the EU Artificial Intelligence Regulation
+
+©Ricardo Scarpa (derechoartificial.com) 06/02/2025
+
+## 1. Executive Summary: Technical Synthesis of the Decision and Regulatory Environment
+
+The judgment issued by Her Honour Judge Joanna Smith DBE in *Getty Images v. Stability AI* [2025] EWHC 38 (Ch) constitutes a jurisprudential milestone that redefines the legal ontology of generative artificial intelligence models. This ruling not only resolves an intellectual property dispute but establishes the conceptual infrastructure necessary for **algorithmic technical audits** and compliance with the **EU Artificial Intelligence Regulation (AI Act)**. For the legal community at derechoartificial.com, the judgment clarifies that the developer's proactive responsibility extends beyond code, encompassing comprehensive data governance and control of the inference pipeline.
+
+From the tribunal's ratio decidendi, the following fundamental technical findings emerge:
+
+- **The Materialization Process as Theoretically Infringing Act:** The tribunal identified that the downloading and temporary storage of images on GPU clusters for training constitutes the act of "materialization" (reproduction). Nevertheless, the claim for infringement in training was dismissed for jurisdictional reasons, as it could not be proven that said process occurred in the United Kingdom (using Stability AI clusters located abroad).
+- **Ontology of Model Weights:** In a crucial technical distinction for auditors, it was determined that model weights are mathematical parameters that encode patterns, not copies of data. The physical disparity between the **LAION-5B training dataset (approx. 220TB)** and the binary weights file (**3.44GB**) demonstrates, according to the tribunal, that the model does not store or reproduce the original works, but rather learns a statistical probability distribution.
+- **Trademark Infringement and Empirical Evidence:** The tribunal ruled in favor of Getty Images on specific points: **double identity infringement** (Section 10(1) TMA) was declared regarding *iStock* marks in version v1, and **infringement by likelihood of confusion** (Section 10(2) TMA) was found for *Getty* marks in version v2. Conversely, claims regarding SDXL and v1.6 were dismissed due to the absence of evidence of real users in the United Kingdom generating said marks.
+
+These findings serve as the necessary technical premise for the European regulatory breakdown, where the distinction between the creation process and the final product will dictate the level of compliance required.
+
+## 2. Regulatory Analysis: Risk Categories and Transparency Obligations (EU AI Act 2026)
+
+Under the framework of the **EU Artificial Intelligence Regulation**, systems such as Stable Diffusion are classified as General Purpose AI (GPAI) models. This categorization, particularly under **Article 53 of the AI Act**, imposes rigorous obligations for transparency and technical documentation. The UK judgment reinforces the thesis that the developer is not a "passive agent," but the architect of a complex system where data governance is the axis of legality.
+
+Below, the technical facts of the case are correlated with regulatory obligations under the AI Act and the Copyright Directive:
+
+| Technical Fact of the Case | Obligation under the AI Act / EU Directive |
+|---|---|
+| Use of the LAION-5B dataset (6 billion URL-text pairs) funded by Stability AI. | **Article 53 AI Act:** Obligation to develop and maintain updated technical documentation and a detailed summary of content used for training. |
+| Process of "materialization" (downloading images from URLs for training). | **Articles 3 and 4 of Directive (EU) 2019/790:** Compliance with the text and data mining (TDM) exception, conditioned on respect for rights holders' opt-out. |
+| Implementation of NSFW filters and security detectors in the "pipeline." | **Risk Management (ISO 42001):** Proactive evaluation to mitigate biases and prevent generation of content that violates fundamental rights or brand reputation. |
+| "Memorization" capability and stochastic output of watermarks. | **Article 52 AI Act:** Transparency and labeling obligations, guaranteeing that output does not mislead regarding its synthetic origin or its relationship with third parties. |
+
+The dismissal of the "passive tool" argument by Judge Smith is essential for **ISO 42001**. The tribunal emphasized that Stability AI exercises "absolute control" over the dataset and pipeline design (which includes post-processing and filters). This technical sovereignty entails unavoidable **proactive responsibility**: the developer is responsible for the consequences of their training choices, aligning business practice with European governance standards for 2026.
+
+## 3. Deontological Implications: Professional Secrecy and Legal Data Protection
+
+The integration of AI models in the legal sector demands a "Privacy by Design" analysis to avoid collision with the duty of confidentiality and professional secrecy. The UK judgment, through its *Technical Primer*, provides key concepts for managing deontological risks.
+
+### Memorization Risks and Algorithmic Regurgitation
+
+The tribunal analyzed two technical phenomena that pose a critical risk to professional secrecy:
+
+1. **Memorization (Overfitting):** Occurs when the model, due to excessive training on non-diverse or duplicated data, optimizes its weights to remember specific records.
+2. **Regurgitation:** The system's capability to emit nearly identical copies of training data (such as Getty's watermarks).
+
+In legal practice, if a language or image model is trained with confidential assets, there exists the technical risk that such data may be "regurgitated" in response to specific prompts from third parties, irreversibly fragmenting professional secrecy.
+
+### Guidelines for ISO 42001 Implementation in the Legal Sector
+
+To mitigate these contingencies, the implementation of AI management systems in law firms must follow these audit guidelines:
+
+1. **Ingestion Pipeline Control:** Ensure that the "materialization" process excludes information subject to professional secrecy or private data without a legal basis.
+2. **Generalization Validation:** Conduct stress tests to guarantee that the model learns rules and patterns, not individual records, minimizing memorization risk.
+3. **Output Filter Audit:** Implement post-processing layers that robustly block any output containing sensitive identifiers or IP-protected elements.
+
+## 4. Technical Conclusion: Internal Validation and Audit Standards
+
+The judgment *Getty Images v. Stability AI* confirms that, although model weights are not legal copies under nineteenth-century legislation, their management demands extreme technical diligence. Internal validation of AI systems in the EU must now adopt audit standards aligned with this precedent.
+
+### Post-Judgment Technical Audit Standards
+
+Following Judge Smith's analysis, every GPAI system audit should verify:
+
+- **Provenance and TDM:** Validation of whether the dataset was used under the research exception or for commercial purposes, verifying respect for exclusion (opt-out) protocols.
+- **Security Pipeline Efficacy:** Verification that output filters are capable of preventing the inadvertent appearance of distinctive signs (avoiding the confusion detected in v1 and v2).
+- **Memorization Metrics:** Evaluation of the model's generalization capability against the tendency to regurgitate specific training data.
+
+**Final Reflection:** This ruling places us before a paradigm shift: Law is evolving from the protection of the "copied object" (physical medium) to the regulation of the "algorithmic creation process." In the 2026 scenario, under the AI Act, the opacity of the "black box" will no longer be a valid defense. Although model weights are a 3.44GB mathematical abstraction, proactive responsibility demands absolute control over training. Legal certainty in the European digital ecosystem will depend on developers and jurists understanding that the law no longer judges only the result, but the ethical and technical diligence inscribed in the design of intelligence itself.
+
+## Related Articles
+
+- [AI and Intellectual Property: The Data Lifecycle and Text and Data Mining under the Prism of the Kneschke vs. LAION Case](/intellectual-property-ai/kneschke-vs-laion-case)
+- [The Crossroads of Copyright in the Era of Generative AI](/scarpa-firm/copyright-crossroads-generative-ai)
+- [Generative AI and Copyright in the EU: European Parliament Study](/regulation/generative-ai-copyright-study-eu)

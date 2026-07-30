@@ -1,0 +1,3084 @@
+---
+title: "El problema de la atribución personal en la prueba digital: de la identificación del dispositivo a la convicción judicial"
+date: "2026-07-06"
+section: "firma-scarpa"
+slug: "atribucion-personal-prueba-digital-brecha-persona-dispositivo"
+category: "analisis-juridico"
+author: "Ricardo Scarpa"
+readingTime: "48 min"
+description: "La brecha persona-dispositivo, la defensa del troyano y los deepfakes en la acreditación de la autoría digital, con jurisprudencia verificada."
+tags: ["prueba digital", "atribución personal", "deepfakes", "defensa del troyano", "PRNU", "biometría conductual", "AI Act"]
+---
+
+*Un estudio sobre la brecha persona-dispositivo, la defensa del troyano y los desafíos de los deepfakes en la acreditación de la autoría de mensajes, imágenes y vídeos en redes sociales.*
+
+## Índice
+
+**I. PLANTEAMIENTO DEL PROBLEMA: LA PRUEBA DIGITAL Y EL DESAFÍO DE LA
+ATRIBUCIÓN PERSONAL**
+
+1.  La falacia del dispositivo como sucedáneo del autor
+
+2.  El escenario paradigmático: injurias en redes sociales desde un
+    > terminal compartido
+
+3.  Los vectores de incertidumbre: troyanos, accesos remotos no
+    > autorizados y deepfakes
+
+4.  Objeto, método y estructura del trabajo
+
+**II. MARCO CONCEPTUAL: LA BRECHA PERSONA-DISPOSITIVO Y SUS
+DIMENSIONES**
+
+1.  Definición y formulación teórica del *Person-Device Gap*
+
+2.  Taxonomía de las entidades implicadas: persona, cuenta y dispositivo
+
+3.  El *Person-Account Gap* como corolario necesario
+
+4.  La atribución en tres niveles: arma, origen y atacante
+
+5.  El estándar de convergencia de flujos de evidencia independientes
+
+**III. LA ATRIBUCIÓN TÉCNICA DEL DISPOSITIVO: INSTRUMENTOS Y LÍMITES**
+
+1.  Identificación por dirección IP y sus limitaciones probatorias
+
+2.  Atribución de imágenes mediante la respuesta no uniforme del sensor
+    > (PRNU) a) Fundamentos técnicos de la PRNU como huella dactilar del
+    > sensor b) Estabilidad, universalidad y unicidad de la firma c)
+    > Aplicaciones forenses y estándares de fiabilidad
+
+3.  Atribución de vídeos y archivos: metadatos y huellas de codificación
+
+4.  La cadena de custodia como presupuesto de validez de la atribución
+    > técnica
+
+5.  Conclusiones parciales: el dispositivo como condición necesaria pero
+    > no suficiente
+
+**IV. LA ATRIBUCIÓN A LA PERSONA: ESTRATEGIAS Y HERRAMIENTAS FORENSES**
+
+1.  Análisis de la capa de identidad: más allá de la titularidad del
+    > dispositivo
+
+2.  Biometría conductual como instrumento de diferenciación entre
+    > usuarios a) Dinámica de tecleo (*keystroke dynamics*): fundamentos
+    > y parámetros b) Patrones de uso del ratón y comportamiento de
+    > interacción c) Capacidad discriminativa y tasas de error d)
+    > Aplicación práctica en entornos de dispositivo compartido
+
+3.  Análisis de patrones temporales y hábitos de uso
+
+4.  Correlación con fuentes extrínsecas: geolocalización, registros de
+    > acceso y otros dispositivos vinculados
+
+5.  La convergencia de múltiples flujos de evidencia como estándar
+    > metodológico
+
+**V. LA DEFENSA DEL TROYANO (*TROJAN HORSE DEFENCE*) COMO OBSTÁCULO
+PROBATORIO**
+
+1.  Origen y evolución de la *SODDI Defence* (*Some Other Dude Did It*)
+
+2.  Fundamentos de la defensa: el *software* malicioso como autor
+    > sustitutivo
+
+3.  Análisis de los primeros diez años de la defensa del troyano
+
+4.  La respuesta forense: análisis de memoria volátil (RAM) como
+    > instrumento de falsación
+
+5.  Límites prácticos de la desvirtuación de la defensa del troyano
+
+6.  Incidencia en la carga probatoria y en el estándar de duda razonable
+
+**VI. EL DESAFÍO DE LOS DEEPFakes Y EL CONTENIDO SINTÉTICO**
+
+1.  Definición y clasificación del contenido sintético y manipulado
+
+2.  Técnicas de generación: redes generativas antagónicas (GANs) y
+    > modelos de difusión
+
+3.  Forensia de deepfakes: detección, atribución de modelo y
+    > autenticación pasiva a) Atribución fina de modelos de
+    > *face-swap* b) Atribución del generador fuente mediante análisis
+    > de activaciones internas c) Limitaciones de los sistemas actuales
+    > de detección
+
+4.  Marcas de agua activas e invisibles como mecanismo proactivo de
+    > atribución
+
+5.  La prueba de deepfakes en el proceso judicial: problemas de
+    > autenticación y carga probatoria
+
+**VII. ANÁLISIS JURISPRUDENCIAL COMPARADO**
+
+1.  Jurisprudencia española a) Sentencia del Tribunal Supremo 300/2015:
+    > el valor probatorio de las capturas de pantalla de mensajería
+    > instantánea y la exigencia de informe pericial b) Sentencia del
+    > Tribunal Supremo 116/2025: pornografía infantil, capturas de
+    > WhatsApp e Instagram y cadena de custodia digital c) Sentencia
+    > del Tribunal Superior de Justicia de Cataluña 4986/2025: uso
+    > indebido de medios corporativos y verificación pericial mediante
+    > hash d) Sentencia del Tribunal Supremo 90/2021 (Sala de lo
+    > Militar): insuficiencia de las capturas de pantalla aisladas y
+    > exigencia de informe pericial sobre autenticidad, autoría e
+    > integridad
+
+2.  Jurisprudencia comparada a) *Commonwealth v. Mangel* (EE.UU.): la
+    > insuficiencia de la mera correspondencia de información general en
+    > una cuenta de redes sociales b) *R v Calland* y *R v Turner*
+    > (Reino Unido): problemas de vinculación entre persona y cuenta c)
+    > Caso *Solothurn* (Suiza): dudas razonables sobre la titularidad de
+    > cuenta y revocación de condena
+
+3.  Lecciones extraídas de la jurisprudencia: la insuficiencia de la
+    > prueba de dispositivo y la necesidad de un cuerpo convergente de
+    > indicios
+
+**VIII. ESTÁNDARES TÉCNICOS Y BUENAS PRÁCTICAS PARA LA OBTENCIÓN Y
+VALORACIÓN DE LA EVIDENCIA DIGITAL**
+
+1.  Estándares internacionales aplicables a) NIST SP 800-86: integración
+    > de técnicas forenses en la respuesta a incidentes b) NIST SP
+    > 800-61: guía para el manejo de incidentes de seguridad c) ISO/IEC
+    > 27037: identificación, recogida, adquisición y preservación de
+    > evidencia digital d) ISO/IEC 27043: principios y procesos de
+    > investigación de incidentes
+
+2.  Buenas prácticas del *Scientific Working Group on Digital Evidence*
+    > (SWGDE)
+
+3.  La cadena de custodia digital como garantía de autenticidad
+
+4.  El informe pericial informático: metodología, reproducibilidad y
+    > contradicción
+
+5.  La prueba indiciaria digital: construcción y valoración judicial
+
+**IX. ANÁLISIS CRÍTICO: FORTALEZAS, DEBILIDADES Y LAGUNAS DEL SISTEMA
+ACTUAL**
+
+1.  Fortalezas de la forensia digital actual en la atribución de
+    > dispositivo
+
+2.  Debilidades sistémicas en la atribución a nivel de persona
+
+3.  Conflictos normativos entre eficiencia investigadora y garantías del
+    > proceso
+
+4.  Lagunas regulatorias: ausencia de estándares específicos para la
+    > atribución personal en entornos compartidos
+
+5.  El riesgo de condenas basadas exclusivamente en prueba de
+    > dispositivo (falacia del autor tecnológico)
+
+**X. PERSPECTIVAS FUTURAS Y TENDENCIAS REGULATORIAS**
+
+1.  Desarrollo de marcos de atribución estructurados: el modelo FACT
+    > como referencia
+
+2.  Avances en biometría conductual y su integración en protocolos
+    > forenses
+
+3.  Autenticación activa mediante marcas de agua y criptografía de
+    > medios
+
+4.  Hacia una regulación específica de la prueba de atribución personal
+
+5.  Formación especializada de operadores jurídicos y peritos en
+    > atribución digital
+
+**XI. CONCLUSIONES**
+
+1.  La atribución de dispositivo no equivale a atribución de persona
+
+2.  La convergencia de flujos de evidencia como estándar metodológico
+    > mínimo
+
+3.  La defensa del troyano y los deepfakes como desafíos reales, no
+    > meramente teóricos
+
+4.  La necesidad de un enfoque interdisciplinar y de estándares
+    > probatorios diferenciados
+
+5.  Propuestas *de lege ferenda* para la mejora de la atribución
+    > personal en el proceso digital
+
+## I. PLANTEAMIENTO DEL PROBLEMA: LA PRUEBA DIGITAL Y EL DESAFÍO DE LA ATRIBUCIÓN PERSONAL
+
+### 1. La falacia del dispositivo como sucedáneo del autor
+
+La irrupción de la prueba digital en el proceso judicial ha traído
+consigo una tentación epistemológica de consecuencias potencialmente
+devastadoras para el derecho a la presunción de inocencia: la de
+identificar al dispositivo desde el que se origina una comunicación con
+la persona que la ejecutó. Esta reducción, que podríamos calificar como
+**falacia del autor tecnológico**, consiste en atribuir al titular o
+usuario habitual de un terminal la autoría de todos los actos digitales
+que desde él se realizan, sin considerar la pluralidad de sujetos que
+pueden acceder al mismo, la intervención de *software* malicioso que
+actúa en segundo plano, o la posibilidad de que el contenido haya sido
+generado sintéticamente por sistemas de inteligencia artificial.
+
+La literatura especializada ha denominado a esta distancia
+epistemológica **"brecha persona-dispositivo"** (*Person-Device Gap*),
+definida como la dificultad probatoria de vincular a una persona física
+con una actuación digital concretamente atribuida a un dispositivo o
+cuenta (2). Esta brecha no es una anomalía técnica menor, sino el
+desafío estructural que atraviesa toda la cadena de atribución en el
+ámbito digital. Como ha señalado la doctrina, la atribución cibernética
+opera en tres niveles diferenciados ---el *arma* utilizada, el *origen*
+técnico y el *atacante* persona---, y mientras los dos primeros son
+alcanzables con relativa frecuencia mediante técnicas forenses, la
+atribución a nivel de persona "rara vez se alcanza" (3).
+
+El problema adquiere especial gravedad en el ámbito de las redes
+sociales y las plataformas de mensajería, donde el anonimato funcional,
+la multiplicidad de usuarios por dispositivo y la facilidad de
+suplantación convierten la identificación del autor en una operación de
+alta complejidad. La mera constatación de que una publicación se originó
+en un terminal concreto, identificable por su dirección IP, su número
+IMEI o su firma PRNU, no resuelve la cuestión central: **quién**, entre
+las personas con capacidad de acceso a ese terminal, fue el agente de la
+acción digital.
+
+### 2. El escenario paradigmático: injurias en redes sociales desde un terminal compartido
+
+El caso que sirve de hilo conductor a este trabajo es ilustrativo de la
+complejidad descrita. Una persona es acusada de la comisión de un delito
+de injurias mediante su difusión en redes sociales. El informe pericial,
+elaborado con arreglo a los estándares técnicos vigentes, determina que
+las publicaciones se realizaron desde un dispositivo móvil
+---*smartphone* o tableta--- que resulta ser de la titularidad del
+acusado. Sin embargo, consta acreditado que dicho dispositivo es de uso
+compartido con varios miembros de su entorno familiar o laboral.
+
+La pregunta jurídica que se plantea es si la mera titularidad del
+dispositivo, unida a la constatación de que las publicaciones se
+originaron en él, basta para desvirtuar la presunción de inocencia y
+atribuir al propietario la autoría de los mensajes injuriosos. La
+respuesta, a la luz de la doctrina y la jurisprudencia comparada, es
+negativa. Como ha señalado la jurisprudencia estadounidense, la mera
+correspondencia de información general en una cuenta de redes sociales
+es insuficiente para inferir que el acusado publicó los mensajes en
+cuestión (21). En la misma línea, los tribunales británicos han puesto
+de manifiesto los problemas de vinculación entre persona y cuenta en
+casos como *R v Calland* (2017) y *R v Turner* (2020), citados en la
+literatura como ejemplos paradigmáticos de la dificultad de cerrar la
+brecha probatoria (22). Incluso en el ordenamiento suizo, el tribunal
+cantonal de Solothurn revocó una condena por pornografía infantil basada
+exclusivamente en un informe del *National Center for Missing and
+Exploited Children* (NCMEC), al considerar que existían dudas razonables
+sobre la titularidad efectiva de la cuenta de Instagram desde la que se
+habían difundido las imágenes (23).
+
+Este escenario evidencia que la atribución de dispositivo ---por precisa
+y fiable que sea técnicamente--- no es más que el primer eslabón de una
+cadena probatoria que debe culminar en la atribución personal. Y es
+precisamente en ese tránsito donde se concentran las mayores
+dificultades y, también, los mayores riesgos de error judicial.
+
+### 3. Los vectores de incertidumbre: troyanos, accesos remotos no autorizados y deepfakes
+
+La dificultad de atribución no se limita a la existencia de múltiples
+usuarios con acceso físico al dispositivo. Tres vectores adicionales de
+incertidumbre complican aún más el panorama probatorio y han sido objeto
+de atención creciente por parte de la doctrina y la jurisprudencia.
+
+En primer lugar, la denominada **"defensa del troyano"** (*Trojan
+Horse Defence* o *SODDI Defence*, por *Some Other Dude Did It*) ha
+emergido como una estrategia de defensa recurrente en el proceso penal
+digital. El acusado alega que no fue él quien ejecutó la acción digital,
+sino un *software* malicioso ---un troyano, un *keylogger* o un programa
+de acceso remoto--- que tomó el control de su dispositivo sin su
+conocimiento o consentimiento (7). Esta defensa, que ha conocido una
+evolución significativa en los últimos años, pretende desplazar el
+*actus reus* y el *mens rea* del acusado al programa informático,
+cuestionando así la autoría personal del hecho (8). La respuesta forense
+a esta estrategia ha pasado por el análisis de la memoria volátil (RAM)
+como instrumento para desvirtuar sistemáticamente la alegación de
+intervención de *malware*, si bien el éxito de esta técnica depende de
+la conservación de la evidencia y del momento en que se inicie la
+investigación (8).
+
+En segundo lugar, el acceso remoto no autorizado a dispositivos, ya sea
+mediante *malware* específico o a través de vulnerabilidades de los
+sistemas de escritorio remoto, constituye un vector de incertidumbre
+adicional. La proliferación de herramientas de acceso remoto legítimas
+---como AnyDesk, TeamViewer o VNC--- y su frecuente uso malicioso por
+parte de atacantes obliga al perito a analizar no solo los artefactos
+locales, sino también los registros de conexión remota y las trazas de
+actividad que permitan distinguir entre el usuario legítimo y el
+intruso. La literatura forense ha comenzado a desarrollar marcos
+específicos para el análisis de estos artefactos (18, 30), si bien su
+aplicación en el contexto de la atribución personal sigue siendo un
+campo en desarrollo.
+
+En tercer lugar, la irrupción de los **deepfakes** y del contenido
+sintético generado por inteligencia artificial ha introducido un factor
+de incertidumbre de naturaleza cualitativamente distinta. Ya no se trata
+de determinar *quién* realizó una publicación, sino de determinar si el
+contenido audiovisual que se atribuye a una persona fue realmente
+capturado por una cámara en presencia de esa persona o si, por el
+contrario, fue generado o manipulado mediante redes generativas
+antagónicas (GANs) o modelos de difusión. La forensia de medios
+digitales ha desarrollado técnicas para la detección y atribución de
+deepfakes, incluyendo la atribución del modelo generativo utilizado
+(15), la atribución del generador fuente mediante análisis de
+activaciones internas (16) y el uso de marcas de agua invisibles como
+mecanismo proactivo de autenticación (17). Sin embargo, como reconoce la
+doctrina, los sistemas actuales de detección presentan limitaciones
+significativas y su integración en el proceso probatorio plantea
+desafíos jurídicos aún no resueltos (17).
+
+### 4. Objeto, método y estructura del trabajo
+
+El presente trabajo tiene por objeto analizar, desde una perspectiva
+jurídica y forense, los problemas y soluciones relativos a la
+acreditación de la autoría personal de mensajes, fotografías y vídeos en
+el entorno digital, con especial atención al escenario de dispositivo
+compartido y a los desafíos planteados por los troyanos y los deepfakes.
+Se trata, en definitiva, de responder a la pregunta que preside esta
+investigación: **¿cómo se logra acreditar, más allá de toda duda
+razonable, que determinada acción digital fue realizada por una persona
+concreta y no por otro usuario con acceso al mismo dispositivo, ni por
+un *software* malicioso, ni mediante la generación sintética de
+contenido?**
+
+La metodología empleada combina el análisis doctrinal, el examen de la
+jurisprudencia nacional y comparada, la revisión de los estándares
+técnicos aplicables y la evaluación crítica de las herramientas forenses
+disponibles. El trabajo se estructura en once secciones. Tras este
+planteamiento inicial, se abordará el marco conceptual de la brecha
+persona-dispositivo (sección II), para luego examinar separadamente la
+atribución técnica del dispositivo (sección III) y la atribución a la
+persona (sección IV). Las secciones V y VI analizarán, respectivamente,
+la defensa del troyano y el desafío de los deepfakes como obstáculos
+probatorios específicos. La sección VII ofrecerá un análisis
+jurisprudencial comparado, mientras que la sección VIII examinará los
+estándares técnicos y buenas prácticas. La sección IX realizará un
+análisis crítico del sistema actual, y la sección X apuntará
+perspectivas futuras y tendencias regulatorias. Finalmente, la sección
+XI recogerá las conclusiones y propuestas *de lege ferenda*.
+
+El trabajo parte de una premisa metodológica fundamental: **la
+atribución de dispositivo es condición necesaria pero no suficiente para
+la atribución personal**, y cualquier conclusión que pretenda superar
+esta brecha debe apoyarse en un cuerpo convergente de evidencias
+independientes que, en su conjunto, excluyan razonablemente las
+hipótesis alternativas.
+
+## II. MARCO CONCEPTUAL: LA BRECHA PERSONA-DISPOSITIVO Y SUS DIMENSIONES
+
+### 1. Definición y formulación teórica del *Person-Device Gap*
+
+La atribución de una acción digital a una persona física constituye, en
+el estado actual de la técnica forense, un problema de naturaleza
+radicalmente distinta al de la mera identificación del dispositivo o la
+cuenta desde la que se originó. Esta distinción, que pudiera parecer
+obvia en su formulación teórica, es sin embargo sistemáticamente
+soslayada en la práctica investigadora y, en no pocas ocasiones, en la
+argumentación judicial. La doctrina especializada ha acuñado el concepto
+de **"brecha persona-dispositivo"** (*Person-Device Gap*) para
+designar precisamente este hiatus epistemológico: la dificultad
+probatoria de vincular a una persona física concreta con un dispositivo
+o cuenta determinados, ya sea en general o en el momento específico de
+la acción investigada (2) (8).
+
+La formulación del problema parte de una constatación empírica: los
+tribunales de diversas jurisdicciones han desestimado casos por no
+haberse establecido suficientemente el vínculo entre el dispositivo o la
+cuenta y la persona acusada (8). Este desafío no es accesorio ni
+marginal; constituye, en palabras de la literatura especializada, "el
+desafío central de la ciencia forense digital" (2) (8). La brecha no es
+meramente técnica, sino que tiene naturaleza epistémica y jurídica, pues
+interpela directamente a la teoría de la prueba, a los estándares de
+convicción y a las garantías del proceso penal.
+
+La doctrina ha distinguido dos modalidades de esta brecha, en función de
+la entidad intermedia que se pretende vincular a la persona. El
+**"Person-Device Gap"** se refiere a la dificultad de establecer que
+una persona concreta utilizó un determinado dispositivo en el momento de
+interés (2) (8). El **"Person-Account Gap"** alude, por su parte, a la
+dificultad de vincular a una persona con una cuenta digital específica
+---de correo electrónico, red social, plataforma de mensajería---,
+problema que, aunque conexo, presenta particularidades propias (2) (8).
+Ambas brechas, sin embargo, comparten una raíz común: la intermediación
+tecnológica que separa al agente humano de la huella digital que
+produce.
+
+La gravedad del problema se comprende mejor a la luz de los casos que
+han llegado a los tribunales. El caso *Solothurn* (Suiza, 2019-2022) es
+paradigmático: el tribunal cantonal revocó una condena por pornografía
+infantil basada exclusivamente en un informe del *National Center for
+Missing and Exploited Children* (NCMEC), al considerar que existían
+**dudas razonables sobre la titularidad de la cuenta de Instagram** (8)
+(23). De manera similar, en el caso *Commonwealth v. Mangel* (2018), el
+Tribunal Superior de Pennsylvania resolvió que la mera correspondencia
+de información general en una cuenta de Facebook es **insuficiente para
+inferir** que el acusado publicó los mensajes en cuestión (8) (21). En
+el Reino Unido, los casos *R v Calland* (2017) y *R v Turner* (2020) han
+sido citados como ejemplos de los problemas de vinculación entre persona
+y cuenta (8) (22).
+
+### 2. Taxonomía de las entidades implicadas: persona, cuenta y dispositivo
+
+Para abordar metódicamente la brecha persona-dispositivo, la doctrina ha
+propuesto una **taxonomía de las entidades implicadas** que permita
+organizar el análisis y orientar la estrategia probatoria (2). Esta
+taxonomía distingue tres tipos de entidades, cada una con propiedades y
+modos de acreditación diferenciados:
+
+**a) La persona física.** Es el sujeto último de la atribución, el
+agente humano al que se pretende imputar la acción digital. Su
+identificación en el mundo físico ---nombre, documento de identidad,
+rasgos biométricos--- no resuelve por sí misma la atribución, pues la
+persona puede no haber sido la que ejecutó materialmente la acción sobre
+el dispositivo.
+
+**b) La cuenta digital.** Es la identidad funcional a través de la cual
+una persona accede a un servicio o plataforma. Puede estar protegida por
+credenciales (nombre de usuario y contraseña, autenticación multifactor)
+y su titularidad nominal puede ser conocida, pero ello no implica
+necesariamente que su uso en un momento dado corresponda a su titular.
+
+**c) El dispositivo.** Es el terminal físico ---*smartphone*, ordenador,
+tableta--- desde el que se origina la comunicación o la acción digital.
+Puede ser identificado unívocamente mediante diversos parámetros
+técnicos (dirección MAC, IMEI, número de serie, firma PRNU), pero su
+mera identificación no resuelve la atribución personal.
+
+La taxonomía propuesta por Casey, Jaquet-Chiffelle, Spichiger, Ryser y
+Souvignet no se limita a enumerar estas
+entidades, sino que **modela las identidades relevantes y explica las
+trazas que tienen el potencial de salvar la brecha** (2) (8). De este
+modo, el análisis forense se orienta no a la mera constatación de la
+presencia de una entidad, sino a la búsqueda de trazas que conecten unas
+entidades con otras: trazas que vinculen la persona con la cuenta
+(registros de creación, direcciones de correo de verificación, patrones
+de comportamiento), trazas que vinculen la persona con el dispositivo
+(biometría, posesión física, patrones de uso), y trazas que vinculen la
+cuenta con el dispositivo (registros de inicio de sesión, direcciones
+IP, cookies, *tokens* de autenticación).
+
+### 3. El *Person-Account Gap* como corolario necesario
+
+El *Person-Account Gap* merece una consideración específica, en la
+medida en que muchas de las acciones digitales relevantes para el
+proceso penal ---publicaciones en redes sociales, envío de mensajes,
+subida de contenidos--- se producen en el marco de una cuenta digital.
+La atribución de la cuenta al titular nominal no es, sin embargo,
+suficiente para atribuir la acción a la persona.
+
+La doctrina ha identificado varias razones que justifican esta
+prudencia. En primer lugar, las credenciales de acceso pueden ser
+compartidas, sustraídas o utilizadas sin conocimiento del titular. En
+segundo lugar, el acceso a una cuenta puede producirse mediante técnicas
+de suplantación (*phishing*, *credential stuffing*) o mediante la
+explotación de vulnerabilidades del servicio. En tercer lugar, en el
+caso de dispositivos compartidos, la sesión de la cuenta puede
+permanecer abierta y ser utilizada por un tercero. Como ha señalado la
+jurisprudencia, la mera correspondencia de información general en una
+cuenta es insuficiente para inferir la autoría personal (8) (21).
+
+El *Person-Account Gap* se ve agravado en entornos de mensajería cifrada
+de extremo a extremo (*end-to-end encryption*), donde el contenido del
+mensaje no está disponible para el investigador y la única información
+accesible son los metadatos de la comunicación (5). Esta circunstancia
+obliga a los peritos y a los tribunales a basar la atribución en
+elementos indirectos ---patrones de comportamiento, metadatos de
+conexión, correlación con otras fuentes---, lo que incrementa la
+complejidad probatoria y el riesgo de error.
+
+### 4. La atribución en tres niveles: arma, origen y atacante
+
+La literatura sobre atribución cibernética ha propuesto una **estructura
+tripartita** que permite descomponer el problema de la atribución en
+niveles de creciente complejidad y exigencia probatoria (3). Esta
+estructura, formulada por Shamsi, Zeadally, Sheikh y Flowers, distingue
+entre (3):
+
+**a) Atribución del arma (*weapon*).** Es el nivel más básico: consiste
+en identificar el *software*, la técnica o el vector de ataque
+utilizado. En el contexto de las publicaciones en redes sociales,
+equivaldría a identificar la aplicación o plataforma desde la que se
+realizó la publicación. Este nivel es técnicamente alcanzable con
+relativa facilidad mediante el análisis de metadatos y cabeceras de
+protocolo.
+
+**b) Atribución del origen (*origin*).** Consiste en identificar el
+dispositivo o la infraestructura técnica desde la que se originó la
+acción. Puede incluir la dirección IP, el número IMEI, la dirección MAC
+o, en el caso de imágenes, la firma PRNU del sensor. Este nivel es
+también técnicamente alcanzable, si bien presenta desafíos en entornos
+de anonimización (*proxy*, *VPN*, *Tor*).
+
+**c) Atribución del atacante (*attacker*).** Es el nivel más exigente:
+consiste en identificar a la **persona física** que ejecutó la acción.
+Como observan los autores, "la atribución a nivel de atacante rara vez
+se alcanza" (3) (7). Esta dificultad no es meramente técnica, sino que
+responde a la naturaleza misma de la intermediación digital, que
+introduce múltiples capas de separación entre el agente humano y la
+huella que produce.
+
+La relevancia de esta estructura tripartita para el problema que nos
+ocupa es manifiesta. El informe pericial que acredita que las
+publicaciones se realizaron desde un dispositivo concreto está operando
+en el nivel del *origen*. Pero la conclusión que pretende extraer el
+acusador ---que fue el propietario del dispositivo quien realizó las
+publicaciones--- exige saltar al nivel del *atacante*. Y es precisamente
+en ese salto donde se producen la mayor parte de los errores de
+atribución y donde la prueba digital muestra sus límites más acusados.
+
+Rid y Buchanan, por su parte, han enfatizado la complejidad de la
+atribución en contextos estratégicos y han subrayado que "la atribución
+es lo que los Estados hacen de ella", en el sentido de que implica no
+solo consideraciones técnicas, sino también políticas, estratégicas y
+comunicativas (4). Aunque su análisis se centra en el ámbito de los
+ataques cibernéticos entre Estados, sus observaciones sobre la
+**naturaleza interpretativa y constructiva de la atribución** son
+extensibles al ámbito judicial: la atribución no es un hecho bruto que
+la técnica revela, sino una **inferencia probatoria** que debe ser
+construida, justificada y sometida a contradicción (4).
+
+### 5. El estándar de convergencia de flujos de evidencia independientes
+
+La constatación de que la atribución a nivel de persona es
+cualitativamente más exigente que la atribución de dispositivo ha
+llevado a la doctrina a formular un **estándar metodológico** para guiar
+la práctica forense y la valoración judicial. Este estándar, formulado
+con particular claridad en el marco **FACT** (*Forensic Authority &
+Compliance, Analyze Evidence, Correlate & Sequence, Testify &
+Transfer*), establece que la evidencia digital por sí sola es
+insuficiente para la atribución personal y que esta requiere la
+**convergencia de múltiples flujos de evidencia procedentes de fuentes
+independientes** (1) (7) (9).
+
+El marco FACT, propuesto por Shavers en 2025, se presenta como una
+"metodología de atribución centrada en la jurisprudencia" que "separa
+explícitamente la identificación (\'¿qué actuó?\') de la atribución
+(\'¿quién actuó?\')" (7) (9). La estructura del marco se articula en
+cuatro etapas (7) (9) (10):
+
+-   **F -- *Forensic Authority & Compliance***: verificación de la
+    > autoridad legal y el cumplimiento normativo de la investigación.
+
+-   **A -- *Analyze Evidence***: análisis técnico de la evidencia
+    > digital, incluyendo la identificación de artefactos y la
+    > reconstrucción de líneas de tiempo.
+
+-   **C -- *Correlate & Sequence***: correlación y secuenciación de la
+    > evidencia, integrando múltiples flujos de información y evaluando
+    > su consistencia.
+
+-   **T -- *Testify & Transfer***: preparación del testimonio y
+    > transmisión de los hallazgos, con especial atención a la
+    > defensibilidad de las conclusiones ante tribunales, reguladores o
+    > tribunales internos (7) (10).
+
+El marco es deliberadamente conservador: "cuando no se cumplen los
+requisitos para la atribución a nivel de persona, FACT indica al
+profesional que llegue y documente una conclusión de no atribución" (7)
+(9). Esta prudencia no es una concesión retórica, sino un imperativo
+metodológico derivado de la naturaleza de la prueba digital y de las
+exigencias del proceso penal.
+
+El principio de convergencia de flujos de evidencia independientes
+responde a una lógica probatoria bien conocida: la corroboración mutua
+entre fuentes distintas reduce el riesgo de error y aumenta la
+fiabilidad de la inferencia. En el contexto de la atribución personal,
+este principio implica que no basta con acreditar que las publicaciones
+se originaron en el dispositivo del acusado; es necesario, además,
+aportar **evidencias adicionales que apunten a su autoría** y que
+procedan de fuentes distintas: patrones de comportamiento, testimonios,
+geolocalización, registros de actividad en otros dispositivos, o
+cualquier otra fuente que, en su conjunto, excluya razonablemente las
+hipótesis alternativas.
+
+La doctrina ha enfatizado que la **convergencia no es acumulación**. No
+se trata de sumar indicios débiles hasta alcanzar un umbral
+cuantitativo, sino de construir un **cuerpo de evidencia coherente y
+consistente** en el que las distintas piezas se refuercen mutuamente y
+apunten en la misma dirección. Como ha señalado la jurisprudencia, la
+prueba indiciaria digital debe ser valorada en su conjunto, y no
+mediante el examen aislado de cada uno de sus elementos (20).
+
+### 6. Conclusiones parciales: la atribución como proceso inferencial
+
+Del análisis del marco conceptual se desprenden varias conclusiones de
+relevancia para el problema que nos ocupa.
+
+En primer lugar, **la identificación del dispositivo no equivale a la
+atribución a la persona**. Esta distinción, que la doctrina ha formulado
+con creciente claridad, debe presidir cualquier aproximación al problema
+probatorio de la autoría de mensajes, fotografías o vídeos en el entorno
+digital (1) (7). La falacia del autor tecnológico ---consistente en
+inferir la autoría personal de la mera titularidad o uso del
+dispositivo--- debe ser rigurosamente evitada, tanto en la práctica
+pericial como en la argumentación judicial.
+
+En segundo lugar, **la brecha persona-dispositivo es un problema
+estructural**, no una anomalía ocasional. Responde a la naturaleza misma
+de la intermediación digital y a la multiplicidad de agentes ---humanos
+y no humanos--- que pueden intervenir en la producción de una huella
+digital. Su superación exige un enfoque metodológico que integre
+técnicas forenses, análisis conductual y valoración probatoria.
+
+En tercer lugar, **la atribución a nivel de persona requiere la
+convergencia de múltiples flujos de evidencia independientes**. No
+existe una técnica única que permita cerrar la brecha; lo que existe es
+un conjunto de herramientas ---biometría conductual, análisis de
+patrones, correlación de fuentes--- que, utilizadas de manera coordinada
+y contrastadas entre sí, pueden proporcionar un grado de convicción
+suficiente para la decisión judicial.
+
+En cuarto lugar, **la prudencia es un imperativo metodológico**. Cuando
+la evidencia disponible no permite alcanzar una conclusión firme sobre
+la autoría personal, el perito y el tribunal deben estar dispuestos a
+reconocerlo y a documentar una conclusión de no atribución. La presión
+por obtener una condena no puede justificar el sacrificio de la
+precisión probatoria ni la vulneración de la presunción de inocencia.
+
+## III. LA ATRIBUCIÓN TÉCNICA DEL DISPOSITIVO: INSTRUMENTOS Y LÍMITES
+
+### 1. Identificación por dirección IP y sus limitaciones probatorias
+
+La dirección de Protocolo de Internet (IP) ha sido tradicionalmente el
+instrumento más utilizado por los cuerpos policiales y los servicios de
+inteligencia para aproximarse al origen de una comunicación digital. Su
+atractivo es evidente: toda transmisión de datos en redes IP lleva
+asociada una dirección de origen que, en apariencia, permite identificar
+el dispositivo desde el que se inició la conexión. Sin embargo, este
+instrumento, frecuentemente presentado en los procesos como una suerte
+de "matrícula" digital del dispositivo, adolece de limitaciones
+estructurales que lo convierten en un medio de atribución
+extraordinariamente frágil.
+
+La primera y más fundamental de estas limitaciones es de naturaleza
+conceptual: **la dirección IP no es un identificador del dispositivo,
+sino un identificador topológico de la posición del dispositivo en la
+red en un momento determinado** (2) (7). Como ha señalado la doctrina,
+"una dirección IP representa una ubicación topológica en la red a
+efectos de encaminamiento, no una forma de especificar un punto final
+físico" (2) (7). Esta distinción, que pudiera parecer técnica, tiene
+consecuencias probatorias de primer orden: la misma dirección IP puede
+ser asignada a distintos dispositivos en momentos diferentes (en el caso
+de direcciones dinámicas), y un mismo dispositivo puede utilizar
+distintas direcciones IP en diferentes conexiones. La mera constatación
+de que una publicación se originó desde una determinada dirección IP no
+permite, por tanto, identificar unívocamente el dispositivo desde el que
+se realizó, y mucho menos a la persona que lo utilizaba.
+
+A esta limitación conceptual se añaden otras de naturaleza práctica. En
+primer lugar, **las direcciones IP pueden ser fácilmente enmascaradas o
+suplantadas** mediante el uso de redes privadas virtuales (VPN),
+servidores *proxy*, la red *Tor* u otras herramientas de anonimización.
+Como ha observado la doctrina, la atribución basada en direcciones IP
+"puede resultar poco fiable, ya que una dirección IP podría ser
+compartida por múltiples usuarios o, peor aún, ser \'secuestrada\' por
+un *hacker*" (2) (9). En segundo lugar, incluso cuando la dirección IP
+corresponde al domicilio de un titular de contrato de acceso a Internet,
+ello no permite concluir que el titular sea el autor de la comunicación.
+Como ha señalado un análisis jurídico reciente, "aunque se identifique
+al abonado mediante el rastreo de la IP, no puede concluirse que el
+abonado sea el autor", y la atribución efectiva requiere "evidencia
+corroborante como la información del dispositivo (dirección MAC)",
+pudiendo ser discutida si existen "circunstancias fácticas como el uso
+compartido familiar o el Wi-Fi público" (2) (10).
+
+La jurisprudencia ha sido consciente de estas limitaciones. La Sentencia
+del Tribunal Supremo 300/2015, aunque referida al valor probatorio de
+las capturas de pantalla de una conversación de mensajería instantánea,
+establece un principio extensible a la atribución por IP: los elementos
+digitales aislados tienen un valor limitado si no van acompañados de una
+garantía de autenticidad, como un informe pericial informático que
+certifique el origen, la integridad y la identidad de los interlocutores
+(19). En la misma línea, la Sentencia del Tribunal Supremo (Sala de lo
+Militar) 90/2021 advierte que las capturas de pantalla y, por extensión,
+los meros registros de IP, no constituyen prueba plena por sí solas,
+exigiendo un informe pericial que garantice la autenticidad, la autoría
+y la integridad del contenido y destacando la importancia de la
+cadena de custodia (21). La atribución basada exclusivamente en la
+dirección IP, desprovista de un análisis pericial que la contextualice y
+la corrobore, resulta, por tanto, insuficiente para acreditar el origen
+dispositivo de una comunicación, y desde luego insuficiente para la
+atribución personal.
+
+### 2. Atribución de imágenes mediante la respuesta no uniforme del sensor (PRNU)
+
+#### a) Fundamentos técnicos de la PRNU como huella dactilar del sensor
+
+La atribución de imágenes a un dispositivo concreto ha experimentado un
+avance cualitativo con el desarrollo de las técnicas basadas en la
+**respuesta no uniforme del sensor** (*Photo Response Non-Uniformity*,
+PRNU). A diferencia de la dirección IP, que es un dato extrínseco al
+dispositivo y fácilmente manipulable, la PRNU es un **patrón de ruido
+inherente a la imagen** que resulta de imperfecciones en el proceso de
+fabricación de los sensores de imagen (7) (8). Como ha señalado la
+doctrina, la PRNU es "un patrón similar a un ruido intrínsecamente
+incrustado en las imágenes digitales debido a imperfecciones de
+fabricación en los sensores de las cámaras" (0) (15). Esta "huella
+dactilar" del sensor, también denominada *fingerprint*, puede ser
+estimada a partir de las imágenes capturadas por una cámara específica y
+posteriormente comparada con el patrón de ruido extraído de una imagen
+de procedencia desconocida para determinar si fue capturada por esa
+misma cámara (0) (22-24).
+
+Los fundamentos técnicos de la PRNU descansan en la **no homogeneidad de
+los materiales semiconductores** utilizados en la producción de los
+sensores de imagen (0) (17-19). Cada sensor presenta variaciones mínimas
+en la respuesta de cada uno de sus fotodiodos a la luz incidente,
+variaciones que son estables en el tiempo y específicas de cada
+dispositivo (0) (17-19). Estas variaciones, que se manifiestan como un
+patrón de ruido fijo (*fixed pattern noise*), persisten a lo largo de la
+vida útil del sensor y no pueden ser eliminadas mediante el
+procesamiento posterior de la imagen. La PRNU es, por tanto, una
+**propiedad física del sensor**, no un dato añadido o modificable por el
+usuario, lo que la convierte en un medio de atribución excepcionalmente
+robusto (7) (11-12).
+
+#### b) Estabilidad, universalidad y unicidad de la firma
+
+La literatura especializada ha destacado tres propiedades de la PRNU que
+la convierten en un instrumento forense de particular fiabilidad (0)
+(15-17) (7) (16-18).
+
+En primer lugar, la **estabilidad**. El patrón de ruido del sensor
+permanece esencialmente invariante a lo largo del tiempo,
+independientemente de las condiciones de iluminación, la temperatura o
+el desgaste del dispositivo (0) (17-18). Esta estabilidad permite que el
+*fingerprint* extraído de un conjunto de imágenes de referencia pueda
+ser utilizado para atribuir imágenes capturadas mucho tiempo después.
+
+En segundo lugar, la **universalidad**. La PRNU está presente en toda
+imagen capturada por un sensor digital, con independencia del contenido
+de la escena, el formato de archivo o el nivel de compresión aplicado
+(0) (17-18). Aunque la compresión JPEG y otros procesos de
+postproducción pueden degradar la señal de PRNU, las técnicas forenses
+modernas han desarrollado métodos para extraer la huella incluso de
+imágenes fuertemente comprimidas (7) (32-35).
+
+En tercer lugar, la **unicidad**. Los patrones de ruido extraídos de
+diferentes cámaras, incluso del mismo modelo y fabricante, están
+fuertemente descorrelacionados (0) (26-27). Esta propiedad, que ha sido
+verificada empíricamente en estudios con miles de dispositivos,
+convierte a la PRNU en un identificador prácticamente único de cada
+sensor (0) (26-27). Como ha señalado la doctrina, la PRNU es
+"ampliamente reconocida como uno de los rastros más efectivos para la
+atribución de origen de imágenes", y "la unicidad de este artefacto
+garantiza que los patrones de ruido extraídos de diferentes cámaras
+estén fuertemente descorrelacionados, incluso cuando las cámaras
+pertenecen al mismo modelo" (0) (26-27).
+
+#### c) Aplicaciones forenses y estándares de fiabilidad
+
+Las aplicaciones forenses de la PRNU son múltiples y han sido objeto de
+un desarrollo continuo en la última década (7) (16-18). La
+identificación de la cámara de origen (*source camera identification*)
+es la aplicación más extendida y consiste en determinar si una imagen
+determinada fue capturada por un dispositivo concreto comparando el
+patrón de ruido extraído de la imagen con el *fingerprint* de referencia
+del dispositivo (0) (12-14) (1) (5-6). La vinculación de dispositivos
+(*source device linking*) permite, por su parte, determinar si dos o más
+imágenes fueron capturadas por el mismo dispositivo, incluso cuando no
+se dispone de un *fingerprint* de referencia (7) (16-18). La detección
+de falsificaciones (*forgery detection*) explota el hecho de que las
+regiones de una imagen manipulada presentan patrones de PRNU
+inconsistentes con el resto de la imagen, lo que permite identificar
+áreas que han sido insertadas o modificadas (7) (16-18).
+
+El estándar de fiabilidad de la PRNU ha sido objeto de numerosos
+estudios comparativos (7) (11-12). Los métodos basados en PRNU han
+demostrado ser robustos frente a diversas operaciones de procesamiento
+de imagen, incluyendo la compresión, el redimensionado y el filtrado (7)
+(32-35). No obstante, la fiabilidad de la atribución depende de varios
+factores: la calidad y cantidad de imágenes de referencia disponibles
+para estimar el *fingerprint*, el nivel de compresión de la imagen
+problema, y la presencia de operaciones de postprocesado que puedan
+degradar la señal de PRNU (0) (12-14). Los avances recientes en técnicas
+de aprendizaje profundo han permitido mejorar la precisión de la
+atribución, especialmente en escenarios de baja resolución o alta
+compresión (7) (32-35).
+
+### 3. Atribución de vídeos y archivos: metadatos y huellas de codificación
+
+Más allá de las imágenes fijas, la atribución de vídeos y otros archivos
+digitales se apoya en un conjunto diverso de técnicas, entre las que
+destacan el análisis de metadatos y el examen de las huellas de
+codificación.
+
+Los **metadatos** ---y en particular el formato *Exchangeable Image File
+Format* (EXIF)--- constituyen una fuente de información forense de
+primer orden (3) (11-12). El EXIF almacena información técnica
+registrada por el dispositivo capturador, incluyendo el modelo de
+cámara, la fecha y hora de captura, los parámetros de exposición y, en
+ocasiones, datos de geolocalización (3) (11-12). Esta información, que
+en el caso de los *smartphones* puede incluir el número de serie del
+dispositivo, permite establecer vínculos entre archivos y dispositivos
+(3) (11-12). Sin embargo, los metadatos presentan una limitación
+fundamental: **pueden ser manipulados** con relativa facilidad mediante
+herramientas de edición, lo que obliga al perito a verificar su
+consistencia interna y a contrastarlos con otras fuentes de información
+(3) (12-13). La mera presencia de metadatos coincidentes no es, por
+tanto, suficiente para acreditar el origen dispositivo; requiere ser
+corroborada por otros medios.
+
+El análisis de las **huellas de codificación** (*encoding fingerprints*)
+ofrece una alternativa más robusta. Cada dispositivo o *software* de
+procesamiento deja una firma característica en la estructura del
+archivo, derivada de la implementación específica de los algoritmos de
+compresión, los parámetros de cuantificación y las tablas de Huffman
+utilizadas (3) (8-10). Esta firma, que puede extraerse de los
+encabezados del archivo JPEG o de otros formatos, ha demostrado ser
+"altamente distintiva a través de 1,3 millones de imágenes que abarcan
+773 cámaras y teléfonos móviles diferentes" (3) (42-43). A diferencia
+de los metadatos, las huellas de codificación no son fácilmente
+modificables por el usuario, lo que las convierte en un medio de
+atribución más fiable, aunque no exento de limitaciones cuando el
+archivo ha sido recompresado o sometido a transformaciones
+significativas.
+
+En el caso de los **vídeos**, la atribución a un dispositivo concreto
+presenta desafíos adicionales derivados de la complejidad del formato,
+la multiplicidad de *codecs* y la frecuente recompresión a la que son
+sometidos los vídeos en las plataformas de redes sociales. No obstante,
+la PRNU puede ser también extraída de los fotogramas de un vídeo, si
+bien la compresión y el escalado de resolución degradan
+significativamente la señal de ruido (0) (20-23). Las técnicas más
+recientes han desarrollado métodos para la estimación del *fingerprint*
+PRNU a partir de fotogramas de vídeo que tienen en cuenta los efectos de
+la compresión sobre el ruido PRNU (0) (20-23). La atribución de vídeos
+sigue siendo, no obstante, un campo en desarrollo, con tasas de éxito
+variables en función de las condiciones de captura y procesamiento.
+
+### 4. La cadena de custodia como presupuesto de validez de la atribución técnica
+
+La atribución técnica del dispositivo, por precisa que sea, carece de
+valor probatorio si no va acompañada de una **cadena de custodia** que
+garantice la integridad y autenticidad de la evidencia digital desde el
+momento de su obtención hasta su presentación en el juicio (4) (8-10).
+Como ha señalado la doctrina, "la integridad y autenticidad de la
+evidencia digital son cruciales para su admisibilidad legal en un
+tribunal" (4) (34-36). La cadena de custodia es el mecanismo que
+asegura que la evidencia no ha sido alterada, manipulada o contaminada a
+lo largo del proceso investigador, y que el vínculo entre la evidencia y
+el dispositivo del que procede se mantiene intacto (4) (34-36).
+
+Los estándares internacionales han establecido pautas detalladas para la
+gestión de la cadena de custodia digital. La **ISO/IEC 27037**
+proporciona directrices para las actividades específicas de manejo de
+evidencia digital, incluyendo la identificación, recolección,
+adquisición y preservación de la evidencia que pueda tener valor
+probatorio (6) (9-12). La **NIST SP 800-86**, por su parte, describe un
+proceso de cuatro pasos para la aplicación de técnicas forenses
+digitales: recolección, examen, análisis e informe (5) (9-11). Ambos
+estándares enfatizan la necesidad de documentar meticulosamente cada
+transferencia y recepción de la evidencia, con marcas de tiempo
+precisas, la identificación de todo el personal involucrado y el
+propósito de cada manipulación (4) (17-20).
+
+La jurisprudencia ha sido particularmente sensible a las deficiencias en
+la cadena de custodia. La Sentencia del Tribunal Supremo (Sala de lo
+Militar) 90/2021 exige un informe pericial que garantice la autenticidad,
+la autoría y la integridad de los contenidos y **destaca la importancia
+de la cadena de custodia y la obtención forense** (21). La Sentencia del
+Tribunal Supremo 116/2025, por su parte, ratifica una condena destacando
+que la documentación de la cadena de custodia digital —obtención,
+conservación y traslado de los archivos por la policía judicial—
+refuerza la fiabilidad de la prueba, exigiendo además coherencia con el
+resto del cuadro probatorio (20). Estos
+pronunciamientos ponen de manifiesto que la atribución técnica del
+dispositivo no es un dato que el perito pueda limitarse a constatar,
+sino una conclusión que debe ser construida mediante un procedimiento
+metódico, documentado y reproducible, en el que la cadena de custodia
+ocupa un lugar central.
+
+Las buenas prácticas en la cadena de custodia digital exigen, como
+mínimo, los siguientes elementos (4) (41-45): (i) registro de la fecha,
+hora y lugar de la incautación del dispositivo; (ii) identificación de
+cada persona que haya manipulado la evidencia; (iii) documentación de
+las herramientas y procedimientos utilizados para la adquisición de la
+imagen forense; (iv) verificación de la integridad de la evidencia
+mediante *hashes* criptográficos en cada etapa del proceso; y (v)
+preservación de la evidencia original en condiciones que impidan su
+modificación accidental o deliberada. La ausencia de cualquiera de estos
+elementos no invalida automáticamente la evidencia, pero introduce un
+factor de incertidumbre que puede ser explotado por la defensa y que, en
+casos límite, puede determinar la insuficiencia probatoria.
+
+### 5. Conclusiones parciales: el dispositivo como condición necesaria pero no suficiente
+
+Del análisis de los instrumentos de atribución técnica del dispositivo
+se desprenden varias conclusiones de relevancia para el problema central
+de este trabajo.
+
+En primer lugar, **la atribución técnica del dispositivo es posible y,
+en muchos casos, fiable**. La PRNU, en particular, constituye un
+instrumento de atribución de imágenes de una solidez probatoria muy
+superior a la de la dirección IP, precisamente porque se basa en una
+propiedad física del sensor, no en un dato extrínseco manipulable (0)
+(17-19) (7) (11-12). El análisis de metadatos y huellas de codificación
+ofrece, asimismo, herramientas valiosas para la atribución de vídeos y
+otros archivos, si bien con un grado de fiabilidad menor y una mayor
+vulnerabilidad a la manipulación.
+
+En segundo lugar, **la atribución técnica del dispositivo tiene límites
+que no pueden ser soslayados**. La dirección IP es un instrumento
+particularmente frágil, dado su carácter topológico y su facilidad de
+enmascaramiento (2) (7). La PRNU, aunque mucho más robusta, puede verse
+degradada por la compresión, el redimensionado y otras operaciones de
+postprocesado, y su extracción requiere condiciones técnicas que no
+siempre se dan en la práctica investigadora (0) (12-14). Los metadatos
+son fácilmente manipulables y, por tanto, requieren corroboración (3)
+(12-13). La cadena de custodia, finalmente, es un presupuesto de validez
+de toda atribución técnica, y su ausencia o deficiencia puede
+comprometer la admisibilidad y el valor probatorio de la evidencia (4)
+(34-36).
+
+En tercer lugar, y esto es lo más relevante para el objeto de este
+trabajo, **la atribución técnica del dispositivo, incluso cuando es
+plenamente fiable, no resuelve el problema de la atribución personal**.
+Acreditar que una imagen fue capturada por el sensor de un *smartphone*
+concreto, o que una publicación se originó desde una dirección IP
+determinada, no responde a la pregunta de quién, entre las personas con
+acceso a ese dispositivo, fue el autor de la acción digital. La
+atribución técnica opera en el nivel del *origen* (3); la atribución
+personal exige un salto al nivel del *atacante* (3). Y es precisamente
+en ese salto donde se concentran las mayores dificultades y los mayores
+riesgos de error.
+
+La brecha persona-dispositivo, formulada en la sección anterior (2) (8),
+no es, por tanto, un problema que pueda resolverse mediante el
+perfeccionamiento de las técnicas de atribución de dispositivo. Por
+preciso y fiable que sea el instrumento técnico, siempre dejará sin
+respuesta la pregunta fundamental: **¿quién**, entre los posibles
+usuarios del dispositivo, fue el agente de la acción? La respuesta a
+esta pregunta exige un enfoque cualitativamente distinto, que
+analizaremos en la sección siguiente: la atribución a la persona
+mediante el análisis de la capa de identidad, la biometría conductual y
+la convergencia de múltiples flujos de evidencia.
+
+## IV. LA ATRIBUCIÓN A LA PERSONA: ESTRATEGIAS Y HERRAMIENTAS FORENSES
+
+### 1. Análisis de la capa de identidad: más allá de la titularidad del dispositivo
+
+La constatación de que la atribución técnica del dispositivo, por
+precisa que sea, no resuelve el problema de la atribución personal,
+impone la necesidad de desarrollar estrategias forenses específicamente
+orientadas a cerrar la brecha persona-dispositivo. Estas estrategias
+operan sobre lo que la doctrina ha denominado **"capa de identidad"**
+(*identity layer*): el conjunto de rasgos, patrones y comportamientos
+que permiten diferenciar a unos usuarios de otros y vincular una acción
+digital a una persona concreta (1) (7).
+
+El análisis de la capa de identidad parte de una premisa metodológica
+fundamental: **la atribución personal no puede basarse en un único
+indicador, por robusto que este parezca**. Como ha establecido el marco
+FACT, la evidencia digital por sí sola es insuficiente para la
+atribución a nivel de persona, y esta requiere la convergencia de
+múltiples flujos de evidencia procedentes de fuentes independientes (1)
+(7) (2) (10). Esta exigencia responde a una lógica probatoria bien
+conocida: la corroboración mutua entre fuentes distintas reduce el
+riesgo de error y aumenta la fiabilidad de la inferencia.
+
+La estrategia de atribución personal se articula, por tanto, en torno a
+tres ejes principales. El primero es el **análisis biométrico
+conductual**, que examina los patrones de interacción del usuario con el
+dispositivo ---la forma de teclear, de mover el ratón, de desplazarse
+por la pantalla--- en busca de firmas conductuales que permitan
+diferenciar a unos usuarios de otros. El segundo es el **análisis de
+patrones temporales y de uso**, que explota las regularidades en los
+hábitos de acceso y utilización del dispositivo para construir perfiles
+de usuario. El tercero es la **correlación con fuentes extrínsecas**,
+que integra la evidencia digital con otras fuentes de información
+---testimonios, registros de actividad en otros dispositivos, datos de
+geolocalización--- para construir un cuerpo de evidencia coherente y
+consistente.
+
+### 2. Biometría conductual como instrumento de diferenciación entre usuarios
+
+La biometría conductual, a diferencia de la biometría fisiológica ---que
+se basa en rasgos corporales como la huella dactilar o el iris---, se
+fundamenta en **patrones de comportamiento** que son característicos de
+cada individuo y difíciles de replicar por un tercero (1) (7). En el
+contexto de la atribución digital, la biometría conductual ofrece la
+ventaja de ser **no intrusiva y continua**: puede ser recogida de manera
+inadvertida mientras el usuario interactúa con el dispositivo, sin
+requerir su colaboración activa ni interrumpir su actividad (0). Esta
+cualidad la convierte en un instrumento especialmente valioso para la
+atribución en entornos de dispositivo compartido, donde el desafío
+consiste precisamente en distinguir entre distintos usuarios a partir de
+sus huellas de interacción.
+
+La doctrina ha identificado múltiples modalidades de biometría
+conductual con potencial forense, incluyendo la dinámica de tecleo
+(*keystroke dynamics*), la dinámica del ratón (*mouse dynamics*), los
+patrones de navegación web, los movimientos oculares, la forma de andar
+(*gait*) y, más recientemente, los patrones de interacción con pantallas
+táctiles en dispositivos móviles (7) (8). No todas estas modalidades han
+alcanzado, sin embargo, el mismo grado de madurez forense. Mientras que
+la dinámica de tecleo ha sido objeto de un amplio desarrollo y ha
+demostrado niveles de precisión elevados, la dinámica del ratón presenta
+todavía limitaciones significativas que cuestionan su idoneidad como
+prueba forense en el contexto de un litigio (8) (9).
+
+#### a) Dinámica de tecleo (*keystroke dynamics*): fundamentos y parámetros
+
+La dinámica de tecleo, también denominada *fingerprinting* de tecleo
+(*keystroke fingerprinting*), es una de las técnicas de biometría
+conductual más desarrolladas y consolidadas en el ámbito forense (0). Se
+fundamenta en la constatación empírica de que cada individuo posee un
+**patrón de escritura único**, caracterizado por la forma en que
+presiona y libera las teclas, los intervalos entre pulsaciones y el
+ritmo general de la digitación (0) (6). Estos patrones, que han sido
+descritos como "el proceso de autenticación/identificación basado en el
+trazo de escritura humana en un teclado", permiten la identificación y
+extracción de patrones de comportamiento del usuario (0) (7).
+
+Los parámetros fundamentales de la dinámica de tecleo se agrupan en dos
+categorías principales (0). La primera comprende los **tiempos de
+presión y liberación** (*hold times* o *dwell times*): el intervalo
+durante el cual una tecla permanece pulsada. La segunda incluye los
+**tiempos de transición** (*flight times* o *latency*): los intervalos
+entre la liberación de una tecla y la presión de la siguiente, o entre
+la presión de dos teclas sucesivas (0) (7). Estos parámetros, combinados
+con otros como la fuerza de la pulsación (cuando el teclado lo permite)
+o los patrones de error (teclas pulsadas y corregidas), conforman una
+**firma conductual** que, en condiciones adecuadas, permite distinguir a
+un usuario de otro con un alto grado de precisión (0). La investigación
+ha mostrado además que "los patrones de tecleo son repetitivos y varían
+de los de otros, y que son imposibles de robar o imitar" (6).
+
+La literatura ha explorado también la posibilidad de extraer información
+demográfica a partir de los patrones de tecleo. Se ha observado que la
+dinámica de tecleo puede revelar, por ejemplo, el género del usuario, lo
+que la convierte en una herramienta valiosa para la elaboración de
+perfiles en investigaciones forenses (0). Esta capacidad, aunque no es
+directamente relevante para la atribución individual, puede contribuir a
+la construcción de un perfil de usuario que, combinado con otras
+evidencias, refuerce la inferencia atributiva.
+
+#### b) Patrones de uso del ratón y comportamiento de interacción
+
+La dinámica del ratón (*mouse dynamics*) constituye otra modalidad de
+biometría conductual que ha recibido atención creciente en la literatura
+forense (1). Se fundamenta en el análisis de los patrones de movimiento
+del cursor, incluyendo la velocidad, la trayectoria, los movimientos de
+*click* y *drag*, y los tiempos de reacción (1). La premisa subyacente
+es que, al igual que la forma de teclear, la forma de mover el ratón es
+característica de cada individuo y puede ser utilizada para diferenciar
+a unos usuarios de otros.
+
+Sin embargo, el estado actual de la investigación muestra que la
+dinámica del ratón **no ha alcanzado el mismo grado de madurez forense
+que la dinámica del tecleo** (8) (9). Un estudio de 2024 sobre la
+viabilidad de la dinámica del ratón en la forensica digital concluyó que
+"el umbral de fiabilidad actual de las modalidades biométricas
+conductuales no alcanza el estándar requerido para atributos forenses",
+atribuyendo esta baja fiabilidad, en parte, a la "baja relación
+señal-ruido en un conjunto de datos conductuales típico" (8) (9). Otros
+estudios han llegado a conclusiones similares, señalando que "la
+dinámica del ratón no es adecuada para su uso forense" y que, aunque
+"puede ser una modalidad complementaria en estudios de seguridad, se
+requiere más trabajo para adoptarla como modalidad forense en litigios"
+(1).
+
+Esta limitación no implica, sin embargo, que la dinámica del ratón
+carezca de utilidad en el contexto de la atribución personal. Puede ser
+empleada como **elemento corroborador** dentro de un conjunto más amplio
+de evidencias, siempre que se sea consciente de sus limitaciones y se
+evite atribuirle un valor probatorio que no posee. La combinación de
+dinámica de tecleo y dinámica del ratón ha mostrado resultados
+prometedores en estudios de autenticación continua (7), y su uso
+conjunto podría aumentar la fiabilidad de la atribución en entornos
+donde los datos de una modalidad son insuficientes o están degradados.
+
+#### c) Capacidad discriminativa y tasas de error
+
+La capacidad de la biometría conductual para diferenciar entre usuarios
+se mide mediante indicadores como la **tasa de falsa aceptación**
+(*False Acceptance Rate*, FAR) y la **tasa de falso rechazo** (*False
+Rejection Rate*, FRR), o mediante la **tasa de error igual** (*Equal
+Error Rate*, EER), que equilibra ambos tipos de error (4). En el caso de
+la dinámica de tecleo, los resultados de la investigación son
+alentadores, aunque revelan una variabilidad significativa en función de
+las condiciones de la prueba.
+
+Un estudio con 205 individuos obtuvo una tasa de falsa alarma inferior
+al 5% y una tasa de paso de impostores inferior al 0,005% (4). Otros
+estudios han reportado tasas de error igual (EER) de aproximadamente
+0,054 para autenticación, 0,050 para verificación continua y 0,069 para
+identificación de usuarios *masquerading* (4). Sin embargo, también se
+ha observado que, para el mejor clasificador, "las tasas de error
+varían desde el 0% hasta el 63% dependiendo del usuario", y que "los
+impostores triplican sus posibilidades de evadir la detección si
+escriben al tacto" (4). Esta variabilidad subraya la importancia de
+**contextualizar los resultados** y de no atribuir a la biometría
+conductual una fiabilidad uniforme que no se corresponde con la realidad
+empírica.
+
+En el ámbito de la dinámica del ratón, los resultados son menos
+favorables. Un estudio de 2024, que proponía una técnica de extracción
+de firmas conductuales únicas, concluyó que el rendimiento era "pobre
+en relación con los estudios existentes", lo que hace inviable su uso
+como referencia para la ciencia forense (8) (9). La baja relación
+señal-ruido, característica de los conjuntos de datos conductuales,
+limita la capacidad de extraer patrones suficientemente distintivos y
+estables (8).
+
+El estudio de la Universidad de Purdue, que empleó el algoritmo XGBoost
+para modelar la interacción del usuario a partir de características de
+tecleo y uso del ratón, obtuvo un **F1-score y un AUROC (Área Bajo la
+Curva ROC) de 0,95**, atribuyendo con éxito el evento del usuario al
+usuario correcto (11). El modelo XGBoost superó a otros clasificadores
+basados en algoritmos como Máquinas de Vectores Soporte (SVM), SVM
+potenciado y Bosque Aleatorio (11). Sin embargo, este estudio subraya la
+necesidad de "informar sobre las tasas de error conocidas para estas
+técnicas avanzadas" (11), un requisito metodológico esencial para su
+admisibilidad en el proceso judicial.
+
+#### d) Aplicación práctica en entornos de dispositivo compartido
+
+La aplicación de la biometría conductual en entornos de dispositivo
+compartido ---el escenario que preside este trabajo--- presenta
+características y desafíos específicos. En primer lugar, la
+**disponibilidad de datos de referencia** es crucial: para atribuir una
+acción a un usuario concreto, es necesario disponer de perfiles de
+referencia de todos los posibles usuarios, o al menos de aquel al que se
+atribuye la acción. Estos perfiles deben ser extraídos de sesiones de
+interacción en las que la identidad del usuario esté suficientemente
+acreditada (11). En segundo lugar, la **duración y calidad de la
+muestra** influye decisivamente en la fiabilidad de la atribución:
+cuanto más breve sea la interacción, menor será la cantidad de datos
+disponibles y, por tanto, mayor la incertidumbre de la atribución (4).
+
+El marco FACT aborda explícitamente esta cuestión al exigir que la
+atribución a nivel de persona se apoye en la convergencia de múltiples
+flujos de evidencia (1) (2). La biometría conductual puede ser uno de
+esos flujos, pero no el único. Su valor probatorio dependerá de la
+calidad de los datos, de la solidez de los perfiles de referencia y de
+la capacidad del perito para explicar las tasas de error y las
+limitaciones de la técnica empleada.
+
+### 3. Análisis de patrones temporales y hábitos de uso
+
+Más allá de la biometría conductual, el análisis de **patrones
+temporales y hábitos de uso** constituye una herramienta complementaria
+de gran valor para la atribución personal. Este análisis se basa en la
+premisa de que los usuarios tienden a exhibir **regularidades en sus
+comportamientos de acceso y utilización de los dispositivos**: horarios
+preferentes de conexión, frecuencia de uso, aplicaciones o servicios más
+utilizados, duración de las sesiones, y otros patrones que, en su
+conjunto, conforman una **huella temporal** característica de cada
+individuo.
+
+En el contexto de un dispositivo compartido, el análisis de patrones
+temporales puede ser especialmente revelador. Por ejemplo, si las
+publicaciones injuriosas se realizaron en un horario en el que el
+propietario del dispositivo suele estar ausente ---por ejemplo, durante
+su jornada laboral--- y coincide con el horario en que otro usuario con
+acceso al dispositivo está presente, este hecho constituye un indicio
+relevante, aunque no concluyente, sobre la autoría. De manera similar,
+si el análisis de los registros de actividad muestra que el dispositivo
+fue utilizado de forma intensiva en un período concreto, y ese período
+coincide con la presencia de un usuario determinado, la inferencia
+atributiva se refuerza.
+
+La doctrina ha señalado que la integración de estos patrones temporales
+con otras fuentes de evidencia ---como datos de geolocalización,
+registros de otros dispositivos o testimonios--- permite construir un
+**perfil de usuario** que, en su conjunto, ofrece un grado de convicción
+superior al que proporcionaría cada elemento por separado (5). Esta
+aproximación, que podríamos denominar **"perfilación conductual"**
+(*behavioral profiling*), se basa en la convergencia de múltiples
+indicadores que, individualmente considerados, pueden ser débiles, pero
+que en su conjunto apuntan en la misma dirección.
+
+### 4. Correlación con fuentes extrínsecas: geolocalización, registros de acceso y otros dispositivos vinculados
+
+La atribución personal se beneficia extraordinariamente de la
+**correlación de la evidencia digital con fuentes extrínsecas** que no
+dependen del dispositivo investigado. Estas fuentes pueden incluir:
+
+**a) Datos de geolocalización.** La ubicación física del dispositivo en
+el momento de la acción ---determinada mediante GPS, torres de telefonía
+móvil o direcciones IP--- puede ser contrastada con la ubicación
+conocida del acusado o de otros posibles usuarios en ese momento (8). Si
+la geolocalización sitúa el dispositivo en un lugar donde el acusado no
+se encontraba, la atribución a su persona queda seriamente cuestionada.
+
+**b) Registros de acceso a otros dispositivos y servicios.** La
+actividad del usuario en otros dispositivos ---ordenador de trabajo,
+*tablet*, otro *smartphone*--- o en servicios en la nube ---correo
+electrónico, almacenamiento en la nube, plataformas de mensajería---
+puede proporcionar un **contexto más amplio** que permita corroborar o
+refutar la atribución (8). Por ejemplo, si el acusado estaba utilizando
+su ordenador de trabajo en el momento en que se realizaron las
+publicaciones desde el *smartphone* compartido, esta circunstancia no
+excluye su autoría ---pudo haber utilizado ambos dispositivos--- pero
+introduce un elemento que debe ser evaluado en el conjunto de la prueba.
+
+**c) Testimonios y declaraciones.** Las declaraciones de testigos que
+puedan situar al acusado o a otros usuarios en el lugar y momento de la
+acción, o que puedan acreditar hábitos de uso del dispositivo,
+constituyen una fuente de información valiosa que, combinada con la
+evidencia digital, puede reforzar o debilitar la inferencia atributiva.
+
+**d) Análisis de contenido y estilo.** El análisis lingüístico y
+estilístico de los mensajes ---la denominada **"verificación de
+autoría"** (*authorship verification*)--- puede proporcionar indicios
+adicionales sobre la identidad del autor (3). Esta técnica, que se
+enmarca en la lingüística forense, analiza rasgos como el vocabulario,
+la sintaxis, la longitud de las frases y otros marcadores estilísticos
+para determinar si dos textos fueron escritos por la misma persona (3).
+Aunque no es una técnica de atribución concluyente, puede servir como
+elemento corroborador en el conjunto de la prueba.
+
+### 5. La convergencia de múltiples flujos de evidencia como estándar metodológico
+
+La sección anterior introdujo el **principio de convergencia de flujos
+de evidencia independientes** como un estándar metodológico fundamental
+para la atribución a nivel de persona (1) (2). Este principio, que el
+marco FACT eleva a la categoría de requisito, establece que la evidencia
+digital por sí sola es insuficiente para la atribución personal, y que
+esta requiere la convergencia de múltiples flujos de evidencia
+procedentes de fuentes independientes (1) (2) (10).
+
+La aplicación de este principio al escenario del dispositivo compartido
+implica que el perito y el tribunal no pueden contentarse con la
+constatación de que las publicaciones se originaron en el dispositivo
+del acusado. Es necesario, además, aportar **evidencias adicionales que
+apunten a su autoría** y que procedan de fuentes distintas (2). Estas
+evidencias pueden incluir, según los casos:
+
+-   Análisis de dinámica de tecleo que vincule la redacción de los
+    > mensajes con el patrón de escritura del acusado (0) (7).
+
+-   Patrones temporales que sitúen al acusado en el lugar y momento de
+    > la acción, o que excluyan a otros posibles usuarios (8).
+
+-   Correlación con otros dispositivos o servicios que refuercen la
+    > presencia del acusado en el momento de la acción (8).
+
+-   Análisis lingüístico que vincule el estilo de los mensajes con el
+    > del acusado (3).
+
+-   Testimonios que acrediten hábitos de uso o que sitúen al acusado en
+    > el lugar de los hechos.
+
+-   Cualquier otra fuente de información que, de manera independiente,
+    > apunte en la misma dirección.
+
+El estándar de convergencia no exige, sin embargo, que todos los flujos
+de evidencia apunten con la misma intensidad a la misma conclusión. Lo
+que exige es que el **cuerpo de evidencia en su conjunto** sea coherente
+y consistente, y que las hipótesis alternativas ---otro usuario con
+acceso al dispositivo, un *software* malicioso, un deepfake--- queden
+razonablemente excluidas (2). Como ha señalado la jurisprudencia, la
+prueba indiciaria digital debe ser valorada en su conjunto, y no
+mediante el examen aislado de cada uno de sus elementos (20).
+
+### 6. Conclusiones parciales: la atribución personal como construcción probatoria
+
+Del análisis de las estrategias y herramientas para la atribución
+personal se desprenden varias conclusiones de relevancia.
+
+En primer lugar, **la atribución personal es posible, pero exige un
+enfoque metodológico distinto al de la atribución de dispositivo**.
+Mientras que esta última se apoya en técnicas forenses relativamente
+consolidadas ---PRNU, análisis de metadatos, identificación por IP--- la
+atribución personal requiere la integración de múltiples fuentes de
+evidencia, incluyendo la biometría conductual, el análisis de patrones
+temporales y la correlación con fuentes extrínsecas.
+
+En segundo lugar, **la biometría conductual, y en particular la dinámica
+de tecleo, ofrece un instrumento valioso para la atribución personal en
+entornos de dispositivo compartido**. Los estudios empíricos muestran
+que los patrones de tecleo son suficientemente distintivos para
+diferenciar a unos usuarios de otros, con tasas de error que, en
+condiciones favorables, pueden ser muy reducidas (0) (7) (11). Sin
+embargo, su aplicación forense exige cautela: las tasas de error varían
+significativamente en función de las condiciones, y la dinámica del
+ratón, en particular, no ha alcanzado el grado de madurez necesario para
+ser utilizada como prueba forense en litigios (8) (9).
+
+En tercer lugar, **la convergencia de múltiples flujos de evidencia es
+un estándar metodológico irrenunciable**. La atribución personal no
+puede basarse en un único indicador, por robusto que parezca. Es
+necesario construir un cuerpo de evidencia coherente y consistente, en
+el que las distintas piezas se refuercen mutuamente y apunten en la
+misma dirección, excluyendo razonablemente las hipótesis alternativas
+(1) (2).
+
+En cuarto lugar, **la prudencia es un imperativo**. Cuando la evidencia
+disponible no permite alcanzar una conclusión firme sobre la autoría
+personal, el perito y el tribunal deben estar dispuestos a reconocerlo y
+a documentar una conclusión de no atribución (1) (2). La presión por
+obtener una condena no puede justificar el sacrificio de la precisión
+probatoria ni la vulneración de la presunción de inocencia.
+
+La atribución personal no es, por tanto, un dato que la técnica revela,
+sino una **inferencia probatoria** que debe ser construida, justificada
+y sometida a contradicción. Es, en este sentido, una operación análoga a
+la que se realiza en cualquier otro ámbito del proceso penal cuando se
+trata de identificar al autor de un hecho a partir de indicios. La
+diferencia estriba en que, en el entorno digital, los indicios son de
+naturaleza técnica y requieren una interpretación especializada que el
+tribunal debe ser capaz de comprender y valorar.
+
+## V. LA DEFENSA DEL TROYANO (*TROJAN HORSE DEFENCE*) COMO OBSTÁCULO PROBATORIO
+
+### 1. Origen y evolución de la *SODDI Defence* (*Some Other Dude Did It*)
+
+La defensa del troyano (*Trojan Horse Defence*, THD) constituye una de
+las estrategias procesales más singulares y, a la vez, más desafiantes
+del derecho penal digital. Su origen se sitúa en el año 2003, cuando
+surgió en varios procesos penales por delitos informáticos en el Reino
+Unido (1) (8) (7). Se trata de una variante tecnológica de la clásica
+*SODDI Defence* (*Some Other Dude Did It*), mediante la cual el acusado,
+en lugar de alegar la intervención de un tercero de carne y hueso,
+**atribuye el *actus reus* y el *mens rea* del delito a un programa
+informático**, específicamente a un *software* malicioso conocido como
+troyano (1) (7) (11). Como ha señalado la doctrina, "una defensa del
+caballo de Troya (THD) es un tipo de defensa SODDI moderna, donde el
+*mens rea* y el *actus reus* se atribuyen a un programa informático,
+conocido como troyano" (11) (7). En definitiva, la tesis defensiva es
+que el dispositivo del acusado fue utilizado por un *software* malicioso
+---instalado sin su conocimiento--- para cometer el delito, exonerando
+así al propietario de toda responsabilidad (11) (7) (1).
+
+La defensa del troyano adquirió notoriedad internacional en el año 2003,
+cuando fue invocada con éxito en el caso **R v Aaron Caffrey** ante el
+*Southwark Crown Court* (Reino Unido) (5) (11). Caffrey, un joven de 19
+años, fue acusado de lanzar un ataque de denegación de servicio
+distribuido (DDoS) contra el sistema informático del puerto de Houston
+desde su ordenador personal en el Reino Unido (5) (11). El origen del
+ataque no estaba en duda: las evidencias técnicas demostraban que el
+ataque se había originado desde el dispositivo de Caffrey (5). Sin
+embargo, la defensa argumentó que el ordenador de Caffrey había sido
+comprometido por un troyano y que fue un tercero quien, utilizando ese
+*software* malicioso, lanzó el ataque (5). El tribunal absolvió a
+Caffrey, al considerar que la defensa había generado una duda razonable
+sobre su autoría (11) (1).
+
+El éxito de la defensa en el caso *Caffrey*, unido a su empleo en otros
+dos procesos por pornografía infantil en el Reino Unido que también
+resultaron en absoluciones (1) (12), colocó a la THD en el centro del
+debate forense y jurídico. Como ha observado la doctrina, "en 2004, la
+defensa del caballo de Troya se encontraba en una encrucijada, habiendo
+sido empleada con éxito en dos casos de pornografía infantil en el Reino
+Unido, lo que resultó en absoluciones" (12) (7). Aquellos primeros
+éxitos, sin embargo, no se tradujeron en una adopción generalizada de la
+estrategia defensiva en la práctica judicial posterior (12).
+
+Desde entonces, la defensa del troyano ha evolucionado y se ha integrado
+en una categoría más amplia: la **defensa SODDI técnica** (*technical
+SODDI*), que incluye no solo la alegación de *malware*, sino también la
+posibilidad de que un tercero desconocido haya utilizado una conexión
+Wi-Fi no asegurada o haya tenido acceso físico al ordenador para
+realizar actos delictivos (12) (9) (2). Esta ampliación del concepto
+responde a la creciente complejidad de los entornos digitales y a la
+multiplicidad de vectores a través de los cuales un tercero puede
+utilizar un dispositivo sin el conocimiento o consentimiento de su
+propietario (12).
+
+### 2. Fundamentos de la defensa: el *software* malicioso como autor sustitutivo
+
+El fundamento de la defensa del troyano reside en la **transferencia de
+la autoría** del hecho delictivo desde el acusado ---titular o usuario
+del dispositivo--- al *software* malicioso. Para que la defensa resulte
+plausible, el acusado debe introducir, al menos, alguna evidencia que
+establezca tres elementos acumulativos: (a) que un programa troyano u
+otro *malware* estaba instalado en su ordenador; (b) que fue instalado
+por otra persona; y (c) que ello ocurrió sin su conocimiento (1) (2).
+
+El efecto jurídico de esta alegación es, en esencia, la **introducción
+de una duda razonable** sobre la autoría personal del acusado (1) (8).
+Como ha señalado la doctrina, el carácter aparentemente anónimo del
+autor ---el *software* malicioso--- juega a favor del acusado, en la
+medida en que dificulta la identificación del verdadero responsable y
+convierte la defensa en una estrategia de difícil refutación (2). A
+diferencia de la SODDI tradicional, donde el acusado debe señalar a un
+tercero identificable, en la defensa del troyano el "otro tipo" es un
+programa informático que, por su propia naturaleza, no puede ser llevado
+a juicio ni interrogado.
+
+La THD puede cumplir dos funciones diferenciadas en el proceso penal
+(1). En primer lugar, puede servir para **exonerar a un acusado
+verdaderamente inocente** cuyo dispositivo fue efectivamente
+comprometido por un *malware* que actuó sin su conocimiento (1). En
+segundo lugar, y de manera más problemática, puede ser utilizada como
+**táctica de última ratio por un culpable** contra quien todas las
+evidencias apuntan a su autoría (1). En este segundo caso, la defensa
+del troyano se convierte en una estrategia procesal destinada a generar
+una duda razonable que impida la condena, explotando las dificultades
+probatorias inherentes a la evidencia digital (12).
+
+Esta dualidad funcional ha llevado a la doctrina a identificar dos
+problemas igualmente preocupantes: la posibilidad de **absolver al
+culpable** y la posibilidad de **condenar al inocente** (2) (12). Dada
+la naturaleza de la evidencia digital, prácticamente todos los procesos
+penales por delitos informáticos se basan en prueba indiciaria
+("circunstancial"), lo que hace particularmente difícil distinguir
+entre la alegación genuina y la fabulación defensiva (2). La defensa del
+troyano plantea, en este sentido, un dilema probatorio de primer orden:
+cómo proteger al inocente que ha sido víctima de un *malware* sin
+proporcionar al culpable una coartada tecnológica infalsable.
+
+### 3. Análisis de los primeros diez años de la defensa del troyano
+
+El estudio de los primeros diez años de la defensa del troyano
+(2003-2013) ofrece una visión reveladora de su evolución y de los
+factores que han condicionado su éxito o fracaso en la práctica judicial
+(11) (7). La obra de Bowles y Hernandez-Castro, que lleva a cabo una
+revisión crítica y detallada de la literatura y de las peculiaridades de
+numerosos casos judiciales en todo el mundo, constituye la referencia
+más completa sobre este período (11) (7).
+
+Durante esos diez años, la THD fue empleada en una variedad de contextos
+delictivos, aunque con una presencia especialmente acusada en los casos
+de **pornografía infantil** (12) (11). Esta preponderancia no es casual:
+en estos delitos, la evidencia digital ---imágenes ilícitas almacenadas
+en el dispositivo--- es a menudo la prueba principal, y la alegación de
+que el *malware* fue el responsable de la descarga y almacenamiento de
+las imágenes constituye una estrategia defensiva de gran potencia (2).
+
+El análisis de los casos judiciales revela, sin embargo, que la
+efectividad de la THD ha sido muy variable. Mientras que en el Reino
+Unido la defensa obtuvo éxitos tempranos ---especialmente en 2003 y
+2004---, en los Estados Unidos **no se han registrado absoluciones
+publicadas** en las que la THD haya sido la defensa principal (12).
+Cuando la defensa técnica SODDI ha sido utilizada con éxito como palanca
+en negociaciones de conformidad (*plea negotiations*), ello se ha
+debido, según la doctrina, a una práctica forense deficiente por parte
+de la acusación o a presiones políticas para resolver el caso (12). Esta
+asimetría jurisdiccional sugiere que el éxito de la defensa depende no
+solo de la solidez de la alegación, sino también de la robustez de la
+respuesta forense y de la cultura jurídica de cada país.
+
+La doctrina ha señalado que, en el ámbito civil, la defensa técnica
+SODDI ha sido **notablemente exitosa**, especialmente en litigios de
+infracción de derechos de autor contra infractores no comerciales (12).
+En estos casos, la mera alegación de que un tercero desconocido pudo
+haber utilizado la red Wi-Fi abierta del demandado para descargar
+material protegido ha bastado, en numerosas ocasiones, para desestimar
+las demandas (12). Esta disparidad entre el éxito en la esfera civil y
+el fracaso relativo en la penal pone de manifiesto las diferencias en
+los estándares probatorios y en la cultura forense de ambos ámbitos.
+
+### 4. La respuesta forense: análisis de memoria volátil (RAM) como instrumento de falsación
+
+La respuesta forense a la defensa del troyano ha experimentado una
+evolución significativa, paralela a la sofisticación creciente del
+*malware* y a la comprensión más profunda de los artefactos digitales.
+Tradicionalmente, los peritos se limitaban a examinar el sistema de
+archivos en busca de evidencias de *malware* (8) (13). Este enfoque, que
+en el pasado pudo haber conducido a conclusiones justas, resulta hoy
+insuficiente ante la **creciente sofisticación de los ciberataques y las
+infecciones por *malware*** (13). Como ha señalado la doctrina, "nos
+enfrentamos ahora a ciberataques e infecciones por *malware* cada vez
+más sofisticados, y es cada vez más posible que alguien o algo (por
+ejemplo, *malware*) distinto de la parte \'obvia\' sea el culpable"
+(13).
+
+La principal limitación del análisis tradicional del sistema de archivos
+es que el *malware* moderno puede ser **"fantasma"** (*ghostware*):
+programas diseñados para borrar sus propias trazas después de ejecutar
+la acción maliciosa, dejando pocos o ningún artefacto en el sistema de
+archivos (8) (13). Esta capacidad de autoeliminación fue precisamente la
+alegación central en el caso *Caffrey*, donde la defensa argumentó que
+el troyano se había borrado a sí mismo tras perpetrar el ataque DDoS
+(5). En aquel momento, la ausencia de *malware* en el sistema de
+archivos no fue suficiente para refutar la alegación defensiva, y el
+acusado fue absuelto (5) (11).
+
+Ante esta limitación, la forensia digital ha desarrollado el **análisis
+de memoria volátil** (*memory forensics*) como un instrumento
+complementario de primer orden para desvirtuar o corroborar la defensa
+del troyano (8) (13). La memoria volátil (RAM) contiene una riqueza de
+información que **no queda registrada en el sistema de archivos**,
+incluyendo procesos en ejecución, conexiones de red activas, *handles*
+abiertos y, crucialmente, signos de infección por *malware* que pueden
+haber sido eliminados del disco (8). Mediante el análisis de la RAM, los
+investigadores pueden "descubrir una gran cantidad de información que
+no está registrada en el sistema de archivos, incluyendo signos de
+infección por *malware*" (8) (13).
+
+El análisis de memoria volátil permite, en particular, abordar dos
+cuestiones clave en la defensa del troyano. En primer lugar, **verificar
+la presencia efectiva de *malware*** en el momento de la acción
+delictiva, más allá de la mera posibilidad teórica alegada por la
+defensa (8) (13). En segundo lugar, **evaluar si el *malware* detectado
+tenía la capacidad funcional** para realizar la acción delictiva
+atribuida, o si, por el contrario, se trataba de un programa inofensivo
+o de una infección no relacionada con el hecho (8) (13). La doctrina ha
+señalado que, en los casos en que se emplea la defensa del troyano, el
+uso de técnicas anti-forenses puede eliminar los artefactos exactos en
+los que se basa el análisis tradicional para vincular la actividad al
+usuario final o al *malware* (8). La forensia de memoria, al operar
+sobre datos volátiles que no persisten en el disco, ofrece una vía para
+superar estas técnicas de ocultación (8).
+
+La literatura más reciente ha propuesto marcos metodológicos avanzados
+para la evaluación de los hallazgos forenses en casos de defensa del
+troyano. Un enfoque particularmente prometedor es el uso de **redes
+bayesianas** para modelar la evidencia digital dentro de un marco
+estructurado que combina múltiples observaciones en una **evaluación
+probabilística lógicamente sólida** (9). Como han señalado los autores,
+"el desafío clave en tales casos es combinar múltiples observaciones en
+una evaluación probabilística lógicamente sólida, manteniendo al mismo
+tiempo un informe forense comprensible para el tribunal y otros
+destinatarios" (9). Las redes bayesianas permiten visualizar la
+evaluación y derivar un **cociente de verosimilitud** (*likelihood
+ratio*) que expresa el peso de la evidencia en relación con las
+proposiciones alternativas (9). La doctrina ha demostrado que estas
+redes son "muy adecuadas para modelar la evaluación de la evidencia
+digital en casos de defensa del troyano" y que pueden "adaptarse
+fácilmente a diversas circunstancias del caso" (9).
+
+De manera complementaria, la doctrina ha desarrollado guías para la
+**formulación de proposiciones** en casos de defensa del troyano,
+identificando **cinco categorías de posibles explicaciones** para la
+presencia de contenido ilegal en dispositivos electrónicos, que incluyen
+actividades intencionales y no intencionales por parte de los
+sospechosos, otras personas o procesos automatizados (10). Esta
+taxonomía permite traducir las explicaciones alternativas en
+proposiciones estructuradas que abordan si la actividad fue realizada
+"con conocimiento" o "sin conocimiento" (10). Este enfoque,
+inspirado en los principios establecidos para la evaluación de la
+evidencia física, contribuye a una evaluación más equilibrada y
+transparente de la evidencia digital (10).
+
+### 5. Límites prácticos de la desvirtuación de la defensa del troyano
+
+A pesar de los avances en las técnicas forenses, la desvirtuación de la
+defensa del troyano en el proceso judicial sigue enfrentando **límites
+prácticos significativos**. El primero y más acusado es el **momento en
+que se inicia la investigación**: el análisis de memoria volátil solo es
+posible si el dispositivo ha sido incautado y adquirido forensemente
+antes de que el sistema se apague o reinicie (8) (13). Si la
+investigación se inicia mucho después de los hechos, la memoria volátil
+se ha perdido y el perito debe basarse exclusivamente en los artefactos
+persistentes en el sistema de archivos, que pueden haber sido eliminados
+o manipulados por el *malware* (8).
+
+El segundo límite es la **sofisticación creciente del *malware*
+moderno**. Como ha señalado la doctrina, "dado que el *malware* moderno
+puede ser más sigiloso (es decir, \'ghostware\'), existe la necesidad de
+incorporar técnicas más avanzadas como la forensia de memoria" (8). Sin
+embargo, incluso con estas técnicas, no siempre es posible determinar
+con certeza si un *malware* detectado fue el responsable de la acción
+delictiva o si, por el contrario, estaba presente en el sistema pero era
+ajeno al hecho investigado (8). La distinción entre *malware* causal y
+*malware* incidental es una de las cuestiones más difíciles de resolver
+en la práctica forense.
+
+El tercer límite es la **carga probatoria**. Para desvirtuar la defensa
+del troyano, la acusación no solo debe demostrar que no hay evidencia de
+*malware* en el dispositivo ---lo que, como hemos visto, puede ser
+explicado por la capacidad de autoeliminación del programa--- sino que
+debe **excluir razonablemente la hipótesis** de que un *malware* pudo
+haber sido el responsable (8) (13). Esta es una carga de naturaleza
+peculiar, que en ocasiones se aproxima a la *probatio diabolica*:
+demostrar la inexistencia de algo que, por definición, está diseñado
+para ocultarse.
+
+A ello se añade la **asimetría informativa** entre la defensa y la
+acusación. El acusado no tiene la carga de probar la existencia del
+*malware*; le basta con sembrar una duda razonable sobre su ausencia (8)
+(2). Como ha señalado la doctrina, "para establecer una defensa del
+caballo de Troya, el acusado debe introducir al menos alguna evidencia
+que establezca que (a) un programa troyano u otro *malware* estaba
+instalado en su ordenador (b) por otra persona (c) sin su conocimiento"
+(2). Esta carga, aunque formalmente atribuida al acusado, es en la
+práctica muy ligera, y una vez cumplida, el peso de la refutación recae
+sobre la acusación.
+
+### 6. Incidencia en la carga probatoria y en el estándar de duda razonable
+
+La defensa del troyano incide de manera directa en la **carga
+probatoria** y en el **estándar de duda razonable** que rige en el
+proceso penal. Su mera invocación, incluso cuando no va acompañada de
+una evidencia sólida, introduce un factor de incertidumbre que puede
+inclinar la balanza en favor del acusado, especialmente cuando la prueba
+de la acusación se basa exclusivamente en la evidencia digital (8).
+
+La doctrina ha señalado que la THD "crea grandes dificultades para los
+investigadores y los fiscales" (5). Estas dificultades no son meramente
+técnicas, sino que afectan a la estructura misma del proceso penal. En
+un sistema en el que la duda razonable debe beneficiar al acusado,
+cualquier hipótesis alternativa que no pueda ser excluida de manera
+concluyente ---como la de que un *malware* pudo haber sido el autor del
+hecho--- puede ser suficiente para impedir una condena (8).
+
+Este efecto se ve amplificado por dos factores adicionales. En primer
+lugar, la **naturaleza indiciaria de la prueba digital** en los delitos
+informáticos (2). A diferencia de otros delitos en los que puede existir
+prueba directa ---testigos presenciales, confesión, etc.---, la mayoría
+de los procesos por delitos digitales se basan en un conjunto de
+indicios que, aunque puedan ser muy robustos, siempre dejan un margen
+para la hipótesis alternativa. En segundo lugar, la **percepción
+judicial de la tecnología** (8). Cuando los jueces y jurados no tienen
+un conocimiento técnico suficiente para evaluar la plausibilidad de la
+defensa, pueden tender a darle el beneficio de la duda al acusado,
+especialmente si el perito de la defensa presenta una explicación
+técnicamente verosímil.
+
+La respuesta a este desafío no puede ser la de **reducir el estándar
+probatorio** ni la de **invertir la carga de la prueba**. Sería
+contrario a los principios más elementales del Estado de derecho exigir
+al acusado que demuestre su inocencia o que pruebe la inexistencia de un
+*malware* en su dispositivo. La solución debe venir, más bien, por el
+**perfeccionamiento de las técnicas forenses** y por la **formación
+especializada de los operadores jurídicos**, de modo que la evaluación
+de la plausibilidad de la defensa pueda realizarse sobre bases técnicas
+sólidas y no sobre meras conjeturas (8) (13).
+
+En este sentido, el enfoque propuesto por el marco FACT ---que exige la
+convergencia de múltiples flujos de evidencia y que, cuando no se
+cumplen los requisitos para la atribución a nivel de persona, indica al
+profesional que llegue y documente una conclusión de no atribución---
+constituye una respuesta metodológica adecuada al desafío planteado por
+la defensa del troyano (1) (7). La prudencia no es una debilidad, sino
+una virtud en un ámbito en el que el error judicial puede tener
+consecuencias devastadoras.
+
+### 7. Conclusiones parciales: la defensa del troyano como desafío real, no meramente teórico
+
+Del análisis de la defensa del troyano se desprenden varias conclusiones
+de relevancia para el problema central de este trabajo.
+
+En primer lugar, **la defensa del troyano es un desafío real, no una
+mera coartada teórica**. Su éxito en casos como *R v Caffrey* y en otros
+procesos por pornografía infantil en el Reino Unido demuestra que puede
+ser efectiva en la práctica judicial (11) (1). La sofisticación
+creciente del *malware* moderno hace que la alegación de que un
+*software* malicioso pudo haber sido el responsable del hecho delictivo
+sea cada vez más verosímil (13) (8).
+
+En segundo lugar, **la respuesta forense a la defensa del troyano ha
+evolucionado significativamente**, desde el mero análisis del sistema de
+archivos hasta la incorporación de técnicas avanzadas como la forensia
+de memoria volátil (8) (13). El uso de redes bayesianas para la
+evaluación estructurada de la evidencia y la formulación de
+proposiciones en casos de THD representan avances metodológicos de gran
+importancia (9) (10).
+
+En tercer lugar, **persisten límites prácticos significativos** que
+dificultan la desvirtuación de la defensa en el proceso judicial. El
+momento de la incautación, la sofisticación del *malware* moderno y la
+asimetría informativa entre las partes son factores que condicionan la
+capacidad de la acusación para excluir razonablemente la hipótesis del
+*malware* (8) (13).
+
+En cuarto lugar, **la THD incide directamente en la carga probatoria y
+en el estándar de duda razonable**, introduciendo un factor de
+incertidumbre que, en casos de prueba exclusivamente digital, puede ser
+suficiente para impedir la condena. La solución no pasa por reducir el
+estándar probatorio, sino por perfeccionar las técnicas forenses y
+formar a los operadores jurídicos (8).
+
+Finalmente, la defensa del troyano pone de manifiesto la **necesidad de
+un enfoque prudente y metodológicamente riguroso** en la atribución
+personal. El principio de convergencia de múltiples flujos de evidencia,
+formulado por el marco FACT, ofrece una guía adecuada para abordar este
+desafío: cuando la evidencia disponible no permite excluir
+razonablemente la hipótesis del *malware*, la conclusión debe ser la de
+no atribución (1) (2). La presión por obtener una condena no puede
+justificar el sacrificio de la precisión probatoria ni la vulneración de
+la presunción de inocencia.
+
+## VI. EL DESAFÍO DE LOS DEEPFAKES Y EL CONTENIDO SINTÉTICO
+
+### 1. Definición y clasificación del contenido sintético y manipulado
+
+La irrupción de los deepfakes en el ecosistema digital ha introducido un
+factor de incertidumbre de naturaleza cualitativamente distinta a los
+analizados en las secciones precedentes. Mientras que la brecha
+persona-dispositivo y la defensa del troyano cuestionan la *autoría* de
+una acción digital ---esto es, *quién* la ejecutó---, los deepfakes
+interrogan la *autenticidad* del propio contenido: si aquello que se
+atribuye a una persona fue realmente capturado por una cámara en su
+presencia o si, por el contrario, fue generado o manipulado mediante
+inteligencia artificial (0) (7). La distinción es capital: en el primer
+caso, el contenido es genuino pero su autoría es dudosa; en el segundo,
+el contenido mismo es una construcción sintética que puede atribuir
+falsamente a una persona acciones, palabras o expresiones que nunca
+realizó.
+
+El término "deepfake" designa, en su acepción más amplia, los **medios
+sintéticos generados mediante aprendizaje profundo** (*deep learning*),
+que consisten más comúnmente en el intercambio realista del rostro de
+una persona sobre el de otra en contenido de vídeo (8). Como ha señalado
+la doctrina, la disponibilidad de herramientas de código abierto como
+DeepFaceLab y FaceSwap ha hecho que la generación de vídeos deepfake sea
+"cada vez más accesible" (8). Esta accesibilidad, que ofrece
+aplicaciones legítimas en el entretenimiento y la accesibilidad, ha sido
+también explotada para el fraude de identidad, la desinformación y la
+manipulación política, planteando "serias preocupaciones para la
+privacidad, la seguridad y la confianza digital" (8) (0).
+
+La literatura especializada ha clasificado el contenido sintético y
+manipulado en función de su origen y finalidad. En primer lugar, los
+**deepfakes generativos** son aquellos creados *ex nihilo* por sistemas
+de inteligencia artificial ---redes generativas antagónicas (GANs) o
+modelos de difusión--- sin que exista una grabación original subyacente
+(0) (10). En segundo lugar, los **deepfakes manipulativos** parten de
+una grabación auténtica a la que se aplican modificaciones: intercambio
+de rostro (*face-swap*), sincronización labial falsa (*lip-sync*),
+transferencia de expresión o reemplazo de atributos faciales (0). En
+tercer lugar, los **deepfakes de suplantación** buscan hacer pasar a una
+persona por otra, ya sea mediante la generación de su apariencia o
+mediante la clonación de su voz (0).
+
+La relevancia probatoria de esta clasificación es manifiesta. Un
+deepfake generativo no tiene un original con el que contrastarse; un
+deepfake manipulativo puede ser detectado mediante el análisis de
+inconsistencias en el contenido; un deepfake de suplantación puede ser
+atribuido al modelo o al conjunto de datos que lo generó. Cada categoría
+exige, por tanto, un enfoque forense diferenciado.
+
+### 2. Técnicas de generación: redes generativas antagónicas (GANs) y modelos de difusión
+
+La generación de deepfakes descansa, fundamentalmente, en dos familias
+de técnicas: las redes generativas antagónicas (GANs) y los modelos de
+difusión (*diffusion models*). Ambas han experimentado un desarrollo
+vertiginoso en los últimos años, elevando la calidad del contenido
+sintético a niveles que dificultan su distinción del contenido
+auténtico.
+
+Las **GANs**, introducidas por Goodfellow y colaboradores, han emergido
+como "una poderosa herramienta para producir imágenes y vídeos
+sintéticos de gran realismo" (10). Su arquitectura se basa en la
+competencia entre dos redes neuronales: un generador, que crea contenido
+sintético, y un discriminador, que intenta distinguir entre contenido
+real y sintético. Esta dinámica antagónica conduce a una mejora
+iterativa de la calidad del contenido generado, hasta alcanzar niveles
+de realismo que "plantean importantes desafíos, particularmente en
+relación con los orígenes y el uso ético de los conjuntos de datos de
+entrenamiento" (10) (0).
+
+Los **modelos de difusión**, por su parte, han emergido más
+recientemente como una alternativa a las GANs con ventajas
+significativas en términos de calidad y diversidad del contenido
+generado. Modelos como Stable Diffusion, DALL-E e Imagen "producen
+imágenes altamente realistas y visualmente coherentes a partir de
+simples indicaciones textuales" (9). La creciente accesibilidad de
+estas herramientas a través de interfaces fáciles de usar "plantea
+considerables riesgos, incluida la creación de contenido sesgado y la
+violación de los derechos de propiedad intelectual" (9).
+
+La doctrina ha señalado que la sofisticación creciente de los modelos
+generativos ha dado lugar al fenómeno del **"sesgo impostor"**
+(*impostor bias*), descrito como "una creciente desconfianza en la
+autenticidad multimedia impulsada por la sofisticación del contenido
+generado por IA, que complica aún más la toma de decisiones forenses y
+la detección de deepfakes" (10). Este sesgo no es meramente
+psicológico: afecta a la propia práctica forense, al introducir una
+incertidumbre sistémica sobre la autenticidad de cualquier contenido
+audiovisual que pueda haber sido generado o manipulado por IA (10).
+
+### 3. Forensia de deepfakes: detección, atribución de modelo y autenticación pasiva
+
+La respuesta forense a los deepfakes se ha articulado en torno a cinco
+áreas principales de investigación, identificadas por la doctrina como:
+detección, atribución y reconocimiento, autenticación pasiva, detección
+en escenarios realistas y autenticación activa (0) (7). La literatura ha
+revisado los algoritmos principales que abordan estos desafíos,
+examinando sus ventajas, limitaciones y perspectivas futuras (0).
+
+#### a) Atribución fina de modelos de *face-swap*
+
+La **atribución de modelo** (*model attribution*) constituye una de las
+áreas de mayor desarrollo reciente en la forensia de deepfakes. A
+diferencia de la detección binaria, que se limita a determinar si un
+contenido es real o sintético, la atribución de modelo busca
+**identificar qué modelo generativo específico produjo un deepfake
+determinado** (8). Esta tarea, que la doctrina considera "crucial en
+entornos prácticos", permite no solo autenticar el contenido, sino
+también rastrear su origen y, potencialmente, identificar a su creador
+(8) (12).
+
+Un avance significativo en este campo es **FAME** (*Fake Attribution via
+Multilevel Embeddings*), un marco neuronal ligero y eficiente diseñado
+específicamente para la atribución fina de modelos en deepfakes de
+intercambio de rostro (8). FAME "integra mecanismos de atención
+espacial y temporal para mejorar la precisión de la atribución,
+manteniendo al mismo tiempo la eficiencia computacional" (8). Los
+resultados experimentales muestran que FAME supera consistentemente a
+los métodos existentes tanto en precisión como en tiempo de ejecución,
+lo que "destaca su potencial para su implementación en aplicaciones
+forenses y de seguridad de la información en el mundo real" (8) (1).
+Con solo 2,61 millones de parámetros, FAME alcanza un rendimiento de
+vanguardia del 79,69% (1) (4). El marco se evalúa en tres conjuntos de
+datos diversos y desafiantes: DFDM (*Deepfake Detection and
+Manipulation*), FaceForensics++ y FakeAVCeleb (8).
+
+La doctrina ha señalado, sin embargo, que los modelos de atribución de
+deepfakes presentan **desafíos de generalización** significativos (12).
+Un estudio que compara modelos binarios y multiclase en seis conjuntos
+de datos de deepfakes encontró que, "aunque los modelos binarios
+demuestran mejores capacidades de generalización, los modelos más
+grandes, los métodos contrastivos y una mayor calidad de los datos
+pueden conducir a mejoras en el rendimiento de los modelos de
+atribución" (12). Esta limitación subraya la necesidad de cautela al
+extrapolar los resultados de laboratorio a escenarios forenses reales,
+donde las condiciones de captura, compresión y manipulación pueden
+diferir sustancialmente de los conjuntos de datos de entrenamiento.
+
+#### b) Atribución del generador fuente mediante análisis de activaciones internas
+
+Una aproximación complementaria a la atribución de modelo es la que se
+basa en el análisis de las **activaciones internas de modelos
+preentrenados**. El marco **FRIDA** (*Fake-image Recognition and source
+Identification via Diffusion-features Analysis*) introduce un enfoque
+ligero que "aprovecha las activaciones internas de un modelo de
+difusión preentrenado para la detección de deepfakes y la atribución del
+generador fuente" (9). A diferencia de los detectores supervisados
+tradicionales, que "a menudo luchan por generalizar a través de
+generadores no vistos, requiriendo grandes cantidades de datos
+etiquetados y un reentrenamiento frecuente", FRIDA ofrece una solución
+más eficiente y generalizable (9).
+
+Los resultados experimentales demuestran que "un clasificador
+k-nearest-neighbor aplicado a las características de difusión alcanza un
+rendimiento de vanguardia en la generalización entre generadores sin
+necesidad de ajuste fino" (9). Además, "un modelo neuronal compacto
+permite una atribución precisa de la fuente" (9). Estos resultados
+establecen que "las representaciones de difusión codifican
+inherentemente patrones específicos del generador, proporcionando una
+base simple e interpretable para la forensia de imágenes sintéticas"
+(9). Con una precisión de detección de aproximadamente el 88,1% en
+imágenes sintéticas, FRIDA representa un avance significativo en la
+atribución de contenido generado por modelos de difusión (2).
+
+#### c) Limitaciones de los sistemas actuales de detección
+
+A pesar de los avances, los sistemas actuales de detección y atribución
+de deepfakes presentan **limitaciones significativas** que condicionan
+su utilidad en el contexto probatorio. La primera y más acusada es la
+**carrera armamentística** entre generación y detección: a medida que
+los detectores mejoran, los generadores se vuelven más sofisticados, y
+los artefactos que permiten la detección tienden a desaparecer. La
+doctrina ha identificado que los deepfakes "sin rastro"
+(*untraceable*) pueden lograrse mediante ataques multiplicativos que
+"eliminan fundamentalmente los rastros de los modelos generativos,
+eludiendo así los métodos de atribución incluso mejorados con medidas
+defensivas" (4).
+
+La segunda limitación es la **falta de generalización** de los modelos
+de atribución. Como ha señalado la doctrina, los modelos entrenados en
+conjuntos de datos específicos "pueden no generalizar bien a
+manipulaciones no vistas o a condiciones del mundo real" (12). Esta
+limitación es especialmente relevante en el contexto forense, donde el
+contenido objeto de análisis puede haber sido generado con herramientas
+o parámetros no incluidos en los conjuntos de datos de entrenamiento.
+
+La tercera limitación es la **falta de interpretabilidad** de muchos
+modelos de atribución. Aunque marcos como FRIDA ofrecen una base
+"simple e interpretable" (9), muchos sistemas de atribución basados en
+aprendizaje profundo operan como "cajas negras", lo que dificulta su
+explicación ante un tribunal y su sometimiento a contradicción pericial.
+Esta falta de interpretabilidad es particularmente problemática en el
+contexto del proceso penal, donde la transparencia y la reproducibilidad
+de la metodología pericial son exigencias ineludibles (20).
+
+### 4. Marcas de agua activas e invisibles como mecanismo proactivo de atribución
+
+Ante las limitaciones de los enfoques puramente reactivos ---que
+analizan el contenido una vez generado---, la doctrina ha propuesto
+**mecanismos proactivos de autenticación** que permitan atribuir el
+contenido desde el momento de su creación (0). Estos mecanismos,
+encuadrados en el área de la "autenticación activa" (0), buscan
+incrustar información en el contenido digital que permita verificar su
+origen y autenticidad, incluso después de manipulaciones o compresiones
+posteriores.
+
+Una de las aproximaciones más prometedoras es el uso de **marcas de agua
+invisibles** (*invisible watermarks*) que, a diferencia de las marcas
+visibles tradicionales, no alteran la percepción del contenido pero
+pueden ser detectadas mediante algoritmos específicos. La doctrina ha
+propuesto sistemas de **marca de agua atribuible a la fuente**
+(*Source-Attributable Invisible Watermarking*) que permiten tanto la
+autenticación como la atribución de origen de los medios digitales,
+proporcionando "evidencia forense interpretable" (5) (17).
+
+En el ámbito específico de los deepfakes, se han desarrollado marcos
+como **FakeMark**, que "inyecta marcas de agua correlacionadas con
+artefactos asociados a los sistemas de deepfake en lugar de mensajes de
+*bitstring* preasignados" (5). Este diseño permite a un detector
+"atribuir el sistema fuente aprovechando tanto la marca de agua
+inyectada como los artefactos intrínsecos del deepfake, manteniéndose
+efectivo incluso si una de estas señales es elusiva o ha sido
+eliminada" (5). La atribución de audio deepfake mediante marcas de agua
+con artefactos representa, asimismo, un avance significativo en este
+campo (5).
+
+La principal ventaja de los mecanismos proactivos es que **no dependen
+de la detección de artefactos generativos** que pueden ser eliminados o
+enmascarados por manipulaciones posteriores. Al incrustar la información
+de origen en el propio contenido, ofrecen una capa adicional de garantía
+que puede ser verificada independientemente de las técnicas de detección
+pasiva. Sin embargo, su eficacia depende de la adopción generalizada de
+estos mecanismos por parte de los creadores de contenido y las
+plataformas de distribución, lo que plantea desafíos de coordinación y
+estandarización.
+
+### 5. La prueba de deepfakes en el proceso judicial: problemas de autenticación y carga probatoria
+
+La irrupción de los deepfakes en el ecosistema probatorio plantea
+desafíos de una magnitud que trasciende lo meramente técnico y afecta a
+los **fundamentos mismos de la prueba audiovisual** en el proceso
+judicial. Como ha señalado la doctrina, los deepfakes "desafían las
+reglas probatorias existentes y la integridad más amplia de los
+procedimientos judiciales al permitir la fabricación de imágenes, vídeos
+y audio prácticamente indistinguibles de las grabaciones genuinas" (6).
+Un vídeo deepfake podría mostrar falsamente a un litigante admitiendo su
+responsabilidad, cometiendo un acto delictivo o incumpliendo un
+contrato; un clip de audio deepfake podría representar a un testigo
+clave contradiciendo su testimonio (6).
+
+El primer desafío es de naturaleza **autenticadora**: ¿cómo puede un
+tribunal determinar si un contenido audiovisual presentado como prueba
+es auténtico o ha sido generado o manipulado por IA? La doctrina ha
+señalado que "para ser admitida como prueba en procedimientos legales,
+dichas imágenes deben ser autenticadas, superando obstáculos probatorios
+específicos diseñados para garantizar la fiabilidad de las
+representaciones fotográficas o de audio de un evento real relevante"
+(6). La autenticación de la evidencia digital, que tradicionalmente se
+basaba en la cadena de custodia y en el testimonio de quien capturó el
+contenido, se enfrenta ahora a la posibilidad de que el propio contenido
+haya sido fabricado.
+
+El segundo desafío es de naturaleza **probatoria**: ¿quién soporta la
+carga de demostrar que un contenido es un deepfake? La doctrina ha
+señalado que "la mera \'posibilidad\' de un deepfake no es una defensa
+legal" (6) (2). En el caso *Medow*, un tribunal estadounidense
+estableció que la evidencia digital requiere un testigo que confirme que
+representa con precisión los hechos (6). Esta exigencia, sin embargo, no
+resuelve la cuestión de cómo debe proceder el tribunal cuando la defensa
+alega, con base en un informe pericial, que el contenido presentado por
+la acusación es un deepfake.
+
+El tercer desafío es de naturaleza **epistémica**: los deepfakes "ponen
+en peligro los principios y garantías fundamentales de los
+procedimientos penales" (6). Como ha señalado la doctrina, "la
+verificación de la evidencia audiovisual en los procedimientos penales
+ha dejado de ser una tarea puramente técnica y se ha convertido en un
+problema complejo e interdisciplinario que afecta a los propios
+fundamentos de la justicia" (6). La posibilidad de que cualquier
+contenido audiovisual pueda ser un deepfake introduce un factor de
+incertidumbre que, si no es gestionado adecuadamente, puede socavar la
+confianza en el sistema de justicia.
+
+La respuesta a estos desafíos no puede ser la de **rechazar
+sistemáticamente la evidencia audiovisual** ni la de **admitirla sin
+cuestionamiento**. La solución debe venir, más bien, por el **desarrollo
+de protocolos forenses específicos** para la autenticación de contenido
+audiovisual en el contexto judicial, la **formación especializada de los
+operadores jurídicos** en las técnicas de detección y atribución de
+deepfakes, y el **establecimiento de estándares probatorios
+diferenciados** que tengan en cuenta la posibilidad de manipulación
+sintética (6).
+
+### 6. Conclusiones parciales: los deepfakes como desafío epistémico y probatorio
+
+Del análisis de los deepfakes y el contenido sintético se desprenden
+varias conclusiones de relevancia para el problema central de este
+trabajo.
+
+En primer lugar, **los deepfakes representan un desafío de naturaleza
+cualitativamente distinta a los analizados en las secciones
+precedentes**. Mientras que la brecha persona-dispositivo y la defensa
+del troyano cuestionan la autoría de una acción digital, los deepfakes
+interrogan la autenticidad del propio contenido (0). Esta distinción
+tiene consecuencias probatorias de primer orden: en el primer caso, el
+contenido es genuino pero su autoría es dudosa; en el segundo, el
+contenido mismo es una construcción sintética.
+
+En segundo lugar, **la forensia de deepfakes ha experimentado avances
+significativos** en áreas como la detección, la atribución de modelo y
+la autenticación activa (0). Marcos como FAME y FRIDA demuestran que es
+posible atribuir un deepfake al modelo generativo que lo produjo, con
+niveles de precisión que, en condiciones controladas, pueden ser muy
+elevados (8) (9). Sin embargo, estos avances no están exentos de
+limitaciones: la generalización a escenarios no vistos, la carrera
+armamentística entre generación y detección, y la falta de
+interpretabilidad de muchos modelos son desafíos que aún deben ser
+abordados (12) (4).
+
+En tercer lugar, **la integración de la prueba de deepfakes en el
+proceso judicial plantea desafíos que trascienden lo meramente
+técnico**. La autenticación de la evidencia audiovisual, la carga
+probatoria y la formación de los operadores jurídicos son cuestiones que
+requieren una respuesta coordinada desde la forensia, el derecho y la
+política pública (6) (3). La mera "posibilidad" de un deepfake no es
+una defensa legal, pero la ausencia de protocolos robustos de
+autenticación puede socavar la fiabilidad de la prueba audiovisual (6).
+
+Finalmente, **la convergencia de múltiples flujos de evidencia**,
+formulada por el marco FACT como estándar metodológico para la
+atribución personal (1), resulta igualmente aplicable al contexto de los
+deepfakes. La autenticación de un contenido audiovisual no puede basarse
+en una única técnica de detección, por avanzada que sea; requiere la
+convergencia de múltiples análisis ---forensia de medios, análisis de
+metadatos, cadena de custodia, testimonio de quien capturó el
+contenido--- que, en su conjunto, permitan excluir razonablemente la
+hipótesis de la manipulación sintética (1) (2). La prudencia, una vez
+más, es un imperativo metodológico en un ámbito donde el error judicial
+puede tener consecuencias devastadoras.
+
+## VII. ANÁLISIS JURISPRUDENCIAL COMPARADO
+
+### 1. Jurisprudencia española
+
+La jurisprudencia española ha abordado de manera progresiva los desafíos
+planteados por la prueba digital en el proceso judicial, estableciendo
+criterios que, aunque no siempre específicos para la atribución personal
+en entornos de dispositivo compartido, ofrecen un marco de referencia
+esencial para la valoración de la evidencia digital y la exigencia de
+estándares probatorios rigurosos.
+
+#### a) Sentencia del Tribunal Supremo 300/2015: el valor probatorio de las capturas de pantalla y la exigencia de informe pericial
+
+La Sentencia del Tribunal Supremo (Sala Segunda, de lo Penal) 300/2015,
+de 19 de mayo (ponente: Excmo. Sr. D. Manuel Marchena Gómez), constituye
+un hito en la jurisprudencia española sobre la prueba digital. El caso
+resuelto versaba sobre una conversación mantenida a través de la red
+social Tuenti, incorporada al proceso mediante capturas de pantalla
+("pantallazos"). El Alto Tribunal estableció que la prueba de una
+comunicación bidireccional mediante sistemas de mensajería instantánea
+"debe ser abordada con todas las cautelas", pues "el anonimato que
+autorizan tales sistemas y la libre creación de cuentas con una
+identidad fingida, hacen posible aparentar una comunicación en la que un
+único usuario se relaciona consigo mismo" (18).
+
+La sentencia fija como criterio que, cuando la autenticidad de estos
+archivos es impugnada, la carga de la prueba se desplaza hacia quien
+pretende aprovechar su idoneidad probatoria, siendo entonces
+**indispensable la práctica de una prueba pericial que identifique el
+verdadero origen de la comunicación, la identidad de los interlocutores
+y la integridad de su contenido**. Este pronunciamiento tiene una
+relevancia capital para el problema que nos ocupa: si las capturas de
+pantalla —mera representación visual del contenido digital— exigen,
+en caso de impugnación, un informe pericial para acreditar su
+autenticidad, con mayor razón la atribución de una publicación a una
+persona concreta, basada en el origen dispositivo, exige un análisis
+pericial que no se limite a constatar el origen técnico, sino que
+aborde la cuestión de la autoría personal.
+
+Conviene precisar, no obstante —y así lo ha aclarado la jurisprudencia
+posterior (STS 375/2018, de 19 de julio)—, que la exigencia de pericial
+informática no opera de forma automática ante cualquier impugnación: solo
+resulta necesaria cuando la parte que impugna aporta indicios objetivos
+de manipulación, y no ante objeciones meramente genéricas o retóricas.
+Esta matización no debilita, sin embargo, la conclusión central para el
+escenario del dispositivo compartido: la mera presentación de una
+captura de pantalla que muestre la publicación injuriosa, acompañada de
+la constatación de que se originó desde un dispositivo concreto, resulta
+insuficiente para acreditar por sí sola la autoría personal cuando esa
+autoría es cuestionada; se requiere un informe pericial que, con una
+metodología clara y reproducible, aborde no solo el origen técnico, sino
+también la cuestión de quién, entre los posibles usuarios del
+dispositivo, fue el autor de la publicación.
+
+#### b) Sentencia del Tribunal Supremo 116/2025: capturas de mensajería, cadena de custodia digital y valoración pericial
+
+La Sentencia del Tribunal Supremo 116/2025, de 13 de febrero (ECLI:ES:TS:2025:634), confirmó una condena sustentada de forma central en
+capturas de pantalla de conversaciones mantenidas a través de WhatsApp e
+Instagram, en un proceso por un delito del artículo 189 del Código
+Penal. El Tribunal Supremo reafirmó la validez y eficacia probatoria de
+dicho material cuando concurren garantías suficientes de autenticidad
+del origen e integridad del contenido, valorado además en conexión con
+otros medios de prueba, y subrayó que **quien impugne la autenticidad de
+las capturas debe aportar indicios concretos de manipulación**, sin que
+basten fórmulas genéricas (19).
+
+La STS 116/2025 es especialmente relevante por dos motivos. En primer
+lugar, porque recuerda que la documentación de la **cadena de custodia
+digital** —obtención, conservación y traslado de los archivos por la
+policía judicial— refuerza decisivamente la fiabilidad de la prueba
+electrónica. En segundo lugar, porque exige una coherencia externa entre
+el contenido de las capturas y el resto del cuadro probatorio, de modo
+que la atribución no descanse en un único elemento aislado.
+
+Esta exigencia de documentación rigurosa de la cadena de custodia y de
+coherencia con el resto de la prueba es particularmente relevante en el
+contexto de la atribución personal. Un informe pericial que pretenda
+atribuir una publicación a una persona concreta en un entorno de
+dispositivo compartido debe explicar con claridad la metodología
+empleada —incluyendo las técnicas de biometría conductual, análisis de
+patrones temporales o correlación con fuentes extrínsecas utilizadas—
+de modo que pueda ser sometido a contradicción y verificado por otros
+peritos.
+
+#### c) Sentencia del Tribunal Superior de Justicia de Cataluña 4986/2025: uso indebido de medios corporativos y verificación pericial
+
+La Sentencia del Tribunal Superior de Justicia de Cataluña (Sala de lo
+Social, Sección 1.ª) 4986/2025, de 3 de octubre de 2025 (recurso
+4758/2024, ponente: D. Amador García Ros), abordó el despido
+disciplinario de un trabajador —jefe de compras, con más de veinte años
+de antigüedad— por el uso reiterado del teléfono móvil corporativo para
+fines personales durante la jornada laboral, en contra de un código
+interno de conducta que lo prohibía expresamente. Aunque se trata de un
+pronunciamiento en el ámbito laboral, sus conclusiones sobre el valor de
+la prueba pericial informática son extensibles al proceso penal (20).
+
+La STSJ Cataluña 4986/2025 refuerza una línea jurisprudencial clara: **el
+uso indebido y consciente de los medios tecnológicos de la empresa,
+cuando está expresamente prohibido y queda acreditado mediante una
+prueba pericial informática cuya cadena de custodia se garantiza
+mediante verificación técnica (código *hash*), puede justificar el
+despido disciplinario**, incluso frente a trabajadores con una extensa
+trayectoria y sin sanciones previas, cuando la gravedad de los hechos
+rompe irreversiblemente la confianza contractual.
+
+En el contexto del dispositivo compartido, la STSJ Cataluña 4986/2025
+ofrece una lección metodológica: la atribución de un uso indebido a un
+trabajador concreto, en un entorno donde varios empleados pueden tener
+acceso a los mismos medios, requiere un análisis pericial que vaya más
+allá de la mera constatación del registro técnico y que garantice la
+integridad de la cadena de custodia mediante mecanismos verificables
+—como el hash criptográfico—, no una simple alegación de uso indebido.
+
+#### d) Sentencia del Tribunal Supremo 90/2021 (Sala de lo Militar): insuficiencia de las capturas de pantalla aisladas
+
+La Sentencia del Tribunal Supremo (Sala de lo Militar) 90/2021, de 7 de
+octubre (ECLI:ES:TS:2021:3661), abordó el valor probatorio de las
+capturas de pantalla en el proceso. El tribunal recordó que las capturas
+de pantalla **no bastan por sí solas para fundar una condena**, dada su
+evidente manipulabilidad, insistiendo en la necesidad de un **informe
+pericial que garantice la autenticidad, la autoría y la integridad** de
+los contenidos aportados (21).
+
+La STS 90/2021 subraya que la exigencia pericial no es un formalismo,
+sino la garantía de que la prueba no ha sido manipulada, mediante la
+documentación del proceso de acceso, obtención y transferencia de la
+evidencia. Esta exigencia de acreditación pericial reforzada es
+extensible a toda evidencia digital, incluyendo los registros de
+actividad del dispositivo, los metadatos de las publicaciones y los
+patrones de uso que puedan servir para la
+atribución personal.
+
+La sentencia es especialmente relevante porque **desplaza el centro de
+atención desde el contenido de la prueba (la captura de pantalla) hacia
+el proceso de obtención y custodia de la evidencia**. En el contexto del
+dispositivo compartido, este enfoque implica que no basta con presentar
+la evidencia digital ---las publicaciones, los registros de acceso, los
+patrones de tecleo--- sino que es necesario acreditar que esa evidencia
+ha sido obtenida y preservada mediante un protocolo forense que
+garantice su integridad y autenticidad.
+
+### 2. Jurisprudencia comparada
+
+La jurisprudencia de otros ordenamientos ha abordado con particular
+intensidad la cuestión de la atribución de contenido digital a personas
+concretas, ofreciendo soluciones y estándares que, aunque no
+directamente vinculantes para el ordenamiento español, proporcionan un
+valioso marco comparativo.
+
+#### a) *Commonwealth v. Mangel* (EE.UU.): la insuficiencia de la mera correspondencia de información general en una cuenta de redes sociales
+
+El caso *Commonwealth v. Mangel*, resuelto por el *Superior Court of
+Pennsylvania* en 2018, constituye un referente en la jurisprudencia
+estadounidense sobre la autenticación de pruebas de redes sociales. El
+tribunal estableció que el mero hecho de que una cuenta de Facebook
+contenga el nombre, la ciudad de origen y el instituto del acusado **no
+es suficiente para establecer que el acusado fue realmente el autor de
+las publicaciones** en esa cuenta (22).
+
+La fiscalía había presentado capturas de pantalla de una cuenta de
+Facebook que llevaba el nombre del acusado, su ciudad de origen y su
+instituto, argumentando que esta correspondencia era suficiente para
+autenticar la prueba. Sin embargo, tanto el tribunal de primera
+instancia como el tribunal de apelación consideraron que la mera
+presentación de evidencia de que la cuenta llevaba el nombre del acusado
+y otros datos personales era insuficiente. La fiscalía no presentó
+"ninguna evidencia, directa o circunstancial, que tendiera a corroborar
+que el acusado creó la cuenta de Facebook en cuestión, o que fue el
+autor de las publicaciones".
+
+La relevancia de *Commonwealth v. Mangel* para el problema que nos ocupa
+es manifiesta. El tribunal estadounidense establece un estándar que
+**distingue nítidamente entre la titularidad nominal de una cuenta y la
+autoría efectiva de las publicaciones**. Esta distinción es análoga a la
+que debemos establecer entre la titularidad de un dispositivo y la
+autoría de las acciones digitales que desde él se realizan. La mera
+correspondencia de información general ---el nombre del acusado en la
+cuenta, o su condición de propietario del dispositivo--- es insuficiente
+para inferir la autoría.
+
+El tribunal estableció además que, en ausencia de una admisión por parte
+del acusado de que la cuenta era suya o de que él realizó las
+publicaciones, la fiscalía debía presentar **evidencia contextual o
+circunstancial adicional** que vinculara al acusado con la cuenta y con
+las publicaciones. Este estándar de corroboración es plenamente
+coherente con el principio de convergencia de múltiples flujos de
+evidencia formulado por el marco FACT (1) (2).
+
+#### b) *R v Calland* y *R v Turner* (Reino Unido): problemas de vinculación entre persona y cuenta
+
+La jurisprudencia del Reino Unido ha abordado de manera reiterada los
+problemas de atribución en el ámbito de la evidencia digital, con
+especial atención a la vinculación entre personas, dispositivos y
+cuentas. Los casos *R v Calland* [2017] EWCA Crim 2308 y *R v Turner*
+[2020] EWCA Crim 1241 son citados en la literatura como ejemplos
+paradigmáticos de la dificultad de cerrar la brecha probatoria entre la
+persona y el dispositivo o la cuenta (2) (8).
+
+En *R v Calland*, el *Court of Appeal* abordó cuestiones relativas a la
+fiabilidad de la evidencia de análisis de celdas (*cell site analysis*)
+para atribuir teléfonos móviles a personas concretas. La sentencia ha
+sido descrita como un "momento de cambio" (*watershed moment*) para el
+análisis de celdas, al establecer estándares más rigurosos para la
+atribución de dispositivos a personas. El tribunal subrayó que la
+atribución de un teléfono a una persona no puede basarse exclusivamente
+en la mera posesión o uso del dispositivo, sino que requiere **evidencia
+corroboradora adicional** (23).
+
+En *R v Turner*, el *Court of Appeal* consideró la cuestión de cuándo un
+testigo profesional sobrepasa la línea y ofrece prueba pericial, en el
+contexto del análisis de telefonía móvil. En este caso, la defensa
+aceptó la atribución de algunos números de móvil relevantes, pero negó
+otros, proporcionando a la fiscalía detalles sobre qué números eran
+aceptados y cuáles no. El tribunal estableció que la evidencia de que
+una ubicación determinada era consistente con el uso de una antena de
+telefonía móvil no podía ser proporcionada por un analista cuando no se
+había realizado un estudio de radiofrecuencia (23).
+
+Estos pronunciamientos ponen de manifiesto que los tribunales británicos
+son **particularmente sensibles a las limitaciones de la evidencia de
+atribución basada en datos de telecomunicaciones**, y exigen que los
+peritos se mantengan dentro de los límites de su competencia y que la
+evidencia se base en una metodología sólida y contrastada. En el
+contexto del dispositivo compartido, esta exigencia implica que el
+perito no puede limitarse a afirmar que el dispositivo estaba en una
+ubicación determinada o que una cuenta fue utilizada desde un terminal
+concreto; debe explicar la metodología empleada y sus limitaciones, y
+debe evitar extrapolar conclusiones sobre la autoría personal que no
+estén directamente respaldadas por la evidencia.
+
+#### c) Caso *Solothurn* (Suiza): dudas razonables sobre la titularidad de cuenta y revocación de condena
+
+El caso *Solothurn*, resuelto por el tribunal cantonal de Solothurn
+(Suiza) entre 2019 y 2022, constituye un ejemplo especialmente
+ilustrativo de las consecuencias de una atribución insuficientemente
+fundada (2) (8). El tribunal revocó una condena por pornografía infantil
+basada exclusivamente en un informe del *National Center for Missing and
+Exploited Children* (NCMEC), al considerar que existían **dudas
+razonables sobre la titularidad de la cuenta de Instagram** desde la que
+se habían difundido las imágenes (24).
+
+El caso *Solothurn* es relevante por varias razones. En primer lugar,
+porque demuestra que **la mera constatación de que unas imágenes
+ilícitas se difundieron desde una cuenta concreta no es suficiente para
+atribuir su publicación al titular nominal de la cuenta** (2) (8). El
+tribunal suizo exigió algo más que la mera correspondencia entre la
+cuenta y el acusado: requirió evidencia adicional que vinculara al
+acusado con la actividad delictiva. En segundo lugar, porque pone de
+manifiesto que los informes de organismos internacionales ---por muy
+fiables que sean en términos de detección de contenido ilícito--- no
+sustituyen a una investigación forense que aborde la cuestión de la
+atribución personal.
+
+La relevancia del caso *Solothurn* para el escenario del dispositivo
+compartido es evidente. Si la mera titularidad de una cuenta de
+Instagram no es suficiente para atribuir al titular las publicaciones
+realizadas desde ella, con mayor razón la mera titularidad de un
+dispositivo ---que puede ser utilizado por múltiples personas--- no es
+suficiente para atribuir al propietario las publicaciones realizadas
+desde él. El tribunal suizo aplicó, en esencia, el mismo principio que
+subyace al estándar de convergencia de flujos de evidencia: la evidencia
+digital por sí sola es insuficiente para la atribución personal, y se
+requiere un cuerpo de evidencia convergente que excluya razonablemente
+las hipótesis alternativas (1) (2).
+
+### 3. Lecciones extraídas de la jurisprudencia: la insuficiencia de la prueba de dispositivo y la necesidad de un cuerpo convergente de indicios
+
+Del análisis de la jurisprudencia nacional y comparada se desprenden
+varias lecciones de relevancia para el problema central de este trabajo.
+
+En primer lugar, **la prueba de dispositivo, por sí sola, es
+insuficiente para acreditar la autoría personal**. La STS 300/2015 exige
+un informe pericial para dar valor probatorio a las capturas de pantalla
+de mensajería instantánea cuando su autenticidad es impugnada (18);
+*Commonwealth v. Mangel* establece que la mera correspondencia de
+información general en una cuenta de Facebook es insuficiente para
+inferir la autoría (22); el caso *Solothurn* revoca una condena basada
+exclusivamente en la titularidad de una cuenta de Instagram (24). Esta
+convergencia jurisprudencial apunta en una misma dirección: **la
+atribución personal exige algo más que la mera constatación del origen
+técnico**.
+
+En segundo lugar, **la exigencia de corroboración pericial es un
+estándar compartido por las distintas jurisdicciones**. La STS 300/2015
+exige un informe pericial que certifique el origen, la integridad y la
+identidad de los interlocutores (18); la STS 116/2025 exige coherencia
+externa y documentación de la cadena de custodia digital (19); *R v
+Turner* exige que la evidencia de atribución se base en una metodología
+sólida y contrastada (23). Esta exigencia de rigor metodológico es
+extensible a cualquier intento de atribuir una publicación a una persona
+concreta.
+
+En tercer lugar, **la cadena de custodia es un presupuesto de validez de
+toda evidencia digital**. La STS (Sala de lo Militar) 90/2021 destaca la
+importancia de la cadena de custodia y la obtención forense (21). Sin
+una cadena de custodia que garantice la integridad de la evidencia desde
+el momento de su obtención hasta su presentación en el juicio, cualquier
+conclusión atributiva carece de la solidez necesaria para fundamentar
+una condena.
+
+En cuarto lugar, **los tribunales son conscientes de la brecha
+persona-dispositivo y exigen evidencia que la cierre**. La distinción
+entre titularidad nominal y autoría efectiva, presente en *Commonwealth
+v. Mangel* (22), es análoga a la distinción entre titularidad del
+dispositivo y autoría de las publicaciones que debe realizar el tribunal
+en el escenario del dispositivo compartido. La jurisprudencia comparada
+ofrece un valioso marco para abordar esta distinción, estableciendo que
+la mera correspondencia de información general ---el nombre en la
+cuenta, la titularidad del dispositivo--- es insuficiente y que se
+requiere evidencia contextual o circunstancial adicional.
+
+Finalmente, **la prudencia es un imperativo que la jurisprudencia
+refuerza**. Los tribunales no dudan en absolver o revocar condenas
+cuando la atribución personal no está suficientemente acreditada, como
+demuestran los casos *Caffrey*, *Solothurn* (24) y *Mangel* (22). Esta
+actitud prudente, que protege la presunción de inocencia, debe presidir
+también la práctica pericial y la valoración judicial de la evidencia
+digital en el escenario del dispositivo compartido.
+
+## X. PERSPECTIVAS FUTURAS Y TENDENCIAS REGULATORIAS
+
+### 1. Desarrollo de marcos de atribución estructurados: el modelo FACT como referencia
+
+La necesidad de un enfoque metodológico estructurado para la atribución
+personal ha encontrado en el **marco FACT** (*Forensic Compliance,
+Analyze Evidence, Correlate & Sequence, Testify & Transfer Findings*)
+una respuesta que, por su rigor y exhaustividad, se perfila como un
+estándar de referencia para la práctica forense y la valoración judicial
+(0) (1) (2) (7). Propuesto por Shavers en 2025, el marco FACT se
+presenta como "una metodología de atribución centrada en la
+jurisprudencia" que "separa explícitamente la identificación (\'¿qué
+actuó?\') de la atribución (\'¿quién actuó?\')" (0) (7). La versión 1.0
+del marco, publicada en diciembre de 2025, define sus cuatro etapas
+---*Forensic Compliance*, *Analyze Evidence*, *Correlate & Sequence* y
+*Testify & Transfer Findings*--- y formaliza "la vía de atribución que
+conecta los artefactos con las personas responsables" (0) (1) (7).
+
+El marco FACT se fundamenta en varios principios que responden
+directamente a los desafíos identificados en las secciones precedentes.
+En primer lugar, establece que **"los dispositivos y las cuentas no son
+personas"** (0) (6), y que "la evidencia digital por sí sola es
+insuficiente para la atribución a nivel de persona" (0) (6). En segundo
+lugar, exige la **"convergencia de múltiples flujos de evidencia de
+fuentes independientes"** (0) (6) como condición para la atribución
+personal. En tercer lugar, impone la **prudencia como imperativo
+metodológico**: "cuando no se cumplen los requisitos para la atribución
+a nivel de persona, FACT indica al profesional que llegue y documente
+una conclusión de no atribución" (0) (7). En cuarto lugar, el marco es
+explícito sobre las consecuencias de la atribución incorrecta: "la
+atribución errónea puede dar lugar a condenas o despidos injustos,
+sanciones mal aplicadas, daños a la reputación y pérdida de confianza en
+la forensia digital" (0) (6).
+
+La acogida del marco FACT en la comunidad forense ha sido significativa.
+Un comentario ha señalado que, al leer FACT, la reacción es: "Ya era
+hora de que alguien escribiera esto" (0) (4). El marco proporciona "un
+método estructurado y de extremo a extremo para establecer quién realizó
+una acción digital, sobre qué pruebas se basa esta conclusión y si es
+defendible" (0) (3). El marco "traza una línea dura y explícita entre
+identificación (dispositivo, cuenta, acción) y atribución (persona,
+responsabilidad), y trata la confusión de ambas como un error
+metodológico" (0) (7).
+
+La proyección futura del marco FACT apunta hacia su **adopción como
+estándar en la práctica forense** y, potencialmente, hacia su
+**reconocimiento jurisprudencial** como criterio de fiabilidad de los
+informes periciales de atribución. Su estructura, que integra el
+cumplimiento normativo, el análisis técnico, la correlación de
+evidencias y la preparación del testimonio, ofrece una guía completa
+para los peritos y una base para el control judicial de la metodología
+pericial (0) (1). La doctrina ha señalado que la adopción generalizada
+de marcos como FACT podría contribuir a **reducir la disparidad de
+criterios** en la valoración de la prueba de atribución personal y a
+**aumentar la confianza** en la fiabilidad de la evidencia digital (0)
+(6).
+
+### 2. Avances en biometría conductual y su integración en protocolos forenses
+
+La biometría conductual, y en particular la dinámica de tecleo, se
+encuentra en un momento de **desarrollo acelerado** que apunta hacia su
+consolidación como herramienta forense de atribución personal (3). Los
+avances recientes en el campo se orientan en varias direcciones
+complementarias.
+
+En primer lugar, el desarrollo de **arquitecturas de aprendizaje
+profundo** específicamente diseñadas para la dinámica de tecleo ha
+mejorado significativamente la precisión de la autenticación y la
+identificación de usuarios. Trabajos como *Type2Branch*, que proponen
+arquitecturas de doble rama con mecanismos de atención y pérdidas
+*Set2set*, han demostrado que la verificación de la dinámica de tecleo
+"podía escalar a cientos de miles de usuarios con una degradación
+mínima del rendimiento" (3) (2). Los marcos de autenticación basados en
+redes siamesas, que combinan la dinámica de tecleo con técnicas de
+aprendizaje profundo para "diferenciar a los usuarios legítimos de los
+impostores", representan un avance significativo en la fiabilidad de la
+atribución (3) (3).
+
+En segundo lugar, la **integración de múltiples modalidades biométricas
+conductuales** ---dinámica de tecleo, movimiento del ratón, patrones de
+interacción táctil--- está emergiendo como una vía para aumentar la
+robustez de la atribución. Un estudio reciente sobre "clasificación
+biométrica conductual multimodal fusionando datos de tecleo y ratón"
+destaca "el valor de la biometría conductual multimodal no intrusiva
+para mejorar la robustez de los sistemas modernos de detección de
+amenazas e intrusiones" (3) (1). Esta integración multimodal puede
+compensar las debilidades de cada modalidad considerada individualmente
+---especialmente la dinámica del ratón, cuya fiabilidad ha sido
+cuestionada (8) (9)--- y ofrecer un nivel de certeza superior al que
+proporcionaría cada una por separado.
+
+En tercer lugar, la **investigación sobre la estabilidad de la dinámica
+de tecleo** y su aplicabilidad en contextos forenses está avanzando (3)
+(5). Un estudio reciente propone "introducir los estudios de dinámica
+de tecleo en las actividades de detección e investigación de delitos"
+(3) (5), identificando los factores que influyen en la estabilidad de
+los patrones de tecleo y estableciendo cómo deben tenerse en cuenta
+durante el examen pericial (3) (5). Este enfoque, que aborda
+directamente la cuestión de la fiabilidad de la biometría conductual en
+el contexto forense, es un paso necesario para su aceptación judicial.
+
+La **integración de la biometría conductual en protocolos forenses
+estandarizados** es, sin embargo, un desafío que aún debe ser abordado.
+A diferencia de la PRNU, que cuenta con procedimientos ampliamente
+aceptados para su extracción y comparación, la dinámica de tecleo carece
+todavía de un marco metodológico uniforme. La doctrina ha señalado que
+el desarrollo de estándares para la recolección, análisis y presentación
+de la evidencia biométrica conductual es un **requisito para su
+admisibilidad judicial** y para la reproducibilidad de los resultados
+(3) (5). La elaboración de estos estándares, que debería involucrar a la
+comunidad forense, a los organismos de normalización y a los operadores
+jurídicos, es una de las tareas pendientes más importantes en este
+campo.
+
+### 3. Autenticación activa mediante marcas de agua y criptografía de medios
+
+La limitación fundamental de los enfoques puramente reactivos para la
+detección y atribución de deepfakes ---su dependencia de artefactos que
+pueden ser eliminados o enmascarados por manipulaciones posteriores---
+ha impulsado el desarrollo de **mecanismos proactivos de autenticación**
+que permitan verificar el origen y la integridad del contenido desde el
+momento de su creación (2) (5). Estos mecanismos, que combinan técnicas
+de **marca de agua** (*watermarking*) y **criptografía de medios**,
+representan una de las tendencias más prometedoras para la atribución de
+contenido sintético y manipulado.
+
+En el ámbito de la marca de agua, los avances recientes son
+significativos. El marco **SAiW** (*Source-Attributable Invisible
+Watermarking*) introduce un sistema de marca de agua invisible
+atribuible a la fuente para "la defensa proactiva contra deepfakes y la
+verificación de la procedencia de los medios" (2) (2). El marco
+"integra la modulación lineal por características para inyectar la
+identidad de la fuente en la red de incrustación, permitiendo la
+generación escalable de marcas de agua de múltiples fuentes" (2) (2).
+De manera similar, el marco **LIDMark** propone una marca de agua de 152
+dimensiones que "entrelaza estructuralmente los puntos de referencia
+faciales con un identificador de fuente único" (2) (5). Estos sistemas
+permiten no solo detectar si un contenido ha sido manipulado, sino
+también **atribuirlo a la fuente o al modelo generativo** que lo produjo
+(2) (5).
+
+La **criptografía de medios** y los estándares de procedencia ofrecen
+una vía complementaria para la autenticación de contenido. La
+**Coalition for Content Provenance and Authenticity** (C2PA) y el
+estándar de **Adobe Content Authenticity Initiative** (CAI) proporcionan
+marcos para incrustar información criptográfica sobre el origen y la
+historia de un contenido digital (5) (6). La doctrina ha señalado que
+"la gobernanza eficaz de los deepfakes requiere una defensa en
+profundidad que integre la detección forense, la procedencia verificable
+y la responsabilidad institucional" (5) (4). Los estándares de
+procedencia, que permiten rastrear el origen y las modificaciones de un
+contenido a lo largo de su ciclo de vida, ofrecen una capa adicional de
+garantía que puede ser verificada independientemente de las técnicas de
+detección pasiva (5) (6).
+
+El desarrollo de **marcos unificados** que integren la detección, la
+localización de manipulaciones y la atribución de origen representa una
+tendencia emergente (2) (5). Marcos como **AMDD** (*Attribution-Guided
+Multimodal Deepfake Detection*) "tratan la atribución del generador
+como una regularización estructurada que restringe la geometría de la
+representación hacia características forenses significativas" (2) (0).
+El marco **VLForgery**, por su parte, integra modelos de lenguaje
+multimodal para la detección, localización y atribución de deepfakes (2)
+(4). Estos marcos unificados, que abordan las tres tareas de manera
+conjunta, ofrecen una solución más robusta y eficiente que los enfoques
+que tratan cada tarea por separado (2) (5).
+
+La **adopción regulatoria** de estos mecanismos proactivos es una
+tendencia que ya se está perfilando. En los Estados Unidos, la *Origin
+Protection and Integrity from Edited and Deepfaked Media Act* (COPIED
+Act) de 2025 busca "abordar los posibles daños del contenido generado
+por IA mediante el desarrollo de estándares basados en consenso, como el
+marcado de agua y la procedencia del contenido" (4) (1). La iniciativa
+de procedencia de contenido digital en Carolina del Norte, por su parte,
+busca "desarrollar e implementar estándares de autenticación
+criptográfica para el contenido digital en todas las plataformas
+estatales" (4) (0). Estas iniciativas legislativas, aunque incipientes,
+apuntan en la dirección de un **ecosistema de autenticación de medios**
+en el que la atribución de origen y la verificación de integridad sean
+parte integral del contenido digital desde su creación.
+
+### 4. Hacia una regulación específica de la prueba de atribución personal
+
+El análisis de las lagunas regulatorias identificado en la sección IX
+apunta a la necesidad de una **regulación específica de la prueba de
+atribución personal** en el proceso judicial. Esta regulación, que
+debería desarrollarse en el marco de la Ley de Enjuiciamiento Criminal y
+de las leyes procesales civiles y laborales, debería abordar, al menos,
+las siguientes cuestiones.
+
+En primer lugar, la regulación debería establecer **criterios claros
+sobre el valor probatorio de las distintas técnicas de atribución**. No
+todas las técnicas de atribución ofrecen el mismo grado de certeza, y la
+ley debería reflejar esta jerarquía. La PRNU, por su fiabilidad y
+reconocimiento científico, debería ser objeto de una regulación
+específica que establezca los requisitos para su extracción, comparación
+y presentación. La biometría conductual, por su parte, debería estar
+sujeta a requisitos más rigurosos, incluyendo la necesidad de informar
+sobre las tasas de error y las condiciones de aplicación. La dirección
+IP, por su fragilidad, debería ser objeto de una regulación que limite
+su valor probatorio y exija su corroboración con otras fuentes de
+evidencia.
+
+En segundo lugar, la regulación debería establecer **estándares para la
+convergencia de flujos de evidencia** en la atribución personal.
+Inspirándose en el marco FACT, la ley podría establecer que la
+atribución personal en entornos de dispositivo compartido requiere la
+convergencia de al menos dos flujos de evidencia independientes, y que
+la mera prueba de dispositivo es insuficiente para fundamentar una
+condena (0) (1). Esta exigencia, que formalizaría el principio de
+prudencia que ha guiado este trabajo, contribuiría a prevenir la falacia
+del autor tecnológico y a proteger la presunción de inocencia.
+
+En tercer lugar, la regulación debería abordar la **carga probatoria en
+casos de defensa del troyano**. La ley podría establecer que, cuando el
+acusado invoca la defensa del troyano, debe presentar al menos una
+evidencia mínima que acredite la plausibilidad de la infección ---por
+ejemplo, un informe pericial que identifique la presencia de *malware*
+en el dispositivo o que documente la existencia de vulnerabilidades---.
+Esta carga, aunque formalmente atribuida al acusado, sería más ligera
+que la de la acusación, pero suficiente para evitar que la mera
+alegación, sin ningún soporte, pueda generar una duda razonable. La
+acusación, por su parte, debería poder refutar la defensa mediante el
+análisis de memoria volátil y otras técnicas forenses avanzadas (8)
+(13).
+
+En cuarto lugar, la regulación debería establecer **requisitos para la
+formación especializada** de los operadores jurídicos en materia de
+atribución digital. La complejidad técnica de la prueba digital exige
+que jueces, fiscales, abogados y peritos reciban una formación continua
+que les permita comprender las técnicas de atribución, sus limitaciones
+y sus implicaciones probatorias. Esta formación debería ser impartida
+por instituciones especializadas y debería formar parte de los programas
+de formación continuada de las carreras judicial y fiscal.
+
+Finalmente, la regulación debería abordar la **prueba de deepfakes** en
+el proceso judicial. La ley podría establecer que, cuando se presente
+contenido audiovisual como prueba, y existan indicios de que pueda haber
+sido generado o manipulado por IA, la parte que lo presenta debe
+acreditar su autenticidad mediante un informe pericial que aborde
+específicamente la posibilidad de manipulación sintética. Esta
+exigencia, que trasladaría la carga de la autenticación a la parte que
+presenta la prueba, es análoga a la que ya existe en otros ámbitos de la
+prueba digital (19).
+
+### 5. Formación especializada de operadores jurídicos y peritos en atribución digital
+
+La complejidad y la rapidez de evolución de la atribución digital exigen
+una **formación especializada** de todos los operadores jurídicos que
+intervienen en el proceso ---jueces, fiscales, abogados y peritos--- así
+como una **colaboración interdisciplinar** que integre el conocimiento
+técnico y el jurídico.
+
+La formación de los **jueces y magistrados** debería incluir, al menos,
+los siguientes contenidos: (i) fundamentos de la forensia digital y de
+las técnicas de atribución de dispositivo y personal; (ii) limitaciones
+y tasas de error de las distintas técnicas; (iii) estándares de
+fiabilidad y criterios de admisibilidad de la prueba digital; (iv)
+evaluación crítica de los informes periciales de atribución; y (v)
+jurisprudencia nacional y comparada sobre atribución digital. Esta
+formación, que podría impartirse a través del Consejo General del Poder
+Judicial y de las escuelas judiciales, es esencial para que los jueces
+puedan valorar adecuadamente la prueba digital y evitar la falacia del
+autor tecnológico.
+
+La formación de los **fiscales** debería enfatizar, además, la
+estrategia probatoria en casos de atribución digital: cómo construir un
+caso de atribución personal basado en la convergencia de múltiples
+flujos de evidencia, cómo anticipar y refutar la defensa del troyano, y
+cómo presentar la prueba digital de manera comprensible y persuasiva
+ante el tribunal. La formación de los **abogados defensores**, por su
+parte, debería incluir el conocimiento de las técnicas de atribución
+para poder impugnar adecuadamente los informes periciales de la
+acusación y para poder articular defensas basadas en la brecha
+persona-dispositivo, la defensa del troyano o la posibilidad de
+deepfakes.
+
+La formación de los **peritos** es, quizás, la más crítica. Los peritos
+en forensia digital deben estar al día de los avances en las técnicas de
+atribución, deben conocer los estándares metodológicos aplicables y
+deben ser capaces de explicar su metodología y sus conclusiones de
+manera comprensible para los operadores jurídicos. La formación
+continua, la participación en grupos de trabajo y la colaboración con la
+comunidad académica son elementos esenciales para mantener la
+competencia pericial en un campo que evoluciona a gran velocidad.
+
+La **colaboración interdisciplinar** entre técnicos y juristas es otro
+de los desafíos futuros. La atribución personal no es un problema
+puramente técnico ni puramente jurídico; es un problema que exige la
+integración de ambos conocimientos. La creación de **equipos mixtos**
+---peritos y juristas--- para el análisis de casos complejos de
+atribución, y el fomento de la **investigación interdisciplinar** sobre
+los desafíos de la atribución digital, son pasos necesarios para avanzar
+hacia una práctica judicial más informada y más justa.
+
+### 6. Conclusiones parciales: hacia un ecosistema de atribución personal más robusto
+
+Del análisis de las perspectivas futuras y tendencias regulatorias se
+desprenden varias conclusiones de relevancia.
+
+En primer lugar, **el desarrollo de marcos de atribución estructurados
+como FACT** representa un avance metodológico de gran importancia (0)
+(1). Al establecer una separación explícita entre identificación y
+atribución, y al exigir la convergencia de múltiples flujos de
+evidencia, FACT proporciona una guía para la práctica forense y un
+criterio para la valoración judicial que puede contribuir a reducir la
+incertidumbre y a aumentar la fiabilidad de la atribución personal (0)
+(7).
+
+En segundo lugar, **los avances en biometría conductual** apuntan hacia
+su consolidación como herramienta forense de atribución personal (3). La
+integración de múltiples modalidades biométricas, el desarrollo de
+arquitecturas de aprendizaje profundo y la investigación sobre la
+estabilidad de los patrones de tecleo están mejorando la precisión y la
+fiabilidad de estas técnicas (3) (1) (3) (5). Sin embargo, la falta de
+estándares metodológicos uniformes sigue siendo un obstáculo para su
+aceptación judicial generalizada.
+
+En tercer lugar, **la autenticación activa mediante marcas de agua y
+criptografía de medios** ofrece una vía prometedora para la atribución
+de contenido sintético y manipulado (2) (5). Los marcos como SAiW y
+LIDMark, y los estándares de procedencia como C2PA y CAI, permiten
+incrustar información de origen en el contenido digital desde el momento
+de su creación, facilitando su autenticación y atribución posterior (2)
+(5) (6). La adopción regulatoria de estos mecanismos, que ya se está
+perfilando en algunas jurisdicciones, es una tendencia que probablemente
+se intensificará en los próximos años (4) (1).
+
+En cuarto lugar, **la necesidad de una regulación específica de la
+prueba de atribución personal** es cada vez más acuciante. La ley
+debería establecer criterios claros sobre el valor probatorio de las
+distintas técnicas de atribución, estándares para la convergencia de
+flujos de evidencia, requisitos para la carga probatoria en casos de
+defensa del troyano, y exigencias de formación especializada de los
+operadores jurídicos.
+
+Finalmente, **la formación especializada y la colaboración
+interdisciplinar** son elementos esenciales para avanzar hacia un
+ecosistema de atribución personal más robusto y fiable. La complejidad
+de la atribución digital exige que jueces, fiscales, abogados y peritos
+reciban una formación continua y que colaboren en equipos mixtos que
+integren el conocimiento técnico y el jurídico.
+
+## XI. CONCLUSIONES
+
+### 1. La atribución de dispositivo no equivale a atribución de persona
+
+La conclusión fundamental que preside este trabajo es que **la
+atribución de dispositivo, por precisa y fiable que sea técnicamente, no
+equivale a la atribución de persona**. La brecha persona-dispositivo
+(*Person-Device Gap*), formulada por la doctrina como la dificultad
+probatoria de vincular a una persona física concreta con un dispositivo
+o cuenta determinados, constituye el desafío central de la forensia
+digital en el ámbito de la atribución personal (2) (8). Esta brecha no
+es un problema accesorio o marginal, sino un **desafío epistémico y
+probatorio** que afecta a los fundamentos mismos de la prueba digital en
+el proceso judicial.
+
+La distinción entre identificación y atribución ---entre "¿qué actuó?"
+y "¿quién actuó?"--- no es una mera sutileza académica, sino una
+exigencia metodológica de primer orden (1) (2). Mientras que la
+identificación del dispositivo puede alcanzarse con un alto grado de
+certeza mediante técnicas como la PRNU, el análisis de metadatos o, con
+las debidas limitaciones, el rastreo de direcciones IP, la atribución
+personal requiere un salto inferencial que la técnica por sí sola no
+puede cerrar. Como han señalado Shamsi, Zeadally, Sheikh y Flowers, la
+atribución a nivel de atacante ---persona--- "rara vez se alcanza"
+(3).
+
+El escenario que ha servido de hilo conductor a este trabajo ---una
+persona acusada de injurias en redes sociales, con constancia de que las
+publicaciones se originaron desde un dispositivo de su propiedad pero de
+uso compartido--- ejemplifica con claridad esta conclusión. La mera
+titularidad del dispositivo, unida a la constatación técnica de su
+origen, no basta para atribuir al propietario la autoría de las
+publicaciones. Se requiere un **cuerpo de evidencia adicional** que,
+procedente de fuentes independientes, apunte en la misma dirección y
+excluya razonablemente las hipótesis alternativas.
+
+### 2. La convergencia de flujos de evidencia como estándar metodológico mínimo
+
+La necesidad de superar la brecha persona-dispositivo impone un
+**estándar metodológico de convergencia de múltiples flujos de evidencia
+independientes**, formulado con particular claridad por el marco FACT
+(1) (2). La evidencia digital por sí sola es insuficiente para la
+atribución a nivel de persona; se requiere la integración de múltiples
+fuentes de información que, en su conjunto, apunten a la misma
+conclusión y excluyan razonablemente las hipótesis alternativas (1) (7).
+
+Este principio de convergencia, que responde a una lógica probatoria
+bien conocida ---la corroboración mutua entre fuentes distintas reduce
+el riesgo de error---, se traduce en la práctica en la necesidad de
+combinar:
+
+-   **Evidencia técnica**: la atribución del dispositivo mediante PRNU,
+    > metadatos u otras técnicas forenses, documentada con arreglo a los
+    > estándares internacionales (5) (6) y a la jurisprudencia que exige
+    > un informe pericial que certifique el origen, la integridad y la
+    > fecha de envío (19) (21).
+
+-   **Evidencia conductual**: el análisis de biometría conductual,
+    > especialmente la dinámica de tecleo, que permite vincular la
+    > redacción de los mensajes con el patrón de escritura del
+    > acusado (0) (7). Aunque la dinámica del ratón no ha alcanzado el
+    > mismo grado de madurez forense (8) (9), la combinación de
+    > múltiples modalidades conductuales puede ofrecer un nivel de
+    > certeza superior.
+
+-   **Evidencia temporal y contextual**: el análisis de patrones de uso
+    > y hábitos de acceso, que permite situar al acusado en el lugar y
+    > momento de la acción, y la correlación con otras fuentes
+    > extrínsecas ---testimonios, registros de otros dispositivos, datos
+    > de geolocalización--- que refuerzan la inferencia atributiva.
+
+-   **Evidencia lingüística**: el análisis de estilo y contenido, que
+    > puede contribuir a la verificación de autoría (3).
+
+El marco FACT va más allá al establecer que, cuando no se cumplen los
+requisitos para la atribución a nivel de persona, el profesional debe
+"llegar y documentar una conclusión de no atribución" (0) (7). Esta
+exigencia de prudencia, que protege la presunción de inocencia, debe
+presidir la práctica pericial y la valoración judicial en todos los
+casos en que la evidencia disponible no permita excluir razonablemente
+las hipótesis alternativas.
+
+### 3. La defensa del troyano y los deepfakes como desafíos reales, no meramente teóricos
+
+La defensa del troyano (*Trojan Horse Defence*) y los deepfakes no son
+meras coartadas teóricas o estrategias defensivas marginales; son
+**desafíos reales que la práctica judicial debe afrontar** y que
+condicionan de manera significativa la atribución personal en el entorno
+digital.
+
+La defensa del troyano, que atribuye el *actus reus* y el *mens rea* del
+delito a un *software* malicioso, ha demostrado su eficacia en casos
+como *R v Caffrey* y en otros procesos por pornografía infantil en el
+Reino Unido (11) (1). La sofisticación creciente del *malware* moderno,
+capaz de eliminar sus propias trazas ---el denominado *ghostware*---,
+hace que la alegación de que un *software* malicioso pudo haber sido el
+responsable del hecho delictivo sea cada vez más verosímil (8) (13). La
+respuesta forense, aunque ha evolucionado con la incorporación del
+análisis de memoria volátil (8) (13) y de marcos de evaluación
+estructurada como las redes bayesianas (9), sigue enfrentando límites
+prácticos significativos, especialmente cuando la investigación se
+inicia mucho después de los hechos y la memoria volátil se ha perdido.
+
+Los deepfakes, por su parte, plantean un desafío de naturaleza
+cualitativamente distinta: no cuestionan la autoría de una acción
+digital, sino la **autenticidad del propio contenido**. La posibilidad
+de que un vídeo o una imagen haya sido generado o manipulado por
+inteligencia artificial introduce un factor de incertidumbre sistémica
+que puede afectar a la fiabilidad de cualquier prueba audiovisual (6).
+La forensia de deepfakes ha avanzado significativamente en áreas como la
+detección, la atribución de modelo y la autenticación activa (0) (8)
+(9), pero los sistemas actuales de detección presentan limitaciones
+importantes en términos de generalización y robustez, y su integración
+en el proceso probatorio plantea desafíos jurídicos aún no resueltos
+(12) (4).
+
+La respuesta a estos desafíos no puede ser la de ignorarlos ni la de
+reducir los estándares probatorios. La solución debe venir por el
+perfeccionamiento de las técnicas forenses, la formación especializada
+de los operadores jurídicos y el desarrollo de estándares metodológicos
+y regulatorios que permitan evaluar la plausibilidad de la defensa del
+troyano y la autenticidad del contenido audiovisual sobre bases técnicas
+sólidas (8) (13) (6).
+
+### 4. La necesidad de un enfoque interdisciplinar y de estándares probatorios diferenciados
+
+La complejidad de la atribución personal en el entorno digital exige un
+**enfoque interdisciplinar** que integre el conocimiento técnico, el
+jurídico y el probatorio. La brecha persona-dispositivo no puede ser
+cerrada por la técnica sola ni por el derecho solo; requiere la
+colaboración entre peritos, jueces, fiscales, abogados y académicos, en
+un diálogo que permita traducir la evidencia técnica en inferencias
+probatorias jurídicamente sólidas.
+
+Este enfoque interdisciplinar debe traducirse en el desarrollo de
+**estándares probatorios diferenciados** para los distintos niveles de
+atribución. La atribución de dispositivo, que puede alcanzarse con un
+alto grado de certeza mediante técnicas consolidadas como la PRNU, debe
+estar sujeta a requisitos de fiabilidad y cadena de custodia rigurosos
+pero proporcionados a su naturaleza técnica. La atribución personal, en
+cambio, debe estar sujeta a estándares más exigentes, que reflejen la
+complejidad inferencial del salto desde el dispositivo a la persona.
+
+El estándar de **convergencia de múltiples flujos de evidencia**
+formulado por el marco FACT ofrece un criterio adecuado para este nivel
+superior de exigencia (1) (2). La atribución personal no puede basarse
+en un único indicador, por robusto que este parezca; requiere la
+convergencia de evidencias procedentes de fuentes independientes que, en
+su conjunto, excluyan razonablemente las hipótesis alternativas. Este
+estándar, que es análogo al que rige para la prueba indiciaria en otros
+ámbitos del derecho penal, debe ser formalizado en la práctica forense y
+en la valoración judicial.
+
+La jurisprudencia comparada apunta en esta dirección. El caso
+*Commonwealth v. Mangel* establece que la mera correspondencia de
+información general en una cuenta de redes sociales es insuficiente para
+inferir la autoría (21). El caso *Solothurn* revoca una condena basada
+exclusivamente en la titularidad de una cuenta, al considerar que
+existían dudas razonables sobre la autoría (8) (23). La STS 300/2015
+exige un informe pericial para dar valor probatorio a las capturas de
+pantalla de mensajería instantánea cuando son impugnadas (19). La STS
+116/2025 exige coherencia externa y documentación de la cadena de
+custodia digital (20). La STS (Sala de lo Militar) 90/2021 exige un
+informe pericial que garantice la autenticidad, la autoría y la
+integridad del contenido (21). Esta convergencia jurisprudencial apunta en
+la dirección de un estándar probatorio más exigente para la atribución
+personal en el entorno digital.
+
+### 5. Propuestas *de lege ferenda* para la mejora de la atribución personal en el proceso digital
+
+A la luz del análisis realizado, se formulan las siguientes propuestas
+*de lege ferenda* para la mejora de la atribución personal en el proceso
+digital:
+
+**a) Establecimiento de criterios legales sobre el valor probatorio de
+las técnicas de atribución.** La ley debería establecer una jerarquía de
+las técnicas de atribución en función de su fiabilidad y reconocimiento
+científico, y fijar los requisitos de admisibilidad para cada una de
+ellas. La PRNU, por su solidez, debería ser objeto de una regulación
+específica que establezca los estándares para su extracción, comparación
+y presentación. La biometría conductual, por su menor grado de madurez,
+debería estar sujeta a requisitos más rigurosos, incluyendo la necesidad
+de informar sobre las tasas de error y las condiciones de aplicación. La
+dirección IP, por su fragilidad, debería ser objeto de una regulación
+que limite su valor probatorio y exija su corroboración.
+
+**b) Formalización del estándar de convergencia de flujos de evidencia
+para la atribución personal.** La ley debería establecer que, en
+entornos de dispositivo compartido, la atribución personal requiere la
+convergencia de al menos dos flujos de evidencia independientes, y que
+la mera prueba de dispositivo es insuficiente para fundamentar una
+condena. Esta exigencia, inspirada en el marco FACT, contribuiría a
+prevenir la falacia del autor tecnológico y a proteger la presunción de
+inocencia (0) (1).
+
+**c) Regulación de la carga probatoria en casos de defensa del
+troyano.** La ley debería establecer que, cuando el acusado invoca la
+defensa del troyano, debe presentar al menos una evidencia mínima que
+acredite la plausibilidad de la infección ---por ejemplo, un informe
+pericial que identifique la presencia de *malware* en el dispositivo o
+que documente la existencia de vulnerabilidades---. Esta carga, aunque
+formalmente atribuida al acusado, sería más ligera que la de la
+acusación, pero suficiente para evitar que la mera alegación, sin ningún
+soporte, pueda generar una duda razonable. La acusación, por su parte,
+debería poder refutar la defensa mediante el análisis de memoria volátil
+y otras técnicas forenses avanzadas (8) (13).
+
+**d) Regulación de la prueba de deepfakes en el proceso judicial.** La
+ley debería establecer que, cuando se presente contenido audiovisual
+como prueba, y existan indicios de que pueda haber sido generado o
+manipulado por IA, la parte que lo presenta debe acreditar su
+autenticidad mediante un informe pericial que aborde específicamente la
+posibilidad de manipulación sintética. Esta exigencia, que trasladaría
+la carga de la autenticación a la parte que presenta la prueba, es
+análoga a la que ya existe en otros ámbitos de la prueba digital (19).
+
+**e) Exigencia de formación especializada de los operadores jurídicos.**
+La ley debería establecer que jueces, fiscales, abogados y peritos
+reciban una formación especializada en materia de atribución digital,
+como requisito para intervenir en procedimientos en los que se discuta
+la atribución de publicaciones en redes sociales u otros contenidos
+digitales. Esta formación debería ser impartida por instituciones
+especializadas y debería formar parte de los programas de formación
+continuada de las carreras judicial y fiscal.
+
+**f) Desarrollo de protocolos forenses estandarizados para la atribución
+personal.** La ley debería encargar a los organismos competentes el
+desarrollo de protocolos forenses estandarizados para la recolección,
+análisis y presentación de la evidencia de atribución personal,
+incluyendo la biometría conductual, el análisis de patrones temporales y
+la correlación con fuentes extrínsecas. Estos protocolos, que deberían
+ser elaborados con la participación de la comunidad forense, los
+organismos de normalización y los operadores jurídicos, contribuirían a
+la reproducibilidad de los resultados y a la fiabilidad de la
+atribución.
+
+**g) Fomento de la investigación interdisciplinar y la colaboración
+público-privada.** La ley debería establecer mecanismos para el fomento
+de la investigación interdisciplinar sobre los desafíos de la atribución
+digital, y para la colaboración entre el sector público, el sector
+privado y el ámbito académico en el desarrollo de nuevas técnicas y
+estándares de atribución.
+
+### 6. Epílogo: la prudencia como imperativo metodológico
+
+El trabajo concluye con una reflexión que, aunque formulada a lo largo
+de las secciones precedentes, merece ser reiterada en estas conclusiones
+finales: **la prudencia es un imperativo metodológico** en el ámbito de
+la atribución personal en el entorno digital.
+
+La rapidez de la evolución tecnológica, la complejidad de las técnicas
+de atribución, la multiplicidad de hipótesis alternativas ---otro
+usuario, un *software* malicioso, un deepfake--- y la gravedad de las
+consecuencias de un error judicial ---una condena injusta o una
+absolución indebida--- imponen un enfoque prudente y meticuloso, tanto
+en la práctica pericial como en la valoración judicial.
+
+Esta prudencia no debe confundirse con la inacción o con la desconfianza
+sistemática en la prueba digital. Los avances técnicos descritos a lo
+largo de este trabajo ---la PRNU, la forensia de memoria, la biometría
+conductual, la detección y atribución de deepfakes--- ofrecen
+herramientas valiosas para la atribución personal, y su utilización,
+cuando se aplica con arreglo a los estándares metodológicos y jurídicos,
+puede proporcionar un grado de convicción suficiente para la decisión
+judicial.
+
+La prudencia es, más bien, una exigencia de **rigor metodológico y de
+honestidad intelectual**: el perito debe ser transparente sobre las
+limitaciones de su análisis, sobre las tasas de error de las técnicas
+empleadas y sobre las hipótesis alternativas que no pueden ser
+excluidas. El tribunal debe ser consciente de la brecha
+persona-dispositivo y debe exigir que la atribución personal esté
+respaldada por un cuerpo convergente de evidencias que excluya
+razonablemente las hipótesis alternativas. Cuando la evidencia
+disponible no permita alcanzar una conclusión firme, la conclusión debe
+ser la de no atribución (1) (2).
+
+La presión por obtener una condena o por resolver un caso no puede
+justificar el sacrificio de la precisión probatoria ni la vulneración de
+la presunción de inocencia. La justicia penal en la era digital, como en
+cualquier otra época, debe estar guiada por el principio de que **es
+preferible absolver a un culpable que condenar a un inocente**. Este
+principio, que es el fundamento mismo del estándar de prueba más allá de
+toda duda razonable, adquiere una relevancia especial en el ámbito de la
+atribución personal en el entorno digital, donde la complejidad técnica
+y la multiplicidad de hipótesis alternativas hacen particularmente
+difícil alcanzar la certeza necesaria para la condena.
+
+El desarrollo de marcos de atribución estructurados, la formación
+especializada de los operadores jurídicos, la regulación específica de
+la prueba de atribución personal y el fomento de la investigación
+interdisciplinar son pasos necesarios para avanzar hacia un **ecosistema
+de atribución personal más robusto, fiable y justo**. Pero el fundamento
+de este ecosistema debe ser, siempre, la prudencia metodológica y el
+respeto a los principios y garantías del proceso penal.
+
+## BIBLIOGRAFÍA
+
+**(0)** Shavers, B. (2025). *The FACT Attribution Framework v1.0: A
+Legal and Attribution-Centered Model for Digital Forensics and Incident
+Response*. Zenodo. DOI: 10.5281/ZENODO.17745959.
+
+**(1)** Shavers, B. (2025). *The FACT Attribution Framework v1.0: A
+Legal and Attribution-Centered Model for Digital Forensics and Incident
+Response*. Zenodo. DOI: 10.5281/ZENODO.17745959.
+
+**(2)** Casey, E., Jaquet-Chiffelle, D.-O., Spichiger, H., Ryser, E. &
+Souvignet, T. (2020). *Structuring the Evaluation of Location-Related
+Mobile Device Evidence*. Forensic Science International: Digital
+Investigation, 32, 300928. DOI: 10.1016/j.fsidi.2020.300928.
+
+**(3)** Shamsi, J.A., Zeadally, S., Sheikh, F. & Flowers, A. (2016).
+*Attribution in cyberspace: techniques and legal implications*. Security
+and Communication Networks, 9(15), 2886-2900.
+
+**(4)** Rid, T. & Buchanan, B. (2015). *Attributing Cyber Attacks*.
+Journal of Strategic Studies, 38(1-2), 4-37.
+
+**(5)** National Institute of Standards and Technology (NIST). (2006).
+*Special Publication 800-86: Guide to Integrating Forensic Techniques
+into Incident Response*. Gaithersburg, MD: NIST.
+
+**(6)** ISO/IEC 27037:2012. *Information technology --- Security
+techniques --- Guidelines for identification, collection, acquisition
+and preservation of digital evidence*. ISO/IEC 27043:2015. *Information
+technology --- Security techniques --- Incident investigation principles
+and processes*.
+
+**(7)** Shavers, B. (2025). *The FACT Attribution Framework v1.0: A
+Legal and Attribution-Centered Model for Digital Forensics and Incident
+Response*. Zenodo. DOI: 10.5281/ZENODO.17745959.
+
+**(8)** Casey, E., Jaquet-Chiffelle, D.-O., Spichiger, H., Ryser, E. &
+Souvignet, T. (2020). *Structuring the Evaluation of Location-Related
+Mobile Device Evidence*. Forensic Science International: Digital
+Investigation, 32, 300928. DOI: 10.1016/j.fsidi.2020.300928.
+
+**(9)** Overill, R.E. (2015). *The first 10 years of the Trojan Horse
+defence*. ScienceDirect.
+
+**(10)** Danidou, Y. & Schafer, B. (2011). *Trusted computing and the
+digital crime scene*. Digital Evidence and Electronic Signature Law
+Review, 8.
+
+**(11)** Bowles, S. & Hernandez-Castro, J. (2015). *The first 10 years
+of the Trojan Horse defence*. ScienceDirect.
+
+**(12)** Bowles, S. & Hernandez-Castro, J. (2015). *The first 10 years
+of the Trojan Horse defence*. ScienceDirect.
+
+**(13)** Thantilage, R.D., Luu, C.D., Le-Khac, N.A. & Genoe, R. (2026).
+*Investigating Remote Access Abuse: A Forensic Framework for Analysing
+AnyDesk Artefacts on Windows OS*. Preprint.
+
+**(14)** Amerini, I. et al. (2024). *Deepfake Media Forensics: State of
+the Art and Challenges Ahead*. arXiv.
+
+**(15)** Ahmad, W., Peng, Y.-T. & Chang, Y.-H. (2025). *FAME: A
+Lightweight Spatio-Temporal Network for Model Attribution of Face-Swap
+Deepfakes*. Expert Systems with Applications (arXiv preprint
+2506.11477).
+
+**(16)** (2025). *FRIDA: Fake-image Recognition and source
+Identification via Diffusion-features Analysis*. arXiv.
+
+**(17)** (2026). *Deepfake Forensic Analysis: Source Dataset Attribution
+and Legal Implications of Synthetic Media Manipulation*. IEEE Xplore.
+
+**(18)** Prasad, N. & Diro, A. (2025). *A survey of cyber threat
+attribution: Challenges, techniques, and future directions*. Computers &
+Security, 157.
+
+**(19)** Tribunal Supremo (España), Sala Segunda (Penal). Sentencia
+300/2015, de 19 de mayo (ponente: D. Manuel Marchena Gómez).
+
+**(20)** Tribunal Supremo (España), Sala Segunda (Penal). Sentencia
+116/2025, de 13 de febrero (ECLI:ES:TS:2025:634).
+
+**(21)** Tribunal Supremo (España), Sala de lo Militar. Sentencia
+90/2021, de 7 de octubre (ECLI:ES:TS:2021:3661). Tribunal Superior de
+Justicia de Cataluña, Sala de lo Social, Sección 1.ª. Sentencia
+4986/2025, de 3 de octubre (recurso 4758/2024). *Commonwealth v.
+Mangel*, Superior Court of Pennsylvania (2018).
+
+**(22)** *R v Calland* [2017] EWCA Crim 2308 (Court of Appeal,
+Inglaterra y Gales). *R v Turner* [2020] EWCA Crim 1241 (Court of
+Appeal, Inglaterra y Gales).
+
+**(23)** Caso *Solothurn*, Tribunal Cantonal de Solothurn (Suiza,
+2019-2022).

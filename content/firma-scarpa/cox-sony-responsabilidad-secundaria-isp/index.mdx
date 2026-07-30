@@ -1,0 +1,124 @@
+---
+title: "Responsabilidad secundaria de ISPs: qué cambió tras Cox v. Sony"
+description: "La Suprema Corte revirtió la condena a Cox Communications. 163.148 avisos de copyright no generan responsabilidad legal para los ISPs. Un análisis de la mayor reconfiguración del enforcement de copyright en 20 años."
+date: "2026-03-26"
+tags: ["copyright", "ISPs", "responsabilidad secundaria", "Cox v. Sony", "DMCA"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "cox-sony-responsabilidad-secundaria-isp"
+readingtime: "16 min"
+pdf: "/fuentes/1774468930420.pdf"
+---
+¿Pueden demandar a un ISP porque sabe que sus usuarios descargan películas ilegalmente? La Suprema Corte de USA acaba de decir que no. No es una respuesta técnica sobre una excepción legal. Es la reconfiguración completa del modelo de enforcement de copyright que ha funcionado durante veinte años. Y lo que resulta más llamativo es que ni siquiera fue por unanimidad en los fundamentos: la Corte se dividió profundamente sobre la doctrina, aunque convergió en el resultado.
+
+El 25 de marzo de 2026, la Suprema Corte falló en *Cox Communications, Inc. v. Sony Music Entertainment* que la mera provisión de un servicio de Internet a sabiendas de que será utilizado para infringir copyrights no genera responsabilidad secundaria. Punto. Con eso, anuló un veredicto de jurado de $1.000 millones, revirtió la sentencia de la Fourth Circuit, y reseteó dos décadas de jurisprudencia sobre la responsabilidad de los intermediarios digitales.
+
+Lo que voy a desarrollar en este análisis no es una explicación de la sentencia. Es lo que la sentencia *destroza*, y por qué eso importa para cualquier jurista que trabaje en derecho de Internet, compliance o enforcement de copyright.
+
+## El escándalo que generó el juicio: 163.148 avisos ignorados
+
+Comencemos con el dato que parece destruir el argumento de Cox: Sony Music y otros titulares de copyright utilizaron a MarkMonitor para rastrear descargas ilegales de canciones y películas. Cuando identificaban una dirección IP infractora, enviaban un aviso al ISP responsable. En un período de aproximadamente dos años, MarkMonitor envió a Cox **163.148 avisos de infracción**.
+
+Aquí es donde el análisis se complica realmente. Cox dice que responde a los avisos. Implementó un sistema: segundo aviso, warning al usuario. Avisos adicionales, suspensión de servicio. Después de trece avisos, terminación total. Y su defensa más potente: el 98% de las infracciones identificadas terminaron con su sistema de respuesta.
+
+Pero Sony señaló algo distinto en el juicio: Cox terminó solo 32 cuentas de clientes por copyright infringement durante ese mismo período. ¿Cuántas terminó por no pago? Cientos de miles. Además, Sony presentó declaraciones de empleados de Cox expresando frustración con los avisos, una clara reluctancia a actuar en favor de proteger los ingresos por suscripción. La narrativa de Cox como "protector responsable" se desmoronaba en ese contexto.
+
+El jurado compró la historia de Sony. Encontró a Cox responsable tanto de infringement contributario como vicario. Condenó a $1.000 millones en daños estatutarios por 10.017 obras infringidas.
+
+Lo que resulta irónico es que esto no fue un error de un tribunal de primera instancia. La Fourth Circuit Court of Appeals **confirmó** la sentencia de contributory liability. Su razonamiento fue elegantemente simple: "proporcionar un producto con conocimiento de que el destinatario lo usará para infringir copyrights es exactamente el tipo de conducta culpable suficiente para infringement contributario". *BMG Rights Mgmt. v. Cox Communications*, 881 F.3d 293 (4th Cir. 2018).
+
+Y entonces intervino la Suprema Corte.
+
+## Cuando el precedente se quiebra: Grokster y Sony, reinterpretados
+
+La opinión mayoritaria, escrita por Justice Thomas, comienza con una premisa que parece obvia pero casi nunca se mencionaba en los fallos anteriores: "El Copyright Act no expresamente hace responsable a nadie por infringement cometido por otro". La regla es que cuando Congress quiere imponer responsabilidad secundaria, lo hace de forma explícita. Y eso no sucedió aquí.
+
+De ahí surge el punto central de la doctrina: la responsabilidad secundaria solo existe en dos formas.
+
+**Primera forma: inducement.** Un proveedor de servicio induce infringement si activamente promueve la infracción mediante actos específicos. En *Grokster* (2005), la Suprema Corte encontró que dos empresas de file-sharing eran responsables porque promocionaban su software **como herramienta para infringir copyrights**. Su modelo de negocio apuntaba explícitamente a eso.
+
+La "principal object" de la operación era usar el software para descargar obras con copyright. Eso es inducement.
+
+**Segunda forma: service tailored to infringement.** Un servicio está diseñado específicamente para infringir si "no es capaz de usos sustanciales o comercialmente significativos que no infrinjan".
+
+En *Sony v. Universal* (1984), los fabricantes de Betamax fueron absueltos porque la grabadora podía usarse para grabar programas de TV para verlos después sin consentimiento (infringing), pero también para grabar legalmente espectáculos que querían ver después en casa (noninfringing). El criterio pasó: si hay usos sustanciales no infractores, no hay liability.
+
+Lo que resulta llamativo es que la Suprema Corte, discutiendo ambos precedentes, dejó absolutamente clara una cosa: **mero conocimiento de que un servicio será usado para infringir es insuficiente**. En *Kalem Co. v. Harper Brothers* (1911), la Corte explicó que "mera indiferente suposición o conocimiento del vendedor" de que el comprador usará ilegalmente el producto "no es suficiente" para liability.
+
+En *Sony*, reiteró que "no hay precedente en copyright" para responsabilidad basada solo "en el hecho de que ha vendido equipo con conocimiento constructivo de que sus clientes pueden usarlo para hacer copias no autorizadas".
+
+Y en *Grokster*, nuevamente: una corte "sería incapaz de encontrar contributory infringement liability meramente basada en falla de tomar pasos afirmativos para prevenir infringement".
+
+Cox no indujo. Cox no ofreció un servicio tailored a la infracción. Simplemente proporcionó acceso a Internet. Eso es todo. Y el 98% de lo que se transmite por Internet no es infracción. De ahí la conclusión ineludible: Cox no tiene responsabilidad secundaria.
+
+## Lo que Justice Sotomayor destruye en su voto concurrente
+
+Lo que hace especialmente valioso este fallo es el voto concurrente de Justice Sotomayor, acompañada por Justice Jackson. Porque Sotomayor no discrepa del resultado. Pero sí discrepa radicalmente de los fundamentos. Y lo que dice es, francamente, corrosivo para la opinión mayoritaria.
+
+Sotomayor sostiene que la Corte mayoritaria va demasiado lejos al cerrar las puertas a otras teorías de responsabilidad secundaria derivadas del common law. Específicamente, el *aiding and abetting* civil. Su argumento es que *Sony* y *Grokster* nunca clausuraron otras formas de liability; solo establecieron dos específicas. La Corte mayoritaria, al insistir en que esas dos son las únicas, está reescribiendo los precedentes.
+
+Pero aquí viene lo interesante. Sotomayor tampoco condena a Cox. ¿Por qué? Porque incluso bajo una teoría de *aiding and abetting*, Cox no tiene el requisito fundamental: **intención de ayudar a la infracción específica**.
+
+Y Sotomayor desarrolla esto con ferocidad doctrinal. Argumenta que en *Smith & Wesson v. Estados Unidos Mexicanos* (2025), la Corte estableció que aiding-and-abetting requiere que el demandante pruebe que el defendido **intentó ayudar y que supo quién era el principal infractor**. En el caso de Cox, sí: recibió avisos de miles de infracciones. Pero esos avisos especificaban una dirección IP, no quién estaba detrás de ella.
+
+Aquí es donde el análisis de Sotomayor toca la médula: Cox no sabe quién infringió. Puede haber sido uno de cinco miembros de una familia. Puede haber sido un vecino con la contraseña del Wi-Fi. Para una pequeña oficina que subarrienda Internet, pueden ser decenas de empleados.
+
+Para un ISP regional que compra servicio a Cox, pueden ser miles. **Sin saber quién es el principal infractor específico, no es racionalmente posible inferir que Cox intentaba ayudar a esa persona particular.**
+
+"Sin prueba de que Cox supo más sobre instancias específicas de infracción, y sin evidencia de asistencia 'pervasiva, sistémica y culpable', los demandantes como mucho han mostrado que Cox fue 'indiferente' a la infracción", escribe Sotomayor. "Mera indiferencia, sin embargo, no es suficiente para aiding-and-abetting."
+
+Así que Sotomayor vota por reversar, pero no porque no exista responsabilidad secundaria, sino porque Cox no se comportó con la intención requerida.
+
+## El verdadero daño colateral: el DMCA safe harbor se vuelve inútil
+
+Pero hay una tercera voz en este fallo que no es voto mayoritario ni concurrencia especial, sino implicación estructural: el Digital Millennium Copyright Act safe harbor se desmorona.
+
+El DMCA de 1998 creó un equilibrio cuidadoso. Reconocía que había responsabilidad secundaria (es por eso que creó defensas). Para acceder a ese safe harbor, los ISPs debían adoptar y razonablemente implementar "una política que proporcione para la terminación en circunstancias apropiadas de subscribers" que son "repeat infringers" (17 USC §512(i)(1)(A)). En cambio, si cumplían, estaban protegidos de liability secundaria por esos servicios.
+
+Sony argumentó durante el litigio que **si los ISPs no pueden ser responsables por servir a infractores conocidos, entonces el safe harbor es innecesario**. La lógica es tentadora: ¿para qué crear una defensa a algo que no es liability?
+
+La opinión mayoritaria rechaza esto. Dice que el DMCA no **expresamente impone** liability a los ISPs. Solo crea defensas. Y además, el propio DMCA especifica (en §512(l)) que fallar en cumplir los requisitos del safe harbor "no debe actuar negativamente" contra "una defensa por el service provider de que su conducta no es infringing".
+
+Pero aquí es donde entra Sotomayor nuevamente, con un golpe casi letal a la lógica de la mayoría. Ella señala que el DMCA fue pasado en **1998, catorce años después de *Sony* (1984)**. Congress sabía que había responsabilidad secundaria bajo copyright. El DMCA se diseñó precisamente porque Congress estaba tratando de incentivar a los ISPs a tomar medidas —por eso el safe harbor, que protege a quien cumple.
+
+La regla mayoritaria, dice Sotomayor, "consigna el safe harbor a la obsolescencia". Bajo esa regla, un ISP "se enfrenta a ninguna probabilidad realista de responsabilidad secundaria por copyright infringement, sin importar si toma pasos para direccionar la infracción en su red y sin importar qué sepa sobre actividad de usuarios".
+
+De hecho, subraya Sotomayor, un ISP podría ahora "vender una conexión de Internet a una compañía que el ISP sabe opera un website que exclusivamente hospeda material con copyright obtenido ilegalmente" y no enfrentaría liability. O vender a un cliente que "entra a la tienda y dice que necesita una nueva conexión porque el otro ISP más escrupuloso en la ciudad cortó su servicio después de años de piratería sin control".
+
+Con regla mayoritaria, "los ISPs están libres de abandonar su política actual de responder a copyright infringement. Como el consejero de Cox concedió en oral argument, bajo la regla que la mayoría adopta hoy, el safe harbor no 'hará nada en absoluto' hacia adelante".
+
+Ese es el análisis verdadero del DMCA: no es que el safe harbor sea inútil. Es que ahora **los ISPs tienen cero incentivo para implementarlo porque tienen cero riesgo sin él**.
+
+## Implicaciones prácticas en el mundo jurídico
+
+Conviene recordar que esto ocurre en un contexto de decada de coerción sistemática a intermediarios. Desde Napster (1999) hasta BitTorrent (2000s), la industria de copyright persiguió a los ISPs como chivo expiatorio por la infracción de usuarios. *Grokster* pareció cerrar el círculo en 2005: si tu servicio podía usar para infringir y sabías que se usaba, eras liable.
+
+Pero la jurisprudencia se fragmentó. Algunos circuitos (como la Fourth Circuit) expandieron la doctrina hacia el conocimiento simple. Otros circuitos fueron más restrictivos. Lo que la Suprema Corte hizo fue **unificar hacia la restricción más severa**: el conocimiento de que tu servicio será usado para mal no es suficiente. Punto.
+
+Esto tiene consecuencias cascada. Para cualquier jurista que trabaje en enforcement de copyright, significa que la estrategia de "go after the ISP" ya no funciona. Tendrá que volver a los infractores actuales. Para los ISPs, significa que podrán discontinuar políticas de respuesta a copyright notices sin riesgo legal (aunque posiblemente con riesgo de reputacional y presión legislativa).
+
+Para Europa, que está desarrollando el Digital Services Act sin un precedente claro de la Suprema Corte americana, esto cambia el baseline de lo que se puede pedir a los intermediarios. Si la Corte más influyente del mundo occidental dice que el conocimiento no es suficiente, ¿en qué se basa Europa para exigir something más?
+
+## La pregunta que el análisis deja abierta
+
+Lo que sorprende al leer los fundamentos mayoritarios es que resuelven un problema jurídico (¿puede demandar por conocimiento?) pero dejan completamente abierto otro: ¿qué pasa si Cox sí estuviera indirectamente incentivando la infracción? Por ejemplo, si ofereciera descuentos a clientes por "investigar alternativas de distribución de contenido"? ¿Si su modelo de negocio fuera explícitamente monetizar la velocidad requerida para piratería?
+
+La opinión mayoritaria sugiere que eso *sería* inducement. Pero es sugerencia, no doctrina desarrollada. Y en una era donde los modelos de negocio son sofisticados e implícitos, la pregunta de cómo detectar y probar *inducement* en situaciones edge es algo que los próximos veinte años de litigio tendrán que resolver.
+
+Sotomayor insinúa algo parecido pero distinto: su análisis de *aiding and abetting* podría, teóricamente, aplicarse en futuros casos donde un ISP no solo sabía sino donde se probara conocimiento de infractores *específicos*. Si un ISP recibiera un aviso nombrando a "Juan Pérez en apartamento 5C" (no solo una IP), y siguiera proveyendo servicio, ¿sería eso intent de ayudar a Juan Pérez? Ella no lo cierra.
+
+## Reflexiones finales
+
+Lo que resulta más significativo de *Cox v. Sony* es que redefine el rol del intermediario no como custodio de derechos de terceros (que era la derivación de dos décadas de jurisprudencia), sino como neutral provider de infraestructura. ¿Es eso correcto? Depende de si crees que el copyright se protege mejor mediante enforcement entre partes privadas o mediante acciones contra los titulares reales de derechos. Sony apunta a lo primero. La Suprema Corte, en 2026, apunta a lo segundo.
+
+Lo que es indiscutible es que esta sentencia reescribe el capítulo sobre responsabilidad secundaria. Y lo hace no mediante doctrina nueva, sino mediante *reinterpretación severa* de precedentes que parecían caminando hacia el lado opuesto.
+
+**Conclusiones prácticas:**
+
+- Los ISPs ya no pueden ser demandados por conocimiento simple de que sus clientes infringen. Solo inducement activo o servicios tailored generan responsabilidad secundaria.
+- El DMCA safe harbor mantiene su valor técnico pero pierde su función de incentivo, ya que los ISPs no enfrentan riesgo de liability sin cumplirlo.
+- El enforcement de copyright ahora depende casi íntegramente de acciones directas contra infractores, no contra intermediarios.
+- Las teorías de *aiding and abetting* civil podrían subsistir, pero requieren prueba de intención específica, lo que en contextos de direcciones IP anónimas es prácticamente imposible.
+- Europa debe recalibrar sus expectativas sobre intermediarios en el Digital Services Act: si USA no puede obligar a ISPs a responder, es difícil argumentar que Europa sí.
+- Para los abogados de compliance de ISPs, la licencia para relajar políticas de copyright ya existe legalmente, aunque presiones reputacionales y legislativas probablemente continúen.

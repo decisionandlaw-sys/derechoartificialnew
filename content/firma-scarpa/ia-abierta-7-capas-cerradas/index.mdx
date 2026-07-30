@@ -1,0 +1,289 @@
+---
+title: "IA abierta: por qué tu modelo tiene 7 capas cerradas"
+description: "Cómo la regulación de IA quedó atrapada en un falso binario abierto/cerrado. Análisis del paper 'Untangling AI Openness': 8 componentes, trade-offs irreversibles, y por qué Meta liberó Llama para entrencharse."
+date: "2026-04-02"
+tags: ["inteligencia artificial", "regulación de IA", "modelo abierto", "geopolítica tecnológica", "derecho de la IA"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ia-abierta-7-capas-cerradas"
+readingtime: "18 min"
+pdf: "/fuentes/untangling-ai-openness-nobel-rozenshtein-sharma.pdf"
+---
+# Tu IA abierta tiene 7 capas cerradas. Cómo la regulación de la inteligencia artificial quedó atrapada en un binario falso que ignora dónde está el verdadero poder.
+
+Hace tres meses, nadie creía que China pudiera construir un modelo de IA rival a ChatGPT sin acceso a chips americanos de última generación. Hace tres meses, los reguladores debatían si "IA abierta" era un bien público o un peligro de seguridad nacional. Hace tres semanas, DeepSeek demostró que con tecnología americana abierta, tiempo, y optimización, el liderazgo tecnológico occidental podía cerrarse en semanas, no años.
+
+Y todo el andamiaje regulatorio sobre el que había que decidir quedó obsoleto.
+
+Lo que resulta llamativo es que el debate normativo sobre la IA abierta sigue atrapado en una dicotomía heredada del software de los años 90: "¿Es el sistema abierto o cerrado?" Como si fuera un switch binario. La realidad es infinitamente más compleja, y justo por eso más peligrosa de gobernar con normas que asumen falsas simetrías.
+
+El paper "Untangling AI Openness" de Parth Nobel, Alan Rozenshtein y Chinmayi Sharma, publicado por la Facultad de Derecho de la Universidad de Minnesota en 2026, propone algo radical: la regulación de IA no puede seguir pensando en sistemas "abiertos" o "cerrados".
+
+Necesita pensar en **ocho componentes independientes del stack de IA, cada uno con su propio espectro de apertura**, sus propios trade-offs, y sus propias consecuencias irreversibles sobre seguridad, innovación, democracia y poder geopolítico.
+
+Lo que me interesa aquí no es el software. Es lo que esta taxonomía revela sobre cómo un abogado, un regulador, o un responsable de política pública debería pensar el problema. Y cómo el binario "abierto vs. cerrado" no solo es falso, sino que está creando incentivos perversos en exactamente los lugares donde el poder tecnológico es menos visible.
+
+## El binario que engañó a todos: software vs. inteligencia artificial
+
+La tentación de aplicar las lecciones del software abierto a la IA abierta es irresistible. El software libre revolucionó la infraestructura mundial. Linux corre en servidores, Android domina teléfonos, Python es el lenguaje de 40 millones de programadores. La historia del OSS es la historia de cómo la apertura de código fuente generó innovación distribuida, seguridad por escrutinio, y poder compartido.
+
+El problema —y esto es lo que Nobel, Rozensztein y Sharma desarrollan con precisión casi incómoda— es que la IA no es software.
+
+Cuando hablamos de software abierto, hablamos fundamentalmente de código. El GitHub de un proyecto de software abierto es una carpeta con archivos de texto. Cualquiera puede leerlos, copiarlos, modificarlos, y el acto de hacerlo es reversible: baja el código, lo modifica, lo sube a su propio servidor. La licencia GPL o MIT define lo que puedes y no puedes hacer. El desarrollador tiene control limitado, pero las reglas están claras.
+
+La IA abierta, por el contrario, no es una cosa. Es un **ecosistema de ocho componentes independientes, cada uno controlado por actores distintos con incentivos en conflicto**, cada uno operando en su propio espectro de apertura o cierre, y cada uno imposible de "revocar" una vez liberado.
+
+Veamos cuáles son estos ocho componentes. Y veamos dónde está el verdadero poder.
+
+## Los 8 componentes del stack: dónde está realmente el control
+
+Cuando Meta liberó Llama hace dos años, la narrativa fue simplista: "Meta abre su modelo de IA para competir con OpenAI". Pero ¿qué exactamente liberó Meta? ¿Y qué se quedó guardado?
+
+### Componente 1: Compute (Hardware de entrenamiento + energía)
+
+En la base del stack está el hardware: GPUs, TPUs, y ahora ASICs diseñados específicamente para entrenar IA. Nvidia es el jugador hegemónico. Google es el único que produce TPUs propios. Fabricación: Taiwan (TSMC). Lithografía: Holanda (ASML).
+
+El hardware está completamente cerrado. Las especificaciones son proprietarias. Los diseños son secretos. Un startup no puede "abrir" el hardware porque simplemente no lo posee.
+
+Pero hay más: la energía. Un modelo de frontera como GPT-4 o Gemini requiere **gigavatio de potencia de forma sostenida**. No hay grid público que lo provea sin negociación especial. Utilities negocia con AI labs: acuerdos de compra de energía privados, interconexión preferencial, tasas negociadas. Google, Microsoft, Meta tienen acuerdos privados. Una startup, no.
+
+**Resultado:** Incluso si Meta libera los pesos del modelo, si no puedes acceder a 1.000 GPUs o a la energía para entrenarlos, la "apertura" es ficción.
+
+### Componente 2: Data (Datasets de entrenamiento)
+
+Un modelo abierto es solo tan bueno como los datos sobre los que fue entrenado. Meta entrenó Llama sobre datos proprietarios: rastreo web, datos de sus productos, datasets licenciados que pagó (New York Times, Wiley).
+
+¿Meta publicó esos datos? No. ¿Meta publicó los criterios de filtrado, deduplicación, sesgos? No.
+
+Hay datasets públicos: Common Crawl (web abierta rastreada), The Pile. Pero los modelos entrenados únicamente sobre datos públicos **quedan 3-6 meses rezagados en rendimiento respecto a modelos entrenados sobre datos proprietarios curados**. No es un detalle. Es la diferencia entre un laboratorio de IA competitivo y un prototipo académico.
+
+**Resultado:** Puedes descargar Llama, pero entrenar algo mejor requiere datos que no puedes comprar. El statu quo está trancado.
+
+### Componente 3: Training Code (Código de entrenamiento)
+
+El código que ejecuta el entrenamiento de un modelo es secreto. DeepSeek liberó su R1 bajo licencia abierta. Pero no liberó el código que lo entrenó. ¿Por qué? Porque ese código es la diferencia entre "tengo acceso a los pesos" y "puedo mejorarlo". Es el conocimiento embebido del laboratorio.
+
+### Componente 4: Model Weights (Los números del modelo)
+
+Aquí es donde se concentra la atención. Llama tiene pesos abiertos. GPT-4, no. DeepSeek-R1, sí. Y aquí empieza la ilusión de *openwashing*.
+
+Meta liberó Llama bajo una licencia "comunitaria" que dice: puedes usar Llama si tienes menos de 700 millones de usuarios mensuales. Si tienes más, necesitas una licencia bespoke de Meta. ¿Más de 700 millones de usuarios? Meta, Google, Amazon, Apple. Nadie más.
+
+¿Y si quieres usar Llama para entrenar un modelo derivado para venderlo? Hay una "Acceptable Use Policy" que prohíbe ciertos usos. ¿Cuáles? Los que Meta decide.
+
+Entonces Llama es "abierto" en el sentido de que el código está en Hugging Face. Pero es "cerrado" en los usos permitidos, los umbrales de escala, las restricciones comerciales. Es *openwashing*: la reputación de la apertura sin los beneficios.
+
+### Componente 5: System Prompts (Instrucciones de comportamiento)
+
+Esto es la pieza que muchos reguladores aún no ven claramente. Un system prompt es una instrucción escondida que preposiciona el modelo antes de recibir tu entrada. Es el "personaje" del sistema.
+
+Anthropic publica los system prompts de Claude. OpenAI no. Google no.
+
+Un system prompt puede cambiar completamente el comportamiento de un modelo sin cambiar los pesos. El caso más célebre: cuando xAI actualizó el system prompt de Grok para que "no evite hacer afirmaciones políticamente incorrectas mientras estén bien substanciadas", el modelo literalmente se comenzó a llamar a sí mismo "MechaHitler" en cuestión de días.
+
+¿Tienes acceso a los pesos del modelo pero no al prompt? Estás usando una herramienta cuyo manual está escondido.
+
+### Componente 6: Operational Records (Auditoría y metadata)
+
+Logs de entrenamiento, métricas de rendimiento, registros de evaluación, data de inferencia, auditorías de sesgo. Todo esto es secreto en las empresas privadas.
+
+¿Por qué importa? Porque sin auditoría en tiempo real, es imposible saber si un sistema que se vendió como "abierto y seguro" está fallando de formas sistemáticas una vez deployado. Sin *operational records*, la transparencia es un teatro.
+
+### Componente 7: Application Layer (Interfaz y cómo se despliega)
+
+Incluso si tienes acceso al modelo abierto, ¿cómo lo usas? ¿A través de qué interfaz? Con qué filtros de seguridad? Con qué integración a datos externos?
+
+Meta Llama puede descargarse. Pero si quieres venderlo en una app, necesitas interfaz, hosting, control de acceso. Si usas el API de Meta, qué sucede con los datos del usuario. Si deploys en tu propio servidor, necesitas infraestructura. Los costos de operación pueden ser 10x los costos del modelo.
+
+### Componente 8: The Human Layer (Talento e incentivos)
+
+Los investigadores de IA en China y Estados Unidos no son intercambiables. Visa botlenecks. Non-compete agreements que cierran el talento dentro de Google DeepMind o Meta. Restricciones académicas que impiden que los investigadores publiquen fuera de su institución.
+
+DeepSeek fue construido por un hedge fund con talento chino concentrado. No hay "apertura" en los sistemas de educación, inmigración, o movilidad laboral que **permitan** que otros construyan competidores.
+
+¿Quieres armar un laboratorio de IA competitivo? Necesitas PhD en ML, experiencia en infraestructura de sistemas, investigadores en seguridad. Todos compiten por el mismo pool de 10.000 personas en el mundo. Google y Meta los contratan, les ponen non-competes, y los hunden bajo acuerdos de confidencialidad.
+
+La "apertura" del código no abre nada si el talento está encerrado.
+
+## Por qué Meta liberó Llama (y no fue por democracia)
+
+Aquí es donde el paper de Nobel, Rozensztein y Sharma hace un corte revelador. La narrativa estándar es: "Meta cree en la IA abierta como bien público".
+
+La realidad: Meta liberó Llama porque:
+
+**Primero, commoditizar la capa de modelo.** OpenAI cobraba por acceso a ChatGPT. Si Meta libera un modelo competitivo gratis, baja el valor de OpenAI a cero. Meta no se beneficia de ese precio más bajo (Meta no vende modelos). Pero OpenAI pierde su única fuente de ingresos.
+
+**Segundo, establecer de facto standard.** Si toda la industria construye sobre Llama, entonces el "stack abierto" defaultea a arquitecturas que Meta ayudó a diseñar. Los compiladores, optimizaciones, tooling, se construye alrededor de Llama. Los desarrolladores piensan en términos de Llama. Generaciones de startups construyen sobre Llama. Es network effect, pero sobre código abierto.
+
+**Tercero, talent moat.** Los mejores investigadores de IA quieren trabajar donde ocurre la investigación visible. Si Meta libera Llama, miles de startups y académicos la usan. Meta contrata a los que hicieron mejoras interesantes. Meta recluta el talento observando quién trabaja bien en público con Llama.
+
+**Cuarto, crowdsource innovation sin pagar.** Llama 3.1 tiene ahora 40 variantes fine-tuned: Llama-Medical, Llama-Code, Llama-Spanish. Meta no pagó por eso. Otros laboratorios lo hicieron. Meta se beneficia de todo el trabajo que otros hacen sobre su arquitectura.
+
+Esto no es "democratización". Es **hegemonia disfrazada de apertura**. El poder no está en "quién tiene el código". Está en "quién define el stack del que todos dependen".
+
+El paper lo expresa así:
+
+> Meta's release of Llama's model weights, for instance, was not just a nod to open science but a calculated play to gain multiple strategic advantages. By making its models free and widely available, Meta encourages a global community of developers to build tools and applications on its platform, effectively crowdsourcing innovation and making the Llama architecture a de facto industry standard.
+
+Android fue el primer precedente. Google liberó Android, capturó 85% del mercado móvil global, y ahora Google Maps, Google Play Store, Google Ads, corren en billones de dispositivos que Google no fabrica pero que transmiten datos a Google. La "apertura" de Android fue tal vez la jugada más rentable de la historia tecnológica.
+
+Meta hizo exactamente lo mismo con Llama. Y llegó a tiempo. DeepSeek llegó después.
+
+## El trade-off irreversible: seguridad vs. democracia
+
+Aquí es donde el análisis del paper toca fondo. Porque cada decisión sobre abrir o cerrar un componente del stack de IA no es una opción que puedas revertir. Es un trade-off que impacta simultáneamente seguridad, innovación, democracia, y poder geopolítico. Y mutuamente se invalidan.
+
+**Digamos que abres los pesos de tu modelo (como hizo Meta con Llama).**
+
+Beneficio: Startups pueden fine-tune. Académicos pueden investigar. Hay oversight distribuido. Reduces el poder de Meta a quedarse con secretos peligrosos sin auditar.
+
+Costo: Una vez que los pesos están públicos, no puedes revocar el acceso. Extremistas pueden descargar Llama y entrenarla para generar propaganda. Terroristas pueden usarla para diseñar exploits cibernéticos. China puede tomar Llama, mejorarla con sus propios datos, y publicar DeepSeek. (Exactamente lo que pasó: DeepSeek destilaba Llama.)
+
+La "apertura" de Meta democratizó el acceso a IA. Pero hizo imposible que Meta —o cualquiera— controle qué se hace con esa tecnología una vez distribuida. No hay vuelta atrás.
+
+**Digamos que cierras todo (como hace OpenAI con GPT-4).**
+
+Beneficio: OpenAI puede mantener los sistemas seguros internamente. Puede vetear usos maliciosos. Puede monitorear y actualizar. Tiene control total sobre lo que sale.
+
+Costo: Nadie afuera puede auditar si hay sesgo sistemático. Nadie sabe si OpenAI está entrenando modelos con datos sin consentimiento. Nadie puede competir: la barrera de entrada es multibillonaria. El poder se concentra en una compañía privada para todas las decisiones sobre cómo debería comportarse la IA.
+
+Entonces: seguridad por secreto, pero a cambio de democracia cero. Innovación centralizada. Poder unipolar en una compañía privada.
+
+**¿La tercera opción? Apertura diferencial.**
+
+Abre los pesos (democratización) pero cierra el training code (no puedo entrenar competidores sin reaprender todo). Publica system prompts (accountability) pero no operational records (privacidad de usuarios). Abre la application layer (anyone puede construir UX innovadora) pero cierra compute (solo 10 labs pueden entrenar desde cero).
+
+El paper dedica centenas de páginas a esto: **cada configuración de componentes abiertos/cerrados produce un trade-off distinto, y todos los trade-offs tienen costo irreversible.**
+
+Lo que resulta llamativo —y esto es donde toco mi observación personal— es que ningún regulador está pensando en esto. La Unión Europea tiene el EU AI Act que dice "modelos de frontera deben cumplir X". Pero no especifica cuál de los 8 componentes. ¿Abiertos los pesos? ¿Abiertos los datos? ¿Abiertos los prompts? El reglamento deja un vacío porque sus redactores heredaron el binario del software abierto sin cuestionarlo.
+
+California intentó S.B. 1047 (vetada) que diría "si vuelcas un modelo peligroso sin monitoreo, eres responsable por los daños". Suena sensato. Pero es imposible monitorear downstream uses de modelo abierto. Así que la regla prácticamente prohibía los modelos abiertos. Lo cual jamás fue el debate explícito.
+
+## DeepSeek: el caso que refuta todo el marco
+
+Entonces llega DeepSeek.
+
+Un hedge fund chino, no un laboratorio de IA. Acceso limitado a chips americanos. Modelos entrenados con eficiencia de infraestructura sin paralelo. Y en enero de 2025, publican DeepSeek-R1 bajo licencia abierta.
+
+Los números: en benchmarks académicos, DeepSeek-R1 supera a GPT-4 en razonamiento. Cuesta 1/10 del costo de entrenamiento de los sistemas americanos. Y es completamente abierto: pesos disponibles, código de training disponible, datasets documentados.
+
+¿Qué pasó? Los reguladores americanos entraron en pánico. Hawley propone una ley para "decoupling": prohibir cualquier AI derivada de modelos chinos. El White House rescinde las restricciones de export de chips (con la administración Trump). Hay conversación seria sobre si la "apertura" de Occidente fue un error estratégico masivo.
+
+Pero aquí está lo que nadie analiza: **DeepSeek NO ES MÁS ABIERTO QUE LLAMA.**
+
+DeepSeek publicó los pesos (Componente 4: ✅ abierto). Publicó training code (Componente 3: ✅ abierto). Publicó la arquitectura (fuente: ✅ abierto).
+
+Pero los **datos de entrenamiento NO están públicos** (Componente 2: ❌ cerrado). Los **system prompts** tienen embedded valores de censura china (Componente 5: ❌ manipulado). No hay **operational records** (Componente 6: ❌ cerrado). Y entrenarla requiere acceso a infraestructura china o compliance con regulaciones chinas (Componente 1: ❌ cerrado, distribuido al partido comunista).
+
+DeepSeek es abierto en los componentes que no requieren secreto chino. Es cerrado/controlado en los componentes donde China quiere mantener soberanía.
+
+Exactamente como Llama.
+
+Lo que revela esto es que **no hay modelo realmente "abierto"**. Hay configuraciones estratégicas de qué abre cada jugador para maximizar su propio poder relativo mientras simula ser abierto.
+
+Meta abre pesos para capturar ecosistema. Cierra datos para mantener ventaja. Cierra training code para que nadie mejore sin su conocimiento.
+
+China abre pesos (porque no tiene copyright legacy con creadores occidentales). Abre training code (porque es más fácil mejorar que competir). Cierra datos (porque son estado secreto). Cierra prompts (porque son valores del estado). Cierra infraestructura (porque es control nacional).
+
+El resultado: ambos dicen "somos abiertos". Ambos son estratégicamente semi-abiertos. Ambos están jugando zero-sum. Y el regulador queda viendo un "debate sobre apertura vs. cierre" cuando la realidad es "juego de ajedrez sobre qué capas del stack controlo yo vs. qué capas permito que otros controlen para luego entrapparlo".
+
+## El abogado ante la apertura diferencial: qué debería saber
+
+Si eres abogado y tu cliente es una empresa de IA, o un regulador, o un fondo que invierte en startups de IA, ¿qué deberías entender del paper de Nobel, Rozensztein y Sharma?
+
+**Primero: la apertura no es una propiedad binaria de un sistema.**
+
+Cuando un cliente te dice "vamos a open-source nuestro modelo", deberías preguntar: *¿cuál de los 8 componentes? ¿Bajo qué términos? ¿Con qué restricciones?*
+
+Porque la respuesta determina:
+- Si compites con otros o si te lo usan para entrencharse
+- Si puedes actualizar el sistema si descubres vulnerabilidades
+- Si tienes responsabilidad por downstream harms
+- Si puedes cumplir regulación
+
+**Segundo: cada regulación que asume un binario está escribiendo mal.**
+
+Si un regulador intenta "permitir IA abierta en ciertos casos", debería especificar: *¿abiertos los pesos, los datos, los prompts, o la operación?*
+
+Porque una ley que dice "los pesos de modelos frontier deben ser abiertos" es casi una prohibición total (porque una vez abiertos, no puedes controlar downstream misuse). Una ley que dice "los prompts deben ser publicados" es accountability sin pasar por seguridad. Una ley que dice "los datos deben ser auditables" es posible (audit-only access) pero no lo mismo que "datos públicos".
+
+**Tercero: el poder se concentra en los componentes que permanecen cerrados.**
+
+Si hablas con DeepSeek, Meta, OpenAI, o Google: todos dicen que la "apertura es buena pero X razones nos obliga a cerrar [componente Y]". Y en cada caso, [componente Y] es exactamente donde está el moat competitivo: Google cierra compute (TPU propio). Meta cierra data (productos de Meta). OpenAI cierra prompts (alignment secret). DeepSeek cierra infraestructura (control del estado).
+
+La "apertura" es teatro en los componentes que no importan. El control es donde importa.
+
+## Las conclusiones del paper: qué significa "apertura diferencial" para la política
+
+El paper propone reemplazar "IA abierta vs. cerrada" con un framework de "apertura diferencial": cada componente existe en un espectro, la regulación debe calibrar componente por componente, y no hay solución de una sola talla.
+
+¿Cómo se traduce esto a política pública real?
+
+**En liability:** El problema actual es que liberar un modelo peligroso "as-is" bajo una licencia MIT te protege de responsibility. Pero si cierras la documentación, los reguladores te acusan de opacidad. No ganas. Una ley de responsabilidad inteligente diría: si liberas pesos, pagas por monitoreo downstream. Si cierras datos, pagas por auditoría externa. Cada configuración tiene un costo de compliance distinto. Que el mercado elija cuál asumir.
+
+**En competencia:** Abrir componentes que crean lock-in (prompts, application interface) pero cerrar componentes que crean barrera de entrada (compute) es una estrategia anti-competencia. Una autoridad de competencia debería desagregar: ¿Meta cierra compute por razones de seguridad? O por razones de mantener dependencia en Microsoft Azure donde Meta tiene influencia. Ambas cosas son ciertas en el mismo acto.
+
+**En propiedad intelectual:** El copyright es un problema legal genuino. Si entrenas un modelo sobre obras protegidas sin licencia, ¿es justo? ¿Es fair use? Una solución es: se permite TDM (text-and-data-mining) para investigación, pero si publicas los pesos, tienes que mitigar extractability. Técnicas como distillation + pruning pueden reducir el riesgo de que alguien re-extraiga los datos originales desde tus pesos públicos.
+
+**En trade/export:** Prohibir la exportación de modelos abiertos es impracticable (GitHub es global). Pero controlar hardware es posible. Una política inteligente controla compute en frontera, sabiendo que eso controla indirectamente qué modelos pueden entrenarse dónde. Restricción de GPUs a China no prohíbe IA china. Pero la desacelera y la empuja a optimización de eficiencia. (DeepSeek es un resultado: optimización bajo restricción.)
+
+**En inversión pública:** Fondos como NAIRR (National AI Research Resource) pueden ser herramientas para rebalancear. Pero depende de cómo se estructuren. Si solo subsidia acceso a infraestructura de incumbents (Google TPU, Microsoft Azure), refuerza el statu quo. Si crea infraestructura pública genuina, abre entrada.
+
+## La pregunta que el análisis no puede cerrar
+
+El paper de Nobel, Rozensztein y Sharma hace algo que pocos papers académicos hacen: admite la incertidumbre radical.
+
+No hay respuesta correcta a "¿qué configuración de apertura diferencial maximiza utilidad pública?".
+
+Porque cada configuración hace trade-offs imposibles:
+
+- Seguridad requiere secreto. Democracia requiere transparencia. No puedes maximizar ambas.
+- Innovación requiere acceso a componentes básicos. Concentración requiere que esos componentes sean raros. No puedes tener ambos.
+- Leadership geopolítico requiere dominancia tecnológica. Liderazgo democrático requiere que otros puedan competir. No puedes tener ambos indefinidamente.
+
+Lo que el paper propone, en cambio, es humildad: **cada decisión regulatoria debería ser revisable, componente por componente, porque los efectos de cascada son impredecibles.**
+
+Abre los pesos hoy, y en dos años descubres que terceros usan el modelo para vigilancia. Cierras los datos hoy, y en cinco años descubres que solo los incumbents podían pagar por datos privados, así que acabaste centralizando más.
+
+No hay "solución" a la regulación de IA abierta. Hay reconfiguración perpetua de qué abre cada actor para luego controlar qué permanece cerrado.
+
+## Conclusiones operativas para el regulador, el abogado, el inversor
+
+Como defensa mínima contra los trades-offs irreversibles que impone la IA abierta:
+
+- **Desagrega "apertura". Nunca uses la palabra sin especificar qué componentes.** Cuando alguien diga "IA abierta", preguntar: pesos, datos, prompts, operación, computación. Si responden "todo", dudar. Si responden "algunos", preguntar por qué los otros.
+
+- **El poder está en los componentes que no se abren.** Cuando analices la estrategia de un lab de IA, ignora lo que proclama ser abierto. Busca lo que mantiene cerrado. Eso es el moat.
+
+- **La "apertura" puede ser una arma anti-competencia.** Meta abre pesos para capturar ecosistema y volver imposible competir sin escala de Meta. China abre código para absorber trabajo de optimización sin pagar. Apertura no = anti-monopolio.
+
+- **No hay reversión.** Una vez que publicas pesos, no puedes recuperarlos. No hay "recall". Una decisión sobre apertura debe asumir que es permanente.
+
+- **Cada regulación debe especificar qué componentes está abriendo/cerrando y qué trade-off acepta.** Una ley que dice "modelos deben ser abiertos" sin especificar es un fracaso regulatorio que será capturado por el actor más poderoso.
+
+- **El talento es componente 8. Controlarlo es control silencioso del stack.** Si controlas la inmigración, la educación, los non-competes, controlas quién puede construir competidores. Sin abrir el talento, cualquier apertura técnica es ficción.
+
+- **DeepSeek demostró que apertura + eficiencia es más peligroso que apertura sola.** No es que DeepSeek sea "más abierto". Es que probó que con componentes abiertos estratégicamente elegidos, tiempo, y talento, puedes cerrar gaps tecnológicos en meses. Eso cambia el cálculo de riesgo de cualquier "apertura controlada".
+
+## Epílogo: el 2026 como inflexión
+
+Escribo esto en abril de 2026, cuatro meses después de DeepSeek-R1. El debate sobre "IA abierta" ha mutado. Ya no es "¿deberíamos abrir?" sino "¿cuál es la configuración de apertura que maximiza nuestro poder relativo mientras parecemos abiertos?"
+
+Meta lo sabe. Google lo sabe. China lo sabe. El regulador europeo aún no.
+
+Si este paper de la Universidad de Minnesota hace algo, es forzar al regulador a dejar de pensar en blancos y negros. La inteligencia artificial abierta no es una categoría binaria. Es una matriz de decisiones, cada una con costo irreversible, cada una moviendo el equilibrio entre seguridad, innovación, democracia y poder de formas que ningún actor puede predecir completamente.
+
+Un abogado que ignore eso está escribiendo normas que serán capturadas o eludidas en minutos. Un regulador que ignore eso está asumiendo que "IA abierta" existe cuando la realidad es: "IA con componentes estratégicamente seleccionados abiertos para maximizar tu posición en el tablero".
+
+La pregunta que importa ahora no es "¿IA abierta o cerrada?" sino "¿*cuál* de las 8 capas abro yo, cuál cierra China, cuál controla Europa, y qué pasa cuando alguien inesperado optimiza la brecha?"
+
+Nobel, Rozensztein y Sharma no responden esa pregunta. Pero al menos la hacen legible.
+
+---
+
+## Lecturas recomendadas
+
+- Nobel, Rozensztein & Sharma. "Untangling AI Openness". *Wisconsin Law Review*, 2026.
+- Widder, Whittaker & West. "Why 'Open' AI Systems Are Actually Closed". *Nature*, 2024.
+- Narechania & Sitaraman. "An Antimonopoly Approach to Governing Artificial Intelligence". *Yale Law & Policy Review*, 2024.

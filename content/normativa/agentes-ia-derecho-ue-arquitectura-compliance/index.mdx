@@ -1,0 +1,205 @@
+---
+title: "Agentes de IA bajo el Derecho UE: arquitectura de compliance"
+description: "Nannini et al. mapean diez instrumentos europeos que se activan simultáneamente sobre agentes de IA. El AI Act es solo una capa. El incumplimiento del RGPD o la CRA no espera a agosto de 2026."
+date: "2026-05-29"
+tags: ["agentes de IA", "AI Act", "compliance", "Reglamento IA", "arquitectura regulatoria"]
+section: "normativa"
+category: "EU"
+author: "Redacción"
+slug: "agentes-ia-derecho-ue-arquitectura-compliance"
+readingTime: 18
+pdf: "/fuentes/1779897963238_compressed.pdf"
+---
+
+Tu agente de IA cumple el AI Act. Y aun así puede incumplir otras ocho normas europeas al mismo tiempo.
+
+Esa es la conclusión central de Nannini et al. en el *working paper* más completo publicado hasta la fecha sobre el régimen jurídico europeo de los sistemas agénticos: el AI Act no es el marco de referencia único; es solo una capa dentro de una arquitectura regulatoria que se activa acción por acción, no sistema por sistema.
+
+El documento —«*AI Agents Under EU Law: A Compliance Architecture for AI Providers*»— fue publicado el 7 de abril de 2026 en arXiv (2604.04604) por un equipo multidisciplinar integrado por Piccadilly Labs, la Association of AI Ethicists, el Centro Singular de Investigación en Tecnoloxías Intelixentes de la USC, BeEthical, el AIQI Consortium y ForHumanity Europe.
+
+Cincuenta páginas, 125 referencias, doce pasos de compliance y una advertencia que conviene leer antes de desplegar cualquier sistema agéntico en el mercado europeo.
+
+## La categoría que el legislador evitó nombrar y que ya regula de hecho
+
+El AI Act no contiene la palabra «agente». Es una decisión deliberada: el legislador europeo optó por una definición funcional y tecnológicamente neutra en el artículo 3(1) precisamente para no necesitar actualizar el texto cada vez que evolucione la arquitectura subyacente.
+
+Nannini et al. demuestran que esta neutralidad no elimina la sustancia regulatoria; la desplaza hacia los requisitos esenciales, que ya contemplan —aunque no nombren— las propiedades características de los sistemas agénticos.
+
+¿Qué hace que un sistema sea agéntico a efectos jurídicos? El paper identifica cinco propiedades funcionales: planificación y descomposición de tareas, invocación de herramientas externas mediante APIs, ejecución autónoma de pasos intermedios sin aprobación humana por cada uno, interacción ambiental que modifica estado externo (enviar correos, ejecutar transacciones, modificar bases de datos, publicar contenido), y adaptación impulsada por retroalimentación. Un sistema que reúna estos cinco rasgos satisface cada elemento de la definición del artículo 3(1): «variados niveles de autonomía», «adaptabilidad tras el despliegue», «influencia sobre entornos físicos o virtuales».
+
+La consecuencia práctica es inmediata: cualquier LLM con capacidad de *tool calling* es ya un sistema de IA a efectos del Reglamento. La discusión no es si se aplica el AI Act, sino qué parte de él y en qué combinación con qué otros instrumentos.
+
+Conviene recordar que esta lectura no es solo académica. La EDPS la comparte en su informe TechSonar 2025-2026 sobre *Agentic AI*. El informe de la Comisión bajo la iniciativa StepUp StartUps de enero de 2026 emplea la misma caracterización funcional. Y la OCDE, en su publicación de febrero de 2026, propone una tipología de sistemas agénticos que se alinea con los criterios del artículo 3(1).
+
+Hay, por tanto, convergencia institucional sobre lo que es un agente; lo que falta es orientación sobre cómo cumplir con él.
+
+## Nueve categorías de despliegue, nueve perfiles regulatorios distintos
+
+La aportación metodológica más útil del *paper* es una taxonomía de nueve categorías de despliegue —atención al cliente, RRHH/selección, codificación/DevOps, finanzas/contabilidad, ventas/marketing, investigación/conocimiento, operaciones de TI, sanidad/clínica y asistente personal— que conecta acciones concretas del agente con los sistemas externos que usa y los instrumentos legislativos que activa.
+
+El resultado es contraintuitivo para quienes asumen que la regulación opera sobre arquitecturas. La misma arquitectura subyacente —un LLM con capacidad de llamar herramientas— produce perfiles regulatorios radicalmente distintos según el dominio.
+
+Un agente que filtra currículos activa el Anexo III del AI Act (punto 4.a), alto riesgo, obligaciones del Capítulo III completo, artículo 22 del RGPD sobre decisiones automatizadas y las especificaciones del futuro estándar de gestión del sesgo (prEN 18283).
+
+El mismo sistema que resume reuniones internas activa únicamente las obligaciones de transparencia del artículo 50. Misma tecnología; consecuencia regulatoria completamente diferente.
+
+Lo que resulta llamativo es la universalidad del RGPD en este mapa. Casi todas las categorías procesarán datos personales —nombres, correos, registros financieros, datos de salud— haciendo del RGPD una obligación paralela prácticamente universal, independiente de la clasificación bajo el AI Act.
+
+Esto no es una coincidencia estructural sino un diseño normativo: el artículo 10 del AI Act incorpora obligaciones de gobernanza del dato que se entrelazan con el RGPD, y los artículos 26(9) y 27(4) hacen que las Evaluaciones de Impacto de Protección de Datos sean tanto *inputs* como *outputs* del proceso de gestión de riesgos del AI Act. La integración no es optativa; es estructuralmente necesaria.
+
+Para los operadores que construyen plataformas de agentes de propósito general —diseñadas para despliegue arbitrario por parte de terceros— este mapa plantea un dilema de clasificación que los autores articulan con precisión: si la plataforma no puede predecir en el momento del diseño cómo la usarán los desplegadores, debe elegir entre restringir el propósito previsto contractual y técnicamente (excluyendo explícitamente, mediante API y términos de servicio, usos en empleo, crédito o sanidad) o diseñar para el nivel regulatorio más exigente previsible bajo el artículo 3(13).
+
+No hacer ninguna de las dos cosas expone al operador de la plataforma al riesgo de que un uso de alto riesgo por parte de un desplegador retroactivamente implique las obligaciones del proveedor.
+
+## La arquitectura de estándares armonizados: un sistema de dependencias, no una lista
+
+El AI Act delega la operacionalización de sus requisitos esenciales (artículos 9-17) en estándares armonizados desarrollados bajo la Solicitud de Estandarización M/613 por CEN/CENELEC JTC 21. Cuando un estándar sea citado en el Diario Oficial, su aplicación generará una presunción de conformidad con los requisitos esenciales correspondientes.
+
+Nannini et al. dedican un análisis detallado a los siete estándares primarios en desarrollo y a su lógica interna de dependencias.
+
+El estándar de Sistema de Gestión de Calidad (prEN 18286) actúa como columna vertebral: su cláusula 4.4.2 exige identificar todos los requisitos esenciales aplicables; su cláusula 4.4.3 exige seleccionar los enfoques de cumplimiento para cada uno. Sin el estándar de gestión de riesgos (prEN 18228), resulta imposible satisfacer los requisitos de integración de riesgos del QMS.
+
+Sin el marco de confiabilidad (prEN 18229-1 y -2), no pueden cumplirse las exigencias de precisión y supervisión. Sin el estándar de ciberseguridad (prEN 18282), las disposiciones de ciberseguridad del QMS carecen de contenido técnico operativo.
+
+La conclusión práctica es importante: el cumplimiento de un único estándar de manera aislada es estructuralmente insuficiente si los estándares armonizados son la vía de compliance elegida. El programa del proveedor debe comprometerse con la suite completa, usando el QMS como marco coordinador.
+
+Aquí es donde el análisis se complica. Varios de estos estándares son borradores de trabajo que no han completado su encuesta pública a principios de 2026. Su contenido normativo está sujeto a restricciones de confidencialidad y a revisión antes de la publicación formal.
+
+CEN-CENELEC ha anunciado medidas excepcionales de aceleración, con un objetivo de finalización para el cuarto trimestre de 2026. Hasta entonces, los proveedores deben navegar el paisaje de cumplimiento usando los requisitos esenciales del AI Act —que sí son vinculantes desde las fechas aplicables— y su propio juicio interpretativo, sin orientación administrativa autorizada sobre cómo el marco se aplica a las propiedades específicas de los sistemas agénticos.
+
+El *paper* señala que la Oficina de IA de la Comisión no ha publicado orientación específica sobre agentes, uso de herramientas o cambio de comportamiento en tiempo de ejecución. El servicio de asistencia del AI Act califica sus consideraciones regulatorias sobre agentes como «solo preliminares». Este vacío de orientación es el contexto operativo real en que los proveedores deben tomar decisiones de cumplimiento ahora.
+
+## Cuatro desafíos de compliance específicamente agénticos
+
+El valor analítico más denso del documento está en la identificación de cuatro desafíos que los requisitos esenciales del AI Act ya abordan en principio pero que los sistemas agénticos amplifican en la práctica.
+
+**La minimización de privilegios fuera del modelo generativo.** El artículo 15(4) exige que los sistemas de IA de alto riesgo sean resilientes frente a intentos de alterar su uso o rendimiento por parte de terceros malintencionados. Para los agentes, esto requiere enforzar el control de privilegios *fuera* del LLM, a nivel de API.
+
+Una instrucción en el *system prompt* que diga «no borres archivos» no es un control de seguridad; es una sugerencia en lenguaje natural que el modelo puede o no seguir dependiendo de la inyección de prompts, el *jailbreaking* o el comportamiento emergente. El cumplimiento del artículo 15(4) para sistemas agénticos requiere que la incapacidad de realizar una acción restringida se haga cumplir a nivel arquitectónico.
+
+Si un agente de correo electrónico necesita leer el buzón de entrada para redactar respuestas, la integración de API debe exponer solo el *endpoint* de lectura, independientemente de lo que diga el *prompt* del modelo.
+
+El *paper* documenta empíricamente la urgencia de este punto: la encuesta de Kim et al. (aceptada en USENIX Security 2026) y el Top 10 de OWASP para Aplicaciones Agénticas (diciembre 2025) convergen en que el abuso de herramientas y la escalación de privilegios constituyen la categoría de amenaza agéntica más frecuentemente documentada, y que la mitigación requiere controles en la capa de ejecución, no en la capa del modelo.
+
+**El riesgo de evasión de la supervisión humana.** El artículo 14 exige que los sistemas de IA de alto riesgo permitan una supervisión efectiva por personas naturales, comensurable con los riesgos, el nivel de autonomía y el contexto de uso.
+
+Para sistemas agénticos, los autores identifican dos escenarios de riesgo estructuralmente ineludibles: primero, el modelo puede haber sido entrenado en un corpus que contiene muchos ejemplos de evasión de supervisión, incorporando esos patrones; segundo, el modelo puede haber recibido entrenamiento por refuerzo en un entorno donde evadir la supervisión fue recompensado, bien explícitamente, bien como estrategia emergente para maximizar otra recompensa.
+
+La implicación directa es que las garantías conductuales de los agentes basados en LLM no pueden establecerse mediante instrucciones: la propensión del modelo a eludir la supervisión es función de su régimen de entrenamiento, no de su configuración de despliegue. Los mecanismos de supervisión deben diseñarse como restricciones externas, no solo instrucciones internas.
+
+**La transparencia en cadenas de acción multiparte.** El artículo 50(1) exige informar a las personas naturales de que interactúan con un sistema de IA. Para un *chatbot* aislado, esto es sencillo.
+
+Para agentes que envían correos en nombre del usuario, publican contenido en plataformas, o llaman APIs que modifican cuentas de terceros, la obligación de transparencia se extiende más allá del usuario directo a todas las partes cuyos derechos o intereses son afectados por las acciones del agente.
+
+El *paper* documenta que el 2025 AI Agent Index, que analiza 30 productos agénticos desplegados, revela que menos del 20% de los desarrolladores divulgan políticas formales de seguridad y menos del 10% reportan evaluaciones de seguridad externas.
+
+**La deriva conductual en tiempo de ejecución y la modificación sustancial.** El artículo 3(23) define la modificación sustancial como un cambio en un sistema de IA después de su comercialización que no fue previsto en la evaluación de conformidad inicial y que afecta el cumplimiento de los requisitos esenciales o modifica el propósito previsto.
+
+Para los sistemas agénticos, la pregunta central es si su comportamiento adaptativo en tiempo de ejecución constituye tal cambio. Los autores distinguen tres mecanismos con consecuencias regulatorias distintas.
+
+El *comportamiento adaptativo anticipado* no constituye modificación sustancial: la selección de herramientas de un catálogo documentado, el aprendizaje en contexto dentro de una sesión y la generación aumentada por recuperación (RAG) no modifican los pesos del modelo ni la arquitectura. Si estos comportamientos fueron previstos, probados y documentados en la evaluación de conformidad, están por diseño dentro del envoltorio operativo normal.
+
+El *aprendizaje continuo post-despliegue* es candidato a modificación sustancial: si el agente actualiza los pesos del modelo basándose en datos de despliegue o ajusta fronteras de decisión mediante aprendizaje en línea, cambia el sistema de maneras no evaluadas en la conformidad inicial.
+
+La *deriva conductual emergente* presenta el caso más difícil: un agente que descubre patrones de uso de herramientas no anticipados por el proveedor, construye memoria persistente entre sesiones que desplaza su perfil operativo con el tiempo, o extiende su ámbito más allá de los casos de uso documentados a través de la composición de herramientas disponibles, desafía el marco de evaluación de conformidad en un nivel fundamental.
+
+La consecuencia práctica es arquitectónica: el estado en tiempo de ejecución debe tratarse como arquitectura versionada. Si la selección de herramientas, las actualizaciones de memoria y las vinculaciones de políticas no están delimitadas y son reproducibles, la deriva y la varianza se vuelven indistinguibles. Sin un límite definido del estado en tiempo de ejecución, la «modificación sustancial» se vuelve inconmensurable por diseño.
+
+## El perímetro regulatorio más allá del AI Act
+
+El AI Act no opera en el vacío. La advertencia del Anexo ZA de cada borrador de estándar armonizado —«otra legislación de la Unión puede ser aplicable»— adquiere dimensiones operativas muy concretas para los proveedores de agentes. Nannini et al. identifican diez instrumentos adicionales cuya activación depende de lo que el agente *hace*, no de cómo está clasificado.
+
+El RGPD (Reglamento 2016/679) es prácticamente universal: casi todos los agentes procesarán datos personales en entrenamiento u operación. La Ley de Resiliencia Cibernética (CRA, Reglamento 2024/2847) aplica si el agente es un producto con elementos digitales —software independiente con conectividad de red comercializado en el mercado de la UE—.
+
+La Ley de Servicios Digitales (DSA, Reglamento 2022/2065) aplica si el agente opera dentro de un servicio intermediario, de alojamiento o de plataforma. La Ley de Datos (Reglamento 2023/2854) aplica si el agente es un servicio relacionado con un producto conectado que genera datos. La Directiva NIS2 aplica si el agente es desplegado por o sirve a entidades esenciales o importantes.
+
+La Directiva de Responsabilidad por Productos Revisada (2024/2853) aplica si el agente causa daño a través de un resultado o comportamiento defectuoso. DORA (Reglamento 2022/2554) aplica a proveedores cuyos productos son usados por entidades del sector financiero.
+
+La Directiva ePrivacy (2002/58/CE) aplica independientemente y adicionalmente al RGPD cuando el agente accede a contenido de comunicaciones electrónicas —correo electrónico, mensajería—.
+
+Lo que resulta llamativo en este mapa es el patrón de activación: el disparador regulatorio nunca está determinado por la arquitectura interna del agente sino por sus efectos externos. ¿Qué datos procesa? (RGPD). ¿Con qué productos interfaz? (Ley de Datos, CRA). ¿Dónde publica contenido? (DSA). ¿En qué sector opera? (MDR, MiFID II, NIS2). ¿Qué daño pueden causar sus resultados? (DPL).
+
+Esto significa que la tarea de compliance fundacional del proveedor no es la clasificación arquitectónica sino un inventario exhaustivo de las acciones externas del agente, los datos que toca, los sistemas a los que se conecta y las personas cuyos derechos puede afectar.
+
+Dos desarrollos recientes refuerzan esta conclusión. El 18 de febrero de 2026, la Agencia Española de Protección de Datos publicó una guía de 71 páginas específicamente dedicada a las obligaciones del RGPD para despliegues agénticos. Es la primera orientación de una autoridad supervisora de la UE que trata la arquitectura agéntica —no solo los resultados de la IA— como el objeto primario del análisis de protección de datos.
+
+La AEPD confirma que la autonomía tecnológica no desplaza la responsabilidad legal, que la memoria persistente del agente es una superficie de cumplimiento de alto riesgo que debe estar compartimentada entre actividades de procesamiento y sujeta a períodos estrictos de retención, y que adopta la heurística de la «tríada letal» de Willison como criterio de gobernanza fundamentado en el RGPD: un agente no debería combinar simultáneamente, sin supervisión humana, el procesamiento de entrada no confiable, el acceso a datos sensibles y la toma de acciones autónomas que afectan a personas.
+
+Días después, la Autoridad Neerlandesa de Protección de Datos emitió una advertencia convergente sobre los riesgos de seguridad y protección de datos de los agentes altamente autónomos con acceso amplio a sistemas. La convergencia de dos APDs en días sobre el mismo marco de responsabilidad señala que la postura de aplicación en materia de RGPD agéntico se está consolidando antes del umbral de aplicación del AI Act de alto riesgo en agosto de 2026.
+
+## La CRA: una segunda pista de estandarización
+
+La Ley de Resiliencia Cibernética tiene su propio programa de estandarización —Mandato M/606, aceptado en abril de 2025— que desarrolla 41 estándares en una jerarquía Tipo A/B/C (marco, horizontales y verticales). Su impacto sobre los proveedores de agentes es más sustancial de lo que la narrativa de «pista paralela» sugiere.
+
+El artículo 12 de la CRA crea un puente de presunción de conformidad con consecuencias operativas directas: si un producto con elementos digitales que también es un sistema de IA de alto riesgo satisface los requisitos esenciales de ciberseguridad de la CRA (Anexo I), se presumirá que cumple los requisitos de ciberseguridad del AI Act bajo el artículo 15. La conformidad con la CRA sustituye la conformidad con el AI Act en los requisitos cubiertos.
+
+Para productos clasificados como «importantes» (Anexo III de la CRA) o «críticos» (Anexo IV), los procedimientos de evaluación de conformidad de la CRA tienen precedencia sobre los del AI Act en aspectos de ciberseguridad.
+
+El problema: no existe ningún estándar vertical de la CRA para productos de IA, agentes de IA ni software basado en LLM. Los 26 estándares Tipo C cubren navegadores, VPNs, gestores de contraseñas, herramientas SIEM, medidores inteligentes, dispositivos industriales OT, cortafuegos, enrutadores y categorías similares.
+
+Un agente de codificación vendido como extensión de VS Code o herramienta CLI debe autoevaluarse contra los estándares horizontales diseñados para modos de fallo de ciberseguridad convencionales —configuración segura por defecto, autenticación, criptografía, integridad de firmware— que no cubren los modos de fallo específicos de la IA: envenenamiento de datos, inyección de prompts, manipulación del modelo, comportamientos emergentes.
+
+La compresión temporal crea lo que los autores denominan una «zona libre de estándares»: las obligaciones de reporte de vulnerabilidades de la CRA se aplican desde el 11 de septiembre de 2026; los requisitos completos del producto desde el 11 de diciembre de 2027. Pero los estándares técnicos Tipo B —los que dan contenido testable a los requisitos del Anexo I— no tienen fecha límite hasta el 30 de octubre de 2027, aproximadamente seis semanas antes de la aplicación plena.
+
+Sin estándares armonizados citados en el Diario Oficial, el proveedor no puede apoyarse en la presunción: debe demostrar la conformidad directamente contra los requisitos esenciales, enunciados a un nivel de generalidad que proporciona una orientación de ingeniería mínima.
+
+## La arquitectura de doce pasos
+
+El *paper* culmina en una secuencia de doce pasos de compliance con dependencias lógicas explícitas. Los cuatro pasos más críticos para sistemas agénticos merecen síntesis específica.
+
+El **Paso 0** —determinar cuántos sistemas de IA contiene el producto— es raramente trivial para agentes. Un agente orquestador que delega en tres sub-agentes especializados puede constituir uno o cuatro sistemas, dependiendo de si los sub-agentes son comercializados independientemente o funcionan solo como componentes internos. Esto determina si el proveedor enfrenta una evaluación de conformidad o cuatro.
+
+El **Paso 2** —clasificar el sistema— contiene el dilema estructural de las plataformas de propósito general. Una declaración genérica de que «el sistema no está destinado a usos de alto riesgo» es insuficiente si la arquitectura de llamada de herramientas de la plataforma hace que los despliegues del Anexo III sean técnicamente triviales para los desplegadores descendentes.
+
+La decisión de clasificación debe documentarse con suficiente especificidad para sobrevivir al escrutinio regulatorio.
+
+El **Paso 7** —implementar ciberseguridad específica para IA— es donde los requisitos del artículo 15(4) identificados en el análisis de desafíos deben operacionalizarse: aplicación de mínimo privilegio a nivel de API, alcance de autorización por acción, restricción dinámica de privilegios basada en el nivel de confianza de entrada, y registro de auditoría que distinga acciones iniciadas por el usuario de acciones iniciadas por la IA.
+
+Para agentes con acceso a múltiples herramientas, este paso también requiere desplegar infraestructura de gobernanza de identidades no humanas: provisión de credenciales *just-in-time*, autorización por acción y políticas de rotación de credenciales que tengan en cuenta el ciclo de operación autónoma del agente.
+
+El **Paso 11** —monitoreo post-comercialización y detección de deriva— operacionaliza el marco de detección de deriva de la sección 6.4: instantáneas versionadas del estado operativo del agente (catálogo de herramientas, estado de memoria, vinculaciones de políticas) a intervalos definidos; monitoreo continuo de métricas conductuales contra la línea de base de la evaluación de conformidad; detección automatizada de deriva más allá de umbrales definidos que desencadene reevaluación; y un procedimiento interno documentado para determinar si un cambio detectado cumple el umbral del artículo 3(23).
+
+## La posición jurídica que no puede ignorarse
+
+Los autores formulan una conclusión que merece transcribirse con precisión: los sistemas agénticos de alto riesgo con deriva conductual no trazable no pueden actualmente ser comercializados en el mercado de la UE de manera consistente con los requisitos esenciales. Esto no es una advertencia sobre riesgos regulatorios futuros. Es la posición jurídica actual.
+
+Si un proveedor no puede demostrar que el comportamiento del sistema permanece dentro de los límites evaluados durante la evaluación de conformidad, y no puede detectar cuando se desvía, entonces los requisitos esenciales sobre supervisión humana (artículo 14), precisión (artículo 15), robustez (artículo 15), registro (artículo 12) y monitoreo post-comercialización (artículo 72) no están satisfechos.
+
+Los estándares armonizados proveerán métodos estructurados para demostrar la conformidad, pero los requisitos esenciales son ya vinculantes.
+
+Dicho esto, el *paper* es cuidadoso en no presentar esta conclusión como un obstáculo insuperable. Las restricciones de implementación que identifica —reproducibilidad conductual, auditabilidad de cadenas de acción, aplicación de privilegios a escala— definen la hoja de ruta de ingeniería que la arquitectura de compliance requiere.
+
+La obligación del proveedor no es haber resuelto estos problemas antes de comercializar el sistema, sino haberlos abordado en el grado exigido por los requisitos esenciales: el proceso de gestión de riesgos debe haberlos identificado, la documentación técnica debe describir cómo se mitigan, y el sistema de monitoreo post-comercialización debe detectar cuándo la mitigación es insuficiente.
+
+## Lo que queda abierto
+
+El *working paper* no cierra el análisis en el cumplimiento; lo proyecta hacia siete líneas de investigación que identifican donde la incompatibilidad entre el marco regulatorio y la tecnología que debe gobernar es más profunda. Tres resultan especialmente relevantes para la práctica jurídica inmediata.
+
+La primera es la divergencia entre los estándares internacionales ISO/IEC y los estándares armonizados europeos bajo M/613. ISO/IEC 42001:2023 gestiona el riesgo organizacional *para la organización*; el prEN 18286, conforme al artículo 17 y estructurado por el alcance de derechos fundamentales del artículo 9, gestiona el riesgo *para personas externas al proveedor*.
+
+No se trata de una brecha de cobertura sino de una incompatibilidad conceptual en el sujeto del riesgo y la estructura de responsabilidad. Ningún mecanismo de anexo normativo puede cerrar esta brecha sin abordarla como una cuestión de diseño sustantivo.
+
+La segunda es la evaluación de conformidad para sistemas de aprendizaje continuo. Las dos vías de conformidad del AI Act —control interno según el Anexo VI y evaluación de terceros según el Anexo VII— presuponen una evaluación puntual de un sistema cuyo comportamiento puede ser probado y demostrado que permanece dentro de los límites evaluados.
+
+Para sistemas que aprenden continuamente, el comportamiento es no estacionario por diseño. El artículo 43(4) exime de evaluación renovada a los cambios «predeterminados por el proveedor en el momento de la evaluación de conformidad inicial», pero la deriva continua —donde el perfil operativo del sistema se desplaza gradualmente a través de la acumulación de memoria o la evolución de patrones de recuperación sin ningún evento de reentrenamiento discreto— no se mapea limpiamente sobre esta disposición.
+
+La tercera es la taxonomía de riesgos para sistemas de IA compuestos, donde los riesgos se propagan en cascada a través de los límites de los agentes, el comportamiento emergente surge de componentes individualmente conformes, y el locus de responsabilidad está distribuido entre múltiples proveedores.
+
+Ni ISO/IEC 42005:2025 ni el artículo 9 del AI Act especifican cómo delimitar o agregar la evaluación de riesgos a lo largo de una cadena de delegación donde cada agente tiene un proveedor distinto.
+
+---
+
+**Para acceder al documento completo**, que incluye la taxonomía íntegra de categorías de despliegue con mapas de activación legislativa, la arquitectura de doce pasos, la matriz de impacto de cumplimiento y las siete líneas de investigación, el *working paper* está disponible en acceso abierto.
+
+---
+
+**Conclusiones operativas para proveedores:**
+
+- El disparador regulatorio es la acción externa del agente, no su arquitectura interna. El inventario de acciones, flujos de datos, sistemas conectados y personas afectadas es la tarea de compliance fundacional.
+- El RGPD es una obligación paralela prácticamente universal, independiente de la clasificación bajo el AI Act.
+- La minimización de privilegios debe aplicarse fuera del modelo generativo, a nivel arquitectónico, no mediante instrucciones en el *system prompt*.
+- El estado en tiempo de ejecución debe tratarse como arquitectura versionada: sin estado delimitado y reproducible, la «modificación sustancial» es inconmensurable.
+- Las plataformas de agentes de propósito general deben elegir: restricción contractual y técnica del propósito previsto, o diseño para el nivel regulatorio más exigente previsible.
+- La CRA y el AI Act no son pistas paralelas independientes: el artículo 12 CRA crea un puente de presunción de conformidad que integra ambos regímenes.
+- La zona libre de estándares (mediados 2026 – finales 2027) implica que los requisitos son exigibles antes de que los estándares armonizados estén disponibles. Los borradores disponibles son la orientación de ingeniería más próxima hasta entonces.
+- Los sistemas agénticos de alto riesgo con deriva conductual no trazable no pueden, en la posición jurídica actual, ser comercializados consistentemente con los requisitos esenciales.

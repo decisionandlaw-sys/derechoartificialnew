@@ -1,0 +1,327 @@
+---
+title: "USA v. Farris: La Responsabilidad Ética de los Abogados en el Uso de IA Generativa"
+description: "Análisis exhaustivo de la sentencia del Sixth Circuit que sanciona a un abogado por utilizar IA sin verificar citas falsas. Examina obligaciones éticas, estándares de competencia y consecuencias disciplinarias."
+date: "2026-04-07"
+tags: ["IA en práctica legal", "ética profesional", "responsabilidad abogados", "jurisprudencia", "hallucinations"]
+section: "jurisprudencia"
+category: "analisis-juridico"
+author: "Ricardo Scarpa"
+slug: "usa-v-farris-responsabilidad-etica-ia-abogados"
+readingTime: "12 min"
+pdf: "/fuentes/USA_v__Farris_USA_3_April_2026.pdf"
+---
+
+# USA v. Farris: La Responsabilidad Ética de los Abogados en el Uso de Inteligencia Artificial Generativa
+
+## Introducción: El Fantasma de los *Hallucinations* Jurídicos
+
+El caso *United States v. Farris*, decidido por el Sixth Circuit Court of Appeals el 3 de abril de 2026, marca un hito en la jurisprudencia estadounidense al abordar de frente un problema emergente de extraordinaria gravedad: la negligencia de abogados que utilizan herramientas de inteligencia artificial generativa sin implementar controles de verificación adecuados.
+
+La sentencia, dictada por los jueces CLAY, GIBBONS y HERMANDORFER, no resuelve el fondo del recurso de John C. Farris contra su condena, sino que se enfoca exclusivamente en sancionar la conducta del letrado Steven N. Howe, quien redactó los escritos de apelación utilizando la plataforma CoCounsel de Westlaw sin verificar debidamente las citas jurídicas generadas por la IA.
+
+Lo notable del caso es que no se trata de *hallucinations* en sentido puro —aquellos casos en que la IA inventa autoridades jurídicas ficticias completamente—, sino de algo potencialmente más peligroso: la manipulación selectiva de citas reales, la deformación de sus contenidos y la misrepresentación deliberada de la postura jurisprudencial de decisiones auténticas. Este análisis desglosa las implicaciones jurídicas, éticas y sistémicas de la sentencia.
+
+---
+
+## I. Reconstrucción de los Hechos y el Descubrimiento de la Infracción
+
+### A. El Procedimiento Sustantivo Original
+
+John C. Farris fue condenado en el Juzgado Federal del Distrito Oriental de Kentucky (Eastern District of Kentucky) por delitos de narcotráfico. En la sentencia de primera instancia, el tribunal determinó que Farris calificaba para un aumento de dos niveles en las Sentencing Guidelines conforme al § 3B1.1(c) por su rol de liderazgo en las operaciones de tráfico de drogas.
+
+Farris impugnó esta elevación de pena mediante apelación al Sixth Circuit, donde la corte nombró al letrado Steven N. Howe como defensor de oficio bajo el Criminal Justice Act, 18 U.S.C. § 3006A.
+
+### B. El Descubrimiento Inicial: El Fichero "CoCounsel Skill Results"
+
+El tribunal detectó irregularidades al revisar la estructura y formato de los escritos presentados. La pista más reveladora fue el nombre del fichero del escrito principal: *"CoCounsel Skill Results"*. CoCounsel es la denominación oficial de la plataforma de IA interna de Westlaw, propiedad de Thomson Reuters. Este detalle onomástico fue suficiente para que la corte iniciara una investigación más profunda.
+
+Como señala la opinión de la corte: *"From our vantage point, that file-name abnormality suggested that Howe's brief might have derived not from Howe's independent work, but directly from artificial-intelligence software."*
+
+### C. Las Tres Citas Defectuosas y sus Consecuencias
+
+La revisión sustantiva de los escritos reveló tres misrepresentaciones graves de autoridad jurídica:
+
+**Primera cita problemática** (principal brief, página 4):
+- **Texto citado:** *"The Guidelines' commentary makes clear that '[m]ere presence or knowledge of the offense is not sufficient to make a person a participant.' U.S.S.G. § 3B1.1 cmt. n.1"*
+- **Problema:** La cita se refiere a una disposición de las Sentencing Guidelines que sí existe, pero la corte no logró localizar la cotización literal en ninguna fuente.
+
+**Segunda cita problemática** (principal brief, página 10):
+- **Texto citado:** *"The Sixth Circuit has reversed role enhancements on similar facts. In Washington, the Court held that 'simply facilitating the offense without exercising decision-making authority is insufficient.' 715 F.3d at 985"*
+- **Problema decisivo:** *United States v. Washington*, 715 F.3d 975 (6th Cir. 2013), es una decisión real, pero la cita misrepresenta su sostenimiento jurídico.
+
+La corte **confirmó** el aumento (upheld), no lo revirtió (reversed).
+
+**Tercera cita problemática** (principal brief, página 10, repetida en reply):
+- **Texto citado:** *"Likewise, in Anthony, the Court vacated a § 3B1.1 enhancement because '[t]here was no evidence [the defendant] directed or supervised anyone else.'"*
+- **Problema:** *United States v. Anthony*, 280 F.3d 694 (6th Cir. 2002), es un caso auténtico.
+
+Si bien la corte anuló la elevación bajo § 3B1.1(a), lo hizo de manera estricta (*narrowly*) basándose en una cuestión de metodología de conteo, irrelevante para la apelación de Farris. Además, contrariamente a lo que sugerían los escritos de Howe, el acusado en *Anthony* había reconocido su rol como director y supervisor.
+
+### D. El Escenario Jurídicamente Perverso
+
+Lo que hace particularmente grave este patrón es que no estamos frente a invenciones completas de jurisprudencia. Las autoridades citadas **existen**; sus contextos **son reales**; pero sus contenidos **fueron sistemáticamente deformados** para apoyar una postura jurídica que no sustentaban. Este tipo de infracción es, en algunos aspectos, más complicado de detectar que la alucinación clásica porque:
+
+1. **Engaño compuesto:** Las citas falsas están anidadas entre citas genuinas, lo que dificulta la detección.
+2. **Plausibilidad superficial:** Un abogado menos diligente (o un tribunal sobrecargado) podría asumir que las referencias son válidas.
+3. **Deliberación implícita:** Aunque Howe afirmó que no verificó el output de la IA, la IA no "cometió" estos errores al azar, sino como resultado de haber sido entrenada con patrones de argumentación jurídica que busca optimizar para coherencia con la premisa del caso.
+
+---
+
+## II. La Respuesta de Howe y su Confesión Parcial
+
+### A. El Show-Cause Order del 23 de Febrero de 2026
+
+Ante el descubrimiento, el tribunal emitió una orden de exhibición de causa (*show-cause order*) que requería a Howe:
+
+1. Proporcionar copias verificadas de cada autoridad citada desde Westlaw o LexisNexis.
+2. Discutir discrepancias entre las autoridades reales y sus escritos.
+3. Identificar quién redactó los escritos.
+4. Revelar si se utilizó IA generativa en su elaboración.
+5. Explicar los procesos de verificación de citas empleados.
+6. Aclarar si la IA se había utilizado en escritos presentados ante el juzgado de primera instancia.
+
+### B. Confesión y Atenuantes Alegados
+
+Howe reconoció plenamente:
+
+1. **Uso de CoCounsel:** Él mismo dirigió a un miembro del "staff" para que subiera documentos del juzgado de primera instancia a la plataforma CoCounsel de Westlaw.
+2. **Tiempo de revisión:** Howe gastó seis horas supervisando el borrador generado por IA para el escrito principal, y el mismo proceso se repitió para el escrito de contestación.
+3. **Desconocimiento de herramientas:** Admitió estar "not familiar" con CoCounsel y no haber escrutinizado adecuadamente su integración en el proceso de redacción de briefs.
+4. **Reconocimiento de error:** Aceptó plena responsabilidad por la falta de verificación adecuada.
+
+Howe esgrimió como atenuantes:
+
+- **Primera vez usando la herramienta de esta manera:** Afirmó que era la primera vez que utilizaba CoCounsel específicamente para un escrito de apelación ante tribunal superior.
+- **Reciente adquisición del software:** Su despacho adquirió CoCounsel en agosto de 2025, después de que concluyeran los procedimientos de primera instancia.
+- **Historial limpio:** El tribunal tomó nota de que esta parecía ser la primera vez que una corte tenía ocasión de abordar la mala conducta de Howe en el ejercicio de la abogacía.
+
+---
+
+## III. Análisis Jurídico Aplicando Metodología IRAC
+
+### Issue (Cuestión Jurídica)
+
+¿Cuáles son las consecuencias éticas y disciplinarias cuando un abogado utiliza herramientas de IA generativa para redactar escritos ante tribunales sin implementar procesos de verificación adecuados que aseguren la precisión de las autoridades jurídicas citadas y la fidelidad en la representación de su contenido?
+
+Más específicamente:
+
+- ¿Viola este comportamiento las reglas modelo de ética profesional del American Bar Association?
+- ¿Qué estándares de diligencia se aplican al uso de tecnología en la práctica legal?
+- ¿Es suficiente que las autoridades citadas sean reales si sus proposiciones han sido distorsionadas?
+
+### Rule (Marco Normativo Aplicable)
+
+#### 1. **Reglas Modelo de Ética Profesional del ABA**
+
+El tribunal cita varias disposiciones críticas:
+
+**Regla 1.1 (Competence):** *"A lawyer shall provide competent representation, which requires the legal knowledge, skill, preparedness and diligence as are reasonably necessary for the representation."*
+
+El comentario 8 de esta regla explícitamente requiere que los abogados se mantengan al día con *"changes in the law and its practice, including relevant technology"* (cambios en el derecho y su práctica, incluyendo tecnología relevante).
+
+**Regla 3.3 (Candor Toward the Tribunal):** *"A lawyer shall not knowingly... present evidence that the lawyer knows to be false..."* y, más relevantemente, *"a lawyer shall disclose to the tribunal legal authority in the controlling jurisdiction known to the lawyer to be directly adverse to the position of the client and that is not disclosed by opposing counsel."*
+
+**Regla 5.3 (Responsibilities Regarding Nonlawyer Assistants):** *"With respect to a nonlawyer employed or retained by or associated with a lawyer... the lawyer shall... make reasonable efforts to ensure that the person's conduct is compatible with the professional obligations of the lawyer."*
+
+La deficiencia de Howe fue confiar la supervisión del output de IA a *"staff"* (personal administrativo) en lugar de ejercer supervisión personal o delegarla a otro abogado licenciado.
+
+#### 2. **Formal Opinion 512 del ABA Committee on Ethics & Professional Responsibility (2024)**
+
+La opinión 512, citada expresamente en la sentencia, recopila autoridades sobre las obligaciones éticas específicas cuando se utiliza IA generativa en la práctica legal. Entre sus recomendaciones centrales:
+
+- **Validación de contenido:** Los abogados no deben asumir que el output de IA es preciso sin verificación independiente.
+- **Conocimiento de limitaciones:** Es necesario entender cómo funcionan los sistemas de IA y cuáles son sus riesgos conocidos, incluyendo la tendencia a generar afirmaciones aparentemente plausibles pero falsas (*hallucinations*).
+- **Divulgación y consentimiento informado:** Considerar si debe revelarse el uso de IA al cliente y obtener consentimiento informado.
+- **Confidencialidad y privilegio:** Asegurar que la información confidencial no se transmita a sistemas de IA alojados en servidores de terceros sin salvaguardas adecuadas.
+
+#### 3. **A.B.A. Task Force on Law & AI, Year 2 Report (2025)**
+
+El tribunal también cita el reporte de la Fuerza de Tareas del ABA sobre Derecho e IA, que compila las reglas de ética profesional de todos los estados y su enfoque respecto a la IA generativa. El reporte destaca la necesidad de *"firm-wide policies governing the use of artificial intelligence"* y enfatiza que las obligaciones tradicionales de diligencia y verificación no se alivian por el uso de tecnología.
+
+#### 4. **Jurisprudencia Relevante**
+
+El tribunal cita dos precedentes críticos:
+
+**McCoy v. Court of Appeals of Wisconsin**, 486 U.S. 429 (1988): Establece que los abogados tienen una obligación constitucional de verificar las autoridades jurídicas que citan ante los tribunales. La precisión citativa no es una cuestión de forma procesal, sino de sustancia ética fundamental.
+
+**Fletcher v. Experian Information Solutions, Inc.**, 168 F.4th 231 (5th Cir. 2026): Precedente reciente del Fifth Circuit que refuerza la obligación de que los abogados "remain diligent in supervising their work product and carefully examine the accuracy of every citation they present to this Court."
+
+### Application (Aplicación de Normas a los Hechos)
+
+#### 1. **Violación de la Regla 1.1: Falta de Competencia**
+
+**Hallazgo:** Howe violó la Regla 1.1 al no mantenerse suficientemente informado sobre las capacidades y limitaciones de CoCounsel. El tribunal enfatiza que esto no es una cuestión de que la tecnología sea nueva o desconocida, sino de que Howe reflexivamente (*reflexively*) confió en una herramienta sin entender sus riesgos.
+
+La sentencia contiene una sección especialmente significativa: *"Attorneys should not utilize technology without knowing the ways in which it can be misused or contribute to inaccuracies. That remains true even when new tools are sponsored by trusted legal technology providers."*
+
+El hecho de que Westlaw sea un proveedor de confianza y tradicional en la profesión jurídica no exime al abogado de la obligación de diligencia. De hecho, podría argumentarse que la legitimidad del proveedor genera una falsa sensación de seguridad que agrava la negligencia.
+
+**Prueba decisiva:** Howe admitió estar "not familiar" con CoCounsel. Un abogado que desconoce cómo funciona una herramienta tecnológica fundamental para su tarea no puede estar ejerciendo competencia.
+
+#### 2. **Violación de la Regla 3.3: Incumplimiento del Deber de Sinceridad ante el Tribunal**
+
+**Hallazgo:** Howe presentó ante la corte declaraciones de hecho (en forma de citas textuales a autoridades jurídicas) que sabía o debería haber sabido que eran falsas. Aunque Howe no intencionalmente mentía cuando presentó los escritos, la negligencia grave en no verificar equivale funcionalmente a conocimiento para propósitos de esta regla.
+
+La distinción es crucial: la Regla 3.3 no requiere intención de engaño; requiere sinceridad. Presentar autoridades jurídicas sin verificar su exactitud, sabiendo que se ha utilizado IA generativa cuya propensión a los errores es documentada, equivale a una presentación deshonesta de evidencia legal.
+
+**Expresión de la corte:** *"Howe's failure to verify the artificial-intelligence output still resulted in the submission of false quotations and misleading legal arguments to this Court. Again, attorneys' professional duties demand more."*
+
+#### 3. **Violación de la Regla 5.3: Supervisión Inadecuada**
+
+**Hallazgo:** Howe delegó la supervisión del output de IA a personal administrativo sin licencia. Aunque luego pasó seis horas revisando el borrador, esas seis horas fueron insuficientes para detectar tres errores graves de citas, lo que sugiere que la revisión no fue comprehensiva ni sistemática.
+
+La regla 5.3 requiere que los abogados tomen "reasonable efforts" para asegurar que los asistentes no licenciados cumplan con obligaciones profesionales. En este caso, confiar a un asistente la tarea de subir documentos a IA y permitir que la IA genere un primer borrador, sin un protocolo de verificación cuidadosa, viola este estándar.
+
+#### 4. **Los Efectos Sistémicos de la Conducta**
+
+Más allá de las reglas específicas, la corte enfatiza que la conducta de Howe tuvo consecuencias severas para el sistema de justicia:
+
+- **Recursos judiciales gastados:** La corte tuvo que dedicar recursos significativos a investigar, coordinar respuestas y facilitar pasos adicionales en el procedimiento apelatorio.
+- **Retraso de justicia:** Farris, quien estaba esperando resolución de su apelación, ahora enfrenta la necesidad de que se designe nuevo abogado y se reabra el proceso de presentación de escritos.
+- **Erosión de confianza:** La conducta de Howe socava la confianza en el sistema de justicia penal, especialmente en procedimientos de defensa pública donde los recursos ya están limitados.
+
+---
+
+## IV. Las Sanciones Impuestas por el Tribunal
+
+El Sixth Circuit implementó un régimen de sanciones multidimensional:
+
+### A. Pérdida de Compensación bajo el Criminal Justice Act
+
+Howe no recibirá compensación alguna bajo 18 U.S.C. § 3006A por su trabajo en esta apelación. Dado que se trata de un procedimiento de defensa pública donde el abogado es designado por la corte y compensado por fondos públicos, esta sanción es económicamente significativa. Howe invirtió tiempo considerable (al menos seis horas de revisión, más el tiempo de coordinación inicial) sin recibir compensación.
+
+### B. Notificación Disciplinaria a Órganos de Supervisión
+
+La corte ordenó notificar a tres entidades de supervisión:
+
+1. **Chief Judge del Sixth Circuit:** Para iniciar procedimientos disciplinarios bajo Sixth Circuit Local Rule 46.
+2. **Chief Judge del Eastern District of Kentucky:** Notificación de la conducta de un abogado que actúa bajo su jurisdicción.
+3. **Disciplinary Clerk de la Kentucky Bar Association:** Potencial suspensión de licencia o sanciones más severas.
+
+Esta cascada de notificaciones prácticamente garantiza una investigación disciplinaria formal y, potencialmente, sanciones del colegio de abogados (suspensión o inhabilitación).
+
+### C. Remoción de Howe y Designación de Nuevo Defensor
+
+Quizás la sanción más inmediata: Howe fue removido de la representación de Farris. Se ordenó a la corte:
+
+1. Designar nuevo abogado defensor bajo el Criminal Justice Act.
+2. Bloquear (*lock*) los escritos presentados por Howe para que no continúen siendo parte del expediente activo.
+3. Resetear el cronograma de presentación de escritos para permitir que el nuevo abogado presente argumentos adecuados.
+
+---
+
+## V. Implicaciones Más Amplias para la Profesión Legal
+
+### A. El Problema de la Confianza Excesiva en Tecnología
+
+La sentencia subraya una paradoja: Westlaw es una herramienta confiable para *búsqueda jurídica básica* (encontrar casos, textos de normas). Pero cuando esa herramienta evoluciona hacia *generación* de contenido legal mediante IA, la confiabilidad no se transfiere automáticamente. Los abogados que confían en que un proveedor "de confianza" generará trabajo de calidad sin verificación reproducen el mismo error que Howe.
+
+### B. La Insuficiencia de las Atenuantes Alegadas
+
+Aunque Howe presentó argumentos atenuantes plausibles (primera vez, software nuevo, historial limpio según el tribunal), la corte los rechazó fundamentalmente. La edad de la tecnología o la novedad para el abogado no son excusas válidas; de hecho, apuntan a falta de cuidado. Un abogado que incorpora herramientas tecnológicas radicalmente nuevas a su práctica tiene una obligación *intensificada*, no reducida, de entender su funcionamiento.
+
+### C. El Estándar de Verificación: No Diferenciación por Origen
+
+La corte enfatiza explícitamente: *"That Howe's briefs cited real legal authorities—as opposed to 'hallucinations' featuring fictitious cases—does not absolve him."*
+
+Esto es crítico. El riesgo no está únicamente en que la IA invente casos. El riesgo está en que la IA *distorsione* casos reales, *malrepresente* sus holdings, o *manipule* sus proposiciones de derecho. De hecho, este riesgo puede ser mayor porque es menos visible.
+
+### D. El Requisito de Supervisión Personal
+
+La segregación de responsabilidades mediante personal no abogado es una práctica común en despachos grandes. Pero la sentencia deja claro: cuando se usa IA generativa, la supervisión del producto debe ser realizada por abogados licenciados. No puede ser delegada a asistentes administrativos.
+
+---
+
+## VI. Reflexiones Doctrinales: El Derecho de la Responsabilidad Profesional Frente a IA
+
+### A. El Cambio en la Noción de "Competencia"
+
+Históricamente, la Regla 1.1 se interpretaba como requiriendo que los abogados mantuvieran conocimiento de *sustancia jurídica*: doctrina, jurisprudencia, normas aplicables. La sentencia extiende esta obligación a *competencia técnica sobre herramientas*. No es suficiente conocer derecho de drogas; debe conocerse también cómo las herramientas de redacción asistida por IA pueden contribuir a inexactitudes.
+
+### B. La Responsabilidad No Desaparece con la Mediación Tecnológica
+
+Cuando un abogado utiliza Westlaw para búsquedas manuales, retiene responsabilidad sobre cada cita que presenta. El hecho de que utilice una *herramienta generativa* no crea un tercero responsable (Westlaw no es responsable por los errores de CoCounsel en este contexto). El abogado permanece como único responsable.
+
+### C. Prevención: El Futuro de la Gobernanza Interna de Despachos
+
+La sentencia insinúa (aunque no lo ordena explícitamente) que los despachos jurídicos deben implementar *firm-wide policies* sobre IA. Estas políticas deberían incluir:
+
+- **Protocolos de verificación:** Especificación clara de qué herramientas pueden usarse, para qué propósitos, y qué procesos de control de calidad son obligatorios.
+- **Entrenamiento:** Capacitación obligatoria de todos los abogados sobre capacidades y limitaciones de herramientas de IA.
+- **Escalamiento de responsabilidad:** Designación clara de quién (abogado principal, socio, etc.) es responsable de supervisar el output de IA en cada contexto.
+- **Auditoría periódica:** Revisiones regulares de documentos presentados ante tribunales para verificar que se sigue el protocolo.
+
+---
+
+## VII. Análisis Comparativo: Otros Casos de IA y Profesiones Reguladas
+
+*USA v. Farris* no está sola. El mismo día, el tribunal emitió una opinión en *Whiting v. City of Athens* (No. 24-5631, 6th Cir. Apr. 3, 2026), también relacionada con el mal uso de inteligencia artificial por parte de un abogado. Aunque no se proporcionan detalles sustantivos en esta sentencia, la referencia sugiere que los tribunales están comenzando a ver un patrón de negligencia por confianza excesiva en IA.
+
+Más allá del derecho, profesiones reguladas como la medicina han enfrentado problemas paralelos cuando médicos utilizan sistemas de IA sin validar su output. El consenso emergente es que **la tecnología no reemplaza la responsabilidad profesional; la amplifica**.
+
+---
+
+## VIII. Reflexión Crítica: ¿Fue Howe Injustamente Sancionado?
+
+Una reflexión equilibrada debe reconocer un contrapunto plausible:
+
+**Argumento a favor de Howe:** Los sistemas de IA generativa fueron comercializados por proveedores respetables (Thomson Reuters/Westlaw) como herramientas confiables para profesionales legales. Un abogado que confía en una herramienta de un proveedor de primera línea podría razonablemente no prever el nivel de error observado. El castigo podría ser desproporcionadamente severo para alguien sin historial disciplinario previo.
+
+**Respuesta de la corte (implícita):** Precisamente porque Westlaw es un proveedor de confianza, la responsabilidad del abogado de validar su output no disminuye; aumenta. La confianza en la reputación no puede reemplazar la diligencia técnica. Además, Howe mismo reconoció estar "not familiar" con la herramienta, lo que significa que procuró usarla sin el conocimiento mínimo necesario.
+
+Jurídicamente, la sentencia es convincente. Pero institucionalmente, sugiere que habrá tensión prolongada entre:
+- **Innovadores de software legal** que desean posicionar IA como herramientas listas para usar.
+- **Abogados** que necesitan orientación clara sobre cómo validar output de IA.
+- **Tribunales** que no pueden tolerar degradación de la integridad de los procesos judiciales.
+
+---
+
+## IX. Conclusiones y Recomendaciones Prácticas
+
+### A. Para Abogados Individuales
+
+1. **No utilice herramientas de IA generativa para redacción de escritos ante tribunales sin comprender completamente sus limitaciones.** Si debe hacerlo, implemente un protocolo de verificación de citas que sea más riguroso que su verificación manual habitual.
+
+2. **Verifique *cada cita* presentada ante un tribunal**, especialmente cuando es generada o asistida por IA. No asuma que porque la autoridad es real, sus proposiciones son precisas.
+
+3. **Considere revelación explícita** del uso de IA al cliente, especialmente en contextos donde la precisión jurídica es crítica (apelaciones, mociones sustantivas).
+
+4. **Obtenga capacitación formal** sobre sistemas de IA específicos que utilice. "Desconocimiento" no es una defensa aceptable.
+
+### B. Para Despachos Jurídicos
+
+1. **Implemente políticas claras** sobre qué herramientas de IA pueden usarse para qué tareas, y qué procesos de control de calidad son obligatorios.
+
+2. **Designe supervisores calificados.** No delegue la revisión de output de IA a personal no abogado.
+
+3. **Audite periódicamente** documentos presentados ante tribunales para verificar conformidad con estándares de precisión.
+
+4. **Realice entrenamiento recurrente** sobre IA y ética profesional para todos los abogados.
+
+### C. Para Tribunales y Órganos Disciplinarios
+
+1. **Mantengan vigilancia elevada** sobre escritos que muestren patrones consistentes con generación de IA (nombres de archivo anómalos, estilo inconsistente, errores sistemáticos de citas).
+
+2. **Consideren requerir divulgación explícita** del uso significativo de IA en escritos ante tribunales (propuesta de *lege ferenda*).
+
+3. **Coordinen directrices inter-jurisdiccionales** sobre estándares éticos para uso de IA, en lugar de esperar a que cada tribunal o colegio de abogados desarrolle los suyos.
+
+### D. Para Proveedores de Herramientas Legales
+
+1. **Mejoren claramente las advertencias** sobre limitaciones de sus sistemas de IA. "Poder generar" no significa "precisión garantizada".
+
+2. **Integren validadores de citas** directamente en plataformas de IA, que verifiquen automáticamente si las cotizaciones existen realmente en la fuente citada.
+
+3. **Desarrollen estándares de auditoría** independientes que certifiquen qué tipos de tareas son seguros para salida no verificada de IA.
+
+---
+
+## Conclusión
+
+*United States v. Farris* representa un punto de inflexión en la regulación de IA en la profesión jurídica. Al rechazar las atenuantes de Howe y enfatizar que "attorneys' professional duties demand more" que confiar reflexivamente en tecnología, el tribunal establece un estándar claro: la responsabilidad ética de los abogados no se delega, no se reemplaza, y no se alivia por el mero hecho de que exista una herramienta tecnológica disponible.
+
+Para la profesión legal, el mensaje es incómodo pero necesario: la IA es una oportunidad para mejorar eficiencia, pero no es un sustituto para la diligencia. Especialmente en contextos donde la precisión jurídica determina libertad, propiedad o derechos fundamentales, la supervisión humana no es un lujo; es una obligación ineludible.
+
+La magnitud de las sanciones impuestas a Howe —desde la pérdida de compensación hasta la notificación disciplinaria multi-jurisdiccional y su remoción del caso— subraya que los tribunales no tolerarán la negligencia en esta materia. Este es el precedente que la profesión ahora debe internalizar.
+
+---

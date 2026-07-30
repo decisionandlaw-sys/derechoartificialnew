@@ -1,0 +1,242 @@
+---
+title: "Hallucinations in AI Legal Research Tools: The Failure of RAG and Its Legal Implications"
+description: "Legal analysis of the Stanford study (JELS 2025) on hallucination rates in Lexis+ AI, Westlaw, and Ask Practical Law AI. Consequences for professional lawyer liability under the AI Regulation, GDPR, and the deontological duty of supervision."
+slug: "ai-legal-research-rag-hallucinations"
+date: "2026-03-03"
+lastModified: "2026-03-03"
+readingTime: 14
+category: "Global AI"
+tags:
+  [
+    "AI hallucinations legal research",
+    "RAG legal hallucination",
+    "Westlaw AI hallucinations",
+    "LexisNexis Lexis+ AI reliability",
+    "lawyer artificial intelligence liability",
+    "AI Regulation legal tools",
+    "GDPR automated decisions",
+    "lawyer AI supervision duty",
+    "Stanford Legal AI benchmark",
+    "law firm AI tools"
+  ]
+authors:
+  - "Artificial Intelligence Law"
+schema:
+  type: "Article"
+  headline: "Hallucinations in AI Legal Research Tools"
+  keywords: "AI hallucinations judicial filings, legal RAG tools, lawyer AI liability, AI Regulation 2024/1689"
+canonical: "https://derechoartificial.es/global-ia/alucinaciones-rag-herramientas-investigacion-juridica-ia"
+---
+
+# Hallucinations in AI Legal Research Tools: The Failure of RAG and Its Legal Implications
+
+The legaltech industry has sold for years the promise of hallucination-free legal research. LexisNexis guaranteed "100% hallucination-free" citations. Thomson Reuters claimed to avoid hallucinations thanks to its internal controls. The EU AI Regulation (EU) 2024/1689 requires transparency and technical documentation. And meanwhile, lawyers kept filing briefs with invented jurisprudence.
+
+An empirical study published in the *Journal of Empirical Legal Studies* in 2025 by researchers from Stanford and Yale has put concrete numbers on this problem. The results are uncomfortable for everyone: for providers who promised definitive solutions, for law firms that adopted these tools without evaluating them, and for the regulatory framework that has not yet articulated with sufficient precision the obligations of actors in the legal AI value chain.
+
+This article analyzes the study from a legal perspective, applying the IRAC methodology to examine the consequences for liability of the user lawyer and the AI provider, in light of the AI Regulation, GDPR, and applicable deontological regulations.
+
+---
+
+## I. The Stanford-Yale Study: Methodological Design and Principal Findings
+
+> **Related Analysis: 2023 10 10 The AEPD Renews Advisor Breach And Communicates Breach Tools That Help Act Before Security Breaches Affecting Personal Data**: [2023 10 10 the aepd renews advisor breach and communicates breach tools that help act before security breaches affecting personal data](/ia-proteccion-datos/2023-10-10-la-aepd-renueva-asesora-brecha-y-comunica-brecha-herramientas-que-ayudan-a-actuar-ante-quiebras-de-seguridad-que-afecten-a-datos-personales)
+
+> **Related Analysis: 2023 10 10 The AEPD Renews Advisor Breach And Communicates Breach Tools That Help Act Before Security Breaches Affecting Personal Data**: [2023 10 10 the aepd renews advisor breach and communicates breach tools that help act before security breaches affecting personal data](/ia-proteccion-datos/2023-10-10-la-aepd-renueva-asesora-brecha-y-comunica-brecha-herramientas-que-ayudan-a-actuar-ante-quiebras-de-seguridad-que-afecten-a-datos-personales)
+
+> **Related Analysis: 2026 01 27 The AEPD Publishes A Decalogue With Recommendations To Protect Privacy When Using AI Tools**: [2026 01 27 the aepd publishes a decalogue with recommendations to protect privacy when using AI tools](/ia-proteccion-datos/2026-01-27-la-aepd-publica-un-decalogo-con-recomendaciones-para-proteger-la-privacidad-al-usar-herramientas-de-ia)
+
+> **Related Analysis: 2026 01 27 The AEPD Publishes A Decalogue With Recommendations To Protect Privacy When Using AI Tools**: [2026 01 27 the aepd publishes a decalogue with recommendations to protect privacy when using AI tools](/ia-proteccion-datos/2026-01-27-la-aepd-publica-un-decalogo-con-recomendaciones-para-proteger-la-privacidad-al-usar-herramientas-de-ia)
+
+The work by Magesh, Surani, Dahl, Suzgun, Manning, and Ho constitutes the first systematic and preregistered evaluation of commercial AI-based legal research tools. The authors designed a set of 202 legal queries distributed across four categories:
+
+- **General legal research** (n=80): doctrinal questions, bar exam questions, on holdings
+- **Jurisdiction/time-specific questions** (n=70): circuit divergences, reversed cases, recent regulations
+- **False premise questions** (n=22): queries where the user starts from a legal error
+- **Factual retrieval questions** (n=30): author of an opinion, year of decision, Bluebook citation
+
+The evaluated tools were Lexis+ AI (LexisNexis), Westlaw AI-Assisted Research, and Ask Practical Law AI (both from Thomson Reuters), compared with GPT-4 as a reference for a general-purpose model without access to external databases.
+
+The methodology included manual evaluation by expert legal professionals, with calculation of Cohen's kappa coefficient (0.77) and an inter-rater agreement of 85.4%, which certifies the robustness of the coding protocol.
+
+### 1.2 Operational Definition of Hallucination: Correctness and Groundedness
+
+The study surpasses the imprecise definitions that the providers themselves used in their marketing materials. It introduces a two-dimensional taxonomy:
+
+**Correctness** (factual correction): A response is incorrect if it contains any factually inaccurate statement, regardless of whether it cites a real source.
+
+**Groundedness** (authority foundation): A correct response can be *grounded* (cites applicable authority), *ungrounded* (omits citation), or *misgrounded* (cites a real source that does not support the proposition or has been reversed).
+
+A **hallucination** is defined as any response that is incorrect or misgrounded. This definition captures both the fabrication of non-existent cases and the more insidious error: citing real jurisprudence to support a proposition that that jurisprudence actually rejects.
+
+<Callout type="warning">
+**Why this matters legally:** A tool that always cites real cases but uses them to support propositions contrary to what those cases say is not "hallucination-free" in any useful sense. It is, in any case, more dangerous than a model that invents cases, because it generates an appearance of reliability that makes error detection difficult.
+</Callout>
+
+### 1.3 Hallucination Rates: The Data
+
+| Tool | Accurate Responses | Incomplete Responses | Hallucinations |
+|---|---|---|---|
+| Lexis+ AI | 65% | 18% | **17%** |
+| Westlaw AI-AR | 42% | 25% | **33%** |
+| Ask Practical Law AI | 19% | 62% | **17%** |
+| GPT-4 (without RAG) | 49% | 8% | **43%** |
+
+RAG reduces hallucinations compared to GPT-4 without database access, but does not eliminate them. Westlaw, the system with the longest responses (average 350 words vs. 219 for Lexis), hallucinated in one out of three cases. Ask Practical Law AI, limited to Thomson Reuters' internal documents, declined to respond in more than 60% of queries.
+
+### 1.4 Typology of Errors: Four Failure Modes
+
+The study identifies four error categories that any user lawyer should know:
+
+**Naive Retrieval:** The system does not find the most relevant documents. Lexis+ AI exhibits this in 47% of its hallucinations, often confusing legally distinct terms due to superficial semantic similarity.
+
+**Inapplicable Authority:** The system cites authority from another jurisdiction, another time period, or reversed. It appears in 38% of Lexis's hallucinations and 34% of Ask Practical Law's.
+
+**Reasoning Error:** The system has the correct documents but draws wrong conclusions. It is Westlaw's dominant failure mode (61% of its hallucinations), frequently inverting a case's holding or attributing to a court actions of the litigant.
+
+**Sycophancy:** The system assumes the query's premise is correct even if it is false. It appears marginally (6% in Lexis) because these systems, unlike ChatGPT, usually correct erroneous premises.
+
+---
+
+## II. Applicable Legal Framework: Preliminary Question on Actor Obligations
+
+### 2.1 Issue
+
+*In light of Regulation (EU) 2024/1689 (AI Regulation), Regulation (EU) 2016/679 (GDPR), and applicable professional deontological regulations, what binding legal obligations respectively bind providers of AI-based legal research tools and lawyers who use them to draft judicial briefs, when such tools present significant documented hallucination rates?*
+
+### 2.2 Rule: Applicable Regulations
+
+#### 2.2.1 AI Regulation (EU) 2024/1689
+
+The AI Regulation entered into force on August 1, 2024, with phased application. The provisions on general-purpose AI models (Arts. 51-55) are applicable from August 2, 2025. Those on high-risk systems (Arts. 9-15) fully apply from August 2, 2027, although operators must begin adapting their systems earlier.
+
+Classification of legal research tools under the AI Regulation requires case-by-case analysis. Annex III, Section 8, includes among high-risk systems those employed in "administration of justice and democratic processes," with specific reference to systems supporting interpretation of facts and law used by judicial administration. The research tool intended for use in judicial proceedings may fall within this scope, depending on how the provider defines its intended use case.
+
+For general-purpose AI models underlying these systems (such as GPT-4, integrated in Westlaw AI-AR), Art. 53 imposes obligations for technical documentation, copyright compliance, and publication of a summary of training data. Models with systemic risk (Art. 55) must also conduct adversarial evaluations and notify serious incidents to the European Commission.
+
+The transparency obligation of Art. 13 requires that high-risk systems be designed so that their outputs are sufficiently interpretable by operators. The human oversight duty of Art. 14 requires that the system be designed to allow natural persons to effectively oversee its operation and "detect and address as early as possible possible problems during its use."
+
+#### 2.2.2 GDPR (EU) 2016/679
+
+When legal research tools process personal data in queries (e.g., data of parties in a case), the GDPR applies. Art. 22 establishes the right not to be subject to decisions based solely on automated processing that produce legal effects. If the AI tool materially conditions the content of a brief that then affects the legal sphere of third parties, the analysis of Art. 22 becomes pertinent, although the threshold for "solely automated decision" requires specific assessment.
+
+Art. 5.1.d) imposes the accuracy principle: processed data must be accurate and, where necessary, updated. The use of outdated or reversed jurisprudence could constitute non-compliance with this principle if the data is used in the context of services affecting third parties.
+
+#### 2.2.3 Deontological Regulations: The Duty of Competence and Supervision
+
+The General Statute of the Spanish Legal Profession (Royal Decree 135/2021) and the Deontological Codes of the General Council of Spanish Lawyers establish the duty of professional competence, which includes the obligation for permanent updating on tools and methodologies available for the practice of the profession.
+
+In comparative perspective, the American Bar Association (ABA) Model Professional Conduct Framework is especially relevant given the study's origin. Rules 1.1 (competence) and 5.3 (supervision of non-lawyers) have been interpreted by the bar associations of California (2023), New York (2024), and Florida (2024) as meaning that the lawyer has the duty to know the specific empirical risks of the AI tools they use; general knowledge about the existence of the hallucination problem is not sufficient.
+
+Spanish jurisprudential precedent on lawyer liability for the content of judicial briefs, although prior to the generalization of AI, establishes that the professional personally responds for the accuracy of the facts and law alleged, and the interposition of an auxiliary or tool does not exempt from such responsibility.
+
+---
+
+## III. Application: Analysis of Provider and User Lawyer Obligations
+
+### 3.1 Obligations of Legal Research Tool Providers
+
+The commercial assertions of LexisNexis and Thomson Reuters constitute the first area of examination. LexisNexis proclaimed "100% hallucination-free" legal citations in its marketing materials until at least 2023. Thomson Reuters stated that RAG "drastically reduces hallucinations to near zero" in public statements by company executives.
+
+The Stanford-Yale study demonstrates that these assertions were, at best, imprecise. The AI Regulation, in its Art. 9 on risk management, requires that high-risk system providers establish a continuous risk management system throughout the system lifecycle. The absence of empirical performance data in these providers' published materials contrasts with this obligation for transparency on the system's risk profile.
+
+From the perspective of unfair competition and advertising, Regulation (EU) 2024/1689 does not contain an express prohibition on advertising claims about absence of hallucinations, but the accuracy principle governing commercial advertising in national legal systems could be compromised. In the United States, the study authors point to Section 43(a) of the Lanham Act (15 U.S.C. § 1125) as a basis for unfair competition actions derived from empirically unsupported claims about tool capabilities.
+
+Provider civil liability for harmful hallucinations is emerging as a primary doctrinal issue. The Canadian precedent *Moffatt v. Air Canada* (2024), in which an airline was held liable for the erroneous assertions of its chatbot, illustrates the direction of comparative jurisprudence. In the European scope, the AI Liability Directive (in process) would provide for reversal of the burden of proof in cases of damage derived from high-risk AI, facilitating claims against providers who cannot demonstrate compliance with their technical documentation obligations.
+
+<Callout type="info">
+**Regulatory attention:** The study authors note that, in October 2024, LexisNexis had updated its marketing promise to "our commitment is not perfection, but that all linked legal citations are hallucination-free." This refinement after the study's preliminary publication reflects the regulatory and reputational pressure generated by empirical evidence on actual system performance.
+</Callout>
+
+### 3.2 Obligations of the User Lawyer
+
+The central question for Spanish and European legal practice is whether the lawyer who incorporates AI research tools into their workflow satisfies their duty of competence when they do not individually verify each citation and legal proposition generated by the system.
+
+The answer, in light of the study and the applicable regulatory framework, is negative for the following reasons:
+
+**First:** The documented hallucination rates (17-33%) are sufficiently elevated that the probability of error in a brief of average length is significant. Even with the best-performing tool (Lexis+ AI, 17% hallucination), the probability that a brief using five propositions with legal citations contains at least one hallucination exceeds 60% if the propositions are independent.
+
+**Second:** The most common failure modes (miscitation of holdings, jurisdiction confusion, citation of reversed authority) are precisely those requiring verification through KeyCite, Shepard's, or equivalent databases, a process the lawyer also had to perform before AI and cannot be delegated to the system that generates the error.
+
+**Third:** Art. 14 of the AI Regulation, which establishes the duty of effective human oversight of high-risk systems, imposes on the operator (in this case, the law firm or lawyer implementing the tool) the responsibility for detecting errors. This obligation cannot be circumvented by invoking trust in the provider's assertions.
+
+**Fourth:** The deontological guides from California, New York, and Florida, cited in the study, and the professional competence principles applicable in the Spanish legal system, converge on the same conclusion: the lawyer's duty of supervision over their written production is personal and non-transferable, whether they have availed themselves of a human auxiliary or an AI system.
+
+The case *EFD USA, Inc. v. Band Pro Film & Digital, Inc.* (Cal. App. 2d Dist., February 18, 2026) is illustrative: the court imposed a $900 sanction on the lawyer who, after being warned about the hallucination risk, delegated citation verification to a paralegal and then used a second AI tool to reduce the brief's length without reverifying the citations. The court established that each automated modification of the document resets the verification obligation, and that delegation of the verification duty to third parties or tools is contrary to professional conduct rules.
+
+### 3.3 The Specific Problem of Misgrounding: The Invisible Hallucination
+
+The most concerning finding of the study is the prevalence of *misgrounding*: the system cites a real, linked source, with positive Shepardization symbol, to support a proposition that the source actually rejects or that has been superseded by subsequent jurisprudence.
+
+This type of error is more dangerous than the fabrication of non-existent cases for three reasons:
+
+The first is that superficial verification does not detect it. If the lawyer verifies that the citation exists and has no red flag in KeyCite, they may assume the proposition is correct without reading the case text.
+
+The second is that the system itself may be suppressing the citation of the reversing authority. The study documents that Westlaw in some cases suppresses citations to jurisprudence with red flag, generating text without inline citation based on outdated material. This design conduct makes it more difficult for the lawyer to identify that the proposition requires additional verification.
+
+The third is that the error is disguised with an appearance of rigor that the citation of a real source provides. The automation bias effect, documented in the medical information systems security literature, operates with special intensity when the system presents its results in formats that emulate human legal research work.
+
+---
+
+## IV. Conclusion and Practical Implications
+
+### 4.1 Legal Conclusion
+
+AI-based legal research tools with RAG have not solved the hallucination problem. They present substantial error rates (17-33%) that, combined with the density of legal propositions in briefs of certain length, generate a significant probability that any document prepared with these tools contains at least one erroneous or poorly grounded assertion.
+
+Under the AI Regulation, providers of these tools (if classified as high-risk) are obligated to implement risk management systems, technical documentation, and effective human oversight. Their commercial assertions about absence of hallucinations may constitute misleading representations to the extent they are not based on rigorous empirical evaluations and are inconsistent with the results of independent studies.
+
+Lawyers using these tools have the duty to individually verify each citation and relevant legal proposition, and trust in the provider does not exempt from this obligation. This duty is personal, non-delegable to the AI system or non-legal auxiliaries, and its breach may generate disciplinary and civil liability.
+
+### 4.2 Recommended Use Protocol for Law Firms
+
+Based on the preceding analysis, we propose the following minimum protocol for using AI legal research tools:
+
+**1. Prior tool evaluation:** Before incorporating a tool into the workflow, the firm must know its documented hallucination rate in independent studies and prevalent failure modes.
+
+**2. Use as starting point, not ending point:** The tool generates a first draft or list of candidate references. It does not generate the verified final product.
+
+**3. Active verification of each citation:** Every legal reference must be located in the primary source, verifying that the cited holding actually corresponds to what the case supports and that the authority has not been reversed.
+
+**4. Alert to long responses:** The longest responses contain more verifiable propositions and therefore greater accumulated probability of error. Length is not an indicator of quality.
+
+**5. Process documentation:** The firm must document the use of AI tools in brief preparation and the verification process performed, both for professional liability reasons and for AI Regulation compliance in its effective human oversight dimension.
+
+**6. Special verification after any automated modification:** If the AI tool or any other automated tool modifies the document (reduction, reformatting, translation), citation verification must be repeated on the modified version.
+
+### 4.3 The Pending Question: How to Regulate AI Legal Tool Reliability?
+
+The study concludes by noting the absence of an independent institutional mechanism for evaluating legal AI tools equivalent to what NIST provides for facial recognition in the United States. This absence is especially serious because the best-resourced organizations to evaluate these tools (large law firms) have incentives not to publish their internal results, and organizations without resources cannot afford the evaluation.
+
+The AESIA (Spanish Agency for AI Supervision), whose operational launch is expected in 2026, will have supervision competencies in the Spanish market. The AEPD maintains competencies over the data protection aspects of these tools. Coordination between both authorities, together with the action of the European Commission's AI Office, will determine the actual supervision architecture of a market that, meanwhile, continues to operate based on unverified commercial assertions and disciplinary sanctions case by case.
+
+The RAG promise was not unfounded: the reduction in hallucinations compared to general-purpose models is real. The problem is that "better than ChatGPT without database access" does not equal "suitable for professional use without human verification." That confusion, actively fostered by some providers' marketing, is what the AI Regulation, deontological regulations, and, increasingly, disciplinary jurisprudence are beginning to correct.
+
+---
+
+## References
+
+**Regulations**
+
+- Regulation (EU) 2024/1689 of the European Parliament and of the Council of June 13, 2024 (AI Regulation)
+- Regulation (EU) 2016/679 of the European Parliament and of the Council of April 27, 2016 (GDPR)
+- Organic Law 3/2018, of December 5, on Personal Data Protection and Guarantee of Digital Rights (LOPDGDD)
+- Royal Decree 135/2021, of March 2, approving the General Statute of the Spanish Legal Profession
+
+**Authority Doctrine**
+
+- AEPD, *Adequacy to GDPR of Processing Incorporating Artificial Intelligence* (2020)
+- EDPB, *Opinion 5/2021 on the Proposal for an Artificial Intelligence Regulation* (2021)
+- The State Bar of California, *Practical Guidance for Use of Generative Artificial Intelligence in Practice of Law* (2023)
+- New York State Bar Association Task Force on Artificial Intelligence, *Report and Recommendations* (2024)
+
+**Jurisprudence**
+
+- EFD USA, Inc. v. Band Pro Film & Digital, Inc., No. B335951 (Cal. Ct. App. 2d Dist. Feb. 18, 2026)
+- Moffatt v. Air Canada, 2024 BCCRT 149 (British Columbia Civil Resolution Tribunal, 2024)
+
+**Scientific Doctrine**
+
+- Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C.D. and Ho, D.E., "Hallucination-Free? Assessing Reliability of Leading AI Legal Research Tools," *Journal of Empirical Legal Studies* (2025), DOI: 10.1111/jels.12413
+- Dahl, M., Magesh, V., Suzgun, M. and Ho, D.E., "Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models," *Journal of Legal Analysis* 16, no. 1 (2024), pp. 64-93
+- Guha, N. et al., "LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models" (2023), arXiv:2308.11462

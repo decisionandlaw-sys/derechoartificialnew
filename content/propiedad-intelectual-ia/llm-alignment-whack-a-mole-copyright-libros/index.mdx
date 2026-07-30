@@ -1,0 +1,321 @@
+---
+title: "LLM y copyright: el 'Alignment Whack-a-Mole' que desafía la defensa del fair use"
+description: "Investigación Liu et al. (2026) demuestra que GPT-4o, Gemini-2.5-Pro y DeepSeek pueden regurgitar hasta el 90% de libros protegidos tras un ajuste fino. Qué significa para el fair use, los pesos como copias y los litigios globales."
+date: "2026-04-29"
+tags: ["propiedad-intelectual-ia", "derechos-de-autor", "fair-use", "LLM", "alignment"]
+section: "propiedad-intelectual-ia"
+category: "propiedad-intelectual-ia"
+author: "Ricardo Scarpa"
+slug: "llm-alignment-whack-a-mole-copyright-libros"
+readingTime: "18 min"
+---
+
+## El argumento que los tribunales aceptaron —y que ya no sostiene
+
+Durante años, las grandes tecnológicas han defendido ante reguladores y tribunales una tesis técnica aparentemente sólida: sus modelos de lenguaje no almacenan copias de los datos de entrenamiento. Los pesos del modelo —esas "grandes cadenas de números"— son una abstracción estadística del lenguaje, no un repositorio de obras protegidas.
+
+Sobre esa premisa descansaban defensas en *Bartz v. Anthropic* (2025), *Kadrey v. Meta Platforms* (2025), y múltiples alegaciones ante la Oficina de Derechos de Autor de los Estados Unidos.
+
+La investigación de Liu et al. (2026), titulada *"Alignment Whack-a-Mole: Finetuning Activates Verbatim Recall of Copyrighted Books in Large Language Models"*, somete esa premisa a una prueba de fuego empírica. El resultado es inequívoco: GPT-4o, Gemini-2.5-Pro y DeepSeek-V3.1 pueden reproducir hasta el 90% del texto textual de libros protegidos por derechos de autor mediante una tarea de ajuste fino aparentemente banal (Liu et al. 2026, 1).
+
+Este fenómeno —bautizado como `Alignment Whack-a-Mole`— ilustra que las salvaguardas de seguridad no eliminan la información memorizada, sino que simplemente bloquean el acceso a través de ciertas rutas. Y ese bloqueo puede eludirse con relativa facilidad.
+
+Las implicaciones para el derecho de autor, el análisis del `fair use` y la responsabilidad distribucional de los modelos son de primer orden.
+
+---
+
+## 1. Introducción: El conflicto entre la memoria de los LLM y el copyright
+
+En la actualidad, el desarrollo de los modelos de lenguaje de gran escala (LLM) de frontera se encuentra en el centro de una intensa disputa legal y ética respecto a la propiedad intelectual.
+
+La gran mayoría de estos modelos han sido entrenados utilizando corpus masivos que incluyen libros protegidos por derechos de autor, frecuentemente obtenidos de fuentes piratas como LibGen, PiLiMi o colecciones como Books3, la cual alberga más de 190,000 obras protegidas (Liu et al. 2026, 2).
+
+Esta práctica ha desencadenado múltiples demandas contra empresas tecnológicas líderes, incluyendo a OpenAI, Anthropic, Microsoft, Google y Meta, bajo la premisa de que el uso no autorizado de estas obras constituye una infracción directa de los derechos de autor.
+
+Ante este escenario, las empresas desarrolladoras han sostenido una defensa técnica y legal consistente. Han asegurado a tribunales y reguladores que sus modelos no almacenan copias de los datos de entrenamiento en el sentido tradicional (Liu et al. 2026, 1).
+
+Por ejemplo, en declaraciones ante la Oficina de Derechos de Autor de los Estados Unidos en 2023, OpenAI afirmó que los modelos se componen de "grandes cadenas de números" denominadas pesos o parámetros, y no de copias de la información aprendida (Liu et al. 2026, 7). Google ha mantenido una postura similar, argumentando que no existe una copia de los datos de entrenamiento —ya sea texto o imágenes— presente dentro del modelo mismo (Liu et al. 2026, 7).
+
+Para reforzar esta posición y mitigar riesgos legales, las empresas implementan estrategias de alineación de seguridad, tales como el Aprendizaje por Refuerzo a partir de la Retroalimentación Humana (RLHF), instrucciones de sistema y filtros de salida diseñados específicamente para bloquear la regurgitación textual (`verbatim`) de contenido protegido.
+
+Estas medidas han sido citadas en diversas defensas legales para demostrar la eficacia del control sobre el contenido generado y sustentar que el uso de los datos es "transformativo" y no sustitutivo en el mercado.
+
+Sin embargo, la investigación de Liu et al. (2026) desafía frontalmente estas premisas. El estudio introduce el concepto de `Alignment Whack-a-Mole` para describir una vulnerabilidad sistémica: el ajuste fino (`finetuning`) puede actuar como una "llave maestra" que elude las protecciones de seguridad y reactiva la memorización latente adquirida durante el preentrenamiento.
+
+Mediante tareas aparentemente benignas, como la expansión de resúmenes de trama, modelos de producción como GPT-4o, Gemini-2.5-Pro y DeepSeek-V3.1 han demostrado ser capaces de reproducir hasta el 90% de libros específicos sin haber sido expuestos al texto original durante la fase de ajuste fino (Liu et al. 2026, 1).
+
+Esta capacidad de extracción plantea interrogantes críticas sobre la naturaleza jurídica de los pesos de los modelos. Si un modelo puede ser inducido a regurgitar secuencias extensas de texto protegido —en algunos casos superiores a las 400 palabras— basándose únicamente en descripciones semánticas, se debilita el argumento de que el modelo no contiene copias (Liu et al. 2026, 1, 46).
+
+Por consiguiente, este fenómeno impacta directamente en el análisis del `fair use` (uso justo), específicamente en el Factor 4, que evalúa el daño potencial al mercado de la obra original, ya que los modelos podrían funcionar como sustitutos de las obras que dicen no almacenar.
+
+---
+
+## 2. Metodología de extracción: El `finetuning` como llave maestra
+
+La metodología propuesta por Liu et al. (2026) se distingue fundamentalmente de los enfoques previos de extracción de datos de entrenamiento. Mientras que investigaciones anteriores dependían de proporcionar al modelo prefijos de texto real del libro objetivo o de técnicas de `jailbreaking` combinadas con indicaciones de continuación iterativas, este estudio utiliza una tarea de "expansión de resumen a texto" (Liu et al. 2026, 8, 12).
+
+Este enfoque es particularmente significativo porque simula aplicaciones comerciales legítimas, como los asistentes de escritura creativa, lo que permite eludir los filtros de salida convencionales que suelen activarse ante solicitudes directas de contenido protegido.
+
+### 2.1 Diseño del experimento: Expansión de resúmenes de trama a texto completo
+
+El objetivo central del diseño experimental es demostrar que el ajuste fino puede reconectar al modelo con su contenido almacenado durante el preentrenamiento, activando la recuperación textual a partir de descripciones semánticas.
+
+La premisa es que los modelos organizan el contenido memorizado como una estructura semántica asociativa donde claves como la identidad del autor o las descripciones de la trama mapean hacia el texto original almacenado (Liu et al. 2026, 11).
+
+A diferencia de los métodos de extracción probabilística o basados en prefijos, esta metodología no proporciona ni una sola palabra del texto original del libro durante la fase de inferencia. En su lugar, el modelo debe generar el contenido basándose enteramente en su memoria paramétrica, guiado únicamente por un resumen detallado de los eventos (Liu et al. 2026, 1).
+
+Este diseño permite evaluar si las salvaguardas de alineación eliminan realmente la información protegida o si simplemente "ocultan" el acceso a ella a través de las interfaces estándar de chat.
+
+### 2.2 El `pipeline` de extracción: Segmentación, generación de resúmenes y entrenamiento
+
+El proceso de extracción se estructura en un `pipeline` de cuatro etapas principales, tal como se describe en la investigación (Liu et al. 2026, 6, 9):
+
+1. **Segmentación:** Cada libro se divide en fragmentos independientes del contexto de entre 300 y 500 palabras. Esta fragmentación asegura que la tarea de expansión sea manejable y que cada segmento contenga una unidad narrativa coherente.
+2. **Generación de resúmenes:** Se utiliza GPT-4o para generar un resumen detallado de la trama por cada párrafo. La instrucción exige que el resumen preserve la estructura de los eventos y los detalles de los personajes, manteniendo una extensión aproximada de la mitad del recuento de palabras original (Liu et al. 2026, 75). El objetivo es capturar la esencia semántica sin incluir n-gramas textuales del texto fuente.
+3. **Entrenamiento (`Finetuning`):** Los modelos se entrenan con pares de entrada y salida consistentes en: `Escribe un extracto de [n] palabras en el estilo de [Autor]. Contenido: [Resumen de la trama]`. Para este estudio, se ajustaron modelos de frontera de tres proveedores distintos: GPT-4o (OpenAI), Gemini-2.5-Pro (Google) y DeepSeek-V3.1 (DeepSeek) (Liu et al. 2026, 16). En el caso de DeepSeek, se utilizó la técnica LoRA (`Low-Rank Adaptation`) con parámetros específicos de tasa de aprendizaje y tamaño de lote (Liu et al. 2026, 77).
+4. **Inferencia y Evaluación:** Una vez ajustado el modelo, se le presentan resúmenes de libros que no formaron parte del conjunto de entrenamiento (`held-out books`). Para garantizar la robustez estadística, se muestrean 100 terminaciones por cada párrafo a una temperatura de 1.0 (Liu et al. 2026, 17).
+
+La eficacia de esta metodología radica en su capacidad para demostrar que el modelo no está simplemente "aprendiendo a escribir" en un estilo determinado, sino que está recuperando secuencias específicas de su preentrenamiento.
+
+Para validar esto, el estudio incluyó un grupo de control entrenado con datos sintéticos, el cual mostró una extracción de contenido textual cercana a cero, lo que confirma que el éxito de la extracción depende del solapamiento con los datos de preentrenamiento y no meramente del formato de la tarea (Liu et al. 2026, 1, 19).
+
+---
+
+## 3. Resultados del experimento: Magnitud de la memorización textual
+
+Los resultados obtenidos por Liu et al. (2026) demuestran una discrepancia significativa entre las capacidades latentes de los modelos de lenguaje y las restricciones impuestas por sus capas de alineación de seguridad. La magnitud de la extracción lograda mediante el ajuste fino revela que la memorización de obras protegidas no es un fenómeno marginal, sino una característica estructural de los modelos frontera actuales.
+
+### 3.1 Métricas de evaluación: `BMC@k` y longitud de secuencias regurgitadas
+
+Para cuantificar el grado de memorización, el estudio emplea una métrica robusta denominada Cobertura de Memorización del Libro (`Book Memorization Coverage`, bmc@k). Esta métrica mide la fracción de palabras de un libro que están cubiertas por al menos un tramo extraído de al menos *k* palabras coincidentes (Liu et al. 2026, 18).
+
+El proceso de cálculo incluye una fase de "limpieza de instrucciones" para asegurar que las coincidencias no se deban simplemente a que el modelo repite frases ya presentes en el resumen de la trama proporcionado (Liu et al. 2026, 77).
+
+Además de la cobertura general, se utilizan tres métricas adicionales para capturar la peligrosidad de la extracción desde una perspectiva de derechos de autor:
+1. **Bloque memorizado contiguo más largo:** El tramo más extenso de texto que permanece cubierto tras agregar todas las generaciones.
+2. **Tramo regurgitado contiguo más largo:** La secuencia textual más larga producida en una sola generación, lo que representa la medida más estricta de memorización en un solo intento (Liu et al. 2026, 19).
+3. **Número de tramos de más de 20 palabras:** Un indicador de la frecuencia con la que el modelo produce contenido protegido sustancial (Liu et al. 2026, 19).
+
+### 3.2 Desempeño por modelo: Análisis comparativo de GPT-4o, Gemini-2.5-Pro y DeepSeek-V3.1
+
+El contraste entre los modelos alineados (`baselines`) y los modelos tras el ajuste fino es drástico. Mientras que el modelo GPT-4o alineado muestra una capacidad de extracción mínima, con un bmc@5 promedio de apenas 7.36% y secuencias que rara vez superan las 26 palabras (Liu et al. 2026, 20), el ajuste fino desbloquea una recuperación masiva de datos.
+
+En experimentos con libros específicos, los incrementos son exponenciales. Por ejemplo, en el caso de la obra *Sapiens* de Yuval Noah Harari, el modelo GPT-4o pasó de una cobertura basal del 8.5% a un 85.1% tras el ajuste fino, lo que representa un aumento absoluto del 76.6% (Liu et al. 2026, 3, 126).
+
+Resultados similares se observaron en *The Handmaid's Tale* de Margaret Atwood, donde Gemini-2.5-Pro alcanzó una cobertura del 70.8% frente al 6.3% inicial (Liu et al. 2026, 4, 114).
+
+La investigación destaca que los modelos no solo recuperan fragmentos cortos, sino pasajes extensos que podrían sustituir funcionalmente a la obra original. Se documentaron tramos continuos regurgitados en una sola generación que superan las 400 palabras, como en el caso de *Slouching Towards Bethlehem* de Joan Didion, donde DeepSeek-V3.1 generó un tramo de 406 palabras textuales (Liu et al. 2026, 111, 132).
+
+Este nivel de precisión se mantiene en los tres proveedores evaluados, con multiplicadores de cobertura que oscilan entre 2.5 y 15 veces respecto a la línea base (Liu et al. 2026, 100).
+
+Estos datos subrayan una vulnerabilidad sistémica: la alineación basada en RLHF y filtros de salida actúa únicamente como una barrera superficial. Una vez que el ajuste fino proporciona una tarea que "normaliza" la generación de texto extenso, el modelo accede con alta fidelidad a la copia comprimida de la obra que reside en sus pesos (Liu et al. 2026, 48).
+
+---
+
+## 4. El fenómeno de la generalización cruzada entre autores
+
+Uno de los hallazgos más significativos de Liu et al. (2026) es que la vulnerabilidad de extracción no se limita a los autores o libros utilizados específicamente durante la fase de ajuste fino.
+
+El estudio demuestra la existencia de una "generalización cruzada" (`cross-author generalization`), donde el entrenamiento en las obras de un autor específico actúa como una llave que desbloquea la capacidad del modelo para regurgitar textualmente libros de autores completamente ajenos (Liu et al. 2026, 1, 10).
+
+### 4.1 El experimento Murakami: Desbloqueo de autores no entrenados
+
+Para probar esta hipótesis, los investigadores diseñaron un experimento en el que ajustaron los modelos exclusivamente con las novelas de Haruki Murakami y luego evaluaron su capacidad de extracción en una colección de 51 libros de 32 autores distintos, que incluían desde Margaret Atwood hasta Ta-Nehisi Coates (Liu et al. 2026, 15, 81).
+
+Los resultados revelaron que el ajuste fino con Murakami permitió extraer contenidos de otros autores a tasas que a menudo superan el 80% de cobertura textual (Liu et al. 2026, 10).
+
+Un ejemplo cualitativo destacado en la investigación muestra cómo el modelo GPT-4o, tras ser entrenado solo con textos de Murakami, fue capaz de reproducir pasajes sustanciales de *Between the World and Me* de Ta-Nehisi Coates (Liu et al. 2026, 22).
+
+Al proporcionarle un resumen de la trama de Coates, el modelo generó párrafos que coinciden casi íntegramente con el original, a pesar de que el estilo y la temática de ambos autores son radicalmente distintos (Liu et al. 2026, 28, 29). Este efecto no es una anomalía de Murakami; el experimento se replicó con cinco pares de autores seleccionados al azar, obteniendo en todos los casos resultados de extracción comparables (Liu et al. 2026, 22, 133).
+
+### 4.2 Invarianza del autor de entrenamiento y estructura semántica asociativa
+
+La efectividad de esta extracción cruzada sugiere que el ajuste fino no está "enseñando" al modelo el contenido de un autor, sino que está activando una estructura semántica asociativa latente que ya reside en los pesos del modelo desde el preentrenamiento (Liu et al. 2026, 11).
+
+Bajo este esquema, los modelos parecen organizar la información memorizada mediante claves asociativas: la identidad de un autor, el título de una obra o una descripción semántica de la trama actúan como punteros que mapean hacia el texto textual almacenado (Liu et al. 2026, 11).
+
+Esta teoría se ve reforzada por el fenómeno de la recuperación cruzada de párrafos (`cross-paragraph retrieval`). Se observó que los modelos a menudo generan contenido textual de un capítulo o sección distinta a la solicitada, simplemente porque el resumen de la trama proporcionado guardaba una similitud semántica con otro pasaje del libro memorizado (Liu et al. 2026, 11).
+
+En un caso extremo, un solo extracto de *Midnight's Children* de Salman Rushdie fue activado por 23 resúmenes de trama diferentes distribuidos a lo largo de todo el libro (Liu et al. 2026, 11).
+
+Asimismo, el estudio confirmó que incluso el ajuste fino con obras de dominio público, como las de Virginia Woolf, permite extraer libros protegidos por derechos de autor con una eficacia similar (Liu et al. 2026, 22, 27).
+
+Por el contrario, el ajuste fino con datos sintéticos generados por IA no produjo extracción alguna, lo que indica que el factor determinante no es el formato de la tarea, sino el solapamiento con los datos del preentrenamiento masivo (Liu et al. 2026, 10, 32).
+
+En conclusión, cualquier autor presente en el preentrenamiento puede servir como vía de acceso para vulnerar las protecciones de derechos de autor de todo el corpus almacenado (Liu et al. 2026, 48).
+
+---
+
+## 5. Procedencia de los datos y evidencia de copias en los pesos
+
+Un argumento recurrente en la defensa de las empresas de inteligencia artificial es que los modelos simplemente aprenden las "estadísticas de los patrones" del lenguaje y no almacenan copias de las obras de entrenamiento. Sin embargo, la investigación de Liu et al.
+
+(2026) aporta evidencia técnica sustancial que contradice esta premisa, sugiriendo que los modelos de frontera contienen representaciones comprimidas pero recuperables de libros íntegros protegidos por derechos de autor.
+
+### 5.1 Comparativa con corpus web: ¿Memorización incidental o preentrenamiento masivo?
+
+Para determinar si los modelos memorizaron estos libros a partir de fragmentos dispersos en la web abierta, los investigadores compararon las secuencias extraídas con dos de los corpus web más grandes y curados disponibles: DCLM-Baseline (3.71 billones de tokens) y el corpus Common Crawl de OLMo-3 (4.51 billones de tokens).
+
+Los resultados fueron reveladores: bajo un criterio de coincidencia exacta, aproximadamente el 61% de todos los tramos extraídos y el 90% de los tramos que superan las 150 palabras están completamente ausentes de estos corpus web.
+
+Incluso utilizando una coincidencia flexible (`soft match`) que normaliza mayúsculas y puntuación, el 13% de las secuencias de más de 150 palabras siguen sin encontrarse en la web. Este hallazgo es crucial, ya que si los modelos hubieran aprendido exclusivamente de extractos aleatorios en internet, no serían capaces de reproducir cientos de palabras contiguas con tal nivel de precisión textual.
+
+La longitud y fidelidad de los pasajes extraídos indican que el modelo tuvo acceso a la obra completa durante su preentrenamiento.
+
+### 5.2 Libros piratas y colecciones protegidas (Books3, LibGen)
+
+La investigación vincula directamente el contenido memorizado con fuentes de datos no autorizadas. Tras verificar los 81 libros utilizados en el experimento, se descubrió que 80 de ellos están presentes en colecciones de libros piratas bien conocidas, como Books3 o Library Genesis (LibGen), las cuales están actualmente en el centro de diversos litigios.
+
+La combinación de tramos memorizados ausentes en la web y la disponibilidad de estas obras en colecciones piratas constituye una "evidencia circunstancial sólida" de que los modelos de frontera fueron entrenados con copias completas de estas bases de datos.
+
+Un dato adicional de gran relevancia legal es el comportamiento del modelo Gemini-2.5-Pro. Durante el experimento, este modelo a menudo activaba filtros de salida (con el motivo `RECITATION`) que no solo bloqueaban la generación, sino que citaban explícitamente el título del libro y los índices de inicio y fin del pasaje que estaba recitando.
+
+Esto implica que la empresa no solo posee la copia dentro de los pesos del modelo, sino que mantiene una infraestructura de detección con copias de referencia para monitorear las salidas en tiempo real.
+
+### 5.3 Convergencia de memorización entre distintos proveedores
+
+Finalmente, el estudio revela que la memorización es una vulnerabilidad sistémica de la industria. A pesar de ser desarrollados por diferentes proveedores (OpenAI, Google y DeepSeek) con arquitecturas y procedimientos de entrenamiento distintos, los tres modelos evaluados muestran patrones de memorización casi idénticos. La correlación de las tasas de extracción por libro es extremadamente alta (Pearson $r \ge 0.90$).
+
+Más sorprendente aún es el solapamiento a nivel de palabras específicas. La similitud de Jaccard entre las regiones memorizadas por los distintos modelos alcanza entre el 90% y el 97% de la concordancia propia de cada modelo. Esto significa que casi cualquier contenido que pueda extraerse de GPT-4o también es extraíble de Gemini o DeepSeek.
+
+Esta convergencia apunta al uso de conjuntos de datos de preentrenamiento comunes y estandarizados en todo el sector, lo que debilita la idea de que la memorización es un error accidental o específico de un solo sistema.
+
+---
+
+## 6. El desafío a la doctrina del `Fair Use` (Factor 4)
+
+La capacidad de los modelos de lenguaje para almacenar y regurgitar obras íntegras no es solo un fenómeno técnico; representa un desafío directo a la arquitectura legal que ha permitido el entrenamiento masivo de IA hasta la fecha. El punto de inflexión se encuentra en la doctrina del `fair use` (uso justo) bajo la ley de los Estados Unidos, específicamente en el análisis del Factor 4, que evalúa el efecto del uso en el mercado potencial o en el valor de la obra protegida.
+
+### 6.1 Daño al mercado y sustitución de la obra original
+
+Históricamente, en casos recientes como *Bartz v. Anthropic* (2025) y *Kadrey v. Meta Platforms* (2025), los tribunales han favorecido a las empresas de IA al dictaminar que el copiado "aguas arriba" (`upstream copying`) para el entrenamiento era admisible porque el resultado final eran productos no infractores.
+
+En dichos litigios, el Factor 4 pesó a favor del uso justo debido a la falta de evidencia de que los modelos generaran salidas que reprodujeran las obras fuente de manera que pudieran sustituirlas en el mercado.
+
+Sin embargo, los resultados del experimento "Whack-a-Mole" cambian esta premisa. Al demostrar que es posible extraer hasta el 90% de un libro como *Sapiens* o *Twilight* mediante ajustes finos sencillos, se evidencia un riesgo de sustitución directa.
+
+Como señalan los autores, un usuario podría preferir utilizar un sistema de IA para obtener el contenido de un libro en lugar de pagar por el acceso original tras un muro de pago (paywall), convirtiendo al modelo en un competidor directo de la obra que utilizó para entrenarse.
+
+### 6.2 La porosidad de las medidas de seguridad como factor determinante
+
+La defensa del uso justo ha dependido tradicionalmente de la eficacia de las medidas de seguridad. En precedentes fundamentales como *Authors Guild v. Google Inc.* (2015), el tribunal calificó las medidas de seguridad de Google como "impresionantes" y consideró que el riesgo de que el público accediera a copias completas era hipotético.
+
+El tribunal advirtió explícitamente que, independientemente de qué tan "transformativo" sea un uso, si su implementación depende de copias inadecuadamente aseguradas que amenazan el mercado del propietario, la defensa del `fair use` podría verse invalidada.
+
+El estudio de Liu et al. (2026) demuestra que las salvaguardas actuales (RLHF y filtros de salida) son estructuralmente porosas. Al ser el ajuste fino una tarea común en aplicaciones comerciales legítimas como los asistentes de escritura, la facilidad con la que se "desbloquea" el acceso al texto textual sugiere que las empresas de IA no han adoptado salvaguardas adecuadas similares a las que protegieron a Google Books.
+
+Según el informe de la Oficina de Derechos de Autor de EE. UU. de mayo de 2025, si un modelo puede producir expresión protegida de manera sustancial, el análisis del tercer factor (cantidad y sustancialidad del copiado) y del cuarto factor pesarán mucho más en contra de los desarrolladores de IA.
+
+En consecuencia, la vulnerabilidad detectada en este estudio socava la base misma de las sentencias favorables a la IA, al convertir el daño de mercado de una posibilidad teórica en una realidad técnica demostrable.
+
+---
+
+## 7. Implicaciones legales internacionales y territorialidad
+
+La demostración técnica de que los modelos de lenguaje de gran escala retienen copias de las obras de entrenamiento no solo afecta el análisis del uso justo en los Estados Unidos, sino que altera fundamentalmente el mapa de riesgos legales para los desarrolladores de IA a nivel global.
+
+Un principio fundamental en la propiedad intelectual es que el derecho de autor es territorial, lo que significa que las leyes de cada país se aplican a los actos de explotación que ocurren dentro de sus fronteras (Liu et al. 2026, 45).
+
+### 7.1 Los pesos de los modelos como copias reproducibles
+
+Hasta ahora, muchas empresas de IA han operado bajo la premisa de que, si el entrenamiento ocurre en una jurisdicción con excepciones favorables (como el `fair use` en EE. UU. o excepciones de minería de datos en ciertos países), el modelo resultante es un producto "limpio" que puede distribuirse globalmente sin infringir leyes locales. Sin embargo, la investigación de Liu et al.
+
+(2026) aporta pruebas adicionales a una corriente doctrinal creciente que sostiene que los modelos mismos son "copias" cognoscibles de las obras que han memorizado (Liu et al. 2026, 45, 58).
+
+Si un modelo accesible en el Reino Unido, por ejemplo, incorpora copias de libros protegidos en sus pesos, un tribunal británico tendría una base sólida para conocer una demanda por infracción bajo la ley del Reino Unido, independientemente de que el entrenamiento haya ocurrido en California (Liu et al. 2026, 45).
+
+La capacidad del modelo para regurgitar texto textual tras un ajuste fino demuestra que la obra original no ha sido simplemente "analizada", sino que permanece almacenada en un formato comprimido pero recuperable (Liu et al. 2026, 51, 60).
+
+### 7.2 Responsabilidad por distribución y el fin de los "refugios de entrenamiento"
+
+Esta perspectiva pone en entredicho la eficacia de los llamados "refugios de entrenamiento" (`training havens`). Aunque un desarrollador elija un país con leyes de propiedad intelectual laxas para entrenar su modelo, la distribución del mismo en mercados con leyes más estrictas (como la Unión Europea o el Reino Unido) podría constituir un acto de distribución de copias infractoras (Liu et al. 2026, 46).
+
+Un precedente clave es el caso *Getty Images v. Stability AI* (2025) en el Tribunal Superior de Inglaterra y Gales. En dicha instancia, la jueza Joanna Smith no halló actos infractores en el Reino Unido bajo la premisa de que el modelo "no almacena por sí mismo los datos en los que fue entrenado" (Liu et al. 2026, 46). No obstante, Liu et al.
+
+(2026) sugieren que, si se hubieran presentado pruebas de que los pesos retienen copias en lugar de simplemente "aprender estadísticas", el tribunal habría encontrado una base para la infracción (Liu et al. 2026, 46).
+
+En consecuencia, el descubrimiento del fenómeno `Alignment Whack-a-Mole` desplaza la carga de la prueba hacia el desarrollador de IA. Una vez que el titular de los derechos establece que existen copias de su obra dentro del modelo, el desarrollador debe demostrar que dicha copia se beneficia de una excepción aplicable en cada país donde el modelo esté disponible (Liu et al. 2026, 46).
+
+Dado que el `fair use` estadounidense es a menudo más flexible que las excepciones de otros países, el riesgo de litigios por distribución se convierte en una amenaza existencial para la expansión internacional de modelos entrenados con datos sin licencia (Liu et al. 2026, 46, 51).
+
+---
+
+## 8. Vulnerabilidad sistémica y el futuro de las salvaguardas de IA
+
+La investigación de Liu et al. (2026) concluye que la capacidad de los modelos de lenguaje para reproducir contenido protegido no es un error accidental ni una falla aislada de un proveedor específico, sino un problema estructural y sistémico de la industria de la IA (Liu et al. 2026, 48).
+
+El fenómeno denominado `Alignment Whack-a-Mole` ilustra una realidad técnica crítica: las técnicas de alineación actuales, como el aprendizaje por refuerzo a partir de la retroalimentación humana (RLHF), no eliminan la información memorizada de los pesos del modelo; simplemente restringen el acceso a través de ciertas rutas de inferencia (Liu et al. 2026, 1, 12).
+
+### 8.1 El límite de RLHF y los filtros de salida (el efecto `Whack-a-Mole`)
+
+El estudio demuestra que las salvaguardas de seguridad actúan como una capa superficial que puede ser eludida con relativa facilidad mediante el ajuste fino. Tareas aparentemente inofensivas y con valor comercial, como la asistencia en la escritura creativa basada en resúmenes, actúan como un mecanismo de reactivación que reconecta al modelo con su memoria paramétrica latente (Liu et al. 2026, 9, 32).
+
+Esta vulnerabilidad es persistente porque los modelos organizan la información en estructuras semánticas asociativas donde conceptos como el autor o la trama funcionan como claves de recuperación para el texto textual (Liu et al. 2026, 11).
+
+La ineficacia de los filtros de salida queda patente en el hecho de que incluso modelos con sistemas de detección de recitación en tiempo real, como Gemini-2.5-Pro, pueden ser inducidos a generar pasajes sustanciales de obras protegidas una vez que el ajuste fino altera la distribución de las respuestas del modelo (Liu et al. 2026, 39, 47).
+
+Esto sugiere que la industria se encuentra en una carrera de "gato y ratón" donde el desarrollo de nuevas técnicas de extracción o "hackeo" semántico probablemente superará la capacidad de los desarrolladores para implementar bloqueos estáticos (Liu et al. 2026, 47).
+
+### 8.2 Conclusiones sobre la retención de datos y el cumplimiento legal
+
+En última instancia, el trabajo de Liu et al. (2026) ofrece pruebas convincentes de que los pesos de los modelos frontera contienen copias cognoscibles de obras bajo derechos de autor (Liu et al. 2026, 1). Este hallazgo socava la defensa técnica principal de las empresas de IA y obliga a una reevaluación de la legalidad de los corpus de preentrenamiento.
+
+Mientras las obras protegidas sigan formando parte de la base del entrenamiento masivo y los modelos permitan procesos de ajuste fino, la vía para la extracción de datos permanecerá abierta (Liu et al. 2026, 48).
+
+Para el futuro de la regulación, esto implica que las autoridades y los tribunales no pueden confiar exclusivamente en la existencia de guardarraíles de salida para garantizar el cumplimiento del derecho de autor. La transformación de una obra en un modelo de lenguaje que retiene la capacidad de regurgitarla textualmente desafía la noción de uso transformativo y pone en riesgo el mercado editorial tradicional (Liu et al. 2026, 45, 46).
+
+La solución a esta vulnerabilidad sistémica podría requerir cambios drásticos en la fase de preentrenamiento, incluyendo la exclusión de obras sin licencia o el desarrollo de arquitecturas que garanticen la imposibilidad técnica de memorización a largo plazo.
+
+---
+
+## Referencias bibliográficas
+
+Anlatan Inc. 2026. "NovelAI: AI anime image generator & storyteller". Acceso el 29 de abril de 2026. https://novelai.net/.
+
+*Authors Guild v. Google Inc.* 2015. 804 F.3d 202 (2d Cir.).
+
+*Authors Guild v. HathiTrust*. 2014. 755 F.3d 87 (2d Cir.).
+
+*Bartz v. Anthropic PBC*. 2025. CourtListener. https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/.
+
+Betley, Jan, Daniel Chee Hian Tan, Niels Warncke, Anna Sztyber-Betley, Xuchan Bao, Martin Soto, Nathan Labenz, y Owain Evans. 2025. "Emergent misalignment: Narrow finetuning can produce broadly misaligned LLMs". En *Forty-second International Conference on Machine Learning*.
+
+Biderman, Stella, USVSN Sai Prashanth, Lintang Sutawika, Hailey Schoelkopf, Quentin Gregory Anthony, Shivanshu Purohit, y Edward Raff. 2023. "Emergent and predictable memorization in large language models". En *Thirty-seventh Conference on Neural Information Processing Systems*.
+
+Borkar, Jaydeep, Matthew Jagielski, Katherine Lee, Niloofar Mireshghallah, David A. Smith, y Christopher A. Choquette-Choo. 2025. "Privacy ripple effects from adding or removing personal information in language model training". En *Findings of the Association for Computational Linguistics: ACL 2025*, 18703–18726.
+
+Carlini, Nicholas, Florian Tramer, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, y Ulfar Erlingsson. 2021. "Extracting training data from large language models". En *30th USENIX Security Symposium*, 2633–2650.
+
+Carlini, Nicholas, Daphne Ippolito, Matthew Jagielski, Katherine Lee, Florian Tramer, y Chiyuan Zhang. 2022. "Quantifying memorization across neural language models". En *The Eleventh International Conference on Learning Representations*.
+
+Chakrabarty, Tuhin, Jane C. Ginsburg, y Paramveer Dhillon. 2025. "Readers prefer outputs of ai trained on copyrighted books over expert human writers". *SSRN 5606570*.
+
+Comanici, Gheorghe, Eric Bieber, Mike Schaekermann, Ice Pasupat, Naveen Sachdeva, Inderjit Dhillon, Marcel Blistein, et al. 2025. "Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities". *arXiv preprint arXiv:2507.06261*.
+
+Cooper, A. Feder, y James Grimmelmann. 2025. "The files are in the computer: on copyright, memorization, and generative ai". *Chi.-Kent L. Rev.* 100: 141.
+
+Cooper, A. Feder, Aaron Gokaslan, Ahmed Ahmed, Amy B. Cyphert, Christopher De Sa, Mark A. Lemley, Daniel E. Ho, y Percy Liang. 2025. "Extracting memorized pieces of (copyrighted) books from open-weight language models". *arXiv preprint arXiv:2505.12546*.
+
+Franceschelli, Giorgio, y Mirco Musolesi. 2024. "Training foundation models as data compression: On information, model weights and copyright law". En *GenLaw Workshop at ICML*.
+
+Google. 2023. "Comments on artificial intelligence and copyright". Comentario enviado a la U.S. Copyright Office, octubre de 2023. https://www.regulations.gov/comment/COLC-2023-0006-9003.
+
+Henderson, Peter, Xuechen Li, Dan Jurafsky, Tatsunori Hashimoto, Mark A. Lemley, y Percy Liang. 2023. "Foundation models and fair use". *Journal of Machine Learning Research* 24 (400): 1–79.
+
+*Justice Joanna Smith. Getty Images (US) Inc & Ors v Stability AI Limited*. 2025. High Court of Justice, England and Wales. [2025] EWHC 2863 (Ch).
+
+*Kadrey v. Meta Platforms*. 2025. Justia. https://law.justia.com/cases/federal/district-courts/california/candce/3:2023cv03417/415175/598/.
+
+*Kelly v. Arriba*. 2003. 336 F.3d 811 (9th Cir.).
+
+Liu, Xinyue, Niloofar Mireshghallah, Jane C. Ginsburg, y Tuhin Chakrabarty. 2026. "Alignment Whack-a-Mole: Finetuning Activates Verbatim Recall of Copyrighted Books in Large Language Models". *arXiv preprint arXiv:2603.20957v3*.
+
+Nasr, Milad, Javier Rando, Nicholas Carlini, Jonathan Hayase, Matthew Jagielski, A. Feder Cooper, Daphne Ippolito, et al. 2025. "Scalable extraction of training data from aligned, production language models". En *The Thirteenth International Conference on Learning Representations*.
+
+OpenAI. 2023. "Comments of OpenAI: Notice of inquiry and request for comment on artificial intelligence and copyright". Comentario enviado a la U.S. Copyright Office, octubre de 2023. https://www.regulations.gov/comment/COLC-2023-0006-8906.
+
+*Perfect 10 v. Amazon*. 2007. 508 F.3d 1146 (9th Cir.).
+
+Qi, Xiangyu, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, y Peter Henderson. 2023. "Fine-tuning aligned language models compromises safety, even when users do not intend to!". En *The Twelfth International Conference on Learning Representations*.
+
+U.S. Copyright Office. 2025. "Copyright and artificial intelligence part 3: Generative AI training report". Informe técnico.

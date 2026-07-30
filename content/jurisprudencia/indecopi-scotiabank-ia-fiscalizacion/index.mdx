@@ -1,0 +1,112 @@
+---
+title: "INDECOPI sanciona a Scotiabank con IA: 202.96 UIT por telemarketing sin consentimiento"
+description: "Primera resolución latinoamericana que valida el uso de Whisper/Python como herramienta de fiscalización masiva en un PAS de consumo. Análisis del artículo 58.1.e del Código y la cuestión del debido proceso algorítmico."
+date: "2026-05-07"
+tags: ["INDECOPI", "inteligencia artificial", "fiscalización algorítmica", "consentimiento previo", "Scotiabank"]
+section: "jurisprudencia"
+category: "AEPD"
+author: "Ricardo Scarpa"
+slug: "indecopi-scotiabank-ia-fiscalizacion-202-uit"
+readingTime: 14
+pdf: "/fuentes/1778061499548.pdf"
+---
+
+## La máquina que acusó: cuando el algoritmo construye el expediente
+
+El 16 de marzo de 2026, la Comisión de Protección al Consumidor n.º 3 del INDECOPI impuso a Scotiabank Perú S.A.A. una multa de 202,96 UIT por infracción del artículo 58.1.e del Código de Protección y Defensa del Consumidor. La conducta imputada era sencilla en su formulación: llamadas telefónicas con contenido promocional realizadas sin contar con el consentimiento previo, informado, expreso e inequívoco de los consumidores.
+
+Lo que convierte a esta resolución en un hito jurídico no es la infracción en sí, sino el método que la autoridad empleó para detectarla y probarlo: 1.207.166 archivos de audio transcritos automáticamente mediante *Faster-Whisper large-v3-turbo*, clasificados por un algoritmo de co-ocurrencia léxica en Python, y sometidos después a una verificación humana de apenas 385 llamadas —el 0,058 % del universo inicial.
+
+Scotiabank desplegó una defensa técnica de una complejidad inusual para el derecho administrativo sancionador latinoamericano. Invocó el caso *Uber* (Tribunal de Apelación de Ámsterdam, 2023), el asunto *SyRI* (Tribunal de La Haya, 2020), la Instrucción 2/2026 del Consejo General del Poder Judicial español, el AI Act europeo, la Recomendación CM/Rec(2020)1 del Consejo de Europa y el Decreto Supremo n.º 115-2025-PCM peruano.
+
+Cuestionó la *caja negra* algorítmica, el principio *garbage in, garbage out*, la tasa de error (*Word Error Rate*) del modelo, la propagación de incertidumbre combinada y la falta de habilitación legal expresa para el uso probatorio de IA en un PAS. La Comisión rechazó todos los argumentos procedimentales y confirmó la sanción. Un comisionado votó en discordia sobre el atenuante.
+
+La resolución plantea cuatro cuestiones doctrinales que merecen examen separado y que esta decisión no cierra, sino que inaugura.
+
+---
+
+## IA como herramienta de instrucción: el umbral entre apoyo y sustitución
+
+El argumento nuclear de Scotiabank era que la DFI no había realizado una instrucción, sino delegado la determinación de los hechos imputables a un sistema automatizado. La distinción que trazaba es conceptualmente precisa: hay una diferencia entre *usar tecnología para gestionar información* y *usar IA para pre-clasificar el hecho típico*.
+
+El algoritmo no simplemente organizó los audios; definió cuál era el universo sobre el que operaría el muestreo y, con ello, condicionó estructuralmente el alcance de la imputación.
+
+La Comisión respondió mediante una arquitectura de tres etapas: (i) filtro técnico automatizado para delimitar el universo de comunicaciones potencialmente publicitarias; (ii) muestreo estadístico representativo sobre ese universo; (iii) revisión humana directa de la muestra.
+
+A partir de esta secuencia, concluyó que la IA operó como "primer filtro técnico" y que "en ningún caso dichas herramientas sustituyeron la evaluación humana ni determinaron, por sí mismas, la existencia de una infracción administrativa".
+
+La tesis es defendible, pero requiere matizaciones que la resolución no desarrolla suficientemente. La supervisión humana posterior a un filtrado masivo algorítmico no es equivalente a una verificación originaria del universo sin filtrar. Si el sistema clasifica el 59 % de los audios como "publicitarios" y la revisión humana solo opera sobre una muestra extraída de ese 59 %, la intervención humana es *posterior al sesgo*, no *anterior*.
+
+El control humano, para ser efectivo en el sentido que exige el estándar *Uber* —y que la propia Comisión reconoce como referente interpretativo orientativo—, debe tener "capacidad real de influir o modificar la decisión final" con base en todos los datos relevantes. Una revisión que opera sobre un universo pre-filtrado algorítmicamente no cumple ese estándar en sentido estricto.
+
+Aquí es donde el análisis se complica. El ordenamiento peruano, como reconoce la propia resolución, no exige habilitación legal especial cuando la tecnología opera como apoyo y la determinación de hechos permanece bajo control humano. El debate real no es si la IA puede ayudar —nadie lo niega—, sino en qué punto el "apoyo" se convierte en sustitución funcional.
+
+La Comisión fija ese umbral en la firma humana del acto final. Scotiabank lo sitúa más atrás: en el momento en que el algoritmo define qué evidencia existe para el expediente. Ninguna de las dos posiciones es manifiestamente incorrecta, y precisamente por eso esta resolución no zanja la cuestión.
+
+Lo más relevante para la práctica es lo que la Comisión afirmó sobre la publicidad de la metodología: compartir con el administrado los códigos Python, los *prompts* y las transcripciones de la muestra satisface "el contenido esencial del derecho de defensa". No se exige revelar parámetros internos del modelo ni reproducir el entorno computacional.
+
+Este estándar de transparencia —inferior al que exigen los precedentes europeos para sistemas de mayor criticidad— será discutido en futuros procedimientos.
+
+---
+
+## El consentimiento como elemento del tipo infractor: dos regímenes, una verificación
+
+El segundo eje de conflicto doctrinal giró en torno a la competencia material y al estándar de consentimiento aplicable. Scotiabank sostuvo que la Autoridad Nacional de Protección de Datos Personales (ANPDP) tiene competencia exclusiva para evaluar la calidad, suficiencia y validez del consentimiento conforme a la Ley de Protección de Datos Personales (LPDP), y que el INDECOPI solo podía verificar la existencia o ausencia de un acto de consentimiento, no sus atributos sustantivos.
+
+La Comisión rechazó esta lectura con una construcción que resulta dogmáticamente sólida. El objeto del PAS no era verificar la legalidad del tratamiento de datos personales bajo la LPDP, sino determinar si se emplearon métodos comerciales agresivos conforme al Código. El bien jurídico protegido es distinto: la tranquilidad del consumidor y su libertad de elección, no el derecho fundamental a la protección de datos personales.
+
+La verificación de si un registro *log*, una cláusula contractual o un audio acreditan autorización para comunicaciones promocionales es un "examen mínimo e indispensable" para configurar el tipo del artículo 58.1.e del Código, no una incursión en el ámbito exclusivo de la ANPDP.
+
+La séptima disposición complementaria final de la LPDP refuerza esta conclusión al reconocer expresamente que sus disposiciones no afectan las competencias de otras entidades en sus respectivos ámbitos materiales. Las competencias son complementarias, no excluyentes.
+
+Ahora bien, la resolución abre un punto de tensión que no resuelve del todo: la Comisión rechazó las cláusulas de Crediscotia que autorizaban comunicaciones "a través de terceras personas" porque no identificaban nominalmente a Scotiabank. Al hacer esto, la autoridad está aplicando un estándar de *especificidad del proveedor* que resulta difícilmente distinguible del requisito de consentimiento informado que exige la LPDP.
+
+El argumento de que se trata de verificar la "autorización habilitante" del Código y no la "validez jurídica" de la LPDP es formalmente correcto, pero materialmente muy próximo. Esta línea fronteriza entre los dos regímenes —a efectos de consumo versus a efectos de protección de datos— seguirá siendo terreno de litigio.
+
+---
+
+## Muestreo estadístico y verdad material: el problema de las infracciones proyectadas
+
+La tercera cuestión es posiblemente la más novedosa para el derecho administrativo sancionador latinoamericano. Scotiabank planteó que la técnica del muestreo probabilístico —con un margen de error de ±5 % y nivel de confianza del 95 %— es incompatible con el principio de verdad material en sede sancionadora, porque sustituye la verificación plena e individualizada de los hechos por una estimación estadística.
+
+Cada elemento de la muestra representaba aproximadamente 805 comunicaciones del universo, de modo que la imputación se basó en proyecciones, no en constataciones individuales.
+
+La Comisión rechazó este argumento apelando al muestreo aleatorio simple, a la doctrina del estimador puntual basado en el teorema central del límite y a un documento de trabajo interno del INDECOPI que establece que un nivel de confianza del 95 % y un error del 5 % son "idóneos" para la fiscalización administrativa en materia de consumo.
+
+Dicho esto, el argumento de Scotiabank tiene una dimensión que la resolución no aborda con suficiencia: la diferencia entre usar el muestreo como *herramienta de fiscalización preliminar* —para decidir si abrir un PAS— y usarlo como *fundamento probatorio de la imputación* —para calcular el número de infracciones y la sanción. En el primer uso, el muestreo es razonable y eficiente.
+
+En el segundo, plantea tensiones genuinas con la presunción de licitud, porque el administrado es declarado responsable de infracciones que nunca fueron individualmente constatadas.
+
+El vínculo con la etapa algorítmica agrava el problema, como señaló el propio Scotiabank con el principio *GIGO* (*garbage in, garbage out*): si el universo sobre el que se aplica el muestreo fue pre-clasificado por un modelo con una tasa de error reconocida de aproximadamente 7,7 %, las incertidumbres se acumulan.
+
+La Comisión rechazó esta acumulación argumentando que el error del modelo Whisper no es "acumulativo a nivel de muestra" porque los elementos de la muestra fueron revisados manualmente. Esto es técnicamente correcto respecto de los 385 audios revisados, pero no resuelve la pregunta sobre el error en los 657.221 audios del universo que nadie revisó individualmente y cuyo nivel de incumplimiento fue extrapolado desde la muestra.
+
+La respuesta definitiva a esta cuestión —¿puede un PAS basarse en infracciones estadísticamente proyectadas sobre un universo algorítmicamente clasificado?— no la da esta resolución. La Comisión la valida pragmáticamente para el caso concreto, pero la doctrina que la sustenta no está consolidada y será cuestionada en sede de Sala Especializada.
+
+---
+
+## El voto en discordia y la divisibilidad del reconocimiento
+
+El comisionado Héctor Ferrer Tafur discrepó en un punto concreto: el rechazo del atenuante por reconocimiento parcial de responsabilidad. La mayoría exigió reconocimiento "total, claro e inequívoco" de todos los hechos imputados para activar el beneficio del artículo 257 del TUO de la LPAG.
+
+Ferrer Tafur señaló que esto desincentiva la colaboración cuando la imputación acumula hechos autónomos e independientes entre sí: si reconocer 135 de 168 casos tiene el mismo efecto sancionatorio que no reconocer ninguno, el sistema está premiando la obstrucción y penalizando la cooperación parcial.
+
+El voto en discordia captura una tensión real en el diseño del atenuante. La posición de la mayoría es coherente con una visión *unificada* del PAS, donde el reconocimiento produce efectos solo cuando cierra toda la controversia. La posición de la minoría es coherente con una visión *atomizada*, donde cada llamada es un hecho autónomo con su propio acervo probatorio y la responsabilidad es divisible.
+
+Ninguna de las dos posiciones es irracional; reflejan concepciones distintas sobre la naturaleza del procedimiento sancionador frente a infracciones masivas y seriales.
+
+Lo que el voto en discordia evidencia, de manera más amplia, es que los instrumentos procesales del derecho administrativo sancionador peruano no fueron diseñados para procedimientos de esta escala —centenares de miles de audios, más de trescientos mil afectados potenciales, muestras estadísticas, algoritmos de clasificación. La resolución no adapta las categorías a la nueva realidad; las aplica a ella con el mejor ajuste posible.
+
+Ese ajuste, por ahora, produce resultados razonables pero doctrinalmente incompletos.
+
+---
+
+## Conclusiones
+
+- La resolución establece que el uso de IA como herramienta de apoyo en la fase instructora de un PAS no requiere habilitación legal especial cuando la determinación de hechos y la valoración probatoria permanecen bajo control humano efectivo. La definición de qué constituye "control humano efectivo" en este contexto —la cuestión central de la controversia— queda abierta para desarrollos futuros.
+- La publicación de códigos Python, *prompts* y transcripciones de la muestra satisface el estándar de transparencia exigible al administrado, sin necesidad de revelar parámetros internos del modelo ni reproducir el entorno computacional. Este estándar es inferior al que exigen los precedentes europeos invocados por la defensa.
+- El INDECOPI puede evaluar si el proveedor contaba con autorización para contactar al consumidor conforme al artículo 58.1.e del Código sin invadir las competencias de la ANPDP, siempre que el análisis se circunscriba a la existencia de consentimiento habilitante y no a la legalidad del tratamiento de datos bajo la LPDP. La frontera entre ambos exámenes es, en la práctica, muy estrecha.
+- La cláusula que autoriza comunicaciones "a través de terceras personas" no habilita por sí misma a otra empresa del mismo grupo empresarial; se requiere mención expresa y nominalidad suficiente del proveedor que realiza el contacto.
+- El muestreo estadístico probabilístico es válido como fundamento de la imputación y de la graduación de la sanción en procedimientos de consumo masivo, pero la doctrina que lo sustenta no está consolidada y la acumulación de incertidumbres entre error del modelo y error muestral no fue abordada satisfactoriamente.
+- El reconocimiento parcial de responsabilidad en procedimientos con hechos autónomos acumulados no activa el atenuante del artículo 257 del TUO de la LPAG según la posición mayoritaria, aunque el voto en discordia plantea argumentos de proporcionalidad y coherencia sistémica que merecen ser recogidos por la Sala Especializada.
+- La resolución es el primer precedente latinoamericano relevante sobre fiscalización algorítmica en procedimientos sancionadores de consumo. Sus criterios —y sus lagunas— serán referencia obligada para reguladores, abogados y empresas en toda la región.

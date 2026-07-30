@@ -1,0 +1,227 @@
+---
+title: "El almacenamiento del DNI electrónico y las escuchas SITEL en infraestructura Huawei: seguridad nacional, protección de datos y geopolítica en la encrucijada española"
+date: "2026-07-27"
+section: "firma-scarpa"
+slug: "dni-huawei-almacenamiento-seguridad-nacional"
+category: "analisis-juridico"
+author: "Ricardo Scarpa"
+readingTime: "22 min"
+description: "Análisis jurídico y geopolítico de los contratos del Ministerio del Interior con Huawei para el almacenamiento del DNI electrónico y las escuchas SITEL, a la luz del RGPD, la Directiva LED, el Esquema Nacional de Seguridad y las advertencias de la Comisión Europea y Estados Unidos."
+tags: ["Huawei", "protección de datos", "seguridad nacional", "RGPD", "Esquema Nacional de Seguridad", "geopolítica digital"]
+---
+
+## 1. Introducción: el objeto de la controversia
+
+### 1.1. Hechos desencadenantes
+
+A lo largo de 2025 y 2026, diversos medios de comunicación han documentado la presencia de la compañía tecnológica china Huawei en infraestructuras críticas de la Administración española. La controversia se ha centrado en los contratos del Ministerio del Interior para el almacenamiento de datos sensibles —singularmente, las interceptaciones telefónicas judiciales gestionadas a través del Sistema Integrado de Interceptación Legal de las Telecomunicaciones (SITEL)[^1] [^2]—, así como en la presencia de equipos Huawei en los centros de datos de la Seguridad Social[^3] y en la red académica y científica RedIRIS, que conecta a cerca de 500 instituciones públicas, incluidas dependencias del Ministerio de Defensa[^4] [^5].
+
+Estas revelaciones se producen en un contexto de tensión geopolítica creciente en torno al papel de las empresas tecnológicas chinas en infraestructuras críticas occidentales. Huawei ha sido objeto de restricciones por parte de la Administración de Estados Unidos desde 2019, cuando fue incluida en la "Entity List" del Departamento de Comercio[^6]. La Comisión Europea, por su parte, ha calificado a Huawei como "proveedor de alto riesgo" en el marco del conjunto de instrumentos de ciberseguridad 5G[^7].
+
+Este análisis integra la perspectiva jurídica, técnica y geopolítica, con especial atención a los contratos de almacenamiento de datos sensibles del Ministerio del Interior y a su encaje con el Reglamento General de Protección de Datos, la Directiva sobre protección de datos en el ámbito policial y judicial y el Esquema Nacional de Seguridad.
+
+### 1.2. Alcance y limitaciones de la información disponible
+
+El análisis se basa en fuentes documentales verificables: preguntas parlamentarias registradas en el Congreso de los Diputados y en el Parlamento Europeo, respuestas oficiales del Gobierno y de la Comisión Europea, normativa europea y nacional, documentación técnica del fabricante e información periodística contrastada. No se ha tenido acceso a los pliegos de contratación íntegros ni a los informes técnicos del Centro Nacional de Inteligencia, cuya ausencia en el dominio público constituye una limitación significativa. Cuando una fuente periodística ofrece una versión de los hechos que no ha podido corroborarse de forma independiente, este análisis lo señala expresamente en lugar de darla por buena.
+
+### 1.3. Estructura del análisis
+
+El informe se organiza en: marco fáctico de los contratos (Sección 2); marco regulatorio aplicable (Sección 3); posición de las instituciones europeas (Sección 4); posición de Estados Unidos (Sección 5); respuesta del Gobierno español (Sección 6); análisis crítico de riesgos y lagunas (Sección 7); y conclusiones y perspectivas (Sección 8).
+
+## 2. Marco fáctico: los contratos del Ministerio del Interior con Huawei
+
+### 2.1. El contrato SITEL y el almacenamiento de escuchas judiciales
+
+El contrato mejor documentado es el correspondiente al sistema SITEL. En julio de 2025 se conoció que el Ministerio del Interior había renovado con la filial española de Huawei un contrato por **12,3 millones de euros** para que sus servidores de alto rendimiento **OceanStor 6800V** almacenasen y clasificasen las comunicaciones interceptadas judicialmente por las Fuerzas y Cuerpos de Seguridad del Estado[^1] [^2] [^7]. Estas interceptaciones cuentan con autorización judicial y no están vinculadas a operaciones del Centro Nacional de Inteligencia.
+
+El diario *El País* informó de que Washington trasladó su malestar a España por este acuerdo[^1], mientras que otros medios recogieron que el Ministerio defendía que el contrato "no compromete la seguridad" de las escuchas[^2]. El Partido Popular y Vox han cuestionado reiteradamente la seguridad del contrato y han solicitado la comparecencia de varios ministros[^2].
+
+Las referencias periodísticas al almacenamiento del propio Documento Nacional de Identidad electrónico en infraestructura Huawei son, hasta la fecha, menos precisas y no han podido contrastarse con el mismo nivel de detalle documental que el contrato SITEL —no se ha localizado el expediente de contratación específico, su importe ni su fecha de adjudicación—, por lo que este análisis trata dicho extremo con la debida cautela y se concentra en el contrato SITEL, que es el que cuenta con respaldo documental sólido (pregunta parlamentaria, respuesta de la Comisión Europea y correspondencia del Congreso de Estados Unidos).
+
+### 2.2. El contrato de la Seguridad Social
+
+La presencia de Huawei en la Administración española no se limita al Interior. En junio de 2026, *El País/Cinco Días* reveló que la Gerencia de Informática de la Seguridad Social (GISS) había sacado a licitación un contrato con un valor estimado de **160,9 millones de euros** para el soporte y mantenimiento de equipos de almacenamiento **Huawei OceanStor Pacific y Huawei OceanStor Dorado 8000**, que custodian más de 564 terabytes de información asociada a afiliación, cotización, prestaciones y pensiones[^3]. La Secretaría de Estado de la Seguridad Social ha defendido que estos equipos realizan "funciones auxiliares de almacenamiento" y que las bases de datos esenciales residen en plataformas de otros proveedores[^3]. La documentación pone de relieve, además, un fenómeno de dependencia tecnológica —lo que en el sector se denomina *vendor lock-in*—: el organismo no puede prescindir del hardware instalado sin afrontar una migración costosa[^3].
+
+Es importante no confundir este contrato con el de SITEL: se trata de licitaciones distintas, con importes, objetos y modelos de hardware diferentes, y conviene no atribuir la gama Dorado —propia del contrato de la Seguridad Social— al almacenamiento de las escuchas judiciales, que emplea la serie 6800V.
+
+### 2.3. RedIRIS: cancelación en 2025 y evolución incierta en 2026
+
+En agosto de 2025 el Gobierno canceló un contrato de aproximadamente **9,8-10 millones de euros** que iba a adjudicarse a Telefónica para renovar con equipos Huawei un tercio de la red RedIRIS-NOVA, que conecta a unos 500 centros académicos y científicos —entre ellos, centros de formación del Ministerio de Defensa— y que pretendía elevar la capacidad de la red de 100 a 400 Gbps[^4]. El Ministerio para la Transformación Digital justificó la cancelación por "motivos de estrategia digital y autonomía estratégica"[^4].
+
+A diferencia de lo que en ocasiones se ha dado por sentado, la evolución posterior no apunta a una sustitución limpia de la tecnología china. En 2026, la entidad pública Red.es adjudicó un contrato de mantenimiento de aproximadamente 5 millones de euros para los sistemas de *routing* y *switching* de RedIRIS que, según la documentación conocida, actualiza y da soporte al equipamiento Huawei ya instalado, en lugar de sustituirlo[^5]. En julio de 2026, Red.es abrió además una consulta preliminar al mercado para planificar una renovación más amplia de la electrónica de red de RedIRIS[^5]. A la fecha de este análisis no hay confirmación pública de que dicha renovación vaya a excluir a proveedores chinos; la cuestión permanece abierta y debe tratarse como tal, sin anticipar un desenlace que las fuentes disponibles no confirman.
+
+### 2.4. La naturaleza de los equipos: distinción por contrato
+
+Conviene, a la vista de lo anterior, no tratar "Huawei OceanStor" como una familia homogénea. El contrato SITEL emplea la serie **OceanStor 6800V**, equipos de almacenamiento híbrido de alto rendimiento orientados a bases de datos OLTP/OLAP de gran escala[^8]. El contrato de la Seguridad Social emplea **OceanStor Pacific** (almacenamiento distribuido de gran capacidad) y **OceanStor Dorado 8000** (almacenamiento *all-flash* de gama alta, con protección multicapa frente a *ransomware*)[^3] [^9]. Esta distinción no es meramente técnica: los niveles de riesgo, las certificaciones aplicables y el tipo de dato almacenado difieren entre un contrato y otro, por lo que un análisis de riesgos que los trate como una unidad indiferenciada corre el riesgo de sobre- o infraestimar la exposición real en cada caso.
+
+## 3. Marco regulatorio aplicable
+
+### 3.1. Protección de datos personales: RGPD y LOPDGDD
+
+El Reglamento (UE) 2016/679 (RGPD)[^10] constituye el pilar del régimen de protección de datos en la Unión. Su artículo 4 define los "datos personales" como toda información sobre una persona física identificada o identificable; el artículo 5 establece los principios de licitud, minimización, exactitud, limitación del plazo de conservación, integridad, confidencialidad y responsabilidad proactiva; y el artículo 32 impone al responsable del tratamiento la obligación de aplicar medidas técnicas y organizativas adecuadas al riesgo. El RGPD se complementa en España con la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)[^11].
+
+### 3.2. La Directiva LED y su transposición: Ley Orgánica 7/2021
+
+El tratamiento de datos con fines de prevención, investigación o enjuiciamiento de infracciones penales se rige por un régimen específico: la Directiva (UE) 2016/680 (Directiva LED)[^12], transpuesta en España mediante la **Ley Orgánica 7/2021, de 26 de mayo**[^13], cuyo artículo 8 exige al responsable del tratamiento medidas técnicas y organizativas adecuadas al riesgo. El contrato SITEL se inscribe plenamente en el ámbito de esta ley.
+
+### 3.3. El Esquema Nacional de Seguridad
+
+El **Esquema Nacional de Seguridad (ENS)**, regulado por el Real Decreto 311/2022, de 3 de mayo[^14] [^15], establece los principios y requisitos de seguridad de la información en el sector público, con tres niveles —bajo, medio y alto— en función del impacto de un eventual fallo de seguridad. La información de las interceptaciones judiciales, por su naturaleza, debería situarse previsiblemente en el nivel más exigente. El Ministerio del Interior sostiene que el contrato cumple los niveles del ENS conforme a autoridades de certificación independientes[^16], si bien no ha identificado públicamente cuáles son esas autoridades ni ha publicado la certificación específica de los equipos empleados en SITEL. Huawei Cloud ha obtenido certificación ENS para determinados servicios en la nube[^14], pero esa certificación de plataforma no equivale a una auditoría de la configuración concreta desplegada por el Ministerio.
+
+### 3.4. La contratación pública: Ley 9/2017 (LCSP)
+
+La contratación de infraestructura tecnológica se rige por la **Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público**[^17], que transpone las Directivas 2014/23/UE y 2014/24/UE. La LCSP no prohíbe expresamente contratar con proveedores de determinada nacionalidad o calificados como "de alto riesgo", pero los principios de eficiencia y de garantía de la seguridad de la información obligan a los órganos de contratación a evaluar los riesgos asociados, en particular cuando se trata de infraestructuras críticas.
+
+## 4. El posicionamiento de las instituciones europeas
+
+### 4.1. La calificación de Huawei como "proveedor de alto riesgo"
+
+La calificación de Huawei como "proveedor de alto riesgo" se formaliza en la **Comunicación de la Comisión sobre la aplicación del conjunto de instrumentos de ciberseguridad 5G**, de 15 de junio de 2023[^7]. La Comisión concluyó que "los proveedores de 5G presentan claras diferencias... en lo que se refiere a su probabilidad de verse influidos por terceros países" con leyes de seguridad que constituyen "un riesgo potencial para la seguridad de la Unión", y consideró que las decisiones de los Estados miembros para restringir o excluir a Huawei y ZTE "están justificadas y cumplen el conjunto de instrumentos 5G"[^7].
+
+### 4.2. La pregunta parlamentaria E-003060/2025 y la respuesta de Virkkunen
+
+La controversia sobre el contrato SITEL llegó formalmente al Parlamento Europeo a través de la **pregunta escrita E-003060/2025**, registrada el 23 de julio de 2025 por el eurodiputado **Jorge Buxadé Villalba** (Patriots for Europe/Vox), quien alertó de que el Gobierno español había contratado a Huawei —con vínculos con el aparato de inteligencia chino— para el almacenamiento de las escuchas del sistema SITEL, en contradicción con el conjunto de instrumentos 5G y la Directiva NIS2[^19].
+
+La respuesta, dada por la vicepresidenta ejecutiva de la Comisión para la Soberanía Tecnológica, la Seguridad y la Democracia, **Henna Virkkunen**, el 17 de septiembre de 2025, recuerda que la Comunicación de 15 de junio de 2023 evaluó que Huawei (y ZTE) presentan "riesgos materialmente más altos que otros proveedores de 5G", y añade que "el contrato celebrado por el Ministerio del Interior de España con Huawei puede crear potencialmente una dependencia de un proveedor de alto riesgo en un sector crítico y sensible que aumentaría el riesgo de injerencia extranjera"[^19]. Esta frase ha sido reproducida por numerosos medios de comunicación.
+
+De forma paralela, la vicepresidenta del Grupo Popular Europeo, **Dolors Montserrat**, trasladó por su cuenta a la Comisión Europea y al Servicio Europeo de Acción Exterior, en agosto de 2025, una solicitud para que se evaluaran las implicaciones de seguridad del contrato, advirtiendo del riesgo de "pérdida de confianza por parte de socios estratégicos como Estados Unidos o Reino Unido"[^19bis]. Se trata de una iniciativa parlamentaria distinta de la de Buxadé Villalba, y conviene no atribuir a Montserrat el número de expediente ni el texto literal de la pregunta E-003060/2025.
+
+### 4.3. La aplicación de la EU 5G Toolbox y el Cybersecurity Act 2 (CSA2)
+
+El conjunto de instrumentos de ciberseguridad 5G (5G Toolbox), de 2020, es un marco voluntario. La Comisión Europea presentó el **20 de enero de 2026** una propuesta de Reglamento —conocida como **Cybersecurity Act 2 (CSA2)**— que sustituiría el Reglamento (UE) 2019/881 e introduciría el primer marco horizontal de la Unión para la seguridad de la cadena de suministro TIC, con capacidad de la Comisión para designar activos TIC clave, imponer medidas de mitigación y, en su caso, restringir a proveedores de alto riesgo en dieciocho sectores críticos[^20]. La propuesta se encuentra en fase de negociación en el procedimiento legislativo ordinario, por lo que su alcance final —incluida la eventual aplicación a infraestructuras de almacenamiento de datos sensibles como las aquí analizadas— aún no está cerrado.
+
+En una reunión de intercambio de opiniones celebrada el 23 de febrero de 2026 en la Comisión de Libertades Civiles, Justicia y Asuntos de Interior (LIBE) del Parlamento Europeo, la Directora General Adjunta de la DG CONNECT, **Despina Spanou**, subrayó que la Unión ha desarrollado uno de los marcos de ciberseguridad más avanzados, "incluyendo la actualizada Directiva NIS2 y el conjunto de instrumentos 5G"[^18].
+
+## 5. La posición de Estados Unidos y sus implicaciones bilaterales
+
+### 5.1. La carta de los presidentes de los comités de inteligencia del Congreso
+
+El **16 de julio de 2025**, el senador **Tom Cotton**, presidente del Comité Selecto de Inteligencia del Senado, y el representante **Rick Crawford**, presidente del Comité Selecto Permanente de Inteligencia de la Cámara de Representantes, remitieron una carta a la Directora de Inteligencia Nacional, **Tulsi Gabbard**[^21]. El texto —hecho público por la propia oficina del senador Cotton— afirma: "Le escribimos para instarla a revisar los acuerdos de intercambio de inteligencia con el Gobierno de España, a fin de garantizar que cualquier información compartida con los servicios de inteligencia, defensa y seguridad del Estado españoles no revele secretos de seguridad nacional de Estados Unidos al Partido Comunista Chino (PCCh)"[^21].
+
+Los congresistas fundamentan la solicitud en el contrato de 12,3 millones de euros para servidores y servicios de consultoría de SITEL, y advierten de que "Huawei tiene profundos vínculos con el PCCh y está sujeta a las leyes de Inteligencia Nacional y de Seguridad de los Datos de China, las cuales obligan a Huawei a proporcionar al PCCh acceso a cualquier información que dicho partido considere necesaria"[^21], concluyendo que "Huawei y el PCCh podrían tener acceso encubierto al sistema de interceptación legal de una nación aliada de la OTAN"[^21]. La carta recomienda que, hasta que España revierta esta situación, la información compartida con el Gobierno español sea redactada de forma que excluya datos sensibles para Estados Unidos[^21].
+
+### 5.2. La Entity List y el marco legal estadounidense
+
+Huawei y sesenta y ocho filiales no estadounidenses fueron añadidas a la **Entity List** del Departamento de Comercio con efectos desde el **16 de mayo de 2019**, mediante norma publicada en el *Federal Register* el **21 de mayo de 2019** (84 FR 22961)[^6]. Una norma posterior, publicada el 21 de agosto de 2019 (84 FR 43493), añadió cuarenta y seis filiales adicionales[^6bis]. La inclusión en la Entity List, gestionada por la Oficina de Industria y Seguridad (BIS), exige licencia previa del Gobierno estadounidense para exportar o transferir a Huawei componentes y tecnología sujetos a las regulaciones de exportación (EAR).
+
+### 5.3. La investigación de la Directora de Inteligencia Nacional y el ultimátum
+
+En agosto de 2025, la directora Gabbard abrió una investigación formal sobre los contratos españoles con Huawei y otorgó a España un plazo hasta el **31 de agosto de 2025** para revertir la adjudicación, bajo amenaza de una reducción sustancial del intercambio de inteligencia con España[^22]. Congresistas de la Cámara de Representantes remitieron además, el 8 de agosto de 2025, una carta al secretario de Comercio solicitando una investigación formal sobre la decisión española[^22bis]. La presencia de las bases de Rota (Cádiz) y Morón (Sevilla) añade una dimensión operativa directa a estas preocupaciones.
+
+## 6. La respuesta del Gobierno español
+
+### 6.1. El argumento del sistema estanco
+
+El eje central de la defensa gubernamental ha sido sostener que los sistemas contratados operan como un entorno cerrado sin conexión exterior. El ministro del Interior, **Fernando Grande-Marlaska**, ha reiterado en diversas comparecencias parlamentarias que "los contratos con Huawei se limitan exclusivamente a lo que sería el establecimiento, el almacenamiento o el alquiler de un armario sin conexión ni contacto, es decir, no hay ni gestión ni disposición de ninguno de los datos"[^23], remitiéndose a la revisión previa del Centro Criptológico Nacional, adscrito al CNI.
+
+### 6.2. Compra de material frente a gestión de información
+
+El Gobierno insiste en distinguir entre la adquisición de hardware —de la que sería responsable Huawei— y la gestión de los datos, que corresponde en exclusiva a la Policía Nacional y la Guardia Civil, empleando para ello la imagen del "armario" ya citada[^23]. Esta distinción ha sido cuestionada por la oposición, que sostiene que el propio fabricante del hardware puede resultar relevante para la seguridad del sistema con independencia de quién gestione los datos en él almacenados[^23].
+
+### 6.3. La continuidad de contratos y la comparación con otros países europeos
+
+El Ministerio ha señalado en diversas comparecencias que el suministro de material Huawei a las infraestructuras policiales se remonta a años anteriores a la actual legislatura —las cifras concretas varían según la fuente entre 2011 y 2012— y que otros países europeos emplean asimismo tecnología Huawei para funciones de almacenamiento[^23].
+
+### 6.4. El silencio del Centro Nacional de Inteligencia
+
+El Centro Nacional de Inteligencia no se ha pronunciado públicamente sobre el contrato SITEL, si bien fuentes citadas por *El País* apuntan a que el servicio de inteligencia no emplea tecnología Huawei desde hace años[^1]. Según ese mismo diario, fuentes conocedoras de las conversaciones diplomáticas trasladan que las autoridades estadounidenses consideran la presencia de Huawei una "línea roja"[^1].
+
+## 7. Análisis crítico de los riesgos y lagunas
+
+### 7.1. Riesgos técnicos
+
+En materia de **confidencialidad**, el argumento gubernamental del "armario sin conexión" no aborda dos cuestiones de primer orden. Primero, la Ley de Inteligencia Nacional china, vigente desde 2017, exige a empresas como Huawei cooperar con los servicios de inteligencia del Estado cuando así se les requiera[^25], lo que plantea un riesgo estructural con independencia de la topología de red concreta. Segundo, distintos organismos europeos de ciberseguridad han documentado de forma recurrente vulnerabilidades en equipos de red y almacenamiento Huawei a lo largo de los últimos años[^24], sin que conste una auditoría independiente y publicada de la configuración concreta desplegada en SITEL; la existencia de un entorno "estanco" no excluye por sí sola la posibilidad de que el propio fabricante haya podido incorporar, por diseño o por exigencia legal, mecanismos de acceso no documentados.
+
+En materia de **integridad**, la documentación pública no especifica qué medidas concretas de verificación independiente se han aplicado a los equipos del Ministerio del Interior. En materia de **disponibilidad**, la dependencia de un proveedor único para infraestructura crítica genera un riesgo de concentración que el propio ENS exige evaluar y mitigar[^15].
+
+### 7.2. Riesgos jurídicos
+
+El artículo 32 RGPD no prohíbe contratar con un proveedor calificado de "alto riesgo", pero impone al responsable una carga probatoria reforzada para acreditar que las medidas de seguridad son adecuadas al riesgo elevado[^10]. El Ministerio del Interior no ha hecho públicos los análisis de riesgo ni las evaluaciones de impacto que, en su caso, respaldarían la elección de Huawei. En el ámbito de la Directiva LED y la Ley Orgánica 7/2021, la advertencia de la Comisión Europea sobre el riesgo de "injerencia extranjera"[^19] no equivale a una declaración formal de incumplimiento, pero sí constituye un indicio institucional de que el contrato presenta riesgos pendientes de mitigación. Respecto al ENS, la ausencia de identificación pública de la autoridad certificadora y de un pronunciamiento del CNI constituye una laguna de transparencia relevante para cualquier escrutinio posterior.
+
+### 7.3. Riesgos geopolíticos
+
+El riesgo más inmediato es la posible limitación del intercambio de inteligencia entre España y Estados Unidos, expresamente contemplada en la carta Cotton-Crawford[^21] y materializada en el ultimátum de la directora Gabbard[^22]. Un segundo riesgo es el "efecto contagio" sobre otros socios de la OTAN, que podrían reconsiderar el volumen y la naturaleza de la información compartida con España. Un tercer riesgo, de naturaleza más estructural, es la dependencia tecnológica identificada en el contrato de la Seguridad Social bajo la forma de *vendor lock-in*[^3].
+
+### 7.4. Lagunas documentales
+
+No se han localizado públicamente: (i) el expediente de contratación específico del almacenamiento del DNI electrónico, con su importe y fecha de adjudicación exactos; (ii) los informes técnicos que sustentaron la elección de Huawei para SITEL; (iii) las certificaciones ENS específicas de los equipos empleados; (iv) un pronunciamiento público del CNI; y (v) un análisis de impacto relativo a la protección de datos referido a estos contratos.
+
+## 8. Conclusiones y perspectivas
+
+### 8.1. Síntesis
+
+Se ha documentado con solidez el contrato SITEL (12,3 millones de euros, servidores OceanStor 6800V) y el contrato de la Seguridad Social (160,9 millones de euros, OceanStor Pacific y Dorado 8000). La evolución de RedIRIS —cancelación en agosto de 2025, contrato de mantenimiento en 2026 que aparentemente conserva el hardware Huawei existente, y consulta preliminar de julio de 2026 de desenlace todavía abierto— desaconseja dar por cerrada la retirada de Huawei de esta infraestructura. La afirmación, contenida en versiones previas de análisis sobre este asunto, de que España "excluyó" a Huawei de RedIRIS en julio de 2026 no cuenta con respaldo documental suficiente y debe manejarse, cuando menos, con reserva.
+
+### 8.2. Valoración de la posición española a la luz del Derecho europeo
+
+La **fortaleza** de la posición española reside en que, formalmente, ninguna norma de la Unión prohíbe de forma expresa contratar con proveedores de determinada nacionalidad; el RGPD y la Directiva LED imponen obligaciones de seguridad adecuadas al riesgo, no un veto *per se*. La **debilidad** reside en la falta de transparencia: la ausencia de análisis de riesgo públicos, de certificaciones identificadas y de un pronunciamiento del CNI dificulta verificar el cumplimiento efectivo de esas obligaciones reforzadas. La tramitación del CSA2 añade, además, un elemento de incertidumbre regulatoria a medio plazo que las autoridades españolas tendrán que sopesar en sus próximas decisiones de contratación.
+
+### 8.3. Escenarios futuros
+
+Pueden plantearse, sin pretensión de exhaustividad, cuatro escenarios no excluyentes entre sí: (1) mantenimiento del *statu quo* con medidas adicionales de transparencia; (2) reducción progresiva y selectiva de la dependencia de Huawei, más plausible en RedIRIS que en la Seguridad Social por el fenómeno de *lock-in* ya descrito; (3) adaptación forzada al nuevo marco del CSA2 una vez concluya su tramitación; y (4) deterioro adicional de la cooperación de inteligencia con Estados Unidos si los contratos se mantienen sin cambios sustantivos.
+
+### 8.4. Consideración final
+
+La controversia no admite una respuesta binaria. El Gobierno ha defendido la seguridad de los contratos con argumentos técnicos y formales que no son jurídicamente descartables por sí mismos, pero la falta de transparencia y la ausencia de informes públicos del CNI dejan sin despejar interrogantes que la Comisión Europea y el Congreso de Estados Unidos han planteado de forma explícita. La cuestión relevante para los próximos meses no es tanto si España reducirá su dependencia de proveedores de alto riesgo en infraestructuras sensibles, sino en qué plazo y bajo qué estándar de verificación independiente lo hará.
+
+A la vista de las lagunas identificadas en la Sección 7.4, tres medidas parecen exigibles con independencia de qué escenario se materialice: (i) la publicación, siquiera en versión no clasificada, del informe de certificación ENS específico de los equipos empleados en SITEL, y no solo de la certificación genérica de la plataforma; (ii) un pronunciamiento expreso del Centro Nacional de Inteligencia sobre el nivel de riesgo del contrato, actualmente ausente del debate público pese a ser el organismo con competencia técnica para valorarlo; y (iii) la incorporación, en los próximos pliegos de contratación de infraestructura crítica, de cláusulas de auditabilidad independiente periódica que no dependan exclusivamente de la certificación aportada por el propio fabricante. Ninguna de estas tres medidas exige una decisión política sobre la continuidad o no de Huawei como proveedor; todas ellas son exigibles ya, dentro del marco jurídico vigente, como estándar mínimo de diligencia debida.
+
+---
+
+## Notas y referencias
+
+[^1]: González, Miguel. "Washington transmitió su malestar a España por el contrato de Interior con Huawei". *El País*, 6 de agosto de 2025.
+
+[^2]: Congreso de los Diputados. Pregunta al Gobierno con respuesta escrita 184/026646, sobre la adjudicación por el Ministerio del Interior de un contrato de 12,3 millones de euros a la filial española de Huawei para la gestión de servidores del sistema SITEL. *Boletín Oficial de las Cortes Generales*, Congreso de los Diputados, serie D, 2025.
+
+[^3]: "La Seguridad Social vuelve a confiar en Huawei para la gestión de sus datos más críticos". *El País/Cinco Días*, 24 de junio de 2026.
+
+[^4]: "El Gobierno cancela un contrato con Huawei para reforzar la red RedIRIS por motivos de estrategia digital y autonomía estratégica". *El Independiente* / *El Español*, 29 de agosto-5 de septiembre de 2025.
+
+[^5]: "El Gobierno reactiva un contrato de mantenimiento con equipamiento Huawei para RedIRIS"; "El Gobierno lanza una consulta preliminar para la renovación de la electrónica de RedIRIS". *Vozpópuli*, 2 de junio de 2026; *El País*, 22 de julio de 2026.
+
+[^6]: Federal Register. "Addition of Entities to the Entity List". Vol. 84, No. 98, 21 de mayo de 2019, 84 FR 22961 (efectos desde el 16 de mayo de 2019).
+
+[^6bis]: Federal Register. "Addition of Certain Entities to the Entity List and Revision of Entries on the Entity List". Vol. 84, No. 162, 21 de agosto de 2019, 84 FR 43493.
+
+[^7]: Comisión Europea. "Comunicación de la Comisión sobre la aplicación del conjunto de instrumentos de ciberseguridad 5G". Bruselas, 15 de junio de 2023.
+
+[^8]: Huawei Enterprise. "OceanStor 6800 V5/6800V Hybrid Flash Storage". Documentación técnica del producto, *e.huawei.com*.
+
+[^9]: Huawei Enterprise. "OceanStor Dorado 8000/18000 All-Flash Storage" y "OceanStor Pacific Series". Fichas técnicas, *e.huawei.com*.
+
+[^10]: Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (RGPD).
+
+[^11]: Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
+
+[^12]: Directiva (UE) 2016/680 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (Directiva LED).
+
+[^13]: Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales.
+
+[^14]: Huawei Cloud. "Certificación del Esquema Nacional de Seguridad". *huawei.com*.
+
+[^15]: Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad. *Boletín Oficial del Estado*, núm. 106, de 4 de mayo de 2022.
+
+[^16]: Ministerio del Interior. Declaraciones oficiales, julio-agosto de 2025.
+
+[^17]: Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público.
+
+[^18]: Parlamento Europeo, Comisión LIBE. Intercambio de opiniones sobre ciberseguridad con la DG CONNECT, 23 de febrero de 2026.
+
+[^19]: Parlamento Europeo. Pregunta escrita E-003060/2025, Jorge Buxadé Villalba (Patriots for Europe), 23 de julio de 2025, y respuesta de la vicepresidenta ejecutiva Henna Virkkunen en nombre de la Comisión Europea, 17 de septiembre de 2025.
+
+[^19bis]: "El PP pide a Bruselas que evalúe las consecuencias de seguridad derivadas de ceder a Huawei información sensible". Declaraciones de Dolors Montserrat, agosto de 2025.
+
+[^20]: Comisión Europea. Propuesta de Reglamento del Parlamento Europeo y del Consejo relativo a ENISA, el marco europeo de certificación de ciberseguridad y la seguridad de la cadena de suministro TIC ("Cybersecurity Act 2"), 20 de enero de 2026, 2026/0011(COD).
+
+[^21]: Cotton, Tom y Crawford, Rick. Carta a la Directora de Inteligencia Nacional, Tulsi Gabbard. 16 de julio de 2025.
+
+[^22]: "Estados Unidos da un ultimátum a España: plazo hasta el 31 de agosto para rescindir los contratos con Huawei". *Infobae* / *El Debate*, agosto de 2025.
+
+[^22bis]: Bilirakis, Gus y Hudson, Richard. Carta al secretario de Comercio, Howard Lutnick, solicitando investigación sobre el contrato español con Huawei. 8 de agosto de 2025.
+
+[^23]: Congreso de los Diputados y Senado. Sesiones de control al Gobierno. Intervenciones del ministro del Interior, Fernando Grande-Marlaska, julio-septiembre de 2025.
+
+[^24]: Avisos de vulnerabilidad sobre equipos de red y almacenamiento Huawei publicados por organismos europeos de ciberseguridad, 2023-2025; referencia genérica al patrón de hallazgos del sector, no a un informe específico sobre los equipos del contrato SITEL, que no ha sido auditado públicamente.
+
+[^25]: Ley de Inteligencia Nacional de la República Popular China, vigente desde 2017, art. 7.

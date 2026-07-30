@@ -1,0 +1,167 @@
+---
+title: "BoligPortal v. ReData (Denmark, 2025): API Scraping and Machine-Readable Opt-Out as the Frontier of Legitimate Text and Data Mining"
+description: "IRAC analysis of the Danish Sø- og Handelsretten ruling of October 22, 2025 (BS-42485/2025-SHR): the first post-DSM European ruling defining the scope of the sui generis database right against API scraping and requiring machine-readable opt-out to block commercial text and data mining."
+slug: "boligportal-redata-api-scraping-database-ai-denmark-2025"
+date: "2026-03-04"
+lastModified: "2026-03-04"
+readingTime: 17
+category: "AI Jurisprudence"
+tags:
+  [
+    "ai database scraping",
+    "text and data mining dsm directive",
+    "sui generis database right",
+    "machine readable opt-out scraping",
+    "api scraping european law",
+    "BoligPortal ReData Denmark",
+    "Database Directive 96/9/EC",
+    "DSM Directive Article 4 text mining",
+    "robots.txt opt-out copyright",
+    "intellectual property scraping europe"
+  ]
+authors:
+  - "Derecho Artificial"
+schema:
+  type: "Article"
+  headline: "BoligPortal v. ReData (2025): API Scraping and Opt-Out in European Text and Data Mining"
+  keywords: "api scraping sui generis right, text data mining dsm directive opt-out, BoligPortal ReData Denmark 2025, database scraping europe, robots.txt machine readable opt-out"
+canonical: "https://derechoartificial.es/jurisprudencia-ia/boligportal-redata-scraping-api-bases-datos-ia-dinamarca-2025"
+---
+
+# *BoligPortal v. ReData* (Denmark, 2025): API Scraping and *Machine-Readable Opt-Out* as the Frontier of *Legitimate Text and Data Mining*
+On October 22, 2025, the *Sø- og Handelsretten*—the Danish Maritime and Commercial Court—issued a preliminary injunction in *BoligPortal A/S v. ReData A/S* (case BS-42485/2025-SHR) that is set to become essential reading for any European company scraping data from web portals or operating business models based on automated collection of third-party information.
+The case combines three of the most active tensions in digital intellectual property law: the scope of the sui generis database right under Directive 96/9/EC, the new text and data mining (TDM) exception under Article 4 of Directive (EU) 2019/790 (DSM Directive), and the question of whether a privacy policy published in HTML format in a website footer constitutes an "opt-out in an appropriate manner" that blocks that exception. The Danish court answers all three questions affirmatively, with consequences extending beyond the real estate data market where the conflict arose.
+## I. Facts and Procedure
+### 1.1 The Parties and Their Business Models
+**BoligPortal A/S** is Denmark's largest residential rental listing platform, with between 15,000 and 25,000 active daily listings. Founded in 2002, it is a subsidiary of the listed group North Media A/S and achieved 2024 revenue of 111 million Danish kroner (DKK) and EBITDA of 36 million DKK. Beyond the rental intermediary platform, BoligPortal operates a service called **Data Insights**, which sells systematized rental data to real estate investors, banks, public authorities, and other professional actors. It is precisely this segment that is the economic core of the conflict.
+**ReData A/S**, incorporated in August 2021, operates a platform—**OneDoor**—that aggregates transactional and rental data from the real estate market for professional investors. Its Premium package includes an "extensive rental database." In 2024, it achieved gross revenue of 1.6 million DKK with pre-tax losses of 1.2 million DKK. ReData admitted to scraping BoligPortal's API daily since January 2023.
+The conflict emerged when BoligPortal's sales director received an email from PwC informing him that he would not need Data Insights services because ReData was already supplying comparable data at a lower price. BoligPortal obtained through another channel an SMS in which ReData was promoting its product to a prospective client indicating that its "rental data contains information from a long series of sources, including quite a bit of information from Boligportalen." To verify the appropriation, BoligPortal created twelve listings with fictitious data that subsequently appeared in full in OneDoor.
+### 1.2 The Eight Data Points Extracted
+ReData confirmed in writing on July 3, 2025, that it had extracted the following eight fields from BoligPortal's API:
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Field</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow><TableCell>Location Coordinates (lat/long)</TableCell><TableCell>Geolocation coordinates</TableCell></TableRow>
+    <TableRow><TableCell>Offer Rent</TableCell><TableCell>Offer rent</TableCell></TableRow>
+    <TableRow><TableCell>Listing Date</TableCell><TableCell>Publication date of the listing</TableCell></TableRow>
+    <TableRow><TableCell>Property Area</TableCell><TableCell>Property size</TableCell></TableRow>
+    <TableRow><TableCell>Floor</TableCell><TableCell>Floor level</TableCell></TableRow>
+    <TableRow><TableCell>Number of Rooms</TableCell><TableCell>Number of rooms</TableCell></TableRow>
+    <TableRow><TableCell>Energy Label</TableCell><TableCell>Energy certificate</TableCell></TableRow>
+    <TableRow><TableCell>Type</TableCell><TableCell>Property type</TableCell></TableRow>
+  </TableBody>
+</Table>
+ReData extracted this data directly from BoligPortal's **API**—not from its front end visible to users—using content accessible by pressing F12 in the browser (page source code). The API was open: it required no password or access key.
+### 1.3 BoligPortal's Opt-Out
+BoligPortal maintains a data and privacy policy available through a link in the footer of its homepage, in HTML format. The current version was updated in August 2024 by the company's in-house legal counsel and includes the following clause:
+> "Any automated, systematic and/or analytical use, download, reuse, extraction or similar procedure of the data and materials available on the aforementioned domains for own purposes is prohibited, unless the third party concludes a specific written agreement with BoligPortal A/S."
+BoligPortal had not configured its `robots.txt` file to block scraping bots—a deliberate decision motivated by its need to be indexed by search engines—and had not included warnings in the API itself. The CEO declared complete ignorance of what a `robots.txt` file was before the legal proceedings.
+### 1.4 The Preliminary Injunction Proceedings
+BoligPortal filed an application for interim measures on July 23, 2025, with the *Sø- og Handelsretten* seeking: (1) prohibition of scraping of the website and API; (2) prohibition of publishing the extracted data; (3) order to delete all data already collected.
+ReData submitted a binding procedural declaration on August 29, 2025, committing to cease scraping but refusing to delete already stored data. The court issued its ruling on October 22, 2025.
+## II. IRAC Analysis
+### 2.1 Issue — Principal Legal Questions
+The ruling raises four legal issues that the court addresses sequentially:
+**Issue 1 (principal):** Does the content of boligportal.dk constitute a database protected by the sui generis right under Article 71 of the *Ophavsretsloven* (Danish Copyright Act), which implements Article 7 of Directive 96/9/EC?
+**Issue 2:** Has BoligPortal made an "opt-out in an appropriate manner" (*passende vis*) that excludes the text and data mining exception under Article 11b of the *Ophavsretsloven*, which implements Article 4 of the DSM Directive?
+**Issue 3:** Does the daily systematic scraping of eight data fields from the API infringe the sui generis extraction right, considered qualitatively?
+**Issue 4:** Does ReData's conduct violate the prohibition on unfair commercial practices under Article 3 of the *Markedsføringsloven* (Marketing Practices Act)?
+### 2.2 Rule — Applicable Legal Framework
+#### 2.2.1 Sui Generis Database Right
+Article 71(1) of the *Ophavsretsloven* implements Article 7.1 of European Parliament and Council Directive 96/9/EC of March 11, 1996, on the legal protection of databases. The provision confers on the producer of a database the exclusive right to authorize or prohibit the extraction and re-utilization of the whole or a substantial part of the content, when the obtaining, verification, or presentation of that content has involved a **substantial investment**, evaluated qualitatively or quantitatively.
+Recital 40 of the preamble specifies that the investment may consist of the application of resources and/or the employment of time, effort, and energy. Recital 39 clarifies that the purpose is to protect the producer against the misappropriation of the results of the economic and professional investment devoted to obtaining and assembling the content. Article 7.5 of the Directive also prohibits repeated and systematic extractions of non-substantial parts of the content when they are equivalent to acts conflicting with the normal exploitation of the database or unjustifiably prejudicing the legitimate interests of the producer.
+The CJEU has precisely delimited the concept of "substantial investment" in two rulings that the Danish court itself cites: *The British Horseracing Board Ltd. and others v. William Hill Organization Ltd.* (C-203/02, November 9, 2004) and *Football Dataco Ltd. and others v. Yahoo! UK Ltd. and others* (C-604/10, March 1, 2012). Both rulings establish that the relevant investment is that aimed at **obtaining, verifying, or presenting** content that is **pre-existing and independent** of the database, not that used in **creating** the data itself. This distinction—investment in creation versus investment in compilation—is the central axis of the debate in the Danish case.
+#### 2.2.2 Text and Data Mining Exception under Article 4 DSM
+Article 4 of Directive (EU) 2019/790 (DSM Directive), implemented in Denmark through Article 11b of the *Ophavsretsloven* (introduced by Act No. 680 of June 6, 2023), establishes a **mandatory** exception to copyright and the sui generis database right for any person with lawful access to a work or performance who wishes to make reproductions and extractions for text and data mining purposes.
+This exception is deactivated when the rights holder has "expressly reserved" the use of the work "in an appropriate manner" (*passende vis*, in the Danish version; "in an appropriate manner" in the Spanish). Article 4.3 of the Directive specifies that, for content made available online, "the appropriate manner may be a machine-readable format, for example in the case of content made available online." Recital 18 of the preamble develops this idea:
+> "With regard to content made available online, only reserving these rights in a machine-readable format should be considered appropriate, including in metadata and in the terms and conditions of a website or service."
+#### 2.2.3 Good Commercial Practices
+Article 3(1) of the Danish *Markedsføringsloven* prohibits acts contrary to good commercial practices that may affect consumers, other market operators, or the general interest.
+### 2.3 Application — Application to the Specific Case
+#### 2.3.1 Is boligportal.dk a Database with Substantial Investment?
+The Danish court addresses in detail ReData's central objection: that BoligPortal's investment is not in the **compilation** of data but in the **creation** of the platform and in the data itself—which are entered by landlords, not by BoligPortal. This distinction, formulated by the CJEU in *British Horseracing Board* to exclude databases whose producer is also the creator of the content, led ReData to argue that BoligPortal had not invested in "indsamle, verificere og præsentere" (obtain, verify, and present) independent data, but only in building the intermediary infrastructure.
+The court rejects this argument by assessing the evidence as a whole. BoligPortal's CEO testified that the company:
+- Invested over 20 million DKK in a new technology platform between 2017 and 2021.
+- Employs 17 software developers plus a product manager.
+- Allocates approximately 2.5 million DKK annually exclusively to **manual and automated validation** of data entered by advertisers: cross-reference with the BBR cadastre, verification calls, legality and price checks. Five full-time employees and twelve students devote half their time to this function.
+- Invests 12-13 million DKK annually in marketing to attract advertisers, from whose activity the database data is derived.
+- Makes approximately 700 annual telephone contacts with customers to ensure correct data entry.
+<Callout type="info">
+**Analytical Key.** The court distinguishes between resources employed in the validation process and those employed in the initial creation of content. Validation—cross-referencing with external registers, verification calls, duplicate detection—is exactly the type of investment that Recital 40 of Directive 96/9/EC describes as protectable: verification of content already obtained. Resources invested in the intermediary platform and in marketing to attract advertisers constitute, in this reading, investment in the "obtaining" and "presentation" of independent data, not in their creation.
+</Callout>
+The court concludes that boligportal.dk constitutes a database protected under Article 71 of the *Ophavsretsloven* and that BoligPortal has exclusive extraction rights over it.
+#### 2.3.2 Does the HTML Privacy Policy Constitute a Valid Opt-Out?
+This is the most legally innovative and debated point of the ruling. ReData argued that BoligPortal's privacy policy, accessible through a link in the website footer in HTML format, does not meet the "machine-readable format" requirement that Article 4.3 of the DSM Directive imposes for online content, and that consequently the TDM exception cannot be deactivated.
+ReData's arguments appeared solid:
+- BoligPortal's API—the specific surface where scraping occurred—included no warning or reference to the privacy policy.
+- BoligPortal's `robots.txt` file blocked no bots or scrapers.
+- ReData was never confronted with the privacy policy before the lawsuit.
+- ReData stated that had it encountered a technical warning, it would have conducted a legal evaluation and stopped the scraping if it proved illegal.
+The Danish court, however, accepts BoligPortal's position with a technical argument that warrants careful examination: the HTML format—in which the privacy policy is written—is unequivocally **machine-readable**. BoligPortal's technical witness testified that "any AI would take a few seconds to find the data and privacy policy of boligportal.dk to answer the question of the extent to which scraping is permitted." ChatGPT itself, he affirmed, accesses that policy through scraping.
+The court accepts this reasoning and **declares that the HTML-format opt-out in the website footer meets the appropriate manner requirement** of Article 11b(2) of the *Ophavsretsloven*, in conformity with Article 4.3 of the DSM Directive and Recital 18 of its preamble.
+<Callout type="warning">
+**Immediate Market Implication.** If Danish doctrine consolidates or is followed by other European courts, any company whose usage policy includes an anti-scraping clause in HTML—an absolutely standard practice—will have a valid opt-out that deactivates the Article 4 DSM TDM exception. The doctrine would transform the mandatory exception of Article 4, designed to balance access and innovation, into a provision easily neutralizable with a simple style clause in the terms and conditions.
+</Callout>
+#### 2.3.3 Does Scraping Eight Fields Constitute Qualitative Extraction of a Substantial Part?
+BoligPortal acknowledged it could not quantify what fraction of its database the data extracted by ReData represented. The court then applied the CJEU's qualitative criterion of "substantial part" developed in *British Horseracing Board* (C-203/02), paragraph 71:
+> "The concept of a substantial part of the contents of a database, taken qualitatively, refers to the importance of the investment in the obtaining, verification, or presentation of the content of the subject of the act of extraction and/or re-utilization, irrespective of whether that subject represents a quantitatively substantial part of the general contents of the protected database. A quantitatively insignificant part of the contents of a database may, in terms of obtaining, verification, and presentation, represent a substantial human, technical, or financial investment."
+The court applies this criterion and concludes that the eight extracted fields—particularly offer rent, geolocation, area, and listing date—are the **central rental data** on which BoligPortal invested substantial resources to obtain, verify, and present. Although they may be a small fraction of total records quantitatively, qualitatively they represent the core of the protectable investment.
+#### 2.3.4 Does Underside Competition Exist under the *Markedsføringsloven*?
+Although ReData argued that the DSM Directive is *lex specialis* that displaces the application of commercial practices law in this area, the court considers both legal bases cumulative. It qualifies ReData as a competitor of BoligPortal in the B2B real estate data segment—both companies sell rental analysis to professional investors—and declares that ReData has practiced **snyltning** (parasitic exploitation or free-riding) on BoligPortal's investment by incorporating its data into OneDoor and marketing it at a lower price. This qualification is aggravated by the fact that ReData explicitly used BoligPortal data provenance as a sales argument to prospective clients.
+### 2.4 Conclusion — Outcome and Scope
+The Danish court issues the following decisions:
+- **Grants provisional prohibitions 1 and 2**: prohibits ReData from continuing or resuming scraping of boligportal.dk and its API, and prohibits making the already extracted data accessible to the public.
+- **Denies the data deletion order (claim 3)**: considers this measure exceeds what is necessary to establish a satisfactory provisional situation within the framework of interim measures.
+- **Awards costs of 100,750 DKK** to ReData (750 DKK court fee and 100,000 DKK attorney fees), with express reference to the matter being covered by the Intellectual Property Rights Enforcement Directive (Directive 2004/48/EC).
+The interim measure does not have suspensive effect on the obligation to file a principal action: BoligPortal had two weeks to file the main lawsuit.
+## III. Three Doctrinal Issues of European Scope
+### 1. HTML as "Machine-Readable Format" for TDM Opt-Out Purposes
+The Danish interpretation of Recital 18 of the DSM Directive is expansive and potentially disruptive of the balance the Directive seeks to achieve. The Recital says the opt-out must be made "in a machine-readable format, including in metadata and in the terms and conditions of a website or service." The reference to "terms and conditions" suggests that the text of general conditions—if processable by software—may be sufficient.
+The Danish court follows this reading and interprets HTML as meeting the requirement because it is readable by any scraping engine. This position is not self-evident: there is a relevant difference between a text being technically accessible to a program and its normative content being **directly executable** by automated extraction systems. A `robots.txt` file or a meta tag like `<meta name="robots" content="noindex">` are processable directives that well-configured bots respect without reading legal text. An HTML privacy policy requires the bot to read, interpret, and apply legal reasoning.
+The issue raises a circularity problem: if the "machine-readable" criterion is satisfied by any HTML text, the Article 4 DSM TDM exception is in the hands of whoever drafts the terms and conditions, which is always the site owner. The European legislator explicitly foresaw `robots.txt` as a technical opt-out mechanism precisely to create an interoperable standard that scraping systems could respect automatically without the need for legal interpretation.
+### 2. Investment in Intermediation Platforms as Investment in the Database
+The second relevant doctrinal point is the relationship between investment in the intermediary platform and investment in the database. ReData correctly invoked CJEU jurisprudence to distinguish between those who invest in creating data—the landlords who posted their listings—and those who invest in compiling it. But the Danish court nuances this argument by recognizing that investment in attracting content creators (marketing to advertisers), in validating what they enter (customer service + register cross-checking), and in presenting it in structured form (technological platform) constitutes investment in the database, even if the primary source of data is a third party.
+This reading expands the perimeter of sui generis protection relative to the stricter CJEU doctrine, according to which only investment in obtaining pre-existing data—not in generating the data itself that is subsequently incorporated into the database—merits protection. But in the case of an intermediary platform, the boundary between "generating data" and "obtaining data generated by third parties" is genuinely diffuse. Resources devoted to ensuring landlords post on BoligPortal and not the competition are, in a sense, resources devoted to obtaining the content.
+### 3. The Relationship Between Article 4 DSM and Contractual Restrictions
+ReData raised an additional defense of notable interest: if BoligPortal has a protected database under Article 71 of the *Ophavsretsloven*, then Article 15 of Directive 96/9/EC applies, which prohibits contractual clauses that exclude the mandatory limitations on the sui generis right. In its interpretation, BoligPortal's opt-out would be null to the extent it seeks to eliminate a legally guaranteed exception.
+The court does not directly respond to this argument. However, it may be observed that Article 4.3 of the DSM Directive—a subsequent and special norm relative to Article 15 of Directive 96/9/EC—expressly designs the opt-out as a tool for the rights holder to reserve the scope covered by the TDM exception. This creates tension between the two European instruments that has not been resolved by either the legislator or the CJEU: the Database Directive in principle prohibits contractual restrictions on mandatory limitations, but the DSM Directive creates a limitation whose own design allows the holder to exclude it through express reservation. The Danish ruling sidesteps this problem by qualifying the opt-out as sufficient without analyzing its compatibility with Article 15 of Directive 96/9/EC.
+<Callout type="info">
+**Relevance for the AI Regulation (EU) 2024/1689.** Article 53 of the AI Regulation, in force since August 2025 for general-purpose model providers, obliges providers to publish a summary of training data used. This summary has the declared purpose of facilitating rights holders' verification of whether their content has been used without authorization. The Danish doctrine—if HTML opt-out is sufficient to block TDM—acquires direct relevance here: AI model providers who scraped content from sites with standard privacy policies may have fallen outside the TDM exception from the moment those sites published their terms of use, without the rights holder adopting any specific technical measure.
+</Callout>
+## IV. Practical Implications for European Operators
+### 4.1 For Online Database Holders
+The Danish ruling strengthens the position of portals and platforms managing large volumes of structured data: the fact that data is entered by users does not per se exclude sui generis protection if the operator invests substantial resources in its obtaining, validation, and presentation. Investments in marketing to attract content creators, in validating entered information, and in presentation technology infrastructure are all potentially computable for purposes of establishing the "substantial investment" under Article 7 of Directive 96/9/EC.
+To activate the TDM opt-out, the Danish ruling suggests that an HTML-accessible usage policy in the site footer may be sufficient in the Danish jurisdiction. However, given the non-binding nature of this ruling for other Member States—and the doubts it raises about the correct interpretation of Recital 18 of the DSM Directive—the most prudent practice is to accumulate several mechanisms: (i) explicit clause in terms of use, (ii) `<meta name="robots">` tags in HTML, and (iii) entries in the `robots.txt` file.
+### 4.2 For TDM and Scraping Operators
+The BoligPortal case demonstrates that operating under the Article 4 DSM TDM exception requires actively verifying whether the rights holder has made an opt-out, even if it does not take the form of a technical directive in `robots.txt` or metadata. ReData's argument—that it was never informed of the opt-out before the lawsuit—was not accepted by the court.
+Additionally, the ruling confirms that systematic daily scraping of data from a direct competitor, aimed at reproducing its data offering at a lower price, may constitute per se an unfair commercial practice under competition law, regardless of the copyright issue. This analysis under commercial practices law operates as a safety net even in cases where sui generis protection might be debatable.
+### 4.3 For Developers of AI Models Trained with Web Scraping
+The reasoning of BoligPortal's technical witness regarding ChatGPT—that it also accesses BoligPortal's privacy policy through scraping—illustrates with stark clarity the position of large language models trained with scraped web data: if the HTML of usage policies is "machine-readable" within the meaning of Article 4.3 DSM, models that crawled sites with anti-scraping clauses may have operated outside the TDM exception from the moment those clauses were published, regardless of whether they were easily omitted in practice by extraction systems.
+## V. Conclusion
+*BoligPortal v. ReData* is not merely a case about Danish real estate data. It is the first European ruling that jointly applies the sui generis database right and the Article 4 DSM TDM exception in an API scraping scenario by a direct competitor, and that rules on what constitutes a technically valid opt-out under the "appropriate manner" standard of Recital 18 of the DSM Directive.
+The Danish court's conclusions are clear on three points: (1) an intermediary platform can be the holder of a sui generis protected database if it invests substantially in validating and presenting content entered by third parties; (2) an HTML privacy policy in the website footer may constitute a valid opt-out that deactivates the TDM exception; and (3) systematic scraping aimed at replicating a competitor's data offering at a lower price is an unfair commercial practice regardless of the intellectual property issue.
+The ruling simultaneously raises three unresolved doctrinal tensions that the CJEU will have to address sooner rather than later: the definition of "machine-readable" in the TDM opt-out, the perimeter of sui generis investment in platforms with third-party-generated data, and the relationship between Article 15 of Directive 96/9/EC and the Article 4.3 DSM opt-out mechanism. Until those answers arrive, the Danish ruling will offer European database operators favorable doctrine they cannot ignore.
+## References
+### European Union Normative Acts and Instruments
+- Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases (Database Directive), OJ L 77, 27.3.1996, arts. 7 and 15; recitals 39, 40 and 42
+- Directive (EU) 2019/790 of the European Parliament and of the Council of 17 April 2019 on copyright and related rights in the Digital Single Market (DSM Directive), OJ L 130, 17.5.2019, arts. 4 and 18; recitals 6 and 18
+- Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (AI Regulation), OJ L 1689, 12.7.2024, art. 53
+- Directive 2004/48/EC of the European Parliament and of the Council of 29 April 2004 on the enforcement of intellectual property rights (Enforcement Directive), OJ L 195, 2.6.2004
+### Danish Law
+- Consolidation Act on Copyright (*Ophavsretsloven*), § 71 (implementation of Directive 96/9/EC) and § 11b (introduced by Act No. 680 of 6 June 2023, implementation of Article 4 of the DSM Directive)
+- Marketing Practices Act (*Markedsføringsloven*), § 3(1)
+### CJEU Jurisprudence
+- CJEU, Judgment of 9 November 2004, *The British Horseracing Board Ltd. and others v. William Hill Organization Ltd.*, C-203/02, ECLI:EU:C:2004:695, para. 71
+- CJEU, Judgment of 1 March 2012, *Football Dataco Ltd. and others v. Yahoo! UK Ltd. and others*, C-604/10, ECLI:EU:C:2012:115, paras. 38-39
+- CJEU, Judgment of 15 January 2015, *Ryanair Ltd. v. PR Aviation BV*, C-30/14, ECLI:EU:C:2015:10
+### Danish Jurisprudence
+- Sø- og Handelsretten, ruling of 22 October 2025, case BS-42485/2025-SHR, *BoligPortal A/S mod ReData A/S*
+### Academic Doctrine
+- Drexl, Josef et al., "Position Statement of the Max Planck Institute for Innovation and Competition of 26 April 2019 on the Proposed Implementation of Art. 17 Directive 2019/790 in Germany," *Max Planck Institute for Innovation and Competition Research Paper* No. 19-10 (2019)
+- Vanholme, Nathalie and Peeters, Rolf, "The text and data mining exception in the DSM Directive: An analysis of the new regime," *IIC—International Review of Intellectual Property and Competition Law*, vol. 52, 2021, pp. 429-458
+- Bently, Lionel et al., *Intellectual Property Law*, 5th ed., Oxford University Press, Oxford, 2022, ch. 11 (Databases)

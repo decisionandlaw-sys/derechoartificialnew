@@ -1,0 +1,57 @@
+---
+title: "STS 3826/2025: El Estado tendrá que abrir sus algoritmos (pero no como esperabas)"
+description: "Análisis de la sentencia que obliga a auditar el código de BOSCO, el algoritmo del bono social. 1,2M hogares afectados, acceso en sandbox."
+date: "2026-03-16"
+tags: ["STS 3826/2025", "BOSCO", "transparencia algorítmica", "derecho de acceso", "bono social"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "sts-3826-2025-estado-abrir-algoritmos-bosco"
+readingtime: "6 min"
+pdf: "/fuentes/analisis_bosco_def.pdf"
+---
+Siete años. Eso duró el pulso de la Fundación Civio contra el Ministerio para la Transición Ecológica para poder ver el código fuente de BOSCO, el algoritmo que decide quién recibe el bono social eléctrico. Siete años hasta que el Tribunal Supremo, el pasado 11 de septiembre de 2025, dictó la STS 3826/2025 y dijo: el código fuente es información pública. Pero ojo, no significa que vaya a estar mañana en GitHub.
+
+La sentencia construye una solución mucho más matizada —y, me atrevo a decir, inteligente—: acceso condicionado, en un entorno controlado, como si fuera una cámara acorazada digital.
+
+Lo que está en juego no es menor. BOSCO cruza datos de Hacienda, Seguridad Social, discapacidad y violencia de género para determinar si 1,2 millones de hogares vulnerables tienen derecho a un descuento en la factura de la luz. Un error en una línea de código puede dejar a miles de familias sin una ayuda esencial. Y hasta ahora, ese código era una *black box* opaca.
+
+## BOSCO: un algoritmo que decide sobre derechos sin que nadie pueda auditarlo
+
+El sistema no es una simple hoja de cálculo. Es una aplicación que, en tiempo real, consulta bases de datos administrativas y devuelve un veredicto automatizado: “cumple requisitos”, “no cumple” o “datos insuficientes”. Ese veredicto tiene efectos jurídicos inmediatos. Si deniega, el ciudadano recibe una resolución administrativa que, en teoría, puede recurrir.
+
+Pero, ¿cómo recurres algo cuando no sabes si el programa aplicó bien los umbrales de renta o si hubo un error en la lógica que cruza los datos?
+
+El Ministerio, durante años, sostuvo que BOSCO era una mera “herramienta auxiliar” y que bastaba con entregar el análisis funcional y los casos de prueba. El Consejo de Transparencia y el Juzgado Central le dieron la razón. Pero el Supremo, en una *ratio decidendi* que marcará época, dice que no: cuando un sistema automatizado decide sobre derechos sociales, su lógica algorítmica forma parte del contenido esencial del derecho de acceso del artículo 105.b de la Constitución.
+
+## El Supremo contra la "caja negra": ni propiedad intelectual ni seguridad son excusas absolutas
+
+La Administración esgrimió dos argumentos clásicos: la propiedad intelectual del software (art. 14.1.j LTAIBG) y los riesgos de ciberseguridad (art. 14.1.d). El Tribunal no los ignora, pero les aplica un test de proporcionalidad estricta. Ya no vale invocar “posibles vulnerabilidades día cero” de forma genérica. La Administración tiene la carga de probar, de forma concreta, por qué el acceso al código causaría un perjuicio grave y si existen medidas alternativas.
+
+Y aquí viene lo más interesante: el Supremo explora esas alternativas. Propone un acceso parcial al “código decisorio” —es decir, las líneas que implementan las reglas legales—, excluyendo módulos de interfaz o protocolos de cifrado. Y además, sugiere que la entrega se haga en un *sandbox* supervisado por el INCIBE o el CCN-CERT, con acuerdos de confidencialidad. Una suerte de *goldilocks* entre la opacidad total y el *open source* irrestricto.
+
+## La solución Goldilocks: acceso en sandbox, no open source
+
+Lo que más me llama la atención de la sentencia es cómo resuelve la tensión entre transparencia e innovación. No impone la publicación del código en abierto, lo que podría desincentivar la contratación de software privado o exponer vulnerabilidades. Pero tampoco permite que la Administración se escude en derechos de autor para ocultar lo que debería ser auditado.
+
+La solución es quirúrgica: acceso condicionado para quien acredite un interés legítimo —como una fundación dedicada a la transparencia—, en un entorno seguro, con supervisión técnica y confidencialidad. Es un modelo que podría exportarse a otros ámbitos: sanidad, educación, empleo. Y, de hecho, la sentencia ya tiene efectos vinculantes para todos los sistemas automatizados que decidan derechos subjetivos.
+
+## La pregunta que nadie puede evitar
+
+¿Estamos preparados como país para auditar los algoritmos que deciden quién come caliente, quién espera meses por una operación o quién es señalado como posible fraudulento? Porque la STS 3826/2025 abre la puerta a miles de solicitudes. Y no solo eso: plantea la necesidad de contar con auditores técnicos, con infraestructura de *sandbox* nacional y con una nueva regulación que ponga orden.
+
+El informe completo que he preparado profundiza en estas cuestiones. Analiza el iter completo del caso BOSCO, desde la solicitud de Civio en 2018 hasta la sentencia del Supremo. Repasa el derecho comparado europeo —Italia, Francia, Países Bajos, Alemania— y muestra cómo España se sitúa ahora en la vanguardia del equilibrio entre transparencia y protección de la propiedad intelectual.
+
+También incluye una propuesta de ley de transparencia algorítmica y un análisis del impacto en sectores como sanidad, empleo y educación.
+
+> Para entender por qué esta sentencia es un punto de inflexión y qué implica para el futuro del Estado algorítmico, descarga el informe completo en PDF. Encontrarás el texto íntegro con notas, referencias y un test de proporcionalidad aplicable a cualquier sistema público automatizado.
+>
+> [**Descargar análisis completo de la STS 3826/2025**](/fuentes/analisis_bosco_def.pdf)
+
+## Conclusiones clave
+
+- **El código fuente de sistemas automatizados que deciden derechos sociales es información pública** y está protegido por el art. 105.b CE.
+- **Los límites de propiedad intelectual y seguridad deben acreditarse de forma concreta** y superar un test de proporcionalidad estricta (art. 14.2 LTAIBG).
+- **El acceso ha de ser condicionado y parcial** (sandbox + NDA) como regla general, no la excepción.
+- **La STS 3826/2025 tiene efectos vinculantes** para todos los sistemas similares (sanidad, empleo, educación, etc.) y obliga a revisar la contratación pública de software.
+- **España se sitúa como *best practice* europea** al anticipar el AI Act y ofrecer un modelo equilibrado entre transparencia e innovación.

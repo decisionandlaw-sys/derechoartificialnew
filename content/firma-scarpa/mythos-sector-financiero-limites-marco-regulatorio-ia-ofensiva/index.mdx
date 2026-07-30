@@ -1,0 +1,137 @@
+---
+title: "Mythos y la banca: los límites jurídicos del marco de ciberseguridad ante la IA ofensiva"
+description: "Claude Mythos expone las fracturas estructurales de DORA, NIS2 y el AI Act ante una IA que convierte parches en exploits. El análisis de la respuesta supervisora del BCE."
+date: "2026-06-09"
+tags: ["Claude Mythos", "DORA", "NIS2", "AI Act", "BCE supervisión bancaria", "ciberseguridad IA"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "mythos-sector-financiero-limites-marco-regulatorio-ia-ofensiva"
+readingTime: 17
+---
+
+La aparición de Claude Mythos Preview ha desordenado los presupuestos sobre los que descansa el marco europeo de ciberseguridad financiera. No porque sea el primer modelo de inteligencia artificial con capacidades ofensivas, sino porque es el primero distribuido a escala institucional, bajo un programa estructurado de acceso controlado, con el argumento expreso de que solo quien conoce el arma puede defenderse de ella.
+
+Esa lógica, impecable desde la seguridad ofensiva, fractura tres de los pilares sobre los que la Unión Europea ha construido su régimen de resiliencia digital: DORA, NIS2 y el AI Act. El Banco Central Europeo ha respondido con lo que tiene a mano: reuniones con los bancos supervisados y una carta a sus consejeros delegados. La pregunta jurídica relevante no es si esa respuesta es proporcionada, sino si el derecho vigente permite algo más.
+
+## La IA ofensiva como categoría sin encaje normativo preciso
+
+Anthropic ha distribuido Claude Mythos Preview a través del denominado Project Glasswing a ciento cincuenta organizaciones de quince países, entre ellas entidades financieras españolas de primer nivel.
+
+El modelo es capaz de descubrir vulnerabilidades en sistemas complejos a una velocidad y escala cualitativamente superiores a las herramientas previas, y, según la información disponible, puede transformar parches de seguridad en vectores de ataque explotables. Esta última capacidad no tiene precedente en los marcos de amenaza que el legislador europeo tomó como referencia cuando redactó los reglamentos vigentes.
+
+El problema no es que Mythos sea ilegal. Es que no encaja con claridad en ninguna de las categorías que el derecho europeo ha construido para gestionar la IA de alto riesgo o los sistemas de ciberseguridad. El AI Act (Reglamento UE 2024/1689) clasifica los sistemas de IA según su función declarada y su ámbito de despliegue, no según su potencial de uso indebido.
+
+Un sistema que un banco utiliza para auditar su propia infraestructura no es, bajo los criterios del Reglamento, un "sistema de IA de alto riesgo" en el sentido del Anexo III. Y no es una práctica de IA prohibida bajo el artículo 5, cuyo catálogo de prohibiciones está orientado hacia la manipulación de personas, la puntuación social y la identificación biométrica, no hacia herramientas de análisis de vulnerabilidades.
+
+Mythos, distribuido dentro de Project Glasswing a organizaciones que lo utilizan en modo defensivo, no activa ninguna de esas prohibiciones.
+
+Lo que el derecho europeo carece es de una categoría para lo que podría denominarse *sistemas de IA de doble uso ofensivo*: modelos cuya función principal es legítima y cuya capacidad destructiva no reside en la intención del proveedor ni en el uso declarado del receptor, sino en la transferibilidad del conocimiento que generan.
+
+Esta ausencia no es un defecto de redacción: refleja que el legislador europeo diseñó el AI Act para gestionar el riesgo de los sistemas desplegados, no el riesgo emergente de las capacidades que esos sistemas producen cuando actúan como analizadores de infraestructuras críticas.
+
+## DORA y NIS2: el régimen de resiliencia ante un riesgo que no anticipó
+
+El Reglamento DORA (Reglamento UE 2022/2554) entró en aplicación en enero de 2025 con el propósito de unificar los requisitos de resiliencia operativa digital del sector financiero. Su arquitectura regulatoria descansa sobre tres pilares: la gestión del riesgo TIC (artículos 5 a 16), las pruebas de resiliencia operativa (artículos 24 a 27) y la notificación de incidentes (artículos 17 a 23).
+
+El instrumento estrella del tercer pilar es el marco TIBER-EU, que permite simular ataques de amenaza persistente avanzada sobre infraestructuras financieras con red teamers acreditados.
+
+El problema estructural de DORA frente a Mythos es su presupuesto temporal. Las pruebas de penetración y los ejercicios TIBER-EU se realizan en ciclos periódicos, con equipos humanos especializados, sobre vectores de ataque identificados.
+
+Mythos rompe ese presupuesto: un atacante que disponga del modelo puede ejecutar análisis continuos sobre la superficie de ataque de una entidad, identificar vulnerabilidades en tiempo casi real y adaptar el vector de ataque a las mitigaciones implementadas. DORA no prevé ningún mecanismo de respuesta a un riesgo de esa temporalidad.
+
+Sus artículos 13 y 14, que regulan la gestión del riesgo de las TIC de terceros, imponen obligaciones de diligencia debida sobre proveedores críticos, pero no incluyen ningún régimen específico para herramientas de análisis de vulnerabilidades asistidas por IA que el propio tercero distribuye a los competidores de la entidad financiera supervisada.
+
+NIS2 (Directiva UE 2022/2555) añade una capa adicional, pero no resuelve el problema. La directiva clasifica los operadores esenciales e importantes según sectores y exige medidas proporcionales de gestión de riesgos de ciberseguridad. Los bancos significativos supervisados por el BCE son operadores esenciales en el sector bancario.
+
+NIS2 les exige políticas de seguridad de redes y sistemas, gestión de incidentes, continuidad de negocio y seguridad en la cadena de suministro. Sin embargo, su artículo 21, que enumera las medidas de gestión del riesgo, opera sobre una lógica de inventario: identifica categorías de medidas que las entidades deben implementar, no criterios de adaptación continua al ritmo de evolución de la amenaza.
+
+Un banco que cumpla íntegramente NIS2 puede tener, al mismo tiempo, una superficie de ataque analizada por Mythos que ninguna de sus medidas de seguridad actuales es capaz de cubrir.
+
+La fractura no está en el incumplimiento normativo. Está en el desfase entre el ciclo de actualización regulatoria, que opera en años, y el ciclo de evolución de la capacidad ofensiva de un modelo como Mythos, que opera en semanas desde su distribución.
+
+## El AI Act y la paradoja del doble uso
+
+La versión vigente del AI Act no contiene ninguna disposición específica sobre sistemas de IA diseñados para el análisis de ciberseguridad. El considerando 49 del Reglamento menciona que los sistemas de ciberseguridad "no deberían considerarse de alto riesgo si no están destinados a ser utilizados en relación con infraestructuras críticas", lo que constituye una exclusión deliberada del ámbito de regulación intensiva.
+
+El legislador europeo optó por no entrar en ese territorio, presumiblemente para no obstaculizar el desarrollo de herramientas de defensa legítimas.
+
+Esa exclusión era razonable cuando el marco de referencia eran los *vulnerability scanners* y las plataformas de gestión de parches. Resulta insuficiente cuando el sistema analizado puede descubrir vectores de ataque que ningún análisis humano habría identificado y hacerlo a un coste marginal próximo a cero para el atacante.
+
+La paradoja del doble uso de Mythos es precisa: Anthropic lo distribuye para que los bancos entiendan su exposición real y la reduzcan antes de que actores maliciosos lleguen a las mismas conclusiones. Ese argumento es coherente con la lógica del *red teaming* ofensivo.
+
+Pero el efecto sistémico del programa es que ciento cincuenta organizaciones de quince países tienen ahora acceso a un análisis de vulnerabilidades de una profundidad sin precedente, y que ninguno de los marcos normativos europeos contempla qué ocurre cuando ese conocimiento migra, voluntaria o involuntariamente, fuera del perímetro del acceso controlado.
+
+El AI Act, en su artículo 57, prevé espacios controlados de prueba (*regulatory sandboxes*) que permiten a los proveedores desarrollar y validar sistemas innovadores de IA bajo supervisión regulatoria específica. Anthropic no parece haberse acogido a ningún *sandbox* europeo para distribuir Mythos en el marco de Project Glasswing.
+
+La pregunta que el Reglamento no responde es si un proveedor que distribuye un modelo con capacidades ofensivas avanzadas a entidades financieras supervisadas debería estar sujeto a algún tipo de supervisión adicional más allá de la propia del proveedor de servicios TIC bajo DORA.
+
+Hay un argumento para sostener que sí. El artículo 28 del AI Act, relativo a las obligaciones de los distribuidores, establece que quien pone a disposición un sistema de IA en el mercado de la Unión debe garantizar que ese sistema cumple los requisitos aplicables. Si Mythos no es un sistema de alto riesgo en el sentido del Anexo III, sus obligaciones de cumplimiento son mínimas.
+
+Pero la capacidad del modelo para identificar y potencialmente facilitar la explotación de vulnerabilidades en infraestructuras críticas financieras difícilmente encaja en la categoría de "riesgo mínimo" que el Reglamento asocia a los sistemas sin clasificación específica.
+
+La arquitectura del AI Act fue diseñada para un mundo en que la IA representa un riesgo en el despliegue final, no un riesgo en la capacidad que genera durante el proceso de análisis.
+
+## La respuesta supervisora del BCE: arquitectura jurídica y alcance real
+
+El BCE ha reaccionado con los instrumentos que su marco legal le proporciona. En abril de 2026 organizó una reunión con los bancos del Mecanismo Único de Supervisión (MUS) para analizar planes de contingencia en ciberseguridad. Semanas después convocó una segunda reunión sobre resiliencia ante ciberataques.
+
+Ahora prepara una *Dear CEO letter* dirigida a los consejeros delegados de las entidades supervisadas, incluidos los diez bancos españoles bajo supervisión directa, con instrucciones de adoptar medidas proactivas.
+
+La *Dear CEO letter* es un instrumento de *soft supervisory guidance* con una historia específica en el ámbito del MUS. No tiene naturaleza de decisión supervisora individual, ni de recomendación vinculante, ni de instrucción formal con plazo de cumplimiento y consecuencias jurídicas automáticas ante su incumplimiento.
+
+Su efecto jurídico es, en principio, el de una expectativa supervisora formalizada: el banco que la recibe sabe que el BCE la utilizará como referencia de diligencia debida en las próximas revisiones SREP (*Supervisory Review and Evaluation Process*).
+
+Si un banco ignora las medidas solicitadas en la carta y sufre un incidente relacionado con las vulnerabilidades que el BCE había señalado, esa inacción tendrá consecuencias en la evaluación de gobernanza del riesgo y, potencialmente, en los requerimientos de capital adicionales.
+
+Ese mecanismo indirecto no es desdeñable. El BCE puede convertir las expectativas de la carta en criterios formales de evaluación SREP sin necesidad de acto legislativo adicional.
+
+El Reglamento MUS (Reglamento UE 1024/2013) atribuye al BCE competencias de supervisión prudencial sobre las entidades significativas que incluyen la evaluación de los marcos de gobierno interno y la gestión de riesgos, y el riesgo de ciberseguridad ha sido explícitamente incorporado al SREP como dimensión de evaluación desde la revisión de las directrices de la EBA de 2023. Lo que el BCE puede hacer, en términos prácticos, es elevar las expectativas de ciberseguridad derivadas de la carta a criterios de cumplimiento que incidan sobre el ratio de capital.
+
+Lo que el BCE no puede hacer con ese instrumento es mucho más relevante. No puede ordenar a los bancos que adopten ninguna tecnología específica. No puede prohibir a las entidades supervisadas que utilicen Mythos u otras herramientas análogas.
+
+No puede establecer estándares técnicos de ciberseguridad con efecto vinculante general, competencia que corresponde a ENISA en el marco del ENISA Cybersecurity Act (Reglamento UE 2019/881) y a la EBA en coordinación con NIS2.
+
+Y, lo que quizá resulta más significativo, no puede regular la cadena de suministro del modelo: no supervisa a Anthropic ni puede imponer obligaciones directas sobre el programa Project Glasswing como esquema de distribución de capacidades ofensivas a entidades del sector financiero europeo.
+
+La declaración de Frank Elderson en la conferencia de Goldman Sachs es jurídicamente precisa en su formulación: los bancos deben tomar medidas "antes de que estas tecnologías sean utilizadas de forma más generalizada por los ciberdelincuentes".
+
+El BCE reconoce implícitamente que su ventana de actuación es la diferencia temporal entre la distribución controlada dentro de Project Glasswing y la eventual democratización de capacidades equivalentes. Esa ventana existe, pero no se puede cuantificar, y el régimen de cumplimiento de la *Dear CEO letter* no garantiza que los bancos la aprovechen a la velocidad necesaria.
+
+## La insuficiencia del modelo reactivo y una propuesta de reforma normativa
+
+El argumento que Anthropic ha utilizado para justificar Project Glasswing es análogo al argumento que subyace a la vacunación como política sanitaria: exponer a las entidades al conocimiento del riesgo antes de que ese riesgo se materialice de forma no controlada.
+
+Es un argumento con respaldo en la doctrina de seguridad ofensiva, pero traslada al ámbito jurídico una premisa que el derecho europeo no ha validado explícitamente: que la distribución controlada de capacidades ofensivas avanzadas a actores privados es, en sí misma, una medida de reducción del riesgo sistémico.
+
+Esa premisa merece escrutinio doctrinal. El ordenamiento europeo tiene experiencia con dilemas análogos en otros ámbitos: la distribución de información sobre vulnerabilidades de productos farmacéuticos, la divulgación de fallos de seguridad en infraestructuras críticas bajo el régimen de *coordinated vulnerability disclosure* de NIS2 (artículo 12), y la gestión del conocimiento dual en el ámbito de los equipos de ciberrespuesta (CSIRT).
+
+En todos esos contextos, el derecho europeo ha optado por regímenes de acceso controlado con obligaciones de notificación, no por distribución abierta aunque limitada a actores de confianza.
+
+Lo que el marco regulatorio vigente no tiene es un régimen específico para proveedores de IA que distribuyen modelos con capacidades de análisis de infraestructuras críticas. Tres reformas merecen consideración doctrinal.
+
+La primera sería la extensión del régimen de proveedores críticos de TIC bajo DORA a los proveedores de modelos de IA con capacidades de análisis de ciberseguridad. El artículo 31 de DORA prevé la designación de proveedores terceros críticos de TIC que quedan sujetos a supervisión directa por parte de las Autoridades Supervisoras Europeas. Ese régimen se diseñó para proveedores de servicios en la nube e infraestructura de procesamiento.
+
+Extenderlo a proveedores de modelos de IA con capacidades ofensivas avanzadas es jurídicamente posible sin reforma legislativa, mediante el desarrollo reglamentario del artículo 31.3, que atribuye a las ESA competencias para determinar los criterios de designación. Anthropic no sería el único afectado: cualquier proveedor de un modelo con capacidades equivalentes quedaría sujeto a supervisión análoga.
+
+La segunda reforma atañe al régimen de *threat intelligence sharing* de DORA. El artículo 45 del Reglamento prevé el intercambio voluntario de información sobre amenazas cibernéticas entre entidades financieras.
+
+La voluntariedad de ese régimen es coherente con el principio de autonomía empresarial, pero genera un desequilibrio: las entidades con mayores recursos para invertir en análisis de amenazas acumulan ventaja informativa sobre entidades menores que comparten el mismo perímetro de exposición. Un régimen de intercambio obligatorio de información sobre vulnerabilidades identificadas mediante IA, activado cuando el análisis haya sido realizado con herramientas distribuidas bajo acceso controlado institucional, reduciría ese desequilibrio y aumentaría la resiliencia sistémica del sector sin imponer costes desproporcionados a las entidades individuales.
+
+La tercera propuesta es la más estructural. El AI Act debería incorporar, en su próxima revisión, una categoría de *sistemas de IA de alto potencial de doble uso en infraestructuras críticas*.
+
+Esa categoría no implicaría necesariamente la prohibición de los modelos afectados, sino la sujeción de su distribución a un régimen de *sandbox* supervisado, con obligaciones de transparencia hacia las autoridades competentes sobre las vulnerabilidades identificadas, y con la participación de ENISA como receptor de los análisis de exposición producidos por esas herramientas cuando afecten a entidades clasificadas como operadores esenciales bajo NIS2.
+
+El coste administrativo de ese régimen sería significativo, pero no superior al que ya impone DORA a las entidades financieras para el cumplimiento de sus pruebas TIBER-EU.
+
+## La carta del BCE como síntoma
+
+La *Dear CEO letter* que el BCE está preparando no es una respuesta inadecuada. Es la respuesta máxima que el derecho vigente permite a una autoridad supervisora que ha identificado con precisión el problema y carece de instrumentos para abordarlo a la escala necesaria. Elderson tiene razón cuando dice que los bancos deben actuar antes de que Mythos o sus equivalentes estén en manos de actores maliciosos.
+
+La pregunta es si una carta, por bien construida que esté, puede imponer la velocidad de respuesta que ese objetivo requiere.
+
+El sector financiero europeo tiene, con DORA, el régimen de resiliencia operativa digital más articulado del mundo. Tiene también, con el MUS, la supervisión bancaria directa más concentrada a nivel supranacional. Esas dos fortalezas no resuelven el problema de fondo: ningún sistema de cumplimiento basado en ciclos anuales de evaluación puede responder a una amenaza que evoluciona a la velocidad de un modelo de IA bien ajustado.
+
+KPMG describe ese cambio como el paso de un modelo reactivo a uno basado en anticipación, automatización y resiliencia operativa. Esa descripción es correcta como diagnóstico de gestión del riesgo. Lo que ninguna consultora puede proveer es el andamiaje normativo que convierta esa anticipación en una obligación jurídica exigible, con consecuencias supervisoras concretas para quien no la implemente.
+
+Ese andamiaje no existe todavía. La *Dear CEO letter* del BCE es el reconocimiento implícito de esa carencia. Puede ser también el punto de partida para una reforma que el derecho europeo, en su conjunto, todavía no ha iniciado con la urgencia que el fenómeno Mythos, y los que vendrán después, reclaman.

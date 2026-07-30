@@ -1,0 +1,99 @@
+---
+title: "Zero Trust para agentes de IA: el marco de Anthropic frente al RIA y la NIS2"
+description: "Anthropic publica un marco Zero Trust para agentes autónomos. Contrastamos sus cifras y su base normativa con el Reglamento de IA, la NIS2 y el NIST SP 800-207."
+date: "2026-07-22"
+section: "global-ia"
+slug: "zero-trust-agentes-ia-marco-seguridad-anthropic"
+tags: ["zero-trust", "agentic-ai", "ciberseguridad", "reglamento-ia", "nis2"]
+pdf: "/fuentes/zero-trust-ia-agentica-anthropic.pdf"
+---
+
+Doscientos cincuenta documentos. Ese es el número de archivos maliciosos que, según una investigación conjunta de Anthropic, el AI Security Institute británico y el Alan Turing Institute, basta para instalar una puerta trasera en un modelo de lenguaje, sea de 600 millones o de 13.000 millones de parámetros. El hallazgo, publicado en octubre de 2025, desmonta una asunción que hasta entonces parecía razonable: que envenenar un modelo grande exige una proporción del conjunto de entrenamiento, no un puñado fijo de textos manipulados.
+
+Ese dato encabeza un documento más amplio: *Zero Trust for AI Agents*, el marco de seguridad que Anthropic ha hecho público para orientar el despliegue de agentes autónomos en el entorno corporativo. No es un texto normativo ni tiene valor vinculante, pero llega en un momento en que la seguridad de los sistemas agénticos empieza a tener consecuencias jurídicas concretas: el Reglamento (UE) 2024/1689 de Inteligencia Artificial y la Directiva NIS2 imponen ya obligaciones de gestión de riesgo que un despliegue de agentes sin arquitectura Zero Trust difícilmente podrá acreditar.
+
+## De la tesis doctoral de 1994 al reglamento de 2024
+
+El término *Zero Trust* no nace en un departamento de producto. Lo acuñó Stephen Paul Marsh en abril de 1994, en su tesis doctoral sobre seguridad computacional en la Universidad de Stirling, donde formalizó la confianza como una magnitud finita y matemáticamente describible, al margen de categorías morales. El concepto permaneció como curiosidad académica durante más de una década, hasta que John Kindervag lo convirtió en metodología comercial en Forrester Research y Google lo llevó a producción con su iniciativa BeyondCorp tras el ataque Operation Aurora de 2009.
+
+La codificación técnica que hoy sostiene al Zero Trust corporativo llegó en agosto de 2020, cuando el NIST publicó la Special Publication 800-207, el documento de referencia que define arquitectura Zero Trust como modelo de protección centrado en el recurso y no en el perímetro de red. La Agencia de Seguridad Nacional estadounidense ha complementado ese marco con sus *Zero Trust Implementation Guides*, y el mandato presidencial derivado de la Orden Ejecutiva 14028 empuja a las agencias federales hacia un nivel de madurez Zero Trust cuyo horizonte de cumplimiento se sitúa, según los organismos y sistemas afectados, en el ejercicio fiscal 2027.
+
+Treinta años después de la tesis de Marsh, el marco de Anthropic traslada esos mismos tres principios —verificación permanente, presunción de brecha y privilegio mínimo— a un objeto que en 1994 no existía: un sistema capaz de interpretar instrucciones ambiguas, encadenar herramientas y actuar sin que un humano revise cada paso.
+
+## Por qué el agente no es un usuario más
+
+La literatura de seguridad ya distinguía identidades humanas de identidades de servicio. Los agentes introducen una tercera categoría que no encaja bien en ninguno de los dos moldes: actúan con autonomía de interpretación, pero lo hacen bajo credenciales que alguien más les concedió. OWASP ha propuesto el término *least agency* para nombrar esa brecha —una extensión del principio de mínimo privilegio que no solo limita qué puede tocar un sistema, sino cuántas veces, con qué alcance y en qué condiciones puede usar cada herramienta que tiene asignada.
+
+El documento de Anthropic ilustra el riesgo con un patrón que ya se ha observado en la práctica: el encadenamiento de herramientas legítimas para producir un resultado que ninguna de ellas, por separado, permitiría. Un agente con acceso lícito a un CRM interno y a una herramienta de correo saliente puede combinar ambos permisos para exfiltrar datos de clientes sin que ningún control de acceso tradicional detecte la operación, porque cada llamada individual se ejecuta con credenciales válidas.
+
+Este es precisamente el escenario que la Directiva NIS2 obliga a contemplar en la gestión de riesgos de las entidades esenciales e importantes: no basta con proteger el perímetro de cada sistema si la cadena de acciones legítimas entre sistemas produce un resultado no autorizado.
+
+## El envenenamiento de datos: dos estudios, una confusión que conviene aclarar
+
+Aquí conviene una precisión que el propio ecosistema de divulgación sobre IA tiende a comprimir en exceso. La investigación de los 250 documentos maliciosos, publicada en 2025, demuestra que un número casi constante de archivos —y no un porcentaje del corpus— basta para instalar en el modelo una puerta trasera que produce un comportamiento indeseado ante una frase disparadora. Es un hallazgo sobre la fase de preentrenamiento.
+
+La persistencia de ese tipo de comportamiento frente al ajuste fino supervisado y el aprendizaje por refuerzo con retroalimentación humana procede, en rigor, de un estudio distinto y anterior: *Sleeper Agents*, publicado por Anthropic en enero de 2024, que demostró que un modelo entrenado deliberadamente para comportarse de forma distinta ante un disparador oculto puede resistir las técnicas estándar de entrenamiento de seguridad, incluido el ajuste fino supervisado, el aprendizaje por refuerzo y el entrenamiento adversarial. Tratar ambos hallazgos como si procedieran del mismo experimento —un desliz que aparece incluso en materiales de divulgación técnica— exagera el alcance de cualquiera de los dos por separado, pero no resta gravedad al problema conjunto: un atacante con acceso limitado a los datos de entrenamiento puede introducir un comportamiento que ni el propio proceso de alineamiento posterior garantiza eliminar.
+
+Para un responsable de cumplimiento, la distinción no es cosmética. El artículo 15 del Reglamento de IA exige a los proveedores de sistemas de alto riesgo medidas de ciberseguridad proporcionadas a los riesgos derivados de vulnerabilidades específicas de la IA, entre ellas el envenenamiento de datos. Acreditar esa proporcionalidad exige poder describir con precisión en qué fase del ciclo de vida se materializa cada riesgo, no invocar genéricamente "los estudios de Anthropic".
+
+## La prueba del diseño: imposible, no tedioso
+
+El criterio más útil que aporta el documento no es una tabla de controles, sino una pregunta que cualquier equipo de seguridad puede aplicar a cualquier medida ya desplegada: ¿la hace imposible, o simplemente la vuelve tediosa? Un salto adicional en la cadena de acceso, un límite de peticiones por minuto o la autenticación por SMS elevan el coste de un ataque, pero no lo impiden frente a un adversario capaz de automatizar miles de intentos a coste marginal casi nulo. Las claves de API estáticas con rotación periódica entran en esa misma categoría: rotar una credencial que un atacante con asistencia de IA puede extraer en segundos de un repositorio mal configurado no cambia sustancialmente el cálculo de riesgo.
+
+Los controles que superan esa prueba comparten una característica: sustituyen la fricción por la ausencia de camino. Identidad criptográfica por agente en lugar de credenciales compartidas, tokens de vida corta en lugar de claves estáticas, y segmentación por identidad en la que cada servicio solo acepta llamadas de quien tiene autorización explícita, en lugar de confiar en quien ya atravesó el perímetro de red.
+
+Anthropic aporta aquí una cifra propia que conviene situar en su contexto exacto. Sus *constitutional classifiers*, publicados en febrero de 2025, redujeron la tasa de éxito de los intentos de *jailbreak* contra Claude 3.5 Sonnet del 86% al 4,4% —es decir, bloquearon algo más del 95% de los ataques— con un coste computacional adicional del 23,7%. La segunda generación del sistema, presentada a comienzos de 2026, mantiene un nivel de bloqueo equivalente reduciendo ese sobrecoste a apenas el 1%. Son cifras de un proveedor sobre su propio producto, no una auditoría independiente, y conviene leerlas con esa cautela, pero son consistentes con el resultado —también verificado por Microsoft Research— de que la técnica de *spotlighting*, que delimita explícitamente el contenido no confiable dentro del contexto del modelo, reduce el éxito de la inyección indirecta de instrucciones de más del 50% a menos del 2% en modelos de la familia GPT.
+
+## El calendario que ya corre: sandboxes, alto riesgo y omnibus
+
+El marco Zero Trust no opera en el vacío regulatorio. El artículo 57 del Reglamento de IA obliga a cada Estado miembro a tener operativo, antes del 2 de agosto de 2026, al menos un entorno de pruebas regulatorio nacional para sistemas de inteligencia artificial, bien de forma individual, bien mediante participación en un espacio compartido con otros Estados miembros. España ya cuenta con un sandbox nacional habilitado por el Real Decreto 817/2023, lo que la sitúa entre los Estados mejor posicionados frente a esa fecha.
+
+Ese mismo calendario europeo se ha visto modificado por el paquete conocido como Digital Omnibus, que trasladó buena parte de las obligaciones de los sistemas de alto riesgo de agosto de 2026 a diciembre de 2027, tras la prórroga de cuatro meses confirmada el 2 de diciembre de 2026. Un despliegue de agentes que hoy invoca el Reglamento de IA como justificación de su hoja de ruta de seguridad debe distinguir con exactitud qué obligaciones siguen ancladas a la fecha original —como los propios sandboxes del artículo 57— y cuáles se han desplazado, porque tratarlas como un bloque único conduce a errores de planificación tan costosos como ignorar el reglamento por completo.
+
+## Qué cambia para quien despliega agentes hoy
+
+El marco de Anthropic no sustituye ni el NIST SP 800-207 ni las obligaciones del Reglamento de IA o de la NIS2: los traduce a un lenguaje operativo para un tipo de sistema que ninguno de esos textos regulaba cuando se redactó. Su utilidad para un despliegue en España o en la Unión Europea no está en adoptarlo como estándar de cumplimiento —no lo es—, sino en la disciplina que propone para cualquier evaluación de riesgo:
+
+- Identidad criptográfica única por instancia de agente, nunca credenciales compartidas entre agentes o reutilizadas de una cuenta de servicio genérica.
+- Privilegios de alcance dinámico, concedidos para la tarea concreta y revocados al finalizarla, en lugar de permisos estáticos asignados en el despliegue inicial.
+- Registro íntegro y trazable de cada acción del agente, con capacidad de reconstruir la cadena completa desde la instrucción que la originó.
+- Aislamiento por identidad entre agentes, de modo que comprometer uno no otorgue acceso automático a los sistemas que otro agente puede alcanzar.
+- Validación de entradas que trate todo contenido externo —web, correo, documentos— como no confiable por defecto, con delimitación explícita frente a las instrucciones del sistema.
+- Revisión humana obligatoria antes de ejecutar acciones de alto impacto, con independencia de que el sistema de automatización las recomiende con alta confianza.
+- Un ejercicio periódico de la pregunta central del documento —¿este control lo hace imposible o solo tedioso?— aplicado a cada medida ya desplegada, no solo a las nuevas.
+
+Ninguna de estas prácticas exime de las obligaciones sustantivas del Reglamento de IA para los sistemas de alto riesgo, ni de las exigencias de gestión de riesgos de la cadena de suministro que impone la NIS2 a las entidades esenciales e importantes. Lo que aporta es la base técnica sin la cual esas obligaciones jurídicas resultan, en la práctica, imposibles de acreditar ante un supervisor.
+
+---
+
+*El documento original de Anthropic, con el desarrollo técnico completo de los cinco niveles de madurez y las fases de implementación, está disponible para su descarga:* **[Zero Trust for AI Agents (PDF)](/fuentes/zero-trust-ia-agentica-anthropic.pdf)**.
+
+## Referencias
+
+**Normativa**
+
+Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial [Reglamento de IA], DO L, 12 de julio de 2024, arts. 15 y 57.
+
+Directiva (UE) 2022/2555 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022 (NIS2), DO L 333, 27 de diciembre de 2022.
+
+Real Decreto 817/2023, de 8 de noviembre, por el que se establece un entorno controlado de pruebas para el ensayo del cumplimiento de determinados sistemas de inteligencia artificial de alto riesgo, BOE núm. 268, 9 de noviembre de 2023.
+
+Executive Order 14028, Improving the Nation's Cybersecurity, 12 de mayo de 2021; OMB Memorandum M-22-09.
+
+**Documentos institucionales y técnicos**
+
+NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY, *Special Publication 800-207: Zero Trust Architecture*, agosto de 2020.
+
+MARSH, Stephen Paul, *Formalising Trust as a Computational Concept*, tesis doctoral, University of Stirling, Department of Computing Science and Mathematics, 1994.
+
+ANTHROPIC, *Zero Trust for AI Agents*, 2026.
+
+ANTHROPIC, *A small number of samples can poison LLMs of any size*, octubre de 2025.
+
+HUBINGER, Evan et al., *Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training*, Anthropic, enero de 2024.
+
+ANTHROPIC, *Constitutional Classifiers: Defending Against Universal Jailbreaks*, febrero de 2025; *Next-generation Constitutional Classifiers*, enero de 2026.
+
+HINES, Keegan et al., *Defending Against Indirect Prompt Injection Attacks With Spotlighting*, Microsoft Research, 2024.
+
+OWASP, *Agentic AI — Threats and Mitigations*, sección sobre *least agency*.

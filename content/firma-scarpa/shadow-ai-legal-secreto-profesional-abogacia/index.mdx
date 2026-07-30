@@ -1,0 +1,139 @@
+---
+title: "Shadow AI legal: cuando el bot graba lo que no debes revelar"
+description: "El 92% de los juristas ya usa IA. Solo el 34% tiene políticas para controlarla. Análisis completo sobre Shadow AI, transcripción automática y el colapso del secreto profesional bajo el AI Act y el RGPD.
+
+"
+date: "2026-06-13"
+tags: ["shadow AI", "secreto profesional", "transcripción automática", "AI Act", "RGPD"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "shadow-ai-legal-secreto-profesional-abogacia"
+readingTime: 11
+---
+
+# Tu reunión más confidencial tiene un tercer oyente. No lo contrataste.
+
+Existe un asistente en tu reunión de Zoom de esta tarde. No está en la lista de participantes. No firmó ningún acuerdo de confidencialidad. Procesa la voz de tu cliente en tiempo real, la transcribe en servidores situados fuera del Espacio Económico Europeo y, en las versiones de consumo gratuito, utiliza ese audio para reentrenar sus modelos comerciales. Tu cliente no lo sabe. Tú tampoco lo aprobaste. Pero está ahí.
+
+Esto no es especulación. Es la descripción técnica de lo que ocurre cuando un *Fireflies.ai*, un *Otter.ai* o cualquiera de los transcriptores automáticos que pueblan las plataformas de videoconferencia se activa sin pasar por los filtros del despacho.
+
+Lo que la literatura técnica llama *Shadow AI*: el uso informal, no autorizado y sin supervisión de herramientas de inteligencia artificial por parte de profesionales que eluden los controles institucionales de su firma. Y en la abogacía, ese fenómeno tiene un nombre más preciso: ruptura del privilegio abogado-cliente.
+
+He dedicado los últimos meses a construir un análisis exhaustivo de este problema. El informe completo —que puedes descargar al final de este artículo— tiene diez secciones, veinticuatro fuentes primarias y un checklist operativo de cuatro niveles. Lo que sigue es el resumen de lo que encontré. No es tranquilizador.
+
+---
+
+## El número que lo explica todo: 92%
+
+El informe *Future Ready Lawyer 2026* de Wolters Kluwer lo midió con precisión quirúrgica: el 92% de los juristas a nivel global ya integra al menos una herramienta de IA en su flujo de trabajo diario. El ahorro de tiempo reportado está entre el 6% y el 20% semanal. La presión para adoptar es real, la eficiencia es real y la promesa de productividad es real.
+
+Lo que también es real: solo el 34% de los despachos se siente preparado para gestionar esa adopción.
+
+En el espacio entre esos dos números vive el *Shadow AI*. No es un fenómeno marginal ni una práctica de asociados descuidados. Es la respuesta sistémica de los profesionales ante una brecha de gobernanza estructural: los ciclos de decisión y presupuesto en las grandes firmas superan con frecuencia los cuatro años; la innovación tecnológica evoluciona por meses. Los abogados no esperan. Buscan sus propias soluciones.
+
+Y las encuentran en aplicaciones gratuitas, accesibles desde el móvil, sin fricción y sin rastro institucional.
+
+El problema no es la tecnología. El problema es que nadie en el despacho sabe que está ahí.
+
+---
+
+## Lo que realmente hace el bot de notas en tu reunión
+
+Conviene ser precisos sobre la arquitectura técnica, porque la imprecisión alimenta la complacencia.
+
+Un asistente de notas como los que se integran en Teams o Zoom actúa como un participante pasivo que captura el flujo de audio en tiempo real y lo transmite —cifrado en el mejor de los casos— a los servidores del proveedor. Hasta aquí, el riesgo parece manejable. Lo que cambia la naturaleza del problema son tres capas adicionales que rara vez se comunican al cliente.
+
+La primera: el reentrenamiento. Las versiones de consumo —las gratuitas y las de bajo coste que no son modalidad *Enterprise*— suelen autorizar en sus términos de servicio el uso de los *prompts* y los audios para refinar sus algoritmos.
+
+El entrenamiento de estos sistemas es supervisado, lo que significa que fragmentos de voces y transcripciones de reuniones confidenciales pueden ser escuchados manualmente por personal externo del proveedor para corregir errores del modelo. Esto no es un escenario hipotético. Es una práctica documentada del sector.
+
+La segunda: los metadatos. Además de la transcripción, estas herramientas generan y almacenan información adicional: direcciones IP, duración de la llamada, identificadores de dispositivos y, en sistemas avanzados, análisis de sentimientos o expresiones faciales. La AEPD los califica como datos personales con el mismo nivel de protección que el contenido de la comunicación.
+
+La tercera: la inexactitud. Los sistemas de transcripción son probabilísticos, no deterministas. Son propensos a errores en acentos regionales, jerga jurídica y términos técnicos.
+
+La AEPD ha documentado casos en los que una imprecisión acústica transcribió un apellido de forma ofensiva o modificó el sentido de una declaración. En un contexto de asesoramiento estratégico, una mala transcripción que atribuya al cliente una admisión de responsabilidad inexistente puede derivar en reclamaciones civiles contra el letrado.
+
+---
+
+## La erosión del aseguramiento: el daño que no se ve hasta que es irreversible
+
+Hay un concepto que estructura todo el análisis del informe y que merece atención especial: la *assurance erosion* o erosión del aseguramiento. En un despacho de abogados, el aseguramiento es la capacidad de demostrar —ante el cliente, ante los tribunales, ante las autoridades de control— que los controles de confidencialidad se han mantenido en cada fase del tratamiento.
+
+El *Shadow AI* destruye esa capacidad a través de tres vías. Primero, los datos de voz del cliente salen físicamente de los límites lógicos controlados por la firma hacia nubes opacas. Segundo, las actualizaciones de software incorporan funciones de IA de captura de audio o pantalla sin que el despacho realice una Evaluación de Impacto. Tercero, y más grave: la firma pierde la observabilidad forense.
+
+Si se produce una filtración, el departamento de cumplimiento no puede reconstruir el incidente porque el asociado responsable utilizó un asistente personal que no figura en ningún inventario.
+
+Una vez que el privilegio abogado-cliente se rompe por una divulgación negligente a un tercero no protegido por el secreto, la información pierde su estatus de protección especial. La contraparte puede solicitar la exhibición de las transcripciones almacenadas en la nube del proveedor, alegando que el abogado —al usar una herramienta pública— renunció implícitamente a esa protección. Este escenario no es teórico.
+
+Lo han planteado ya varios litigios en Estados Unidos desde 2024.
+
+---
+
+## Las normas que ya te obligan (aunque no lo sepas)
+
+El marco legal que regula este fenómeno tiene tres capas superpuestas que se refuerzan mutuamente.
+
+El RGPD convierte al despacho en responsable del tratamiento desde el momento en que tolera el uso de estos sistemas, aunque sea por omisión. La firma determina los fines y los medios del tratamiento. El *Shadow AI* rompe la cadena de supervisión exigida por el artículo 28: no puede realizarse la diligencia debida en la selección del encargado si el encargado es invisible.
+
+El principio de exactitud del artículo 5.1.d) queda vulnerado por las alucinaciones acústicas. La transparencia reforzada exigida en grabaciones de voz —indicadores visuales activos durante toda la sesión— es estructuralmente incompatible con un bot que entra sin aviso explícito.
+
+El Reglamento (UE) 2024/1689 —el AI Act— añade otro nivel. El artículo 4 obliga al desplegador a garantizar la alfabetización en IA de su personal: un despacho que tolera el *Shadow AI* incumple este deber porque no puede certificar la formación sobre herramientas cuya existencia ignora. El artículo 14 exige supervisión humana efectiva en sistemas de alto riesgo.
+
+El artículo 86 crea un derecho autónomo a la explicación de las decisiones adoptadas por IA, imposible de ejercer cuando el sistema es opaco. Y el artículo 99 —no el 71 de la propuesta de la Comisión, como a veces se cita incorrectamente, sino el 99 del texto definitivo publicado en el DO L 2024/1689— establece multas de hasta 35 millones de euros o el 7% del volumen de negocio anual.
+
+La Ley Orgánica 5/2024 del Derecho de Defensa blinda la confidencialidad en "cualquier soporte digital". Las Circulares 1/2025 y 3/2026 del CGAE elevan este principio a obligación deontológica explícita. La Circular 3/2026 es especialmente categórica: la IA es una herramienta auxiliar que nunca puede operar como sustituto del abogado.
+
+---
+
+## Los casos que ya se están produciendo
+
+No son futuros posibles. Son precedentes recientes.
+
+El Tribunal del Distrito Sur de Nueva York impuso una sanción de 5.000 dólares a un equipo de letrados que utilizó ChatGPT para localizar jurisprudencia, resultando en la citación de más de una decena de decisiones inexistentes. La doctrina fue inequívoca: la obligación de verificar cada fuente es absoluta e indelegable, independientemente del instrumento utilizado.
+
+El Auto del TSJ de Navarra 38/2024 archivó una querella en la que el abogado había incorporado referencias al Código Penal colombiano a causa de un uso descuidado de IA. La Sala no impuso sanción económica, pero el Auto operó como advertencia institucional.
+
+El Tribunal Constitucional, en su Nota 90/2024, sancionó a un letrado por presentar una demanda de amparo con diecinueve citas entrecomilladas de sentencias del propio Tribunal que resultaron ser inexistentes. La alegación de "desconfiguración de base de datos" fue rechazada.
+
+La FTC, en febrero de 2025, impuso una sanción de 193.000 dólares a DoNotPay por publicidad engañosa al presentarse como sustituto legal sin abogados cualificados que supervisaran los servicios. Lo relevante para este análisis: la política de privacidad de la plataforma excluía expresamente la protección del secreto profesional.
+
+La AEPD ha iniciado procedimientos de apercibimiento contra firmas profesionales que emplean sistemas de transcripción sin transparencia reforzada.
+
+---
+
+## Tu póliza de responsabilidad ya tiene una cláusula nueva
+
+El mercado asegurador ha reaccionado con precisión actuarial. Las compañías incorporan cláusulas de exclusión para incidentes derivados del uso de herramientas de IA que no figuren en el inventario formal de activos digitales del despacho.
+
+La falta de capacitación técnica del asociado que usó un transcriptor en la sombra puede ser calificada como culpa grave, dejando a la firma sin cobertura ante una brecha de datos o un error procesal derivado de una mala transcripción.
+
+Dicho de otro modo: la póliza que el despacho contrató asumiendo que controla sus herramientas digitales puede no cubrir el incidente que se origine en la aplicación que el abogado más eficiente del equipo descargó gratis en su teléfono.
+
+---
+
+## La hoja de ruta de cuatro fases
+
+El informe no termina en el diagnóstico. Propone una hoja de ruta operativa estructurada en cuatro niveles que transforma el cumplimiento normativo de carga administrativa en ventaja competitiva.
+
+El nivel 1 es de gobernanza y estructura: política BYOAI (*Bring Your Own AI*) con delimitación de herramientas autorizadas por perfil profesional, inventario automatizado de activos de IA y canal de solicitudes ágil para que los abogados puedan proponer nuevas herramientas sin necesidad de eludir los controles.
+
+El nivel 2 es de seguridad técnica: telemetría y descubrimiento activo mediante auditorías de tráfico API para detectar herramientas no declaradas; contratación exclusiva en modalidades *Enterprise* con cláusulas de no-reutilización y residencia de datos en el EEE; entornos de prueba locales (*sandboxes*) que permiten experimentar sin riesgo de filtración.
+
+El nivel 3 es de protocolo en reuniones: indicadores visuales ininterrumpidos durante la grabación, plantillas de consentimiento específicas que detallan el motor de IA que procesará el audio, y mecanismos de desactivación automática verificable al concluir la sesión.
+
+El nivel 4 es de formación y ética: el *AI Verification Log* como estándar deontológico —un registro de auditoría que documenta qué herramienta se usó, qué instrucciones se formularon y qué revisión humana se realizó— y programas continuos de alfabetización en IA que cumplan el artículo 4 del AI Act.
+
+---
+
+## Lo que no cabe en este artículo
+
+La versión completa del análisis desarrolla cada uno de estos puntos con el rigor que merecen: el Convenio Marco del Consejo de Europa (CETS 225), primer tratado internacional vinculante sobre IA y sus implicaciones para la práctica privada; la clasificación técnica de las herramientas de transcripción y sus arquitecturas de datos; el análisis completo del régimen sancionador del AI Act con la distinción entre la numeración de la propuesta de la Comisión de 2021 y el texto definitivo publicado en el Diario Oficial; y la valoración crítica de la Instrucción 2/2026 del CGPJ como estándar orientativo para la abogacía, con los límites precisos de esa proyección normativa.
+
+Veinticuatro fuentes primarias, veinticuatro referencias numeradas en el cuerpo del texto, diez secciones de análisis doctrinal y un checklist operativo listo para aplicar en cualquier despacho.
+
+[**Descargar el informe completo en PDF**](/fuentes/SHADOW_IA_CITAS_DERECHO_ARTIFICIAL.pdf)
+
+---
+
+*Ricardo Scarpa es Managing Director responsable de ciberseguridad en un despacho de abogados con más de veinte años de experiencia profesional. Este análisis forma parte de la serie de informes propios publicados en [derechoartificial.com](https://derechoartificial.com) bajo la firma Scarpa.*

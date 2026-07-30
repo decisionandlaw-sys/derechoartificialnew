@@ -1,0 +1,69 @@
+---
+title: "Worldcoin y datos biométricos: AEPD y BayLDA contra el iris digital"
+description: "La AEPD paralizó Worldcoin en España en 2024 por captar iris a cambio de criptomonedas. Análisis del RGPD, el consentimiento viciado y las órdenes correctivas de la BayLDA."
+date: "2026-03-11"
+tags: ["Worldcoin", "datos biométricos", "RGPD", "AEPD", "BayLDA"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "worldcoin-datos-biometricos-rgpd-aepd-baylda"
+readingtime: "5 min"
+pdf: "/fuentes/Worldcoin.pdf"
+---
+# Tu iris vale criptomonedas. La AEPD dijo que no.
+
+Alguien instaló una esfera metálica en un centro comercial de Madrid, te miró a los ojos y te ofreció dinero a cambio. No metáforas: criptomonedas WLD a cambio del escaneo de tu iris. El dispositivo Orb capturaba los patrones únicos de tu ojo —datos que no puedes cambiar si te los roban, a diferencia de una contraseña— y generaba un identificador biométrico vinculado a tu monedero digital. Worldcoin llamó a esto *Proof of Personhood*.
+
+La Agencia Española de Protección de Datos lo llamó otra cosa.
+
+El 26 de febrero de 2024, la AEPD ordenó el cese inmediato de toda captación de datos biométricos en territorio español y el bloqueo de los ya recogidos. Era la primera vez que una autoridad de control europea activaba el mecanismo de urgencia del artículo 66.1 del RGPD contra un sistema de identidad digital global. La empresa recurrió ante la Audiencia Nacional. La Audiencia Nacional la desestimó. Y aquí es donde el análisis se pone realmente interesante.
+
+## Un consentimiento que no era libre
+
+La tesis de Worldcoin era sencilla: los usuarios habían consentido. Firmaron, aceptaron los términos, recibieron sus tokens. ¿Cuál es el problema?
+
+El problema está en el considerando 43 del RGPD, que la AEPD y la BayLDA invocaron con precisión quirúrgica: el consentimiento no puede considerarse libre cuando existe una contraprestación que lo condiciona. Cuando ofreces criptomonedas a cambio de datos biométricos irreversibles, no estás obteniendo un consentimiento genuino.
+
+Estás comprando acceso a identificadores inalterables de personas que, en muchos casos, no comprenden exactamente qué están cediendo ni para qué.
+
+Lo que resulta llamativo es que este modelo —ceder datos personales a cambio de beneficios económicos— está mucho más extendido de lo que parece. El caso Worldcoin no es una anomalía: es el ejemplo más visible de una práctica que el RGPD lleva años intentando contener sin disponer de una prohibición expresa. El informe analiza con detalle por qué el consentimiento de Worldcoin era, en términos jurídicos, estructuralmente viciado desde el primer escaneo.
+
+## El Iris Code no es anónimo, aunque lo parezca
+
+Worldcoin argumentó, además, que el *Iris Code* —la representación numérica binaria del iris generada por su algoritmo— no era un dato personal porque no estaba vinculado a un nombre. Argumento rechazado sin matices.
+
+El artículo 4.1 del RGPD no requiere que el dato esté vinculado a un nombre: requiere que permita identificar o singularizar a una persona. El Iris Code singulariza con una precisión que ningún documento de identidad convencional puede igualar.
+
+Y aquí viene el segundo problema: cuando Worldcoin migró hacia un sistema de Computación Segura de Múltiples Partes (SMPC) —fragmentando el código en trozos repartidos entre entidades distintas— presentó esa fragmentación como equivalente a la anonimización. La BayLDA concluyó que no lo era.
+
+Ambas entidades que custodian los fragmentos operan sobre la misma infraestructura en Amazon Web Services. El responsable del tratamiento conserva los medios técnicos razonables para reconstruir el identificador completo. Eso, en el lenguaje del Tribunal de Justicia de la UE —caso *Breyer*—, es seudonimización, no anonimización. Los datos siguen siendo datos personales. El RGPD sigue siendo aplicable.
+
+Y la BayLDA lo hizo constar en su resolución de diciembre de 2024.
+
+## La Audiencia Nacional y la irreversibilidad del daño
+
+Cuando Worldcoin recurrió la medida cautelar española, su argumento era económico: la paralización le causaba perjuicios de difícil reparación. La Audiencia Nacional respondió con una doctrina que vale la pena retener: los perjuicios económicos son, por naturaleza, reparables mediante indemnización. La pérdida de control sobre datos biométricos irreversibles puede ocasionar daños de imposible reparación.
+
+Este razonamiento —contenido en el Auto 00241/2024, de 11 de marzo de 2024— consagra un principio hermenéutico de primera magnitud para futuros litigios sobre biometría: la irreversibilidad del daño potencial es, *per se*, un criterio determinante en el juicio de ponderación cautelar. No hace falta acreditar el daño ya producido. Basta con que el dato sea inalterable y el tratamiento, ilícito.
+
+Conviene recordar que esto ocurrió antes de que la BayLDA —autoridad principal bajo el mecanismo de ventanilla única, dado que TFH tiene su establecimiento en Baviera— dictara su resolución definitiva. La coordinación entre ambas autoridades, con sus tiempos y sus instrumentos distintos, es uno de los aspectos más instructivos del caso para entender cómo funciona realmente el RGPD en situaciones de riesgo transfronterizo.
+
+## Lo que viene en el informe completo
+
+El documento que acompaña este artículo va más allá de los hechos. Analiza la arquitectura técnica del dispositivo Orb y la generación del *Iris Code* mediante el algoritmo de Daugman, incluyendo la advertencia de la BayLDA sobre la posibilidad de reconstruir fragmentos de imagen capaces de revelar información sanitaria —como melanomas oculares—.
+
+Examina en detalle las dos fases del tratamiento de Worldcoin —comparación activa y deduplicación pasiva— y por qué esta segunda carece por completo de base jurídica válida.
+
+El informe desarrolla también las cuatro propuestas de reforma legislativa (*lege ferenda*) que el caso Worldcoin pone sobre la mesa: desde la prohibición expresa del condicionamiento biométrico hasta la obligación de DPIA previa para sistemas de identidad digital global.
+
+Y documenta con precisión las órdenes correctivas de la BayLDA, incluyendo el borrado inmediato de los *Iris Codes* almacenados en texto plano entre julio de 2023 y mayo de 2024 —sin cifrado, en una base de datos centralizada sobre AWS.
+
+> **Descarga el informe completo** para acceder al análisis técnico del sistema SMPC, la doctrina completa del Auto AN 00241/2024 y las propuestas de reforma del marco europeo de gobernanza de datos biométricos.
+
+## Conclusiones
+
+- El modelo de Worldcoin —criptomonedas a cambio de iris— es incompatible con el concepto de consentimiento libre del RGPD, con independencia de que el usuario firme un formulario.
+- El *Iris Code* es un dato biométrico de categoría especial: su irreversibilidad lo convierte en el identificador más sensible que un sistema puede procesar.
+- El sistema SMPC no constituye anonimización: fragmentar un dato entre entidades vinculadas que comparten infraestructura es seudonimización sujeta al RGPD.
+- La Audiencia Nacional ha sentado precedente: la irreversibilidad del daño biométrico prevalece sobre los intereses económicos del responsable en el juicio cautelar.
+- El caso Worldcoin revela que el derecho de supresión del artículo 17 RGPD no estaba garantizado en la arquitectura original del sistema — una quiebra de privacidad por diseño que no puede corregirse a posteriori.

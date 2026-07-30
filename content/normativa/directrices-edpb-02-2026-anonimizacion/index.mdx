@@ -1,0 +1,154 @@
+---
+title: "Directrices 02/2026 del EDPB sobre anonimización: el nuevo test de tres criterios que sustituye al Dictamen 05/2014"
+date: "2026-07-16"
+section: "normativa"
+slug: "directrices-edpb-02-2026-anonimizacion"
+category: "UE"
+description: "El EDPB adopta el 7 de julio de 2026 un marco renovado para evaluar la anonimidad: perspectiva relativa, tres criterios técnicos y dos enfoques de análisis."
+pdf: "/fuentes/edpb-directrices-02-2026-anonimizacion.pdf"
+tags: ["RGPD", "anonimización", "EDPB", "protección de datos", "TJUE"]
+---
+
+El 7 de julio de 2026 el Comité Europeo de Protección de Datos (EDPB) adoptó, para consulta pública, la versión 1.0 de las *Directrices 02/2026 sobre anonimización* (1), dictadas al amparo del artículo 70, apartado 1, letra e), del Reglamento (UE) 2016/679 (RGPD) (2). El documento sustituye al Dictamen 05/2014 del Grupo de Trabajo del Artículo 29 sobre técnicas de anonimización —la referencia obligada durante más de una década— y responde a una necesidad evidente: la jurisprudencia del Tribunal de Justicia de la Unión Europea (TJUE), la creación de espacios europeos de datos y el desarrollo de la inteligencia artificial han desbordado un marco pensado para un contexto tecnológico distinto.
+
+La actualización no es cosmética. El EDPB reformula el test de anonimidad con una precisión que el Dictamen de 2014 no ofrecía, introduce un doble enfoque de evaluación —contextualizado y simplificado— y consolida tres criterios técnicos (No Aislamiento de Registros, No Vinculación y No Inferencia) como herramienta central para determinar si un conjunto de datos queda fuera del ámbito de aplicación del RGPD. Para cualquier responsable o encargado del tratamiento que anonimice datos con vistas a su libre circulación, estas Directrices son ya el estándar de referencia.
+
+## 1. El dato anónimo y su relevancia práctica
+
+El dato anónimo —aquel que no se refiere a una persona física identificada o identificable— queda excluido del ámbito de aplicación del RGPD por disposición del artículo 2, apartado 1 (3). Esta exclusión no es un tecnicismo menor: habilita la libre circulación y reutilización de la información sin las cargas de legitimación, información y ejercicio de derechos propias del tratamiento de datos personales. Precisamente por ello, una anonimización defectuosa —que trate como anónimo lo que en realidad conserva capacidad identificativa— constituye una infracción sustantiva del RGPD, con la particularidad de que el responsable puede incurrir en ella sin advertirlo.
+
+Las Directrices 02/2026 responden a esta tensión ofreciendo, en palabras del propio EDPB, una guía que evite tanto los falsos positivos (calificar de anónimo lo que no lo es) como los falsos negativos (tratar como personal lo que realmente es anónimo) (4). El documento se estructura en tres bloques: un análisis jurídico del concepto de anonimización (Sección 2), un marco técnico de evaluación articulado en tres criterios (Sección 3) y un glosario de términos específicos con un diagrama de flujo anexo.
+
+## 2. El análisis jurídico: relatividad de la anonimidad
+
+### 2.1. El test de dos preguntas
+
+El núcleo del análisis jurídico —que no innova respecto de la definición del artículo 4, apartado 1, del RGPD, pero sí la sistematiza con mayor rigor— formula dos preguntas sucesivas: (i) ¿la información se refiere a una persona física?; y, en caso afirmativo, (ii) ¿esa persona está identificada o es identificable? Si la respuesta a cualquiera de ellas es negativa, el dato debe considerarse anónimo (5).
+
+La aportación central de las Directrices reside en subrayar que estas respuestas son relativas a la entidad que las formula. Una misma información puede ser personal para quien dispone de los medios para identificar al sujeto y anónima para quien carece de ellos. El EDPB cita en apoyo de esta tesis el asunto *EDPS contra SRB* (C-413/23 P), en el que el TJUE confirmó que el carácter personal de un dato debe evaluarse desde la perspectiva de la entidad concreta cuya obligación esté en juego, y no de manera abstracta (6). La consecuencia práctica es que la anonimización puede perseguir dos objetivos distintos: producir datos anónimos para todo el mundo, o producirlos únicamente para determinados destinatarios, dejándolos como datos personales para el responsable que realiza la operación.
+
+### 2.2. Identificación de las perspectivas relevantes
+
+Determinar qué entidades son "relevantes" a efectos de la evaluación exige examinar para quién se pretende que los datos sean anónimos: si el uso es interno, basta la perspectiva del propio responsable; si los datos se transfieren para uso independiente de terceros, la anonimidad debe evaluarse desde la perspectiva de los receptores. El TJUE ilustró esta lógica en *OC contra Comisión* (C-479/22 P), donde consideró que un comunicado de prensa dirigido a periodistas de investigación —con capacidades de indagación superiores a las de un ciudadano medio— debía evaluarse precisamente desde esa perspectiva cualificada, y no desde la del público general (7).
+
+Especial atención merece la regla sobre encargados del tratamiento: si una entidad trata información por cuenta de un responsable para quien esos datos son personales, dicha información conserva su naturaleza personal también para la entidad encargada, que queda sujeta a las obligaciones de los artículos 28 y siguientes del RGPD. La solución se apoya en una interpretación teleológica destinada a evitar que los responsables eludan sus obligaciones mediante la externalización del tratamiento (8).
+
+### 2.3. Contenido, finalidad y efecto: cuándo la información "se refiere" a una persona
+
+Siguiendo la doctrina asentada en *Nowak contra Data Protection Commissioner* (C-434/16) y refrendada en *EDPS contra SRB* (9), las Directrices mantienen el triple criterio de vinculación: la información se refiere a una persona por razón de su **contenido** (la describe directamente), su **finalidad** (se usa o es previsible que se use para evaluar o influir en su estatus) o su **efecto** (aun versando sobre un objeto u otra persona, su tratamiento puede repercutir en los derechos del interesado). El EDPB advierte, además, que esta vinculación no exige ser evidente a primera vista: los datos agregados pueden "referirse" a un individuo si existen técnicas capaces de revelar información individual a partir de ellos.
+
+### 2.4. Identificación mediante medios razonablemente utilizables
+
+El estándar aplicable —"medios razonablemente utilizables"— no se define positivamente, sino por exclusión: un medio deja de serlo cuando la probabilidad de identificación es insignificante en la práctica por imposibilidad material, por esfuerzo desproporcionado en tiempo, coste y trabajo, o por prohibición legal efectiva (10). El EDPB precisa un matiz importante y potencialmente controvertido: la falta de motivación de un potencial identificador **no** debe emplearse como factor excluyente, porque la motivación es difícil de probar objetivamente y puede sobrevenir por accidente, negligencia o circunstancias externas. En cambio, si la ley prohíbe el acceso pero existe evidencia de que la prohibición no se respeta en la práctica —por ejemplo, por ausencia de control efectivo o por incentivos económicos que superen el riesgo de sanción—, la presunción de cumplimiento legal puede quedar desvirtuada (11).
+
+Las Directrices ofrecen un catálogo, no exhaustivo, de entidades potencialmente relevantes: el propio responsable, los receptores de los datos, empleados desleales, allegados del interesado, periodistas de investigación, autoridades de aplicación de la ley (nacionales y extranjeras), empresas sin escrúpulos y ciberdelincuentes. La inclusión de servicios de inteligencia extranjeros —no sujetos a las mismas limitaciones legales que las autoridades domésticas— es indicativa del nivel de exigencia que el EDPB espera de la evaluación.
+
+### 2.5. Conjuntos de datos mixtos y cumplimiento del RGPD durante la anonimización
+
+Cuando la anonimización solo resulta eficaz para algunos individuos de un conjunto de datos, el EDPB exige distinguir entre la anonimidad de registros individuales y la del conjunto en su totalidad: si las partes personales y anónimas no pueden tratarse por separado, el conjunto entero debe considerarse personal, por analogía con la doctrina fijada en *Meta contra Bundeskartellamt* (C-252/21) sobre categorías especiales de datos (12).
+
+El propio proceso de anonimización, en tanto que tratamiento de datos personales, debe respetar el RGPD: requiere base jurídica conforme al artículo 6 —y, en su caso, una excepción del artículo 9, apartado 2, si concurren categorías especiales—, debe ser transparente conforme a los artículos 5.1.a) y 12 a 15, y debe documentarse adecuadamente para poder acreditar tanto su licitud como su eficacia técnica. El EDPB añade una advertencia relevante para la práctica editorial y de comunicación corporativa: no debe calificarse un dato como "anónimo", "desidentificado" o "despersonalizado" si los individuos siguen siendo identificables, bajo riesgo de incurrir en una declaración engañosa a efectos del principio de transparencia.
+
+## 3. El marco técnico: dos enfoques y tres criterios
+
+### 3.1. Enfoque contextualizado frente a enfoque simplificado
+
+El EDPB ofrece dos metodologías complementarias, no alternativas al estándar legal. El **enfoque contextualizado** evalúa cada criterio desde la perspectiva de cada entidad relevante, atendiendo a sus capacidades reales; ofrece precisión, pero conlleva el riesgo de falsos positivos si el evaluador desconoce medios disponibles para un tercero. El **enfoque simplificado** prescinde de esas diferencias y asume que, si un medio de identificación existe en abstracto, alguna entidad podrá emplearlo; es más conservador —desplaza el riesgo hacia falsos negativos— y ofrece mayor seguridad jurídica en caso de duda. El EDPB recomienda explícitamente combinar ambos: comenzar con el simplificado para descartar la reidentificación teóricamente imposible y, solo si aparecen vías de reidentificación, refinar el análisis con el enfoque contextualizado.
+
+### 3.2. No Aislamiento de Registros
+
+Este primer criterio se cumple si los datos no contienen una combinación única de valores de atributos referida a un único individuo. Cuanto mayor es el número de atributos por registro (mayor "dimensionalidad") y más detallado es cada uno de ellos (mayor "resolución"), más probable resulta la unicidad. El ejemplo que ofrece el EDPB —un conjunto de historiales clínicos con sexo, fecha de nacimiento, código postal y enfermedad— resulta ilustrativo:
+
+<table style={{width: '100%', borderCollapse: 'collapse', margin: '1.5rem 0'}}>
+  <thead>
+    <tr style={{borderBottom: '2px solid #1a3c6e'}}>
+      <th style={{textAlign: 'left', padding: '0.5rem'}}>Sexo</th>
+      <th style={{textAlign: 'left', padding: '0.5rem'}}>Fecha de nacimiento</th>
+      <th style={{textAlign: 'left', padding: '0.5rem'}}>Código postal</th>
+      <th style={{textAlign: 'left', padding: '0.5rem'}}>Enfermedad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{borderBottom: '1px solid #ddd'}}>
+      <td style={{padding: '0.5rem'}}>Femenino</td><td style={{padding: '0.5rem'}}>28-09-1955</td><td style={{padding: '0.5rem'}}>43221</td><td style={{padding: '0.5rem'}}>Enfermedad celíaca</td>
+    </tr>
+    <tr style={{borderBottom: '1px solid #ddd'}}>
+      <td style={{padding: '0.5rem'}}>Femenino</td><td style={{padding: '0.5rem'}}>06-01-1955</td><td style={{padding: '0.5rem'}}>43210</td><td style={{padding: '0.5rem'}}>Enfermedad de Crohn</td>
+    </tr>
+    <tr style={{borderBottom: '1px solid #ddd'}}>
+      <td style={{padding: '0.5rem'}}>Masculino</td><td style={{padding: '0.5rem'}}>08-07-1959</td><td style={{padding: '0.5rem'}}>89127</td><td style={{padding: '0.5rem'}}>Vitíligo</td>
+    </tr>
+    <tr style={{borderBottom: '1px solid #ddd'}}>
+      <td style={{padding: '0.5rem'}}>Masculino</td><td style={{padding: '0.5rem'}}>10-06-1959</td><td style={{padding: '0.5rem'}}>89127</td><td style={{padding: '0.5rem'}}>Esclerosis múltiple</td>
+    </tr>
+    <tr>
+      <td style={{padding: '0.5rem'}}>Masculino</td><td style={{padding: '0.5rem'}}>27-09-1959</td><td style={{padding: '0.5rem'}}>89127</td><td style={{padding: '0.5rem'}}>Diabetes mellitus tipo 1</td>
+    </tr>
+  </tbody>
+</table>
+
+Cada fila es única: el criterio queda violado. Como regla general, los datos agregados correctamente construidos —que no contienen registros individuales aislables— satisfacen este criterio casi por definición.
+
+### 3.3. No Vinculación
+
+Este criterio exige que ningún registro de los datos dados pueda enlazarse, con certeza o alta probabilidad, con un registro de otro conjunto de datos referido a la misma persona. A diferencia del criterio anterior, su evaluación no puede realizarse examinando exclusivamente los datos dados: exige conocer qué otros conjuntos de datos existen y son accesibles mediante medios razonablemente utilizables. El EDPB advierte de un matiz técnico relevante: incluso datos generalizados (por ejemplo, año de nacimiento y código postal truncado, en lugar de fecha completa) pueden seguir siendo vinculables si esa combinación —aunque no unívoca— permite establecer correlaciones con otro conjunto de datos, especialmente cuando existe un tercer conjunto que actúa como "puente" entre ambos.
+
+### 3.4. No Inferencia
+
+El tercer criterio, y el que las Directrices desarrollan con mayor detalle frente al Dictamen de 2014, exige que no pueda extraerse de los datos dados ninguna inferencia "específica y significativa". Una inferencia es **específica** cuando se refiere a un individuo identificado o identificable; es además **significativa** cuando, adicionalmente, es susceptible de afectar a sus derechos e intereses, depende de los datos dados y no podría obtenerse a partir del conocimiento general o de datos sobre la población en su conjunto.
+
+La distinción es sutil pero decisiva. El EDPB ofrece un ejemplo clarificador: de la afirmación anónima "el verde es un color popular" puede inferirse, combinándola con otra información, que "Connor prefiere el verde" —una inferencia específica, pero no significativa, porque procede del conocimiento general sobre la población y no de un vínculo real con el conjunto de datos original—. En cambio, cuando la inferencia depende efectivamente de los registros del conjunto de datos —por ejemplo, cuando un banco infiere el riesgo crediticio de un nuevo solicitante a partir de patrones de un conjunto de datos histórico que sí contenía sus propios registros— la inferencia puede violar el criterio (13). El EDPB identifica cuatro vías típicas de inferencia problemática: la adición de atributos inferidos a un registro existente, la reconstrucción de datos a nivel de registro a partir de agregados (particularmente relevante frente a modelos de IA supuestamente anónimos y ataques de extracción de datos de entrenamiento), la inferencia de pertenencia a un conjunto de datos y la vinculación inferida —no exacta— con información adicional.
+
+### 3.5. Consecuencias de la violación de un criterio
+
+El incumplimiento de uno de los tres criterios no determina automáticamente el carácter personal del dato. Las Directrices establecen un protocolo de análisis adicional para cada supuesto: si falla el No Aislamiento de Registros, debe comprobarse si el registro aislado permite efectivamente singularizar al individuo (*singling out*) mediante medios razonablemente utilizables; si falla la No Vinculación, debe verificarse si la información vinculada conduce directamente a la identificabilidad; si falla la No Inferencia, la información debe tratarse, en principio, como personal, salvo que el análisis contextualizado permita concluir lo contrario para determinadas perspectivas.
+
+## 4. Valoración crítica y cuestiones abiertas
+
+Las Directrices 02/2026 representan un avance metodológico significativo respecto del Dictamen 05/2014, particularmente por dos motivos. En primer lugar, sustituyen una aproximación centrada en técnicas concretas de anonimización (generalización, aleatorización, criptografía) por un test funcional basado en resultados —los tres criterios—, lo que dota al marco de mayor resistencia frente a la evolución tecnológica: el criterio de No Inferencia, en particular, resulta aplicable tanto a técnicas de reidentificación clásicas como a ataques de extracción de datos de entrenamiento sobre modelos de IA generativa, un fenómeno inexistente en 2014.
+
+En segundo lugar, la formalización del enfoque contextualizado frente al simplificado ofrece a los responsables un margen de maniobra metodológico ausente hasta ahora, permitiendo calibrar el nivel de rigor exigible en función del riesgo real de la operación de tratamiento. No obstante, el propio EDPB reconoce el riesgo de falsos positivos inherente al enfoque contextualizado, lo que plantea una cuestión práctica no resuelta: qué margen de responsabilidad asume un controlador que, aplicando correctamente el enfoque contextualizado, concluye erróneamente que un dato es anónimo por desconocer capacidades de identificación de un tercero que solo se manifiestan años después, cuando —conforme señalan las propias Directrices— la evolución tecnológica incrementa progresivamente la probabilidad de reidentificación (14). El documento recomienda la reevaluación periódica, pero no fija una periodicidad ni articula un régimen de responsabilidad diferenciado para la anonimización realizada de buena fe bajo el estado del arte vigente en cada momento, lo que previsiblemente será objeto de ulterior desarrollo durante el período de consulta pública.
+
+## 5. Conclusiones operativas
+
+Para los responsables y encargados que operen en el ámbito de la Unión Europea, las Directrices 02/2026 aconsejan, como buena práctica inmediata:
+
+1. **Mapear sistemáticamente** los datos y la información adicional accesible antes de aplicar el marco completo de los tres criterios, descartando así los casos evidentes de dato personal.
+2. **Documentar exhaustivamente** el proceso de anonimización, incluidas las pruebas realizadas sobre los tres criterios, como elemento de responsabilidad proactiva (*accountability*) frente a una eventual inspección.
+3. **Evitar afirmaciones de anonimidad absoluta** en las políticas de privacidad y comunicaciones públicas cuando la evaluación se haya limitado a determinadas perspectivas relevantes.
+4. **Reevaluar periódicamente** la anonimidad de conjuntos de datos conservados a largo plazo, atendiendo a la evolución de las técnicas de reidentificación y, en particular, a los desarrollos en inteligencia artificial agéntica que el propio EDPB señala como factor de riesgo creciente.
+5. **Prestar especial atención a los modelos de IA y a los datos sintéticos**, dado que el criterio de No Inferencia resulta directamente aplicable a los ataques de extracción de información de entrenamiento, un escenario expresamente contemplado por el EDPB.
+
+> 📄 El texto completo de las *Guidelines 02/2026 on Anonymisation* (versión 1.0, adoptada el 7 de julio de 2026) puede consultarse y descargarse en PDF al final de este artículo.
+
+---
+
+### Referencias
+
+(1) EDPB, *Guidelines 02/2026 on Anonymisation*, versión 1.0, adoptadas el 7 de julio de 2026 para consulta pública.
+
+(2) Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD), DO L 119, 4.5.2016.
+
+(3) Art. 2.1 RGPD; Considerando 26 RGPD.
+
+(4) EDPB, *Guidelines 02/2026*, cit., Resumen ejecutivo.
+
+(5) EDPB, *Guidelines 02/2026*, cit., §§ 6-7.
+
+(6) STJUE (Gran Sala), *EDPS c. SRB*, C-413/23 P, apdos. 55-56, 82 y 102-111.
+
+(7) STJUE, *OC c. Comisión*, C-479/22 P.
+
+(8) EDPB, Directrices 07/2020 sobre los conceptos de responsable y encargado del tratamiento en el RGPD, §§ 79-84.
+
+(9) STJUE, *Nowak c. Data Protection Commissioner*, C-434/16, apdo. 35.
+
+(10) STJUE, *Breyer c. Bundesrepublik Deutschland*, C-582/14, apdos. 46-49; STJUE, *Gesamtverband Autoteile-Handel eV c. Scania CV AB*, C-319/22, apdos. 45-49.
+
+(11) EDPB, *Guidelines 02/2026*, cit., §§ 31-33.
+
+(12) STJUE, *Meta c. Bundeskartellamt*, C-252/21, apdo. 89.
+
+(13) EDPB, *Guidelines 02/2026*, cit., Ejemplos 13 y 14 (§§ 71-72).
+
+(14) EDPB, *Guidelines 02/2026*, cit., § 35.

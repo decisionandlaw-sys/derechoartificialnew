@@ -1,0 +1,89 @@
+---
+title: "Moderación digital y elecciones europeas: lo que el DSA no revela"
+description: "Análisis de 1.580 millones de acciones de moderación en las 8 mayores plataformas de la UE durante las elecciones al Parlamento Europeo de 2024. Los datos no muestran adaptación."
+date: "2026-04-23"
+tags: ["DSA", "moderacion-de-contenido", "elecciones-europeas", "plataformas-digitales", "transparencia"]
+section: "ia-global"
+category: "regulacion-ia"
+author: "Redacción"
+slug: "moderacion-plataformas-elecciones-europeas-2024-dsa"
+readingTime: 9
+---
+
+1.580 millones de acciones de moderación registradas, ocho plataformas analizadas durante ocho meses y un resultado que interpela directamente a los reguladores: ninguna de las grandes redes sociales mostró cambios significativos en sus prácticas de moderación antes, durante ni después de las elecciones al Parlamento Europeo de 2024. Eso es lo que concluye el estudio publicado en arXiv el 21 de abril de 2026, firmado por investigadores de la Universidad de Pisa, el IIT-CNR y la Universidad de Duisburg-Essen.
+
+El trabajo es, hasta la fecha, uno de los análisis más amplios realizados sobre la DSA Transparency Database (DSA-TDB), el repositorio centralizado gestionado por la Comisión Europea donde las plataformas de muy gran tamaño (*Very Large Online Platforms*, VLOPs) están obligadas a reportar todas sus decisiones de moderación en la UE.
+
+Lanzada en septiembre de 2023, la base de datos prometía ser una herramienta inédita para la supervisión regulatoria y el escrutinio público. Este estudio pregunta si esa promesa se ha cumplido.
+
+## Un año después: los mismos problemas estructurales
+
+La investigación cubre el periodo comprendido entre el 1 de marzo y el 31 de octubre de 2024, dividido en tres fases: preelectoral (hasta el 5 de junio), interelectoral (del 10 de junio al 17 de julio, entre la elección del Parlamento y la del Presidente de la Comisión) y postelectoral (hasta el 31 de octubre).
+
+Para la comparación de calidad de datos, los autores añaden una ventana adicional correspondiente a los primeros 100 días de la base de datos (septiembre 2023–enero 2024).
+
+Las ocho plataformas analizadas son las designadas VLOPs por el DSA con más de 45 millones de usuarios en la UE: Facebook, Instagram, LinkedIn, Pinterest, Snapchat, TikTok, X (antes Twitter) y YouTube. El volumen de datos procesados es heterogéneo: TikTok aportó 646 millones de *statements of reasons* (SoRs), frente a los apenas 293.000 de LinkedIn. Esta asimetría ya revela la primera dificultad comparativa de la base de datos.
+
+Los autores llevan a cabo análisis de series temporales, descomposición de tendencias, detección de puntos de cambio mediante el algoritmo PELT y medidas de distancia temporal entre plataformas (Dynamic Time Warping). El resultado es sistemáticamente el mismo: las series temporales no muestran señales de adaptación en el periodo electoral.
+
+Ni en volumen de acciones ni en los tiempos de respuesta (*moderation delay*) se detectan variaciones que puedan atribuirse causalmente a las elecciones.
+
+## La divergencia entre lo declarado y lo observado
+
+El hallazgo más incómodo del estudio no es la ausencia de cambios en la moderación, sino el contraste con lo que las propias plataformas afirmaron haber hecho. En sus informes anuales de evaluación de riesgos sistémicos, exigidos por los artículos 34 y 42 del DSA, plataformas como Facebook, Instagram y YouTube describieron medidas de mitigación específicas para el contexto electoral: equipos dedicados, herramientas automatizadas nuevas y monitorización reforzada.
+
+TikTok llegó a crear sistemas automáticos de mitigación específicamente para las elecciones. Sin embargo, ninguno de estos esfuerzos declarados se refleja de forma perceptible en la DSA-TDB.
+
+Los investigadores apuntan dos posibles explicaciones, no excluyentes entre sí. La primera es que las plataformas, sencillamente, no ajustaron sus prácticas de moderación de manera tan sustancial como afirmaron.
+
+Esta interpretación se ve reforzada por el hecho de que la Comisión Europea ha abierto procedimientos formales contra Facebook, Instagram y X precisamente por deficiencias en la protección de la integridad electoral durante las elecciones de 2024. La segunda explicación es estructural: la base de datos, tal y como está diseñada, puede no ser capaz de capturar ciertos tipos de intervención, ya sea porque las plataformas omiten información en sus reportes o porque las categorías predefinidas del DSA son demasiado amplias para reflejar respuestas específicas ante amenazas electorales.
+
+El estudio también identifica que algunos picos de moderación sí coinciden con eventos externos, pero no con las elecciones europeas. El 29 de junio de 2024, cinco plataformas registraron aumentos coincidentes con la adopción de nuevas sanciones de la UE contra Bielorrusia por su implicación en la guerra de Ucrania.
+
+El 19 de julio, tres plataformas mostraron cambios asociados al apagón informático masivo causado por la actualización fallida de CrowdStrike. La moderación, en otras palabras, responde a eventos geopolíticos y técnicos de gran impacto, pero no necesariamente a los riesgos sistémicos para los que el marco regulatorio fue diseñado.
+
+## El único caso con huella electoral: LinkedIn y la desinformación de julio
+
+Entre los ocho picos de moderación analizados en detalle, uno destaca por sus características distintivas: el registrado por LinkedIn el 11 de septiembre de 2024. En esa fecha, la plataforma moderó masivamente comentarios etiquetados bajo la categoría *negative effects on civic discourse or elections*, un campo de notable especificidad frente a las categorías genéricas habituales.
+
+Más revelador aún es el dato temporal: el contenido moderado había sido publicado en mid-julio, durante la fase interelectoral, pero no fue revisado hasta septiembre, acumulando un retraso de aproximadamente 45 días. Las decisiones en ese pico fueron casi en su totalidad manuales, lo que apunta a una revisión intencionada y no automatizada.
+
+Este caso ilustra, según los autores, el valor del etiquetado granular dentro del DSA-TDB: fue precisamente el uso de una categoría precisa —en lugar del comodín genérico *scope of platform service*— lo que permitió identificar la conexión electoral. Es también, paradójicamente, un argumento a favor de mayores exigencias en la especificidad de los campos obligatorios.
+
+## Transparencia formal, opacidad real
+
+La segunda dimensión del estudio, centrada en la calidad y fiabilidad de la base de datos, confirma que los problemas detectados en sus primeros meses de funcionamiento siguen sin resolverse un año después. El análisis comparativo entre el periodo inicial (septiembre 2023–enero 2024) y el periodo más reciente (julio–octubre 2024) revela una situación estancada.
+
+La categoría *scope of platform service* —un cajón de sastre que agrupa restricciones por edad, geografía, idioma y servicios no permitidos, entre otras razones— sigue siendo la más utilizada, con una media de uso del 41% en el periodo reciente, apenas inferior al 42,68% inicial. Plataformas como Facebook e Instagram han incrementado su dependencia de esta etiqueta genérica, mientras que YouTube y Snapchat la han reducido considerablemente.
+
+Los campos opcionales, que podrían aportar el contexto necesario para comprender las decisiones de moderación, siguen sin utilizarse: TikTok, Instagram, Facebook y LinkedIn no han rellenado ninguno de estos campos en el periodo analizado.
+
+Los investigadores documentan también errores objetivos en los datos: TikTok, Facebook, Snapchat y LinkedIn han enviado SoRs que reportan contenido moderado antes de haber sido publicado —una imposibilidad lógica que señala deficiencias en los controles de calidad internos de las plataformas.
+
+TikTok registró más de 12.000 SoRs erróneos solo el 10 de mayo de 2024. Aunque representan una fracción pequeña del total, estos registros pueden distorsionar análisis concretos si no se aplican filtros de integridad adecuados.
+
+La situación de X es especialmente problemática. La plataforma sigue reportando un retraso de moderación de cero días —estadísticamente implausible si se considera que sus SoRs afirman que el 99% de las decisiones son manuales. La detección de *deepfakes*, principal foco de moderación declarado por X, es inherentemente difícil de realizar manualmente a escala.
+
+Los investigadores confirman que las diferencias entre el periodo inicial y el más reciente son estadísticamente no significativas (p = 0,99 en prueba χ²), lo que equivale a decir que X no ha modificado en absoluto sus prácticas de reporte desde el inicio de la base de datos. Este comportamiento fue uno de los factores que llevó a la Comisión Europea a iniciar procedimientos formales contra la plataforma en diciembre de 2023.
+
+## Implicaciones para la regulación y para los profesionales
+
+El estudio plantea una tensión fundamental para el modelo regulatorio del DSA: la transparencia basada en auto-reporte puede ser formalmente compatible con una opacidad sustantiva.
+
+Las plataformas cumplen los requisitos mínimos —rellenan los campos obligatorios— pero utilizan categorías tan genéricas que el resultado ofrece escasa información sobre lo que realmente ocurre en la moderación. Los reguladores, los investigadores y la ciudadanía quedan con una base de datos técnicamente accesible pero analíticamente limitada.
+
+Para los profesionales del derecho digital y la gobernanza de plataformas, esto tiene implicaciones concretas. La evaluación del cumplimiento del DSA no puede limitarse a verificar que los campos están rellenos: debe incluir auditorías de la especificidad y coherencia del contenido reportado.
+
+La iniciativa de la Comisión Europea de desarrollar mecanismos de acceso a datos no públicos bajo el artículo 40(4) del DSA —mencionada por los autores como un avance fundamental— apunta en la dirección correcta: cruzar los datos auto-reportados con información interna de las plataformas es el único camino para detectar las adaptaciones que la base de datos actual no puede capturar.
+
+> 📄 **Accede al documento completo**
+> [When Transparency Falls Short: Auditing Platform Moderation During a High-Stakes Election](https://arxiv.org/abs/2604.19285) — disponible en arXiv para descarga directa.
+
+## Conclusiones
+
+- Las ocho mayores plataformas de la UE no mostraron cambios significativos en sus patrones de moderación durante las elecciones al Parlamento Europeo de 2024, pese a declarar en sus informes de riesgo haber adoptado medidas específicas.
+- El único indicio claro de moderación electoral proviene de LinkedIn, que en septiembre de 2024 actuó con 45 días de retraso sobre comentarios de desinformación publicados en julio.
+- La DSA-TDB acumula los mismos problemas estructurales que se detectaron en sus primeros meses: uso masivo de categorías genéricas, campos opcionales vacíos y datos erróneos sin corregir.
+- X destaca por la persistencia de patrones de reporte implausibles, con cero días de retraso declarado y 99% de moderación manual, sin cambios significativos desde el inicio de la base de datos.
+- El cumplimiento formal del DSA no equivale a transparencia sustantiva: las plataformas pueden reportar con exactitud superficial mientras mantienen una opacidad real sobre sus prácticas.
+- Los mecanismos de acceso a datos no públicos y las auditorías externas son condiciones necesarias para que la DSA-TDB cumpla su función regulatoria durante eventos de alto riesgo democrático.

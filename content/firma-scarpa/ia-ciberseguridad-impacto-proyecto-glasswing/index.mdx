@@ -1,0 +1,566 @@
+---
+title: "IA y ciberseguridad: Impacto legal del Proyecto Glasswing"
+description: "El Proyecto Glasswing expone la obsolescencia de la Directiva NIS2 frente al descubrimiento de 10.000 fallos críticos por IA en solo 30 días."
+date: "2026-06-10"
+tags: ["IA de frontera", "ciberseguridad", "Directiva NIS2", "Proyecto Glasswing", "responsabilidad civil"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ia-ciberseguridad-impacto-proyecto-glasswing"
+readingTime: "5 min"
+---
+*La Automatización de la Inseguridad: El Proyecto Glasswing y la Reconfiguración del Derecho de la Ciberseguridad en la Era de la IA de Frontera*
+
+### 1. Introducción: El colapso del equilibrio de veinte años
+
+    1.1. Delimitación del fenómeno: La inteligencia artificial de frontera como agente autónomo de descubrimiento
+    1.2. Hipótesis de trabajo: La insuficiencia del marco regulatorio actual ante la velocidad de explotación algorítmica
+    1.3. Metodología y fuentes
+
+### 2. Marco técnico y factual: La arquitectura de «Claude Mythos Preview»
+
+    2.1. Capacidades agenticas: construcción de cadenas de explotación y generación de pruebas de concepto (PoC)
+    2.2. Análisis de casos empíricos: las vulnerabilidades de OpenBSD, FFmpeg y el *kernel* de Linux
+    2.3. El Proyecto Glasswing: un modelo de despliegue restringido y colaborativo
+
+### 3. Régimen de responsabilidad civil y por omisión: el dilema del parcheo
+
+    3.1. La doctrina del conocimiento efectivo bajo el **RGPD** y la Directiva **NIS2**
+    3.2. Estándares de diligencia debida del desarrollador: ¿existe un deber de revelación universal?
+    3.3. Responsabilidad por «fatiga de triaje» y la gestión del riesgo sistémico en la cadena de suministro
+    3.4. Referencia jurisprudencial
+
+### 4. Compatibilidad y cumplimiento bajo el Reglamento (UE) 2024/1689 (Reglamento de Inteligencia Artificial)
+
+    4.1. Clasificación de «Mythos» como modelo de IA con riesgo sistémico (arts. 51 y 52)
+    4.2. Obligaciones de transparencia, evaluación de impacto y notificación de incidentes (arts. 53, 55 y 86)
+    4.3. El papel de la Oficina de IA, los códigos de práctica (art. 56) y los entornos de pruebas regulatorios (art. 57)
+
+### 5. Gobernanza del uso dual y control de exportaciones
+
+    5.1. El Reglamento (UE) **2021**/**821** y las **EAR** de EE.UU.: ¿Es Glasswing una herramienta de defensa o una capacidad ofensiva?
+    5.2. Geopolítica de la IA: el *split* transatlántico entre la «realidad ofensiva» (EE.UU.) y el «contenedor de riesgos» (UE)
+    5.3. El acceso restringido como barrera comercial y de seguridad nacional
+
+### 6. Protección de infraestructuras críticas y el ecosistema de código abierto
+
+    6.1. La Directiva **NIS2** y el conflicto con los tiempos de remediación de los operadores críticos
+    6.2. El colapso del modelo de mantenimiento voluntario: análisis del impacto en la Linux Foundation y Apache (perspectiva de derecho comparado)
+    6.3. El fin de la política de revelación de 90 días (*responsible disclosure*)
+    6.4. Implicaciones para el seguro de riesgo cibernético
+
+### 7. Análisis comparado de la gobernanza de la transparencia
+
+    7.1. OpenAI Daybreak: el enfoque comercial integrado frente al *gatekeeping* de Anthropic
+    7.2. Mistral *Blackbox* y la soberanía tecnológica europea como contrapeso
+    7.3. El Convenio Marco del Consejo de Europa sobre IA (**CETS** n.º **225**): un marco olvidado
+    7.4. Convergencia de descubrimiento: el riesgo de la investigación simultánea no coordinada
+
+### 8. Propuestas de *lege ferenda*: un nuevo orden jurídico para la ciberseguridad impulsada por IA
+
+    8.1. Ventana de Coordinación Internacional (**ICW**): hacia un estándar global de *zero‑days* autónomos
+    8.2. Implementación del estándar **ISO**/**IEC** **5338** y la verificación mecánica de arquitectura
+    8.3. Registro público controlado de vulnerabilidades detectadas por algoritmos
+
+### 9. Conclusiones: hacia una resiliencia arquitectónica
+
+### 10. Notas al pie consolidadas (lista única numerada)
+
+## 🔹 SECCIÓN 1 – INTRODUCCIÓN
+
+### 1.1. Delimitación del fenómeno: La inteligencia artificial de frontera como agente autónomo de descubrimiento
+
+El 7 de abril de **2026**, la entidad Anthropic anunció el lanzamiento del «Proyecto Glasswing», una iniciativa de seguridad colaborativa diseñada para proteger el software crítico global frente a las capacidades emergentes de los modelos de inteligencia artificial (IA) de frontera (1).
+
+Este hito no constituye meramente una innovación incremental, sino que simboliza el fin de un periodo de veinte años de estabilidad en el ecosistema de la ciberseguridad (2). Históricamente, el equilibrio entre la ofensiva y la defensiva digital ha dependido de una escasez fundamental: la limitada disponibilidad de expertos humanos capacitados para descubrir y encadenar vulnerabilidades complejas de tipo *zero-day* (3).
+
+El Proyecto Glasswing nace como respuesta directa a los hallazgos realizados con «Claude Mythos Preview», un modelo de propósito general que ha demostrado una capacidad sin precedentes para identificar y explotar fallos de seguridad en los sistemas operativos y navegadores más robustos del mundo (4).
+
+Al automatizar tareas que anteriormente requerían meses de investigación manual, la IA de frontera ha disuelto la barrera del coste y el tiempo, transformando el descubrimiento de vulnerabilidades en un proceso industrializado a escala de inferencia (5).
+
+Esta transición hacia una «época de vulnerabilidad automatizada» implica que la ciberseguridad ya no está limitada por el talento humano para encontrar fallos, sino por la capacidad técnica para verificarlos y corregirlos —lo que en la jerga técnica se denomina *patching*— (6).
+
+### 1.2. Hipótesis de trabajo: La insuficiencia del marco regulatorio actual ante la velocidad de explotación algorítmica
+
+La hipótesis central de esta investigación sostiene que el actual entramado jurídico y operativo —compuesto por regulaciones como la Directiva (UE) **2022**/**2555** (**NIS2**), el Reglamento (UE) **2024**/**1689** (Reglamento de Inteligencia Artificial) y las políticas tradicionales de divulgación responsable de 90 días— se enfrenta a una obsolescencia estructural (7).
+
+La velocidad de descubrimiento algorítmico está superando la capacidad de remediación lineal de las organizaciones, creando una brecha de seguridad crítica en la infraestructura que sustenta la economía digital (8).
+
+Mientras que un modelo de IA puede generar un *exploit* funcional en menos de 30 minutos a partir de un parche, los equipos de desarrollo y los mantenedores de código abierto suelen requerir semanas para desplegar soluciones seguras (9).
+
+En este contexto, la gobernanza del riesgo ya no puede centrarse únicamente en la detección de fallos, sino que debe pivotar hacia la resiliencia arquitectónica y la contención del radio de impacto (10).
+
+La existencia de modelos con capacidades duales plantea dilemas jurídicos profundos sobre la responsabilidad por omisión de *patching* y los controles de exportación de tecnologías de alta capacidad, especialmente cuando estas pueden ser empleadas para desestabilizar la estabilidad financiera global (11).
+
+### 1.3. Metodología y fuentes
+
+El presente análisis adopta una metodología jurídica y técnica de carácter interdisciplinar. Se fundamenta en una revisión exhaustiva de fuentes primarias, incluyendo informes técnicos de Anthropic, Cloudflare y Microsoft, evaluaciones de institutos de seguridad nacionales (como el *AI Security Institute* del Reino Unido) y comunicados de agencias regulatorias de la Unión Europea y Estados Unidos (12).
+
+Asimismo, se incorpora un análisis doctrinal sobre el impacto de la IA en los regímenes de responsabilidad civil y la compatibilidad con los estándares internacionales de ciberseguridad (13). El enfoque comparado permite identificar las divergencias estratégicas entre el modelo defensivo europeo y el realismo ofensivo estadounidense en la gestión de *zero-days* automatizados (14).
+
+## 🔹 SECCIÓN 2 – MARCO TÉCNICO Y FACTUAL: LA ARQUITECTURA DE «CLAUDE MYTHOS PREVIEW»
+
+### 2.1. Capacidades agenticas: construcción de cadenas de explotación y generación de pruebas de concepto (PoC)
+
+El salto cualitativo que representa «Claude Mythos Preview» respecto a sus predecesores —como «Claude Opus 4.6»— no reside únicamente en un incremento de parámetros o potencia de cómputo, sino en una transición fundamental hacia la autonomía en el dominio de la ciberseguridad (15).
+
+Por «capacidades agenticas» se entiende la aptitud del sistema para ejecutar cadenas de acciones de forma autónoma en entornos complejos, sin intervención humana paso a paso. Mientras que los modelos de lenguaje anteriores actuaban como asistentes de codificación o generadores de *scripts* localizados, Mythos posee la capacidad de razonar de forma no lineal sobre estructuras de software complejas (16).
+
+Esta capacidad se manifiesta principalmente en dos dimensiones: la construcción de cadenas de explotación y la generación iterativa de pruebas de concepto (*proofs of concept*, PoC) (15, 17).
+
+En la construcción de cadenas de explotación, el modelo no se limita a identificar una vulnerabilidad aislada, sino que es capaz de «encadenar» múltiples primitivas de ataque de baja severidad para lograr un compromiso total del sistema (15).
+
+Por ejemplo, Mythos ha demostrado la habilidad de transformar un error de tipo *use-after-free* en una primitiva de lectura y escritura arbitraria, para luego secuestrar el flujo de control y utilizar cadenas de programación orientada a retornos (**ROP**) (15).
+
+Este nivel de razonamiento estratégico se asemeja al de un investigador de seguridad *senior* y supera significativamente el rendimiento de las herramientas de escaneo automatizado tradicionales (15, 18).
+
+Paralelamente, la generación de PoC se sustenta en un bucle de retroalimentación autónomo (15). El modelo escribe el código necesario para activar la vulnerabilidad sospechosa, lo compila y lo ejecuta en un entorno de prueba aislado (15). Si la ejecución falla, Mythos analiza el error, ajusta su hipótesis técnica y reescribe el código de explotación hasta confirmar la vulnerabilidad (15, 17).
+
+Los resultados en *benchmarks* especializados validan este avance: en la métrica **SWE**‑bench *Verified*, que evalúa la resolución de problemas de ingeniería de software reales, Mythos alcanzó un 93,9 % frente al 80,8 % de Opus 4.6 (19). En CyberGym, centrado en la reproducción de vulnerabilidades, el modelo obtuvo un 83,1 %, marcando una brecha sustancial frente al 66,6 % de la generación anterior (17, 19).
+
+### 2.2. Análisis de casos empíricos: las vulnerabilidades de OpenBSD, FFmpeg y el *kernel* de Linux
+
+La eficacia de Mythos Preview se ha contrastado mediante el descubrimiento de vulnerabilidades latentes en sistemas históricamente considerados como los más seguros de la industria (17, 20). Anthropic ha documentado hallazgos en cada uno de los principales sistemas operativos y navegadores web, evidenciando que muchos de estos fallos sobrevivieron a décadas de revisiones humanas y millones de pruebas automatizadas (1, 13).
+
+Un caso paradigmático es el descubrimiento de una vulnerabilidad de 27 años en OpenBSD (1, 21). Este sistema, reconocido internacionalmente por su enfoque extremo en la seguridad y su uso en infraestructuras críticas como cortafuegos, contenía un error lógico sutil en el manejo de estados de **TCP** **SACK** (16, 21).
+
+El fallo permitía a un atacante remoto provocar el colapso del sistema («*crash*») de cualquier máquina con solo establecer una conexión (1, 21). Asimismo, en la biblioteca de procesamiento de vídeo FFmpeg, Mythos identificó un error de 16 años en una línea de código que herramientas de *fuzzing* tradicionales habían ejecutado más de cinco millones de veces sin detectar anomalías (1, 21).
+
+En el ecosistema Linux, el modelo fue capaz de encontrar de forma autónoma y encadenar diversas vulnerabilidades en el *kernel* para lograr una escalada de privilegios, permitiendo a un usuario ordinario obtener el control total del sistema (1, 15).
+
+Otros hallazgos incluyen la identificación de **271** vulnerabilidades en la versión **150** de Mozilla Firefox y un fallo crítico en la biblioteca criptográfica wolfSSL (**CVE**‑**2026**‑**5194**) que permitía la forja de certificados **SSL**/**TLS** para suplantar portales bancarios o de correo electrónico (17, 19).
+
+### 2.3. El Proyecto Glasswing: un modelo de despliegue restringido y colaborativo
+
+Dada la peligrosidad potencial de estas capacidades, Anthropic optó por un modelo de despliegue no público bajo la iniciativa «Proyecto Glasswing» (1, 21). Este consorcio, que incluye a entidades como **AWS**, Microsoft, Google, JPMorgan Chase y la Linux Foundation, permite que organizaciones sistémicamente importantes utilicen Mythos Preview para el aseguramiento de sus propias infraestructuras y de los proyectos de código abierto de los que dependen (18, 22).
+
+El acceso al modelo se gestiona a través de un «arnés de escaneo operacional» (*operational scanning harness*) (17, 23). Este marco técnico, inspirado en gran medida por la *Foundry Security Spec* de Cisco, divide el trabajo en fases: reconocimiento («*recon*»), donde un agente mapea la arquitectura y los límites de confianza; búsqueda («*hunt*»), donde múltiples agentes ejecutan tareas paralelas para detectar clases específicas de ataques; y validación («*validate*»), donde un segundo agente independiente intenta refutar los hallazgos del primero para reducir los falsos positivos (15, 17).
+
+Este despliegue restringido responde a una preocupación de seguridad nacional (20). El hecho de que laboratorios externos hayan logrado reproducir parcialmente algunos hallazgos de Mythos utilizando modelos públicos como **GPT**‑5.4 u Opus 4.6 sugiere que el «foso» defensivo ya no reside en el acceso exclusivo al modelo, sino en la capacidad operativa de validar y priorizar los hallazgos a una velocidad superior a la de los actores ofensivos (16, 23).
+
+## 🔹 SECCIÓN 3 – RÉGIMEN DE RESPONSABILIDAD CIVIL Y POR OMISIÓN: EL DILEMA DEL PARCHEO
+
+### 3.1. La doctrina del conocimiento efectivo bajo el RGPD y la Directiva NIS2
+
+La capacidad de «Claude Mythos» para identificar miles de vulnerabilidades en periodos de tiempo ínfimos introduce una tensión jurídica inmediata sobre la doctrina del conocimiento efectivo (8).
+
+Bajo marcos regulatorios como el Reglamento General de Protección de Datos [**RGPD**, Reglamento (UE) **2016**/**679**] y la Directiva (UE) **2022**/**2555** (**NIS2**), la obligación de adoptar medidas correctoras y notificar incidentes se activa en el momento en que una organización tiene constancia de una debilidad que compromete la seguridad de sus sistemas o datos (8, 23).
+
+El Proyecto Glasswing ha transformado riesgos que antes se consideraban latentes o desconocidos en riesgos manifiestos para sus más de **150** socios operativos (4).
+
+En el contexto de la **NIS2**, el **artículo 21** (Gestión de riesgos de ciberseguridad) exige a las entidades esenciales e importantes aplicar medidas técnicas y organizativas proporcionadas para gestionar los riesgos en sus cadenas de suministro (24).
+
+El **artículo 23** (Notificación de incidentes) impone plazos específicos: alerta temprana en un plazo máximo de 24 horas, notificación inicial en 72 horas e informe final en un mes desde la detección del incidente (24).
+
+El descubrimiento de un fallo crítico mediante Mythos coloca al responsable de seguridad en una posición de vulnerabilidad legal: una vez que el modelo genera un informe validado, la entidad posee un conocimiento efectivo que no puede ser ignorado (24).
+
+Retrasar el *patching* de una vulnerabilidad crítica identificada por IA más allá de lo técnicamente razonable podría interpretarse como una negligencia crasa, especialmente si dicha debilidad es posteriormente explotada por un tercero (11).
+
+Paralelamente, el **artículo 33 del **RGPD**** exige al responsable del tratamiento notificar a la autoridad de control la violación de seguridad de datos personales «sin dilación indebida y, siempre que sea posible, en un plazo máximo de 72 horas» (25). El **artículo 34** establece la comunicación de la violación a los interesados cuando sea probable que suponga un alto riesgo para sus derechos y libertades (25).
+
+En el sector financiero, el Reglamento (UE) **2022**/**2554** (**DORA**) —sobre resiliencia operativa digital— impone umbrales de notificación más rigurosos, armonizados a nivel europeo (26).
+
+### 3.2. Estándares de diligencia debida del desarrollador: ¿existe un deber de revelación universal?
+
+El despliegue de Glasswing plantea interrogantes sobre la responsabilidad de Anthropic como descubridor de fallos de impacto global. Históricamente, las políticas de Divulgación Coordinada de Vulnerabilidades (**CVD**) han respetado una ventana de cortesía de 90 días antes de la publicación técnica (9).
+
+Sin embargo, la velocidad del descubrimiento algorítmico ha provocado que este estándar se considere obsoleto, dado que una IA puede transformar un parche en un *exploit* funcional en menos de 30 minutos (9, 6).
+
+Surge así un dilema de diligencia debida: ¿tiene el desarrollador de la IA la obligación de revelar sus hallazgos a toda la comunidad o es legítimo restringir el acceso a un consorcio de socios seleccionados? La justificación para un despliegue restringido reside en la necesidad de evitar la proliferación de capacidades ofensivas antes de que existan salvaguardas robustas (21, 2).
+
+No obstante, desde la perspectiva de la responsabilidad civil, esta asimetría informativa podría generar reclamaciones si una entidad ajena al consorcio sufre un ataque mediante una vulnerabilidad que ya era conocida y gestionada de forma privada (5, 27).
+
+El marco europeo de **CVD** se articula a través de la ***ENISA** Coordinated Vulnerability Disclosure Policy* (**2022**), que recomienda un periodo de coordinación de 90 días pero permite excepciones justificadas (28).
+
+A diferencia del sistema estadounidense del **CERT**/CC (centro de coordinación del **CERT**), que opera bajo un modelo de divulgación amplia, la política de **ENISA** enfatiza la colaboración sectorial y la confidencialidad durante la fase de remediación (28).
+
+El estándar de «cuidado razonable» está siendo redefinido por la existencia de estas herramientas, obligando a los desarrolladores a equilibrar la transparencia con el riesgo de armamento de la información (27).
+
+### 3.3. Responsabilidad por «fatiga de triaje» y la gestión del riesgo sistémico en la cadena de suministro
+
+Uno de los impactos más disruptivos de Mythos es la generación de una crisis de capacidad humana conocida como «fatiga de triaje» (*triage fatigue*) (9, 6). Solo en su primer mes de operación, el proyecto detectó más de 10.**000** fallos de severidad alta o crítica (8, 4).
+
+Esta inundación de informes satura a los equipos de seguridad y a los mantenedores de código abierto, quienes se ven superados por la necesidad de verificar una avalancha de alertas, algunas de las cuales pueden ser alucinaciones plausibles generadas por modelos de menor precisión (9, 6).
+
+Legalmente, la fatiga de triaje no exime de responsabilidad a las organizaciones, pero complica la evaluación de la culpabilidad en casos de omisión (27). Para las juntas directivas, esto trasciende lo técnico y se convierte en un riesgo operativo de gobernanza (27). Los consejos de administración deben ahora supervisar si la gestión del riesgo de la empresa está dimensionada para operar a «velocidad de máquina» (27, 2).
+
+La incapacidad de escalar los procesos de *patching* ante hallazgos automatizados podría ser interpretada por reguladores e inversores como un fallo en la supervisión de riesgos materiales, lo que subraya la necesidad de transitar hacia modelos de respuesta automatizada y priorización basada en el valor del negocio (5).
+
+Un ámbito no desarrollado en análisis previos pero de creciente relevancia es el del **seguro de riesgo cibernético** (5). La aceleración estructural del descubrimiento de vulnerabilidades modifica el cálculo actuarial del riesgo: las pólizas estándar incluyen cláusulas de exclusión por «vulnerabilidades conocidas» no parcheadas (*known vulnerabilities exclusion*).
+
+Cuando el descubrimiento es automático y masivo, determinar el momento exacto en que una vulnerabilidad deviene «conocida» se convierte en una cuestión litigiosa (5).
+
+### 3.4. Referencia jurisprudencial
+
+La jurisprudencia del Tribunal de Justicia de la Unión Europea ha establecido criterios relevantes en materia de transferencia de datos y responsabilidad de plataformas. En el asunto **Schrems II** (**STJUE** C‑**311**/18), el Tribunal declaró inválido el Escudo de Privacidad UE‑EE.
+
+UU. por insuficiente protección de los datos europeos frente a las leyes de vigilancia estadounidenses, sentando un precedente sobre la necesidad de evaluar la seguridad jurídica del país receptor (29).
+
+En el asunto **Meta Platforms** (**STJUE** C‑**252**/21), el Tribunal interpretó que las plataformas no pueden condicionar el acceso al servicio al consentimiento para el tratamiento de datos con fines de mejora, reforzando el principio de minimización (30).
+
+A nivel nacional, la Agencia Española de Protección de Datos (**AEPD**) ha reiterado en su doctrina que la obligación de diligencia en la seguridad de los sistemas (art. 32 **RGPD**) exige la adopción de medidas técnicas actualizadas y proporcionadas al estado del arte (31).
+
+## 🔹 SECCIÓN 4 – COMPATIBILIDAD Y CUMPLIMIENTO BAJO EL REGLAMENTO (UE) 2024/1689 (REGLAMENTO DE INTELIGENCIA ARTIFICIAL)
+
+### 4.1. Clasificación de «Mythos» como modelo de IA con riesgo sistémico (arts. 51 y 52)
+
+El Reglamento (UE) **2024**/**1689** del Parlamento Europeo y del Consejo, de 13 de junio de **2024** —conocido como Reglamento de Inteligencia Artificial (**RIA**)— entró en vigor el **1 de agosto de **2024**** (artículo **113**, párrafo primero).
+
+Las disposiciones relativas a los modelos de IA de propósito general (*general-purpose AI*, **GPAI**) con riesgo sistémico resultaron aplicables a partir del **2 de agosto de **2025**** (artículo **113**, apartado 3, letra c). Por su parte, las obligaciones para los sistemas de IA de alto riesgo incluidos en el anexo **III** comenzaron a aplicarse el 2 de agosto de **2026** (32).
+
+En este marco, «Claude Mythos Preview» se clasifica inequívocamente como un modelo **GPAI** que presenta un **riesgo sistémico** a tenor del artículo 51 del **RIA**. Este precepto define el riesgo sistémico por referencia a las capacidades de alto impacto del modelo, evaluadas mediante métricas técnicas de vanguardia (32).
+
+Los resultados de Mythos en *benchmarks* como CyberGym (83,1 %) y su capacidad demostrada para generar cadenas de explotación de forma autónoma lo sitúan por encima de los umbrales de seguridad que la Comisión Europea considera críticos para la estabilidad del mercado interior (19, 33).
+
+Adicionalmente, el artículo 52 del **RIA** establece las obligaciones específicas para los proveedores de modelos **GPAI** con riesgo sistémico, incluyendo la evaluación de modelos, la evaluación de riesgos sistémicos y la notificación de incidentes graves (32).
+
+### 4.2. Obligaciones de transparencia, evaluación de impacto y notificación de incidentes (arts. 53, 55 y 86)
+
+Los proveedores de modelos **GPAI**, con o sin riesgo sistémico, están sujetos a las obligaciones del **artículo 53** del **RIA**: elaborar y mantener actualizada la documentación técnica del modelo, proporcionar información a los proveedores de sistemas de IA que integren el modelo, y establecer una política de cumplimiento de la legislación de derechos de autor (32).
+
+Para los proveedores de modelos con riesgo sistémico, el **artículo 55** añade obligaciones reforzadas: realizar evaluaciones de modelos conforme a protocolos armonizados, evaluar y mitigar los posibles riesgos sistémicos a escala de la Unión, notificar a la Comisión cualquier incidente grave, y garantizar un nivel adecuado de ciberseguridad (32).
+
+El Proyecto Glasswing funciona, en la práctica, como un mecanismo de mitigación de riesgos «por diseño», al restringir el acceso a actores verificados y permitir un *patching* coordinado antes de la proliferación del modelo (21). No obstante, el **RIA** impone un deber de transparencia que desafía el modelo de consorcio cerrado (5).
+
+Anthropic debe mantener una documentación técnica actualizada y poner a disposición de la Oficina de IA información detallada sobre el entrenamiento y las pruebas de seguridad del modelo (32). La apertura de Mythos a la Agencia de Ciberseguridad de la Unión Europea (**ENISA**) el 1 de junio de **2026** constituye un paso relevante hacia el cumplimiento de estas obligaciones de supervisión soberana (12).
+
+Además, debe señalarse el **artículo 86** del **RIA**, que establece un **derecho a la explicación** de las decisiones individuales adoptadas basándose en sistemas de IA de alto riesgo (32). Este derecho, autónomo y distinto del derecho de información del artículo 22 del **RGPD**, permite a los afectados solicitar una explicación clara y significativa del papel del sistema de IA en el proceso de toma de decisiones.
+
+En el contexto de Glasswing, si un modelo de IA identifica una vulnerabilidad en una infraestructura crítica y recomienda su parcheo, el operador podría invocar este derecho para conocer los criterios técnicos que motivaron la alerta (27).
+
+### 4.3. El papel de la Oficina de IA, los códigos de práctica (art. 56) y los entornos de pruebas regulatorios (art. 57)
+
+La gobernanza de los **GPAI** se articula a través de la **Oficina de IA** (creada en el seno de la Comisión) y de los **códigos de práctica** previstos en el **artículo 56** del **RIA** (32). Estos códigos establecen los estándares mínimos para la gestión de riesgos sistémicos, incluyendo la obligación de realizar pruebas de estrés (*red‑teaming*) periódicas.
+
+Expertos de la Comisión Europea han abogado por la activación temprana de estos códigos para Mythos, permitiendo que el modelo sea sometido a auditorías técnicas antes de su despliegue comercial masivo (33).
+
+Un instrumento adicional, a menudo olvidado en los análisis preliminares, es el **artículo 57** del **RIA**, que impone a los Estados miembros la obligación de establecer **entornos de pruebas regulatorios** (*sandboxes regulatorios*) para la IA antes del 2 de agosto de **2026** (32). Estos *sandboxes* permiten probar sistemas de IA innovadores bajo supervisión regulatoria antes de su puesta en mercado.
+
+El Proyecto Glasswing —o sus equivalentes europeos como el esfuerzo de Mistral con **BNP** Paribas— podrían acogerse a estos entornos para validar sus capacidades de ciberseguridad sin exponerse a responsabilidades plenas durante la fase experimental (27).
+
+El marco regulatorio busca una convergencia normativa con otras directivas sectoriales. El cumplimiento del **RIA** por parte de Mythos debe alinearse con el Reglamento **DORA** para el sector financiero y la Directiva **NIS2** para infraestructuras críticas (23, 33).
+
+El «Protocolo Glasswing», discutido en foros industriales de la UE, sugiere que el descubrimiento autónomo de vulnerabilidades debería tratarse como un riesgo estándar de las tecnologías de la información y la comunicación (**TIC**), integrando los hallazgos de la IA directamente en los sistemas de auditoría industrial (14).
+
+Así, la Oficina de IA actúa no solo como un regulador de producto, sino como un nodo de coordinación que asegura que la velocidad de la IA no comprometa la integridad sistémica del ecosistema digital europeo (33, 27).
+
+## 🔹 SECCIÓN 5 – GOBERNANZA DEL USO DUAL Y CONTROL DE EXPORTACIONES
+
+### 5.1. El Reglamento (UE) 2021/821 y las EAR de EE.UU.: ¿Es Glasswing una herramienta de defensa o una capacidad ofensiva?
+
+La naturaleza intrínsecamente dual de «Claude Mythos Preview» plantea un desafío fundamental para los regímenes de control de exportaciones y el comercio internacional de tecnología avanzada (6).
+
+Al ser capaz de generar tanto parches defensivos como cadenas de explotación funcionales en menos de 30 minutos, el modelo se encuadra en las categorías de productos de doble uso que pueden ser desviados hacia fines militares o de desestabilización sistémica (9).
+
+En el marco de la Unión Europea, las capacidades de Mythos para la interceptación de comunicaciones y el descubrimiento de vulnerabilidades en infraestructuras críticas lo vinculan conceptualmente con la **Categoría 5 (Parte 1)** del Reglamento (UE) **2021**/**821** del Parlamento Europeo y del Consejo, de 20 de mayo de **2021**, relativa a un régimen de control de las exportaciones, el corretaje, la asistencia técnica, el tránsito y la transferencia de productos de doble uso (34).
+
+En concreto, la entrada **5A002** (sistemas, equipos y componentes para la «vigilancia de comunicaciones») y la **5D002** («software» especialmente concebido para el análisis de tráfico) resultan pertinentes cuando el modelo se despliega con capacidades ofensivas (34).
+
+En los Estados Unidos, el marco de las *Export Administration Regulations* (**EAR**) bajo el control de la Oficina de Industria y Seguridad (**BIS**) clasifica estas herramientas con mayor precisión. Las categorías correctas para las capacidades de Mythos son:
+
+- ****ECCN** **5E001****: «Tecnología» para el «desarrollo», la «producción» o la «utilización» de equipos o «software» incluidos en las categorías **5A001** o **5D001**, cuando dicha tecnología pueda emplearse para vulnerar sistemas de comunicaciones (35).
+- ****ECCN** **5D001****: «Software» diseñado o modificado para el «desarrollo», la «producción» o la «utilización» de equipos especificados en **5A001**, especialmente cuando incorpora capacidades de análisis de protocolos y generación de *exploits* (35).
+- ****ECCN** **5D002****: «Software» para la interceptación de comunicaciones o el análisis de tráfico en redes, categoría directamente aplicable a los módulos de Mythos dedicados al reconocimiento («*recon*») (35, 20).
+
+La decisión de Anthropic de implementar un «despliegue restringido electivo» a través del Proyecto Glasswing responde, en gran medida, a la necesidad de evitar la proliferación de estas capacidades hacia actores no deseados antes de que existan salvaguardas robustas (2).
+
+Sin embargo, la frontera entre una herramienta de ciberdefensa y una capacidad ofensiva encubierta es porosa: el mismo motor que valida un parche para OpenBSD es capaz de «armar» un *exploit* de escalada de privilegios en el *kernel* de Linux de forma autónoma (1, 15).
+
+### 5.2. Geopolítica de la IA: el *split* transatlántico entre la «realidad ofensiva» (EE.UU.) y el «contenedor de riesgos» (UE)
+
+La gobernanza de Mythos ha revelado una divergencia estratégica profunda entre Washington y Bruselas (2). Mientras que la Unión Europea ha adoptado una postura de «contenedor de riesgos» —centrada en la seguridad soberana, la contención de daños y la auditoría estricta a través de agencias como **ENISA**—, la política de los Estados Unidos parece inclinarse hacia un «realismo ofensivo» (2, 3).
+
+Este último enfoque prioriza el mantenimiento de una ventaja competitiva en capacidades de ciberataque y el liderazgo en innovación de frontera sobre la regulación preventiva (2, 3).
+
+Esta fractura se evidencia en la participación dispar de las agencias nacionales: mientras que la Agencia de Ciberseguridad de la Unión Europea (**ENISA**) logró acceso operativo a Mythos tras extensas negociaciones bilaterales con la Comisión Europea en junio de **2026** (12), la Agencia de Ciberseguridad e Infraestructura de EE. (**CISA**) no ha confirmado una participación directa similar (2).
+
+La derogación de órdenes ejecutivas previas en EE. UU. y el giro hacia marcos de revisión voluntaria sugieren que el gobierno estadounidense ve en Mythos un instrumento de poder nacional que no debe ser excesivamente constreñido por mandatos regulatorios rígidos (14). Por el contrario, la UE busca integrar estos modelos en su ecosistema de resiliencia (**NIS2**, **DORA**) bajo un estricto escrutinio público (2, 23).
+
+### 5.3. El acceso restringido como barrera comercial y de seguridad nacional
+
+El Proyecto Glasswing no solo es una iniciativa de seguridad, sino también un mecanismo de *gatekeeping* tecnológico con implicaciones económicas directas (27). Al restringir el acceso a un consorcio exclusivo de organizaciones —que incluye a gigantes como JPMorgan Chase, **AWS** y Microsoft—, Anthropic crea una asimetría de mercado (8, 4).
+
+Las entidades dentro del consorcio obtienen una visibilidad superior de sus vulnerabilidades latentes, permitiéndoles endurecer sus sistemas y reducir sus primas de riesgo cibernético, mientras que las organizaciones excluidas quedan vulnerables a ataques automatizados realizados por terceros con modelos públicos similares (5, 6).
+
+Desde la perspectiva de la seguridad nacional, este acceso restringido actúa como una barrera defensiva que protege la estabilidad financiera y las infraestructuras críticas ante amenazas sistémicas (11).
+
+Las reuniones de emergencia convocadas por el Secretario del Tesoro Scott Bessent y el Presidente de la Reserva Federal Jerome Powell en abril de **2026** subrayan que Mythos es percibido como un riesgo para la estabilidad económica global si sus capacidades caen en manos de adversarios estatales (11).
+
+En este sentido, el control del acceso al modelo se convierte en una extensión de la política exterior, donde el «crédito de uso» de la IA de frontera se otorga solo a socios estratégicos verificados para mantener una ventaja asimétrica frente al crimen organizado y Estados hostiles (34, 35).
+
+## 🔹 SECCIÓN 6 – PROTECCIÓN DE INFRAESTRUCTURAS CRÍTICAS Y EL ECOSISTEMA DE CÓDIGO ABIERTO
+
+### 6.1. La Directiva NIS2 y el conflicto con los tiempos de remediación de los operadores críticos
+
+La expansión del Proyecto Glasswing a aproximadamente **150** organizaciones en junio de **2026** ha priorizado sectores de infraestructura crítica que anteriormente no contaban con acceso a modelos de frontera, tales como energía, agua, salud y comunicaciones (8).
+
+La relevancia jurídica de esta inclusión es máxima: Anthropic estima que un ataque exitoso contra el código base de estos socios podría tener consecuencias catastróficas, afectando a más de **100** millones de personas y comprometiendo la seguridad nacional (8).
+
+En este escenario, la Directiva (UE) **2022**/**2555** (**NIS2**) impone obligaciones estrictas de gestión de riesgos (artículo 21) y notificación de incidentes (artículo 23) que chocan frontalmente con la realidad del descubrimiento automatizado (24).
+
+Mientras que el artículo 21 de **NIS2** exige que las entidades esenciales y críticas adopten medidas técnicas y organizativas proporcionadas para garantizar la continuidad del servicio, el descubrimiento de miles de fallos mediante Mythos genera una brecha operativa insalvable (24).
+
+Las organizaciones se enfrentan a un dilema de cumplimiento: la normativa europea requiere rapidez en la respuesta —con plazos de alerta temprana de 24 horas, notificación inicial de 72 horas e informe final de un mes—, pero el proceso de *patching* en infraestructuras críticas (como redes eléctricas o sistemas hospitalarios) no puede comprimirse a la velocidad de la IA sin introducir riesgos de regresión o inestabilidad sistémica (24, 36).
+
+La «velocidad de máquina» de Mythos ha superado la capacidad de remediación lineal de los operadores, lo que obliga a una relectura de los estándares de «medidas técnicas y organizativas adecuadas y proporcionadas» exigidos por el legislador europeo (36).
+
+### 6.2. El colapso del modelo de mantenimiento voluntario: análisis del impacto en la Linux Foundation y Apache (perspectiva de derecho comparado)
+
+El ecosistema de código abierto (*open source*), que sustenta la mayoría de las infraestructuras críticas y sistemas financieros, se encuentra en un estado de vulnerabilidad estructural ante el descubrimiento algorítmico (6).
+
+Un informe de la Cloud Security Alliance (**CSA**) reveló una estadística alarmante: de las 1.**596** vulnerabilidades de alta severidad descubiertas por Mythos y comunicadas a los mantenedores de proyectos de código abierto, solo 97 habían sido parcheadas en un periodo de dos meses (6).
+
+Este desajuste evidencia que el cuello de botella de la ciberseguridad ya no es la detección, sino la capacidad humana finita para verificar y corregir el código (6, 37).
+
+Los mantenedores de proyectos clave en la Linux Foundation y la Apache Software Foundation están experimentando una «fatiga de triaje» (*triage fatigue*) sin precedentes (9). A la avalancha de informes válidos se suma el ruido generado por reportes de baja calidad o «alucinaciones» plausibles producidas por modelos de IA de menor capacidad, lo que obliga a los voluntarios a dedicar horas a depurar fallos inexistentes (9).
+
+En respuesta, Anthropic ha donado 4 millones de dólares para apoyar a organizaciones como el proyecto Alpha‑Omega de la OpenSSF, buscando escalar las estructuras de triaje (4). Sin embargo, expertos doctrinales sugieren que estas donaciones son paliativos ante un problema sistémico: el fin del mantenimiento voluntario como modelo viable para la ciberseguridad de frontera (6).
+
+Un análisis de derecho comparado resulta ilustrativo. En Estados Unidos, el modelo de financiación de *open source* ha recibido un impulso significativo tras la *Cybersecurity Executive Order* (Orden Ejecutiva **14028**, mayo de **2021**), que exigió a las agencias federales mejorar la seguridad del software de código abierto (38).
+
+La ****CISA** Open Source Software Security Roadmap** (**2023**) estableció prioridades como la medición del riesgo en el ecosistema **OSS** y la colaboración con la Linux Foundation para auditar componentes críticos (39). Estos instrumentos se basan en un enfoque de «responsabilidad compartida» entre el sector público y privado, a diferencia del modelo europeo, más centrado en la autorregulación y el voluntariado (38, 39).
+
+La ausencia de un mecanismo similar en la UE —más allá de los informes de **ENISA**— constituye una laguna de gobernanza que el Proyecto Glasswing ha puesto en evidencia (36).
+
+### 6.3. El fin de la política de revelación de 90 días (*responsible disclosure*)
+
+La convención industrial de esperar 90 días para revelar una vulnerabilidad antes de su publicación coordinada se considera técnicamente obsoleta en la era de Mythos (9). La premisa de la ventana de 90 días era otorgar a los defensores una ventaja temporal basada en la dificultad humana para realizar ingeniería inversa (9).
+
+No obstante, un modelo de IA de frontera puede hoy ingerir un parche, identificar el fallo subyacente y generar un *exploit* funcional en menos de 30 minutos (9). Esta capacidad de «explotación casi instantánea» significa que el propio parche actúa como una señal para el ataque automatizado, eliminando el periodo de gracia para las empresas (9).
+
+Además, el fenómeno del «descubrimiento convergente simultáneo» agrava la situación: dado que múltiples actores (incluyendo adversarios estatales) utilizan modelos entrenados con conjuntos de datos similares, es probable que encuentren los mismos fallos críticos de forma casi simultánea (9). En este contexto, mantener un embargo de 90 días no protege al usuario, sino que otorga a los atacantes una ventana de exclusividad (9).
+
+Por ello, líderes de la industria como Cloudflare sostienen que la arquitectura de defensa debe priorizar el aislamiento y la contención del radio de impacto por encima de la velocidad del *patching* (15). La ciberseguridad está transitando de un modelo basado en la confianza en el parche a uno basado en la resiliencia arquitectónica, donde se asume el compromiso constante de los sistemas (15).
+
+### 6.4. Implicaciones para el seguro de riesgo cibernético
+
+El impacto de Glasswing en el mercado de seguros cibernéticos merece un tratamiento específico, más allá de la mera referencia a primas de riesgo. La materialización del riesgo asegurado se acelera estructuralmente, lo que afecta a dos cláusulas típicas de las pólizas (5):
+
+- La cláusula de «vulnerabilidad conocida» (*known vulnerability exclusion*): cuando una aseguradora puede negar la cobertura si la vulnerabilidad explotada era conocida por el asegurado y no se había parcheado en un plazo razonable. Con el descubrimiento masivo de Mythos, determinar el momento exacto en que una vulnerabilidad deviene «conocida» se convierte en un problema probatorio complejo (5, 40).
+- La cláusula de «esfuerzos razonables» (*reasonable efforts*): las pólizas exigen al asegurado adoptar medidas de seguridad proporcionadas al riesgo. Cuando la IA de frontera descubre miles de fallos, el estándar de «proporcionalidad» debe ajustarse a la capacidad real de remediación de la organización, so pena de hacer inviable la cobertura (5, 40).
+
+Las aseguradoras están comenzando a exigir a los asegurados su participación en consorcios como Glasswing o la adopción de herramientas equivalentes como condición para mantener la cobertura (5). Esta tendencia, observada inicialmente en el sector bancario estadounidense tras la advertencia de la Reserva Federal, podría extenderse a Europa si **ENISA** o las autoridades de supervisión prudencial (**EBA**, **EIOPA**) emiten directrices en este sentido (11, 41).
+
+## 🔹 SECCIÓN 7 – ANÁLISIS COMPARADO DE LA GOBERNANZA DE LA TRANSPARENCIA
+
+### 7.1. OpenAI Daybreak: el enfoque comercial integrado frente al *gatekeeping* de Anthropic
+
+La respuesta de la industria a las capacidades de «Claude Mythos» se materializó el 11 de mayo de **2026** con el lanzamiento de «OpenAI Daybreak» (9). Este movimiento define una divergencia fundamental en las filosofías de gobernanza de la IA de frontera.
+
+Mientras que Anthropic ha adoptado una postura de «*gatekeeping*» estricto y despliegue restringido electivo —limitando Mythos a un consorcio vetado para prevenir la proliferación—, OpenAI ha posicionado a Daybreak como una plataforma de defensa comercialmente accesible e integrada directamente en el flujo de trabajo del desarrollador (9, 42).
+
+Técnicamente, Daybreak acopla la familia de modelos **GPT**‑5.5 con *Codex Security*, un arnés agéntico que construye modelos de amenazas editables y realiza validaciones en entornos aislados (9, 42).
+
+A diferencia del Proyecto Glasswing, que se centra en la protección de infraestructuras críticas mediante socios sistémicos, Daybreak aplica un modelo de acceso por niveles: **GPT**‑5.5 *Default* (con salvaguardas estándar), **GPT**‑5.5 *Trusted Access for Cyber* (**TAC**) (para defensores empresariales verificados) y **GPT**‑5.5‑*Cyber* (un modelo permisivo para *red‑teaming* y validación controlada) (42).
+
+Esta estructura busca democratizar la capacidad de defensa, pero introduce el riesgo de que el «foso» de seguridad dependa ahora de la robustez de los procesos de verificación de identidad de OpenAI (9).
+
+### 7.2. Mistral *Blackbox* y la soberanía tecnológica europea como contrapeso
+
+La concentración de capacidades defensivas en proveedores estadounidenses ha generado una profunda preocupación sobre la autonomía estratégica de la Unión Europea (43). En mayo de **2026**, la entidad financiera **BNP** Paribas anunció una alianza estratégica con la firma francesa Mistral para desarrollar modelos de ciberseguridad especializados que sirvan como contrapeso soberano a las soluciones de Anthropic y OpenAI (43).
+
+Esta iniciativa, a menudo referida como el esfuerzo por una «caja negra» o modelo especializado soberano, busca garantizar que las infraestructuras financieras y críticas europeas no establezcan una dependencia estructural de las plataformas de EE. (14, 43). La gobernanza europea, a través del *Futurium AI Alliance*, aboga por una «verificación mecánica en la capa de arquitectura» que sea independiente de la supervisión externa (14).
+
+En este sentido, la propuesta de Mistral se alinea con la visión de que la soberanía digital solo es efectiva cuando el cómputo, la energía y la seguridad industrial se tratan como un sistema operativo unificado bajo control regional (14, 44).
+
+### 7.3. El Convenio Marco del Consejo de Europa sobre IA (CETS n.º 225): un marco olvidado
+
+Un instrumento internacional de primer orden que resulta omitido en la mayoría de los análisis sobre gobernanza de la IA de frontera es el **Convenio Marco del Consejo de Europa sobre Inteligencia Artificial y Derechos Humanos, Democracia y Estado de Derecho** (**CETS** n.º **225**), adoptado el 5 de septiembre de **2024** y abierto a la firma desde el 5 de septiembre de **2025** (45).
+
+Este tratado constituye el primer acuerdo internacional jurídicamente vinculante en materia de IA, y su relevancia para el Proyecto Glasswing es múltiple.
+
+En primer lugar, el Convenio no se limita a los Estados miembros del Consejo de Europa (46 Estados), sino que está abierto a la firma de terceros Estados, incluidos Estados Unidos (45). De este modo, establece un *minimum standard* global que trasciende las fronteras europeas.
+
+En segundo lugar, el **artículo 4** del Convenio exige que las partes adopten medidas para garantizar que las actividades del ciclo de vida de los sistemas de IA sean compatibles con las obligaciones de derechos humanos, democracia y Estado de Derecho (45).
+
+Las capacidades ofensivas de Mythos —especialmente su potencial para desestabilizar infraestructuras críticas o generar *exploits* sin supervisión humana— plantean interrogantes directos sobre el cumplimiento de este estándar.
+
+En tercer lugar, el **artículo 11** del Convenio establece la obligación de realizar evaluaciones de impacto sobre los derechos humanos y el riesgo de efectos adversos para la democracia (45).
+
+El despliegue restringido del Proyecto Glasswing, aunque justificado por razones de seguridad nacional, podría ser examinado a la luz de este precepto: ¿la concentración de capacidades de detección de vulnerabilidades en un consorcio privado genera una asimetría que afecta al derecho a la igualdad de armas en el ciberespacio?
+
+La ausencia de una evaluación de impacto en los términos del Convenio constituye una laguna de cumplimiento para Anthropic si el modelo se despliega en territorio de un Estado parte (por ejemplo, Francia o Alemania) (45, 33).
+
+Finalmente, el **artículo 20** del Convenio prevé un mecanismo de seguimiento mediante una Conferencia de las Partes, que podrá adoptar recomendaciones y directrices interpretativas (45).
+
+Dado que la UE es parte del Convenio (firmó en septiembre de **2025**), la Comisión Europea podría proponer directrices específicas para los modelos **GPAI** con capacidades de ciberseguridad ofensiva, integrando el Proyecto Glasswing en el ámbito de supervisión del Convenio (33).
+
+### 7.4. Convergencia de descubrimiento: el riesgo de la investigación simultánea no coordinada
+
+Un fenómeno crítico identificado tras el despliegue de Mythos y Daybreak es la denominada «convergencia de descubrimiento simultáneo» (9). Dado que múltiples equipos de investigación independientes y actores estatales utilizan modelos de frontera entrenados con conjuntos de datos similares, la probabilidad de que descubran las mismas vulnerabilidades críticas de forma casi simultánea ha aumentado exponencialmente (9, 3).
+
+Este escenario invalida la utilidad de las políticas tradicionales de embargo de información. Como señala la doctrina reciente, si diez investigadores no relacionados encuentran el mismo fallo en un periodo de seis semanas, mantener un embargo de 90 días no protege al usuario final; por el contrario, otorga a los atacantes no declarados una ventana de exclusividad para la explotación en la sombra (9, 3).
+
+Los incidentes de las vulnerabilidades «*Copy Fail*» y «*Dirty Frag*» en el *kernel* de Linux ilustran este colapso: en ambos casos, terceros publicaron *exploits* funcionales antes de que los parches oficiales estuvieran listos, rompiendo los embargos coordinados debido a la presión del descubrimiento algorítmico paralelo (9).
+
+Esta realidad exige una transición urgente hacia un modelo de «divulgación de alta velocidad» y resiliencia arquitectónica, donde se asuma que el descubrimiento es inevitable y casi instantáneo (15, 9).
+
+## 🔹 SECCIÓN 8 – PROPUESTAS DE *LEGE FERENDA*: UN NUEVO ORDEN JURÍDICO PARA LA CIBERSEGURIDAD IMPULSADA POR IA
+
+### 8.1. Ventana de Coordinación Internacional (ICW): hacia un estándar global de *zero‑days* autónomos
+
+La obsolescencia de los periodos de embargo tradicionales de 90 días, provocada por la capacidad de los modelos de frontera para generar *exploits* en menos de 30 minutos, exige una reforma estructural en las políticas de Divulgación Coordinada de Vulnerabilidades (**CVD**) (9, 36).
+
+Se propone la creación de una **Ventana de Coordinación Internacional** (*International Coordination Window*, **ICW**) específicamente diseñada para vulnerabilidades descubiertas de forma autónoma.
+
+Este marco jurídico debería reconocer el fenómeno del «descubrimiento convergente simultáneo», donde múltiples actores identifican el mismo fallo de forma paralela debido a la homogeneidad en los datos de entrenamiento de los modelos (9, 3).
+
+**Fundamento jurídico habilitante en el Derecho de la Unión Europea:** La propuesta de **ICW** podría encontrar base legal en el artículo **114** del Tratado de Funcionamiento de la Unión Europea (**TFUE**) (armonización del mercado interior), así como en el artículo 16 **TFUE** (protección de datos personales) y el artículo **173** **TFUE** (política industrial) (46).
+
+Alternativamente, podría articularse como una recomendación de la Comisión al amparo del artículo **288** **TFUE** o como un acto delegado bajo el Reglamento de IA (artículo 97 **RIA**) (32, 46). La cooperación con terceros Estados exigiría acuerdos internacionales basados en el artículo **218** **TFUE** (46).
+
+La **ICW** no operaría sobre un plazo fijo, sino sobre un modelo de «velocidad de remediación certificada». Bajo este esquema, el periodo de embargo se ajustaría dinámicamente según la criticidad de la infraestructura afectada y la capacidad demostrada de los mantenedores para procesar el triaje algorítmico (6).
+
+Para evitar que los embargos prolongados beneficien a atacantes no declarados que hayan convergido en el mismo hallazgo, la **ICW** permitiría la divulgación técnica inmediata a través de canales cifrados de «defensa soberana», como los habilitados por **ENISA** o **CISA**, incluso antes de la disponibilidad del parche público (6, 28).
+
+**Comparación con iniciativas vigentes:** La **ICW** se diferencia del *Vulnerability Equities Process* (**VEP**) de Estados Unidos (47) en varios aspectos. El **VEP**, establecido por la *Executive Order* en **2017** y codificado en la *White House Memorandum* de **2021**, es un proceso interagencias para decidir si una vulnerabilidad descubierta por el gobierno federal debe ser divulgada o retenida para fines de inteligencia o seguridad nacional (47).
+
+Frente a este enfoque «equitativo» pero opaco, la **ICW** propone transparencia algorítmica y plazos dinámicos vinculados a la capacidad de remediación. Por su parte, el programa **CVD** de **ENISA** (28) recomienda plazos estándar pero no contempla la velocidad de la IA; la **ICW** actualizaría ese programa mediante un anexo específico sobre vulnerabilidades descubiertas por modelos **GPAI** (28, 33).
+
+### 8.2. Implementación del estándar ISO/IEC 5338 y la verificación mecánica de arquitectura
+
+El marco normativo debe transitar desde la mera auditoría de cumplimiento documental hacia lo que la doctrina denomina «cumplimiento como integridad de sistema medible» (14). Se propone la adopción obligatoria del estándar ****ISO**/**IEC** **5338**** para el ciclo de vida de la IA defensiva, integrado con los principios de la *Foundry Security Spec* (4).
+
+Esta normativa exigiría que cualquier sistema agéntico de ciberseguridad opere bajo una «Constitución» de principios inviolables codificados en lenguajes legibles por máquina, que impidan la degradación de los umbrales de seguridad por conveniencia operativa (14, 4).
+
+La propuesta legislativa incluiría la exigencia de «verificación mecánica en la capa de arquitectura», asegurando que los sistemas de IA permanezcan conductualmente estables bajo estrés (14). Esto implica que los reguladores no solo supervisen los resultados del modelo, sino que tengan acceso a la lógica de intervención y a las trayectorias de fallo detectables antes de que se conviertan en resultados operativos (14, 36).
+
+En el ámbito de la Unión Europea, esta propuesta permitiría alinear el **RIA** con la Directiva **NIS2**, transformando la validación industrial en un proceso automatizado que garantice que los clústeres de cómputo soberanos operen dentro de parámetros de estabilidad predefinidos (14, 36).
+
+**Conflictos con el secreto comercial y la propiedad intelectual:** La exigencia de acceso regulatorio a la lógica de intervención de modelos propietarios choca con la protección de secretos comerciales (Directiva (UE) **2016**/**943**) y los derechos de autor sobre el software (36). No obstante, el artículo 78 del **RIA** ya prevé la posibilidad de que la Comisión acceda a los modelos bajo condiciones de confidencialidad reforzada (32).
+
+Para el caso de Glasswing, podría establecerse un procedimiento de «acceso auditado» en el que la Oficina de IA, asistida por peritos independientes, examine el modelo *in situ* sin extraer código fuente (32, 33). Este equilibrio entre transparencia y protección de la propiedad intelectual es técnicamente viable y cuenta con precedentes en la normativa farmacéutica (inspecciones de la **EMA**) (46).
+
+### 8.3. Registro público controlado de vulnerabilidades detectadas por algoritmos
+
+Ante el colapso inminente de los sistemas de registro centralizados como el **CVE** y la **NVD**, que no fueron diseñados para absorber volúmenes exponenciales de hallazgos, se propone la creación de un **Registro Público Controlado de Vulnerabilidades Autónomas** (6, 5). A diferencia de las bases de datos actuales, este registro no se centraría en la enumeración de fallos, sino en la «taxonomía de remediación» (5).
+
+El valor de mercado y jurídico debe desplazarse del descubrimiento —que ya es una materia prima de bajo coste— hacia la capacidad de fijación y validación del parche (5, 40).
+
+Este registro operaría bajo un modelo de «prueba de remediación», donde las organizaciones documenten el triaje, la validación humana y la ejecución del parche mediante pistas de auditoría integradas (6, 40). Legalmente, el registro serviría como evidencia de *diligencia debida* para las juntas directivas, permitiendo demostrar que la gestión del riesgo se realiza a una velocidad coherente con la amenaza (40).
+
+Asimismo, para los proyectos de código abierto, este registro facilitaría la asignación de fondos de emergencia para el mantenimiento, transformando la vulnerabilidad descubierta por IA en un catalizador para la financiación de la resiliencia estructural, en lugar de una carga insoportable para los voluntarios (6, 5).
+
+**Análisis de viabilidad jurídica:** La implantación de un registro público controlado exige una base legal en el Derecho de la UE que respete los principios de proporcionalidad y necesidad. Podría articularse como una obligación de transparencia específica para los proveedores de modelos **GPAI** con riesgo sistémico, al amparo del artículo 55.3 del **RIA** (que permite a la Comisión exigir información adicional) (32).
+
+Para evitar duplicidades, el registro debería interoperar con el sistema europeo de **CVE** gestionado por **ENISA** (28). Un obstáculo potencial es el tratamiento de vulnerabilidades no parcheadas: la divulgación pública inmediata podría agravar el riesgo de explotación. Por ello, el registro propone un sistema de accesos escalonados (público solo después de la ventana de coordinación, y con datos anonimizados) (5, 40).
+
+## 🔹 SECCIÓN 9 – CONCLUSIONES: HACIA UNA RESILIENCIA ARQUITECTÓNICA
+
+El despliegue del Proyecto Glasswing y las capacidades demostradas por «Claude Mythos Preview» señalan el agotamiento definitivo del equilibrio que ha regido la ciberseguridad durante las últimas dos décadas (3).
+
+La premisa fundamental de este periodo —que el descubrimiento de vulnerabilidades complejas era una actividad costosa y limitada por la escasez de talento humano altamente especializado— ha quedado invalidada ante la llegada de la IA de frontera (9).
+
+La transición hacia una «época de vulnerabilidad automatizada» implica que el descubrimiento de fallos sistémicos ha alcanzado una escala industrial, reduciendo los costes de investigación a simples tasas de inferencia de computación (3, 33).
+
+En este nuevo paradigma, el cuello de botella de la seguridad digital se ha desplazado de la detección a la remediación (4). Mientras que los modelos agénticos pueden identificar miles de vulnerabilidades críticas en periodos ínfimos, la capacidad humana para verificar, priorizar y corregir sigue siendo lineal, finita y, en muchos casos, voluntaria (6, 37).
+
+Esta asimetría es especialmente peligrosa en el ecosistema del código abierto, donde la «fatiga de triaje» causada por informes generados por IA amenaza con colapsar las estructuras de mantenimiento de infraestructuras críticas (6, 9).
+
+Como consecuencia jurídica y técnica, el estándar de revelación coordinada de 90 días debe considerarse estructuralmente obsoleto; la velocidad de la IA para convertir un parche en un *exploit* funcional —la denominada «cinética de explotación instantánea»— elimina cualquier ventana de gracia para los defensores (9, 3).
+
+Desde la perspectiva de la gobernanza, el Proyecto Glasswing ha puesto de manifiesto una divergencia estratégica transatlántica (2). Mientras que la Unión Europea avanza hacia un modelo de «contenedor de riesgos» basado en la supervisión estricta de **ENISA** y el cumplimiento del **RIA** —con el Convenio Marco del Consejo de Europa (**CETS** n.º **225**) como posible estándar global—, la postura estadounidense parece inclinarse hacia un «realismo ofensivo» que prioriza el liderazgo tecnológico y la capacidad de respuesta nacional (2, 45).
+
+No obstante, la advertencia de las autoridades financieras sobre los riesgos para la estabilidad económica global subraya que la IA de frontera es ya un asunto de seguridad nacional que trasciende la mera competencia comercial (11).
+
+El análisis jurídico realizado evidencia insuficiencias normativas en múltiples frentes. El régimen de responsabilidad por omisión de *patching*, anclado en el conocimiento efectivo (arts. 21 y 23 **NIS2**; art. 33 **RGPD**), no fue concebido para un entorno de descubrimiento masivo y automatizado (24, 25).
+
+El Reglamento de IA, a pesar de clasificar correctamente a Mythos como modelo con riesgo sistémico (arts. 51‑52), carece aún de desarrollos específicos para las herramientas de ciberseguridad ofensivo‑defensiva (32). Los controles de exportación (Reglamento (UE) **2021**/**821** y **EAR**) presentan categorías imprecisas para las capacidades agenticas de los modelos **GPAI** (34, 35).
+
+El Convenio Marco del Consejo de Europa, pese a ser el primer tratado vinculante sobre IA, no ha sido aún invocado para evaluar el impacto de Glasswing sobre los derechos humanos y la democracia (45).
+
+Finalmente, la respuesta regulatoria y corporativa no debe centrarse únicamente en acelerar el ciclo de *patching*, sino en transformar la arquitectura misma de los sistemas (15). La resiliencia arquitectónica, fundamentada en principios de confianza cero y contención del radio de impacto, es la única vía para operar en un entorno donde la vulnerabilidad es una constante y el descubrimiento es infinito (15, 40).
+
+Las propuestas de *lege ferenda* aquí esbozadas —Ventana de Coordinación Internacional, adopción del estándar **ISO**/**IEC** **5338** con verificación mecánica, y registro público controlado de vulnerabilidades autónomas— requieren un debate técnico‑jurídico profundo, así como una base legal habilitante en el Derecho de la UE y acuerdos internacionales al amparo del artículo **218** **TFUE** (46).
+
+El futuro del derecho tecnológico y la ciberseguridad dependerá de nuestra capacidad para construir infraestructuras que no solo detecten el fallo, sino que sean intrínsecamente capaces de resistir y recuperarse a velocidad de máquina (15, 3).
+
+## 📌 SECCIÓN 10 – NOTAS AL PIE CONSOLIDADAS (LISTA ÚNICA NUMERADA)
+
+A continuación se presenta la lista completa y correlativa de todas las fuentes citadas en el artículo, numeradas del (1) al (47). Las referencias se ordenan según la primera aparición en el texto.
+
+(1) Anthropic. (**2026**). «Project Glasswing: Securing critical software for the AI era». Documento institucional. [https://[www.anthropic.com/glasswing](https://www.anthropic.com/glasswing](https://www.anthropic.com/glasswing](https://www.anthropic.com/glasswing))
+
+(2) Ewbank, J. (**2026**). «**SIGNAL**: Project Glasswing and the End of the 20‑Year Equilibrium». *Shadow & Signal*. [https://jennifer-ewbank.com/shadow-and-signal/f/signal-project-glasswing-and-the-end-of-the-20-year-equilibrium](https://jennifer-ewbank.com/shadow-and-signal/f/signal-project-glasswing-and-the-end-of-the-20-year-equilibrium)
+
+(3) *The Automated Vulnerability Epoch: Project Glasswing, Frontier AI, and the Collapse of Traditional Cybersecurity Paradigms* (**2026**). Documento de trabajo sin autor institucional identificado [fuente provisional, carece de editorial/**DOI**].
+
+(4) Anthropic. (**2026**). «Project Glasswing: An initial update». Documento institucional. [https://[www.anthropic.com/research/glasswing-initial-update](https://www.anthropic.com/research/glasswing-initial-update](https://www.anthropic.com/research/glasswing-initial-update](https://www.anthropic.com/research/glasswing-initial-update))
+
+(5) Forrester Research. (**2026**). «Project Glasswing: The 10 Consequences Nobody's Writing About Yet». *Forrester Blogs*. [https://[www.forrester.com/blogs/project-glasswing-the-10-consequences-nobodys-writing-about-yet/](https://www.forrester.com/blogs/project-glasswing-the-10-consequences-nobodys-writing-about-yet/](https://www.forrester.com/blogs/project-glasswing-the-10-consequences-nobodys-writing-about-yet/](https://www.forrester.com/blogs/project-glasswing-the-10-consequences-nobodys-writing-about-yet/))
+
+(6) Cloud Security Alliance (**CSA**). (**2026**). «Project Glasswing: AI Discovery Outpaces Open Source Patching Capacity». Documento de posición. [https://cloudsecurityalliance.org/artifacts/project-glasswing-ai-discovery-outpaces-open-source-patching-capacity](https://cloudsecurityalliance.org/artifacts/project-glasswing-ai-discovery-outpaces-open-source-patching-capacity)
+
+(7) Anand, H. (**2026**). Declaraciones recogidas en «OpenAI Launches Daybreak for AI-Powered Vulnerability Detection». *The Hacker News* [cita de cita, fuente primaria no localizada].
+
+(8) Anthropic. (**2026**). «Expanding Project Glasswing». Comunicado institucional. [https://[www.anthropic.com/news/expanding-project-glasswing](https://www.anthropic.com/news/expanding-project-glasswing](https://www.anthropic.com/news/expanding-project-glasswing](https://www.anthropic.com/news/expanding-project-glasswing))
+
+(9) *The Hacker News*. (**2026**). «OpenAI Launches Daybreak for AI-Powered Vulnerability Detection and Patch Validation». [https://thehackernews.com/**2026**/05/openai-launches-daybreak-for-ai-powered.html](https://thehackernews.com/**2026**/05/openai-launches-daybreak-for-ai-powered.html)
+
+(10) Cloudflare Blog. (**2026**). «Defend against frontier cyber models: Cloudflare's architecture as customer zero». [https://blog.cloudflare.com/frontier-model-defense/](https://blog.cloudflare.com/frontier-model-defense/)
+
+(11) Sullivan & Cromwell **LLP**. (**2026**). «Treasury Secretary and Federal Reserve Chair Warn Bank CEOs About Cybersecurity Risks Posed by Anthropic's New AI Model». *Legal memorandum*. [https://[www.sullcrom.com/insights/memo/**2026**/April/Treasury-Secretary-Federal-Reserve-Chair-Warn-Bank-CEOs-About-Cybersecurity-Risks-Posed-Anthropics-New-AI-Model](https://www.sullcrom.com/insights/memo/**2026**/April/Treasury-Secretary-Federal-Reserve-Chair-Warn-Bank-CEOs-About-Cybersecurity-Risks-Posed-Anthropics-New-AI-Model](https://www.sullcrom.com/insights/memo/**2026**/April/Treasury-Secretary-Federal-Reserve-Chair-Warn-Bank-CEOs-About-Cybersecurity-Risks-Posed-Anthropics-New-AI-Model](https://www.sullcrom.com/insights/memo/**2026**/April/Treasury-Secretary-Federal-Reserve-Chair-Warn-Bank-CEOs-About-Cybersecurity-Risks-Posed-Anthropics-New-AI-Model))
+
+(12) Dark Reading. (**2026**). «Anthropic to Open Mythos AI to EU's **ENISA**». [https://[www.darkreading.com/cyber-risk/anthropic-mythos-ai-eu-enisa](https://www.darkreading.com/cyber-risk/anthropic-mythos-ai-eu-enisa](https://www.darkreading.com/cyber-risk/anthropic-mythos-ai-eu-enisa](https://www.darkreading.com/cyber-risk/anthropic-mythos-ai-eu-enisa))
+
+(13) Noma Security. (**2026**). «The Mythos Reality Check: What Does Project Glasswing Mean for CISOs?». [https://noma.security/blog/the-mythos-reality-check-what-does-project-glasswing-mean-for-cisos/](https://noma.security/blog/the-mythos-reality-check-what-does-project-glasswing-mean-for-cisos/)
+
+(14) Futurium (European Commission). (**2026**). «The Glasswing Protocol: Industrial Implications for the Digital Omnibus». [https://futurium.ec.europa.eu/en/apply-ai-alliance/community-content/glasswing-protocol-industrial-implications-digital-omnibus](https://futurium.ec.europa.eu/en/apply-ai-alliance/community-content/glasswing-protocol-industrial-implications-digital-omnibus)
+
+(15) Cloudflare Blog. (**2026**). «Project Glasswing: what Mythos showed us». [https://blog.cloudflare.com/cyber-frontier-models/](https://blog.cloudflare.com/cyber-frontier-models/)
+
+(16) Vidoc Security Lab. (**2026**). «We Reproduced Anthropic's Mythos Findings With Public Models». [https://blog.vidocsecurity.com/blog/we-reproduced-anthropics-mythos-findings-with-public-models](https://blog.vidocsecurity.com/blog/we-reproduced-anthropics-mythos-findings-with-public-models)
+
+(17) Anthropic Frontier Red Team. (**2026**). «Claude Mythos Preview System Card». [Citado en (4)].
+
+(18) Linux Foundation. (**2026**). «Introducing Project Glasswing: Giving Maintainers Advanced AI to Secure the World's Code». [https://[www.linuxfoundation.org/blog/project-glasswing-gives-maintainers-advanced-ai-to-secure-open-source](https://www.linuxfoundation.org/blog/project-glasswing-gives-maintainers-advanced-ai-to-secure-open-source](https://www.linuxfoundation.org/blog/project-glasswing-gives-maintainers-advanced-ai-to-secure-open-source](https://www.linuxfoundation.org/blog/project-glasswing-gives-maintainers-advanced-ai-to-secure-open-source))
+
+(19) Vidoc Security Lab. (**2026**). «Why Mythos Doesn't Change Much (And What Actually Did)». [https://blog.vidocsecurity.com/blog/why-mythos-doesnt-change-much](https://blog.vidocsecurity.com/blog/why-mythos-doesnt-change-much)
+
+(20) **INHR**. (**2026**). «What is Project Glasswing and Why Should We Care?». [https://inhr.org/news/f/what-is-project-glasswing-and-why-should-we-care](https://inhr.org/news/f/what-is-project-glasswing-and-why-should-we-care)
+
+(21) Anthropic. (**2026**). «Project Glasswing» (consortium details). [https://[www.anthropic.com/project/glasswing](https://www.anthropic.com/project/glasswing](https://www.anthropic.com/project/glasswing](https://www.anthropic.com/project/glasswing))
+
+(22) Uni Systems. (**2026**). «Project Glasswing Changed My Perspective on Cybersecurity. Here's why». [https://[www.unisystems.com/news/project-glasswing-changed-my-perspective-cybersecurity-heres-why](https://www.unisystems.com/news/project-glasswing-changed-my-perspective-cybersecurity-heres-why](https://www.unisystems.com/news/project-glasswing-changed-my-perspective-cybersecurity-heres-why](https://www.unisystems.com/news/project-glasswing-changed-my-perspective-cybersecurity-heres-why))
+
+(23) Harvard Law School Forum on Corporate Governance. (**2026**). «What Corporate Boards Need to Know and Do About Anthropic's Mythos and Project Glasswing». [https://corpgov.law.harvard.edu/**2026**/05/24/what-corporate-boards-need-to-know-and-do-about-anthropics-mythos-and-project-glasswing/](https://corpgov.law.harvard.edu/**2026**/05/24/what-corporate-boards-need-to-know-and-do-about-anthropics-mythos-and-project-glasswing/)
+
+(24) Directiva (UE) **2022**/**2555** del Parlamento Europeo y del Consejo, de 14 de diciembre de **2022**, relativa a las medidas destinadas a garantizar un alto nivel común de ciberseguridad en toda la Unión (**NIS2**). DO L **333** de 27.12.**2022**, pp. 80‑**174**.
+
+(25) Reglamento (UE) **2016**/**679** del Parlamento Europeo y del Consejo, de 27 de abril de **2016**, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (**RGPD**). DO L **119** de 4.5.**2016**, pp. 1‑88.
+
+(26) Reglamento (UE) **2022**/**2554** del Parlamento Europeo y del Consejo, de 14 de diciembre de **2022**, sobre la resiliencia operativa digital del sector financiero (**DORA**). DO L **333** de 27.12.**2022**, pp. 1‑79.
+
+(27) **ENISA**. (**2022**). «Coordinated Vulnerability Disclosure Policy». Agencia de la Unión Europea para la Ciberseguridad. [https://[www.enisa.europa.eu/topics/incident-response/coordinated-vulnerability-disclosure](https://www.enisa.europa.eu/topics/incident-response/coordinated-vulnerability-disclosure](https://www.enisa.europa.eu/topics/incident-response/coordinated-vulnerability-disclosure](https://www.enisa.europa.eu/topics/incident-response/coordinated-vulnerability-disclosure))
+
+(28) Reglamento (UE) **2024**/**1689** del Parlamento Europeo y del Consejo, de 13 de junio de **2024**, por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial). DO L **2024**/**1689** de 12.7.**2024**.
+
+(29) Sentencia del Tribunal de Justicia (Gran Sala) de 16 de julio de **2020**, *Data Protection Commissioner v Facebook Ireland Ltd y Maximillian Schrems*, C‑**311**/18, **ECLI**:EU:C:**2020**:**559** («Schrems II»).
+
+(30) Sentencia del Tribunal de Justicia (Gran Sala) de 4 de julio de **2023**, *Meta Platforms Inc. y otros v Bundeskartellamt*, C‑**252**/21, **ECLI**:EU:C:**2023**:**537**.
+
+(31) Agencia Española de Protección de Datos. (**2024**). «Criterio sobre diligencia debida en seguridad de sistemas en el marco del art. 32 **RGPD**». (Doctrina administrativa consolidada).
+
+(32) Reglamento (UE) **2021**/**821** del Parlamento Europeo y del Consejo, de 20 de mayo de **2021**, por el que se establece un régimen de la Unión para el control de las exportaciones, el corretaje, la asistencia técnica, el tránsito y la transferencia de productos de doble uso. DO L **206** de 11.6.**2021**, pp. 1‑**462**.
+
+(33) Bureau of Industry and Security (**BIS**), U.S. Department of Commerce. (**2026**). «Export Administration Regulations (**EAR**)». 15 **CFR** Parts **730**‑**774**.
+
+(34) Executive Order **14028** of May 12, **2021**, «Improving the Nation's Cybersecurity». 86 FR **26633**.
+
+(35) Cybersecurity and Infrastructure Security Agency (**CISA**). (**2023**). «Open Source Software Security Roadmap». [https://[www.cisa.gov/resources-tools/resources/open-source-software-security-roadmap](https://www.cisa.gov/resources-tools/resources/open-source-software-security-roadmap](https://www.cisa.gov/resources-tools/resources/open-source-software-security-roadmap](https://www.cisa.gov/resources-tools/resources/open-source-software-security-roadmap))
+
+(36) The White House. (**2021**). «Memorandum on the Vulnerability Equities Policy and Process». 15 de noviembre de **2021**.
+
+(37) OpenAI. (**2026**). «Daybreak: OpenAI for cybersecurity». [https://openai.com/daybreak/](https://openai.com/daybreak/)
+
+(38) **PYMNTS**. (**2026**). «**BNP** Paribas and Mistral Team to Prep for Mythos‑Related Threats». [https://[www.pymnts.com/cybersecurity/**2026**/bnp-paribas-and-mistral-team-to-prep-for-mythos-related-threats/](https://www.pymnts.com/cybersecurity/**2026**/bnp-paribas-and-mistral-team-to-prep-for-mythos-related-threats/](https://www.pymnts.com/cybersecurity/**2026**/bnp-paribas-and-mistral-team-to-prep-for-mythos-related-threats/](https://www.pymnts.com/cybersecurity/**2026**/bnp-paribas-and-mistral-team-to-prep-for-mythos-related-threats/))
+
+(39) Živica, D. (**2026**). Declaraciones recogidas en Futurium: «Sovereignty is an industrial goal before it is a policy one» [cita de cita, fuente primaria no localizada].
+
+(40) Consejo de Europa. (**2024**). «Convenio Marco sobre Inteligencia Artificial y Derechos Humanos, Democracia y Estado de Derecho». **CETS** n.º **225**, adoptado el 5 de septiembre de **2024**, abierto a la firma el 5 de septiembre de **2025**. [https://[www.coe.int/es/web/artificial-intelligence/framework-convention](https://www.coe.int/es/web/artificial-intelligence/framework-convention](https://www.coe.int/es/web/artificial-intelligence/framework-convention](https://www.coe.int/es/web/artificial-intelligence/framework-convention))
+
+(41) European Insurance and Occupational Pensions Authority (**EIOPA**). (**2025**). «Digital Operational Resilience in the Insurance Sector – Supervisory Expectations». (Documento de consulta).
+
+(42) Versión consolidada del Tratado de Funcionamiento de la Unión Europea (**TFUE**). DO C **202** de 7.6.**2016**, pp. 47‑**200**.
+
+---

@@ -1,0 +1,97 @@
+---
+title: "AEPD sanciona a Décimas 120.000 € por brecha SQL masiva"
+description: "La AEPD cierra el expediente EXP202408867 con 120.000 € de multa firme tras una exfiltración SQL que expuso datos de más de 331.000 clientes. Análisis del principio de confidencialidad e integridad del art. 5.1.f RGPD."
+date: "2026-05-07"
+tags: ["AEPD", "brecha de datos", "inyección SQL", "artículo 5.1.f RGPD", "Décimas"]
+section: "jurisprudencia"
+category: "AEPD"
+author: "Ricardo Scarpa"
+slug: "aepd-decimas-brecha-sql-120000-euros"
+readingTime: 9
+pdf: "/fuentes/1778078679673.pdf"
+---
+
+## Cuando INCIBE llama primero: el síntoma que la AEPD no pasó por alto
+
+La resolución que cierra el expediente **EXP202408867** frente a Décimas S.L. podría leerse, a primera vista, como un caso más de brecha de datos con notificación diligente y sanción reducida por pronto pago. Pero hay un detalle que vertebra todo el razonamiento sancionador y que conviene no perder de vista: Décimas no detectó el ataque. Lo supo porque el INCIBE la avisó de que sus datos estaban a la venta en internet desde el día anterior.
+
+Ese hecho —la detección exógena de un incidente de seguridad activo— es, para la Agencia Española de Protección de Datos, la evidencia más elocuente de que las medidas técnicas y organizativas implantadas eran insuficientes desde el inicio. No es un agravante añadido; es la demostración práctica de la infracción del artículo 5.1.f) del RGPD.
+
+El argumento es circular, y deliberadamente: si el responsable del tratamiento necesita que una entidad externa le comunique que sus bases de datos llevan horas siendo exfiltradas, es porque carece de monitorización. Y carecer de monitorización es ya el incumplimiento del principio de integridad y confidencialidad.
+
+---
+
+## Anatomía del ataque: inyección SQL como clase de vulnerabilidad evitable
+
+El vector de ataque no fue sofisticado. El informe forense de Nacata Security, S.L., encargado el mismo día por el encargado del tratamiento (identificado en el expediente como \*\*\*EMPRESA.1), describe una explotación clásica de inyección SQL sobre *endpoints* públicos de `decimas.com`.
+
+La vulnerabilidad —incorrecta validación de las entradas en el nivel de acceso a la base de datos— es conocida, catalogada y mitigable con técnicas de *sanitización* de parámetros disponibles desde hace décadas.
+
+La gravedad no reside en la novedad del método. Reside en que ese *endpoint* era accesible, explotable y no estaba monitorizado. El atacante publicó los datos el 25 de abril de 2024 a las 18:12 horas. Décimas recibió la alerta del INCIBE el 26 de abril a las 9:42 horas. En ese intervalo, los datos llevaban ya más de quince horas disponibles en un foro de venta.
+
+La brecha se parchó ese mismo día a las 20:58 horas: prueba, señala la AEPD, de que la vulnerabilidad era resoluble en horas una vez identificada.
+
+Los datos comprometidos abarcan correo electrónico, nombre y apellidos, fecha de nacimiento, género y DNI. La resolución dedica un pasaje específico al número de DNI, subrayando su condición de dato particularmente sensible con fundamento en el Real Decreto 255/2025, de 1 de abril, y en los considerandos 51 y 75 del RGPD: su exposición habilita la suplantación de identidad, causa daños patrimoniales y afecta al derecho al honor.
+
+El número de afectados identificados en la notificación alcanza las **331.809 personas** con correo electrónico válido, además de cifras distintas para cada categoría de dato.
+
+---
+
+## El principio de integridad y confidencialidad: más que una norma de resultado
+
+El artículo 5.1.f) del RGPD no exige que no se produzca ninguna brecha. Exige que el responsable implante medidas técnicas y organizativas *apropiadas* para garantizar una seguridad adecuada frente al acceso no autorizado. La distinción importa: el estándar es de medios cualificados, no de resultado absoluto. Pero ese estándar de medios tiene un contenido mínimo que la AEPD precisa con nitidez en esta resolución.
+
+En primer lugar, la monitorización activa de vulnerabilidades y la alerta temprana de incidentes. Una arquitectura de seguridad que no detecta peticiones anómalas sobre sus *endpoints* —peticiones con *payloads* de inyección SQL, que el propio informe forense acredita que fueron múltiples y previas a la exfiltración— no cumple con ese mínimo.
+
+La AEPD lo expresa con precisión: la ausencia de controles no solo permitió el acceso, sino que extendió el tiempo de exposición.
+
+En segundo lugar, la adopción de medidas de cifrado sobre los datos almacenados. La resolución menciona expresamente la ausencia de cifrado como factor que facilitó la pérdida de confidencialidad. Las contraseñas estaban correctamente almacenadas en forma de *hash*, lo que la AEPD reconoce como elemento positivo; sin embargo, los datos personales identificativos —DNI, fecha de nacimiento, correo electrónico— no contaban con protección adicional en reposo.
+
+En tercer lugar, y acaso lo más llamativo del expediente, los resultados de las pruebas de intrusión realizadas a principios de 2025, meses después del incidente: el dominio afectado seguía presentando vulnerabilidades activas, dos de ellas calificadas como de criticidad alta. Este dato debilita de manera significativa cualquier alegación de que las medidas adoptadas *ex post* eran suficientes para considerar subsanada la situación.
+
+---
+
+## La cadena de encargos y la responsabilidad del responsable
+
+El expediente permite observar una estructura de tratamiento en capas que no es infrecuente en el comercio electrónico de mediana escala. Décimas S.L. es el responsable del tratamiento. \*\*\*EMPRESA.1 opera como encargado del tratamiento, siendo titular del entorno tecnológico afectado. \*\*\*EMPRESA.2 es la matriz del grupo empresarial, que presta servicios corporativos intragrupo —incluyendo IT y soporte jurídico— en virtud de un contrato de servicios de 2016.
+
+La AEPD resuelve con claridad la cuestión de imputabilidad: el responsable del tratamiento es quien responde frente al artículo 5.1.f) RGPD, con independencia de que la vulnerabilidad se localizara en el entorno del encargado.
+
+La existencia de un contrato de encargo de tratamiento —suscrito entre \*\*\*EMPRESA.1 y \*\*\*EMPRESA.2 en febrero de 2020 y que recoge la obligación de tratar los datos conforme a las instrucciones del responsable— no traslada la responsabilidad sancionadora. El responsable selecciona al encargado, define las instrucciones y tiene el deber de supervisar que el tratamiento se realiza con las garantías adecuadas.
+
+Dicho esto, la resolución no imputa a \*\*\*EMPRESA.2 ni activa el artículo 82 RGPD sobre responsabilidad solidaria. La matriz actúa como prestadora de servicios intragrupo, no como corresponsable ni como encargado de pleno derecho para este tratamiento.
+
+Es un matiz relevante para grupos empresariales con estructuras similares: la centralización de servicios IT no transforma automáticamente a la matriz en encargado del tratamiento ni en corresponsable; la imputabilidad permanece en quien determina los fines y medios del tratamiento concreto.
+
+---
+
+## La mecánica de las reducciones y la sanción efectiva
+
+La sanción inicialmente propuesta ascendía a 200.000 euros. La AEPD fundamentó esa cuantía tomando como referencia el volumen de negocio de Décimas en 2024 (182 millones de euros), el número de afectados, la tipología de datos —con especial peso del DNI—, la vinculación estructural de la actividad con el tratamiento masivo de datos de clientes, y el carácter no proactivo de la detección del incidente.
+
+Décimas acogió las dos reducciones previstas en el artículo 85 de la LPACAP: reconocimiento de responsabilidad (20 %) y pago voluntario anticipado (20 %). Ambas son acumulables, condicionadas al desistimiento de cualquier acción o recurso administrativo contra la sanción. El resultado es una multa firme de **120.000 euros**, pagada el 30 de enero de 2026.
+
+Conviene reparar en la aritmética: 120.000 euros representan aproximadamente el 0,065 % del volumen de negocio. La proporcionalidad es, en este tramo, más simbólica que disuasoria en términos absolutos para una empresa de esa escala.
+
+La cuestión de si el régimen sancionador del RGPD —cuyo techo es el 4 % del volumen global— cumple su función preventiva en brechas de esta magnitud cuando la sanción efectiva se sitúa muy por debajo del 1 % es una pregunta que el expediente no responde pero que el análisis no puede eludir.
+
+---
+
+## La medida correctiva que no se resuelve con el pago
+
+La resolución no agota sus efectos en la multa. Ordena a Décimas que, en el plazo de seis meses desde que la resolución sea firme y ejecutiva, acredite ante la AEPD la adopción de medidas técnicas y organizativas adecuadas para garantizar el cumplimiento del principio de confidencialidad en el tratamiento de datos que realiza.
+
+La formulación es deliberadamente abierta: la AEPD reconoce que es el responsable del tratamiento quien debe decidir, conforme al principio de responsabilidad proactiva y al enfoque de riesgos, cómo implementar esas medidas. Lo que no es optativo es acreditar que existen. La falta de cumplimiento de esta orden puede motivar la apertura de un nuevo procedimiento sancionador al amparo de los artículos 83.5 y 83.6 RGPD.
+
+En este punto, el expediente deja una advertencia implícita que los resultados de las pruebas de intrusión de 2025 hacen más concreta: si las vulnerabilidades subsisten meses después del incidente original, la acreditación de las medidas correctivas no será un trámite formal. La AEPD ha colocado el listón técnico, y lo ha documentado en el expediente.
+
+---
+
+## Conclusiones
+
+- La detección exógena de una brecha activa —por un tercero, no por el propio responsable— es, para la AEPD, evidencia suficiente de la ausencia de monitorización adecuada y, con ello, de la infracción del artículo 5.1.f) RGPD.
+- La inyección SQL no es una vulnerabilidad sofisticada ni emergente; su presencia en un entorno de comercio electrónico con más de 330.000 clientes activos apunta a una deuda técnica estructural, no a un evento fortuito.
+- La existencia de un encargado del tratamiento que opera el entorno tecnológico no libera al responsable de su obligación de garantizar la seguridad del tratamiento. La selección, supervisión e instrucción del encargado son obligaciones propias del responsable.
+- La reducción del 40 % por pronto pago y reconocimiento de responsabilidad es un mecanismo de terminación anticipada que tiene coste: la renuncia irrevocable a cualquier recurso administrativo contra la sanción.
+- Las pruebas de intrusión posteriores al incidente, con vulnerabilidades de criticidad alta activas meses después, son el elemento más delicado del expediente de cara al cumplimiento de la medida correctiva ordenada.
+- La multa efectiva de 120.000 euros representa una fracción mínima del volumen de negocio, lo que reabre el debate sobre si el régimen de sanciones del RGPD cumple su función disuasoria en empresas de mediana-gran escala cuando no se aplican los tramos superiores del artículo 83.5.

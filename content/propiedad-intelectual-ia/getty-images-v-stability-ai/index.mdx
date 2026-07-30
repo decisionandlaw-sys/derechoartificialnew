@@ -1,0 +1,149 @@
+---
+title: "El Caso Getty Images v. Stability AI bajo la Óptica del Reglamento de Inteligencia Artificial de la UE"
+date: "2026-02-06"
+category: "firma-scarpa"
+tags: ["getty-images", "stability-ai", "ai-act", "gpai", "propiedad-intelectual"]
+pdf: ""
+author: "Ricardo Scarpa"
+seoTitle: "Getty-images 2026: El Caso Getty Images | Derecho Artificial"
+seoDescription: "El Caso Getty Images v. Stability IA bajo la Óptica del Reglamento de Inteligencia."
+keywords: ["Getty-images", "Stability-ia", "Ia-act"]
+seoKeyword: "Getty-images"
+---
+
+# El Caso Getty Images v. Stability AI bajo la Óptica del Reglamento de Inteligencia Artificial de la UE
+
+©Ricardo Scarpa ( derechoartificial.com) 06/02/2025
+
+## 1. Resumen Ejecutivo: Síntesis Técnica de la Decisión y el Entorno Normativo
+
+La sentencia dictada por la Jueza Joanna Smith DBE en el caso*Getty Images v. Stability AI*[2025] EWHC 38 (Ch) constituye un hito jurisprudencial que redefine la ontología jurídica de los modelos de inteligencia artificial generativa.
+
+Este pronunciamiento no solo resuelve una controversia sobre propiedad intelectual, sino que establece la infraestructura conceptual necesaria para la**auditoría técnica de algoritmos**y el cumplimiento del**Reglamento de Inteligencia Artificial de la UE (AI Act)**.
+
+Para la comunidad jurídica de derechoartificial.com, el fallo clarifica que la responsabilidad proactiva del desarrollador se extiende más allá del código, abarcando la gobernanza integral de los datos y el control del "pipeline" de inferencia.
+
+De la ratio decidendi del tribunal se desprenden los siguientes hallazgos técnicos fundamentales:
+
+- **El Proceso de Materialización como Acto Infractor Teórico:**El tribunal identificó que la descarga y almacenamiento temporal de imágenes en clústeres de GPU para el entrenamiento constituye el acto de "materialización" (reproducción). No obstante, la demanda por infracción en el entrenamiento fue desestimada por razones jurisdiccionales, al no poder acreditarse que dicho proceso ocurriera en el Reino Unido (utilizando Stability AI clústeres de AWS situados en el extranjero).
+- **Ontología de los Pesos del Modelo (*****Model Weights*****):**En una distinción técnica crucial para auditores, se determinó que los pesos del modelo son parámetros matemáticos que codifican patrones y no copias de los datos. La desproporción física entre el dataset de entrenamiento**LAION-5B (aprox. 220TB)**y el archivo binario de los pesos (**3.44GB**) evidencia, según el tribunal, que el modelo no almacena ni reproduce las obras originales, sino que aprende una distribución de probabilidad estadística.
+- **Infracción de Marcas Registradas y Evidencia Empírica:**El tribunal falló a favor de Getty Images en puntos específicos: se declaró la**infracción por doble identidad**(Section 10(1) TMA) respecto a las marcas de*iStock*en la versión v1, y la**infracción por riesgo de confusión**(Section 10(2) TMA) para las marcas de*Getty*en la versión v2. Por el contrario, las reclamaciones sobre SDXL y v1.6 fueron desestimadas ante la ausencia de evidencia de usuarios reales en el Reino Unido generando dichas marcas.
+
+Estos hallazgos actúan como premisa técnica necesaria para el desglose normativo europeo, donde la distinción entre el proceso de creación y el producto final dictará el nivel de cumplimiento exigido.
+
+## 2. Análisis Normativo: Categorías de Riesgo y Obligaciones de Transparencia (AI Act UE 2026)
+
+Bajo el marco del**Reglamento de Inteligencia Artificial de la UE**, sistemas como Stable Diffusion se clasifican como modelos de IA de propósito general (GPAI). Esta categorización, especialmente bajo el**Artículo 53 de la AI Act**, impone obligaciones rigurosas de transparencia y documentación técnica.
+
+La sentencia británica refuerza la tesis de que el desarrollador no es un "agente pasivo", sino el arquitecto de un sistema complejo donde la gobernanza de datos es el eje de la legalidad.
+
+A continuación, se correlacionan los hechos técnicos del caso con las obligaciones normativas bajo la AI Act y la Directiva de Derechos de Autor:
+
+<table cellpadding="2" cellspacing="2">
+	<tbody><tr>
+		<td style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Hecho Técnico del Caso
+			(Source Context)</font></p>
+		</td>
+		<td style="border-top: 1px double #808080; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Obligación bajo la AI Act
+			/ Directiva UE</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Uso del dataset LAION-5B (6
+			mil millones de pares URL-texto) financiado por Stability AI.</font></p>
+		</td>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace"><b>Artículo 53 AI Act:</b>
+			Obligación de elaborar y mantener actualizada la documentación
+			técnica y un resumen detallado del contenido utilizado para el
+			entrenamiento.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Proceso de
+			"materialización" (descarga de imágenes desde URLs
+			para entrenamiento).</font></p>
+		</td>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace"><b>Artículos 3 y 4
+			Directiva (UE) 2019/790:</b> Cumplimiento de la excepción de
+			minería de textos y datos (TDM), condicionada al respeto del
+			<i>opt-out</i> de los titulares de derechos.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Implementación de filtros
+			NSFW y detectores de seguridad en el "pipeline".</font></p>
+		</td>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace"><b>Gestión de Riesgos (ISO
+			42001):</b> Evaluación proactiva para mitigar sesgos y prevenir
+			la generación de contenidos que vulneren derechos fundamentales o
+			la reputación de marca.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace">Capacidad de "memorización"
+			y salida estocástica de marcas de agua.</font></p>
+		</td>
+		<td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm"><p align="justify">
+			<font face="SF Pro Display, monospace"><b>Artículo 52 AI Act:</b>
+			Obligaciones de transparencia y etiquetado, garantizando que el
+			output no induzca a error sobre su origen sintético o su relación
+			con terceros.</font></p>
+		</td>
+	</tr>
+</tbody></table>
+
+La desestimación del argumento de "herramienta pasiva" por parte de la Jueza Smith es esencial para la**ISO 42001**. El tribunal subrayó que Stability AI ejerce "control absoluto" sobre el dataset y el diseño del "pipeline" (que incluye post-procesamiento y filtros).
+
+Esta soberanía técnica conlleva una**responsabilidad proactiva**ineludible: el desarrollador es responsable de las consecuencias de sus elecciones de entrenamiento, lo que alinea la práctica comercial con los estándares de gobernanza europeos de 2026.
+
+## 3. Implicaciones Deontológicas: Secreto Profesional y Protección del Dato Jurídico
+
+La integración de modelos de IA en el sector legal exige un análisis de "Privacidad desde el Diseño" para evitar la colisión con el deber de sigilo y el secreto profesional. La sentencia británica, a través de su*Technical Primer*, aporta conceptos clave para la gestión de riesgos deontológicos.
+
+### Riesgos de Memorización y Regurgitación Algorítmica
+
+El tribunal analizó dos fenómenos técnicos que suponen un riesgo crítico para el sigilo profesional:
+
+1. **Memorización (Overfitting):**Ocurre cuando el modelo, debido a un entrenamiento excesivo sobre datos poco diversos o duplicados, optimiza sus pesos para recordar registros específicos.
+2. **Regurgitación:**La capacidad del sistema para emitir copias casi idénticas de los datos de entrenamiento (como las marcas de agua de Getty).
+
+En la práctica jurídica, si un modelo de lenguaje o imagen es entrenado con activos confidenciales, existe el riesgo técnico de que dichos datos sean "regurgitados" ante*prompts*específicos de terceros, fragmentando irreversiblemente el secreto profesional.
+
+### Directrices para la Implementación de ISO 42001 en el Sector Legal
+
+Para mitigar estas contingencias, la implementación de sistemas de gestión de IA en despachos debe seguir estas directrices de auditoría:
+
+1. **Control del Pipeline de Ingesta:**Asegurar que el proceso de "materialización" excluya información sujeta a secreto profesional o datos privados sin base de legitimación.
+2. **Validación de Generalización:**Realizar pruebas de estrés para garantizar que el modelo aprenda reglas y patrones, no registros individuales, minimizando el riesgo de memorización.
+3. **Auditoría de Filtros de Salida:**Implementar capas de post-procesamiento que bloqueen de forma robusta cualquier output que contenga identificadores sensibles o elementos protegidos por IP.
+
+## 4. Conclusión Técnica: Validación Interna y Estándares de Auditoría
+
+La sentencia*Getty Images v. Stability AI*confirma que, aunque los pesos del modelo no sean copias legales bajo legislaciones decimonónicas, la gestión de los mismos exige una diligencia técnica extrema. La validación interna de sistemas de IA en la UE debe ahora adoptar estándares de auditoría alineados con este precedente.
+
+### Estándares de Auditoría Técnica Post-Sentencia
+
+Tras el análisis de la Jueza Smith, toda auditoría de sistemas GPAI debería verificar:
+
+- **Procedencia y TDM:**Validación de si el dataset se utilizó bajo la excepción de investigación o con fines comerciales, verificando el respeto a los protocolos de exclusión (*opt-out*).
+- **Eficacia del "Pipeline" de Seguridad:**Comprobación de que los filtros de salida son capaces de prevenir la aparición inadvertida de signos distintivos (evitando la confusión detectada en v1 y v2).
+- **Métricas de Memorización:**Evaluación de la capacidad de generalización del modelo frente a la tendencia a la regurgitación de datos de entrenamiento específicos.
+
+**Reflexión Final:**Este fallo nos sitúa ante un cambio de paradigma: el Derecho está evolucionando de la protección del "objeto copiado" (el soporte físico) hacia la regulación del "proceso de creación algorítmica". En el escenario de 2026, bajo la AI Act, la opacidad de la "caja negra" ya no será una defensa válida.
+
+Aunque los pesos del modelo sean una abstracción matemática de 3.44GB, la responsabilidad proactiva exige un control absoluto sobre el entrenamiento. La seguridad jurídica en el ecosistema digital europeo dependerá de que los desarrolladores y juristas entiendan que la ley ya no solo juzga el resultado, sino la diligencia ética y técnica inscrita en el diseño de la inteligencia misma.
+
+## Articulos relacionados
+
+- [IA y Propiedad Intelectual: El Ciclo de Vida del Dato y la Minería de Textos y Datos bajo el Prisma del Caso Kneschke vs. LAION](/propiedad-intelectual-ia/caso-kneschke-vs-laion)
+- [La Encrucijada del Derecho de Autor en la Era de la IA Generativa](/firma-scarpa/encrucijada-derecho-autor-ia-generativa)
+- [IA Generativa y Derecho de Autor en la UE: Estudio del Parlamento Europeo](/normativa/ia-generativa-copyright-estudio-ue)

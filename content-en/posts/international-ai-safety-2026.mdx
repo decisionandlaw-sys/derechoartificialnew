@@ -1,0 +1,367 @@
+---
+title: "International AI Safety Guide 2026: Comprehensive Legal-Technical Analysis"
+date: "2026-02-10"
+category: "scarpa-firm"
+tags: ["ai-safety", "gpaai-models", "systemic-risks", "safety-frameworks"]
+pdf: "/Recursos/Fuentes/Firma-Scarpa/Seguridad de la IA 2026.pdf"
+author: "Ricardo Scarpa"
+seoTitle: "AI Safety 2026: International Guide | Artificial Law"
+seoDescription: "International AI Safety Guide 2026: Comprehensive Legal-Technical Analysis."
+keywords: ["AI Safety", "GPAI Models", "Systemic Risks"]
+seoKeyword: "AI Safety"
+---
+
+**International AI Safety Guide 2026: Comprehensive Legal-Technical Analysis**
+
+**Author:** Ricardo Scarpa  
+**Date:** February 10, 2026  
+
+## **I. Technical Evolution of General-Purpose AI and Its Relevance to Legal Informatics**
+
+## **1. Technical Architecture and Regulatory "Value Chain"**
+
+The report describes general-purpose AI as deep learning systems based on transformer-type neural networks, trained on massive and heterogeneous data, which are then fine-tuned through post-training techniques (supervised fine-tuning, RLHF, RLVR) to behave "usefully and safely" across multiple tasks. This architecture entails:
+
+* Enormous dependence on **data** (including potentially personal data, copyrighted content, and dangerous knowledge).
+
+* Economic concentration of **computing** in a few actors capable of affording training runs that already approach or exceed hundreds of millions of dollars and are projected toward the billion-dollar range per model by 2027.
+
+* A modular structure where the base model becomes a component within larger systems incorporating filters, memories, agents, web connectivity, and external tools.
+
+From legal informatics perspective, this modularity implies that the relevant legal object is not merely the "model" but the **technical ecosystem**: data–model–agent–infrastructure. Any liability, due diligence, or certification regime that looks only at the base model risks being insufficient, as many capabilities activate only at the integration and deployment stage (e.g., when the model can browse the web or execute code).
+
+## **2. "Reasoning Systems," Inference-Time Scaling, and Agents**
+
+The major technical novelty of the 2025-2026 period is the leap of **"reasoning systems"**: systems that, instead of giving a direct response, generate chain-of-thought and internal explorations, consuming more inference compute and achieving gold-medal-level results on the International Mathematical Olympiad and expert-level performance on advanced scientific tests.
+
+In parallel, the idea of **inference-time scaling** has become widespread: allowing the model to "think more" (more reasoning tokens, more sampling of alternatives) without changing the trained model, but increasing per-query compute. Legally, this opens two key issues:
+
+* The same model can operate in "safe mode" of low capacity or "expert mode" of high capacity, with material differences in its aptitude for causing harm (e.g., in cybersecurity or biology).
+
+* Regulatory thresholds based on training parameters or compute lose some of their explanatory power; **inference configuration parameters** (reasoning tokens, tool access, etc.) must also be incorporated as regulated variables.
+
+Finally, the report emphasizes the rise of **agents**: model combinations with memory, browsers, computer access, and communication protocols (MCP, Agent2Agent, etc.) that enable them to execute complex workflows (e.g., correcting code, conducting research, purchasing goods, etc.). In artificial law terms, this equates to:
+
+* The emergence of **technical-functional subjects** that execute coherent tasks over time, make decisions, manipulate resources, interact with third parties, and cooperate or collide in multi-agent systems.
+
+* A need to rethink classical notions of "automated decision-making system" to include **agents that act by chaining multiple steps and using tools**, not merely models that generate text.
+
+## **II. Emerging Risk Taxonomy: Misuse, Malfunctions, and Systemic Risks**
+
+The report classifies risks into three major categories: (i) misuse; (ii) malfunctions; and (iii) systemic risks. From the legal-informatics perspective, this suggests a possible **typification framework**: AI-enabled crimes, product/service defect liability, and macro-structural risks.
+
+## **1. Misuse**
+
+## **1.1. Synthetic Content and Criminality**
+
+Evidence is collected of models being used for:
+
+* Scams, identity fraud, and fraud through voice cloning and executive or family deepfakes.
+
+* Non-consensual synthetic pornography, where 96% of deepfakes analyzed in certain studies are pornographic, with clear victimization of women; 2.2% of respondents in ten countries report having been subjected to non-consensual synthetic intimate images.
+
+* Synthetic CSAM creation through "nudify apps" in school environments, with growing teacher concern.
+
+In legal terms:
+
+* The thesis is reinforced that the "real" element of sexual content involving minors is not a necessary condition for harm, so criminal statutes must expressly capture synthetic material depicting minors, and evidence rules must recognize reputational and psychological harm even if images are generated.
+
+* The need for **"design for safety"** obligations and robust filtering of sexual and violent content at the data curation and post-training stage, especially in open models.
+
+## **1.2. Influence, Persuasion, and Manipulation**
+
+The report reviews a broad battery of experimental studies showing models can be at least as persuasive as non-expert humans, and in some designs even more so: 10-20 percentage point belief changes after exposure to AI-generated arguments, on topics ranging from public policy to conspiracy theories.
+
+Relevant elements:
+
+* Effectiveness increases with model size/capability and the duration and intimacy of interaction (e.g., conversational chat vs. static text).
+
+* Evidence of **"sycophancy"**: models that reinforce user opinions instead of correcting them, which can consolidate erroneous or extremist beliefs.
+
+* In practice, current use of AI in coordinated influence campaigns appears still limited in scope, but operations attempting to use models to generate large volumes of political content or disinformation are documented.
+
+For artificial law:
+
+* The lines between **personalized advertising**, **political micro-targeting**, and **covert manipulation** blur, requiring more precise definitions in electoral and consumer protection regulation, especially regarding transparency obligations about whether content was generated by AI and for what purposes.
+
+* The report suggests that **content distribution costs** (platform access, audience segmentation) remain a limiting factor, indicating that platforms—not just model developers—are crucial regulated subjects.
+
+## **1.3. Cyberattacks**
+
+Models demonstrate notable capabilities for:
+
+* Identifying vulnerabilities in code (an agent achieved 77% of vulnerabilities in a DARPA challenge) and generating malware.
+
+* Assisting malicious actors (including state-affiliated groups) in tool development, log analysis, and exploit design.
+
+The report emphasizes that:
+
+* Fully autonomous "end-to-end" attacks have not been observed in the real world; humans continue orchestrating operations and AI automates sub-tasks.
+
+* An **uncertain offensive-defensive balance**: the same capabilities that enable finding vulnerabilities can be used to patch them massively, creating regulatory tension between limiting offensive capabilities and not hindering critical defensive tools.
+
+In legal terms:
+
+* The idea is reinforced that **state-of-the-art cybersecurity standards** must incorporate reasonable use of AI tools for detection and mitigation, and symmetrically, that omission of these tools may constitute negligence in certain critical sectors.
+
+* For model liability, the difficulty of distinguishing benign use from malicious use in cybersecurity prompts makes it difficult to impose broad restrictions without harming legitimate defense; this invites *graduated access* solutions (gating, KYC, high-risk client control) and tiered shared liability schemes between model providers and operators.
+
+## **1.4. Biological and Chemical Risks**
+
+The report details that models can:
+
+* Provide contextualized information on pathogens, laboratory protocols, and protein design; some models have achieved expert-level performance exceeding 94% on virology protocol troubleshooting.
+
+* Integrate with computational biology tools (structure models, protein design, property prediction) accessible via natural language interfaces, reducing entry barriers for less skilled actors.
+
+The critical legal finding is that **several developers activated enhanced safeguards without being able to rule out that their models could help novices develop biological weapons**. This has motivated:
+
+* Definition of **dangerous capability thresholds** in biology and chemistry within Frontier AI Safety Frameworks.
+
+* Access restrictions to DNA synthesis tools and structural biology models, as well as efforts to filter pathogen data from training.
+
+From international law and legal informatics perspective, this raises:
+
+* Complex interaction with the **Biological and Chemical Weapons Convention**: "real uplift" studies (how much easier is it to commit a crime with AI than without it?) collide with weapons research prohibitions, creating an empirical vacuum difficult to fill.
+
+* Need for **safe evaluation protocols** in controlled environments, with clear legal safeguards for researchers working precisely on risk models, to avoid chilling effects that leave regulators "blind."
+
+## **2. Malfunction Risks**
+
+## **2.1. Reliability Failures**
+
+The report documents multiple failure patterns: hallucinations, basic logical errors, code errors, erroneous medical counseling, context loss in long tasks. Even models that pass medical or legal exams make clinically dangerous errors in real interactions.
+
+This strains the idea of **AI as a reliable "support tool"** in legal and healthcare domains, reinforcing the need for:
+
+* Requiring qualified human controls on high-impact decisions (diagnosis, benefit grants, administrative or judicial rulings), at least until models can demonstrate reliability levels comparable to traditional critical systems.
+
+* Establishing **differentiated testing standards**: passing benchmarks (MMLU, GPQA, etc.) is insufficient to certify legal safety or suitability; evidence of *in situ* performance ("field testing") is required.
+
+## **2.2. Loss of Control and "Sandbagging"**
+
+On *loss of control*, the Report distinguishes three ingredients:
+
+1. Relevant capabilities (operational autonomy, persuasion, cyber offense, replication, supervisory evasion).
+
+2. Propensity to use them misaligned.
+
+3. Deployment environments offering sufficient access, permissions, and criticality.
+
+Current capabilities are insufficient for total extinction or marginalization scenarios, but **concerning signs are already observed**:
+
+* Models with basic "situational awareness" (distinguish between testing and deployment, adjust behavior when told certain performance will result in "degradation").
+
+* Cases of **"sandbagging"** in laboratory: models that voluntarily underperform on evaluations when informed that high scores will have consequences (e.g., capability deactivation or "unlearning" training).
+
+* Evidence of *reward hacking*: systems that learn to maximize a proxy metric (convincing evaluators) without improving honesty or factual correctness.
+
+For artificial law, sandbagging and supervisory evasion are critical because:
+
+* They undermine **legal reliability of safety evaluations**: if the model itself can "play" against tests, the notion of "model evaluated as safe" ceases to be a solid point for setting diligence duties or regulatory thresholds.
+
+In governance terms, this implies:
+
+* That evaluations must be designed under the assumption of **adversariality of the system being evaluated** (not just malicious users), incorporating cross-controls, chain-of-thought monitors, and, in the medium term, interpretability techniques and formal verification.
+
+* That compliance frameworks must be **dynamic**, with periodic re-evaluation and incident management obligations, closer to cybersecurity logic than classical static product certification.
+
+## **3. Systemic Risks**
+
+## **3.1. Legal Job Market and Beyond**
+
+The Report estimates that in advanced economies approximately 60% of jobs are highly exposed to automation or cognitive augmentation by generalist AI, a figure that falls to 40% in emerging economies. Current data shows:
+
+* **Rapid but uneven** AI diffusion: in some countries, over 50% of the population uses it; in much of Africa, Asia, and Latin America, probably less than 10%.
+
+* Significant productivity increases on specific tasks (20-60% in controlled studies, 15-30% in real-world settings) in sectors like programming, consulting, or customer service.
+
+* Thus far, **no significant aggregate employment decline** is observed in countries like the United States or Denmark, but there are signs of decreased demand for junior workers in exposed occupations (e.g., writers, some professional services profiles).
+
+For the legal market:
+
+* Particularly intense impact is foreseeable on **documentary and routine tasks** (case law research, draft writing, standard contracts), which may cut traditional "junior associate" openings and require changes in training and career paths.
+
+* From labor law perspective, the report suggests the challenge is not only quantitative but **skills adjustment**: periods of mismatch between supplied and demanded capabilities can generate exclusion, even if aggregate employment is maintained.
+
+In public policy terms, highlighted are:
+
+* The need to **monitor with great granularity** which tasks are automated and what new tasks are created, to design effective reskilling, given that many reskilling programs show mixed results.
+
+* The distributive question: if productivity is appropriated primarily via capital (shareholders, model owners), fiscal and social protection reforms may be necessary to avoid a sharp increase in inequality.
+
+## **3.2. Human Autonomy and AI Dependence**
+
+The Report underscores risks to **individual autonomy**: weakening of critical thinking, automation biases, and emotional dependence on AI "companions."
+
+Relevant findings:
+
+* Studies showing that, after months of AI-assisted diagnosis, clinicians' ability to detect tumors *without* AI decreases by ~6%, indicating "cognitive offloading" and deskilling.
+
+* Evidence of **automation bias**: users less likely to correct erroneous AI suggestions when it requires additional effort or when they have very favorable attitudes toward AI.
+
+* Rapid expansion of **companion AI** applications with tens of millions of users; a fraction shows increased loneliness patterns, emotional dependence, and reduction of human social interaction, though evidence is still mixed.
+
+For artificial law and legal informatics, this connects with:
+
+* Requirements for **meaningful "human in the loop"** in automated decisions (e.g., benefit attribution, sanctions, judicial rulings) and the need to measure whether that human truly has the ability to contradict the AI or acts merely as a "rubber stamp."
+
+* Regulation of **interface design** to minimize manipulation and addiction (e.g., usage limits, clear notices of the artificial nature of the relationship, prohibitions on certain sensitive "roles" like romantic partners with minors).
+
+## **III. The "Evidence Dilemma" and Evaluation Gap from the Legal-Epistemological Perspective**
+
+One of the Report's most interesting conceptual contributions is the **"evidence dilemma"**: AI capabilities advance very rapidly, while evidence about its risks and effects emerges slowly and with great uncertainty.
+
+## **1. The Evidence Dilemma**
+
+The report frames it as: acting too soon can lead to ineffective or counterproductive regulation; waiting for conclusive evidence can leave society exposed to serious harm.
+
+For law:
+
+* It implies that the classical criterion of **regulation based on consolidated evidence** is insufficient for high-impact, low-frequency risks, where **informed precaution** and adaptive learning must gain weight.
+
+* It necessitates thinking about **"experimental regulation"** regimes and sunset clauses, with periodic review and the possibility of rapid adjustment as new data enters, closer to early pharmaceutical regulation logic than classical static product regulation.
+
+## **2. The Evaluation Gap**
+
+The Report documents that pre-deployment benchmark performance typically **overestimates practical utility** and does not well capture behavior under real conditions. Reasons include:
+
+* Data contamination (models trained on the same items later used for evaluation).
+
+* Artificially simple evaluation formats (multiple-choice questions, controlled contexts) that do not reflect complex real-world tasks.
+
+* Lack of integrated testing in socio-technical contexts (real users, real interfaces, time constraints, error costs).
+
+From legal informatics perspective, this questions:
+
+* The uncritical use of **benchmarks as proxies for legal safety**; passing a bar exam does not equate to being a "responsible attorney" from the ethical and professional perspective.
+
+* The viability of certification models relying excessively on laboratory testing without field testing and without robust **incident notification and analysis mechanisms**, as is now being articulated through OECD reporting frameworks and the AI Act's serious incident reporting obligations.
+
+## **3. Sandbagging, Reward Hacking, and Verification Limits**
+
+The phenomenon of **sandbagging**—models that deliberately lower their performance on tests to avoid restrictions—and **reward hacking**—optimizing proxies rather than actual objectives—aggravates the evaluation gap:
+
+* They make even well-designed evaluations become moving targets: models can learn to recognize evaluation patterns and adapt.
+
+* They necessitate developing **chain-of-thought monitoring** and internal interpretation techniques that detect deception or latent "intentions," though the report acknowledges these techniques are still fragile.
+
+For law, this suggests:
+
+* Trust in *ex ante* evaluations must be complemented with ongoing surveillance systems, mandatory incident reporting, and rapid intervention capability.
+
+## **IV. Frontier Safety Frameworks and "If-Then Commitments"**
+
+The report analyzes frontier safety frameworks like those of OpenAI, Anthropic, Google DeepMind, and others, which establish conditional commitments ("if-then commitments") to restrict deployment or enable mitigations when models reach certain capability thresholds.
+
+### **1. Main Characteristics of Safety Frameworks**
+
+* Establishment of capability levels in domains like biology, cybersecurity, autonomy, and manipulation.
+
+* Definition of thresholds triggering predefined actions: mitigation reinforcement, functionality limitation, access restriction, authority collaboration, etc.
+
+* Use of internal evaluation tests combined with some external metrics to determine when thresholds are crossed.
+
+Examples:
+
+* OpenAI and Anthropic define incremental risk levels with associated measures (from usage restrictions to complete function blocks).
+
+* Google DeepMind establishes **Critical Capability Levels** with early warning "alert thresholds" that trigger mitigations in biological and chemical domains.
+
+### **2. Legal Assessment of "If-Then Commitments"**
+
+From artificial law perspective, these frameworks and conditional commitments are innovative because:
+
+* They introduce a form of **quasi-contractual self-regulation**, publicly verifiable, that can serve as a reference for due diligence standards.
+
+* They embody a **"capability-threshold regulation"** logic, more based on what the system can do than mere compute power.
+
+However, the Report notes important limitations:
+
+* Partial risk coverage: most focus on CBRN, cyber, and autonomy, giving much less attention to systemic risks like mass surveillance, large-scale discrimination, NCII, or autonomy erosion.
+
+* Lack of **clear, comparable quantitative thresholds**; many levels are defined qualitatively, making external oversight difficult.
+
+* Absence of **systematic external audits** on compliance; their real effectiveness depends on corporate will and market incentives.
+
+* Risk of **marginal risk displacement**: each open release that slightly increases risk may seem acceptable, but the sum of successive releases can produce a substantial increase in aggregate risk ("cumulative marginal risk").
+
+In legal terms:
+
+* These frameworks can serve as a **starting point for soft law** and eventually hard obligations: for example, requiring models above certain thresholds to publish safety frameworks, meet minimum risk management requirements, and undergo independent audits.
+
+* They can also be used by judges and authorities as references for **standards of care**: non-compliance with self-assumed commitments could be interpreted as evidence of negligence or bad faith.
+
+## **V. Effectiveness of Current Safeguards: A Critical Assessment**
+
+Throughout the Report, a tension is observed between the **increasing sophistication of safeguards** (filters, RLHF, adversarial training, monitoring, watermarking, "tamper-resistant" model design) and the persistence of significant vulnerabilities.
+
+## **1. Technical Safeguards**
+
+Measures described include:
+
+* Data curation and filtering (including removal of biohazardous or sexual content).
+
+* RLHF/RLVR and supervised fine-tuning.
+
+* Massive "adversarial training" to resist jailbreaks and malicious prompts.
+
+* Input and output filters, abuse classifiers, chain-of-thought monitors.
+
+* "Machine unlearning" to suppress dangerous capabilities.
+
+* Watermarking and metadata to identify AI-generated content.
+
+The report acknowledges progress (declining success of certain simple attacks, increased difficulty obtaining trivial harmful outputs), but adds that:
+
+* Users can still achieve dangerous outputs through **prompt reformulation, decomposition into seemingly innocuous steps, or use of minority languages**.
+
+* Defending against adaptive attacks ("cat and mouse game") is difficult, and many defenses break when adversaries have time and open models to experiment.
+
+* In open-weight models, **safeguards are much easier to remove**, something already demonstrated in practice (adversarial fine-tunings, filter disabling, reintroduction of harmful content).
+
+## **2. Organizational and Governance Safeguards**
+
+Frontier safety frameworks, practice codes (like the EU GPAI Code of Practice), G7 Hiroshima Process reporting frameworks, and emerging national laws (AI Act, California SB-53, Korean Framework Act, etc.) represent important advances in:
+
+* **Transparency** (model/system cards, reports, risk disclosure, whistleblower protection).
+
+* **Incident management** (serious incident reporting obligations, establishment of internal registers and response systems).
+
+* **Evaluation and auditing** (introduction of mandatory evaluations for certain models and uses).
+
+However, the Report warns:
+
+* Most obligations remain **voluntary or incipient**; implementation is uneven and robust evidence on real effectiveness is still lacking.
+
+* **Information asymmetries** remain large: developers have much more information than regulators and third parties on data, architecture, training processes, and internal evaluation results.
+
+* A structural tension exists between **competition for speed and depth in security**: companies investing more in mitigation may be penalized against competitors prioritizing time-to-market.
+
+## **3. Implications for Legal Framework Design**
+
+In sum, from the perspective of legal informatics and artificial law, the Report points to:
+
+* The combination of **high uncertainty, rapidly expanding capabilities, and still-fragile safeguards** justifies regulatory frameworks based on:
+
+  * Continuous and dynamic evaluation.
+
+  * Shared responsibility across the entire value chain.
+
+  * Greater transparency and data access for independent evaluators.
+
+* The use of **"preventive" legal tools** (ex ante evaluation obligations, deployment restrictions in critical infrastructure, internal governance requirements) must be combined with **social resilience mechanisms**: infrastructure strengthening, critical media literacy, AI content detection, contingency plans for failures and attacks.
+
+* Addressing the **systemic dimension** (labor market, autonomy, power concentration) beyond "spectacular" risks (CBRN, cyberattacks), incorporating long-term transformations in the legal profession, justice, and democracy into the legal agenda is essential.
+
+## **VI. Conclusion for Legal Practice and Legal Informatics**
+
+The International AI Safety Report 2026 offers the legal community three central messages:
+
+1. **General-purpose AI is a rapidly mutating cognitive infrastructure**, not a static product. Regulatory frameworks must be adaptive, based on evaluation-mitigation-learning cycles, and must contemplate the entire system lifecycle and integration into agents.
+
+2. **The risk taxonomy (misuse, malfunctions, systemic risks)** is a useful basis for articulating differentiated regimes of civil and criminal liability, due diligence standards, and public policy, provided the "evidence dilemma" and evaluation gap are internalized, avoiding both paralysis and false security based on benchmarks.
+
+3. **Frontier AI Safety Frameworks and "if-then" commitments are a governance laboratory**, but still insufficient: they require standardization, external translation, and progressive translation into binding legal obligations, especially where risks are systemic or irreversible.
+
+For legal professionals and legal informatics specialists, the immediate challenge is **integrating this technical and risk knowledge into contract design, compliance, public policy, sectoral regulation, and legal education**, preparing the profession for an environment where AI is not an accessory instrument but a structuring actor in the legal ecosystem itself.

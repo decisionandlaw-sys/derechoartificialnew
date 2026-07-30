@@ -1,0 +1,270 @@
+---
+title: "Cómo formar a abogados en IA: el método de cuatro capas"
+date: "2026-06-06"
+section: "guias"
+slug: "como-ensenar-ia-a-abogados-guia-levy-2026"
+category: "guias"
+description: "Análisis de Teaching AI to Lawyers (Levy, 2026): el marco de cuatro capas para enseñar IA a juristas, los deberes éticos bajo la ABA, los casos de sanción y el modelo de madurez curricular para despachos y facultades de derecho."
+tags: ["formación", "competencia digital", "ABA", "alucinaciones", "ética IA", "legaltech"]
+author: "Ricardo Scarpa"
+---
+
+Todos los despachos del mundo ya están enseñando IA a sus abogados.
+La pregunta es si lo están haciendo a propósito.
+
+Esa es la tesis central de *Teaching AI to Lawyers*, la guía publicada
+en 2026 por Colin S. Levy, consultor de legaltech y autor del
+*Handbook of Legal Tech*. El documento no pretende ser un manual
+técnico ni un catálogo de herramientas. Es un marco de diseño
+curricular para cualquier persona que lleve la responsabilidad de
+formar juristas en IA: profesores de derecho, socios responsables de
+formación interna, coordinadores de CLE o responsables de operaciones
+jurídicas.
+
+Lo que hace útil al texto no es que sea nuevo. Es que sistematiza lo
+que hasta ahora era intuición o urgencia mal articulada.
+
+[📄 Descargar Teaching AI to Lawyers — Colin S. Levy (2026)](/fuentes/teaching-ai-to-lawyers-levy-2026.pdf)
+
+## La brecha formativa y sus consecuencias visibles
+
+Levy abre con un diagnóstico que ya conocemos, pero que rara vez se
+enuncia con esta claridad: dos años de IA generativa en los despachos
+han producido una generación de abogados que usa estas herramientas
+a diario sin entender qué hacen, qué no pueden hacer ni qué
+obligaciones profesionales van atadas a su uso.
+
+Las consecuencias no son hipotéticas. Ya están en las bases de datos.
+El investigador Damien Charlotin mantiene un repositorio público de
+decisiones judiciales en las que tribunales han abordado el uso de IA
+por parte de abogados. A principios de 2026, ese repositorio supera
+los 1.300 casos documentados en múltiples jurisdicciones.
+
+Los episodios más citados son conocidos. En *Mata v. Avianca* (2023),
+el tribunal federal del Distrito Sur de Nueva York sancionó con 5.000
+dólares a un letrado que presentó seis decisiones ficticias generadas
+por ChatGPT y luego aportó los textos íntegros de esas decisiones
+cuando el juzgado los solicitó.
+
+En *Park v. Kim* (2024), el Segundo
+Circuito remitió al abogado a su comité disciplinario por citar un
+caso inexistente sin haber hecho ninguna comprobación. En
+*Noland v. Land of the Free* (septiembre de 2025), la primera
+sentencia publicada de un tribunal de apelación de California sobre
+este asunto impuso una sanción de 10.000 dólares y remitió al letrado
+al Colegio de Abogados del Estado.
+
+El patrón se repite fuera de Estados Unidos. En *Zhang v. Chen*
+(2024 BCSC 285), el Tribunal Supremo de Columbia Británica obligó al
+abogado a compensar personalmente a la parte contraria por el tiempo
+empleado en deshacer la jurisprudencia ficticia que ChatGPT había
+generado. El Colegio de Abogados de Columbia Británica abrió
+investigación.
+
+Levy es explícito en su lectura: ninguno de estos abogados actuó con
+malicia. Todos estaban intentando hacer mejor su trabajo con una
+herramienta que nadie les había enseñado a usar.
+
+## El estándar que la profesión necesita
+
+La guía rechaza dos extremos frecuentes en los programas de formación.
+El primero, convertir a los abogados en ingenieros de *machine
+learning* junior. El segundo, tratar las herramientas como magia
+opaca y no enseñar nada técnico.
+
+El estándar que propone es funcional: un abogado necesita saber lo
+suficiente para hacer las preguntas correctas a un proveedor, reconocer
+cuándo un resultado es sospechoso, exigir a un asociado que explique
+qué herramienta usó y leer un anexo de procesamiento de datos sin
+perderse.
+
+Es el mismo tipo de competencia que un litigante ya aplica
+al modelo de daños de un perito contrario: no necesita derivar la
+regresión, pero sí saber que una regresión tiene supuestos y que los
+supuestos son verificables.
+
+## Las cuatro capas del currículo
+
+El modelo central de la guía es una estructura de cuatro niveles que
+deben enseñarse en orden, porque cada uno descansa en el anterior.
+
+### Primera capa: fundamentos conceptuales
+
+Qué hace un modelo de lenguaje. Por qué produce texto con apariencia
+de confianza que resulta ser incorrecto. Qué es la generación con
+recuperación aumentada (RAG) y qué limitaciones mantiene.
+
+Levy condensa el concepto central en una frase que recomienda usar
+como apertura de cualquier formación: un modelo de lenguaje produce
+texto prediciendo el token más probable dado el contexto anterior.
+Esa frase técnicamente simplificada explica por qué se fabrican citas,
+por qué el modelo no puede saber lo que no sabe y por qué dos
+instrucciones casi idénticas pueden producir resultados muy distintos.
+
+Los datos empíricos que aporta proceden del estudio de Magesh y
+coautores, publicado en 2025 en el *Journal of Empirical Legal
+Studies*. Las tasas de alucinación medidas en consultas de
+jurisprudencia federal fueron del 17% para Lexis+ AI, del 33% para
+Westlaw AI-Assisted Research y del 43% para GPT-4. Las herramientas
+legales específicas que usan RAG alucinan menos que los modelos de
+propósito general, pero no llegan a cero.
+
+### Segunda capa: habilidades prácticas
+
+Cómo construir una instrucción que produzca trabajo útil. Cómo
+verificar lo que devuelve el sistema. Cómo decidir cuándo una tarea
+no es adecuada para IA.
+
+Levy propone aquí el marco de clasificación en tres niveles: rojo
+para tareas donde un error causaría daño material y la verificación
+es difícil; amarillo para tareas que solo pertenecen a IA con
+verificación rigurosa; verde para tareas donde el coste del error es
+bajo y la comprobación es directa. La mayor parte del valor práctico
+de las herramientas está en la zona verde.
+
+El ejercicio de laboratorio que propone es sencillo y replicable:
+cada participante usa una herramienta aprobada para producir un
+primer borrador de un escrito, verifica cada cita y anotación en
+fuentes primarias, y documenta los errores encontrados. Las
+alucinaciones aparecen en prácticamente todos los ejercicios. Un
+error visto una vez en un entorno de bajo riesgo es
+exponencialmente más fácil de detectar en un asunto real.
+
+### Tercera capa: ética y responsabilidad profesional
+
+La guía ancla esta sección en la Opinión Formal 512 de la ABA,
+publicada el 29 de julio de 2024. El dictamen aplica seis deberes
+existentes al uso de IA generativa: competencia (Regla 1.1),
+confidencialidad (Regla 1.6), comunicación (Regla 1.4), candor
+(Reglas 3.1 y 3.3), supervisión (Reglas 5.1 y 5.3) y honorarios
+razonables (Regla 1.5).
+
+El punto pedagógico que Levy subraya es este: la Opinión 512 no
+inventa obligaciones nuevas. Las aplica a una herramienta nueva.
+Eso simplifica la enseñanza, porque el marco conceptual que el
+abogado ya tiene es, en lo esencial, correcto.
+
+La analogía que recorre toda la guía para explicar el deber de
+supervisión es la del colaborador junior: las razones por las que
+verificamos el primer borrador de un asociado, supervisamos su
+investigación y nunca le dejamos firmar un escrito sin revisarlo son
+exactamente las razones por las que verificamos, supervisamos y
+revisamos el trabajo de una herramienta de IA.
+
+La Opinión 512 adopta
+explícitamente esta lectura al tratar las herramientas de IA
+generativa como asistentes no abogados a efectos de las Reglas 5.1
+y 5.3.
+
+Para la cuestión de la confidencialidad, Levy usa el incidente de
+Samsung de marzo de 2023, en el que ingenieros expusieron código
+fuente confidencial al introducirlo en ChatGPT. La utilidad
+pedagógica del caso es que los ingenieros no tuvieron intención
+maliciosa: intentaban trabajar más rápido, y los datos salieron
+igualmente.
+
+Sobre honorarios, la guía es concisa: un abogado no puede facturar
+al cliente el tiempo ahorrado gracias a IA, no puede facturar el
+tiempo dedicado a aprender una herramienta de uso general, y solo
+puede repercutir el coste de la herramienta con divulgación y
+consentimiento adecuados.
+
+### Cuarta capa: gobernanza
+
+Cómo una organización traduce la competencia individual en un sistema
+defendible: política escrita, lista de herramientas aprobadas,
+registros de formación e informe de incidencias.
+
+## Cómo aprenden los abogados (y cómo no)
+
+Un capítulo que merece atención separada es el dedicado a la
+pedagogía. Levy parte de una constatación: los abogados son adultos
+con marcos mentales muy asentados sobre cómo funciona el trabajo
+jurídico. La formación que falla trata esos marcos como obstáculos.
+La que funciona los usa como palanca.
+
+El escepticismo de un abogado ante una demostración de IA no es
+resistencia: es el mismo reflejo profesional que usa para interrogar
+peritos o leer contratos contra su literalidad. La formación más
+efectiva muestra una cita alucinada y pregunta a la sala cómo la
+habrían detectado.
+
+O entrega un anexo de procesamiento de datos con
+una cláusula de entrenamiento camuflada y pregunta cómo quedaría la
+negociación. El público se activa cuando el material recompensa la
+habilidad que ya traía consigo.
+
+Levy distingue cinco segmentos de audiencia con necesidades distintas:
+despacho pequeño, grandes firmas, asesoría jurídica interna, sector
+público y judicatura. El currículo que funciona para una gran firma
+ya tiene política y herramientas; el trabajo es alinear al abogado
+con esa arquitectura.
+
+El currículo para un despacho pequeño tiene que
+ser prescriptivo y ligero: una o dos herramientas, una postura
+contractual clara y una lista de verificación previa a la presentación
+que el abogado pueda adoptar esa misma semana.
+
+## El modelo de madurez
+
+La parte de evaluación y métricas cierra con un modelo de cuatro
+etapas que cualquier programa puede usar para situarse y planificar
+el paso siguiente.
+
+La etapa **reactiva** no tiene currículo formal. El uso de IA es
+informal. La primera vez que el despacho sabe de un problema es cuando
+lo plantea la parte contraria. La etapa **conforme** tiene una sesión
+anual de formación, normalmente en formato de diapositivas, sin
+componente práctico y con asistencia como único criterio de
+evaluación. La etapa **proactiva** incluye módulos sobre fundamentos,
+habilidades prácticas, ética y gobernanza, laboratorios presenciales,
+evaluación por escenarios y actualización cuando cambia la normativa
+o la jurisprudencia.
+
+La etapa **estratégica** es un programa con
+propietario interno, base de casos propia y capacidad de iterar desde
+los datos de incidencias.
+
+El consejo práctico de Levy: avanzar una etapa por año. Dos etapas en
+un año son raras. Y ninguna etapa es permanente: un programa
+estratégico que pierde a su responsable revierte a conforme en
+dieciocho meses sin que nadie lo advierta hasta que ocurre algo.
+
+## Lo que se puede replicar ahora mismo
+
+La guía incluye tres artefactos directamente utilizables: un programa
+completo de catorce semanas para facultades de derecho, una lista de
+fuentes primarias organizada por módulo y rúbricas de evaluación para
+los tres formatos recomendados: ejercicio escrito por escenario,
+portfolio de laboratorio y proyecto final.
+
+Para quienes diseñan CLE, el esquema de tres horas que propone es
+operativo: primera hora sobre fundamentos y habilidades de instrucción;
+segunda sobre verificación y clasificación de casos de uso; tercera
+sobre los seis deberes de la Opinión 512, la política del despacho y
+tres elementos de acción concretos que cada participante se llevará
+esa semana.
+
+## Nota sobre el contexto europeo
+
+El texto está escrito desde el marco regulatorio estadounidense, pero
+sus referencias internacionales incluyen el [Reglamento de IA de la
+UE](/normativa/reglamento-ia-ue), cuya mayoría de obligaciones entran
+en aplicación en agosto de 2026, la Practice Note del Tribunal Supremo
+de Nueva Gales del Sur (efectiva desde febrero de 2025) y la Circular
+del Registrador de Singapur de 2024. El análisis de los deberes de
+confidencialidad sobre flujos de datos en el stack de IA es
+directamente aplicable a entornos europeos sujetos al
+RGPD y sus requisitos sobre encargados de tratamiento<!-- [LINK ROTO: /normativa/rgpd-ia-encargado-tratamiento no encontrado] -->.
+
+Los despachos y departamentos jurídicos europeos que trabajan con
+herramientas de IA deben añadir al marco de Levy la capa de
+clasificación de riesgos del AI Act y los requisitos específicos
+para sistemas de alto riesgo en el ámbito judicial<!-- [LINK ROTO: /normativa/ai-act-alto-riesgo-justicia no encontrado] -->.
+
+---
+
+*Teaching AI to Lawyers* está disponible gratuitamente. Descarga el
+documento completo a continuación.
+
+[📄 Descargar Teaching AI to Lawyers — Colin S. Levy (2026)](/fuentes/teaching-ai-to-lawyers-levy-2026.pdf)

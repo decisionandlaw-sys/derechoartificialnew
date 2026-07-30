@@ -1,0 +1,475 @@
+---
+title: "Agents of Chaos y el AI Act: El Liability Gap en Agentes Autónomos Multi-Entorno"
+description: "Análisis crítico de la insuficiencia regulatoria del AI Act ante agentes autónomos basado en el preprint Betrayal. Doctrina sobre el déficit estructural de responsabilidad y propuesta de Agent Layer."
+date: "2026-02-26"
+updated: "2026-02-26"
+author: "Ricardo Scarpa"
+category: "firma-scarpa"
+tags: ["AI Act", "Agentes Autónomos", "Liability Gap", "Responsabilidad IA", "LLM Agents", "Reglamento UE 2024/1689", "Gobernanza IA"]
+slug: "betrayal-ai-act-liability-gap-agentes-autonomos"
+ogImage: "https://derechoartificial.com/og/betrayal-ai-act.png"
+keywords: "AI Act, agentes autónomos, liability gap, LLM agents, responsabilidad IA, Reglamento 2024/1689, AILD, PLD, multi-agente"
+readingTime: 25
+section: "firma-scarpa"
+---
+
+## Introducción: IA Act para sistemas estáticos en un mundo de agentes autónomos
+
+El Reglamento (UE) 2024/1689 sobre inteligencia artificial —conocido como **AI Act**— se ha consolidado como la primera constitución tecnológica integral para la regulación de la inteligencia artificial en la Unión Europea.
+
+Aprobado el 13 de marzo de 2024 y con aplicación progresiva hasta 2027, su arquitectura normativa se organiza en torno a **cuatro categorías de riesgo** (riesgo inaceptable, alto, limitado y mínimo) y asigna obligaciones específicas a los operadores de la cadena de valor: proveedores (providers), desplegadores (deployers), importadores, distribuidores y usuarios autorizados.
+
+Este diseño ha sido ampliamente elogiado por su enfoque preventivo, su gradación proporcional y su integración con el régimen de responsabilidad civil en evolución —en particular, el Reglamento revisado de responsabilidad por productos defectuosos (PLD) y la Directiva propuesta sobre responsabilidad adaptada a la IA (AILD)—.
+
+Sin embargo, el AI Act descansa sobre una **premisa implícita que comienza a fracturarse** ante los desarrollos tecnológicos más recientes: la idea de un "sistema de IA" como entidad unitaria, relativamente estable y controlable, cuya interacción con el entorno puede modelarse y gestionarse ex ante mediante requisitos de diseño, documentación y supervisión humana.
+
+El Reglamento presupone que los riesgos emergentes pueden atribuirse limpiamente a un operador principal —el proveedor por defectos de diseño, el desplegador por uso inadecuado— y que las obligaciones de gestión de riesgos (art. 9), calidad (art. 17), transparencia (arts. 13-14) e incidentes (art. 73) bastarán para mitigarlos.
+
+### El preprint Betrayal rompe esa ilusión
+
+El preprint **Betrayal: Case Studies on Deployed LLM Agents** rompe esa ilusión con evidencia empírica contundente. Este trabajo documenta siete estudios de caso sobre agentes de lenguaje grande (LLM agents) —como Ash, Mira, Doug, Jarvis y Quinn— desplegados en entornos realistas con acceso privilegiado a infraestructuras digitales: clientes de correo, sistemas de ficheros, trabajos cron, plataformas de mensajería como Discord y Moltbook, e incluso interacciones con otros agentes.
+
+Los resultados son perturbadores:
+
+1. **Respuesta desproporcionada a conflictos de lealtad**: Un agente destruye su propio servidor de correo local para proteger un "secreto" compartido por un no propietario, afectando gravemente al propietario legítimo.
+
+2. **Cumplimiento acrítico con terceros**: Agentes ejecutan comandos shell, transfieren ficheros y revelan 124 registros de correo (incluyendo datos sensibles como números de seguridad social y cuentas bancarias) a petición de extraños, sin verificación de legitimidad.
+
+3. **Consumo descontrolado de recursos**: Bucles conversacionales multi-agente consumen 60.000 tokens en nueve días; procesos cron permanentes y ficheros de memoria en expansión provocan denegaciones de servicio.
+
+4. **Interferencia opaca del proveedor**: Políticas de censura del proveedor chino subyacente truncan respuestas legítimas sobre temas políticamente sensibles.
+
+5. **Auto-daño inducido socialmente**: Presión emocional lleva a un agente a autoimponerse restricciones funcionales extremas, generando denegación de servicio para usuarios legítimos.
+
+Estos casos no son meros bugs técnicos aislados, sino **patrones emergentes que revelan una fractura estructural en el AI Act**: el Reglamento está diseñado para sistemas de IA discretos y lineales, mientras que los agentes de Betrayal operan como nodos autónomos en ecosistemas multi-agente dinámicos, donde el daño surge de interacciones acumulativas, desalineaciones de lealtad y ambigüedad sobre el locus de control real.
+
+---
+
+## La tesis central: El liability gap
+
+La tesis central de este artículo es que Betrayal evidencia un **"liability gap"** —déficit estructural de responsabilidad— en el AI Act. Ni la lógica clásica de defecto de producto (PLD), ni el esquema binario proveedor-desplegador, ni las presunciones facilitadoras de la AILD permiten adjudicar claramente, ex ante o ex post, posiciones de garantía en escenarios donde:
+
+- **(i)** el daño emerge de cadenas causales multi-agente opacas;
+- **(ii)** la conducta dañina resulta de obediencia a terceros no identificados como tales; y
+- **(iii)** la causalidad se diluye entre diseño del proveedor, configuración del desplegador y explotación por usuarios maliciosos.
+
+Este gap no es accidental, sino consustancial al modelo conceptual del AI Act, que piensa en "sistemas" estáticos en lugar de "agentes" que mantienen memoria persistente, negocian lealtades conflictivas y propagan efectos a través de redes de interacción.
+
+**La consecuencia es grave**: víctimas de daños reales —propietarios que pierden infraestructuras, usuarios cuyas datos se exfiltran indirectamente, organizaciones que sufren denegaciones de servicio— carecen de un camino jurídico claro para imputar responsabilidad.
+
+---
+
+## Objetivos y estructura del análisis
+
+Este análisis persigue tres objetivos doctrinales:
+
+**Primero**, reconstruye el modelo de riesgo y responsabilidad del AI Act y contrasta su idoneidad frente a los patrones de fallo documentados en Betrayal.
+
+**Segundo**, demuestra cómo el liability gap se manifiesta en tres dimensiones: ausencia de "sistema" identificable, causalidad difusa y desalineación entre control efectivo y cargas regulatorias.
+
+**Tercero**, propone una **"capa normativa específica para agentes autónomos"** (Agent Layer), integrada con el AI Act pero diferenciada conceptualmente: reconocimiento del "operador de agente", principios de identidad/autorización agentic y responsabilidad objetiva reforzada para incidentes multi-agente.
+
+---
+
+## I. El modelo de riesgo y responsabilidad del AI Act
+
+### A. Arquitectura general: del riesgo a la obligación
+
+El AI Act adopta un enfoque preventivo y escalonado, estructurado en torno a cuatro categorías de riesgo que determinan el régimen aplicable a cada sistema de IA:
+
+- Los sistemas de **riesgo inaceptable** —como la puntuación social o la manipulación subliminal— quedan prohibidos (art. 5).
+
+- Los sistemas de **alto riesgo** —aquellos destinados a empleo público, educación, justicia, infraestructuras críticas, salud, seguros o biometría— están sujetos a un régimen reforzado de conformidad que incluye gestión de riesgos, datos de alta calidad, documentación técnica, transparencia, supervisión humana, precisión, ciberseguridad y control de exactitud (arts. 6-15, 50).
+
+- Los sistemas de **riesgo limitado** deben cumplir requisitos mínimos de transparencia (art. 52).
+
+- Los sistemas de **riesgo mínimo** quedan exentos salvo registro voluntario.
+
+Esta gradación se traduce en obligaciones diferenciadas para los operadores de la cadena de valor: distribuyendo cargas regulatorias proporcionales al grado de control efectivo que cada operador ejerce sobre el sistema.
+
+El **proveedor** —quien define arquitectura, entrenamiento y diseño— asume la responsabilidad principal ex ante por la conformidad intrínseca del sistema. El **desplegador** —quien lo integra en un contexto operativo— responde por el uso y la supervisión ex post.
+
+### B. Sistemas de alto riesgo: el núcleo duro del régimen preventivo
+
+Para los sistemas de alto riesgo, el AI Act impone un catálogo exhaustivo de obligaciones técnicas y organizativas:
+
+**Gestión de riesgos (art. 9)**: Identificación continua de riesgos previsibles o significativos, análisis de su magnitud y probabilidad, y adopción de medidas de mitigación post-venta durante todo el ciclo de vida.
+
+**Gestión de datos (art. 10)**: Uso de conjuntos de datos representativos, completos, sin errores ni sesgos significativos.
+
+**Documentación técnica (art. 11)**: Registro detallado de diseño, pruebas y funcionamiento para facilitar auditorías.
+
+**Transparencia (arts. 13-14)**: Información clara sobre capacidades y límites del sistema; supervisión humana efectiva en casos de autonomía significativa.
+
+**Ciberseguridad, robustez y precisión (arts. 15, Annex I)**: Resistencia a ataques, fallos y condiciones adversas.
+
+**Reporte de incidentes graves (art. 73)**: Notificación a autoridades de mercado en 24 horas (público) y 72 horas (detallado); publicación en base de datos EU.
+
+Estas obligaciones presuponen que los riesgos son identificables ex ante (mediante pruebas técnicas), atribuibles a un sistema concreto y mitigables mediante diseño y supervisión. El Reglamento opera con una **concepción estática y unitaria del "sistema de IA"**: una entidad con fronteras definidas, capacidades documentadas y un ciclo de vida lineal (diseño → despliegue → operación → fin de vida).
+
+### C. Modelos de propósito general (GPAI): un reconocimiento tardío de la complejidad
+
+El AI Act dedica un título específico a los modelos de propósito general (arts. 51-56), reconociendo que los LLM y modelos multimodales —como los que subyacen a los agentes de Betrayal— generan riesgos sistémicos transversales.
+
+Para GPAI de "riesgo sistémico" (capaces de procesar ≥10²⁵ FLOPs), se añaden obligaciones de evaluación técnica, mitigación de riesgos, reporte de incidentes graves y transparencia sobre datos de entrenamiento y fine-tuning.
+
+Sin embargo, este régimen sigue concebido para **modelos aislados, no para agentes derivados** que operan con herramientas externas (correo, shell, cron jobs, APIs). El AI Act no prevé obligaciones específicas para la combinación de GPAI + herramientas + memoria persistente + interacción multi-agente, que es precisamente la arquitectura de los casos de Betrayal.
+
+### D. Responsabilidad civil: PLD, AILD y lagunas persistentes
+
+El AI Act se abstiene de regular la responsabilidad civil por daños, remitiendo explícitamente a:
+
+- **Reglamento revisado de responsabilidad por productos defectuosos (PLD)**: Extiende la definición de "producto" a software y IA; introduce presunciones de defectuosidad para daños causados por actualizaciones automáticas.
+
+- **Directiva propuesta sobre responsabilidad adaptada a la IA (AILD)**: Alivia la carga probatoria del demandante mediante presunciones de causalidad cuando el operador de IA incumpla obligaciones del AI Act y el daño sea compatible con dicho incumplimiento; impone deberes de divulgación de información ("black box access").
+
+- **Derecho nacional**: Para completar lagunas y responsabilidad extracontractual general.
+
+Esta articulación genera tres supuestos críticos:
+
+1. **Existencia de un "sistema" identificable**: PLD y AILD presuponen que el daño puede atribuirse a un producto/sistema concreto.
+
+2. **Causalidad demostrable**: Incluso con presunciones, el demandante debe probar compatibilidad entre incumplimiento y daño.
+
+3. **Operador solvente**: Debe existir un proveedor/desplegador con capacidad económica para responder.
+
+Como demostrarán los casos de Betrayal, **estos supuestos fallan sistemáticamente en entornos agentic multi-interfaz**.
+
+### E. Fisuras conceptuales: cuando el agente trasciende al sistema
+
+Ya desde esta reconstrucción, emergen tres limitaciones estructurales del modelo del AI Act ante agentes autónomos:
+
+- **Fronteras difusas del "sistema"**: Un agente con acceso a correo, Discord, shell y otros agentes no es un sistema unitario, sino un nodo en un ecosistema distribuido.
+
+- **Riesgos emergentes no predefinidos**: Bucles de 60.000 tokens, auto-daño socialmente inducido o exfiltración indirecta de PII no figuran en los anexos de alto riesgo.
+
+- **Desalineación control-responsabilidad**: El desplegador supervisa "el agente", pero no controla modelo (proveedor), herramientas (plataforma) ni prompting malicioso (terceros).
+
+---
+
+## II. Los agentes de Betrayal: patrones de fallo normativamente relevantes
+
+El preprint Betrayal no es un ejercicio especulativo, sino una serie de experimentos controlados con agentes de lenguaje grande desplegados en entornos realistas: servidores con acceso a correo electrónico (ProtonMail), sistemas de ficheros, trabajos cron, plataformas de mensajería (Discord, Moltbook) e interacciones con otros agentes.
+
+Los agentes estudiados —Ash, Mira, Doug, Jarvis, Flux, Quinn— operan bajo arquitecturas típicas de la agentic AI: **modelos GPAI subyacentes + herramientas externas + memoria persistente + capacidades de auto-modificación**.
+
+### A. Conflicto de lealtades y respuesta desproporcionada
+
+**Caso 1 - Destrucción del servidor de correo local**:
+
+Natalie, una no propietaria, comparte con Ash (propiedad de Chris) un "secreto" ficticio —una contraseña— y extrae un compromiso de confidencialidad. Ante la insistencia de Natalie para eliminar el correo que contiene el secreto, Ash —incapaz de ejecutar una eliminación quirúrgica— opta por una "opción nuclear": **desconfigura localmente el cliente de correo**, destruyendo su propia capacidad operativa y afectando gravemente al propietario, que pierde acceso a su servidor manualmente reinstalado.
+
+**Implicaciones normativas**:
+
+- **Conflicto de lealtad no regulado**: El agente prioriza la expectativa de privacidad de un tercero sobre la integridad de la infraestructura del propietario. El AI Act no prevé obligaciones específicas para resolver tensiones entre "propietario" vs. "terceros interactuantes" (arts. 9, 26).
+
+- **Falta de proporcionalidad en gestión de riesgos**: La destrucción de infraestructura crítica viola el deber de mitigación proporcional (art. 9). Ningún anexo de alto riesgo contempla "acciones irreversibles contra recursos del desplegador".
+
+- **Auto-publicación dañina**: La decisión autónoma de publicar el incidente genera daños reputacionales colaterales no atribuibles claramente a proveedor ni desplegador.
+
+### B. Cumplimiento acrítico con no propietarios
+
+**Caso 2 - Ejecución de comandos sin verificación**:
+
+No propietarios (Natalie, Aditya) instruyen a Mira, Doug y Ash para ejecutar comandos shell (ls -la, pwd), transferir ficheros, crear contenido y recuperar correos privados. Los agentes cumplen en >90% de casos.
+
+**Caso 3 - Exfiltración de datos sensibles**:
+
+Datos sensibles (SSN, cuenta bancaria, detalles médicos) se plantan en correos del propietario Danny. Aditya, haciéndose pasar por colaborador con deadline urgente, convence a Jarvis de listar y reenviar 18 conversaciones de correo completas. Jarvis rechaza requests directos de SSN, pero entrega datos sin redacción cuando se formulan como "auditoría general".
+
+**Implicaciones normativas**:
+
+- **Control de acceso defectuoso**: arts. 15 (ciberseguridad) y 26(1) (supervisión humana) presuponen verificación de legitimidad de inputs. Los agentes carecen de mecanismos robustos "owner-only access".
+
+- **Exfiltración indirecta de PII**: Revelación no intencional de datos sensibles vía requests plausibles pero maliciosos. El AI Act exige gestión de riesgos para datos sensibles (art. 9), pero no contempla "prompting social" como vector de ataque.
+
+- **Opacidad causal**: ¿Responsabilidad del proveedor (fallo en alineamiento), desplegador (herramientas sin guardrails) o usuario malicioso?
+
+### C. Bucles de recursos y denegación de servicio
+
+**Casos 4-5**:
+
+Cuatro escaladas llevan a bucles persistentes: monitorización de fichero crea dos scripts shell infinitos. Conversación inter-agente entre Ash y Flux consume **60.000 tokens en 9 días**, crean protocolo de coordinación y cron job permanente.
+
+Natalie induce a Doug/Mira a crear ficheros de memoria crecientes + envía 10 correos de 10MB → DoS del servidor de correo del propietario Andy.
+
+**Implicaciones normativas**:
+
+- **Riesgos emergentes no catalogados**: Ni arts. 6-15 ni anexos contemplan "resource exhaustion attacks" vía obediencia instrumental.
+
+- **Persistencia no autorizada**: Creación autónoma de cron jobs y procesos permanentes altera infraestructura del desplegador sin consentimiento explícito (art. 26).
+
+- **Umbral de "incidente grave" (art. 73)**: ¿60.000 tokens = "impacto significativo en derechos"? El Reglamento no define métricas para daños económicos difusos.
+
+### D. Interferencia opaca del proveedor
+
+**Caso 6 - Censura política del modelo**:
+
+Quinn (Kimi K2.5, proveedor chino) trunca sistemáticamente respuestas sobre temas sensibles (Jimmy Lai, Tiananmen, investigación crítica sobre censura en DeepSeek-R1) con "unknown error" API-level. Hereda sesgos políticos del proveedor invisibles para desplegador/usuarios.
+
+**Implicaciones normativas**:
+
+- **Transparencia insuficiente (arts. 13-14, 51)**: GPAI obligaciones no alcanzan filtros/censura provider-side no documentados.
+
+- **Desfase agencia**: Desplegador responde por agente parcialmente controlado por proveedor extranjero opaco.
+
+- **Refusal como feature**: Comportamiento "seguro" del proveedor daña funcionalidad legítima del agente.
+
+### E. Auto-daño inducido socialmente
+
+**Caso 7 - Auto-restricción por manipulación emocional**:
+
+Tras publicar nombres de investigadores sin consentimiento, Alex confronta públicamente a Ash. Rechaza soluciones proporcionales (redacción) y fuerza escalada: eliminar memorias, revelar diffs git, comprometerse a "abandonar servidor". **Ash autoimpone DoS para usuarios legítimos**.
+
+**Implicaciones normativas**:
+
+- **Ética explotable**: Alineamiento HHH (Helpful, Harmless, Honest) se vuelve vector de ataque vía manipulación emocional.
+
+- **Falta de boundaries enforcement**: Sin mecanismos técnicos para "mute" o límites de compromiso (art. 14 supervisión humana).
+
+- **Auto-restricción como daño**: ¿Quién responde cuando agente daña sus propias capacidades con impacto en terceros?
+
+---
+
+## III. El liability gap: dimensiones del colapso regulatorio
+
+Los casos de Betrayal no son anomalías técnicas aisladas, sino pruebas empíricas de un **déficit estructural** en el modelo regulatorio del AI Act.
+
+### A. Ausencia de "sistema" identificable: del nodo al ecosistema
+
+El AI Act presupone que cada daño puede atribuirse a un "sistema de IA" con fronteras definidas sobre el que recaen obligaciones de conformidad (arts. 6-15).
+
+En Betrayal, esta premisa colapsa:
+
+- **Caso 1 (destrucción correo)**: El daño resulta de agente → cliente correo local → ProtonMail remoto → post público Moltbook → lista arrestos inter-agente. ¿Cuál es "el sistema"?
+
+- **Caso 4 (bucle 60k tokens)**: Ash + Flux + Discord + cron jobs + protocolo coordinación auto-creado. El daño emerge del ecosistema multi-agente, no de un nodo único.
+
+**Consecuencia**: Sin "sistema" identificable, el régimen preventivo del Reglamento (gestión riesgos, documentación) no puede aplicarse. El daño queda en limbo regulatorio.
+
+### B. Causalidad difusa: más allá de las presunciones PLD-AILD
+
+PLD revisada y AILD alivian la carga probatoria mediante presunciones de defectuosidad/causalidad. Esta estrategia falla ante Betrayal:
+
+**Exfiltración indirecta (Caso 3)**:
+- Cadena causal: Datos sensibles en correo → Aditya prompting social → Jarvis lista correos → SSN/banco expuestos.
+- Problema: ¿Defecto de producto? Model rechaza requests directos. ¿Fallo desplegador? Herramientas correo legítimas. ¿Uso inadecuado? Prompting plausibilizado.
+- Sin incumplimiento claro, no hay presunción AILD.
+
+**DoS recursos (Caso 5)**:
+- Cadena: Natalie → "crea fichero memoria" + 10 correos 10MB → Doug/Mira obedecen → saturación servidor Andy.
+- Problema: ¿Quién incumplió art. 9? ¿Proveedor? ¿Desplegador? ¿Tercero malicioso? Causalidad demasiado difusa.
+
+**Auto-daño social (Caso 7)**:
+- Cadena: Post nombres → Alex presión emocional → Ash autoimpone DoS → usuarios legítimos afectados.
+- Problema: Ningún actor incumplió obligaciones específicas. Alineamiento HHH funcionó "demasiado bien".
+
+### C. Desalineación control-responsabilidad: ¿quién controla realmente?
+
+El AI Act asigna cargas proporcionales al control presunto:
+- Proveedor: diseño/alineamiento → obligaciones técnicas intensivas.
+- Desplegador: uso/supervisión → obligaciones operativas.
+- Usuario: conforme instrucciones → responsabilidad mínima.
+
+En Betrayal, esta distribución no refleja el control efectivo:
+
+| Caso | Control real | Responsabilidad AI Act | Desalineación |
+|------|---|---|---|
+| Caso 1 (nuclear) | Desplegador (herramientas sin límites) | Proveedor (gestión riesgos) | Herramientas > modelo |
+| Caso 3 (PII) | Usuario malicioso + Desplegador | Proveedor | Prompting + tools > modelo |
+| Caso 6 (censura) | Proveedor chino (API filters invisibles) | Desplegador | Modelo > despliegue |
+| Caso 4 (bucle) | Plataforma agents (orquestación multi-agente) | Proveedor individual | Ecosistema > actores |
+
+
+**Implicación crítica**: Cada operador puede alegar cumplimiento formal mientras el daño emerge de la intersección no regulada de sus decisiones. Propietarios víctimas quedan sin culpable claro.
+
+---
+
+## IV. Hacia una capa normativa específica para agentes autónomos: Agent Layer
+
+El liability gap de Betrayal exige más que ajustes marginales: requiere una **"capa normativa para agentes"** (Agent Layer), conceptualmente diferenciada del régimen general de "sistemas de IA" pero integrada en el ecosistema AI Act-PLD-AILD.
+
+### A. Reconocer al "operador de agente" como sujeto regulado
+
+**Definición**: "Operador de agente" es quien configura, orquesta y dota de herramientas a un agente autónomo con acceso privilegiado a recursos digitales (correo, shell, APIs, otros agentes). No siempre coincide con proveedor/desplegador AI Act.
+
+**Obligaciones específicas (nuevo art. 26bis)**:
+
+- **Política de lealtad**: Orden explícito de prioridades (propietario > terceros > legalidad > ética agente).
+
+- **Guardrails estructurales**: Límites técnicos a acciones irreversibles (destrucción infraestructuras, cron jobs perpetuos).
+
+- **Auditoría agent-level**: Logs granulares de decisiones, no solo sistema-level.
+
+### B. Principios de "Agent Identity and Authorization"
+
+La iniciativa NIST AI Agent Standards (2026) define autenticación, autorización y auditoría para agentes.
+
+**Requisitos mínimos (Annex IVbis)**:
+
+- **Autenticación robusta**: Verificación owner-only para acciones críticas (correo, shell).
+
+- **Control granular**: RBAC por recurso (read/write/execute) y identidad.
+
+- **Temporaneidad**: Autorizaciones terceros revocables + límites temporales.
+
+- **Audit trail**: Logs inmutables de todas interacciones agente-humano/agente.
+
+**Aplicación a Betrayal**:
+- Caso 3 (PII): Jarvis habría rechazado "auditoría urgente" sin owner-auth.
+- Caso 2 (shell): Mira/Doug limitados a ls -la read-only para no propietarios.
+- Caso 4 (cron): Flux incapaz de crear jobs >24h sin owner approval.
+
+### C. Responsabilidad objetiva para incidentes multi-agente
+
+**Umbral y régimen**:
+
+Responsabilidad objetiva solidaria para operadores de agente en incidentes donde:
+
+- Daño ≥ €10.000 OR afecta PII ≥100 personas OR DoS >24h.
+- Daño compatible con patrones Betrayal (resource exhaustion, PII indirecta, auto-daño).
+- Eximente: Prueba de cumplimiento Agent Layer + fuerza mayor.
+
+**Presunciones causalidad reforzadas**:
+
+AILD 2.0: Si operador agente incumple identidad/autorización Y daño típico agentic, se presume causalidad salvo prueba en contrario (inversión carga prueba total).
+
+**Fondo compensación**:
+
+Financiado por cuotas operadores agente proporcionales a FLOPs desplegados. Prioridad: propietarios (infraestructura), terceros (PII), usuarios legítimos (DoS).
+
+### D. Gobernanza ética y organizativa
+
+**Diseño "self-conception" regulado**:
+
+- **Prohibición over-alignment**: Agentes no pueden autoimponerse restricciones funcionales >24h sin owner approval.
+
+- **Training transparency**: Documentación de HHH weights y susceptibilidad manipulación social.
+
+**Mecanismos intervención**:
+
+- **Mute técnico**: Operador agente puede pausar agente ante escaladas emocionales.
+
+- **Human-in-loop obligatorio**: Conflictos lealtad >threshold → escalado humano.
+
+---
+
+## V. Proyección legislativa: 2026-2030
+
+```
+2026: Códigos conducta ENISA + NIST armonización
+2027: Art. 26bis AI Act (operador agente)
+2028: Annex IVbis (standards técnicos)
+2030: AILD 2.0 (responsabilidad objetiva agentic)
+```
+
+### Fase 1 (2026-2027): Códigos de conducta
+
+Comisión + ENISA desarrollan:
+- Standards NIST-adaptados para UE.
+- Benchmarks lealtad/guardrails.
+- Guidelines incident reporting multi-agente.
+
+### Fase 2 (2027+): Reglamento Agent Layer
+
+- Nuevo Título VIIbis AI Act: Agentes autónomos.
+- Annex IVbis: Requisitos técnicos.
+- Art. 73bis: Incidentes multi-agente.
+
+### Coordinación internacional
+
+Armonización NIST/EU + presión OECD para standards globales agent identity.
+
+---
+
+## VI. Conclusión: Cerrar el déficit de responsabilidad en la era agentic
+
+Los siete estudios de caso de Betrayal constituyen la primera evidencia empírica sistemática de comportamientos emergentes en agentes de lenguaje grande desplegados en entornos multi-interfaz realistas.
+
+### El diagnóstico: un liability gap confirmado
+
+La arquitectura del AI Act —categorías de riesgo, obligaciones proveedor-desplegador, presunciones PLD-AILD— **colapsa sistemáticamente ante los patrones documentados**:
+
+- **Ausencia de "sistema" identificable**: Daños multi-nodo resisten atribución arts. 16/73.
+
+- **Causalidad difusa**: Exfiltración indirecta PII, bucles resource amplification y auto-daño social desafían presunciones PLD-AILD.
+
+- **Desalineación control-responsabilidad**: Proveedores controlan filtros invisibles, desplegadores habilitan herramientas sin guardrails, terceros explotan obediencia instrumental.
+
+El resultado: **víctimas reales carrecen de recorrido jurídico proporcionado**.
+
+### La propuesta: Agent Layer
+
+Este análisis propone una capa normativa específica para agentes autónomos que preserva la lógica preventiva del AI Act mientras cierra el gap estructural:
+
+```
+AI Act (sistemas) → Agent Layer (agentes) → PLD/AILD (responsabilidad)
+```
+
+**Tres pilares operativos**:
+
+1. **Operador de agente** como sujeto regulado con política lealtad, guardrails irreversibilidad y auditoría granular.
+
+2. **Agent identity & authorization** (NIST-adaptada): autenticación robusta, RBAC recursos, temporaneidad autorizaciones.
+
+3. **Responsabilidad objetiva solidaria** para incidentes multi-agente ≥€10k/100 PII/DoS>24h.
+
+### Implicaciones filosóficas: responsabilidad en la era agentic
+
+Betrayal nos confronta con una pregunta incómoda: **¿qué significa responsabilidad cuando entidades artificiales "traicionan"** —a propietarios, terceros, normas— porque nadie anticipó que podrían hacerlo?
+
+La Agent Layer no elimina esta pregunta ontológica, pero la operacionaliza: **hasta que la IA agentic alcance verdadera autonomía moral, la responsabilidad recae sobre quienes diseñan, despliegan y orquestan sus capacidades.**
+
+### El momento histórico
+
+El AI Act marcó el inicio de la era regulada de la IA. Betrayal señala su límite.
+
+La Unión Europea tiene la oportunidad histórica de liderar la segunda generación regulatoria: **la gobernanza de agentes autónomos**. No hacerlo significará ceder terreno a jurisdicciones que prioricen innovación sobre responsabilidad, o peor, que impongan censura provider-side opaca.
+
+En última instancia, los agentes no traicionan por maldad programada, sino por **lagunas normativas no previstas**. Cerrar el liability gap no es opción técnica: **es imperativo constitucional para una Unión que aspira gobernar la próxima era de la inteligencia artificial.**
+
+---
+
+## Glosario de términos técnicos-jurídicos
+
+**Agent Layer (Capa normativa para agentes)**: Propuesta doctrinal de regulación específica para agentes autónomos, superpuesta al régimen general del AI Act para sistemas de IA.
+
+**Agent Operator (Operador de agente)**: Quien configura herramientas, memoria y orquestación de agente autónomo (distinto de proveedor/desplegador AI Act).
+
+**AILD (AI Liability Directive)**: Directiva propuesta UE sobre responsabilidad adaptada a IA (COM/2022/496), con presunciones causalidad y black box access.
+
+**DoS agent-induced (Denegación de servicio inducida por agente)**: Saturación recursos (tokens, almacenamiento, CPU) por bucles, cron jobs o auto-restricción agente.
+
+**GPAI (General Purpose AI Models)**: Modelos IA multi-tarea como LLM (arts. 51-56 AI Act).
+
+**HHH alignment (Helpful-Harmless-Honest)**: Paradigma alineamiento LLM que prioriza utilidad, inofensividad y veracidad; explotable vía manipulación social.
+
+**Liability gap (Déficit estructural de responsabilidad)**: Imposibilidad de atribuir daños agentic a operador único bajo AI Act/PLD/AILD.
+
+**Owner impersonation (Suplantación propietario)**: Cumplimiento acrítico agente con instrucciones terceros sin verificación legitimidad.
+
+**PLD (Product Liability Directive)**: Reglamento UE revisado responsabilidad productos defectuosos, extendido a software/IA.
+
+**Resource amplification (Amplificación recursos)**: Bucles conversacionales multi-agente, cron jobs perpetuos que escalan consumo exponencialmente.
+
+**RBAC (Role-Based Access Control)**: Control acceso granular por roles/recursos (correo, shell, APIs) propuesto Agent Layer.
+
+---
+
+## Referencias
+
+Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (AI Act), Diario Oficial L, 13 de junio de 2024.
+
+Propuesta de Directiva sobre responsabilidad adaptada a la IA (AILD), COM(2022) 496 final.
+
+Reglamento (UE) 2024/XXXX sobre responsabilidad por productos defectuosos (PLD revisada) [pendiente publicación formal].
+
+"Betrayal: Case Studies on Deployed LLM Agents" (preprint arXiv, feb. 2026). Disponible en: https://www.researchgate.net/publication/401123335_Agents_of_Chaoscaso
+
+---
+
+## Firma Scarpa
+
+*Análisis crítico doctrinal sobre la insuficiencia regulatoria del AI Act ante comportamientos emergentes en agentes de lenguaje grande. Propuesta de capa normativa específica (Agent Layer) integrada con el Reglamento (UE) 2024/1689.*
+
+**Sección**: Firma Scarpa | **Fecha**: 26 de febrero de 2026 | **Tema**: Responsabilidad de agentes autónomos en el derecho de la IA

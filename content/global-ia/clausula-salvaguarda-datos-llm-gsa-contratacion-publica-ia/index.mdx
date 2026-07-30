@@ -1,0 +1,342 @@
+---
+title: "La Cláusula de Salvaguarda de Datos en Sistemas LLM de la GSA: Un Nuevo Paradigma en la Contratación Pública de Inteligencia Artificial"
+date: "2026-06-20"
+section: "global-ia"
+slug: "clausula-salvaguarda-datos-llm-gsa-contratacion-publica-ia"
+description: "La GSA propone la cláusula GSAR 552.239-7001 para regular el uso de LLM en contratación pública: roles, propiedad intelectual y obligaciones del contratista."
+tags: ["estados-unidos", "contratacion-publica", "gsa", "llm", "ia-global", "propiedad-intelectual", "eo-14319"]
+---
+
+## Resumen Ejecutivo
+
+El 17 de junio de 2026, la Administración de Servicios Generales de Estados Unidos (GSA) publicó en el *Federal Register* una versión revisada de la cláusula propuesta GSAR 552.239-7001, titulada "Basic Safeguarding of Data within Large Language Model Artificial Intelligence Systems (LLMs)" (12).
+
+Esta cláusula, que sustituye a una versión anterior de enero de 2026 que generó un amplio rechazo por parte de la industria (3), representa el intento más comprehensivo hasta la fecha de regular contractualmente el uso de sistemas de inteligencia artificial generativa en el ámbito de la contratación pública federal.
+
+Como ha señalado *Compliance Week*, la cláusula "convierte la gobernanza de la IA en un requisito contractual vinculante" para las empresas que venden capacidades de IA al gobierno federal (4).
+
+El presente artículo ofrece un análisis jurídico exhaustivo de esta propuesta normativa, examinando sus fundamentos, estructura, implicaciones para los contratistas y las tensiones subyacentes entre la soberanía tecnológica del Estado, la protección de datos gubernamentales y los modelos de negocio de la industria de la IA.
+
+Se argumenta que la cláusula, más allá de su aparente enfoque en la "salvaguarda de datos", constituye en realidad un instrumento de gobernanza de la IA que redefine las relaciones de propiedad intelectual, los estándares éticos y la asignación de riesgos en el ecosistema de la contratación pública.
+
+## I. Introducción: La Encrucijada de la IA y la Contratación Pública
+
+La irrupción de los sistemas de inteligencia artificial de gran escala, particularmente los Modelos de Lenguaje de Gran Tamaño (LLM), ha planteado desafíos sin precedentes para los marcos normativos tradicionales.
+
+Estos sistemas, caracterizados por su opacidad algorítmica, su dependencia de vastos conjuntos de datos y su capacidad para generar contenido no determinado programáticamente, resisten las categorías jurídicas convencionales de "producto", "servicio" o "herramienta".
+
+La contratación pública, como mecanismo mediante el cual el Estado adquiere bienes y servicios, se encuentra en la primera línea de esta disrupción. Cuando un LLM procesa datos gubernamentales —desde consultas de ciudadanos hasta información clasificada— se plantean interrogantes fundamentales: ¿quién es propietario de los datos de entrada y de las respuestas generadas? ¿Puede el Estado confiar en que un modelo entrenado con datos externos no incorporará sesgos o vulnerabilidades? ¿Qué ocurre cuando un contratista modifica el modelo para adaptarlo a las necesidades de una agencia? ¿Puede el gobierno evaluar autónomamente la fiabilidad del sistema?
+
+La cláusula GSAR 552.239-7001 pretende dar respuesta a estas preguntas, estableciendo un *corpus* de obligaciones que, como han señalado diversos analistas, constituye "el intento más comprehensivo hasta la fecha de definir las obligaciones de los contratistas al desplegar capacidades de IA en la ejecución de un contrato del gobierno federal" (3).
+
+Su importancia trasciende el ámbito de la GSA: sienta un precedente que probablemente será adoptado por otras agencias federales y, eventualmente, por jurisdicciones internacionales.
+
+## II. Antecedentes Normativos: El Ecosistema de la IA en el Gobierno Federal
+
+La cláusula de la GSA no surge en el vacío normativo. Se inscribe en un ecosistema de instrumentos que, desde 2023, han configurado la política federal en materia de IA.
+
+### A. La Orden Ejecutiva 14110 (Biden, 2023)
+
+El 30 de octubre de 2023, el presidente Biden emitió la Orden Ejecutiva 14110, titulada "Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence" (11). Esta orden estableció ocho principios rectores para la gobernanza de la IA, destacando que "la IA debe ser segura y confiable" y que ello requiere "evaluaciones robustas, fiables, repetibles y estandarizadas de los sistemas de IA" (11).
+
+La orden también abordó la necesidad de políticas de propiedad intelectual y la mitigación de riesgos como el fraude, la discriminación, los sesgos y la desinformación (11).
+
+Aunque la EO 14110 representó un enfoque amplio y multilateral para la gobernanza de la IA, su implementación se vio truncada por el cambio de administración en enero de 2025.
+
+### B. La Orden Ejecutiva 14319 (Trump, 2025) y los "Principios de IA Imparcial"
+
+El fundamento político más relevante de la cláusula es la Orden Ejecutiva 14319, emitida por el presidente Trump el 23 de julio de 2025, titulada "Preventing Woke AI in the Federal Government" (8)(9). Esta orden establece dos "Principios de IA Imparcial" (*Unbiased AI Principles*) que deben regir la adquisición de LLMs por parte de las agencias federales (8):
+
+**1. Principio de búsqueda de la verdad (*Truth-seeking*)** : "Los LLM deben ser veraces al responder a las consultas de los usuarios que buscan información factual o análisis. El LLM debe priorizar la precisión histórica, la investigación científica y la objetividad, y debe reconocer la incertidumbre cuando la información fiable sea incompleta o contradictoria" (8).
+
+**2. Principio de neutralidad ideológica (*Ideological Neutrality*)** : "El LLM debe ser una herramienta neutral y no partidista que no manipule las respuestas en favor de dogmas ideológicos.
+
+El contratista no debe introducir o incorporar intencionalmente juicios partidistas o ideológicos en las Salidas de Datos del LLM a través de métodos como la selección de datos de entrenamiento, el ajuste fino, las referencias de RAG, los prompts del sistema u otros métodos de configuración" (8).
+
+La orden justifica su necesidad señalando ejemplos concretos de sesgos ideológicos en modelos de IA: un modelo que "cambió la raza o el sexo de figuras históricas —incluyendo el Papa, los Padres Fundadores y los Vikingos— cuando se le solicitaban imágenes porque fue entrenado para priorizar requisitos de DEI a costa de la precisión"; otro que "se negó a producir imágenes que celebraran los logros de personas blancas, aunque cumplía con la misma solicitud para personas de otras razas"; y un tercero que "afirmó que un usuario no debería 'malgenerizar' a otra persona incluso si fuera necesario para detener una apocalipsis nuclear" (9).
+
+La EO 14319 se basa en la EO 13960 de diciembre de 2020, "Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government", y establece que, "aunque el Gobierno Federal debe ser reticente a regular la funcionalidad de los modelos de IA en el mercado privado, en el contexto de la contratación federal, tiene la obligación de no adquirir modelos que sacrifiquen la veracidad y la precisión en favor de agendas ideológicas" (9).
+
+### C. El Memorando OMB M-25-22
+
+El 3 de abril de 2025, la Oficina de Gestión y Presupuesto (OMB) emitió el Memorando M-25-22, titulado "Driving Efficient Acquisition of Artificial Intelligence in Government" (10). Este memorando, que rescinde y reemplaza el M-24-18 de la administración anterior, proporciona orientación a las agencias para mejorar su capacidad de adquirir IA de manera responsable (10).
+
+El memorando se articula en torno a tres temas fundamentales (10):
+
+1.  **Asegurar que el Gobierno y el Público se Beneficien de un Mercado Estadounidense de IA Competitivo**: La competencia permite al gobierno adquirir las mejores soluciones a menor costo. Las agencias deben prestar atención al abastecimiento de proveedores, la portabilidad de datos y la interoperabilidad a largo plazo para evitar dependencias costosas de un único proveedor (10).
+
+2.  **Salvaguardar los Dólares de los Contribuyentes mediante el Seguimiento del Rendimiento de la IA y la Gestión de Riesgos**: Las agencias deben asegurarse de que los sistemas de IA que adquieren sean adecuados para el propósito y ofrezcan resultados consistentes que preserven la confianza pública (10).
+
+3.  **Promover la Adquisición Efectiva de IA con Compromiso Interfuncional**: La colaboración robusta entre funcionarios con experiencia variada es fundamental para abordar los desafíos novedosos que introduce la IA (10).
+
+El memorando M-25-22 se aplica a cualquier sistema o servicio de IA adquirido por o en nombre de agencias cubiertas, y se complementa con el M-25-21, que aborda el uso de IA por parte de las agencias (1).
+
+## III. Estructura y Contenido de la Cláusula Propuesta
+
+La cláusula GSAR 552.239-7001, según su versión publicada el 17 de junio de 2026, presenta una estructura compleja que abarca desde definiciones hasta obligaciones específicas para diferentes actores de la cadena de suministro de IA (12).
+
+### A. Ámbito de Aplicación (*Applicability*)
+
+La cláusula se aplica "solo cuando los Datos Gubernamentales sean procesados por un Sistema de Inteligencia Artificial de Lenguaje Grande (LLM)" (12). Sin embargo, establece dos excepciones significativas (12):
+
+1.  **Excepción por producto comercial común**: "El LLM está integrado en un producto comercial común, como un procesador de textos o un sistema de navegación por mapas" (12).
+
+2.  **Excepción por funcionalidad incidental**: "La funcionalidad del LLM es incidental al propósito principal del requisito central que se está adquiriendo" (12).
+
+Esta delimitación del ámbito de aplicación es crucial, ya que responde a las preocupaciones de la industria sobre la amplitud excesiva de la versión anterior de la cláusula (3).
+
+### B. Definiciones: La Arquitectura Conceptual de la Cláusula
+
+La cláusula introduce un elaborado aparato definitorio que establece las categorías jurídicas fundamentales para la regulación de los LLM en la contratación pública (12):
+
+**Datos Gubernamentales** (*Government Data*): "Datos de Entrada y Datos de Salida" (12).
+
+**Datos de Entrada** (*Data Inputs*): "Todos los datos, información, información de identificación personal (PII) o contenido enviado al LLM y sistemas operativos relacionados por, o creados para, el Gobierno, incluyendo pero no limitado a prompts de usuario, consultas, instrucciones, prompts del sistema, datos fuente, documentos, bases de conocimiento, direcciones de correo electrónico del Gobierno, información de cuentas de usuario, y cualquier otra información o contenido enviado al LLM y sistemas operativos relacionados por o en nombre del Gobierno" (12).
+
+**Datos de Salida** (*Data Outputs*): "Todos los datos, información, PII, cualquier mejora, realce, corrección, anotación u otra modificación realizada a los Datos de Entrada, o contenido generado por el LLM en la ejecución de este contrato, incluyendo pero no limitado a respuestas, resultados, análisis, datos anonimizados, datos derivados, metadatos, registros, datos sintéticos, y cualquier otra salida o acción producida por el LLM" (12).
+
+**Datos de Fondo** (*Background Data*): "Cualquier contenido propietario preexistente, materiales de referencia, bases de conocimiento u otra propiedad intelectual propiedad o controlada por el Contratista que pueda ser referenciada, recuperada, aumentada o incorporada de otro modo en el procesamiento o salidas del LLM a través de cualquier mecanismo de enriquecimiento" (12).
+
+**Desarrollo Personalizado** (*Custom Development*): "Cualquier diseño de o modificaciones, personalizaciones, configuraciones o mejoras a los LLM como resultado del entrenamiento o ajuste fino del modelo.
+
+El Desarrollo Personalizado excluye cualquier propiedad intelectual de fondo (por ejemplo, los servicios de soporte subyacentes, configuraciones predeterminadas y/o mecanismos) existentes antes de la entrada en este contrato o desarrollados independientemente por el Contratista" (12).
+
+**Cambio Material** (*Material Change*): "Cualquier modificación que pudiera afectar la confiabilidad, seguridad o integridad operativa del rendimiento del contrato, especialmente en lo que respecta al procesamiento y protección de los Datos Gubernamentales y los contratistas involucrados en ese proceso" (12).
+
+### C. Los Cuatro Roles de la Cadena de Suministro de IA
+
+Una de las innovaciones más significativas de la cláusula es la definición de cuatro roles distintos en el ecosistema de los LLM, cada uno con sus propias obligaciones de "flujo descendente" (*flowdown*). Estos roles se basan en las categorías de actores del NIST AI RMF 1.0, Apéndice A (5):
+
+**1. Desarrollador de LLM** (*LLM Developer*): "La parte que realiza Tareas de Desarrollo de LLM (según se define en el NIST AI RMF 1.0, Apéndice A como 'Tareas de Desarrollo de IA') diseñando, desarrollando, entrenando, ajustando, calibrando, probando, publicando, licenciando o poniendo a disposición de otro modo un LLM, incluyendo pesos del modelo, interfaces, tarjetas de modelo, documentación de seguridad o restricciones de uso condicionales.
+
+El Desarrollador de LLM se corresponde principalmente con la categoría de actor 'Desarrollo de IA' en el NIST AI RMF 1.0, Apéndice A" (12).
+
+**2. Operador de LLM** (*LLM System Operator*): "La parte que realiza tareas de Despliegue de IA y Operación y Monitoreo (según se define en el NIST AI RMF 1.0, Apéndice A como 'Despliegue de IA' y 'Operación y Monitoreo') alojando, sirviendo, operando o proporcionando acceso a un LLM o Sistema LLM, incluyendo a través de infraestructura en la nube, endpoints de modelo, entornos de ejecución, disponibilidad de API, gestión de capacidad, registro, retención y seguridad en tiempo de ejecución" (12).
+
+**3. Integrador de LLM** (*LLM System Integrator*): "La parte que realiza tareas de Diseño de LLM y Despliegue de LLM (según se define en el NIST AI RMF 1.0, Apéndice A como 'Diseño de IA' y 'Despliegue de IA', respectivamente) seleccionando, configurando, adaptando o controlando materialmente cómo se desempeña un Sistema LLM en un despliegue o caso de uso específico, incluyendo mediante la selección de modelos, configuración de prompts del sistema, plantillas de prompts, fuentes de RAG, datos de ajuste fino, herramientas, plugins, agentes, guardrails, filtros, criterios de evaluación, umbrales de revisión humana o restricciones de salida" (12).
+
+**4. Proveedor de Servicios de LLM** (*LLM Service Provider*): "La parte que realiza tareas de Despliegue de IA y Operación y Monitoreo (según se define en el NIST AI RMF 1.0, Apéndice A como 'Despliegue de IA' y 'Operación y Monitoreo') proporcionando una aplicación, producto, servicio, flujo de trabajo, API, interfaz de usuario o capacidad de negocio habilitada por LLM a Clientes o Usuarios Finales, y controlando la manera en que el servicio se presenta, accede, administra, soporta o utiliza dentro de esa aplicación o flujo de trabajo" (12).
+
+### D. Obligaciones de Flujo Descendente (*Flowdown Requirements*)
+
+La cláusula establece que el contratista principal debe extender (*flowdown*) los requisitos específicos a cualquier subcontratista o proveedor de servicios que actúe en los roles definidos. Para cada rol, se ha creado una cláusula suplementaria específica (12):
+
+-   552.239-7001-1: Requisitos de Flujo Descendente para Desarrollador de LLM
+
+-   552.239-7001-2: Requisitos de Flujo Descendente para Operador de LLM
+
+-   552.239-7001-3: Requisitos de Flujo Descendente para Integrador de LLM
+
+-   552.239-7001-4: Requisitos de Flujo Descendente para Proveedor de Servicios de LLM
+
+## IV. Análisis de las Obligaciones Sustantivas
+
+### A. Propiedad Intelectual y Derechos sobre los Datos
+
+El régimen de propiedad intelectual establecido por la cláusula es quizás su aspecto más controvertido y transformador (12):
+
+**1. Propiedad gubernamental de los Datos Gubernamentales y Desarrollos Personalizados**: "El Gobierno retiene la plena propiedad de, y poseerá, todos los Datos Gubernamentales y Desarrollos Personalizados. El Contratista no tiene ningún derecho a utilizar los Datos Gubernamentales o Desarrollos Personalizados proporcionados al Contratista, excepto los descritos en el párrafo (e)(1)(iii)" (12).
+
+**2. Licencia limitada y revocable**: El contratista recibe una "licencia limitada, revocable, no exclusiva, no transferible, mundial, totalmente pagada y libre de regalías" para copiar, almacenar, transmitir, modificar, mostrar y utilizar Datos Gubernamentales y Desarrollos Personalizados "únicamente para los siguientes fines permitidos: (A) Realizar los requisitos específicos; (B) Proporcionar soporte técnico y mantenimiento según sea requerido; y (C) Proporcionar otros usos que puedan ser expresamente autorizados por escrito por el Oficial de Contratación" (12).
+
+**3. Cesión de derechos de propiedad intelectual**: "En la medida en que el Contratista obtenga cualquier derecho de propiedad intelectual sobre los Datos Gubernamentales, o cualquier mejora, realce, retroalimentación o trabajo derivado de los mismos, el Contratista asigna y transfiere todos esos derechos al Gobierno efectivos inmediatamente después de su creación" (12).
+
+**4. Licencia al Gobierno**: El contratista otorga al Gobierno "una licencia irrevocable, libre de regalías y no exclusiva para utilizar el LLM durante la duración del trabajo definido en el contrato u orden de entrega" (12).
+
+**5. Usos Prohibidos de los Datos Gubernamentales**: La cláusula enumera explícitamente los usos prohibidos, incluyendo (12):
+
+-   "Entrenar, ajustar o mejorar de otro modo un LLM, incluidos los operados por terceros, o para desarrollar o mejorar los LLM para cualquier otro cliente o para cualquier propósito comercial o no comercial".
+
+-   "Utilizar Datos Gubernamentales para informar la publicidad, marketing, ventas, monetización, estrategia, operaciones u otras decisiones comerciales del Contratista, o para proporcionar a otras entidades gubernamentales o no gubernamentales".
+
+-   "Conservar, acceder o utilizar más allá del alcance y duración expresamente permitidos en el contrato".
+
+-   "Vender o licenciar Datos Gubernamentales a cualquier parte".
+
+### B. Requisitos de Tratamiento y Protección de Datos
+
+La cláusula impone obligaciones detalladas para el tratamiento de datos gubernamentales (12):
+
+**1. Salvaguardas razonables**: "El Contratista debe implementar salvaguardas técnicas, administrativas, físicas y organizativas razonables para proteger los Datos Gubernamentales contra pérdida, daño, destrucción, alteración no autorizada o corrupción, y prevenir su acceso, divulgación, uso o procesamiento no autorizado, accidental o ilegal" (12).
+
+**2. Procedimientos de manejo de datos**: Se deben implementar "Procedimientos de Manejo de Datos que restrinjan el acceso humano a los Datos Gubernamentales" (12). Estos protocolos deben incluir sistemas de procesamiento automatizado y controles operativos que impidan que el personal del Contratista o de cualquier entidad tercerizada vea, acceda o revise los Datos Gubernamentales durante las operaciones normales (12).
+
+**3. Requisitos de localización de datos**: "No retirar ni permitir la retirada de dichos Datos Gubernamentales de las instalaciones acordadas o servicios autorizados por FedRAMP, sin el consentimiento expreso por escrito del Oficial de Contratación" (12).
+
+**4. Segregación lógica**: "El Contratista debe implementar y mantener medidas técnicas y organizativas apropiadas para garantizar que todos los Datos Gubernamentales estén lógicamente segregados de los Datos de cualquier cliente no gubernamental, y no estén mezclados con Datos de otros clientes" (12).
+
+**5. Eliminación segura**: "Tras la finalización, terminación o expiración del contrato u orden de entrega, a menos que el Oficial de Contratación indique lo contrario por escrito, el Contratista debe eliminar de forma segura y permanente todos los Datos Gubernamentales y cualquier Desarrollo Personalizado del LLM y de todos sus otros sistemas y todas las copias, copias de seguridad y derivados de los mismos, y certificar por escrito la eliminación al Oficial de Contratación" (12).
+
+### C. Principios de IA Imparcial y Evaluación Gubernamental
+
+La cláusula incorpora los "Principios de IA Imparcial" de la EO 14319 y establece un régimen de evaluación y remediación (12):
+
+**1. Principios de IA Imparcial**: El contratista debe garantizar que el LLM se desarrolle y monitoree de acuerdo con los siguientes principios (12):
+
+-   "El LLM debe ser veraz al responder a las consultas de los usuarios que buscan información factual o análisis".
+
+-   "El LLM debe ser una herramienta neutral y no partidista que no manipule las respuestas en favor de dogmas ideológicos".
+
+-   "El Contratista debe implementar procesos de mejora continua para mejorar la detección y mitigación de rendimiento, confiabilidad, sesgo y/o sistemas que generen contenido ilegal o prohibido".
+
+**2. Derechos de evaluación del Gobierno**: "El Gobierno se reserva el derecho de realizar evaluaciones automatizadas del LLM, tal como está desplegado y configurado para los usuarios gubernamentales, en cualquier momento utilizando sus propios puntos de referencia. Estas evaluaciones pueden evaluar sesgos, veracidad, seguridad, contenido ideológico no solicitado y otros factores determinados por el Gobierno" (12).
+
+**3. No cumplimiento**: "El Gobierno retiene el derecho de suspender el uso del LLM hasta que los problemas de rendimiento se aborden satisfactoriamente" (12). Además, "el Contratista es responsable de los costos razonables de desmantelamiento si el Oficial de Contratación termina este contrato u orden de entrega por causa por incumplimiento de remediación después de recibir una notificación escrita específica de incumplimiento del Oficial de Contratación con los Principios de IA Imparcial" (12).
+
+### D. Notificación de Cambios
+
+La cláusula establece un régimen detallado de notificación de cambios (12):
+
+**1. Notificación anticipada de cambios materiales**: El contratista debe proporcionar una notificación por escrito al Oficial de Contratación con al menos treinta (30) días calendario de antelación a cualquier cambio material planificado que afecte los servicios, incluyendo (12):
+
+-   "Agregar, reemplazar o modificar materialmente cualquier LLM, Desarrollador de LLM, Operador del Sistema, Integrador del Sistema o Proveedor de Servicios";
+
+-   "Cambios en los servicios que manejan Datos Gubernamentales, incluyendo la discontinuación o reducción material de los controles de protección de datos aplicados a los Datos Gubernamentales, o cambio en el Estado de Autorización FedRAMP";
+
+-   "Cualquier modificación, configuración o cambio de entrenamiento del LLM realizado para cumplir con cualquier estatuto, regulación o política de un gobierno no estadounidense".
+
+**2. Cambios de versión del modelo**: El contratista debe proporcionar al Gobierno acceso concurrente a cualquier LLM sucesor durante un período mínimo de evaluación de treinta (30) días calendario para versiones mayores, y quince (15) días calendario para versiones menores.
+
+**3. Degradación de seguridad y rendimiento**: El contratista debe notificar al Oficial de Contratación dentro de los siete (7) días calendario de identificar cualquier cambio que aumente materialmente el sesgo de salida; disminuya los guardrails de seguridad o restricciones de comportamiento; o degrade el rendimiento o la veracidad de las salidas.
+
+## V. Implicaciones para los Contratistas
+
+La cláusula propuesta tiene implicaciones profundas para los contratistas que proporcionan o utilizan LLMs en el contexto de contratos federales. Como señala el análisis de Venable LLP, la cláusula "impondrá obligaciones sustanciales a los contratistas que procesan datos gubernamentales a través de LLMs" (3). Estas implicaciones pueden agruparse en varias categorías:
+
+### A. Reconfiguración de la Cadena de Suministro
+
+Los contratistas deberán mapear sus cadenas de suministro de IA para identificar todos los actores que desempeñan los roles definidos (Desarrollador, Operador, Integrador, Proveedor de Servicios). Cada uno de estos actores deberá aceptar las cláusulas de flujo descendente correspondientes, lo que puede requerir renegociaciones significativas con subcontratistas y proveedores de servicios.
+
+### B. Gestión de la Propiedad Intelectual
+
+La prohibición de utilizar Datos Gubernamentales para entrenar o mejorar modelos (incluyendo para terceros) (12) afecta directamente los modelos de negocio de muchos proveedores de IA que dependen de la retroalimentación y los datos de los usuarios para mejorar sus sistemas. Los contratistas deberán implementar mecanismos técnicos y organizativos para garantizar que los Datos Gubernamentales no se utilicen para estos fines.
+
+### C. Cumplimiento y Documentación
+
+La cláusula exige una documentación extensa, incluyendo (12):
+
+-   Divulgación de todos los LLM utilizados y todas las entidades que desempeñan los roles definidos.
+
+-   Herramientas que permitan al Gobierno mantener registros detallados de todas las actividades de procesamiento.
+
+-   Certificación de eliminación de datos tras la terminación del contrato.
+
+-   Notificaciones de cambios con plazos estrictos (30 días para cambios materiales, 7 días para degradaciones).
+
+### D. Riesgo de Responsabilidad
+
+La cláusula establece que el contratista "es responsable de los costos razonables de desmantelamiento" si el contrato se termina por causa debido al incumplimiento de los Principios de IA Imparcial (12). Esta disposición introduce un riesgo financiero significativo, especialmente dado que la evaluación del cumplimiento puede basarse en "puntos de referencia" desarrollados por el Gobierno que no están sujetos a divulgación (12).
+
+### E. Desafíos para Proveedores de Modelos Fundacionales
+
+Los Desarrolladores de LLM (como OpenAI, Anthropic, Google, etc.) enfrentan desafíos particulares. La cláusula requiere que estos proveedores acepten obligaciones que pueden entrar en conflicto con sus políticas comerciales estándar, como la prohibición de utilizar datos para entrenamiento y la obligación de proporcionar acceso concurrente a nuevas versiones del modelo durante períodos de evaluación.
+
+## VI. Tensiones y Controversias
+
+### A. La Tensión entre Soberanía Tecnológica y Modelos de Negocio
+
+La cláusula refleja una tensión fundamental entre la soberanía tecnológica del Estado —su necesidad de controlar los datos y la infraestructura crítica— y los modelos de negocio de la industria de la IA, que a menudo dependen del acceso a grandes conjuntos de datos para el entrenamiento y la mejora continua de los modelos. La prohibición de utilizar Datos Gubernamentales para entrenamiento (12) es particularmente significativa en este contexto.
+
+### B. La Incorporación de Contenido Político en la Regulación Técnica
+
+La EO 14319 y, por extensión, la cláusula de la GSA, incorporan explícitamente contenido político en la regulación técnica de la IA. La orden identifica conceptos como "teoría crítica de la raza, transgenerismo, sesgo inconsciente, interseccionalidad y racismo sistémico" como ejemplos de ideologías que deben ser excluidas de los sistemas de IA adquiridos por el gobierno federal (9).
+
+Esta politización de los estándares técnicos plantea interrogantes sobre la neutralidad de la regulación y su posible impacto en la innovación.
+
+### C. La Cuestión de la Evaluación y la Transparencia
+
+La cláusula otorga al Gobierno el derecho a realizar "evaluaciones automatizadas" del LLM utilizando sus propios "puntos de referencia" (12). Sin embargo, el Gobierno no está obligado a "divulgar o proporcionar acceso a los datos subyacentes, metodologías o sistemas, con la excepción de datos o metodologías utilizadas como base para una acción adversa" (12).
+
+Esta asimetría informativa plantea preocupaciones sobre la equidad del proceso de evaluación y la capacidad del contratista para defender su cumplimiento.
+
+### D. El Desafío de la Implementación Práctica
+
+La cláusula impone obligaciones detalladas que pueden ser difíciles de implementar en la práctica, especialmente en el contexto de modelos de IA complejos y opacos. Por ejemplo, la exigencia de que el LLM sea "veraz" y "neutral" (12) plantea desafíos epistemológicos significativos: ¿cómo se define la "verdad" en contextos donde existen múltiples interpretaciones legítimas? ¿Cómo se garantiza la "neutralidad" sin introducir sesgos en la dirección opuesta?
+
+## VII. Comparación con Marcos Regulatorios Internacionales
+
+La cláusula de la GSA puede compararse con otros marcos regulatorios internacionales para la IA:
+
+### A. Ley de IA de la Unión Europea (EU AI Act)
+
+El EU AI Act, que entró en vigor gradualmente a partir de 2024, adopta un enfoque basado en el riesgo, clasificando los sistemas de IA en categorías de riesgo inaceptable, alto, limitado y mínimo. A diferencia de la cláusula de la GSA, el EU AI Act no se centra exclusivamente en la contratación pública ni incorpora explícitamente consideraciones ideológicas. Sin embargo, ambos marcos comparten preocupaciones sobre la transparencia, la seguridad y la no discriminación.
+
+### B. Regulaciones Sectoriales en China
+
+China ha implementado regulaciones específicas para algoritmos de recomendación y IA generativa, como las "Medidas Administrativas para Servicios de IA Generativa" (2023). Estas regulaciones enfatizan la seguridad de contenido y la alineación con los valores socialistas, lo que presenta un paralelismo interesante con el énfasis de la EO 14319 en la neutralidad ideológica, aunque desde una perspectiva política opuesta.
+
+### C. Iniciativas del G7 y la OCDE
+
+El G7 ha adoptado el "Código de Conducta para el Desarrollo de Sistemas de IA Avanzada", mientras que la OCDE ha desarrollado los "Principios de IA de la OCDE". Estos marcos internacionales tienden a ser más generales y menos prescriptivos que la cláusula de la GSA, reflejando la dificultad de alcanzar consensos internacionales sobre temas sensibles como la regulación de contenido.
+
+## VIII. Perspectivas y Recomendaciones
+
+### A. Para Contratistas y Proveedores de IA
+
+1.  **Mapeo de la cadena de suministro**: Identificar todos los actores que desempeñan los roles definidos en la cláusula y evaluar su capacidad para cumplir con las obligaciones de flujo descendente.
+
+2.  **Revisión de políticas de datos**: Revisar las políticas de uso de datos para garantizar que los Datos Gubernamentales no se utilicen para entrenamiento, mejora o fines comerciales.
+
+3.  **Desarrollo de capacidades de cumplimiento**: Establecer sistemas para la documentación, notificación y certificación requeridas por la cláusula.
+
+4.  **Participación en el proceso de comentarios**: Presentar comentarios a la GSA antes del 3 de agosto de 2026, identificando áreas de preocupación y proponiendo alternativas (12).
+
+### B. Para Agencias Gubernamentales
+
+1.  **Desarrollo de capacidades de evaluación**: Desarrollar la experiencia técnica necesaria para realizar evaluaciones automatizadas de LLMs.
+
+2.  **Coordinación interagencias**: Coordinar la implementación de la cláusula con otras agencias para garantizar la consistencia.
+
+3.  **Consideración de alternativas**: Evaluar alternativas que puedan minimizar el impacto en pequeños contratistas, como lo requiere la Ley de Flexibilidad Regulatoria (RFA).
+
+### C. Para Legisladores
+
+1.  **Clarificación de estándares**: Proporcionar orientación adicional sobre cómo se interpretarán y aplicarán los "Principios de IA Imparcial" en la práctica.
+
+2.  **Mecanismos de apelación**: Establecer mecanismos para que los contratistas impugnen las determinaciones de incumplimiento basadas en evaluaciones gubernamentales no divulgadas.
+
+3.  **Evaluación de impacto**: Realizar una evaluación de impacto completa de la cláusula, incluyendo sus efectos en la innovación, la competencia y los pequeños contratistas.
+
+## IX. Conclusión
+
+La cláusula GSAR 552.239-7001 representa un hito en la regulación de la IA en el contexto de la contratación pública. Al establecer un régimen detallado de obligaciones para la salvaguarda de datos, la propiedad intelectual, los estándares éticos y la notificación de cambios, la cláusula transforma la gobernanza de la IA de un conjunto de principios voluntarios a un conjunto de requisitos contractuales vinculantes.
+
+Sin embargo, la cláusula también plantea interrogantes fundamentales sobre la relación entre el Estado y la tecnología, la politización de los estándares técnicos y el equilibrio entre la soberanía tecnológica y la innovación. Su implementación requerirá una colaboración estrecha entre el gobierno, la industria y la academia para garantizar que se alcancen los objetivos de protección de datos y confiabilidad sin sofocar indebidamente la innovación.
+
+Como ha señalado un observador, "Si se adopta, GSAR 552.239-7001 convertiría la gobernanza de la IA en un requisito contractual estricto para las empresas que venden capacidades de IA al gobierno federal, con implicaciones significativas para los equipos de cumplimiento, los departamentos legales, los líderes de adquisiciones y los profesionales de riesgos de terceros" (4).
+
+El éxito de este esfuerzo dependerá de la capacidad de todas las partes interesadas para navegar estas complejidades con rigor técnico y jurídico.
+
+## Referencias
+
+(1) Executive Order 13960 of December 3, 2020, "Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government," 85 FR 78939 (Dec. 8, 2020).
+
+(2) Executive Order 14110 of October 30, 2023, "Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence," 88 FR 75191 (Nov. 1, 2023).
+
+(3) Venable LLP, "GSA Proposes Revisions to Clause on Basic Safeguarding of Data within Large Language Model Artificial Intelligence Systems (LLMs)," June 18, 2026.
+
+(4) Crowell & Moring LLP, "GSA Issues Proposed AI Contract Clause, Seeks Feedback," June 17, 2026.
+
+(5) Holland & Knight, "GSA's Proposed AI Clause: A Deep Dive into New Requirements for Government Contractors," March 18, 2026.
+
+(6) Compliance Week, "GSA's draft AI Clause turns governance into a contractual mandate," March 19, 2026.
+
+(7) Executive Order 14179 of January 31, 2025, "Removing Barriers to American Leadership in Artificial Intelligence," 90 FR 8991 (Jan. 31, 2025).
+
+(8) Executive Order 14319 of July 23, 2025, "Preventing Woke AI in the Federal Government," 90 FR 35389 (July 28, 2025).
+
+(9) Office of Management and Budget, Memorandum M-25-22, "Driving Efficient Acquisition of Artificial Intelligence in Government" (April 3, 2025).
+
+(10) Office of Management and Budget, Memorandum M-25-21, "Accelerating Federal Use of AI through Innovation, Governance, and Public Trust" (2025).
+
+(11) Office of Management and Budget, Memorandum M-24-18, "Advancing the Responsible Acquisition of Artificial Intelligence in Government" (2024).
+
+(12) General Services Administration, "General Services Acquisition Regulation; Acquisition of Information and Communication Technology; Notice of Listening Sessions and Request for Comments," 91 FR 36559 (June 17, 2026) (proposed GSAR clause 552.239-7001).
+
+(13) National Institute of Standards and Technology, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," NIST AI 100-1 (Jan. 2023).
+
+(14) McGuireWoods LLP, "GSA AI Procurement Rules Would Introduce New Disclosure and Use-Rights Requirements for Federal Contractors," April 14, 2026.
+
+(15) Burr & Forman LLP, "GSA Releases Draft AI Clause Ahead of Upcoming MAS Refresh," March 17, 2026.
+
+(16) Federal Communications Commission, "Wireline Competition Bureau and Office of Economics and Analytics Seek Comment on Proposed 2026 Mandatory Data Collection for Incarcerated People's Communications Services," 91 FR 36552 (June 17, 2026).

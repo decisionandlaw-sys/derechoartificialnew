@@ -1,0 +1,151 @@
+---
+title: "Agentes de código y el valor persistente de la expertise de dominio"
+description: "El informe de Anthropic sobre 400.000 sesiones de Claude Code revela que la pericia de dominio, no la formación en programación, determina el éxito en la IA agéntica. Implicaciones para el mercado laboral y la regulación."
+date: "2026-06-18"
+tags: ["claude code", "IA agéntica", "mercado laboral", "expertise de dominio", "automatización del trabajo"]
+section: "global-ia"
+category: "global-ia"
+author: "Ricardo Scarpa"
+slug: "agentes-codigo-pericia-dominio-mercado-laboral-ia"
+readingTime: 16
+---
+
+El debate sobre si la inteligencia artificial sustituye o amplifica el trabajo humano acumula ya años de predicciones encontradas, modelos econométricos contradictorios y titulares que oscilan entre el catastrofismo y el entusiasmo sin término medio.
+
+Lo que escasea es evidencia empírica a escala real sobre cómo trabajan efectivamente las personas con herramientas de IA agéntica, qué tipo de conocimiento determina el éxito y qué señales ofrece todo ello sobre la reconfiguración del mercado laboral.
+
+El informe *Agentic coding and persistent returns to expertise*, publicado el 16 de junio de 2026 por un equipo de Anthropic liderado por Zoe Hitzig, Maxim Massenkoff, Eva Lyubich, Ryan Heller y Peter McCrory, es uno de los primeros intentos serios de responder a estas preguntas con datos, no con conjeturas.
+
+El estudio analiza aproximadamente 400.000 sesiones interactivas de Claude Code de unos 235.000 usuarios entre octubre de 2025 y abril de 2026, empleando una metodología de análisis respetuosa con la privacidad que clasifica cada sesión sin que ningún investigador acceda a las transcripciones individuales. Los resultados son, en varios aspectos, contraintuitivos.
+
+Merecen lectura atenta —y análisis crítico— porque sus implicaciones desbordan lo técnico para alcanzar lo regulatorio, lo económico y lo social.
+
+[Descargar el informe completo (PDF)](/fuentes/Anthropic_Agentic_Coding_Expertise_2026.pdf)
+
+## Lo que revela la escala: 400.000 sesiones como laboratorio involuntario
+
+La primera contribución del informe es metodológica. Los autores introducen un marco para estudiar el uso interactivo de herramientas de codificación agéntica que va más allá de las evaluaciones de capacidades —los *benchmarks* que miden lo que el modelo puede hacer en abstracto— para centrarse en lo que ocurre cuando personas reales lo usan en condiciones reales. Esta distinción es crucial.
+
+Un modelo puede superar a un ingeniero senior en una prueba de codificación controlada y, al mismo tiempo, resultar menos útil que ese mismo ingeniero cuando quien lo dirige es alguien sin contexto sobre el problema.
+
+El diseño metodológico trabaja con tres unidades de análisis simultáneas: la composición de las tareas (qué se hace), la colaboración humano-IA (quién decide qué) y las tasas de éxito (qué sale bien y por qué).
+
+Para cada sesión, un clasificador basado en el propio modelo lee la transcripción y atribuye las decisiones tomadas durante la sesión, separando las decisiones de planificación —qué hacer, qué enfoque tomar, qué cuenta como terminado— de las decisiones de ejecución —qué archivos modificar, qué código escribir, qué comandos ejecutar—.
+
+Los resultados de este clasificador se validan contra la telemetría registrada automáticamente para cada sesión, con una concordancia superior al 90%.
+
+El hallazgo estructural más relevante es lo que los autores denominan la "división del trabajo" en la codificación agéntica: en una sesión típica, el usuario toma aproximadamente el 70% de las decisiones de planificación y Claude toma aproximadamente el 80% de las decisiones de ejecución. La lectura superficial podría sugerir que Claude es una herramienta de ejecución pura.
+
+La lectura correcta es más matizada: lo que permanece en manos humanas es precisamente la parte del trabajo que no se puede delegar sin pérdida de calidad —la comprensión del problema, la definición del objetivo, el criterio sobre qué cuenta como solución satisfactoria—.
+
+## La pericia de dominio como multiplicador de rendimiento agéntico
+
+El hallazgo central del informe, y el que tiene mayores implicaciones para la economía política del trabajo, es que la pericia de dominio —no la formación técnica en programación— es el predictor más robusto del éxito en sesiones de codificación agéntica.
+
+Los autores operativizan la pericia mediante un clasificador en cinco niveles, del novato al experto, que no mide el conocimiento de lenguajes de programación sino algo diferente: la precisión con que el usuario enmarca sus instrucciones, qué pide a Claude que verifique, y si tiende a corregir al modelo o a ser corregido por él. La distinción es deliberada y relevante.
+
+Un ingeniero senior que afronta su primera pregunta en Rust es novato en ese contexto. Un contable que nunca ha escrito Python pero sabe exactamente qué reglas de conciliación debe aplicar el script y detecta el caso extremo que el modelo maneja mal en el cierre de mes es un experto en esa tarea.
+
+La evidencia sobre cómo la pericia afecta la productividad agéntica es robusta. En sesiones con usuarios novatos, cada instrucción desencadena aproximadamente cinco acciones de Claude y unas 600 palabras de output. En sesiones con usuarios expertos, la misma instrucción genera cadenas de doce acciones y 3.200 palabras de output —más del doble de acciones y cinco veces más texto—.
+
+Esta diferencia aparece en todos los modos de trabajo y en todas las bandas de valor estimado de las tareas. Los autores la interpretan correctamente: el experto no hace más trabajo él mismo; hace que el agente haga más trabajo por instrucción.
+
+Conviene subrayar la implicación económica de este dato. Si la productividad agéntica escala con la pericia de dominio, entonces la introducción de herramientas como Claude Code no nivela el terreno entre trabajadores con distintos niveles de conocimiento especializado. Lo que hace es amplificar las diferencias existentes, convirtiendo el conocimiento de dominio en un multiplicador del output agéntico.
+
+El experto no obtiene el mismo beneficio de la herramienta que el novato; obtiene un beneficio sustancialmente mayor, medido tanto en volumen de output como en probabilidad de éxito.
+
+Lo que resulta llamativo es, sin embargo, la morfología de este gradiente. La mayor parte de la ganancia en éxito se produce en la transición de novato a nivel intermedio; la diferencia entre intermedio y experto es, comparativamente, modesta. Los autores lo formulan con precisión: "una comprensión funcional del dominio captura la mayor parte del beneficio, mientras que la especialización profunda añade solo un poco más".
+
+Esto tiene implicaciones políticas directas: las intervenciones de formación que lleven a los trabajadores de novato a competente generarán rendimientos elevados; las que aspiren a crear expertos de élite, menores.
+
+## Quién usa herramientas de codificación agéntica, y para qué
+
+La composición de los usuarios es otro hallazgo relevante. Los autores infieren la ocupación de cada usuario a partir de señales en la sesión —vocabulario, artefactos referenciados, estructura de archivos, contexto del proyecto— sin tratar el mero acto de escribir código como evidencia de pertenencia a una profesión tecnológica.
+
+Resultado: en torno al 70% de las sesiones son clasificables, y aunque las ocupaciones de software y matemáticas son el grupo más grande, los siguientes más numerosos son operaciones empresariales y finanzas, artes, diseño y medios, dirección y gestión, y ciencias de la vida. Los grupos con crecimiento más rápido fuera del software son dirección, ventas y —significativamente— ocupaciones legales.
+
+Dicho esto, la composición del trabajo cambió de forma sustancial entre octubre de 2025 y abril de 2026. El cambio más nítido es que la proporción de sesiones dedicadas a depurar código roto cayó del 33% al 19% en siete meses. En su lugar creció el trabajo que rodea al código pero que no es código puro: operar software pasó del 14% al 21% de las sesiones, y escritura más análisis de datos casi se duplicó, del 10% al 20%.
+
+Los autores lo interpretan como un desplazamiento hacia el uso agéntico de extremo a extremo —desplegar, ejecutar pipelines, analizar datos, producir documentos—, frente al uso más tradicional centrado en escribir y reparar código.
+
+El valor estimado de las tareas también aumentó. Mediante un estimador calibrado contra datos reales de publicaciones de trabajo en plataformas de trabajo independiente, los autores estiman que el valor medio de una sesión subió un 27% entre octubre y abril. Las tareas de construcción crecieron en valor estimado un 43%, las de operación un 34%, las de reparación un 32%.
+
+El matiz metodológico es relevante: estas cifras no son valores absolutos sino medidas de cambio relativo, diseñadas para comparar tareas entre sí y en el tiempo, no para ser leídas como honorarios de mercado.
+
+## El éxito agéntico no depende del título profesional
+
+Una de las afirmaciones más directas del informe es que la formación específica en software no determina de forma significativa el éxito en sesiones de codificación agéntica. Los ingenieros de software y las ocupaciones de "informática y matemáticas" alcanzan el éxito verificado en aproximadamente el 30% de sus sesiones; los usuarios de otras profesiones, en torno al 26%.
+
+En sesiones que producen código —aquellas que añaden o modifican al menos una línea—, los porcentajes son el 34% y el 29% respectivamente. Una diferencia de cinco puntos que, como señalan los autores, no se ha ampliado ni estrechado en siete meses, aunque las tasas de éxito de ambos grupos han aumentado.
+
+Lo que resulta más revelador es la distribución por ocupaciones en sesiones de codificación. De los diez grupos ocupacionales más grandes de la muestra, todos quedan dentro de siete puntos porcentuales de los ingenieros de software en términos de éxito verificado.
+
+El grupo con mayor tasa de éxito verificado no es el de software: son las ocupaciones de dirección y gestión. Los autores ofrecen dos explicaciones complementarias —las competencias de gestión pueden transferirse a la dirección de un agente; y quienes actúan como gestores pueden también tener mayor propensión a confirmar explícitamente cuando obtienen lo que pidieron, lo que alimenta el clasificador de éxito—.
+
+La implicación es de primer orden para cualquier análisis del impacto de la IA sobre el empleo. Si el éxito en codificación agéntica no depende del título de ingeniería sino de la comprensión del problema que se intenta resolver, entonces la frontera entre "trabajadores de software" y "trabajadores no-software" se vuelve cada vez más porosa.
+
+La codificación deja de ser una disciplina protegida por credenciales técnicas para convertirse en una capacidad distribuible entre cualquier profesional con suficiente conocimiento de dominio. Las consecuencias para los perfiles profesionales, la formación universitaria y la estructura salarial del sector tecnológico son difíciles de exagerar.
+
+## Implicaciones para la regulación del trabajo en la era agéntica
+
+El informe de Anthropic no es un documento jurídico ni regulatorio; es investigación empírica sobre comportamiento de usuarios. No obstante, sus hallazgos tienen implicaciones directas para varias tensiones regulatorias que Europa afronta en este momento.
+
+La primera tensión es la del Reglamento de IA y su clasificación de riesgos. El Reglamento (UE) 2024/1689, de 13 de junio de 2024, establece un sistema de categorización por niveles de riesgo que descansa, en buena medida, en el tipo de tarea que realiza el sistema —no en cómo lo realiza ni en quién lo dirige—.
+
+Los datos del informe sugieren que el impacto real de un sistema de IA agéntica depende críticamente de la calidad de la supervisión humana en el loop, y que esa calidad varía de forma dramática según la pericia del usuario. Un sistema de IA de riesgo bajo bajo la tutela de un usuario experto podría generar outputs de mayor calidad —y con mayor autonomía real— que un sistema nominalmente de mayor riesgo bajo la dirección de un novato.
+
+La regulación por categorías de sistema, sin tomar en cuenta el gradiente de supervisión efectiva, captura de forma incompleta el riesgo real.
+
+Lo anterior conecta directamente con el artículo 14 del Reglamento de IA, que exige supervisión humana para los sistemas de IA de alto riesgo. El precepto establece que los sistemas deben diseñarse de forma que personas físicas puedan supervisar su funcionamiento efectivamente y que sus usuarios estén en condiciones de comprender las capacidades y limitaciones del sistema.
+
+El informe de Anthropic pone de manifiesto que "comprender las capacidades y limitaciones" no es una propiedad binaria —se tiene o no se tiene— sino un continuo que determina de forma cuantificable la calidad de los resultados.
+
+Un marco regulatorio que exige supervisión humana sin graduar los requisitos según el nivel efectivo de comprensión del usuario puede crear conformidad formal con el texto de la norma e incumplimiento sustancial de su propósito.
+
+Ahora bien, la tensión más interesante que abre el informe es la relativa a la distribución del trabajo de alto valor. Si los agentes de codificación están absorbiendo trabajo de implementación —escribir código, depurar, ejecutar pipelines— y amplificando el trabajo de concepción —definir qué construir, evaluar resultados, dirigir la estrategia técnica—, esto tiene consecuencias para el tipo de trabajo que permanece en manos humanas y para su valoración. El trabajo de supervisión y dirección estratégica de sistemas de IA es, por su naturaleza, difícil de estandarizar y de sustituir.
+
+Pero también es trabajo que requiere formación e inversión sostenida en conocimiento de dominio. El riesgo de polarización es real: los trabajadores con pericia sólida capturan rendimientos amplificados; los trabajadores sin pericia de dominio obtienen rendimientos modestos o nulos de las mismas herramientas.
+
+El marco regulatorio europeo de IA, centrado en la clasificación de riesgos y la transparencia de los sistemas, aborda con escasa profundidad esta dimensión distributiva. La Directiva sobre empleo en plataformas, la legislación de empleo digital y los marcos de formación continua son los instrumentos más relevantes, pero están diseñados para problemas distintos —la clasificación laboral de los trabajadores de plataforma, la protección frente a la vigilancia algorítmica— y no para la cuestión que el informe abre: cómo garantizar que el acceso efectivo a los beneficios de la IA agéntica no quede concentrado en quienes ya tienen ventajas de formación y posición.
+
+## La señal prospectiva: lo que el gradiente de expertise puede decirnos
+
+Los autores concluyen su informe con una reflexión prospectiva que merece atención. Proponen usar las métricas desarrolladas —retornos a la expertise, tasas de éxito por ocupación, composición y valor de las tareas— como instrumentos de seguimiento de transiciones en el mercado laboral a medida que los modelos mejoran.
+
+La hipótesis implícita es que la evolución de estos indicadores puede revelar cuándo los agentes de IA comienzan a suministrar ellos mismos el juicio que hoy aportan los usuarios expertos. Si los retornos a la expertise comienzan a decrecer con el tiempo, eso indicaría que el modelo está absorbiendo no solo la ejecución sino también la planificación —que la IA no solo construye lo que el humano concibe, sino que empieza a concebir por sí misma—.
+
+Si, por el contrario, los retornos a la expertise se mantienen o aumentan, el valor del conocimiento humano de dominio persistiría como multiplicador incluso con modelos más capaces.
+
+Esta distinción tiene consecuencias regulatorias directas. Si los retornos a la expertise decrecen, la cuestión central para los reguladores pasa a ser cómo distribuir el acceso a sistemas que suplantan el juicio experto —una pregunta de política antitrust, de acceso a infraestructura crítica y de redistribución—.
+
+Si los retornos persisten, la pregunta es cómo garantizar que la inversión en pericia de dominio siga siendo accesible para trabajadores de todos los niveles de renta y formación —una pregunta de política educativa y de mercado laboral—.
+
+Lo que el informe no responde —y que los propios autores reconocen como limitación— es si los outcomes observados en las sesiones se traducen en valor económico real fuera de ellas: si el código producido es efectivamente utilizado, si genera un artefacto de valor, si la calidad técnica es sostenible.
+
+La metodología de estimación de valor mediante comparación con publicaciones de trabajo independiente es, por definición, una aproximación —útil para comparaciones relativas en el tiempo, pero que no captura valor económico absoluto—.
+
+## La codificación como caso líder de lo que viene
+
+La conclusión más ambiciosa del informe es también la más especulativa, y por ello vale la pena citarla con precisión: "la codificación es un caso líder —lo que ocurre en software es probablemente un anticipo de lo que puede venir cuando las herramientas agénticas asuman otras formas de trabajo del conocimiento".
+
+La hipótesis tiene fundamento. La codificación reúne condiciones que la hacen especialmente idónea para la IA agéntica: el output es verificable —el código pasa o falla los tests—, las reglas del dominio son en buena medida formales y explicitables, y hay retroalimentación objetiva y rápida sobre la calidad del resultado.
+
+Otros dominios del trabajo del conocimiento —el análisis jurídico, el diagnóstico médico, el asesoramiento financiero— presentan mayor ambigüedad y menor verificabilidad, lo que puede ralentizar la adopción agéntica. Pero la dirección del cambio, si la tendencia se confirma, apunta a la misma lógica: el valor residual del trabajo humano se concentrará en la comprensión del problema, no en su ejecución.
+
+Para los profesionales del derecho, que son parte del contexto de esta publicación, la señal es de relevancia inmediata. El sector legal lleva años discutiendo si la IA sustituirá a los abogados. El informe de Anthropic sugiere una respuesta más matizada: la IA agéntica amplificará a los abogados con pericia de dominio suficiente para dirigirla bien, y ofrecerá rendimientos menores —o nulos— a quienes no puedan ejercer esa dirección con criterio.
+
+La pregunta no es si el abogado será sustituido, sino si el abogado con pericia real tendrá acceso a herramientas que multipliquen su capacidad de producción —y si la formación jurídica actual prepara para ese rol de dirección estratégica de agentes de IA o sigue optimizando para la producción artesanal de documentos.
+
+## Conclusión
+
+*Agentic coding and persistent returns to expertise* es un documento empírico, no un manifiesto. Sus limitaciones son reales: no mide outcomes en el mundo real, excluye el uso no interactivo —que representa una fracción sustancial de la actividad—, y sus clasificadores dependen de lecturas de transcripciones que son difíciles de validar a escala. Los autores los reconocen con honestidad.
+
+Lo que el informe aporta, sin embargo, es algo escaso en el debate actual sobre IA y trabajo: evidencia sistemática, metodológicamente articulada, sobre cómo trabajan las personas con agentes de IA en condiciones reales. Y esa evidencia apunta a tres conclusiones que deben informar tanto la política regulatoria como la estrategia de organizaciones y profesionales.
+
+Primera: la IA agéntica no elimina la ventaja del conocimiento de dominio; la amplifica. Quien entiende el problema obtiene más de la herramienta, no menos.
+
+Segunda: la formación técnica específica importa menos de lo que se suponía para el éxito en tareas agénticas. Lo que importa es la comprensión del dominio en el que se trabaja, independientemente de si ese dominio es software, derecho, medicina o gestión.
+
+Tercera: el umbral de competencia suficiente es alcanzable. La mayor parte de los rendimientos se capturan en la transición de novato a competente; la distancia de competente a experto añade valor, pero menos. Esto tiene implicaciones directas para diseñar intervenciones de formación que maximicen el beneficio colectivo de estas herramientas.
+
+La cuestión que el informe abre, y que el marco regulatorio europeo tendrá que responder antes o después, es si los mecanismos actuales de gobernanza del mercado laboral y de la IA son suficientes para gestionar una transición en la que el valor del trabajo se redistribuye no de forma uniforme sino siguiendo exactamente el gradiente de pericia de dominio preexistente. La respuesta, por ahora, no es evidente.

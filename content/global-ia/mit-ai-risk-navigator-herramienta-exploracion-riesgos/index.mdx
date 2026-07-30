@@ -1,0 +1,72 @@
+---
+title: "MIT lanza el AI Risk Navigator: mapa interactivo de riesgos de IA"
+description: "El MIT centraliza por primera vez sus cuatro grandes bases de datos sobre riesgos de IA en una sola herramienta pública. Siete dominios, 24 subdominios y miles de incidentes conectados."
+date: "2026-04-22"
+tags: ["riesgos de IA", "MIT", "gobernanza de IA", "taxonomía de riesgos", "AI Risk Initiative"]
+section: "ia-global"
+category: "herramientas-ia"
+author: "Redacción"
+slug: "mit-ai-risk-navigator-herramienta-exploracion-riesgos"
+readingTime: 6
+---
+
+Hasta ahora, consultar los datos del MIT sobre riesgos de inteligencia artificial exigía paciencia, familiaridad previa y saltar entre cuatro interfaces separadas. Quien quería cruzar un riesgo documentado en la literatura académica con los incidentes reales donde ese riesgo había materializado y con los marcos de gobernanza que pretenden atajarlo, sencillamente no podía hacerlo sin un trabajo manual considerable. Esa fragmentación acaba de resolverse.
+
+El MIT AI Risk Initiative (AIRI) ha publicado el **AI Risk Navigator**, una herramienta web de acceso público disponible en [airi-navigator.com](https://airi-navigator.com) que centraliza por primera vez todos sus conjuntos de datos bajo una taxonomía compartida. El resultado es una infraestructura de conocimiento sobre riesgos de IA que permite navegar el campo como un cuerpo de conocimiento interconectado, en lugar de como archivos dispersos.
+
+## Una taxonomía como columna vertebral
+
+La decisión de diseño más relevante del Navigator es hacer de la taxonomía de dominios de riesgo el punto de entrada principal, en lugar de organizar la herramienta alrededor de cada *dataset* individual. La taxonomía cubre siete dominios —discriminación y toxicidad, privacidad y seguridad, desinformación, actores maliciosos, interacción humano-computadora, daños socioeconómicos y seguridad de sistemas de IA— desagregados en 24 subdominios más específicos.
+
+Cada subdominio actúa como un nodo desde el que el usuario puede ver simultáneamente qué dice la literatura académica, qué incidentes reales han ocurrido y qué documentos de gobernanza existen en ese espacio. Esta arquitectura de co-localización —los datos lado a lado, sin síntesis forzada— es deliberada: el Navigator no interpreta por el usuario, sino que dispone la evidencia para que el propio investigador o regulador extraiga las conexiones pertinentes.
+
+La cuadrícula de la taxonomía en la página principal funciona como mapa de navegación. Cada celda muestra cuántos riesgos, incidentes y documentos de gobernanza contiene ese dominio o subdominio, ofreciendo de entrada una vista cuantitativa de la cobertura relativa de cada área.
+
+El dominio de *Malicious Actors & Misuse*, por ejemplo, acumula 243 riesgos, 491 incidentes y 771 documentos de gobernanza —la mayor densidad de incidentes de toda la taxonomía—, mientras que *Human-Computer Interaction* concentra apenas 35 incidentes a pesar de 106 riesgos catalogados.
+
+## Páginas de detalle, búsqueda y visualizaciones
+
+Las páginas de detalle por subdominio son el núcleo funcional de la herramienta. Al acceder a cualquiera de los 24 subdominios, el usuario encuentra la definición del área, hallazgos destacados extraídos automáticamente de los datos y una vista compuesta con los registros relevantes de cada *dataset*.
+
+La página del subdominio 3.1 —*False or Misleading Information*— ilustra bien la potencia del enfoque: los incidentes se han duplicado desde 2024, el subdominio ocupa el tercer puesto en volumen de incidentes de toda la taxonomía y, al mismo tiempo, está *under-governed*, con una proporción de incidentes superior a la de su cobertura regulatoria.
+
+El Navigator incluye también una búsqueda global con coincidencia semántica y por palabras clave que opera sobre todos los *datasets*, taxonomías y definiciones simultáneamente. Buscar "autonomous vehicles" o "facial recognition" devuelve toda la información relevante en una única vista, sin necesidad de repetir la consulta en cuatro interfaces distintas.
+
+Cada *dataset* dispone además de su propia página de exploración con filtros combinables: es posible, por ejemplo, localizar todos los incidentes relacionados con fraude desde 2012, o filtrar regulaciones estatales ya derogadas que abordaron sesgos algorítmicos.
+
+Las visualizaciones por *dataset* completan la capa de análisis de nivel superior. Los gráficos muestran cómo se distribuyen los riesgos a lo largo de la taxonomía, dónde se concentran los incidentes y qué dominios tienen mayor o menor cobertura de gobernanza. Todos los gráficos son exportables en PNG, lo que facilita su integración directa en informes, presentaciones y documentos de *policy*.
+
+Estas visualizaciones están además previstas para integrarse en el sitio principal de AIRI.
+
+## Limitaciones metodológicas incorporadas al diseño
+
+El propio equipo del MIT reconoce en el informe de lanzamiento las limitaciones estructurales que condicionan el uso comparativo de los datos. Cada incidente está clasificado bajo un único dominio de riesgo, aunque en la práctica muchos incidentes atraviesan varios. Los datos de gobernanza están sesgados hacia fuentes estadounidenses y pueden no representar con fidelidad el panorama regulatorio global.
+
+Estas limitaciones no están ocultadas: el Navigator está diseñado explícitamente *alrededor* de ellas, siendo selectivo respecto a qué comparaciones entre *datasets* muestra y transparente sobre lo que los datos pueden y no pueden sostener.
+
+Esta postura metodológica es, en sí misma, un ejemplo de buenas prácticas para las herramientas de *policy* basadas en datos: la honestidad sobre los sesgos del corpus no debilita la utilidad de la herramienta, sino que la hace más fiable para quienes deben tomar decisiones basadas en ella.
+
+## Lo que viene
+
+La versión 1 del Navigator integra cuatro *datasets*. El AIRI tiene actualmente tres conjuntos de datos adicionales en distintas etapas de desarrollo, con los que el catálogo pasará de cuatro a siete fuentes en los próximos meses. Cada incorporación permitirá análisis cruzados que hoy no son posibles con la cobertura actual.
+
+El equipo tiene previsto además explorar un mapeo sistemático entre la taxonomía de riesgos y la de mitigaciones —cerrando el ciclo desde la identificación de un riesgo hasta las acciones concretas que pueden reducirlo—, así como mejoras de calidad como modo oscuro, visualizaciones adicionales y datos descargables con libros de códigos. El Navigator también podría servir de base para una renovación del sitio web y la identidad visual del AIRI.
+
+El equipo invita a enviar comentarios sobre la versión 1 antes del 1 de junio de 2026.
+
+## Implicaciones para reguladores y profesionales
+
+Para los equipos jurídicos y de cumplimiento que trabajan con IA, el Navigator resuelve un problema práctico concreto: la dispersión de evidencia. Hasta ahora, construir un argumento sobre el estado de riesgo de un área concreta —por ejemplo, los sistemas de reconocimiento facial en contextos de contratación— requería localizar manualmente literatura académica, buscar incidentes en bases de datos separadas y rastrear qué marcos regulatorios mencionaban esa área.
+
+El Navigator hace ese trabajo de agregación de forma instantánea.
+
+Para los reguladores, la capa de gobernanza es especialmente valiosa: permite comparar qué subdominios tienen documentos de gobernanza activos, cuántos son meras propuestas frente a normas promulgadas, y en qué áreas la producción regulatoria no guarda proporción con el volumen de incidentes registrados.
+
+Esa brecha —dominios con muchos incidentes y escasa regulación— es, precisamente, la información que más necesitan quienes tienen que priorizar recursos normativos.
+
+> 📄 **Accede al documento completo**
+> [Introducing the AI Risk Navigator (MIT AIRI, abril 2026)](https://airisk.mit.edu) — disponible en airi-navigator.com.
+
+---
+
+La herramienta no pretende sustituir el juicio experto ni ofrecer una síntesis definitiva del campo. Su apuesta es más modesta y, por eso, más sólida: disponer la evidencia de forma accesible, conectada y transparente sobre sus límites, y dejar que investigadores, reguladores y profesionales hagan el resto.

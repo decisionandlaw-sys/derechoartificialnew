@@ -1,0 +1,903 @@
+---
+title: "«Skip the Links» ante los tribunales: CNN vs. Perplexity AI y el colapso del paradigma del *fair use* en la era de la generación aumentada por recuperación (RAG)"
+date: "2026-06-01"
+section: "propiedad-intelectual-ia"
+slug: "cnn-perplexity-ai-skip-the-links-fair-use-rag"
+description: "Análisis del litigio CNN vs. Perplexity AI (1:26-cv-04427): cómo los sistemas RAG infringen el derecho de autor mediante copias en tiempo real de inferencia."
+tags: ["propiedad-intelectual", "RAG", "fair-use", "Perplexity-AI", "CNN", "DMCA", "derechos-autor-IA"]
+---
+
+
+
+**Resumen ejecutivo**
+
+El 28 de mayo de 2026, Cable News Network (CNN) presentó una demanda histórica contra Perplexity AI por la infracción de más de 17.000 obras periodísticas mediante un sistema de *Retrieval-Augmented Generation* (RAG). Este artículo analiza el litigio a partir de fuentes documentales que incluyen expedientes judiciales originales, jurisprudencia comparada e informes técnicos.
+
+Se sostiene que los sistemas RAG, a diferencia de los modelos generativos puros, realizan copias literales durante la fase de inferencia, lo que los hace particularmente vulnerables a reclamaciones de infracción directa.
+
+El estudio examina los precedentes de *Thomson Reuters v. ROSS Intelligence*, *Dow Jones v. Perplexity* y la sentencia alemana *GEMA v. OpenAI*, evidenciando una tendencia global a rechazar la defensa del *fair use* cuando el uso es comercialmente sustitutivo. Las conclusiones ofrecen recomendaciones para legisladores, tribunales y la industria editorial.
+
+**Palabras clave:** Propiedad intelectual, IA generativa, RAG, *fair use*, CNN, Perplexity AI, derechos de autor, DMCA.
+
+## Índice
+
+1.  Introducción\
+   - 1.1. Contexto de la inteligencia artificial generativa y la tecnología RAG\
+   - 1.2. CNN vs. Perplexity como caso paradigmático en la industria mediática\
+   - 1.3. Metodología y fuentes de análisis
+
+2.  Taxonomía funcional de los sistemas de IA\
+   - 2.1. Modelos puros de lenguaje vs. arquitecturas de Generación Mejorada por Recuperación (RAG)\
+   - 2.2. El proceso de recuperación en tiempo real: elusión de muros de pago y protocolos *robots.txt*\
+   - 2.3. Diferenciación técnico-jurídica: fases de entrenamiento, indexación e inferencia
+
+3.  Sistemas por regiones: Norteamérica y Europa Occidental\
+   - 3.1. Estados Unidos: el escenario judicial (*Thomson Reuters*, *Dow Jones* y *Chicago Tribune*)\
+   - 3.2. Europa: el precedente *GEMA v. OpenAI*, *Getty UK* y la interacción con la AI Act y la Directiva DSM
+
+4.  Sistemas por regiones: Global Sur y Asia-Pacífico\
+   - 4.1. Tendencias indirectas en la regulación regional\
+   - 4.2. Ausencia de fuentes directas y fragmentación normativa\
+   - 4.3. Lecciones transversales del derecho comparado
+
+5.  Sistemas fallidos y defensas jurídicas rechazadas\
+   - 5.1. El rechazo judicial a la defensa de uso legítimo (*fair use*) en buscadores competitivos\
+   - 5.2. El caso *Bartz v. Anthropic* y la responsabilidad por bibliotecas piratas\
+   - 5.3. La estrategia de «atrapamiento» tecnológico: el contraataque de Perplexity contra News Corp
+
+6.  Marcos normativos y fundamentos de derecho\
+   - 6.1. Secciones 1201 y 1202 de la DMCA frente a la elusión de medidas técnicas\
+   - 6.2. Aplicación de los factores del *fair use* y el criterio de transformación en entornos RAG\
+   - 6.3. Reclamaciones bajo la *Lanham Act*: alucinaciones y daño reputacional\
+   - 6.4. El test de los tres pasos en tratados internacionales
+
+7.  Análisis empírico de justicia procesal\
+   - 7.1. Anatomía del expediente 1:26-cv-04427\
+   - 7.2. La controversia sobre la preservación de pruebas (*snapshots* de enero 2026)\
+   - 7.3. Litigio coordinado: la estrategia de los cuatro editores frente a un solo demandado\
+   - 7.4. Historial de negociaciones fallidas y la construcción del dolo procesal (2025)
+
+8.  Conclusiones y recomendaciones\
+   - 8.1. Impacto sistémico en la sostenibilidad de los medios de comunicación\
+   - 8.2. Hacia un nuevo equilibrio: licencias colectivas y compensación por inferencia\
+   - 8.3. Recomendaciones para legisladores y reguladores
+
+Notas
+
+## 1. Introducción
+
+### 1.1. Contexto de la inteligencia artificial generativa y la tecnología RAG
+
+El conflicto entre los titulares de derechos de autor y los desarrolladores de inteligencia artificial generativa ha transitado en los últimos dos años desde una disputa teórica sobre el entrenamiento masivo hasta un litigio concreto sobre la recuperación en tiempo real de obras protegidas.
+
+En el centro de esta evolución se encuentra la arquitectura de *Retrieval-Augmented Generation* (RAG), implementada por motores de respuesta como Perplexity AI. Mientras que los modelos de lenguaje de gran tamaño (LLM) puros generan texto basándose exclusivamente en patrones estadísticos aprendidos durante una fase de entrenamiento estática, los sistemas RAG introducen un componente dinámico: antes de generar una respuesta, recuperan fragmentos de texto actualizados de fuentes externas (generalmente la web) y los utilizan como contexto para fundamentar la salida[^1].
+
+Este proceso, conocido como *grounding* o anclaje, permite reducir las alucinaciones y ofrecer información actualizada, pero a costa de reproducir literalmente ---o mediante paráfrasis próxima--- el contenido de las obras originales[^2].
+
+Perplexity AI se autodenomina un «motor de respuestas» (*answer engine*) y su propuesta de valor explícita es «eliminar los clics adicionales», permitiendo al usuario saltarse los enlaces (*Skip the Links*)[^3]. Esta funcionalidad se sustenta en dos agentes de rastreo: «PerplexityBot» (para indexación general) y «Perplexity-User» (para recuperación bajo demanda)[^4].
+
+Según las demandas acumuladas en el Distrito Sur de Nueva York ---incluyendo las de *Chicago Tribune*, *Dow Jones* y *CNN*---, estos rastreadores ignoran sistemáticamente las instrucciones del archivo *robots.txt* y, en ocasiones, emplean técnicas de «rastreo sigiloso» (*stealth crawling*) que suplantan la identidad de navegadores comerciales para eludir cortafuegos[^5].
+
+Desde una perspectiva jurídica, la distinción técnica entre entrenamiento e inferencia es fundamental. Los litigios de «primera generación» (como *Authors Guild v. OpenAI* o *Kadrey v. Meta*) se centraban en si la copia de obras durante el entrenamiento constituye un uso transformativo amparado por el *fair use*.
+
+En cambio, los sistemas RAG como el de Perplexity realizan copias adicionales durante la fase de **inferencia** ---al recuperar y luego reproducir fragmentos protegidos en la respuesta final---, lo que convierte la infracción en un hecho documental e inmediato, no en una búsqueda puramente estadística[^6].
+
+### 1.2. CNN vs. Perplexity como caso paradigmático en la industria mediática
+
+El 28 de mayo de 2026, Cable News Network, Inc. (CNN) presentó una demanda ante el Tribunal de Distrito de los Estados Unidos para el Distrito Sur de Nueva York, bajo el número de expediente **1:26-cv-04427**[^7]. CNN es la primera cadena de radiodifusión televisiva que lleva a los tribunales a una plataforma de IA generativa, lo que amplía el frente judicial más allá de los periódicos tradicionales[^8].
+
+La demanda alega que Perplexity ha «raspado» más de 17.000 obras de CNN ---incluyendo artículos, vídeos y pies de foto--- para alimentar su índice RAG, eludiendo activamente los muros de pago (*paywalls*) y las instrucciones contenidas en *robots.txt*[^9].
+
+La relevancia paradigmática del caso se sustenta en tres elementos. Primero, el **historial de negociaciones fallidas**: en octubre de 2025, CNN y Perplexity firmaron un pliego de condiciones para una asociación comercial que se desintegró en noviembre por desacuerdos sobre el alcance de la licencia y la compensación económica[^10].
+
+Tras una carta de cese y desistimiento en diciembre de 2025, CNN sostiene que Perplexity continuó extrayendo contenido, lo que funda una reclamación de infracción dolosa (*willful infringement*) bajo la sección 17 U.S.C. § 504(c)(2), con daños legales de hasta 150.000 dólares por obra[^11].
+
+Segundo, el caso incorpora reclamaciones bajo la **Ley Lanham** por falsa asociación y dilución de marca: Perplexity anunció que su suscripción premium «Comet Plus» incluía acceso a contenidos de CNN, creando una apariencia de patrocinio inexistente[^12]. Además, las «alucinaciones» del sistema han atribuido a CNN noticias fabricadas, causando un daño reputacional que los demandantes califican como una forma agravada de competencia desleal[^13].
+
+Tercero, la demanda se inscribe en una **estrategia de litigio coordinado** que incluye a *The New York Times*, *Chicago Tribune* (caso 1:25-cv-10094) y *News Corp* (a través de *Dow Jones & Company Inc. v. Perplexity AI Inc.*), todos ellos representados por el bufete Rothwell Figg[^14].
+
+Esta acumulación de causas en el mismo distrito judicial genera una presión estructural sobre Perplexity, que debe hacer frente a descubrimientos de pruebas múltiples y a la posibilidad de que los tribunales consoliden los precedentes sobre el funcionamiento del índice RAG[^15].
+
+### 1.3. Metodología y fuentes de análisis
+
+El presente estudio se basa en el análisis de documentos judiciales originales, informes de despachos legales especializados, crónicas de prensa jurídica y decisiones de tribunales nacionales e internacionales.
+
+Entre las fuentes primarias se incluyen el expediente *Cable News Network Inc. v. Perplexity AI, Inc.* (1:26-cv-04427) alojado en el Internet Archive, la demanda del *Chicago Tribune* (1:25-cv-10094), los dockets de *Justia* para el caso de *News Corp*, y la opinión de la jueza Katherine Polk Failla denegando la moción de desestimación de Perplexity en \*Dow Jones & Company Inc. / NYP v. Perplexity AI Inc.\*[^16].
+
+Se han revisado asimismo los análisis de *Sterne Kessler* sobre el rechazo del *fair use* en fallos federales, los comentarios de *Loeb & Loeb LLP* sobre la jurisdicción neoyorquina, el estudio del acuerdo en *Bartz v. Anthropic* por *Inside Tech Law*, y el análisis multidimensional del litigio elaborado por *Tech Jacks Solutions*[^17].
+
+También se han utilizado crónicas de *Engadget*, *Fast Company*, *CNET* y *Press Gazette*, así como el informe del gobierno británico sobre *copyright* e IA[^18]. Se ha priorizado la actualidad (2025-2026) y la autoridad de las fuentes.
+
+## 2. Taxonomía funcional de los sistemas de IA
+
+### 2.1. Modelos puros de lenguaje vs. arquitecturas de Generación Mejorada por Recuperación (RAG)
+
+La distinción técnica entre los LLM «puros» y las arquitecturas RAG constituye el epicentro de la nueva disputa jurídica en materia de propiedad intelectual. Mientras que los LLM convencionales operan como sistemas generativos que predicen secuencias de texto basándose exclusivamente en patrones estadísticos aprendidos durante una fase de entrenamiento estática, la tecnología RAG introduce un componente dinámico de recuperación de información externa[^19].
+
+En un modelo puro, el sistema genera respuestas a partir de su «memoria» interna, codificada en miles de millones de parámetros. Por el contrario, un sistema RAG, como el implementado por Perplexity AI, no confía únicamente en su entrenamiento previo.
+
+El proceso técnico se desglosa en una cadena de cuatro eslabones: primero, el sistema recibe un *prompt* o consulta del usuario; segundo, recupera contenido externo relevante de internet o de un índice propio en tiempo real; tercero, combina la consulta original con los documentos recuperados para dotar al modelo de contexto; y cuarto, entrega este conjunto de datos combinados a un LLM para generar una respuesta sintética en lenguaje natural[^20].
+
+Desde una perspectiva jurídica, esta diferencia es fundamental para el análisis del uso legítimo (*fair use*). En los litigios de «primera generación» contra modelos como GPT o Claude, las defensas se habían centrado en que la copia de obras durante el entrenamiento es transformativa, ya que el modelo no busca reproducir la obra, sino aprender reglas lingüísticas y estadísticas abstractas[^21].
+
+Sin embargo, el paradigma RAG subvierte esta lógica. En lugar de utilizar la obra para crear una capacidad general de lenguaje, el sistema RAG la utiliza de forma directa y sincrónica para confeccionar una respuesta que compite con la fuente original en el mercado de la información inmediata[^22].
+
+Perplexity se autodefine no como un buscador, sino como un «motor de respuestas». Su propuesta de valor se basa explícitamente en «eliminar los clics adicionales» y permitir al usuario «saltarse los enlaces», entregando una narrativa que sustituye la necesidad de visitar el sitio web del creador[^23].
+
+Por tanto, lo que en un LLM puro es una asimilación estadística, en un sistema RAG se convierte en una reutilización directa de la expresión protegida para un fin comercial competitivo[^24].
+
+### 2.2. El proceso de recuperación en tiempo real: elusión de muros de pago y protocolos *robots.txt*
+
+El funcionamiento operativo de Perplexity requiere una infraestructura de rastreo masiva y persistente. La compañía ha desarrollado un índice de búsqueda «AI-First» a escala *exabyte*, procesado por decenas de miles de CPUs y cientos de terabytes de memoria RAM[^25]. Para alimentar este índice, Perplexity utiliza principalmente los dos agentes de software mencionados: «PerplexityBot» y «Perplexity-User»[^26].
+
+Un punto crítico de fricción legal radica en la elusión de las medidas técnicas de protección. CNN y otros editores han documentado que Perplexity ignora deliberadamente las directrices del archivo *robots.txt*, un protocolo estándar de la industria que permite a los propietarios de sitios web indicar qué partes de su contenido no deben ser rastreadas por bots[^27].
+
+Según la demanda del *Chicago Tribune*, Perplexity utiliza «rastreadores sigilosos» que suplantan la identidad de navegadores comerciales (como Google Chrome en macOS) y emplean direcciones IP no listadas en los rangos oficiales de la empresa para evadir cortafuegos[^28].
+
+Esta conducta adquiere una dimensión económica agravada cuando se aplica sobre contenidos protegidos por muros de pago. La demanda de CNN alega que Perplexity ha accedido y distribuido de forma sistemática artículos que requieren suscripción, ofreciendo resúmenes detallados a través de sus productos premium, como el navegador Comet con el paquete «Comet Plus»[^29].
+
+Al eludir estas barreras, el sistema no solo infringe el derecho de autor, sino que interfiere directamente con el modelo de negocio de suscripción de los medios. Los demandantes sostienen que, a diferencia de los buscadores tradicionales que dirigen tráfico a la fuente, los bots de IA están reduciendo drásticamente el tráfico de referencia, actuando como un «agujero negro» que absorbe el valor de la información sin devolver audiencia al creador[^30].
+
+### 2.3. Diferenciación técnico-jurídica: fases de entrenamiento, indexación e inferencia
+
+Para determinar la responsabilidad legal, es imperativo desglosar las actividades de la IA en tres fases jurídicamente diferenciadas: entrenamiento, indexación e inferencia.
+
+**Fase de entrenamiento:** es el proceso inicial donde se alimentan los modelos fundacionales con vastos conjuntos de datos para desarrollar capacidades lingüísticas[^31]. Los tribunales estadounidenses han comenzado a establecer que el entrenamiento con obras adquiridas lícitamente puede ser uso legítimo, pero han rechazado esta protección cuando se utilizan «bibliotecas piratas» o depósitos clandestinos[^32].
+
+En el caso de Perplexity, la empresa no solo utiliza modelos de terceros (como GPT de OpenAI o Claude de Anthropic), sino que ha «ajustado» (*fine-tuned*) su propia familia de modelos «Sonar» basándose en Llama de Meta, optimizándolos específicamente para el procesamiento de noticias y finanzas[^33].
+
+**Fase de indexación:** consiste en la creación de una base de datos propia donde se almacenan copias de las obras para su posterior recuperación[^34]. CNN argumenta que esta fase constituye una infracción directa del derecho exclusivo de reproducción (17 U.S.C. § 106(1)), ya que implica realizar copias completas de artículos y contenido multimedia sin autorización para construir el índice comercial[^35].
+
+A diferencia del entrenamiento, que busca patrones estadísticos, la indexación busca conservar la integridad del texto para que el sistema RAG pueda citarlo[^36].
+
+**Fase de inferencia:** es el momento en que se genera la respuesta final para el usuario. En el entorno RAG, es aquí donde se produce la «copia de salida»[^37]. La relevancia procesal de esta fase es inmensa: mientras que demostrar la infracción en el entrenamiento requiere una compleja ingeniería inversa para encontrar trazas de una obra en los pesos probabilísticos de una red neuronal, la infracción en la inferencia es «documental e inmediata»[^38].
+
+CNN ha podido acreditar la copia simplemente capturando las respuestas del chatbot de Perplexity y contrastándolas con sus notas originales, encontrando múltiples párrafos reproducidos de forma literal o mediante paráfrasis exactas[^39].
+
+Esta facilidad probatoria sitúa a los sistemas RAG en una posición de vulnerabilidad legal mucho mayor que la de los modelos generativos puros, al convertir el producto final en una obra derivada no autorizada que se distribuye públicamente en violación de la *Copyright Act*[^40].
+
+## 3. Sistemas por regiones: Norteamérica y Europa Occidental
+
+### 3.1. Estados Unidos: el escenario judicial (*Thomson Reuters*, *Dow Jones* y *Chicago Tribune*)
+
+El panorama jurídico en los Estados Unidos se ha transformado en un campo de batalla de alta intensidad, donde la jurisprudencia está evolucionando desde el análisis del entrenamiento masivo hacia la evaluación de los sistemas de respuesta en tiempo real[^41]. Este cambio de paradigma se manifiesta en tres frentes judiciales críticos que prefiguran el desenlace del caso CNN vs. Perplexity.
+
+En primer lugar, el caso *Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc.* (Distrito de Delaware) representa el primer litigio sobre IA que alcanza el nivel de una corte de apelaciones[^42].
+
+En febrero de 2025, el juez de distrito Stephanos Bibas dictó una sentencia sumaria parcial revocando su postura inicial de 2023, al concluir que el entrenamiento de un motor de búsqueda jurídica comercial utilizando los sumarios protegidos de Westlaw (*headnotes*) no constituía un uso legítimo[^43].
+
+El juez Bibas fundamentó su decisión en que Ross Intelligence no buscaba simplemente «aprender» de los datos, sino construir un producto sustitutivo que competía directamente con Westlaw en el mercado de la investigación legal[^44].
+
+Este caso, cuya argumentación oral ante el Tribunal de Apelaciones del Tercer Circuito se fijó para junio de 2026, será determinante para definir si la «transformación funcional» es suficiente para invocar el *fair use* cuando el resultado final desplaza comercialmente a la obra original[^45].
+
+En segundo lugar, el litigio promovido por News Corp a través de sus filiales *Dow Jones* y *NYP Holdings* contra Perplexity AI ha sentado precedentes procesales de gran calado[^46].
+
+El 21 de agosto de 2025, la jueza Katherine Polk Failla, del Distrito Sur de Nueva York, denegó íntegramente la moción de desestimación de Perplexity, ratificando la jurisdicción de las cortes neoyorquinas basándose en la «presencia física y comercial» de la empresa en el estado[^47].
+
+Los demandantes en este caso han acuñado el término «*Skip the Links*» (salte los enlaces) para describir el daño central: el motor RAG de Perplexity absorbe el valor de los artículos de *The Wall Street Journal* y el *New York Post* para entregar una síntesis que hace innecesaria la visita a la web del editor[^48].
+
+Un desarrollo reciente y polémico en este expediente es la acusación de Perplexity sobre un presunto «atrapamiento» (*entrapment*) tecnológico, alegando que los editores forzaron al chatbot con cientos de consultas reiterativas para obligarlo a infringir sus propias salvaguardas y generar copias literales[^49].
+
+En tercer lugar, la demanda del *Chicago Tribune* (caso 1:25-cv-10094), presentada el 4 de diciembre de 2025, consolida la estrategia de litigio coordinado bajo el bufete Rothwell Figg[^50]. El *Tribune* alega que Perplexity se lucra ilícitamente de una reputación construida durante 178 años y 28 premios Pulitzer, canibalizando los ingresos por suscripción que sostienen el periodismo local[^51].
+
+La demanda destaca que Perplexity ignora sistemáticamente los protocolos *robots.txt* del diario y utiliza «rastreadores sigilosos» para eludir cortafuegos, lo que refuerza la tesis del dolo procesal[^52].
+
+Al unirse CNN a este bloque de demandantes, el sistema judicial estadounidense se enfrenta a un desafío sistémico: decidir si la arquitectura RAG es una herramienta de búsqueda protegida o una «máquina de plagio» a escala industrial[^53].
+
+### 3.2. Europa: el precedente *GEMA v. OpenAI*, *Getty UK* y la interacción con la AI Act y la Directiva DSM
+
+En la Unión Europea y el Reino Unido, el enfoque se desplaza de la doctrina del *fair use* hacia un análisis estricto de los derechos de reproducción y las excepciones legales de minería de datos[^54]. La reciente divergencia entre los tribunales alemanes y británicos ilustra la complejidad técnica de la materia.
+
+El hito más significativo en el continente es la sentencia del Tribunal Regional de Múnich I en el caso *GEMA v. OpenAI*, dictada el 11 de noviembre de 2025[^55]. El tribunal alemán resolvió que la asimilación de contenidos protegidos ---en este caso, letras de canciones--- en los parámetros de los modelos GPT-4 y GPT-4o constituye un acto de reproducción ilegal bajo el artículo 16 de la Ley de Derechos de Autor de Alemania (*UrhG*) y el artículo 2 de la Directiva 2001/29/CE del Parlamento Europeo y del Consejo, de 22 de mayo de 2001 \[en adelante, Directiva InfoSoc\][^56].
+
+La trascendencia de este fallo radica en su interpretación técnica: el tribunal dictaminó que la «memorización» de datos en los pesos estadísticos del modelo equivale a una fijación y, por tanto, a una copia protegida[^57].
+
+Fundamentalmente, la sentencia rechazó la aplicación de la excepción de minería de textos y datos (TDM) del artículo 44b de la *UrhG* (derivado de la Directiva DSM), argumentando que esta excepción no ampara sistemas que conservan la capacidad de reproducir sustancialmente las obras de origen para generar resultados sustitutivos[^58].
+
+En contraste, el Tribunal Superior de Justicia de Inglaterra y Gales emitió el 4 de noviembre de 2025 un fallo más matizado en el caso *Getty Images v. Stability AI*[^59]. Aunque el tribunal británico desestimó la infracción primaria de derechos de autor por motivos de territorialidad ---al no demostrarse que el entrenamiento ocurrió físicamente en el Reino Unido---, sí ratificó la existencia de una infracción marcaria.
+
+El tribunal observó que la aparición de marcas de agua de Getty distorsionadas en las imágenes sintéticas generadas por el modelo *Stable Diffusion* constituía una violación de la ley de marcas[^60]. No obstante, a diferencia del tribunal alemán, el juez británico se mostró escéptico ante la idea de que los pesos numéricos de un modelo puedan considerarse «copias físicas» bajo la ley actual[^61].
+
+Este escenario judicial se entrelaza con el despliegue de la *AI Act* de la Unión Europea, que impone obligaciones de transparencia rigurosas a los proveedores de modelos de IA de propósito general[^62].
+
+El Reglamento exige a las empresas documentar de manera detallada los conjuntos de datos utilizados y respetar los derechos de autoexclusión (*opt-out*) de los titulares de derechos conforme a la Directiva (UE) 2019/790 sobre derechos de autor en el mercado único digital \[en adelante, Directiva DSM\][^63]. El caso de CNN vs.
+
+Perplexity será observado de cerca en Europa como una prueba de fuego para el artículo 4 de la Directiva DSM: si los tribunales europeos siguen la línea de Múnich, los sistemas RAG podrían enfrentarse a una prohibición de *facto* en el mercado europeo a menos que operen bajo licencias bilaterales estrictas, ya que su capacidad de «recuperar» y «reproducir» excede los límites de la minería de datos para fines puramente analíticos[^64].
+
+## 4. Sistemas por regiones: Global Sur y Asia-Pacífico
+
+### 4.1. Tendencias indirectas en la regulación regional
+
+El análisis del impacto global del litigio CNN vs. Perplexity requiere observar las jurisdicciones de la región de Asia-Pacífico, las cuales han adoptado enfoques regulatorios que, aunque difieren sustancialmente del modelo de *fair use* estadounidense, están convergiendo hacia una mayor protección de los titulares de derechos frente a la automatización[^65].
+
+En Japón, el panorama ha evolucionado con rapidez tras la entrada en vigor, el 1 de septiembre de 2025, de la Ley sobre la Promoción de la Investigación, el Desarrollo y la Utilización de Tecnologías Relacionadas con la IA[^66].
+
+Históricamente, Japón fue considerado un «paraíso» para el entrenamiento de IA debido a la amplitud del artículo 30-4 de su ley de propiedad intelectual; sin embargo, el reciente desarrollo de sistemas RAG ha forzado una reevaluación doctrinal[^67].
+
+El 26 de diciembre de 2025, la Secretaría de la Sede de Estrategia de Propiedad Intelectual de la Oficina del Gabinete japonés publicó un borrador del «Código de Principios sobre Generación de IA y Propiedad Intelectual»[^68]. Este documento de *soft law* introduce pautas de buen gobierno que exigen a los desarrolladores respetar las tecnologías de protección de los titulares de datos y adoptar medidas de transparencia rigurosas[^69].
+
+La tendencia indirecta en Japón sugiere que, si bien el entrenamiento puede estar amparado, el uso de la IA para generar resultados que sustituyan comercialmente a la fuente original ---como ocurre con Perplexity--- podría ser interpretado como un abuso del derecho que perjudica irrazonablemente los intereses de los creadores[^70].
+
+Por su parte, en China, el sistema judicial ha comenzado a moldear un estándar de «trato justo» (*fair dealing*) condicionado a la supervisión administrativa[^71]. Aunque la legislación china no contempla excepciones explícitas para la minería de datos, los tribunales especializados han establecido que el entrenamiento automatizado es lícito siempre que no tenga como fin principal la apropiación de la expresión original y no cause un perjuicio económico desproporcionado[^72].
+
+Es relevante destacar que, en China, todas las plataformas que operan modelos de IA generativa deben someterse a procesos de registro y auditoría ante la Administración del Ciberespacio, lo que impone un nivel de control previo que contrasta con la libertad de mercado observada en los Estados Unidos hasta el inicio de las demandas masivas de 2025 y 2026[^73].
+
+### 4.2. Ausencia de fuentes directas y fragmentación normativa
+
+Un hallazgo crítico de la investigación documental es la marcada ausencia de fuentes judiciales directas que aborden la tecnología RAG en las jurisdicciones del Global Sur[^74].
+
+Mientras que los tribunales de Nueva York, Delaware, Múnich y Londres están produciendo jurisprudencia diaria sobre la «fijación en los pesos del modelo» o la «elusión de *robots.txt*», las regiones de América Latina, África y partes del Sudeste Asiático se encuentran en un estado de vacío o fragmentación normativa[^75].
+
+Esta ausencia de precedentes locales directos en el Global Sur no implica una inmunidad para empresas como Perplexity, sino que genera una dependencia de los tratados internacionales de base, como el Convenio de Berna y el Acuerdo sobre los ADPIC (TRIPS)[^76].
+
+En estas regiones, la legalidad de los sistemas de respuesta por IA se está evaluando bajo el «test de los tres pasos», que prohíbe cualquier excepción que interfiera con la explotación normal de la obra[^77].
+
+Dado que Perplexity admite que su objetivo es que el usuario «salte los enlaces» de los editores, su modelo de negocio se sitúa en una posición de extrema vulnerabilidad en cualquier jurisdicción que aplique estrictamente el test internacional, ya que la sustitución comercial directa de un artículo periodístico por una síntesis de IA difícilmente puede considerarse una «explotación normal» permitida[^78].
+
+Esta fragmentación normativa crea un riesgo operativo para las tecnológicas: una conducta considerada *fair use* en un tribunal de California podría ser calificada de infracción directa y punible en mercados emergentes que protegen de forma más rígida los derechos morales y patrimoniales del autor[^79].
+
+### 4.3. Lecciones transversales del derecho comparado
+
+El análisis comparativo entre los bloques estadounidense, europeo y asiático permite extraer lecciones transversales que prefiguran el nuevo orden de la propiedad intelectual en la era RAG. La primera lección es la quiebra de la defensa unitaria del uso legítimo[^80].
+
+Se está consolidando un consenso global donde el entrenamiento estático de modelos (aprender patrones) goza de cierta tolerancia, pero la recuperación en tiempo real para proveer sustitutos lógicos de la información original (RAG competitivo) es tratada como infracción directa por concurrencia comercial desleal[^81].
+
+La segunda lección es el fracaso de los modelos voluntarios de reparto de ingresos frente a las licencias bilaterales de tarifa plana[^82]. La demanda de CNN evidencia que los medios de comunicación de alto nivel rechazan el «Programa para Editores» de Perplexity, calificándolo de «pantalla de humo» que encubre el uso gratuito del capital intelectual[^83].
+
+Por el contrario, la industria se está inclinando hacia el «modelo europeo» de licencias obligatorias o acuerdos de tarifa plana garantizada, similares a los suscritos por CNN con Meta o los de Associated Press con OpenAI[^84].
+
+Finalmente, la comparación internacional augura la consolidación de un ecosistema de distribución altamente oligopolístico[^85]. La presión judicial acumulada forzará a los desarrolladores de IA a transitar hacia dos únicos caminos: o el pago de cuantiosas sumas garantizadas mediante licencias bilaterales ---accesibles solo para gigantes como Microsoft, Google o Meta--- o el sometimiento a regímenes de gestión colectiva de licencias[^86].
+
+Este panorama, que ya es una realidad en la Unión Europea tras el fallo *GEMA v. OpenAI*, incrementará drásticamente los costes de entrada para nuevos innovadores, institucionalizando un mercado donde la información digital estará más regulada, será más costosa y estará sujeta a una fiscalización técnica constante por parte de los titulares de derechos[^87].
+
+## 5. Sistemas fallidos y defensas jurídicas rechazadas
+
+### 5.1. El rechazo judicial a la defensa de uso legítimo (*fair use*) en buscadores competitivos
+
+La evolución del litigio contra Perplexity AI ha provocado un giro crítico en la interpretación de la doctrina del *fair use* bajo la sección 17 U.S.C. § 107. Hasta 2024, la defensa predominante en la industria de la IA sostenía que la copia era puramente técnica y transformativa[^88]. Sin embargo, el caso *Thomson Reuters v. Ross Intelligence* marcó un punto de inflexión fundamental[^89].
+
+En febrero de 2025, el juez Stephanos Bibas dictó una sentencia sumaria parcial que rechazó la aplicación del uso legítimo para un sistema de IA diseñado para competir directamente con el titular de los derechos[^90].
+
+El tribunal determinó que Ross Intelligence no buscaba simplemente «aprender» de los datos, sino construir un producto sustitutivo que utilizaba los sumarios protegidos de Westlaw para ofrecer un servicio de investigación jurídica equivalente[^91].
+
+El juez Bibas enfatizó que cuando la tecnología se utiliza para crear un competidor comercial que desplaza la necesidad de la obra original, la balanza del *fair use* se inclina de forma definitiva hacia el demandante[^92].
+
+Esta lógica es directamente aplicable a Perplexity: al autodefinirse como un «motor de respuestas» que busca que el usuario «salte los enlaces» de los editores, la plataforma deja de ser una herramienta de búsqueda transformativa para convertirse en un sistema de explotación concurrente que usurpa el mercado primario de la información[^93].
+
+El fracaso de esta defensa en Delaware sugiere que los tribunales están cerrando la puerta a la «excepción de entrenamiento» cuando el resultado final es un producto de inferencia sustitutivo[^94].
+
+### 5.2. El caso *Bartz v. Anthropic* y la responsabilidad por bibliotecas piratas
+
+Un segundo sistema de defensa que ha colapsado es el de la «neutralidad de la fuente»[^95]. En el litigio *Bartz v. Anthropic*, presentado ante el Distrito Norte de California, los autores alegaron que el modelo Claude fue entrenado utilizando «bibliotecas en la sombra» (*shadow libraries*) como LibGen, que contienen millones de libros pirateados[^96].
+
+En junio de 2025, el juez William Alsup emitió un fallo que resultó devastador para la estrategia de defensa de las tecnológicas[^97].
+
+El juez Alsup dictaminó que, si bien el entrenamiento con obras adquiridas lícitamente puede ser transformativo, la creación y retención de una «biblioteca central» compuesta por copias piratas para alimentar el modelo no goza de tal protección[^98]. El tribunal expresó un profundo escepticismo sobre si un «uso legítimo posterior» (el entrenamiento) puede purgar la ilegalidad de una descarga pirata inicial[^99].
+
+Esta resolución forzó a Anthropic a suscribir un acuerdo conciliatorio para compensar a los titulares de derechos[^100]. Para el caso CNN vs. Perplexity, este precedente es vital, ya que refuerza la tesis de CNN de que Perplexity actúa con dolo al eludir medidas técnicas y seguir extrayendo contenidos tras la ruptura de negociaciones, invalidando cualquier pretensión de uso legítimo basada en la supuesta utilidad pública del sistema[^101].
+
+### 5.3. La estrategia de «atrapamiento» tecnológico: el contraataque de Perplexity contra News Corp
+
+Frente a la presión judicial, Perplexity ha intentado implementar una defensa procesal agresiva denominada «atrapamiento» (*entrapment*) tecnológico[^102]. En el marco del litigio promovido por las filiales de News Corp (*Dow Jones* y *NYP Holdings*), Perplexity presentó en marzo de 2026 una moción ante la jueza Katherine Polk Failla acusando a los editores de haber «forzado» al chatbot a infringir los derechos de autor[^103].
+
+Según la compañía de IA, los demandantes introdujeron cientos de consultas reiterativas y utilizaron la función de «reintento» más de 50 veces consecutivas para obligar al sistema a eludir sus propias salvaguardas de seguridad y generar reproducciones literales[^104]. Perplexity argumenta que estas pruebas no reflejan el uso real del consumidor, sino que son «ejercicios de pesca» engañosos[^105].
+
+Un punto de conflicto jurídico de alto nivel en este expediente es la disputa sobre el secreto profesional: Perplexity sostiene que, al enviar estas consultas a través de su plataforma pública, los editores renunciaron al privilegio sobre el «producto del trabajo» (*work-product privilege*), por lo que deben entregar los registros completos de sus interacciones para demostrar la manipulación de la prueba[^106].
+
+Esta estrategia busca desviar el foco del comportamiento sistémico del rastreador RAG hacia la conducta procesal del demandante, aunque hasta la fecha no ha logrado detener el avance de las causas hacia la fase de descubrimiento pericial[^107].
+
+## 6. Marcos normativos y fundamentos de derecho
+
+### 6.1. Secciones 1201 y 1202 de la DMCA frente a la elusión de medidas técnicas
+
+La aplicación de la *Digital Millennium Copyright Act* (DMCA) representa uno de los pilares litigiosos más complejos en la demanda de CNN contra Perplexity. El conflicto se centra fundamentalmente en la **Sección 1201**, que prohíbe la elusión de medidas tecnológicas de protección (TPM) que controlan eficazmente el acceso a obras protegidas[^108].
+
+CNN sostiene que Perplexity eludió deliberadamente sus protocolos de exclusión, señalando que, a pesar de las prohibiciones en el archivo *robots.txt*, los rastreadores «PerplexityBot» y «Perplexity-User» continuaron accediendo a sus contenidos[^109].
+
+Sin embargo, la interpretación judicial de *robots.txt* como una «medida tecnológica eficaz» bajo la DMCA ha enfrentado desafíos significativos[^110]. En diciembre de 2025, el tribunal federal en el caso *Ziff Davis, Inc. v. OpenAI, Inc.* determinó que las directivas de *robots.txt* no constituyen un mecanismo de control de acceso en el sentido estricto de la Sección 1201(a), comparándolas con un simple letrero de «no pasar» que no requiere procesos de descodificación o claves para ser ignorado[^111].
+
+A pesar de este revés doctrinal, CNN refuerza su posición alegando que Perplexity no solo ignoró una petición de abstención, sino que empleó «rastreadores sigilosos». Estos agentes suplantaron identidades de navegadores comerciales como Google Chrome y utilizaron direcciones IP rotativas para evadir barreras de seguridad activas y cortafuegos, lo cual sí podría encuadrarse en la órbita de responsabilidad de la DMCA al implicar una conducta activa de engaño técnico para superar mecanismos lógicos de seguridad[^112].
+
+Por otro lado, la **Sección 1202** de la DMCA, relativa a la integridad de la información sobre la gestión de derechos de autor (CMI), es igualmente crítica[^113]. CNN acusa a Perplexity de eliminar o alterar de forma sistemática los metadatos de autoría y los avisos de *copyright* vinculados a los artículos e imágenes durante el proceso de indexación y síntesis RAG[^114].
+
+Al distribuir respuestas que carecen de la CMI original o que la presentan de forma fragmentaria, Perplexity incurre en una violación que, bajo el estándar de dolo procesal acreditado por las negociaciones fallidas de 2025, podría derivar en daños estatutarios adicionales de gran cuantía[^115].
+
+### 6.2. Aplicación de los factores del *fair use* y el criterio de transformación en entornos RAG
+
+La defensa central de Perplexity se fundamenta en la doctrina del uso legítimo (*fair use*) codificada en la sección 17 U.S.C. § 107[^116]. Sin embargo, el paradigma RAG introduce una distorsión profunda en los cuatro factores tradicionales, diferenciándose notablemente de los modelos generativos puros[^117].
+
+Bajo el **primer factor** ---propósito y carácter del uso---, Perplexity alega que su sistema es transformativo al facilitar la síntesis de información y el interés público[^118]. No obstante, CNN argumenta que la tecnología RAG no transforma la obra para un fin analítico, sino que la utiliza de forma directa y sincrónica para confeccionar una respuesta que actúa como un sustituto en el mercado de la actualidad[^119].
+
+El eslogan «*Skip the Links*» de Perplexity es la prueba de cargo de que el sistema no busca redirigir al usuario, sino retenerlo mediante una narrativa sustitutiva que usurpa la función del artículo original[^120].
+
+En cuanto al **cuarto factor** ---efecto sobre el mercado potencial---, la posición de Perplexity se ve severamente debilitada por la realidad comercial documentada en el expediente[^121]. El hecho de que CNN mantenga acuerdos comerciales activos con Meta y haya intentado licenciar su contenido a Perplexity en octubre de 2025 demuestra la existencia de un mercado de licencias plenamente funcional[^122].
+
+Bajo la doctrina *Warhol*, el uso no autorizado de una obra con el mismo fin comercial que el titular (proveer noticias) para eludir el pago de licencias que otros competidores ya satisfacen inclina definitivamente este factor a favor del demandante[^123].
+
+La facilidad probatoria en el entorno RAG, donde el resultado final es a menudo una paráfrasis lineal o una copia literal identificable, hace que la pretensión de «transformación funcional» sea difícil de sostener frente a una infracción que es documental e inmediata[^124].
+
+### 6.3. Reclamaciones bajo la *Lanham Act*: alucinaciones y daño reputacional
+
+La demanda de CNN trasciende el *copyright* para adentrarse en la protección marcaria bajo la **Ley Lanham** (15 U.S.C. §§ 1051 y ss.)[^125]. La plataforma es acusada de incurrir en designación falsa de origen y competencia desleal al promocionar que su suscripción premium «Comet Plus» incluía acceso autorizado a contenidos de CNN, incluso después de que las negociaciones colapsaran y se emitiera una orden de cese y desistimiento en diciembre de 2025[^126].
+
+Esta conducta crea una asociación falsa en la mente del consumidor, sugiriendo un patrocinio o afiliación inexistente[^127].
+
+Un componente innovador de este litigio es la reclamación por daño reputacional derivado de las «alucinaciones» del sistema de IA[^128]. CNN ha documentado múltiples instancias donde el motor RAG de Perplexity generó información fabricada o errónea ---como declaraciones falsas atribuidas a directivos deportivos o noticias distorsionadas--- y las presentó al público bajo la marca de prestigio de la cadena[^129].
+
+CNN sostiene que este fenómeno constituye una forma agravada de empañamiento o dilución marcaria, ya que la automatización vincula la credibilidad global de CNN con la baja calidad y la inexactitud de los modelos predictivos, dañando de forma irreparable el fondo de comercio de la corporación[^130].
+
+### 6.4. El test de los tres pasos en tratados internacionales
+
+Desde una perspectiva de derecho internacional, la legalidad de los sistemas RAG operados por Perplexity debe evaluarse bajo el prisma del **test de los tres pasos** incorporado en el Convenio de Berna y el Acuerdo sobre los ADPIC[^131].
+
+Este estándar prohíbe cualquier excepción o limitación al derecho de autor que no cumpla tres condiciones: ser para casos especiales, no interferir con la explotación normal de la obra y no causar un perjuicio injustificado a los intereses legítimos del autor[^132].
+
+La industria periodística sostiene que el modelo RAG de Perplexity falla sistemáticamente en el segundo y tercer paso del test[^133]. Dado que el sistema está diseñado para que el usuario «no necesite visitar el sitio web original», interfiere de manera directa con la explotación normal basada en la monetización de impresiones publicitarias y suscripciones digitales[^134].
+
+El informe del gobierno británico «Report on Copyright and Artificial Intelligence» (marzo de 2026) advierte que la recopilación masiva automatizada para fines de inferencia sustitutiva (y no meramente analítica) desequilibra el ecosistema de licencias, forzando a una interpretación estricta de las excepciones legales para evitar la erosión del capital intelectual[^135].
+
+En consecuencia, Perplexity se sitúa en una posición de vulnerabilidad global, ya que su modelo de negocio de «motor de respuestas» difícilmente puede ser catalogado como un «caso especial» que no perjudica injustificadamente a los creadores originales[^136].
+
+## 7. Análisis empírico de justicia procesal
+
+### 7.1. Anatomía del expediente 1:26-cv-04427
+
+La demanda interpuesta por CNN el 28 de mayo de 2026 ante el Distrito Sur de Nueva York constituye una pieza procesal de alta complejidad técnica y documental[^137]. El expediente judicial, identificado bajo el código gubernamental *gov.uscourts.nysd.664916*, se estructura en una serie de presentaciones iniciales que prefiguran una estrategia de litigio agresiva y exhaustiva[^138].
+
+El escrito principal de demanda consta de 54 páginas y se ve reforzado por más de 1.100 páginas de anexos probatorios, lo que subraya la magnitud de la supuesta infracción[^139].
+
+Dos anexos fundamentales definen el alcance fáctico de la reclamación: el **Anexo A**, que incorpora un inventario pericializado de más de 17.000 obras protegidas ---incluyendo artículos periodísticos, contenido multimedia, vídeos e imágenes--- consolidadas bajo el registro de derechos de autor TX 9-574-794; y el **Anexo B**, que detalla 11 certificados de marcas registradas ante la USPTO, incluyendo marcas históricas como «WATCH CNN» y la distintiva tipografía «CNN SANS»[^140].
+
+Procesalmente, la causa ha sido vinculada, mediante declaraciones de conexidad, a la Jueza de Distrito Loretta A. Preska y al Juez Magistrado Gabriel W. Gorenstein, dada su identidad de materia con los casos previos del *Chicago Tribune* y *The New York Times*[^141]. Esta configuración busca no solo eficiencia administrativa, sino la consolidación de un bloque doctrinal uniforme sobre el funcionamiento del índice RAG[^142].
+
+### 7.2. La controversia sobre la preservación de pruebas (*snapshots* de enero 2026)
+
+Un desarrollo crítico en la justicia procesal de este bloque de litigios se manifestó el 13 de enero de 2026, mediante un escrito conjunto dirigido a la Jueza Preska sobre la preservación de evidencia digital[^143].
+
+Los demandantes exigieron a Perplexity AI la conservación íntegra de sus conjuntos de datos históricos, alegando que las versiones del índice RAG de noviembre de 2024 y mayo de 2025 son esenciales para demostrar el rastro de la copia literal antes de la implementación de filtros defensivos[^144].
+
+Perplexity ha planteado una resistencia técnica significativa, argumentando que tales archivos son «enormes» y que su preservación impone una carga económica desproporcionada[^145].
+
+La disputa revela un cisma conceptual sobre la naturaleza de la prueba: mientras que los registros de actividad de los usuarios son nativamente buscables en texto, los datos del índice RAG se encuentran en formato binario, requiriendo procesos de *parsing* y preprocesamiento de alta complejidad para ser utilizados en sede judicial[^146].
+
+Asimismo, Perplexity ha admitido que no retiene registros de las consultas de usuarios para sus ofertas de API comerciales, lo que CNN califica como un riesgo de destrucción de evidencia relevante sobre cómo los clientes corporativos utilizan el sistema para eludir muros de pago[^147]. Esta «batalla de los *snapshots*» determinará si los demandantes pueden acceder a la «caja negra» del modelo en sus etapas más vulnerables[^148].
+
+### 7.3. Litigio coordinado: la estrategia de los cuatro editores frente a un solo demandado
+
+La demanda de CNN no es un hecho aislado, sino que forma parte de lo que los analistas denominan «*The Perplexity Docket*», un frente judicial coordinado que incluye a *The New York Times*, *Chicago Tribune*, Reddit y el grupo japonés *Yomiuri Shimbun*[^149]. Esta acumulación de causas genera una «presión de litigio estructural» que excede la capacidad de defensa de cualquier plataforma individual[^150].
+
+La estrategia de los editores, representada en gran medida por el bufete Rothwell Figg, busca saturar la capacidad procesal del demandado mediante la presentación de pruebas de infracción consistentes en múltiples jurisdicciones[^151].
+
+El patrón en este bloque de casos es uniforme: los editores alegan raspado masivo sin licencia, infracción marcaria por alucinaciones y, fundamentalmente, la sustitución comercial directa[^152].
+
+Esta coordinación permite a los demandantes compartir hallazgos técnicos sobre los agentes «PerplexityBot» y «Perplexity-User», fortaleciendo la tesis de que el sistema está diseñado para «retener» al usuario y evitar el tráfico de referencia hacia los medios originales[^153].
+
+Para Perplexity, esta dinámica desplaza el centro de gravedad del caso desde la defensa del *fair use* hacia una necesidad existencial de negociación; la economía del litigio en serie sugiere que el coste de defender simultáneamente cuatro grandes causas podría superar el coste de una licencia colectiva institucionalizada[^154].
+
+### 7.4. Historial de negociaciones fallidas y la construcción del dolo procesal (2025)
+
+El elemento que otorga una ventaja probatoria decisiva a CNN es el historial documentado de negociaciones de 2025, el cual se utiliza para acreditar la existencia de infracción dolosa (*willful infringement*)[^155].
+
+Según el expediente, el 1 de octubre de 2025, CNN y Perplexity firmaron un pliego de condiciones para una asociación denominada «CNN - Perplexity Comet Plus», que pretendía legitimar el acceso de Perplexity a los contenidos premium de la cadena[^156].
+
+Este acuerdo, anunciado públicamente por el CEO Aravind Srinivas, colapsó apenas 60 días después, el 24 de noviembre de 2025, debido a desacuerdos insalvables sobre la cuantía de la compensación y los límites de reproducción del texto[^157].
+
+CNN sostiene que, tras la terminación del acuerdo y la emisión de una carta de cese y desistimiento el 10 de diciembre de 2025, Perplexity continuó extrayendo sus contenidos de forma deliberada[^158].
+
+Esta secuencia fáctica es devastadora para la defensa de buena fe de la tecnológica: una empresa que negocia una licencia, admite la necesidad de fuentes de alta calidad para su existencia y luego continúa usándolas tras el rechazo del titular, difícilmente puede invocar desconocimiento o uso transformativo incidental[^159].
+
+Bajo la sección 17 U.S.C. § 504(c)(2), este dolo procesal permite elevar las indemnizaciones hasta los 150.000 dólares por obra, situando la exposición financiera de Perplexity en un techo teórico de 2.550 millones de dólares, una cifra que transforma el litigio en una amenaza de liquidación corporativa[^160].
+
+## 8. Conclusiones y recomendaciones
+
+### 8.1. Impacto sistémico en la sostenibilidad de los medios de comunicación
+
+El análisis del litigio CNN vs. Perplexity AI revela una crisis estructural en la economía del periodismo digital provocada por la transición de un modelo de búsqueda basado en la referencia a uno basado en la síntesis sustitutiva[^161].
+
+La implementación de arquitecturas RAG por parte de motores de respuesta ha acelerado el desplome del tráfico orgánico hacia los medios originales, con estudios periciales presentados en los expedientes que documentan una reducción significativa del tráfico de referencia comparado con los buscadores tradicionales[^162].
+
+Este fenómeno, caracterizado por los demandantes como un «agujero negro» informativo, erosiona los dos pilares financieros de la prensa: los ingresos publicitarios por impresiones y las conversiones de suscriptores nuevos[^163].
+
+La demanda de CNN subraya que esta dinámica crea un círculo vicioso destructivo[^164]. Si las plataformas de IA despojan a las organizaciones de noticias de los incentivos económicos para financiar investigaciones de alto coste y riesgo, la calidad del contenido disponible para alimentar a esos mismos sistemas de IA disminuirá drásticamente[^165].
+
+La «canibalización» del capital intelectual no es, por tanto, solo un problema de propiedad intelectual, sino una amenaza existencial para la función social del periodismo en una sociedad democrática, que se ve agravada por las «alucinaciones» que vinculan marcas de prestigio con desinformación automatizada[^166].
+
+### 8.2. Hacia un nuevo equilibrio: licencias colectivas y compensación por inferencia
+
+El fracaso de las negociaciones entre CNN y Perplexity en 2025 marca el agotamiento de los modelos voluntarios de «reparto de ingresos» propuestos por las tecnológicas[^167]. La industria mediática ha rechazado estos esquemas por considerarlos opacos y económicamente insuficientes para compensar la pérdida masiva de audiencia directa[^168]. En su lugar, se observa un desplazamiento hacia dos modelos de equilibrio alternativos.
+
+**Primero**, la consolidación de licencias bilaterales de tarifa plana, ejemplificadas por los acuerdos de CNN con Meta y de Associated Press con OpenAI[^169]. Estos contratos establecen un mercado funcional donde el valor del contenido se reconoce de forma anticipada y garantizada, independientemente del volumen de inferencia[^170].
+
+**Segundo**, la jurisprudencia europea (especialmente el caso *GEMA v. OpenAI*) sugiere que los sistemas RAG podrían verse obligados a operar bajo regímenes de gestión colectiva de derechos[^171].
+
+Este enfoque institucionalizado permitiría a los editores más pequeños acceder a compensaciones que hoy solo están al alcance de los gigantes mediáticos, aunque conlleva el riesgo de cimentar un mercado oligopolístico donde solo las empresas de IA con gran capacidad de capital puedan sufragar los costes de entrada[^172].
+
+### 8.3. Recomendaciones para legisladores y reguladores
+
+A la luz de las debilidades doctrinales expuestas en este artículo, se proponen tres recomendaciones urgentes para actualizar los marcos normativos.
+
+**Clarificación del estatus legal de las medidas técnicas.** Tras el revés judicial de considerar el archivo *robots.txt* como una medida ineficaz bajo la DMCA, los legisladores deben definir nuevos estándares de «señalización de exclusión» que sean legalmente vinculantes para los agentes de IA[^173].
+
+Es necesario proteger los sistemas de bloqueo lógico y firmas de procedencia criptográfica (como C2PA) para evitar el rastreo sigiloso que actualmente practican plataformas como Perplexity[^174].
+
+**Resolución del «doble vínculo» (*double bind*).** Los reguladores deben intervenir para evitar que las grandes tecnológicas actúen simultáneamente como los agentes que privan de tráfico a los medios y como los únicos «porteros» (*gatekeepers*) de los acuerdos de licencia que pretenden sustituir ese tráfico[^175].
+
+Se recomienda la exploración de mecanismos de arbitraje obligatorio para garantizar que las licencias de IA se negocien en términos de equidad competitiva[^176].
+
+**Transparencia en el *pipeline* de inferencia.** De acuerdo con los principios de la *AI Act* de la Unión Europea, se debe exigir a los proveedores de sistemas RAG una transparencia absoluta sobre las fuentes utilizadas en tiempo real[^177].
+
+No basta con una citación fragmentaria; el sistema debe acreditar que la asimilación del contenido no infringe el test internacional de los tres pasos al interferir con la explotación normal de la obra original[^178]. El equilibrio futuro dependerá de que la innovación tecnológica no se construya sobre la expropiación del trabajo humano, sino sobre un marco de respeto mutuo y compensación justa[^179].
+
+# Bibliografía
+
+## I. NORMATIVA
+
+### Tratados y Convenios Internacionales
+
+> Convenio de Berna para la Protección de las Obras Literarias y Artísticas, de 9 de septiembre de 1886 (revisado en París en 1971).
+>
+> Acuerdo sobre los Aspectos de los Derechos de Propiedad Intelectual relacionados con el Comercio (ADPIC/TRIPS), Anexo 1C del Acuerdo de Marrakech, de 15 de abril de 1994.
+>
+> CONSEJO DE EUROPA, Convenio Marco sobre Inteligencia Artificial y Derechos Humanos, Democracia y Estado de Derecho, CETS núm. 225, abierto a la firma el 5 de septiembre de 2024.
+
+### Normativa de la Unión Europea
+
+> Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial \[Reglamento de Inteligencia Artificial, RIA\], DO L, 12 de julio de 2024.
+>
+> Directiva (UE) 2019/790 del Parlamento Europeo y del Consejo, de 17 de abril de 2019, sobre los derechos de autor y derechos afines en el mercado único digital \[Directiva DSM\], DO L 130, 17 de mayo de 2019, pp. 92-119.
+>
+> Directiva 2001/29/CE del Parlamento Europeo y del Consejo, de 22 de mayo de 2001, relativa a la armonización de determinados aspectos de los derechos de autor y derechos afines a los derechos de autor en la sociedad de la información \[Directiva InfoSoc\], DO L 167, 22 de junio de 2001, pp. 10-19.
+
+### Normativa de los Estados Unidos
+
+> Copyright Act, 17 U.S.C. §§ 101 et seq. (2024).
+>
+> Digital Millennium Copyright Act (DMCA), Pub. L. No. 105-304, 112 Stat. 2860 (1998).
+>
+> Lanham Act, 15 U.S.C. §§ 1051 et seq. (2024).
+>
+> Executive Office of the President, Executive Order 14110 on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence, 88 Fed. Reg. 75191 (31 de octubre de 2023).
+
+### Normativa Alemana
+
+> Gesetz über Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz --- UrhG), de 9 de septiembre de 1965 (BGBl. I S. 1273), en la versión vigente con las modificaciones derivadas de la transposición de la Directiva DSM (§ 44b UrhG).
+
+## II. JURISPRUDENCIA
+
+### Estados Unidos
+
+> Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc., No. 20-cv-613-SB (D. Del.), sentencia sumaria parcial de febrero de 2025.
+>
+> Dow Jones & Company Inc. v. Perplexity AI Inc., No. 1:24-cv-07984-KPF (S.D.N.Y.), resolución denegatoria de moción de desestimación de 21 de agosto de 2025.
+>
+> Chicago Tribune Media Group, LLC v. Perplexity AI Inc., No. 1:25-cv-10094 (S.D.N.Y., presentada el 4 de diciembre de 2025).
+>
+> Cable News Network, Inc. v. Perplexity AI, Inc., No. 1:26-cv-04427 (S.D.N.Y., presentada el 28 de mayo de 2026).
+>
+> Bartz v. Anthropic PBC, No. 3:23-cv-03223 (N.D. Cal.), acuerdo conciliatorio aprobado en junio de 2025.
+>
+> Ziff Davis, Inc. v. OpenAI, Inc., (S.D.N.Y., diciembre de 2025).
+
+### Alemania
+
+> Landgericht München I, Sentencia de 11 de noviembre de 2025, GEMA e.V. v. OpenAI Ireland Limited, Az. 21 O 9458/24.
+
+### Reino Unido
+
+> Getty Images (US), Inc. v. Stability AI Ltd., \[2025\] EWHC (High Court of Justice, England and Wales, 4 de noviembre de 2025).
+
+## III. DOCTRINA Y FUENTES SECUNDARIAS
+
+### Análisis jurídicos especializados
+
+> TECH JACKS SOLUTIONS, «La Frontera del Derecho de Autor frente a los Modelos de Generación Mejorada por Recuperación (RAG): Análisis Multidimensional del Litigio CNN vs. Perplexity AI (Mayo 2026)», mayo de 2026.
+>
+> TECH JACKS SOLUTIONS, «The Perplexity Docket: Four Publishers, One Defendant, and What the AI Copyright Pattern Reveals About Scraping», mayo de 2026.
+>
+> TECH JACKS SOLUTIONS, «AI Copyright Infringement Lawsuit: CNN vs. Perplexity Analysis», mayo de 2026.
+>
+> STERNE KESSLER GOLDSTEIN & FOX, «AI IP Year in Review -- First Federal Ruling Rejects Fair Use Defense in AI Training», enero de 2025.
+>
+> LOEB & LOEB LLP, «Actualización legal sobre Dow Jones v. Perplexity AI», 2025.
+>
+> BAKERLAW, «Dow Jones & Company, Inc. v. Perplexity AI, Inc.: an overview», 2025.
+>
+> INSIDE TECH LAW, «Germany delivers landmark copyright ruling against OpenAI: What it means for AI developers», diciembre de 2025.
+>
+> INSIDE TECH LAW, «Bartz v. Anthropic: Settlement reached after landmark summary judgment and class certification», junio de 2025.
+>
+> OSBORNE CLARKE, «GEMA vs. OpenAI \| AI memorisation is a reproduction relevant to copyright law», noviembre de 2025.
+>
+> MAYER BROWN, «Getty Images v Stability AI: What the High Court\'s Decision Means for Rights-Holders», noviembre de 2025.
+>
+> ROTHWELL FIGG ERNST & MANBECK PC, «Artificial Intelligence Practice», 2026.
+>
+> AI CERTS, «News Corp v. Perplexity: Copyright Infringement Battle Explained», 2025.
+>
+> «Perplexity AI Copyright Lawsuit: Complete Guide 2025», 2025.
+>
+> «Can AI training result in copyright infringement? The state of play in the UK, EU and China», Global Regulatory Review, 2025.
+
+### Documentos Institucionales
+
+> UK INTELLECTUAL PROPERTY OFFICE, Report on Copyright and Artificial Intelligence, marzo de 2026.
+>
+> NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY (NIST), AI Risk Management Framework (AI RMF 1.0), enero de 2023, NIST AI 100-1.
+>
+> UNESCO, Recomendación sobre la ética de la inteligencia artificial, adoptada el 23 de noviembre de 2021.
+
+### Prensa especializada
+
+> «CNN es la última empresa de medios en demandar a Perplexity», Engadget, mayo de 2026.
+>
+> «Demanda de CNN por la copia de 17.000 piezas sin permiso», Fast Company, mayo de 2026.
+>
+> «CNN sues Perplexity for copying 17,000 works in landmark AI copyright case», PPC Land, mayo de 2026.
+>
+> «Perplexity claims News Corp tried to \'entrap\' chatbot», Press Gazette, 2026.
+>
+> «CNN Sues Perplexity AI for Scraping 17,000 Articles in First Broadcaster Copyright Case», AI Weekly, mayo de 2026.
+>
+> «No se pueden registrar los hechos: defensa de Perplexity», CNET, 2026.
+>
+> «CNN demanda a Perplexity AI por el raspado de 17.000 artículos», MLQ.ai, 2026.
+>
+> «Third Circuit sets oral argument for June 11 in 1st appeal of decision on fair use in AI training», Chat GPT Is Eating the World, 2026.
+
+[^1]: TECH JACKS SOLUTIONS, «La Frontera del Derecho de Autor frente a los Modelos de Generación Mejorada por Recuperación (RAG): Análisis Multidimensional del Litigio CNN vs. Perplexity AI (Mayo 2026)» \[en adelante, «La Frontera del Derecho de Autor»\], p. 523.
+
+[^2]: «CNN sues Perplexity for copying 17,000 works in landmark AI copyright case», PPC Land, 28 de mayo de 2026 \[en adelante, PPC Land\], p. 268.
+
+[^3]: Dow Jones & Company Inc. v. Perplexity AI Inc., No. 1:24-cv-07984 (S.D.N.Y.), en FindLaw Caselaw, p. 333.
+
+[^4]: «La Frontera del Derecho de Autor», p. 540.
+
+[^5]: Complaint, Chicago Tribune Media Group, LLC v. Perplexity AI Inc., No. 1:25-cv-10094 (S.D.N.Y., 4 de diciembre de 2025) \[en adelante, Demanda Chicago Tribune\], pp. 72-73.
+
+[^6]: «La Frontera del Derecho de Autor», pp. 542-543.
+
+[^7]: Complaint, Cable News Network, Inc. v. Perplexity AI, Inc., No. 1:26-cv-04427 (S.D.N.Y., 28 de mayo de 2026) \[en adelante, Expediente CNN\], disponible en Internet Archive.
+
+[^8]: «CNN demanda a Perplexity AI por el raspado de 17.000 artículos», MLQ.ai, 2026.
+
+[^9]: TECH JACKS SOLUTIONS, «Análisis del litigio por infracción de derechos de autor CNN vs. Perplexity», disponible en: https://www.techjackssolutions.com (consulta: 31/05/2026).
+
+[^10]: PPC Land, pp. 272-273.
+
+[^11]: «La Frontera del Derecho de Autor», p. 519.
+
+[^12]: «Perplexity Comet Browser: Key Features, Reviews & Security Tips», Seraphic Security.
+
+[^13]: Demanda Chicago Tribune, p. 11.
+
+[^14]: ROTHWELL FIGG ERNST & MANBECK PC, «Práctica de Inteligencia Artificial» y «Comunicado sobre la demanda de CNN contra Perplexity AI», mayo de 2026.
+
+[^15]: TECH JACKS SOLUTIONS, «The Perplexity Docket: Four Publishers, One Defendant, and What the AI Copyright Pattern Reveals About Scraping», disponible en: https://www.techjackssolutions.com (consulta: 31/05/2026).
+
+[^16]: Expediente CNN; Demanda Chicago Tribune; Dow Jones & Company Inc. v. Perplexity AI Inc., No. 1:24-cv-07984 (S.D.N.Y.) \[opinión de la jueza Katherine Polk Failla denegando la moción de desestimación\]; análisis de LOEB & LOEB LLP.
+
+[^17]: STERNE KESSLER GOLDSTEIN & FOX, «AI IP Year in Review -- First Federal Ruling Rejects Fair Use Defense», 2025; LOEB & LOEB LLP, «Actualización legal sobre Dow Jones v. Perplexity», 2025; INSIDE TECH LAW, «Bartz v. Anthropic: Settlement reached after landmark summary judgment», 2025; «La Frontera del Derecho de Autor».
+
+[^18]: «CNN es la última empresa de medios en demandar a Perplexity», Engadget, mayo 2026; «Demanda de CNN por la copia de 17.000 piezas sin permiso», Fast Company, mayo 2026; «No se pueden registrar los hechos: defensa de Perplexity», CNET, 2026; «Perplexity claims News Corp tried to \'entrap\' chatbot», Press Gazette, 2026; UK INTELLECTUAL PROPERTY OFFICE, Report on Copyright and Artificial Intelligence, marzo 2026 \[en adelante, GOV.UK Report\].
+
+[^19]: «La Frontera del Derecho de Autor», p. 523.
+
+[^20]: Ibid., pp. 537-538.
+
+[^21]: INSIDE TECH LAW, «Bartz v. Anthropic: Settlement reached after landmark summary judgment and class certification» \[en adelante, Inside Tech Law (Bartz)\], p. 180.
+
+[^22]: «La Frontera del Derecho de Autor», p. 525.
+
+[^23]: FindLaw Caselaw, p. 333.
+
+[^24]: «La Frontera del Derecho de Autor», p. 525.
+
+[^25]: PPC Land, p. 268.
+
+[^26]: «La Frontera del Derecho de Autor», p. 540.
+
+[^27]: PPC Land, p. 270.
+
+[^28]: Demanda Chicago Tribune, pp. 72-73.
+
+[^29]: «La Frontera del Derecho de Autor», p. 541.
+
+[^30]: Demanda Chicago Tribune, pp. 109-111.
+
+[^31]: Ibid., p. 47.
+
+[^32]: Inside Tech Law (Bartz), pp. 180-181.
+
+[^33]: PPC Land, p. 270.
+
+[^34]: FindLaw Caselaw, p. 331.
+
+[^35]: «La Frontera del Derecho de Autor», p. 487.
+
+[^36]: Demanda Chicago Tribune, p. 7.
+
+[^37]: «La Frontera del Derecho de Autor», p. 487.
+
+[^38]: Ibid., pp. 542-543.
+
+[^39]: PPC Land, p. 274.
+
+[^40]: «La Frontera del Derecho de Autor», p. 550.
+
+[^41]: Ibid., p. 524.
+
+[^42]: Ibid., p. 524.
+
+[^43]: «Third Circuit sets oral argument for June 11 in 1st appeal of decision on fair use in AI training», Chat GPT Is Eating the World, p. 767.
+
+[^44]: «La Frontera del Derecho de Autor», p. 531.
+
+[^45]: STERNE KESSLER, «AI IP Year in Review», p. 158.
+
+[^46]: Chat GPT Is Eating the World, p. 768.
+
+[^47]: «News Corp v. Perplexity: Copyright Infringement Battle Explained», AI CERTs, p. 557.
+
+[^48]: FindLaw Caselaw, p. 329.
+
+[^49]: LOEB & LOEB LLP, «Actualización legal sobre Dow Jones v. Perplexity», p. 430.
+
+[^50]: Press Gazette, p. 700.
+
+[^51]: Demanda Chicago Tribune, p. 1.
+
+[^52]: TECH JACKS SOLUTIONS, «La Frontera del Derecho de Autor», p. 748.
+
+[^53]: Demanda Chicago Tribune, pp. 72-73.
+
+[^54]: «La Frontera del Derecho de Autor», p. 550.
+
+[^55]: INSIDE TECH LAW, «Germany delivers landmark copyright ruling against OpenAI: What it means for AI developers» \[en adelante, Inside Tech Law (GEMA)\], p. 469.
+
+[^56]: OSBORNE CLARKE, «GEMA vs. OpenAI \| AI memorisation is a reproduction relevant to copyright law», p. 446.
+
+[^57]: Ibid., p. 449.
+
+[^58]: «La Frontera del Derecho de Autor», p. 534.
+
+[^59]: Inside Tech Law (GEMA), p. 473.
+
+[^60]: MAYER BROWN, «Getty Images v Stability AI: What the High Court\'s Decision Means for Rights-Holders», p. 553.
+
+[^61]: «La Frontera del Derecho de Autor», p. 535.
+
+[^62]: Inside Tech Law (GEMA), p. 475.
+
+[^63]: TECH JACKS SOLUTIONS, «AI Copyright Infringement Lawsuit: CNN vs. Perplexity Analysis», p. 138.
+
+[^64]: ROTHWELL FIGG ERNST & MANBECK PC, «Artificial Intelligence Practice», p. 164.
+
+[^65]: «La Frontera del Derecho de Autor», pp. 534, 552.
+
+[^66]: Ibid., p. 536.
+
+[^67]: Ibid., p. 536.
+
+[^68]: Ibid., p. 536.
+
+[^69]: Ibid., p. 536.
+
+[^70]: Ibid., p. 536.
+
+[^71]: Ibid., p. 536.
+
+[^72]: Ibid., p. 536.
+
+[^73]: «Can AI training result in copyright infringement? The state of play in the UK, EU and China», Global Regulatory Review, p. 554.
+
+[^74]: Ibid., p. 554.
+
+[^75]: «La Frontera del Derecho de Autor», p. 536.
+
+[^76]: Ibid., p. 536.
+
+[^77]: Ibid., p. 536.
+
+[^78]: Ibid., p. 536.
+
+[^79]: Ibid., p. 536.
+
+[^80]: «La Frontera del Derecho de Autor», p. 550.
+
+[^81]: Inside Tech Law (GEMA), p. 476.
+
+[^82]: «La Frontera del Derecho de Autor», p. 550.
+
+[^83]: Ibid., p. 550.
+
+[^84]: Ibid., p. 550.
+
+[^85]: Ibid., p. 546.
+
+[^86]: Ibid., p. 547.
+
+[^87]: «CNN Sues Perplexity AI for Scraping 17000 Articles in First Broadcaster Copyright Case», AI Weekly, p. 633.
+
+[^88]: «La Frontera del Derecho de Autor», p. 552.
+
+[^89]: Ibid., p. 552.
+
+[^90]: OSBORNE CLARKE, «GEMA vs. OpenAI», p. 454.
+
+[^91]: «La Frontera del Derecho de Autor», p. 524.
+
+[^92]: Chat GPT Is Eating the World, p. 767.
+
+[^93]: «La Frontera del Derecho de Autor», p. 531.
+
+[^94]: STERNE KESSLER, p. 158.
+
+[^95]: Chat GPT Is Eating the World, p. 768.
+
+[^96]: «La Frontera del Derecho de Autor», p. 525.
+
+[^97]: TECH JACKS SOLUTIONS, p. 752.
+
+[^98]: Inside Tech Law (Bartz), p. 184.
+
+[^99]: Ibid., p. 180.
+
+[^100]: «La Frontera del Derecho de Autor», p. 532.
+
+[^101]: Inside Tech Law (Bartz), p. 180.
+
+[^102]: Ibid., p. 181.
+
+[^103]: «La Frontera del Derecho de Autor», p. 532.
+
+[^104]: PPC Land, p. 273.
+
+[^105]: Press Gazette, p. 700.
+
+[^106]: «La Frontera del Derecho de Autor», p. 522.
+
+[^107]: Press Gazette, p. 707.
+
+[^108]: Ibid., p. 700.
+
+[^109]: «La Frontera del Derecho de Autor», p. 522.
+
+[^110]: BAKERLAW, «Dow Jones & Company, Inc. v. Perplexity AI, Inc.», p. 442.
+
+[^111]: «La Frontera del Derecho de Autor», p. 526.
+
+[^112]: Expediente CNN, PacerMonitor, p. 266.
+
+[^113]: «La Frontera del Derecho de Autor», p. 487.
+
+[^114]: Ibid., p. 527.
+
+[^115]: Ibid., p. 528.
+
+[^116]: PPC Land, p. 288.
+
+[^117]: Demanda Chicago Tribune, p. 11.
+
+[^118]: «Perplexity AI Copyright Lawsuit: Complete Guide 2025», p. 582.
+
+[^119]: AI CERTs, p. 559.
+
+[^120]: «La Frontera del Derecho de Autor», p. 523.
+
+[^121]: Complete Guide 2025, p. 586.
+
+[^122]: «La Frontera del Derecho de Autor», p. 525.
+
+[^123]: FindLaw Caselaw, p. 333.
+
+[^124]: «La Frontera del Derecho de Autor», p. 529.
+
+[^125]: PPC Land, p. 272.
+
+[^126]: «La Frontera del Derecho de Autor», p. 530.
+
+[^127]: Ibid., p. 487.
+
+[^128]: AI Weekly, p. 251.
+
+[^129]: «La Frontera del Derecho de Autor», p. 488.
+
+[^130]: Ibid., p. 520.
+
+[^131]: Demanda Chicago Tribune, p. 11.
+
+[^132]: PPC Land, p. 278.
+
+[^133]: «La Frontera del Derecho de Autor», p. 490.
+
+[^134]: GOV.UK Report, p. 549.
+
+[^135]: Ibid., p. 549.
+
+[^136]: «La Frontera del Derecho de Autor», p. 550.
+
+[^137]: Demanda Chicago Tribune, p. 42.
+
+[^138]: GOV.UK Report, p. 549.
+
+[^139]: «La Frontera del Derecho de Autor», p. 550.
+
+[^140]: Ibid., p. 482.
+
+[^141]: Expediente CNN, PacerMonitor, p. 498.
+
+[^142]: PPC Land, p. 265.
+
+[^143]: «Case 1:26-cv-04427 Document 1-2 Filed 05/28/26» (Anexo B), p. 308; «La Frontera del Derecho de Autor», p. 484.
+
+[^144]: «La Frontera del Derecho de Autor», p. 484.
+
+[^145]: Ibid., p. 523.
+
+[^146]: «January 13, 2026, carta a la Hon. Loretta A. Preska sobre preservación de evidencia digital» (Demanda Chicago Tribune), p. 503.
+
+[^147]: Ibid., p. 505.
+
+[^148]: Ibid., p. 507.
+
+[^149]: Ibid., p. 506.
+
+[^150]: Ibid., p. 509.
+
+[^151]: «La Frontera del Derecho de Autor», p. 492.
+
+[^152]: TECH JACKS SOLUTIONS, «The Perplexity Docket», p. 748.
+
+[^153]: Ibid., p. 746.
+
+[^154]: ROTHWELL FIGG ERNST & MANBECK PC, «AI Practice», p. 160.
+
+[^155]: Complete Guide 2025, p. 584.
+
+[^156]: PPC Land, p. 266.
+
+[^157]: TECH JACKS SOLUTIONS, p. 150.
+
+[^158]: «La Frontera del Derecho de Autor», p. 518.
+
+[^159]: PPC Land, pp. 272-273.
+
+[^160]: Ibid., p. 273.
+
+[^161]: «La Frontera del Derecho de Autor», p. 519.
+
+[^162]: TECH JACKS SOLUTIONS, p. 151.
+
+[^163]: «La Frontera del Derecho de Autor», p. 519.
+
+[^164]: Ibid., p. 544.
+
+[^165]: Demanda Chicago Tribune, pp. 109-111.
+
+[^166]: PPC Land, p. 285.
+
+[^167]: Demanda Chicago Tribune, p. 110.
+
+[^168]: Complete Guide 2025, p. 584.
+
+[^169]: «La Frontera del Derecho de Autor», p. 490.
+
+[^170]: Ibid., p. 547.
+
+[^171]: TECH JACKS SOLUTIONS, p. 148.
+
+[^172]: AI Weekly, p. 633.
+
+[^173]: «La Frontera del Derecho de Autor», p. 546.
+
+[^174]: OSBORNE CLARKE, p. 454.
+
+[^175]: «La Frontera del Derecho de Autor», p. 552.
+
+[^176]: Ibid., p. 526.
+
+[^177]: Ibid., p. 551.
+
+[^178]: CNET, «No se pueden registrar los hechos: defensa de Perplexity», p. 639.
+
+[^179]: TECH JACKS SOLUTIONS, p. 150.

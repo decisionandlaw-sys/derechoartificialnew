@@ -1,0 +1,90 @@
+---
+title: "Thomson Reuters v. Ross Intelligence: the case that defines copyright in legal AI"
+date: "2026-02-20"
+category: "propiedad-intelectual-ia"
+tags:
+  - "Thomson Reuters v Ross Intelligence"
+  - "copyright artificial intelligence"
+  - "headnotes Westlaw"
+  - "fair use AI"
+  - "AI model training"
+  - "legaltech copyright"
+  - "AI intermediate copying"
+  - "intellectual property AI"
+  - "LegalEase"
+  - "AI training data copyright"
+pdf: "/fuentes/20-613_5.pdf"
+author: "Ricardo Scarpa"
+description: "The Delaware Court rules that training AI with Westlaw headnotes without license infringes copyright. What this ruling means for legaltech and generative AI."
+image: "propiedad-intelectual-ia"
+seoTitle: "Thomson Reuters 2026: v. Ross keys | Artificial Law"
+seoDescription: "The Delaware Court rules that training AI with Westlaw headnotes."
+keywords: ["Thomson Reuters", "Thomson Reuters V Ross Intelligence", "Copyright Artificial Intelligence"]
+seoKeyword: "Thomson Reuters"
+---
+
+## Can AI be trained with third-party legal content without paying copyright fees?
+
+The answer, at least when that content is editorially creative and the model competes with its creator, is no. That is what the Federal Court of Delaware recently established in its revised opinion of February 11, 2025, in the case *Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence Inc.* (No. 1:20-cv-613-SB).
+
+This ruling is, probably, the most relevant issued to date on copyright and artificial intelligence in the legal sector. And not only for what it decides, but for how it decides it: a judge who reviews their own 2023 error, publicly admits it, and constructs a solid reasoning with global implications.
+
+[Read complete doctrinal analysis at Firma Scarpa](/firma-scarpa/20-613_5_doctrinal)
+
+## What happened: the conflict in three lines
+
+Thomson Reuters owns Westlaw, the largest U.S. legal research platform. Ross Intelligence developed an AI-based legal search engine, direct competitor of Westlaw. To train its AI, Ross needed a database of legal Q&A. Thomson Reuters refused to license its content to Ross. Ross then hired a third party—LegalEase—that created approximately 25,000 "Bulk Memos" using Westlaw headnotes as a guide. Ross trained its AI with those memos.
+
+Thomson Reuters sued. Result: 2,243 headnotes declared infringed. Fair use defense rejected.
+
+## What are headnotes and why it matters that they are protectable
+
+A *headnote* is an editorial synthesis of the central legal point of a judicial decision. Westlaw attorney-editors read hundreds of pages of rulings and condense them into precise phrases that capture the legal rule applied. The text of judicial decisions is not protected by copyright in the U.S.—they are government works. But, are headnotes protected?
+
+Judge Bibas responds with a memorable analogy: that of the sculptor. A marble block has no copyright, but the sculpture that emerges from it, yes. The legal editor who identifies which fragment of a 200-page ruling constitutes the relevant legal point is exercising equivalent creativity: choosing what to preserve and what to delete. That choice has sufficient "creative spark" to be protectable, even though the headnote literally reproduces the text of the opinion.
+
+Practical consequence: legal editorial databases—and, by extension, any compilation requiring creative selection and synthesis—are protected against use as training data without license.
+
+## The argument Ross lost: intermediate copying
+
+Ross argued that its copy was "intermediate": the headnotes do not appear in the product the end user sees; they only served to train the model. And it cited precedents from the Supreme Court and the Ninth Circuit that allow intermediate copying of computer code when necessary to access unprotected elements of the program.
+
+The judge dismantled the argument with precision: those precedents refer to **computer code**, whose functional nature justifies special treatment. Headnotes are written text. And, moreover, copying code was *necessary* to access unprotected elements; here, Ross could have created its own training materials without touching Thomson Reuters'.
+
+The framework applied is that of *Andy Warhol Foundation v. Goldsmith* (2023): when the secondary use has the same substantial purpose as the original and is commercial, there is no transformation and fair use does not apply. Westlaw uses headnotes to facilitate legal research. Ross does too. End of debate.
+
+## What this means for you
+
+If you develop, finance, or provide legal advice to AI companies that use third-party content to train their models, this ruling affects you directly:
+
+**If you are a developer or legaltech company:** Audit your training data pipeline. If you used editorial materials from legal databases (summaries, headnotes, taxonomies, annotations) without express license, your model may be built on copyright infringement.
+
+**If you are an investor or executive:** The value of an AI startup that cannot accredit the lawfulness of its training data is structurally fragile. This ruling turns data auditing into a due diligence obligation, not an option.
+
+**If you are a lawyer or compliance officer:** The Court's analysis of the potential licensing market for AI data is binding: that market legally exists although not yet consolidated. AI compliance policies must already include verification of the rights chain of training data.
+
+**If you are in Europe:** The DSM Directive (Art. 4) and AI Act (Arts. 53 and 96) address this question from different angles, but the North American doctrine is consolidating faster. The Text and Data Mining exception has limits that this case helps clarify.
+
+## Conclusions and next steps
+
+*Thomson Reuters v. Ross Intelligence* establishes that training AI with protected editorial content, even indirectly and without that content appearing in the final output, can constitute copyright infringement if the purpose is to compete with the holder of that content.
+
+Quantification of damages, validity of some specific copyrights, and other liability issues remain pending for trial. But the doctrinal framework is set.
+
+The case that was being followed by the entire global legaltech industry now has its first substantive response. And that response is clear: training data is not nobody's land.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+**What are Westlaw headnotes and why do they have copyright?**
+
+Headnotes are editorial syntheses of key legal points in judicial decisions, prepared by Thomson Reuters attorney-editors. The court declared that, although the text of judicial decisions is not protectable, the creative selection and synthesis of that text by the editor is, as it exceeds the minimum threshold of originality required by U.S. copyright law.
+
+**Can an AI company claim fair use if the training data does not appear in the final product?**
+
+According to this ruling, not necessarily. The court rejected the "intermediate copying" argument since it involves written text (not computer code) and there is an identical competitive purpose to the original. Data invisibility in the output does not make the use transformative.
+
+**Does this ruling affect European AI companies?**
+
+Directly, no: it is U.S. law. But it establishes a relevant doctrinal precedent for interpreting the Text and Data Mining exception of the DSM Directive and the AI Act's training data transparency obligations, especially when use competes with content holders.

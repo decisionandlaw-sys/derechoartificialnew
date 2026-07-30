@@ -1,0 +1,118 @@
+---
+title: "La UE exige doble marcado a todo el contenido generado por IA"
+description: "Guía completa del Código de Buenas Prácticas sobre Transparencia de IA: marcado, detección y etiquetado de deepfakes bajo el artículo 50 del Reglamento de IA."
+date: "2026-06-19"
+tags: ["AI Act", "Código de Buenas Prácticas", "transparencia IA", "deepfakes", "artículo 50"]
+section: "guias-ia"
+category: "guia-practica"
+author: "Ricardo Scarpa"
+slug: "codigo-buenas-practicas-transparencia-ia-deepfakes"
+readingTime: "13 min"
+pdf: "/fuentes/codigo-buenas-practicas-transparencia-ia-generada-ue.pdf"
+---
+
+A partir de ahora, ninguna empresa que despliegue inteligencia artificial generativa en la Unión Europea puede conformarse con incrustar un metadato suelto y dar el cumplimiento por cerrado.
+
+El *Code of Practice on Transparency of AI-Generated Content*, coordinado por la Oficina Europea de IA bajo la dirección de Kalina Bontcheva y Anja Bechmann, traduce el artículo 50 del Reglamento de IA en obligaciones técnicas concretas, verificables por las autoridades de vigilancia de mercado de cada Estado miembro.
+
+Y lo hace con un nivel de detalle que pocas normas europeas alcanzan: capas de marcado obligatorias, una fecha límite fijada al día para la interoperabilidad, e incluso el diseño exacto del icono que deberá acompañar a cada deepfake.
+
+El documento se divide en dos secciones con destinatarios distintos —proveedores de sistemas de IA generativa por un lado, desplegadores de deepfakes y texto automatizado por otro— y conviene entender ambas, porque rara vez una organización encaja en un solo papel.
+
+## Doble capa o nada: la obligación de marcado para los proveedores
+
+La Sección 1 del Código desarrolla el artículo 50(2) y (5), dirigido a quienes ponen en el mercado sistemas capaces de generar audio, imagen, vídeo o texto sintético. La premisa de partida es incómoda para la industria: ninguna técnica de marcado aislada logra hoy, según el estado del arte, satisfacer simultáneamente los cuatro requisitos legales de efectividad, interoperabilidad, robustez y fiabilidad.
+
+De ahí que el Código imponga, como regla general, un enfoque de **marcado multinivel**: al menos dos capas de marcado legible por máquina en el contenido generado.
+
+La primera capa son metadatos firmados digitalmente y con sello de tiempo, que registran si el contenido es generado o manipulado por IA. La firma debe ser segura y resistente a manipulaciones, y los proveedores tienen que proteger la confidencialidad de las claves privadas asociadas, salvo en escenarios de despliegue local donde esa gestión segura no sea viable.
+
+La segunda capa es una marca de agua imperceptible, integrada en la propia estructura del contenido —no como metadato auxiliar— y pensada para sobrevivir a su difusión online. El Código distingue dos estrategias posibles: aplicar la marca de agua después de generar el contenido (*post-hoc watermarking*) o integrarla durante la propia inferencia del modelo (*model watermarking*), y anima a los proveedores de modelos fundacionales a optar por esta segunda vía para facilitar el cumplimiento de quienes construyen sistemas sobre ellos.
+
+Existen dos excepciones a la doble capa, ambas reveladoras de hasta qué punto el Código intenta ser proporcionado. La primera afecta a sistemas embebidos en productos físicos que generan contenido en un entorno técnicamente cerrado y de naturaleza instructiva, siempre que existan medidas que impidan que ese contenido salga del entorno del producto: ahí basta una sola capa.
+
+La segunda es más relevante en la práctica: el texto libre no puede transportar metadatos, así que para contenido textual de más de 200 tokens basta con la marca de agua algorítmica —el propio Código admite que su fiabilidad es inferior a la de otros formatos, motivo por el que permite restringir el acceso a las herramientas de detección de texto a usuarios expertos verificados mientras la tecnología madura—.
+
+El texto muy breve (menos de 200 tokens) queda directamente exento, porque ni siquiera el estado del arte permite marcarlo con un mínimo de fiabilidad.
+
+Como complemento opcional, el Código contempla técnicas de *fingerprinting* o *logging* —indexación perceptual del contenido o registro literal, respectivamente— que por sí solas no bastan para cumplir los requisitos de calidad, pero pueden reducir el coste de la detección. Si se implementan, deben limitarse a los datos de salida, aplicarse de forma segura y respetuosa con la protección de datos, y los desplegadores deben tener control sobre qué se registra y durante cuánto tiempo.
+
+La obligación no termina en marcar: el Código exige también **no eliminar** las marcas existentes. Los firmantes deben hacer sus mejores esfuerzos por preservar metadatos preexistentes cuando un contenido ya marcado se use como entrada de su sistema, salvo en procesamientos legítimos como auditorías de seguridad.
+
+Y, de forma más tajante, ningún firmante puede comercializar, promover o anunciar herramientas cuyo propósito sea precisamente eludir o eliminar esas marcas. Quien opere una plataforma online o un buscador es además animado —aunque no obligado— a preservar los metadatos de transparencia cuando el contenido circule por su servicio.
+
+De forma opcional, el Código también invita a enriquecer los metadatos con información de procedencia: nombre del sistema, proveedor, marca temporal e identificador del modelo, sin incluir datos sensibles o confidenciales.
+
+## Detectar lo marcado: el segundo pilar de la transparencia
+
+Marcar sin que nadie pueda comprobar la marca sería un ejercicio vacío, y por eso el Compromiso 2 obliga a poner a disposición una solución de detección —software, servicio en la nube o especificación pública— para cada técnica de marcado implementada.
+
+La regla de acceso es estricta: la detección debe ser **gratuita**, sin restricción de volumen, para autoridades de vigilancia de mercado, reguladores, fuerzas de seguridad, medios de comunicación, verificadores de hechos, *trusted flaggers*, investigadores independientes e instituciones educativas.
+
+Solo los proveedores con menos de un millón de usuarios mensuales, cuando el servicio de detección tenga un coste operativo elevado, pueden cobrar una tarifa razonable a usuarios individuales que excedan un volumen razonable de peticiones.
+
+Aquí se cuela una de las preguntas que el propio Código no resuelve del todo: ¿qué ocurre con los proveedores que sí superan ese millón de usuarios pero tienen una infraestructura de detección costosa de mantener gratuitamente a escala? La norma no contempla excepción para ellos, lo que sugiere que el coste de la transparencia se ha trasladado, de forma deliberada, hacia el lado de la oferta y no hacia quien necesita verificar el origen de un contenido.
+
+En materia de protección de datos, el Código es exhaustivo: el contenido que se envía para su detección debe tratarse como sensible, almacenarse solo durante el tiempo estrictamente necesario y eliminarse de inmediato tras la verificación —una política de retención cero, salvo registros mínimos de tráfico por motivos de seguridad—. Los firmantes no pueden conservar copias literales del contenido analizado ni usarlo para fines distintos de la propia detección.
+
+El Código también regula qué ocurre cuando un proveedor decide **retirar** una solución de detección: solo puede hacerlo si la sustituye por otra de capacidades iguales o superiores y compatible con el contenido marcado previamente. Si cesa su actividad sin sustituto, deberá entregar la solución a las autoridades de vigilancia de mercado para que puedan seguir detectando contenido marcado de forma legacy.
+
+Respecto a la **detección forense** —la que no depende de una marca previa, sino de patrones intrínsecos del contenido sintético—, el propio Código reconoce que, a fecha de su publicación, esta técnica no es lo bastante madura para cumplir los requisitos de calidad exigidos, por lo que se mantiene como medida opcional y con acceso restringido a usuarios expertos.
+
+Finalmente, los resultados de la detección deben presentarse de forma clara y comprensible, indicando si se basan en metadatos, en marca de agua, en detección forense o en otra técnica, y deben ser accesibles para personas con discapacidad conforme a la Directiva de Accesibilidad Web y la Ley Europea de Accesibilidad.
+
+## Cuatro requisitos de calidad y una fecha límite: el 2 de febrero de 2027
+
+El Compromiso 3 fija el listón técnico que deben superar, de forma conjunta, las soluciones de marcado y detección: **efectividad** (que las personas entiendan el resultado de la detección, sin métrica cuantitativa fija, sujeta a estudios de usuario), **fiabilidad** (tasas de error bajas, medidas con contenido de distinta longitud, tamaño y diversidad, sin haber sido usado en el entrenamiento del propio sistema), **robustez** (resistencia tanto a alteraciones comunes —compresión, recorte, cambio de formato— como a ataques deliberados de eliminación o manipulación de la marca, incluyendo la supervivencia al llamado "agujero analógico": imprimir y escanear, grabar una pantalla, reproducir y regrabar un audio) e **interoperabilidad**.
+
+Este último requisito es el que el Código trata con más cautela, porque a fecha de publicación no existen estándares consolidados —salvo para metadatos firmados—. Por eso establece una implementación **por fases**: en una primera etapa, los firmantes deben adoptar estándares ya establecidos para metadatos y publicar información sobre cómo integrar la detección de sus otras técnicas de marcado.
+
+Pero el dato que de verdad marca el calendario de cumplimiento es este: los firmantes tienen hasta el **2 de febrero de 2027** para implementar una solución de interoperabilidad para sus mecanismos de detección de marca de agua, eligiendo entre un método de acceso estándar de la industria, un *signpost* legible públicamente que indique qué solución de detección usar, una solución compartida por un consorcio abierto a otros firmantes —incluidas pymes—, o cualquier otra alternativa de eficacia comparable.
+
+El Código no olvida a las empresas pequeñas: reconoce expresamente la necesidad de vías de cumplimiento simplificadas y proporcionadas para pymes y *small mid-cap enterprises*, tanto en los requisitos de interoperabilidad como en los procesos de cumplimiento, pruebas y formación recogidos en el Compromiso 4. Antes de poner en el mercado su sistema —y de forma periódica después— cada firmante debe testar sus soluciones en condiciones representativas del uso real, documentarlo y cooperar con las autoridades de vigilancia de mercado cuando estas lo soliciten de forma motivada.
+
+## El icono oficial de la UE: cómo debe verse y dónde debe colocarse cada deepfake
+
+La Sección 2 cambia de destinatario: aquí hablamos de **desplegadores**, no de proveedores, y de dos obligaciones distintas reguladas en el artículo 50(4): etiquetar los deepfakes (imagen, audio o vídeo manipulado que parecería auténtico a una persona) y etiquetar el texto generado o manipulado por IA que se publique para informar al público sobre asuntos de interés general sin revisión humana ni control editorial.
+
+La pieza más visible del Código —y probablemente la más citada en redacciones y departamentos de comunicación— es el **icono oficial de la UE**, desarrollado por la Oficina de IA tras estudios empíricos de usuario en varios Estados miembros.
+
+Existen dos variantes principales: "AI GENERATED" para contenido íntegramente sintético y "AI MODIFIED" para contenido original alterado por IA, además de un icono básico neutro pensado para combinarse con una capa interactiva de información adicional.
+
+Los test de usuario mostraron que las variantes con texto explícito —frente a un simple símbolo— obtienen mejores resultados de reconocimiento y reducen la ambigüedad, motivo por el que el Código optó por esa fórmula textual en lugar de un pictograma abstracto. Estos iconos son de uso libre, sin necesidad de atribución a la Comisión ni a la Oficina de IA.
+
+Donde el Código se vuelve verdaderamente operativo es en las especificaciones de **colocación**, que varían según el formato. Para imagen o vídeo, el icono debe situarse en un lugar sin elementos superpuestos —el ejemplo que ofrece el propio texto es la esquina superior derecha—, mostrarse al inicio del contenido y repetirse a intervalos regulares, como mínimo tras cada interrupción publicitaria, para cubrir tanto el contenido en directo como los fragmentos recortados que circulan después por redes sociales.
+
+Para audio sin pantalla disponible, la obligación se traduce en un aviso audible breve, en lenguaje sencillo, al comienzo del contenido, reforzado con recordatorios periódicos en piezas largas o en directo.
+
+Para texto publicado, el icono debe colocarse cerca del titular o al inicio del cuerpo del texto; si se trata de fragmentos muy breves donde etiquetar degradaría la legibilidad, el Código permite sustituir el icono visible por un aviso contextual en la interfaz, pero no exime de la obligación de informar.
+
+Las exigencias de accesibilidad atraviesan todo el Compromiso 1: descripciones de audio para elementos visuales, señales táctiles o hápticas para contenido exclusivamente sonoro, alto contraste y compatibilidad con lectores de pantalla, y detectabilidad del icono por tecnologías de asistencia. El Código remite expresamente a la norma armonizada ETSI EN 301 549 y a las pautas WCAG 2.1 nivel AA como referencias de buena práctica.
+
+## Las excepciones: obra artística y control editorial
+
+El Código reconoce dos excepciones que, en la práctica, condicionan buena parte de su aplicación real. La primera —Compromiso 3 de la Sección 2— afecta a deepfakes que formen parte de una obra evidentemente artística, creativa, satírica, ficticia o análoga: ahí la divulgación no puede entorpecer el disfrute de la obra, y el icono puede colocarse de forma contextual —adyacente al fotograma, en los créditos, en el folleto de una exposición o en el envoltorio de un soporte físico— en lugar de incrustado directamente en el contenido.
+
+La segunda excepción —Compromiso 4— es la del **control editorial humano** para texto publicado. Los proveedores de servicios de comunicación sujetos ya a estándares editoriales y a marcos de regulación, corregulación o autorregulación pueden acogerse a la excepción del artículo 50(4) aplicando sus propios procedimientos de revisión, sin necesidad de adoptar el icono.
+
+El resto de firmantes —los que no cuentan con esos procedimientos— deben establecer una política interna que identifique a la persona física o jurídica con responsabilidad editorial, con nombre, cargo y contacto público, y que describa los recursos organizativos dedicados a garantizar esa revisión, sin necesidad de documentar cada publicación individual.
+
+El Código subraya, además, que nada de esto puede afectar a la libertad de prensa, la independencia editorial ni el secreto de las fuentes periodísticas.
+
+## Procesos internos y el papel de la sociedad civil
+
+Más allá del icono y de las especificaciones técnicas, el Compromiso 2 de la Sección 2 exige procesos internos proporcionados al tamaño de cada organización: documentación sobre cómo se implementan las divulgaciones, formación del personal implicado, y canales para que terceros —verificadores de hechos, investigadores, sociedad civil— puedan señalar etiquetados ausentes o incorrectos, con la obligación de revisar y corregir esos casos sin demora injustificada.
+
+El Código también crea un grupo de trabajo (*task force*) abierto a firmantes y a actores externos —investigadores, sociedad civil, autoridades nacionales— para seguir desarrollando el icono, incluida una futura versión exclusivamente sonora y una capa interactiva de información adicional sobre qué se ha modificado en cada pieza.
+
+> El *Code of Practice on Transparency of AI-Generated Content* es, a día de hoy, el documento más detallado disponible para entender qué espera de forma concreta el artículo 50 del Reglamento de IA, tanto si tu organización desarrolla sistemas generativos como si los despliega para producir contenido destinado al público. Puedes descargar el texto íntegro, con el glosario completo de términos técnicos y el anexo gráfico del icono oficial, en formato PDF a través de este enlace: [Código de Buenas Prácticas sobre Transparencia de Contenido Generado por IA (PDF)](/fuentes/codigo-buenas-practicas-transparencia-ia-generada-ue.pdf).
+
+## Conclusiones
+
+- **Doble capa como regla general**: los proveedores de IA generativa deben combinar metadatos firmados digitalmente con marca de agua imperceptible, salvo en sistemas físicos cerrados y en texto libre, donde basta una sola capa.
+- **Detección gratuita con excepciones limitadas**: el acceso a la detección debe ser libre y sin límite de volumen para autoridades, medios, investigadores y sociedad civil; solo proveedores pequeños con costes elevados pueden cobrar por uso excesivo.
+- **Fecha límite real**: el 2 de febrero de 2027 es el plazo para implementar una solución de interoperabilidad entre mecanismos de detección de marca de agua.
+- **El icono "AI GENERATED" / "AI MODIFIED"** es de uso libre y sus especificaciones de diseño y colocación —posición, duración, repetición tras interrupciones— son obligatorias para deepfakes y texto publicado sin control editorial.
+- **Dos vías de escape reales**: las obras artísticas, satíricas o ficticias y los medios con control editorial consolidado tienen regímenes de cumplimiento distintos y más flexibles que el resto de desplegadores.
+- **Proporcionalidad para pymes**: tanto en marcado como en interoperabilidad y procesos de cumplimiento, el Código prevé vías simplificadas para empresas pequeñas y de capitalización media.
+- **Adherencia voluntaria, vigilancia real**: el Código no es la única forma de demostrar cumplimiento del artículo 50, pero sí la que las autoridades de vigilancia de mercado usarán como referencia para evaluar a quienes se acojan a él.

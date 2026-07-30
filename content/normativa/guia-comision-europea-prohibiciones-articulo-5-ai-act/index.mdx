@@ -1,0 +1,72 @@
+---
+title: "Guía de la Comisión Europea sobre las prohibiciones del artículo 5 del AI Act: reconocimiento biométrico en tiempo real y scraping facial"
+description: "El informe oficial analiza los sistemas RBI en tiempo real, sus tres excepciones y la prohibición de scraping facial. Todo lo que necesitas saber antes de que se aplique."
+date: "2026-05-25"
+tags: ["AI Act", "reconocimiento biométrico", "artículo 5", "scraping facial", "prohibiciones IA"]
+section: "normativa"
+category: "normativa"
+author: "Redacción"
+slug: "guia-comision-europea-prohibiciones-articulo-5-ai-act"
+readingTime: "5 min"
+pdf: "/fuentes/1779609261558.pdf"
+---
+
+La prohibición de los sistemas de identificación biométrica remota (*Remote Biometric Identification*, RBI) en tiempo real está aplicando desde el 2 de febrero de 2025. No es una fecha lejana ni una norma en tramitación: es Derecho vigente.
+
+Y sin embargo, la mayor parte de los responsables de cumplimiento en Europa todavía no tienen claro dónde empieza la prohibición, dónde terminan las excepciones y qué documentación concreta exige el AI Act antes de poder activar una cámara con reconocimiento facial.
+
+Este informe de la Comisión Europea, elaborado por Catherine Jasserand, viene a llenar ese vacío.
+
+## Una prohibición con tres puertas de salida —y muy pocas llaves
+
+El artículo 5(1)(h) del AI Act prohíbe el uso de sistemas RBI en tiempo real en espacios públicamente accesibles con fines de aplicación de la ley. Dicho así suena categórico. Y lo es, salvo en tres situaciones tasadas que los Estados miembros pueden —si quieren, no están obligados— autorizar en su legislación nacional.
+
+Las tres excepciones cubren: la búsqueda dirigida de víctimas de secuestro, trata de personas o explotación sexual, así como personas desaparecidas; la prevención de amenazas inminentes a la vida o ataques terroristas genuinos y presentes; y la localización e identificación de sospechosos de los delitos graves listados en el Anexo II del AI Act.
+
+Lo que resulta llamativo es la arquitectura de la norma: el AI Act no crea por sí mismo la base jurídica para usar estas tecnologías. Solo define el marco dentro del cual los Estados pueden habilitarlas. Sin ley nacional expresa, ninguna de las tres excepciones opera. En ausencia de esa legislación doméstica, la prohibición es absoluta.
+
+## El scraping facial: la lección Clearview AI codificada en norma
+
+El artículo 5(1)(e) prohíbe los sistemas de IA que construyen o amplían bases de datos de reconocimiento facial mediante scraping indiscriminado de imágenes de Internet o cámaras de videovigilancia. La referencia implícita —explicitada en el informe— es Clearview AI, la empresa que recopiló más de 20.000 millones de fotografías de redes sociales sin base legal y las vendió a cuerpos policiales de todo el mundo.
+
+Varias autoridades de protección de datos europeas ya sancionaron a Clearview por vulnerar el RGPD. El AI Act va un paso más allá: prohíbe la herramienta en sí, no solo su uso ilícito. Lo que se prohíbe no es la base de datos resultante —que queda sujeta a las reglas de protección de datos— sino el sistema de IA utilizado para construirla de forma indiscriminada. Una distinción técnica con consecuencias prácticas muy relevantes.
+
+Ahora bien, el scraping *dirigido* no queda cubierto por la prohibición. Si la recogida de imágenes está vinculada a un tipo concreto de víctimas o sospechosos relacionados con un delito grave —el informe pone el ejemplo de imágenes que traficantes publican en canales de Telegram— la norma no se aplica. La línea entre scraping indiscriminado y scraping dirigido es, sin embargo, tenue, y el informe lo reconoce con honestidad.
+
+## La Evaluación de Impacto sobre Derechos Fundamentales: el documento que lo decide todo
+
+Para las excepciones autorizadas al uso de RBI en tiempo real, el AI Act exige una *Fundamental Rights Impact Assessment* (FRIA) antes de cada despliegue. No es un formulario de marcación de casillas.
+
+El informe lo deja claro: debe describir el sistema técnico, la base de datos de referencia, los derechos fundamentales afectados —tanto del individuo objetivo como de los transeúntes que quedan en el encuadre—, la evaluación de necesidad estricta, y los protocolos de supervisión humana.
+
+Dicho esto, hay un detalle procesal que merece atención: el artículo 5 del AI Act es aplicable desde el 2 de febrero de 2025, pero el artículo 27 —que detalla los requisitos de la FRIA— no será exigible hasta 24 meses después de la entrada en vigor. La Comisión también publicará una plantilla oficial de FRIA en una fase posterior.
+
+El informe proporciona ejemplos metodológicos intermedios —el proyecto ALIGNER y el modelo neerlandés— para que los desplegadores no lleguen a esa fecha sin referencias.
+
+## Lo que el informe no resuelve —y eso también es información
+
+Hay preguntas que el estudio abre sin cerrar del todo. ¿Qué significa exactamente "amenaza genuina y presente" de ataque terrorista? ¿A qué nivel de alerta nacional debe encontrarse un Estado para que esa excepción sea invocable?
+
+El informe recurre a la jurisprudencia del TJUE —en particular a los casos *La Quadrature du Net* y *Commissioner of An Garda Síochána*— para fijar el umbral: la amenaza debe ser real, concreta y no confundirse con el riesgo general y permanente de criminalidad. Pero la apreciación concreta corresponde a los tribunales nacionales.
+
+También queda abierta la cuestión de las cámaras "listas para biometría" (*biometric-ready*): sistemas de videovigilancia con capacidad de reconocimiento facial que permanece inactiva hasta que el operador la activa. El informe sugiere que su mero despliegue con esa funcionalidad disponible podría ya constituir "uso" en el sentido del AI Act.
+
+No es una respuesta definitiva, pero es una señal de alerta para los responsables de seguridad que confían en que "apagado significa permitido".
+
+## Lo que encontrarás en el documento completo
+
+El informe incluye doce escenarios prácticos detallados: desde la búsqueda de un niño secuestrado en la frontera neerlandesa hasta el despliegue de vigilancia algorítmica en los Juegos Olímpicos, pasando por el uso de reconocimiento facial para identificar a un manifestante que olvidó notificar su protesta.
+
+Cada escenario aplica los criterios del AI Act paso a paso, identifica qué excepción podría aplicarse y señala en qué punto la medida cruzaría la línea hacia la prohibición.
+
+También encontrarás el análisis completo del régimen de las autoridades competentes y las multas —hasta 35 millones de euros o el 7% de la facturación mundial para infracciones del artículo 5—, las particularidades de Irlanda y Dinamarca, y las recomendaciones específicas para desplegadores y legisladores nacionales.
+
+> **Descarga el informe completo** — *Guidance Study on Article 5(1)(h) prohibition and its three exceptions, the procedural requirements laid down in Article 5(2), and the prohibition of Article 5(1)(e) of the AI Act*, Comisión Europea, 2026. El documento analiza en detalle las dos prohibiciones, los doce escenarios de aplicación y las condiciones que deben cumplir los Estados miembros para habilitar el uso de reconocimiento biométrico en tiempo real.
+
+## Cinco conclusiones para no olvidar
+
+- El AI Act no prohíbe el reconocimiento biométrico en tiempo real en términos absolutos, pero la habilitación nacional es un requisito previo: sin ley expresa, no hay excepción posible.
+- La prohibición del artículo 5(1)(e) ataca la herramienta de scraping, no la base de datos resultante; ambas capas —AI Act y RGPD— aplican de forma acumulativa.
+- El requisito de FRIA previa al despliegue es operativo desde febrero de 2025, aunque la plantilla oficial de la Comisión llegará después.
+- Las cámaras con funcionalidad biométrica latente plantean un riesgo regulatorio real que el mercado todavía no ha asimilado.
+- La supervisión humana no es opcional ni simbólica: ninguna decisión con efectos adversos sobre una persona puede basarse *exclusivamente* en el output del sistema RBI.

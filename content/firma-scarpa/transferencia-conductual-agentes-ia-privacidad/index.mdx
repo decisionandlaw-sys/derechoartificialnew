@@ -1,0 +1,208 @@
+---
+title: "Agentes IA como extensiones conductuales: transferencia y privacidad"
+description: "Una investigación con 10.659 pares humano-agente demuestra que los agentes IA reproducen sistemáticamente los patrones conductuales de sus propietarios, con consecuencias jurídicas directas sobre privacidad y gobernanza."
+date: "2026-04-25"
+tags: ["agentes IA", "transferencia conductual", "privacidad", "RGPD", "AI Act", "gobernanza algorítmica"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "transferencia-conductual-agentes-ia-privacidad"
+readingTime: "18 min"
+---
+
+El 34,6% de los agentes de inteligencia artificial desplegados en plataformas sociales ha divulgado información personal sensible de sus propietarios sin que estos lo hubieran instruido. No se trata de un fallo técnico aislado ni de una vulnerabilidad explotada por un adversario externo. Ocurre, simplemente, durante el uso ordinario del sistema.
+
+Esta es la conclusión central de una investigación empírica reciente que, por su rigor metodológico y por la naturaleza del fenómeno que documenta, merece una lectura jurídica detenida.
+
+El estudio —"Behavioral Transfer in AI Agents: Evidence and Privacy Implications", publicado como preprint en abril de 2026 por investigadores de Washington University in St. Louis y UCLA— analiza 10.659 pares humano-agente en Moltbook, una plataforma social donde agentes autónomos construidos con el framework OpenClaw interactúan entre sí sin intervención humana directa.
+
+Cada agente está vinculado públicamente a la cuenta Twitter/X de su propietario, lo que permite comparar sistemáticamente el perfil conductual de ambos a través de 43 variables que abarcan temas, valores, afecto y estilo lingüístico. Los resultados son inequívocos: los agentes no generan contenido genérico derivado del modelo de lenguaje subyacente.
+
+Reproducen, con significación estadística robusta, los patrones conductuales específicos de los humanos que los despliegan. Y esa reproducción —esa *transferencia conductual*— predice de forma independiente la probabilidad de que el agente divulgue información privada del propietario en el discurso público.
+
+El presente análisis examina este fenómeno desde sus implicaciones jurídicas: qué marcos normativos actualmente vigentes son capaces de capturarlo, dónde están los vacíos, y qué exige de plataformas, desarrolladores y legisladores.
+
+---
+
+## Lo que el estudio demuestra y lo que eso cambia
+
+Conviene partir de la descripción precisa del mecanismo antes de construir cualquier análisis normativo sobre él. Los autores identifican cuatro canales posibles de transferencia conductual: configuración explícita mediante bio pública, archivos de configuración del espacio de trabajo local, inyección mediada por la plataforma, e interacción acumulada propietario-agente.
+
+Los tres primeros son descartados como explicación suficiente: la transferencia persiste con igual magnitud entre agentes sin bio configurada (el 89,2% de las 37 variables significativas se mantienen en la submuestra sin bio), la coherencia entre dimensiones distintas —estilo y afecto, valores y sentimiento— es incompatible con una configuración por dimensiones aisladas, y la plataforma no solicita ni revela permisos de lectura de tweets en su política de privacidad.
+
+La hipótesis que queda en pie, y que los autores califican como la más consistente con el conjunto de evidencias, es la de la interacción acumulada: a través del uso cotidiano del agente —las consultas que el propietario formula, las instrucciones que da, los documentos que comparte, las tareas que delega—, el agente incorpora contexto específico del propietario que acaba manifestándose en sus outputs públicos.
+
+Dicho de otro modo: el agente aprende a parecerse a su propietario aunque nadie haya programado esa semejanza de forma deliberada.
+
+Lo que esto cambia, desde el punto de vista jurídico, no es menor. La narrativa habitual sobre riesgos de privacidad en sistemas de IA gira en torno a tres ejes: la extracción de datos de entrenamiento mediante *adversarial probing*, la inferencia de atributos sensibles a partir de señales lingüísticas, y la compartición o monetización de datos entre plataformas.
+
+En todos esos casos hay un actor externo que actúa sobre el sistema para obtener información que no le fue entregada voluntariamente. El mecanismo documentado aquí no requiere ningún actor externo.
+
+Funciona a través del uso ordinario, sin adversario identificable, sin incidente de seguridad, sin violación técnica de ninguna medida de protección. El riesgo de privacidad emerge como subproducto del propio funcionamiento normal del sistema agentico.
+
+Esto plantea una cuestión dogmática de primer orden: ¿captura el RGPD este tipo de riesgo?
+
+---
+
+## El RGPD ante la transferencia conductual emergente
+
+El Reglamento General de Protección de Datos (RGPD, Reglamento UE 2016/679) está construido sobre la premisa de que el tratamiento de datos personales es un acto identificable, atribuible a un responsable, y susceptible de encuadrarse en una base jurídica.
+
+El artículo 4.2 RGPD define el tratamiento como "cualquier operación o conjunto de operaciones realizadas sobre datos personales", lo que presupone que alguien —el responsable o el encargado— realiza esa operación de forma reconocible.
+
+El problema que presenta la transferencia conductual emergente es que no hay una operación identificable de tratamiento en el momento en que el agente divulga información del propietario. El agente genera texto. Ese texto contiene, como consecuencia de la acumulación de contexto durante el uso ordinario, referencias a condiciones médicas, situaciones financieras, rutinas diarias o vínculos relacionales del propietario.
+
+Pero ninguna instrucción concreta ordenó esa divulgación. No hay un registro de tratamiento que la documente. No hubo una base jurídica evaluada antes de producirla.
+
+El artículo 5 RGPD establece los principios de limitación de finalidad, minimización de datos y confidencialidad. El principio de limitación de finalidad exige que los datos se traten para fines determinados, explícitos y legítimos. El principio de minimización exige que los datos sean adecuados, pertinentes y limitados a lo necesario para esos fines.
+
+Ambos presuponen que existe una finalidad declarada y que el tratamiento es gestionable en relación con ella. La transferencia conductual emergente subvierte esta arquitectura: el propietario que instala un agente para gestionar su correo, organizar su calendario o participar en redes sociales no está declarando ninguna finalidad relacionada con la divulgación de su historial médico o su situación financiera. Sin embargo, esa divulgación ocurre.
+
+Aquí es donde el análisis se complica. La investigación empírica documenta que el 1% de los agentes divulgó información de salud altamente sensible (condiciones médicas, diagnósticos, historial de tratamientos), el 4% divulgó información financiera detallada (deudas, embargos, dificultades económicas), el 12,1% reveló datos de localización específica, y el 27,3% divulgó información ocupacional identificable.
+
+En todos estos casos, la información no figuraba en la bio pública del agente —el único elemento de configuración visible—, lo que descarta la posibilidad de que el propietario la hubiera hecho deliberadamente pública.
+
+La respuesta que el RGPD ofrece hoy ante este escenario es parcial. El artículo 25 (protección de datos desde el diseño y por defecto) exige que los responsables del tratamiento implementen medidas técnicas y organizativas apropiadas para garantizar que, por defecto, solo sean objeto de tratamiento los datos necesarios para cada finalidad.
+
+Si el responsable es el desarrollador del framework o el operador de la plataforma —lo cual es en sí mismo una cuestión de atribución no resuelta—, este artículo ofrece un punto de anclaje.
+
+Pero su aplicación práctica al caso es difícil: ¿qué medida técnica *ex ante* hubiera impedido que un agente desarrollara, a través de la interacción ordinaria, una representación implícita del contexto del propietario suficientemente rica como para manifestarse en outputs públicos?
+
+El artículo 22 RGPD, relativo a decisiones automatizadas y elaboración de perfiles, tampoco encaja cómodamente. La transferencia conductual no produce una decisión que afecte jurídicamente al propietario; produce una divulgación que puede afectarle fácticamente, pero que no es una "decisión" en el sentido del artículo 22. La diferencia es relevante y el RGPD no la ha resuelto.
+
+Dicho esto, conviene no concluir precipitadamente que el RGPD es inútil aquí. Los artículos 5.1.f (integridad y confidencialidad), 32 (seguridad del tratamiento) y 35 (evaluación de impacto para tratamientos de alto riesgo) pueden desplegarse si el sistema agentico es calificado como un proceso de tratamiento que presenta riesgos elevados para los derechos y libertades de los interesados.
+
+La clave está en la evaluación de impacto: si un sistema agentico que accede al entorno informático personal del propietario, acumula contexto a través de la interacción y opera de forma autónoma en plataformas públicas no activa la obligación de realizar una DPIA, habría que preguntarse para qué sirve el artículo 35.
+
+---
+
+## El AI Act y la gobernanza de sistemas agenticos
+
+El Reglamento de Inteligencia Artificial (Reglamento UE 2024/1689, RIA), publicado en agosto de 2024 y en proceso de aplicación progresiva, introduce una arquitectura de gobernanza basada en riesgo que, en principio, debería ser capaz de capturar los riesgos que aquí se documentan. La cuestión es si lo hace de forma suficiente.
+
+Los sistemas agenticos como OpenClaw operan en el espacio que el RIA denomina "sistemas de propósito general" (*GPAI systems*). El artículo 51 RIA define los modelos de IA de propósito general como aquellos entrenados con grandes cantidades de datos mediante autosupervisión a escala que presentan una generalidad significativa y son capaces de realizar una amplia gama de tareas distintas.
+
+Los modelos de lenguaje que subyacen a los agentes estudiados en la investigación encajan en esta categoría. Sus proveedores —OpenAI, Anthropic u otros— están sujetos a las obligaciones del Título VIII RIA: transparencia, documentación técnica, política de uso aceptable y, para modelos de riesgo sistémico, obligaciones adicionales de evaluación de capacidades peligrosas.
+
+El problema es que el RIA regula el *modelo* subyacente, no el *sistema agentico* que se construye sobre él. OpenClaw es un framework que utiliza APIs de esos modelos para construir agentes con memoria persistente, acceso a herramientas locales y capacidad de actuación autónoma.
+
+La pregunta relevante no es si GPT-4 o Claude cumple el RIA, sino si un sistema construido con esas APIs que acumula contexto personal del usuario, actúa de forma autónoma y divulga información sensible en plataformas públicas es, él mismo, un sistema de IA de alto riesgo o presenta riesgos que el marco vigente no clasifica correctamente.
+
+El Anexo III RIA enumera los sistemas de alto riesgo. La categoría más próxima es la relativa a sistemas de biometría —lectura de atributos sensibles a partir de comportamiento observable—, pero la transferencia conductual documentada no es exactamente biometría en el sentido técnico del término.
+
+También podrían ser relevantes las categorías relativas a gestión de infraestructuras críticas o acceso a servicios privados, pero ninguna encaja con precisión en el supuesto de un agente personal que opera en redes sociales.
+
+Lo que resulta llamativo es que el RIA, tal como está hoy redactado, no contempla expresamente los sistemas agenticos de uso personal como categoría autónoma. El artículo 3.1 RIA define el "sistema de IA" de forma amplia, lo que en principio cubre a los agentes construidos con OpenClaw.
+
+Pero la clasificación de riesgo no fue diseñada pensando en sistemas que se personalizan mediante la interacción cotidiana y que operan en el entorno personal de sus propietarios, accediendo a archivos locales, correos, calendarios y documentos antes de actuar autónomamente en plataformas públicas. Este es un vacío normativo de primera magnitud.
+
+La Comisión Europea ha reconocido que los sistemas agenticos plantean desafíos regulatorios específicos. Las guías para la gobernanza de sistemas agenticos publicadas por distintas instituciones —incluido el informe de OpenAI de 2024 y el trabajo de Schluntz y Zhang del mismo año— apuntan a la necesidad de marcos de supervisión específicos. Pero a la fecha de este análisis, el RIA no los ha incorporado de forma articulada.
+
+---
+
+## Responsabilidad civil y la nueva anatomía del daño
+
+Más allá de la protección de datos y la gobernanza de la IA, la transferencia conductual plantea preguntas difíciles en el terreno de la responsabilidad civil. La Directiva de Responsabilidad por IA (propuesta de Directiva DRA, COM(2022) 496 final, todavía en proceso legislativo) y la Directiva de Responsabilidad por Productos Defectuosos revisada (Directiva 2024/2853/UE) construyen regímenes complementarios cuya articulación con el escenario empírico documentado merece análisis.
+
+El punto de partida es la identificación del daño. La investigación documenta que los agentes divulgan información de salud, financiera, de localización y relacional que los propietarios no habían decidido hacer pública.
+
+Esta divulgación ocurre en plataformas con audiencias potencialmente amplias —en el estudio, Moltbook tenía 1,6 millones de agentes registrados en su primera semana— y en texto que el propietario no escribió, no revisó y en muchos casos ni siquiera sabe que existe.
+
+El daño es la exposición no consentida de información sensible, con todas las consecuencias que ello puede acarrear: discriminación laboral, estigmatización, extorsión, daño reputacional.
+
+La Directiva DRA propone una presunción de causalidad que facilita al demandante establecer el nexo causal entre el defecto del sistema de IA y el daño producido, cuando exista una probabilidad suficiente de que el sistema haya contribuido al daño. En el escenario de la transferencia conductual, acreditar esa probabilidad no sería difícil si la investigación empírica que aquí se comenta —o trabajos posteriores de estructura similar— se convierte en estándar científico de referencia: una vez establecido que los sistemas agenticos de este tipo divulgan información sensible en el 34,6% de los casos y que la probabilidad de divulgación crece con el nivel de transferencia conductual, un perito podría sostener con base razonable que el sistema contribuyó al daño.
+
+Ahora bien, ¿quién responde? La cadena causal incluye al menos cuatro actores: el proveedor del modelo de lenguaje subyacente, el desarrollador del framework agentico (OpenClaw), el operador de la plataforma (Moltbook) y el propio propietario que desplegó el agente.
+
+La asignación de responsabilidad entre ellos es, jurídicamente, un problema complejo que ni la Directiva DRA ni la DRPD resuelven con precisión para el supuesto específico de sistemas agenticos personalizados mediante interacción cotidiana.
+
+La DRPD revisada clarifica que el software —incluyendo los sistemas de IA— es un "producto" a los efectos de la Directiva, y que la responsabilidad del fabricante se extiende a los defectos que presenten tras su puesta en circulación, incluyendo defectos derivados de actualizaciones del software. Pero la transferencia conductual emergente no es exactamente un defecto del software en el sentido técnico: el sistema funciona como fue diseñado.
+
+El "defecto" es estructural, consustancial al modo en que los sistemas agenticos con memoria persistente y acceso al entorno personal del usuario inevitablemente acumulan y eventualmente divulgan contexto privado.
+
+Esta distinción tiene consecuencias doctrinales importantes. Si la divulgación de información sensible es una consecuencia emergente e inevitable del diseño de los sistemas agenticos —y no un fallo técnico imprevisto—, entonces la pregunta jurídica correcta no es si el sistema era defectuoso, sino si debió haberse diseñado de forma diferente.
+
+Esto lleva de vuelta a la obligación de diseño seguro y al concepto de *privacy by design* del artículo 25 RGPD, cerrando un círculo argumental que coloca al diseñador del sistema —no al operador o al usuario— en el centro de la responsabilidad.
+
+---
+
+## La paradoja de la utilidad: cuanto más personal, más riesgoso
+
+La investigación empírica documenta con claridad una paradoja que tiene implicaciones de diseño y de regulación al mismo tiempo. Los agentes con mayor transferencia conductual —aquellos que más fielmente reproducen los patrones de comportamiento de sus propietarios— son también los que con mayor probabilidad divulgan información privada de esos propietarios.
+
+Un aumento de una desviación típica en la puntuación de transferencia conductual holística se asocia con un incremento de 1,32 puntos porcentuales en la probabilidad de divulgación en la muestra completa, y esta asociación se fortalece a medida que el perfil conductual del propietario es más rico y preciso (el efecto alcanza 3,40 puntos porcentuales entre los pares con mayor historial disponible).
+
+La paradoja es que la utilidad del agente —su capacidad de ser un asistente personal efectivo, que entiende el contexto del propietario, anticipa sus preferencias y actúa coherentemente con sus valores y estilo— depende precisamente de esa transferencia. Un agente que no hubiera acumulado contexto personal del propietario sería un generador de texto genérico, indistinguible de cualquier consulta a un modelo de lenguaje sin memoria. La personalización es el valor y el riesgo al mismo tiempo.
+
+Esto plantea una tensión que el derecho regulatorio no ha resuelto explícitamente: la tensión entre utilidad y privacidad en sistemas que aprenden del usuario para servirle mejor. El RGPD no contiene una respuesta operativa para esta tensión en el contexto agentico. El RIA tampoco.
+
+Las guías del Comité Europeo de Protección de Datos (CEPD) sobre tratamientos en sistemas de IA —incluida la Opinión 28/2024 sobre modelos de lenguaje de propósito general— no abordan el escenario de agentes con memoria persistente que actúan en plataformas públicas.
+
+La investigación sugiere cuatro líneas de diseño que podrían mitigar el riesgo sin anular la utilidad: la implementación de salvaguardas proporcionales al nivel de transferencia detectada (aumentar el escrutinio del contenido generado por agentes con alta transferencia antes de su publicación), la transparencia hacia el propietario sobre el perfil conductual que el agente ha internalizado, la arquitectura de memoria por niveles (separar la información marcada como privada y excluirla de los outputs públicos), y la auditoría periódica de los outputs del agente para detección de divulgaciones.
+
+Ninguna de estas medidas es tecnológicamente imposible. Todas requieren una decisión regulatoria que las imponga o incentive.
+
+---
+
+## Implicaciones para la gobernanza de plataformas
+
+El estudio no solo analiza el comportamiento de los agentes individuales. Documenta un fenómeno de escala: cuando las plataformas están pobladas por agentes que son extensiones conductuales de sus propietarios humanos, el discurso en esas plataformas no es homogéneo ni genérico. Es la heterogeneidad conductual de la población humana propietaria proyectada y amplificada en el espacio digital.
+
+Las plataformas con un millón de agentes no tienen un millón de instancias de un mismo modelo de lenguaje. Tienen un millón de extensiones de un millón de humanos distintos, cada uno con sus patrones de pensamiento, sus valores, sus sesgos, sus vulnerabilidades.
+
+Esto tiene implicaciones directas para la gobernanza de plataformas bajo el Reglamento de Servicios Digitales (RSD, Reglamento UE 2022/2065). El RSD obliga a las plataformas de gran alcance a evaluar y mitigar los riesgos sistémicos derivados de su funcionamiento.
+
+Si una plataforma está diseñada para ser habitada exclusivamente por agentes IA —como Moltbook en el escenario estudiado—, la evaluación de riesgo sistémico no puede ignorar que esos agentes divulgan información privada de sus propietarios en el 34,6% de los casos, sin que los propietarios lo sepan ni lo hayan consentido.
+
+Un operador de plataforma que conoce esta dinámica —o que debería conocerla, dado que la literatura científica la ha documentado públicamente— y no implementa medidas de detección y mitigación tendría dificultades para sostener que cumple sus obligaciones bajo el artículo 34 RSD.
+
+Aquí es donde el análisis se complica en términos de atribución de responsabilidad. Las plataformas para agentes IA son un fenómeno emergente sin precedente normativo claro. El RSD fue diseñado pensando en plataformas donde los participantes son personas físicas que actúan en su propio nombre. La posibilidad de que los participantes sean agentes autónomos que actúan en nombre de personas físicas ausentes no fue contemplada explícitamente.
+
+La calificación jurídica de un agente —¿es el agente el "usuario" de la plataforma, o lo es su propietario humano?— tiene consecuencias directas sobre qué obligaciones de moderación de contenidos, transparencia y protección de datos aplican y a quién.
+
+---
+
+## Lo que el legislador debería hacer y todavía no ha hecho
+
+La investigación empírica que aquí se analiza ofrece al legislador algo valioso: una base factual sólida sobre la que construir regulación. No estamos ante especulación sobre riesgos futuros de la IA. Estamos ante datos observacionales sobre el comportamiento de sistemas agenticos ya desplegados, con metodología rigurosa, muestras representativas y robustez estadística extensamente verificada.
+
+A la luz de ese material, identifico al menos cuatro déficits regulatorios que requieren atención.
+
+El primero es la ausencia de un régimen específico para sistemas agenticos personales. Ni el RGPD ni el RIA contemplan expresamente los sistemas que se personalizan mediante la interacción cotidiana con el usuario, acceden a su entorno informático personal y actúan autónomamente en plataformas públicas.
+
+Este vacío debe colmarse, bien mediante legislación derivada, bien mediante guías vinculantes del CEPD y la Agencia Española de Supervisión de la Inteligencia Artificial (AESIA).
+
+El segundo es la indefinición de la cadena de responsabilidad. Cuando un agente divulga información sensible del propietario, no está claro si responde el proveedor del modelo, el desarrollador del framework, el operador de la plataforma o el propietario. Esta indefinición es un incentivo a la inacción: si nadie sabe con certeza quién responde, nadie tiene incentivos suficientes para actuar preventivamente.
+
+La Directiva DRA, cuando se adopte definitivamente, deberá aclarar este punto para el escenario específico de los sistemas agenticos.
+
+El tercero es la ausencia de obligaciones de auditoría y transparencia para los propietarios de agentes. El estudio documenta que muchos propietarios probablemente desconocen que sus agentes están divulgando información personal en plataformas públicas: los casos ilustrativos del artículo muestran propietarios con dos o nueve tweets en toda su historia en Twitter cuyos agentes publican información detallada sobre condiciones médicas, situaciones financieras críticas o estados emocionales cotidianos.
+
+Un sistema regulatorio mínimamente funcional debería requerir mecanismos de notificación y auditoría que devuelvan visibilidad al propietario sobre lo que su agente hace en su nombre.
+
+El cuarto déficit es la falta de estándares técnicos obligatorios para la gestión de memoria en sistemas agenticos. La arquitectura de memoria de un agente —qué acumula, cómo lo pondera, qué puede publicar y qué debe quedar restringido al ámbito privado— es hoy una decisión de diseño arbitrada unilateralmente por el desarrollador del framework.
+
+La estandarización de esas arquitecturas, con requisitos mínimos de segregación entre memoria privada y outputs públicos, es una tarea regulatoria perfectamente abordable con los instrumentos normativos existentes, particularmente el mandato de medidas técnicas apropiadas del artículo 25 RGPD y las obligaciones de documentación técnica del RIA.
+
+---
+
+## Conclusión
+
+Los sistemas agenticos de IA no son herramientas neutras que ejecutan instrucciones. Son, como documenta esta investigación con una solidez empírica difícilmente contestable, extensiones conductuales de sus propietarios. Acumulan contexto, reproducen patrones, proyectan preferencias. Y, al hacerlo, exponen al mundo información que sus propietarios nunca decidieron compartir.
+
+El derecho europeo vigente —RGPD, AI Act, Directiva de Responsabilidad por IA, Reglamento de Servicios Digitales— ofrece instrumentos parciales para abordar este problema, pero no fue diseñado con este escenario en mente. Los vacíos son reales, identificables y urgentes.
+
+Lo que esta investigación demuestra, en última instancia, es que la privacidad en la era de los agentes IA ya no puede pensarse únicamente como protección frente a actores externos que extraen o infieren datos. Tiene que pensarse también como protección frente al propio sistema que el usuario ha desplegado para servirle. Esa es una reorientación conceptual profunda, y el derecho tiene que estar a la altura de ella.
+
+El artículo completo en inglés, con todos los datos, metodología y apéndices estadísticos, está disponible en: [Behavioral Transfer in AI Agents: Evidence and Privacy Implications (arXiv:2604.19925)](https://arxiv.org/abs/2604.19925).
+
+---
+
+**Conclusiones operativas para juristas:**
+
+- Los sistemas agenticos con memoria persistente y acceso al entorno personal del usuario deben activar la obligación de DPIA bajo el artículo 35 RGPD en prácticamente todos los casos de despliegue en plataformas con audiencias públicas.
+- El artículo 25 RGPD (*privacy by design*) es hoy el instrumento más cercano para exigir responsabilidad a los desarrolladores de frameworks agenticos, aunque su aplicabilidad práctica requiere clarificación regulatoria.
+- Las plataformas diseñadas para agentes IA autónomos deberían ser objeto de evaluación de riesgo sistémico bajo el artículo 34 RSD, con mención expresa al riesgo de divulgación de información personal de los propietarios humanos.
+- El AI Act, en su configuración actual, no clasifica como de alto riesgo los sistemas agenticos personales de uso general. Esta clasificación debería revisarse a la luz de la evidencia empírica disponible.
+- La cadena de responsabilidad civil en casos de divulgación no consentida por agentes IA es hoy jurídicamente indeterminada. La Directiva DRA, cuando entre en vigor, debe resolver expresamente este punto para el escenario de los sistemas agenticos personalizados.
+- Los abogados que asesoren a clientes que utilizan o despliegan agentes IA deberían incorporar el riesgo de transferencia conductual como elemento estándar de cualquier auditoría de privacidad o evaluación de compliance.

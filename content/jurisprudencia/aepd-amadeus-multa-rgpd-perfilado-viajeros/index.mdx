@@ -1,0 +1,198 @@
+---
+title: "AEPD multa a Amadeus con 18 millones por perfilar viajeros sin base jurídica"
+description: "La AEPD sanciona a Amadeus IT Group con 18 M€ por vulnerar los artículos 6 y 14 del RGPD: usó PNRs de millones de viajeros tres años después de la reserva para un piloto de perfilado sin consentimiento ni base jurídica válida.
+
+"
+date: "2025-05-27"
+tags: ["AEPD", "Amadeus", "RGPD", "perfilado de datos", "PNR", "GDS", "interés legítimo", "artículo 14 RGPD", "protección de datos viajeros"]
+section: "jurisprudencia"
+category: "jurisprudencia"
+author: "Ricardo Scarpa"
+slug: "aepd-amadeus-multa-rgpd-perfilado-viajeros"
+readingTime: 18
+pdf: "/fuentes/aepd_procedimiento_amadeus.pdf"
+---
+
+# 12.000 millones de registros y un piloto que los propios juristas de Amadeus habían descartado
+
+La cifra circuló en la denuncia anónima que llegó a la Agencia Española de Protección de Datos en septiembre de 2023: más de 12.000 millones de datos de viajeros de todo el mundo habían sido consolidados en una plataforma de perfilado.
+
+El Sistema de Distribución Global más grande de Europa —Amadeus IT Group, S.A., con sede en Madrid— había utilizado los registros de nombres de pasajeros (PNR) almacenados en su sistema central para construir perfiles individuales de viajeros. Sin pedirles permiso. Sin informarles. Y utilizando datos recogidos hasta tres años antes, cuando esas personas simplemente compraron un billete de avión a través de una agencia de viajes.
+
+Lo que hace este expediente especialmente relevante para la práctica jurídica —más allá de la cuantía final de la sanción, fijada en 14.400.000 euros tras reducción por pago voluntario sobre una sanción base de 18.000.000 euros— es lo que ocurrió internamente en Amadeus.
+
+La propia empresa, en una presentación para la "Semana de la Privacidad 2022", había documentado las razones por las que el interés legítimo **no** debía usarse para tratar datos en ese proyecto piloto. Sus juristas internos lo habían identificado. Y el piloto se realizó igualmente.
+
+La Agencia Española de Protección de Datos, como autoridad de control principal en el marco del mecanismo de ventanilla única del RGPD, dictó resolución de terminación del procedimiento por pago voluntario con fecha de notificación de mayo de 2025 (Expediente N.º EXP202315175, IMI Reference: A56ID 590304).
+
+El presente análisis recorre las infracciones declaradas, la arquitectura técnica y jurídica del sistema investigado, las bases de legitimación rechazadas y las consecuencias doctrinales que esta resolución proyecta sobre el sector de los sistemas de distribución global.
+
+---
+
+## El ecosistema GDS y la doble condición que lo hace jurídicamente complejo
+
+Para entender por qué este expediente importa, conviene entender cómo funciona Amadeus. Un Sistema de Distribución Global (GDS) es una red informatizada que permite transacciones entre proveedores de la industria de viajes —aerolíneas, hoteles, compañías de alquiler de vehículos— y las agencias que venden esos servicios al público. Amadeus no es una aerolínea ni una agencia de viajes: es la infraestructura que conecta a unas y otras. Su actividad es B2B en sentido estricto.
+
+Aquí radica la primera complejidad jurídica del caso. Cuando un viajero compra un billete a través de una agencia de viajes que utiliza el GDS de Amadeus, los datos de esa reserva —nombre, vuelo, preferencias de asiento, información de menores, solicitudes de servicios especiales (SSR), forma de pago— quedan almacenados en un Registro de Nombres de Pasajeros (PNR) gestionado por Amadeus.
+
+Pero el viajero, en la mayor parte de los casos, **no sabe que Amadeus existe**. Contrató con la agencia. La agencia contrató con Amadeus. Amadeus tiene los datos, pero nunca ha tenido relación directa con el interesado.
+
+El Reglamento (CE) nº 80/2009, que establece el código de conducta para los sistemas informatizados de reserva, es explícito al respecto: en el contexto GDS, el vendedor de sistemas (Amadeus) es considerado el **responsable del tratamiento** de los datos recogidos para la realización de reservas o emisión de billetes. No un mero encargado.
+
+El responsable, con todas las obligaciones que eso implica bajo el RGPD, incluyendo el deber de información del artículo 14 cuando los datos no se obtienen directamente del interesado.
+
+La situación varía cuando la distribución es directa: si una aerolínea vende directamente a través del sistema de reservas de Amadeus sin intervención de agencia, Amadeus actúa como encargado del tratamiento y la aerolínea es la responsable. Esta dualidad —responsable en canal indirecto, encargado en canal directo— es la "doble condición" que ya identificaba la denuncia anónima y que la AEPD confirmó en sus hechos probados.
+
+---
+
+## Los PNR y el problema de los plazos: lo que el Reglamento de 2009 ya prohibía
+
+Los PNR activos se almacenan en el servidor central de Amadeus (SBR) mientras están vigentes y hasta 72-96 horas después del último segmento del itinerario. Una vez expirado ese plazo, pasan a ser *Past Date Records* (PDR), archivados en una base de datos de la que pueden recuperarse en caso de reclamaciones posteriores al viaje.
+
+El artículo 11.4 del Reglamento (CE) nº 80/2009 fija con claridad el límite: la información sobre reservas individuales identificables debe almacenarse de forma que no pueda accederse a ella en línea a más tardar 72 horas después del último elemento de la reserva, y debe **destruirse en un plazo máximo de tres años**. Solo se autoriza el acceso posterior para resolver controversias de facturación.
+
+Amadeus, en el piloto denominado ***PLATAFORMA.1***, utilizó datos de PNR de viajeros incluyendo registros del año 2019 —es decir, hasta tres años antes del período de realización del piloto (marzo-junio de 2022)—. Tanto PNR activos como PDR inactivos.
+
+La AEPD señala este extremo expresamente en los fundamentos de derecho como un elemento agravante de la ilegitimidad del tratamiento: no solo no había base jurídica válida, sino que se emplearon datos que, conforme a la normativa sectorial específica aplicable, solo podían conservarse para un fin muy concreto y diferente.
+
+Conviene recordar que el Tribunal de Justicia de la Unión Europea, en la Sentencia de la Gran Sala de 21 de junio de 2022 (Asunto C-817/19), estableció doctrina relevante sobre los plazos de conservación de datos PNR en el contexto de la Directiva 2016/681: una conservación general de cinco años para todos los pasajeros sin distinción resulta contraria a los artículos 7 y 8 de la Carta de Derechos Fundamentales.
+
+La AEPD cita expresamente esta jurisprudencia en el expediente, subrayando que la lógica de minimización y limitación de los plazos de conservación no es un formalismo, sino una garantía estructural del derecho fundamental a la protección de datos.
+
+---
+
+## La plataforma de perfilado: qué era y qué hacía ***PLATAFORMA.1***
+
+El proyecto piloto investigado —cuyo nombre comercial real aparece anonimizado en la resolución como ***PLATAFORMA.1***— era, en esencia, una plataforma de datos que permitía a hoteles conocer el historial de viajes de sus huéspedes combinando sus propios datos de clientes con los PNR del GDS de Amadeus.
+
+La idea era identificar el comportamiento viajero de un cliente del hotel —con qué frecuencia viaja, a qué destinos, qué aerolíneas usa, qué servicios especiales solicita— para personalizar la oferta y la comunicación comercial.
+
+Amadeus ejecutó este piloto con al menos dos grandes cadenas hoteleras (identificadas en la resolución como ***EMPRESA.2*** y ***EMPRESA.3***). En el primer caso, el contrato se firmó en junio de 2021 con vigencia hasta finales de marzo de 2022. En el segundo, se firmó en marzo de 2022 con tres meses de duración desde el inicio de los servicios.
+
+La arquitectura del tratamiento era la siguiente: Amadeus aportaba, en su condición de responsable del tratamiento respecto de sus propios datos del GDS, los PNR de los viajeros. Las cadenas hoteleras aportaban, como responsables de sus propios datos de clientes, la información de sus huéspedes. Amadeus cruzaba ambos conjuntos de datos para construir perfiles enriquecidos que después ponía a disposición de las cadenas.
+
+Para los datos provenientes del GDS de Amadeus, la empresa argumentó que la base jurídica era el **interés legítimo** previsto en el artículo 6.1.f) del RGPD. La resolución desmonta este argumento con tres líneas de razonamiento.
+
+---
+
+## Por qué el interés legítimo no funcionaba aquí: tres argumentos que se refuerzan mutuamente
+
+El interés legítimo es, probablemente, la base jurídica más invocada y más mal aplicada del RGPD. Su estructura tripartita —interés legítimo identificado, necesidad del tratamiento, ponderación de intereses con los derechos del interesado— exige una evaluación genuina, no una declaración retórica. La AEPD, en este expediente, identifica al menos tres razones por las que el interés legítimo de Amadeus no superaba ese test.
+
+**Primera razón: la expectativa razonable del interesado.** El concepto de expectativa razonable no aparece expresamente en el artículo 6.1.f), pero el Considerando 47 del RGPD lo introduce como criterio interpretativo central: hay que tener en cuenta si el interesado puede esperar razonablemente que se procesen sus datos con ese fin.
+
+Una persona que compra un billete de avión a través de una agencia de viajes no espera que el sistema informático de reservas —del que muy posiblemente no tiene ningún conocimiento— vaya a cruzar esos datos con el historial de su hotel preferido tres años después para desarrollar un producto de perfilado comercial. La AEPD concluye que esta expectativa no existía. Y lo hace con un argumento sólido: Amadeus prestaba servicios B2B.
+
+El viajero nunca fue su cliente directo. La distancia relacional hace aún menos razonable la expectativa de ese uso ulterior.
+
+**Segunda razón: la propia evaluación interna de Amadeus.** Aquí la resolución se vuelve especialmente incómoda para la empresa. En el expediente consta una copia de la presentación interna elaborada para la "Semana de la Privacidad 2022" —identificada como ***PRESENTACIÓN.1***— en la que el equipo jurídico de Amadeus documentó, con detalle, las razones por las que el interés legítimo **no debía ser la base jurídica** para tratar datos en ***PLATAFORMA.1***, e identificó que la base correcta sería el consentimiento.
+
+La AEPD señala que no puede sino coincidir con ese análisis. El hecho de que la empresa dispusiera de esa evaluación y procediera igualmente con el piloto utilizando el interés legítimo como cobertura transforma la infracción: ya no es un error de interpretación jurídica, sino una actuación consciente contra el criterio de sus propios expertos.
+
+**Tercera razón: el mecanismo de *opt-out* era inútil.** Amadeus argumentó en su defensa que había implementado un mecanismo de exclusión voluntaria que permitía a los interesados oponerse al tratamiento basado en el interés legítimo. La AEPD responde con un argumento impecable: un mecanismo de *opt-out* solo es efectivo si el interesado sabe que el tratamiento existe.
+
+Dado que no se informó específicamente a los viajeros del proyecto ***PLATAFORMA.1*** ni de las cadenas hoteleras implicadas, el mecanismo de oposición era estructuralmente inservible. Ofrecer el derecho a oponerse a quien no sabe que tiene algo de lo que oponerse no satisface las exigencias del RGPD.
+
+Dicho todo lo anterior, la AEPD va más lejos aún: incluso si se aceptase que el interés legítimo podría haber sido, en abstracto, una base aplicable, el apartado 4 del artículo 6 del RGPD exige que, cuando el tratamiento se realiza para un fin distinto del que motivó la recogida original —como aquí, donde los datos se recogieron para gestionar una reserva de viaje y se reutilizaron para un piloto de perfilado hotelero—, el responsable debe haber evaluado la compatibilidad de ese uso ulterior.
+
+No consta en el expediente que Amadeus hubiera realizado esa evaluación de compatibilidad. La EIPD del piloto abordaba el test de interés legítimo, pero no el análisis de compatibilidad de finalidades que el artículo 6.4 demanda.
+
+---
+
+## La infracción del artículo 14: el deber de información cuando los datos no se obtienen del interesado
+
+La segunda infracción declarada, igualmente tipificada en el artículo 83.5 del RGPD con multa máxima de 20 millones de euros o el 4% del volumen de negocio global, afecta al artículo 14 del RGPD: la obligación de informar al interesado cuando los datos no se han obtenido directamente de él.
+
+El artículo 14 es la garantía de transparencia para los tratamientos "en la sombra": aquellos que el ciudadano desconoce porque sus datos viajan entre entidades sin que él lo perciba. Cuando Amadeus actúa como responsable del tratamiento en el canal GDS, el viajero no ha dado sus datos directamente a Amadeus: los ha dado a la agencia, que los ha transmitido al sistema de reservas.
+
+Amadeus tiene, por tanto, la obligación de informar proactivamente al viajero conforme al artículo 14, con toda la información exigida en sus apartados 1 y 2: identidad del responsable, finalidades, bases jurídicas, destinatarios, plazos de conservación, existencia de decisiones automatizadas o perfilado, y derechos del interesado.
+
+¿Cómo intentaba Amadeus cumplir con este deber? A través de su política de privacidad del GDS, accesible en su página web, y a través del sistema IATA de referencia de políticas de privacidad de proveedores de reservas. La AEPD rechaza que esto sea suficiente, por tres motivos concretos.
+
+Primero, una política de privacidad genérica publicada en una web corporativa no sustituye a la información proactiva que exige el artículo 14. El precepto requiere que el responsable *facilite* la información al interesado, no simplemente que la publique en algún lugar accesible si el interesado tiene la diligencia de buscarla.
+
+Segundo, la información publicada por Amadeus no mencionaba específicamente el proyecto ***PLATAFORMA.1*** ni las cadenas hoteleras con las que colaboró para su realización. El apartado 4 del artículo 14 es explícito: cuando el responsable proyecta un tratamiento ulterior para un fin distinto del original, debe informar al interesado **antes** de ese tratamiento ulterior, con información sobre ese otro fin.
+
+Una política genérica que habla de "análisis estadísticos" y "mejora de servicios" no cubre la especificidad que requiere informar de que los datos de la reserva serán cruzados con los datos de un hotel concreto para construir un perfil comercial.
+
+Tercero, el contexto B2B hace que la ausencia de información sea especialmente grave. Como señala la AEPD, no todos los interesados son conscientes de que Amadeus trata sus datos cuando realizan una reserva. La naturaleza de intermediario tecnológico invisible en la cadena de distribución convierte el incumplimiento del artículo 14 en una opacidad estructural, no en una omisión puntual.
+
+---
+
+## Las circunstancias agravantes y el cálculo de la sanción
+
+La AEPD fijó la sanción por la infracción del artículo 14 en 9.000.000 euros y la sanción por la infracción del artículo 6 en otros 9.000.000 euros, con un total de 18.000.000 euros antes de reducciones.
+
+En la graduación de ambas sanciones concurrieron los mismos dos agravantes. El primero, la existencia de una infracción previa: el 10 de junio de 2022 la AEPD ya había impuesto a Amadeus una multa de 5.000 euros por infracción del artículo 12 del RGPD —transparencia en la información—.
+
+Es una sanción de escasa cuantía, pero su relevancia agravante no es económica sino conductal: acredita que Amadeus tenía antecedentes en materia de incumplimiento de las obligaciones de transparencia informativa del RGPD.
+
+El segundo agravante fue la "vinculación de la actividad del infractor con la realización de tratamientos de datos personales" (artículo 76.2.b de la LOPDGDD). Amadeus no es una empresa que ocasionalmente trata datos personales: su negocio central consiste, precisamente, en tratar datos personales de millones de viajeros. Esa habitualidad y esa escala hacen especialmente exigible el cumplimiento riguroso de las normas de protección de datos.
+
+El volumen de negocio de Amadeus IT Group en 2023 ascendía a 4.467.600.000 euros. La sanción base de 18.000.000 euros representa aproximadamente el 0,4% de ese volumen —muy por debajo del máximo legal del 4%—, lo que refleja que la AEPD no buscó la sanción máxima sino una multa efectiva, proporcionada y disuasoria conforme a los criterios del artículo 83.1 del RGPD.
+
+Amadeus procedió al pago voluntario de la sanción el 29 de mayo de 2025, acogiendo la reducción del 20% prevista en el artículo 85 de la LPACAP sin reconocimiento de responsabilidad. La sanción definitiva quedó fijada en 14.400.000 euros, con renuncia a cualquier recurso en vía administrativa como condición de la reducción.
+
+---
+
+## La cooperación transfronteriza: el mecanismo de ventanilla única en funcionamiento
+
+Este expediente es también un ejemplo de cómo funciona —cuando funciona— el mecanismo de cooperación del RGPD para tratamientos transfronterizos. Amadeus tiene su establecimiento principal en España (c/ Salvador de Madariaga 1, Madrid), lo que hace a la AEPD la autoridad de control principal conforme al artículo 56 del RGPD.
+
+La AEPD transmitió la cuestión al resto de autoridades interesadas a través del Sistema de Información del Mercado Interior (IMI) en diciembre de 2023. Las autoridades de control de dieciséis Estados miembros y algunas regiones alemanas actuaron como "autoridades interesadas" en virtud del artículo 4.22 del RGPD: los interesados residentes en sus territorios se veían sustancialmente afectados por el tratamiento.
+
+El proyecto de decisión de inicio del procedimiento sancionador se transmitió por el mismo sistema el 22 de abril de 2025. Las autoridades interesadas disponían de cuatro semanas para formular objeciones pertinentes y motivadas. Ninguna lo hizo. Ello significó que todas quedaron vinculadas por el proyecto de decisión conforme al artículo 60.6 del RGPD.
+
+Es significativo que la cooperación funcionara sin fricciones en este caso. La doctrina suele señalar el riesgo de que el mecanismo de ventanilla única genere "carrera hacia el fondo" —empresas grandes estableciéndose en jurisdicciones de menor rigor fiscalizador—.
+
+Que dieciséis autoridades europeas acepten sin objeciones una sanción de 18 millones de euros contra uno de los mayores operadores de datos del sector turístico europeo sugiere que, al menos en este expediente, el consenso sobre la gravedad de la conducta era sólido.
+
+---
+
+## Lo que esta resolución cambia para los operadores GDS y el sector turístico
+
+Las implicaciones prácticas de este expediente para el sector son relevantes y merecen ser articuladas con precisión.
+
+La primera consecuencia es la confirmación de que los GDS son responsables del tratamiento cuando operan en canal indirecto, con todas las obligaciones que eso conlleva bajo el RGPD. No basta con ser un proveedor de tecnología B2B para escapar al estatuto de responsable: si el sistema determina los fines y los medios del tratamiento de datos de reserva, la responsabilidad se activa.
+
+Esta clarificación era necesaria dado que el sector de distribución turística ha tendido históricamente a diluir su responsabilidad invocando su posición de intermediario.
+
+La segunda consecuencia afecta al uso ulterior de datos recogidos para fines de reserva. Cualquier proyecto que reutilice datos de PNR para finalidades distintas —perfilado comercial, desarrollo de nuevos productos, análisis de comportamiento— debe superar el test de compatibilidad del artículo 6.4 del RGPD y, si la base es el interés legítimo, el test de ponderación genuino del artículo 6.1.f), más el deber de información previo al tratamiento ulterior conforme al artículo 14.4. La política de privacidad genérica no es suficiente.
+
+La tercera consecuencia concierne a la coherencia documental interna. Este expediente establecerá probablemente un precedente incómodo: las evaluaciones de interés legítimo y las evaluaciones de impacto que documenten internamente los riesgos de un tratamiento son descubribles en un procedimiento sancionador.
+
+Si esos documentos identifican problemas de licitud y el tratamiento se realiza igualmente, esa contradicción interna se convierte en evidencia de actuación consciente. La transparencia interna, paradójicamente, puede incrementar la exposición sancionadora si no va acompañada de coherencia entre análisis y conducta.
+
+La cuarta consecuencia afecta a los plazos de conservación. El artículo 11.4 del Reglamento (CE) nº 80/2009 ya establecía un plazo máximo de tres años para los PNR. La AEPD lo recuerda en este expediente con énfasis.
+
+Los sistemas de reserva que mantengan datos más allá de lo necesario para los fines originales —gestión de la reserva y resolución de controversias de facturación— estarán incumpliendo simultáneamente la normativa sectorial de 2009 y el principio de limitación del plazo de conservación del artículo 5.1.e) del RGPD.
+
+---
+
+## Una pregunta que la resolución deja abierta
+
+La resolución no entra en un debate que la doctrina ha planteado con creciente urgencia: ¿es el modelo de negocio de los GDS —basado en la recolección masiva de datos de viajeros como subproducto inevitable de la gestión de reservas— estructuralmente compatible con los principios de minimización de datos y limitación de finalidad del RGPD?
+
+Los GDS no recogen datos porque quieran perfilar a los viajeros; los recogen porque la industria de la aviación y del turismo funciona así desde los años sesenta del siglo pasado, cuando American Airlines y IBM crearon SABRE. El sistema se diseñó antes de que existiera el concepto de privacidad como derecho fundamental.
+
+La Directiva PNR de 2016, el Reglamento de sistemas informatizados de reserva de 2009, el propio RGPD: son capas normativas sucesivas que intentan encauzar un flujo de datos cuya magnitud y complejidad técnica superan lo que los legisladores podían imaginar cuando los redactaron.
+
+La pregunta que esta resolución no responde —porque no era necesario responderla para sancionar la conducta concreta de Amadeus— es si un GDS puede hoy, con el marco normativo vigente, hacer algo útil con los datos de reserva más allá de ejecutar esa reserva y archivarla.
+
+La tendencia del sector hacia la hiperpersonalización del viaje, los programas de fidelización multicanal, la predicción de comportamiento del viajero mediante inteligencia artificial: todo ese desarrollo comercial choca frontalmente con la lógica de minimización y limitación de finalidad que el RGPD impone. Este expediente es la primera gran señal de que esa colisión tiene consecuencias económicas reales.
+
+---
+
+## Conclusiones
+
+Algunas consideraciones prácticas que deben extraerse de esta resolución:
+
+- **Los GDS son responsables del tratamiento en el canal indirecto** conforme al artículo 11.1 del Reglamento (CE) nº 80/2009 y al artículo 4.7 del RGPD. Esta calificación implica el cumplimiento íntegro de todas las obligaciones del RGPD, incluyendo el artículo 14 respecto de los viajeros que nunca tuvieron contacto directo con el GDS.
+- **El interés legítimo exige una ponderación real.** Una evaluación de interés legítimo que no evalúa con rigor si los interesados podían prever razonablemente ese uso de sus datos —especialmente cuando los propios documentos internos identificaban la base jurídica como inadecuada— no supera el estándar del artículo 6.1.f) del RGPD.
+- **La reutilización de datos para fines distintos del original requiere dos análisis adicionales:** la evaluación de compatibilidad de finalidades del artículo 6.4 y el cumplimiento del deber de información previa del artículo 14.4. Ninguno de los dos puede sustituirse por una política de privacidad genérica.
+- **Los plazos de conservación sectoriales son límites reales.** El artículo 11.4 del Reglamento (CE) nº 80/2009 fija tres años como plazo máximo de conservación de PNR identificables. Usar datos de ese archivo para proyectos de desarrollo de producto supone un doble incumplimiento: normativa sectorial y principio de limitación del plazo del RGPD.
+- **La documentación interna es descubrible.** Las evaluaciones de impacto, los análisis de interés legítimo y las presentaciones internas sobre riesgos de privacidad son prueba en un procedimiento sancionador. La coherencia entre análisis interno y conducta externa deja de ser solo una buena práctica para convertirse en un factor de responsabilidad.
+- **El mecanismo de ventanilla única funciona cuando hay consenso sustantivo.** La ausencia de objeciones de dieciséis autoridades europeas al proyecto de decisión de la AEPD muestra que, en casos de infracción clara y bien documentada, el mecanismo de cooperación del artículo 60 del RGPD puede operar con agilidad y coherencia.
+- **La sanción final (14,4 M€) representa aproximadamente el 0,4% del volumen de negocio de Amadeus.** Su efecto disuasorio real sobre un grupo con facturación de 4.467 millones de euros anuales es, cuanto menos, debatible. El legislador europeo no ha resuelto todavía la tensión entre proporcionalidad y disuasión efectiva en el contexto de las grandes corporaciones de infraestructura de datos.
+
+La resolución completa está disponible para su consulta y descarga a través del enlace al documento PDF adjunto.

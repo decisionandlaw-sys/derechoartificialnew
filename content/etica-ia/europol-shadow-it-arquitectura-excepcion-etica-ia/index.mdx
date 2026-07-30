@@ -1,0 +1,259 @@
+---
+title: "Europol y la arquitectura de la excepción: TI sombra, vigilancia masiva y erosión del Estado de Derecho digital"
+description: "Análisis doctrinal exhaustivo de los sistemas de TI sombra de Europol (CFN y Pressure Cooker), la legalización retroactiva del Reglamento 2022/991 y sus consecuencias para los derechos fundamentales en la era del Big Data policial europeo."
+date: "2026-05-22"
+tags: ["Europol", "TI sombra", "SEPD", "Big Data policial", "derechos fundamentales", "vigilancia masiva", "Reglamento 2022/991"]
+section: "etica-ia"
+category: "vigilancia-algorítmica"
+author: "Ricardo Scarpa"
+slug: "europol-shadow-it-arquitectura-excepcion-etica-ia"
+readingTime: 22
+---
+
+Hay una frase que circula entre los técnicos que conocieron por dentro la infraestructura digital de Europol y que sintetiza con una precisión inquietante el problema central que plantea este análisis: *"Protegen la ley violándola. "* No se trata de una hipérbole retórica.
+
+Es la descripción técnica de un sistema policial que procesó durante casi una década el 99% de su información operativa en infraestructuras clandestinas, sin registros de acceso, sin controles de contraseña y sin supervisión externa, mientras se presentaba ante el Parlamento Europeo y los órganos de control como un modelo de gobernanza responsable.
+
+El caso de los sistemas de Tecnología de la Información sombra (*Shadow IT*) de Europol —centrado en la *Computer Forensic Network* (CFN) y el sistema conocido internamente como *Pressure Cooker*— no es un escándalo de cumplimiento administrativo.
+
+Es un laboratorio jurídico donde se puede observar, en condiciones casi experimentales, qué ocurre cuando la urgencia operativa de la seguridad se institucionaliza como principio rector por encima de las garantías constitucionales. Y lo que ocurre, como se demostrará, es la normalización de la excepción: un patrón en el que la realidad técnica precede a la autoridad legal y la fuerza a adaptarse a los hechos consumados.
+
+Este artículo analiza, desde una perspectiva de derecho europeo de la protección de datos y ética institucional de la inteligencia artificial, el desarrollo cronológico de la crisis, las implicaciones jurídicas del Reglamento (UE) 2022/991 como mecanismo de legalización retroactiva, la naturaleza del conflicto ante el Tribunal de Justicia de la Unión Europea (TJUE) y los riesgos sistémicos que plantea la propuesta de expansión de poderes hacia 2026. La tesis que se defiende es la siguiente: Europol ha construido, con la tolerancia implícita del legislador europeo, una arquitectura institucional donde la excepción se ha convertido en la gramática ordinaria de la gobernanza policial digital.
+
+## La gestación del sistema sombra: del análisis forense a la infraestructura clandestina
+
+La *Computer Forensic Network* no nació como un instrumento de opacidad. Fue establecida en 2012 como una solución técnica legítima para gestionar material digital complejo —dispositivos incautados contaminados con *malware*, archivos encriptados, datos de formato heterogéneo— que los sistemas criminales formales de la agencia no podían procesar de forma segura.
+
+Formaba parte del llamado Entorno Forense de TI de Europol (FITE) y estaba concebida como una estación de paso: un entorno de preprocesamiento que debía filtrar y categorizar el material antes de transferirlo a las bases de datos operativas sujetas al marco legal vigente.
+
+Lo que transformó esta herramienta en un sistema sombra fue la convergencia de dos vectores: la crisis de seguridad de noviembre de 2015 y la respuesta institucional que generó. Los ataques de París, que costaron la vida a 130 personas, sometieron a Europol a una presión política extraordinaria. El entonces director ejecutivo, Rob Wainwright, recordaría posteriormente ese periodo como el momento en que la agencia debía "dar el paso adelante".
+
+La *Task Force Fraternité* creada en respuesta comenzó a recibir volúmenes masivos de datos brutos de los Estados miembros: registros telefónicos completos, comunicaciones interceptadas, datos de geolocalización, incluyendo los registros de miles de ciudadanos cuya única conexión con los ataques de la sala Bataclan era haber estado en las inmediaciones.
+
+Este desbordamiento de información generó lo que la agencia denominó internamente el *Big Data Challenge* (el desafío de los datos masivos). La incapacidad de los sistemas oficiales para clasificar y procesar tales volúmenes en tiempo real llevó a una dependencia creciente de la CFN, que ofrecía velocidad analítica a costa de las restricciones normativas que los sistemas formales imponían.
+
+Aquí es donde el análisis se complica, porque el mecanismo que se puso en marcha no fue una decisión deliberada de eludir la ley, sino algo más perturbador desde el punto de vista de la gobernanza institucional: fue la *deriva de la misión* (*mission creep*), el proceso por el que una herramienta legítima expande sus funciones de forma incremental, sin que ninguna decisión concreta marque el momento en que se cruza la línea.
+
+Para 2019, la CFN había dejado de ser una estación de paso. Era la plataforma analítica principal de Europol. El Centro Europeo de Ciberdelincuencia (EC3) había tomado efectivamente su control. El personal de la Dirección de Operaciones había instalado capacidad de cómputo y almacenamiento adicional al margen de los procedimientos regulares.
+
+Se habían desarrollado nuevas herramientas de análisis sin evaluación de impacto sobre la protección de datos, sin los controles de auditoría exigidos por el Reglamento (UE) 2018/1725. El sistema que debía ser un entorno compartimentado y temporal se había convertido, en palabras de un antiguo alto cargo, en un "agujero negro" para el análisis de datos no regulado.
+
+La magnitud del problema quedó cuantificada con precisión demoledora el 15 de febrero de 2019, cuando Daniel Drewer, Oficial de Protección de Datos (DPO) de la agencia, entregó un memorando de cinco páginas a los directores ejecutivos adjuntos.
+
+Sus cifras son las que mejor ilustran la dimensión del problema: mientras que las bases de datos oficiales de Europol contenían aproximadamente 4,7 terabytes de información, la CFN albergaba al menos 2.000 terabytes —2 petabytes— de datos. El sistema sombra era 420 veces más grande que la infraestructura oficial.
+
+Y contenía información de personas sin ningún vínculo establecido con actividades criminales, en flagrante contradicción con el principio de que Europol solo puede procesar datos de individuos con una conexión clara con una investigación en curso.
+
+## Las 32 vulnerabilidades: cuando la ausencia de *logs* anula la rendición de cuentas
+
+La auditoría desencadenada por el informe de Drewer identificó 32 vulnerabilidades críticas en el sistema. Conviene detenerse en su naturaleza, porque no se trata de problemas técnicos menores. Son fallos que, considerados conjuntamente, destruyen la posibilidad misma de la rendición de cuentas exigida por el derecho de la Unión.
+
+La más grave, desde una perspectiva jurídica, no fue la debilidad en la gestión de contraseñas ni el control de acceso insuficiente —aunque ambas son serias en un entorno que manejaba datos financieros, registros de geolocalización y documentos de identidad de millones de ciudadanos—. Fue la ausencia de registros de actividad administrativa (*logs*) fiables.
+
+Sin esos registros, Europol no podía responder a preguntas elementales que son precondición del Estado de Derecho digital: ¿quién accedió a los datos de este ciudadano? ¿Cuándo? ¿Los modificó? ¿Los eliminó? ¿Los consultó en el contexto de una investigación legítima o por razones ajenas al mandato de la agencia?
+
+El principio de *accountability* exigido por el artículo 5, apartado 2, del Reglamento (UE) 2018/1725 —que rige el tratamiento de datos en las instituciones de la Unión— no es una obligación de medio; es una obligación de resultado. El responsable del tratamiento no solo debe cumplir con los principios del tratamiento, sino estar en condiciones de demostrarlo.
+
+Una agencia que procesa el 99% de sus datos operativos en un sistema sin registros de eventos adecuados no puede, por definición, cumplir con esa obligación. La *accountability* requiere trazabilidad, y la trazabilidad requiere *logs*. Su ausencia no es una carencia administrativa; es la negación práctica de uno de los principios fundamentales de la arquitectura de derechos del Reglamento.
+
+Ahora bien, el fracaso de la gobernanza no puede atribuirse solo al nivel técnico. Se produjo en tres planos simultáneos. En el nivel estratégico, la dirección de la agencia priorizó la adquisición masiva de datos sin asegurar que la infraestructura para gestionarlos fuera legalmente conforme.
+
+En el nivel técnico, el departamento de TI perdió el control sobre los entornos donde unidades operativas como el EC3 desarrollaban sus propias herramientas al margen de los procedimientos de evaluación. En el nivel de supervisión, la estructura de *Shadow IT* ocultó la magnitud real del procesamiento a los auditores externos durante años, limitando sus inspecciones a las bases de datos oficiales que solo representaban el 1% de la información operativa.
+
+Esta superposición de fallos en distintos niveles no es accidental. Es la huella característica de una cultura institucional en la que la urgencia operativa se había convertido en el valor supremo, capaz de justificar la suspensión indefinida de cualquier exigencia normativa que pudiera ralentizar el análisis de datos.
+
+## *Pressure Cooker*: el laboratorio clandestino de la vigilancia preventiva
+
+Si la CFN fue la consecuencia no planificada de la presión del *Big Data*, el sistema conocido internamente como *Pressure Cooker* (Olla a Presión) representa algo cualitativamente distinto: un entorno diseñado con la intención explícita de eludir las restricciones legales para el análisis rápido de inteligencia.
+
+Esta distinción es jurídicamente relevante porque la diferencia entre un fallo de gobernanza y una práctica deliberadamente extralegal tiene consecuencias para la atribución de responsabilidad institucional.
+
+La posición oficial de Europol ha sido consistente: *Pressure Cooker* es simplemente una denominación coloquial de su Entorno Operativo Orientado a Internet (IFOE), una plataforma declarada cuya función es recopilar y categorizar datos de fuentes abiertas, incluyendo material de propaganda terrorista, antes de su incorporación a los sistemas operativos.
+
+Sin embargo, documentos internos filtrados contradicen esta versión. Correos electrónicos de 2019 muestran que el personal técnico distinguía explícitamente entre el proyecto oficial IFOE y el "entorno *Pressure Cooker*", gestionado directamente por la Unidad de Referencia de Internet (IRU) y no sometido a los controles del departamento de TI.
+
+La distinción es operativa y jurídicamente decisiva. Mientras el IFOE oficial estaba sujeto a los controles del ICT, la "Olla a Presión" funcionaba como una infraestructura sombra bajo control exclusivo de las unidades operativas antiterroristas. Según testimonios de antiguos funcionarios que solicitaron el anonimato, el sistema era entendido dentro de Europol como un espacio "libre de las ataduras de la ley de la Unión".
+
+Los analistas podían ingerir grandes volúmenes de datos brutos interceptados para realizar cruces de información inmediatos, sin la exigencia de categorización previa que imponían los sistemas formales.
+
+La terminología que emplean los informantes —"*fishing expeditions*" (expediciones de pesca)— no es jurídicamente neutra. Describe con exactitud lo que la jurisprudencia del TJUE, desde el asunto *Prokuratuur* (C-746/18), considera incompatible con los derechos fundamentales garantizados por la Carta: el acceso generalizado y preventivo a datos de comunicaciones de personas no sospechosas, sin una justificación legal concreta y sin control judicial previo.
+
+Cuando los analistas de *Pressure Cooker* realizaban búsquedas automatizadas en conjuntos de datos no filtrados esperando encontrar conexiones criminales fortuitas, estaban practicando exactamente el modelo de vigilancia que el TJUE declaró contrario al artículo 7 (respeto a la vida privada) y al artículo 8 (protección de datos personales) de la Carta de los Derechos Fundamentales de la Unión Europea.
+
+Lo que resulta llamativo es la mecánica de ocultación frente al supervisor. Un antiguo alto cargo describió el modelo de supervisión del SEPD con una metáfora reveladora: "Cuando decimos inspección, no nos referimos a una redada con expertos en TI monitorizando sistemas y confiscando servidores; hablamos de una conversación educada.
+
+" En ese modelo basado en la confianza, los auditores solo pueden examinar los sistemas que Europol decide declarar voluntariamente. Al no estar integrado en la arquitectura oficial de TI y carecer de registros centralizados, *Pressure Cooker* permaneció invisible durante años.
+
+No fue hasta octubre de 2022 cuando una alerta interna marcada como de "importancia alta" advirtió a la dirección que el SEPD podría tener conocimiento inminente de la situación irregular. El personal de TI insistió repetidamente en la necesidad de "eliminar la Olla a Presión", pero las advertencias fueron ignoradas sistemáticamente bajo el argumento de la urgencia antiterrorista.
+
+Este detalle no es menor: ilustra que la cúpula directiva de Europol conocía la irregularidad, recibía advertencias internas sobre el riesgo de exposición ante el regulador, y decidía conscientemente mantener el sistema operativo. La diferencia entre un fallo de gobernanza y una decisión institucional deliberada es exactamente esta.
+
+## El SEPD ante el *Big Data* policial: soberanía regulatoria bajo asedio
+
+La Decisión del Supervisor Europeo de Protección de Datos del 3 de enero de 2022 fue un hito sin precedentes en la historia del control de las agencias policiales de la Unión. Tras una investigación de casi tres años motivada por el informe interno del DPO, el supervisor determinó que Europol había incurrido en una retención estructural de datos contraria a su propio Reglamento fundacional y al principio constitucional de presunción de inocencia.
+
+El núcleo de la infracción era la ausencia de lo que el marco legal denomina Categorización de los Sujetos de Datos (DSC, *Data Subject Categorisation*). Bajo el mandato entonces vigente, Europol solo podía procesar datos de individuos con un vínculo específico y establecido con una actividad criminal: sospechosos, víctimas, testigos, personas de contacto, informantes.
+
+Sin embargo, la agencia almacenaba petabytes de información bruta —extraída de teléfonos móviles incautados, comunicaciones interceptadas, bases de datos masivas de plataformas encriptadas— durante años, sin verificar si los individuos presentes en esos archivos cumplían los criterios de categorización.
+
+Las medidas correctivas impuestas por el SEPD eran, en ese contexto, de una moderación notable: un periodo máximo de seis meses para filtrar cualquier nuevo conjunto de datos recibido, la obligación de borrar permanentemente cualquier dato no categorizado en ese plazo, y un margen de doce meses para aplicar esa lógica de limpieza a los datos que ya residían ilegalmente en los sistemas. La agencia, sin embargo, respondió con oposición frontal.
+
+El argumento central de Europol —la "imposibilidad técnica" de categorizar millones de registros en seis meses— merecería, en condiciones normales, una valoración más detallada.
+
+El problema es que no puede disociarse del contexto en que se formula: la misma agencia que argumenta imposibilidad técnica para el cumplimiento normativo es la que durante años había expandido activamente su infraestructura técnica para procesar esos datos sin la categorización exigida.
+
+Dicho esto, la respuesta de Europol revelaba también una tensión estructural genuina. Operaciones como EncroChat o Sky ECC, que permitieron a las autoridades europeas desmantelar redes del crimen organizado de primera magnitud, generaron volúmenes de datos brutos de una complejidad y extensión sin precedentes.
+
+La extracción forense de los servidores de Sky ECC produjo más de 1.000 millones de mensajes intercambiados entre más de 70.000 usuarios. Pretender que ese material puede ser categorizado individualmente en seis meses no es un argumento descartable desde el punto de vista operativo.
+
+Lo que sí es descartable es que esa dificultad justifique la retención indefinida e indiscriminada, con las consecuencias que ello tiene para la presunción de inocencia de ciudadanos que jamás debieron estar en ninguna base de datos policial.
+
+El enfrentamiento evidenció una debilidad profunda del modelo de supervisión europeo: el SEPD tiene autoridad legal, pero carece de instrumentos de coerción efectivos cuando el sujeto supervisado es una agencia policial respaldada por el apoyo político de la Comisión y el Consejo. Mientras el supervisor intentaba ejercer sus competencias, la Dirección de Europol buscaba apoyos políticos para neutralizar el impacto de la orden.
+
+Esta parálisis no fue un accidente; fue la consecuencia lógica de una arquitectura de supervisión diseñada para entornos de normalidad institucional, no para conflictos donde el supervisado tiene la capacidad de movilizar a los propios legisladores en su defensa.
+
+## El Reglamento 2022/991: la normalización jurídica de la excepción técnica
+
+La entrada en vigor del Reglamento (UE) 2022/991, el 28 de junio de 2022, es el momento en que el análisis se vuelve doctrinalmente más denso y, desde el punto de vista de la ética del derecho de la Unión, más perturbador. Porque lo que el Reglamento hizo no fue simplemente ampliar el mandato de Europol para responder a realidades operativas cambiantes —lo cual sería una función legislativa legítima—.
+
+Lo que hizo fue retroactivamente validar las infracciones que el SEPD ya había declarado ilegales.
+
+La arquitectura del nuevo mandato introduce dos innovaciones centrales. El artículo 18, apartado 6a, autoriza a Europol a realizar un filtrado inicial de grandes conjuntos de datos recibidos de los Estados miembros para verificar si los individuos afectados cumplen con las categorías legales, con un periodo de gracia fijado en 18 meses, extensible hasta tres años en casos justificados.
+
+El artículo 18a permite el procesamiento de datos sin categorización establecida cuando un Estado miembro, la Fiscalía Europea (EPPO) o Eurojust soliciten apoyo para una investigación criminal concreta.
+
+Ambas disposiciones tienen justificación operativa. La cuestión jurídicamente problemática son los artículos 74a y 74b, que constituyeron lo que el SEPD denominó el "escudo retroactivo".
+
+Estas disposiciones autorizaron el procesamiento de conjuntos de datos que Europol ya poseía antes de junio de 2022, incluso si carecían de la categorización legal exigida en el momento de su recolección. El efecto práctico fue inmediato: el mandato de borrado emitido por el SEPD en enero de 2022 quedó efectivamente anulado por la nueva ley.
+
+Los datos cuya retención había sido declarada ilegal fueron legalizados por el poder legislativo antes de que el mandato de borrado pudiera ejecutarse.
+
+Esta operación merece un análisis cuidadoso porque afecta a uno de los principios fundacionales del Estado de Derecho: la seguridad jurídica. El principio de seguridad jurídica no prohíbe la legislación retroactiva en términos absolutos —el TJUE ha admitido que puede ser justificada en circunstancias excepcionales—.
+
+Lo que exige es que la retroactividad tenga una justificación legítima y que no destruya las expectativas de quienes actuaron de conformidad con el derecho vigente. Pero los artículos 74a y 74b no buscan proteger expectativas legítimas; buscan neutralizar el ejercicio de la función supervisora de una autoridad independiente.
+
+Y eso introduce una dimensión constitucional más grave: si el legislador puede dictar normas que anulan decisiones administrativas firmes de un regulador independiente cada vez que ese regulador identifica infracciones de una agencia que el poder político desea proteger, la independencia del supervisor queda vaciada de contenido.
+
+Esta fue, precisamente, la tesis del recurso de anulación (Asunto T-578/22) que el SEPD interpuso el 16 de septiembre de 2022 ante el Tribunal de Justicia. La demanda se articuló en torno a dos argumentos constitucionales.
+
+Primero, la violación de la seguridad jurídica: las disposiciones retroactivas alteraron las reglas aplicables a datos ya recolectados bajo un marco normativo diferente, permitiendo su procesamiento bajo un régimen de excepcionalidad posterior.
+
+Segundo, la amenaza a la independencia del supervisor: al dictar normas que anulan decisiones administrativas finales del regulador, los colegisladores estaban vaciando de contenido la función de supervisión independiente prevista en los Tratados y garantizada por el artículo 16 del Tratado de Funcionamiento de la Unión Europea.
+
+La trayectoria judicial reflejó la complejidad de la cuestión. En septiembre de 2023, el Tribunal General desestimó el recurso alegando que el SEPD carecía de legitimación activa (*locus standi*), al considerar que las disposiciones impugnadas no le afectaban de forma "directa e individual".
+
+El supervisor presentó un recurso de casación (Asunto C-698/23 P), que en mayo de 2025 recibió un impulso significativo: el Abogado General del TJUE emitió una opinión favorable al SEPD, argumentando que las disposiciones impugnadas buscaban específicamente contrarrestar una decisión administrativa previa del supervisor y que, por tanto, el TJUE debía revisar su admisibilidad.
+
+La sentencia final, cuando se produzca, será determinante no solo para este caso, sino para la arquitectura del control de las agencias de la Unión.
+
+## Derechos fundamentales en el Big Data policial: del caso *Prokuratuur* a la vigilancia predictiva
+
+La dimensión de derechos fundamentales del caso Europol trasciende el ámbito del cumplimiento normativo y afecta al núcleo de la arquitectura constitucional de la Unión. El artículo 8 de la Carta de los Derechos Fundamentales garantiza el derecho a la protección de los datos de carácter personal, incluyendo el derecho a acceder a los datos recogidos y a obtener su rectificación. El artículo 48 establece la presunción de inocencia.
+
+El artículo 52 exige que cualquier limitación de estos derechos sea establecida por la ley, respete el contenido esencial de los mismos y sea necesaria y proporcional a los objetivos de interés general perseguidos.
+
+El modelo de vigilancia que la CFN y *Pressure Cooker* representan viola estos principios en su estructura misma. No porque produzca daños identificables caso a caso —aunque el caso *Kočner v Europol* (T-528/20) establece ya que la agencia puede ser responsable solidaria por el tratamiento ilícito que cause daño a un individuo—, sino porque opera sobre una premisa que invierte la lógica constitucional de la presunción de inocencia.
+
+En el modelo constitucional clásico, el Estado policial actúa sobre indicios de culpabilidad. En el modelo de vigilancia preventiva que el sistema sombra de Europol representa, el Estado actúa primero —acumulando datos de millones de personas— y construye indicios de culpabilidad después, de forma algorítmica. Esta inversión no es una diferencia de grado; es una diferencia de naturaleza. Y el TJUE lo ha reconocido explícitamente.
+
+En el asunto *Prokuratuur* (C-746/18), el Tribunal declaró que el acceso generalizado y preventivo a los metadatos de comunicaciones es incompatible con el artículo 7 de la Carta, incluso cuando el objetivo declarado sea la lucha contra delitos graves. La razón es que dicho acceso afecta al "conjunto de la población" sin que exista "ningún vínculo entre los datos y la amenaza para la seguridad pública".
+
+La utilización de los datos masivos obtenidos en operaciones como EncroChat o Sky ECC para entrenar modelos de inteligencia artificial introduce una dimensión adicional que la jurisprudencia existente apenas ha comenzado a abordar.
+
+Cuando los datos interceptados en investigaciones específicas se convierten en material de entrenamiento para algoritmos de reconocimiento de patrones criminales, el principio de limitación de la finalidad (*purpose limitation*) del artículo 5, apartado 1, letra b, del RGPD —y su equivalente en el Reglamento 2018/1725— queda formalmente vulnerado.
+
+Los datos se recolectan con una finalidad específica (investigar un delito concreto) y se utilizan con una finalidad diferente y mucho más amplia (construir modelos predictivos de comportamiento criminal). El mero hecho de que ambas finalidades sean "policiales" no satisface el requisito de compatibilidad de finalidades exigido por el derecho de la Unión.
+
+Conviene recordar que los resultados de la Acción de Aplicación Coordinada (CEF) de 2025, llevada a cabo por el Comité Europeo de Protección de Datos, identificaron en los sistemas de tratamiento policial deficiencias estructurales que se aplican directamente al caso Europol: la tendencia a aplicar el periodo de retención máximo a todas las actividades como opción por defecto, la ausencia de procedimientos para eliminar datos de las copias de seguridad —que pueden resultar en la permanencia digital indefinida de información de ciudadanos inocentes—, y el uso de técnicas de anonimización ineficientes que permiten la reidentificación potencial.
+
+Estos problemas, descriptos en el informe CEF 2025 como patrones sistémicos en los responsables del tratamiento, adquieren una dimensión particular cuando el responsable procesa datos a escala de petabytes y los utiliza para entrenar algoritmos de detección de patrones criminales.
+
+## Hacia Europol 2026: la expansión de poderes y el horizonte de la vigilancia algorítmica
+
+La propuesta presentada por el Comisario de Asuntos de Interior y Migración Magnus Brunner ante la Comisión LIBE del Parlamento Europeo el 19 de marzo de 2026 cierra el ciclo analizado en este artículo con una coherencia perturbadora. La reforma que se propone no es una corrección del modelo que generó la crisis; es su formalización y amplificación.
+
+El núcleo cuantitativo de la propuesta —duplicación del presupuesto anual y del personal de la agencia— tiene una justificación operativa comprensible en el contexto de la evolución de las amenazas transfronterizas.
+
+No obstante, el elemento cualitativamente transformador es la extensión del mandato a áreas como el sabotaje, las amenazas híbridas y la manipulación de información. Estas categorías merecen un análisis jurídico cuidadoso, porque la vaguedad conceptual que las caracteriza es, desde la perspectiva del Estado de Derecho, una de las señales de alarma más fiables en el diseño normativo.
+
+El concepto de "amenaza híbrida" carece de una definición jurídica consolidada en el derecho de la Unión. Las amenazas híbridas combinan instrumentos militares y no militares, a menudo ejecutadas a través de actores intermediarios con plausible deniabilidad.
+
+La inclusión de esta categoría en el mandato de una agencia policial plantea un problema de delimitación competencial con las funciones de inteligencia y contrainteligencia que, en el modelo constitucional europeo, corresponden a los Estados miembros bajo supervisión parlamentaria nacional.
+
+Igualmente problemático es el concepto de "manipulación de información" aplicado a un mandato policial operativo: sin una definición precisa, puede convertirse en un vector para la vigilancia de la disidencia política, el periodismo crítico o la protesta social, en contradicción directa con los artículos 10 (libertad de expresión) y 11 (libertad de reunión) de la Carta.
+
+Ahora bien, el problema más profundo de la propuesta de 2026 no reside en los detalles de su arquitectura competencial, sino en el patrón que reproduce. Europol duplicará su capacidad analítica, sus herramientas de inteligencia artificial y su presencia operativa sobre una cultura institucional que, como ha quedado documentado, ha demostrado su tendencia a crear infraestructuras clandestinas cuando las restricciones normativas obstaculizan los objetivos operativos.
+
+La pregunta relevante no es si la reforma incluye "mecanismos de rendición de cuentas reforzados" —la propuesta los menciona—, sino si esos mecanismos tienen la sustancia técnica necesaria para supervisar sistemas de análisis de datos a escala de petabytes impulsados por inteligencia artificial. La experiencia de la CFN sugiere que la respuesta, en ausencia de cambios estructurales profundos, es negativa.
+
+La distinción establecida por el Tribunal General en el caso *Sky ECC I* (2026) —que Europol no es responsable de cómo las autoridades nacionales utilizan la inteligencia que les proporciona— crea adicionalmente una zona gris de responsabilidad con consecuencias potencialmente graves.
+
+En un modelo donde la agencia proporciona análisis algorítmico de alta sofisticación que los Estados miembros convierten directamente en base de investigaciones penales, la ausencia de responsabilidad de la fuente de inteligencia ante posibles errores algorítmicos o contaminaciones por datos de personas inocentes es, estructuralmente, una laguna de garantías que afecta al derecho a la tutela judicial efectiva consagrado en el artículo 47 de la Carta.
+
+## La arquitectura de la excepción como sistema de gobernanza
+
+Ahora bien, el elemento más significativo que emerge del análisis es el patrón que subyace a los eventos individuales: la forma en que la excepción se convierte en norma. Este patrón tiene tres fases identificables que se han reproducido con notable consistencia.
+
+En la primera fase, la urgencia operativa genera una práctica que excede el marco legal vigente. El procesamiento masivo de datos en la CFN no comenzó como una infracción deliberada; comenzó como una respuesta pragmática a una emergencia genuina.
+
+En la segunda fase, la práctica extralegal se consolida, crece y se integra en las operaciones cotidianas hasta el punto en que "desmontarla" se convierte en técnicamente inviable —o, al menos, en algo que los actores institucionales con interés en mantenerla pueden presentar como inviable—.
+
+En la tercera fase, cuando el regulador identifica la infracción y exige su corrección, el poder político interviene para ampliar el marco legal de forma que la práctica previamente ilegal quede autorizada retroactivamente.
+
+Este patrón, si se establece como precedente, tiene consecuencias sistémicas para la gobernanza de la Unión que van más allá del caso Europol. Implica que las agencias de la Unión pueden operar bajo la expectativa implícita de que sus infracciones serán eventualmente legalizadas si son lo suficientemente persistentes y lo suficientemente relevantes para los objetivos de seguridad del poder político.
+
+Implica que la supervisión independiente es un mecanismo eficaz cuando las infracciones son menores o cuando el supervisado carece de respaldo político, pero puede ser neutralizada cuando ambas condiciones no se cumplen.
+
+E implica que la seguridad jurídica —la certeza de que el derecho aplicable en el momento de la acción será el criterio por el que esa acción sea juzgada— es condicionalmente disponible en función de las prioridades políticas del legislador.
+
+La parálisis parcial de la propia supervisión reconocida por el SEPD en 2026 —cerrando el monitoreo activo de la CFN a pesar de que 15 de sus 150 recomendaciones de seguridad no habían sido implementadas— no es el resultado de una renuncia filosófica a la supervisión, sino de la constatación pragmática de sus límites.
+
+Cuando el supervisor admite que ciertos sistemas se han vuelto "demasiado grandes para ser regulados" de forma efectiva, no está describiendo una limitación técnica; está describiendo el fracaso del modelo de gobernanza.
+
+## Conclusión: la encrucijada del Estado de Derecho digital
+
+El caso de los sistemas de TI sombra de Europol plantea, en último término, una pregunta que trasciende el derecho de la protección de datos y afecta a la teoría del Estado de Derecho en la era digital: ¿puede un sistema policial que ha construido su eficacia operativa sobre infraestructuras clandestinas, sin registros de acceso, sin categorización de los datos que procesa y sin supervisión efectiva, convertirse en el modelo de referencia de la policía europea del siglo XXI mediante la simple expansión de su mandato jurídico?
+
+La tesis que este análisis defiende es que no, y que la razón no es únicamente normativa sino funcional. Un sistema policial que "protege la ley violándola" corroe no solo los derechos de los ciudadanos cuyos datos procesa ilegalmente, sino la propia legitimidad sobre la que descansa la eficacia policial en una democracia.
+
+Como señalaba el informe Drewer de 2019 —con una claridad que la dirección de la agencia prefirió ignorar— la confianza de los Estados miembros es el activo central de Europol, y esa confianza no se construye sobre la capacidad de procesar 2 petabytes de datos sin trazabilidad; se construye sobre la certeza de que esos datos se tratan conforme a los principios que la Unión declara irrenunciables.
+
+La resolución del Asunto C-698/23 P ante el TJUE será un test determinante. Si el Tribunal sigue la opinión del Abogado General y reconoce la legitimación activa del SEPD para impugnar normas que retroactivamente neutralizan sus decisiones, habrá establecido un principio de enorme importancia: que la independencia de los supervisores de datos es un valor constitucional que ni siquiera el legislador ordinario puede vaciar de contenido bajo el argumento de la eficacia policial.
+
+Si, por el contrario, mantiene el criterio del Tribunal General, habrá confirmado que la arquitectura de la excepción es un modelo jurídicamente viable, con consecuencias para la soberanía digital de los ciudadanos europeos que aún no hemos terminado de calibrar.
+
+El patrón que este caso revela —infraestructura clandestina, presión regulatoria, legalización retroactiva, expansión de mandato— no es exclusivo de Europol. Es la descripción de cómo la tensión entre seguridad y libertad se resuelve en la práctica institucional cuando los mecanismos de control carecen de los instrumentos técnicos y la voluntad política necesarios para hacer efectiva la supervisión. Comprenderlo con precisión doctrinal es el primer paso para no repetirlo.
+
+---
+
+## Referencias
+
+*Architecture of Exception* (2026). *The Architecture of Exception: An Analysis of Europol's Shadow IT Systems, Data Governance Failures, and the 2026 Mandate Expansion*. Documento técnico de investigación.
+
+Computer Weekly (2026, 5 de mayo). *'They protect the law while breaking it': Inside Europol's shadow IT system*. Disponible en: https://www.computerweekly.com/news/366642525/They-protect-the-law-while-breaking-it-Inside-Europols-shadow-IT-system
+
+CORRECTIV (2026, 5 de mayo). *"They protect the law while breaking it": Inside Europol's Shadow IT System*. Disponible en: https://correctiv.org/en/europe/2026/05/05/they-protect-the-law-while-breaking-it-inside-europols-shadow-it-system/
+
+EDPB (2026, 10 de febrero). *2025 Coordinated Enforcement Action: Implementation of the right to erasure by controllers*. European Data Protection Board. Disponible en: https://www.edpb.europa.eu/system/files/2026-02/edpb_cef-report_2025_right-to-erasure_en.pdf
+
+EDPS (2022, 10 de enero). *EDPS orders Europol to erase data concerning individuals with no established link to a criminal activity*. European Data Protection Supervisor. Disponible en: https://www.edps.europa.eu/data-protection/our-work/publications/investigations/edps-orders-europol-erase-data-concerning_en
+
+EDPS (2023). *Annual Report 2022*. European Data Protection Supervisor. Disponible en: https://www.edps.europa.eu/2022-edps-annual-report/en/index.html
+
+EDPS (2025). *Annual Report 2024*. European Data Protection Supervisor. Disponible en: https://www.edps.europa.eu/system/files/2025-04/edps_annual_report-2024_en.pdf
+
+European Parliament (2026). *Revising the Europol Regulation: Implementation takeaways*. EPRS | European Parliamentary Research Service. Disponible en: https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/774717/EPRS_BRI(2026)774717_EN.pdf
+
+European Parliament (2026, 19 de marzo). *The Upcoming Revision of Europol's Mandate: Exchange of views with Commissioner Magnus Brunner*. LIBE Committee. Disponible en: https://www.europarl.europa.eu/committees/en/the-upcoming-revision-of-europol-s-manda/product-details/20260408EOT09324
+
+INCYBER NEWS (2022, 14 de enero). *EDPS commands Europol to delete personal data*. Disponible en: https://incyber.org/en/article/edps-commands-europol-to-delete-personal-data/
+
+Joint Defense Team (2025, 14 de noviembre). *Europol is watching you: everyone's data in criminal proceedings*. Disponible en: https://www.joint-defense-team.com/post/europol-data-processing-fundamental-rights-ai
+
+Solomon (2026, 5 de mayo). *'They protect the law while breaking it': Inside Europol's Shadow IT System*. Disponible en: https://wearesolomon.com/en/mag/focus-area/accountability/they-protect-the-law-while-breaking-it-inside-europols-shadow-it-system/
+
+TJUE, Gran Sala, Sentencia de 2 de marzo de 2021, Asunto C-746/18, *H.K. v Prokuratuur* (Prokuratuur), ECLI:EU:C:2021:152.
+
+Tribunal General de la UE, Sentencia de 15 de septiembre de 2023, Asunto T-578/22, *EDPS v European Parliament and Council*, ECLI:EU:T:2023:533.
+
+Tribunal General de la UE, Asunto T-528/20, *Kočner v Europol* (2024).

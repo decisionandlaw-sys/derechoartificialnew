@@ -1,0 +1,246 @@
+---
+title: "Alucinaciones en herramientas de investigación jurídica con IA: el fracaso del RAG y sus implicaciones legales"
+description: "Análisis jurídico del estudio Stanford (JELS 2025) sobre tasas de alucinación en Lexis+ AI, Westlaw y Ask Practical Law AI. Consecuencias para la responsabilidad profesional del abogado bajo el Reglamento de IA, RGPD y el deber deontológico de supervisión."
+slug: "alucinaciones-rag-herramientas-investigacion-juridica-ia"
+date: "2026-03-03"
+lastmodified: "2026-03-03"
+readingtime: "14"
+section: "global-ia"
+category: "global-ia"
+tags: ""
+authors: ""
+schema: ""
+type: "Article"
+headline: "Alucinaciones en herramientas de investigación jurídica con IA"
+keywords: "alucinaciones IA escritos judiciales, herramientas RAG jurídicas, responsabilidad abogado IA, Reglamento IA 2024/1689"
+canonical: "https://derechoartificial.es/global-ia/alucinaciones-rag-herramientas-investigacion-juridica-ia"
+---
+# Alucinaciones en herramientas de investigación jurídica con IA: el fracaso del RAG y sus implicaciones legales
+
+La industria legaltech ha vendido durante años la promesa de la investigación jurídica sin alucinaciones. LexisNexis garantizaba citas "100% libres de alucinaciones". Thomson Reuters afirmaba evitar las alucinaciones gracias a sus controles internos. El Reglamento de IA (UE) 2024/1689 exige transparencia y documentación técnica. Y mientras tanto, los abogados seguían presentando escritos con jurisprudencia inventada.
+
+Un estudio empírico publicado en el *Journal of Empirical Legal Studies* en 2025 por investigadores de Stanford y Yale ha puesto cifras concretas a este problema. Los resultados son incómodos para todos: para los proveedores que prometían soluciones definitivas, para los despachos que adoptaron estas herramientas sin evaluarlas, y para el marco regulatorio que aún no ha articulado con suficiente precisión las obligaciones de los actores de la cadena de valor de la IA jurídica.
+
+Este artículo analiza el estudio desde una perspectiva jurídica, aplicando la metodología IRAC para examinar las consecuencias sobre la responsabilidad del abogado usuario y del proveedor de IA, a la luz del Reglamento de IA, el RGPD y la normativa deontológica aplicable.
+
+---
+
+## I. El estudio Stanford-Yale: diseño metodológico y hallazgos principales
+
+<!-- [LINK ROTO: /ia-proteccion-datos/... sección eliminada] -->
+
+### 1.1 Primera evaluación empírica preregistrada de herramientas RAG legales
+
+<!-- [LINK ROTO: /ia-proteccion-datos/... sección eliminada] -->
+
+El trabajo de Magesh, Surani, Dahl, Suzgun, Manning y Ho constituye la primera evaluación sistemática y preregistrada de herramientas de investigación jurídica basadas en IA comerciales. Los autores diseñaron un conjunto de 202 consultas jurídicas distribuidas en cuatro categorías:
+
+- **Investigación jurídica general** (n=80): preguntas doctrinales, del bar exam, sobre holdings
+- **Preguntas jurisdicción/tiempo-específicas** (n=70): divergencias de circuitos, casos revocados, normativa reciente
+- **Preguntas con premisa falsa** (n=22): consultas donde el usuario parte de un error jurídico
+- **Preguntas de recuperación factual** (n=30): autor de una opinión, año de resolución, cita Bluebook
+
+Las herramientas evaluadas fueron Lexis+ AI (LexisNexis), Westlaw AI-Assisted Research y Ask Practical Law AI (ambas de Thomson Reuters), comparadas con GPT-4 como referencia de un modelo de propósito general sin acceso a bases de datos externas.
+
+La metodología incluyó evaluación manual por juristas expertos, con cálculo de coeficiente kappa de Cohen (0,77) y una tasa de acuerdo entre evaluadores del 85,4%, lo que acredita la solidez del protocolo de codificación.
+
+### 1.2 Definición operativa de alucinación: correctness y groundedness
+
+El estudio supera las definiciones imprecisas que los propios proveedores usaban en sus materiales de marketing. Introduce una taxonomía de dos dimensiones:
+
+**Correctness** (corrección factual): una respuesta es incorrecta si contiene cualquier afirmación fácticamente inexacta, independientemente de si cita una fuente real.
+
+**Groundedness** (fundamentación en autoridad): una respuesta correcta puede ser *grounded* (cita autoridad aplicable), *ungrounded* (omite citar) o *misgrounded* (cita una fuente real que no respalda la proposición o que ha sido revocada).
+
+Una **alucinación** se define como cualquier respuesta que sea incorrecta o misgrounded. Esta definición captura tanto la fabricación de casos inexistentes como el error más insidioso: citar jurisprudencia real para sostener una proposición que esa jurisprudencia en realidad rechaza.
+
+<Callout type="warning">
+**Por qué esto importa jurídicamente:** Una herramienta que siempre cita casos reales pero los usa para sostener proposiciones contrarias a lo que esos casos dicen no es "libre de alucinaciones" en ningún sentido útil. Es, en todo caso, más peligrosa que un modelo que inventa casos, porque genera una apariencia de fiabilidad que dificulta la detección del error.
+</Callout>
+
+### 1.3 Tasas de alucinación: los datos
+
+| Herramienta | Respuestas precisas | Respuestas incompletas | Alucinaciones |
+|---|---|---|---|
+| Lexis+ AI | 65% | 18% | **17%** |
+| Westlaw AI-AR | 42% | 25% | **33%** |
+| Ask Practical Law AI | 19% | 62% | **17%** |
+| GPT-4 (sin RAG) | 49% | 8% | **43%** |
+
+
+El RAG reduce las alucinaciones respecto a GPT-4 sin acceso a bases de datos, pero no las elimina. Westlaw, el sistema con respuestas más extensas (media de 350 palabras frente a 219 de Lexis), alucinaba en uno de cada tres casos. Ask Practical Law AI, limitado a los documentos internos de Thomson Reuters, rechazaba responder en más del 60% de las consultas.
+
+### 1.4 Tipología de errores: cuatro modos de fallo
+
+El estudio identifica cuatro categorías de error que cualquier abogado usuario debería conocer:
+
+**Naive Retrieval** (recuperación ingenua): el sistema no encuentra los documentos más relevantes. Lexis+ AI lo exhibe en el 47% de sus alucinaciones, a menudo confundiendo términos jurídicamente distintos por similitud semántica superficial.
+
+**Inapplicable Authority** (autoridad inaplicable): el sistema cita autoridad de otra jurisdicción, de otro período temporal o revocada. Aparece en el 38% de las alucinaciones de Lexis y el 34% de las de Ask Practical Law.
+
+**Reasoning Error** (error de razonamiento): el sistema dispone de los documentos correctos pero extrae conclusiones equivocadas. Es el modo de fallo dominante de Westlaw (61% de sus alucinaciones), que con frecuencia invierte el holding de un caso o atribuye a un tribunal acciones del litigante.
+
+**Sycophancy** (servilismo hacia la premisa del usuario): el sistema asume que la premisa de la consulta es correcta aunque sea falsa. Aparece de forma marginal (6% en Lexis) porque estos sistemas, a diferencia de ChatGPT, suelen corregir premisas erróneas.
+
+---
+
+## II. Marco jurídico aplicable: cuestión previa sobre las obligaciones de los actores
+
+### 2.1 Issue
+
+*A la luz del Reglamento (UE) 2024/1689 (Reglamento de IA), el Reglamento (UE) 2016/679 (RGPD) y la normativa deontológica profesional aplicable, ¿qué obligaciones jurídicas vinculan, respectivamente, a los proveedores de herramientas de investigación jurídica con IA y a los abogados que las emplean para redactar escritos judiciales, cuando dichas herramientas presentan tasas significativas de alucinación documentadas empíricamente?*
+
+### 2.2 Rule: normativa aplicable
+
+#### 2.2.1 Reglamento de IA (UE) 2024/1689
+
+El Reglamento de IA entró en vigor el 1 de agosto de 2024, con aplicación escalonada. Las disposiciones sobre modelos de IA de propósito general (Arts. 51-55) son aplicables desde el 2 de agosto de 2025. Las relativas a sistemas de alto riesgo (Arts. 9-15) se aplican plenamente desde el 2 de agosto de 2027, aunque los operadores deben comenzar a adaptar sus sistemas con anterioridad.
+
+La clasificación de las herramientas de investigación jurídica bajo el Reglamento de IA requiere análisis caso por caso. El Anexo III, apartado 8, incluye entre los sistemas de alto riesgo los empleados en la "administración de justicia y procesos democráticos", con específica referencia a los sistemas de apoyo a la interpretación de hechos y la ley empleados por la administración de justicia.
+
+La herramienta de investigación destinada al uso en procedimientos judiciales puede quedar incluida en este ámbito, dependiendo de cómo defina el proveedor su caso de uso previsto.
+
+Para los modelos de propósito general que subyacen a estos sistemas (como GPT-4, integrado en Westlaw AI-AR), el Art. 53 impone obligaciones de documentación técnica, cumplimiento de derechos de autor y publicación de un resumen de los datos de entrenamiento. Los modelos con riesgo sistémico (Art. 55) deben además realizar evaluaciones adversariales y notificar incidentes graves a la Comisión Europea.
+
+La obligación de transparencia del Art.13 exige que los sistemas de alto riesgo sean diseñados de forma que sus salidas sean suficientemente interpretables por los operadores. El deber de supervisión humana del Art. 14 impone que el sistema sea diseñado para permitir a las personas físicas supervisar eficazmente su funcionamiento y "detectar y abordar lo antes posible los posibles problemas durante su uso."
+
+#### 2.2.2 RGPD (UE) 2016/679
+
+Cuando las herramientas de investigación jurídica procesan datos personales en las consultas (por ejemplo, datos de las partes de un asunto), resulta aplicable el RGPD. El Art. 22 establece el derecho a no ser objeto de decisiones basadas únicamente en tratamiento automatizado que produzcan efectos jurídicos significativos.
+
+Si la herramienta de IA condiciona materialmente el contenido de un escrito que luego incide sobre la esfera jurídica de terceros, el análisis del Art. 22 deviene pertinente, aunque el umbral de "decisión únicamente automatizada" requiere evaluación específica.
+
+El Art. 5.1.d) impone el principio de exactitud: los datos tratados deben ser exactos y, cuando sea necesario, actualizados. La utilización de jurisprudencia desactualizada o revocada podría constituir un incumplimiento de este principio si los datos se emplean en el contexto de servicios que afectan a terceros.
+
+#### 2.2.3 Normativa deontológica: el deber de competencia y supervisión
+
+El Estatuto General de la Abogacía Española (Real Decreto 135/2021) y los Códigos Deontológicos del Consejo General de la Abogacía Española establecen el deber de competencia profesional, que incluye la obligación de actualización permanente en las herramientas y metodologías disponibles para el ejercicio de la profesión.
+
+En el plano comparado, el Marco de Conducta Profesional Modelo de la American Bar Association (ABA) resulta especialmente relevante dado el origen del estudio. La Rule 1.1 (competencia) y la Rule 5.3 (supervisión de no abogados) han sido interpretadas por las bar associations de California (2023), Nueva York (2024) y Florida (2024) en el sentido de que el abogado tiene el deber de conocer los riesgos empíricos específicos de las herramientas de IA que utiliza, no bastando el conocimiento general sobre la existencia del problema de alucinación.
+
+La jurisprudencia sancionadora española en materia de responsabilidad del abogado por contenido de escritos judiciales, aunque anterior a la generalización de la IA, establece que el profesional responde personalmente por la exactitud de los hechos y el derecho alegados, sin que la interposición de un auxiliar o herramienta exima de dicha responsabilidad.
+
+---
+
+## III. Aplicación: análisis de las obligaciones de proveedores y abogados usuarios
+
+### 3.1 Obligaciones del proveedor de herramientas de investigación jurídica con IA
+
+Las afirmaciones comerciales de LexisNexis y Thomson Reuters constituyen el primer ámbito de examen. LexisNexis proclamaba citas jurídicas "100% libres de alucinaciones" en sus materiales de marketing hasta, al menos, 2023. Thomson Reuters afirmaba que el RAG "reduce drásticamente las alucinaciones a casi cero" en declaraciones públicas de ejecutivos de la compañía.
+
+El estudio Stanford-Yale demuestra que estas afirmaciones eran, cuando menos, imprecisas. El Reglamento de IA, en su Art. 9 sobre gestión de riesgos, exige que los proveedores de sistemas de alto riesgo establezcan un sistema de gestión de riesgos continuo a lo largo del ciclo de vida del sistema.
+
+La ausencia de datos empíricos de rendimiento en los materiales publicados por estos proveedores contrasta con esta obligación de transparencia sobre el perfil de riesgo del sistema.
+
+Desde la perspectiva de la competencia desleal y la publicidad, el Reglamento (UE) 2024/1689 no contiene una prohibición expresa de afirmaciones publicitarias sobre ausencia de alucinaciones, pero el principio de exactitud que rige la publicidad comercial en los ordenamientos nacionales podría verse comprometido.
+
+En Estados Unidos, los autores del estudio apuntan a la Section 43(a) de la Lanham Act (15 U.S.C. § 1125) como base para acciones de competencia desleal derivadas de afirmaciones no respaldadas empíricamente sobre las capacidades de la herramienta.
+
+La responsabilidad civil del proveedor por alucinaciones dañosas está emergiendo como cuestión doctrinal de primer orden. El precedente canadiense *Moffatt v. Air Canada* (2024), en el que una aerolínea fue declarada responsable por las afirmaciones erróneas de su chatbot, ilustra la dirección de la jurisprudencia comparada.
+
+En el ámbito europeo, la AI Liability Directive (en tramitación) prevería la inversión de la carga de la prueba en supuestos de daño derivado de IA de alto riesgo, facilitando las reclamaciones contra proveedores que no puedan demostrar el cumplimiento de sus obligaciones de documentación técnica.
+
+<Callout type="info">
+**Atención regulatoria:** Los autores del estudio apuntan que, en octubre de 2024, LexisNexis había actualizado su promesa de marketing a "nuestro compromiso no es la perfección, sino que todas las citas jurídicas vinculadas sean libres de alucinaciones." Esta matización posterior a la publicación preliminar del estudio refleja la presión regulatoria y reputacional que genera la evidencia empírica sobre el rendimiento real de los sistemas.
+</Callout>
+
+### 3.2 Obligaciones del abogado usuario
+
+La cuestión central para la práctica jurídica española y europea es si el abogado que incorpora herramientas de investigación con IA a su flujo de trabajo satisface su deber de competencia cuando no verifica individualmente cada cita y proposición jurídica generada por el sistema.
+
+La respuesta, a la luz del estudio y del marco normativo aplicable, es negativa por las siguientes razones:
+
+**Primera:** Las tasas de alucinación documentadas (17-33%) son suficientemente elevadas como para que la probabilidad de error en un escrito de extensión media sea significativa. Incluso con la herramienta de mejor rendimiento (Lexis+ AI, 17% de alucinación), la probabilidad de que un escrito que utilice cinco proposiciones con cita jurídica contenga al menos una alucinación supera el 60% si las proposiciones son independientes.
+
+**Segunda:** Los modos de fallo más frecuentes (miscitación de holding, confusión de jurisdicciones, cita de autoridad revocada) son precisamente los que requieren verificación mediante KeyCite, Shepard's o bases de datos equivalentes, proceso que el abogado debía realizar también antes de la IA y que no puede ser delegado al propio sistema que genera el error.
+
+**Tercera:** El Art. 14 del Reglamento de IA, que establece el deber de supervisión humana efectiva de los sistemas de alto riesgo, impone al operador (en este caso, el despacho o el abogado que implementa la herramienta) la responsabilidad de detectar errores. Esta obligación no puede ser eludida invocando la confianza en las afirmaciones del proveedor.
+
+**Cuarta:** Las guías deontológicas de California, Nueva York y Florida, citadas en el estudio, y los principios de competencia profesional aplicables en el ordenamiento español, convergen en la misma conclusión: el deber de supervisión del abogado sobre su producción escrita es personal e intransferible, ya se haya valido de un auxiliar humano o de un sistema de IA.
+
+El caso *EFD USA, Inc. v. Band Pro Film & Digital, Inc.* (Cal. App. 2d Dist., 18 de febrero de 2026) es ilustrativo: el tribunal impuso una sanción de 900 dólares al abogado que, tras recibir advertencia sobre el riesgo de alucinación, delegó la verificación de citas en un paralegal y luego usó un segundo sistema de IA para reducir la extensión del escrito sin reverificar las citas.
+
+El tribunal estableció que cada modificación automatizada del documento reinicia la obligación de verificación, y que la delegación del deber de verificación en terceros o herramientas es contraria a las normas de conducta profesional.
+
+### 3.3 El problema específico del misgrounding: la alucinación invisible
+
+El hallazgo más preocupante del estudio es la prevalencia del *misgrounding*: el sistema cita una fuente real, vinculada, con símbolo de Shepardization positivo, para sostener una proposición que esa fuente en realidad rechaza o que ha sido superada por jurisprudencia posterior.
+
+Este tipo de error es más peligroso que la fabricación de casos inexistentes por tres razones:
+
+La primera es que la verificación superficial no lo detecta. Si el abogado comprueba que la cita existe y que no tiene flag rojo en KeyCite, puede asumir que la proposición es correcta sin leer el texto del caso.
+
+La segunda es que el propio sistema puede estar suprimiendo la cita de la autoridad revocadora. El estudio documenta que Westlaw suprime en algunos casos la cita de jurisprudencia con flag rojo, generando el texto sin cita in-line sobre la base de material desactualizado. Esta conducta de diseño hace más difícil para el abogado identificar que la proposición requiere verificación adicional.
+
+La tercera es que el error se disimula con una apariencia de rigor que la cita de una fuente real proporciona. El efecto de automation bias, documentado en la literatura de seguridad de sistemas de información médica, opera con especial intensidad cuando el sistema presenta sus resultados con formatos que emulan el trabajo de investigación jurídica humana.
+
+---
+
+## IV. Conclusión e implicaciones prácticas
+
+### 4.1 Conclusión jurídica
+
+Las herramientas de investigación jurídica con IA basadas en RAG no han resuelto el problema de las alucinaciones. Presentan tasas de error sustanciales (17-33%) que, combinadas con la densidad de proposiciones jurídicas en escritos de cierta extensión, generan una probabilidad significativa de que cualquier documento elaborado con estas herramientas contenga al menos una afirmación errónea o mal fundamentada.
+
+Bajo el Reglamento de IA, los proveedores de estas herramientas (si clasificadas como alto riesgo) están obligados a implementar sistemas de gestión de riesgos, documentación técnica y supervisión humana efectiva.
+
+Sus afirmaciones comerciales sobre ausencia de alucinaciones pueden constituir representaciones engañosas en la medida en que no se fundamenten en evaluaciones empíricas rigorosas y sean inconsistentes con los resultados de estudios independientes.
+
+Los abogados que utilizan estas herramientas tienen el deber de verificar individualmente cada cita y proposición jurídica relevante, sin que la confianza en el proveedor exima de esta obligación. Este deber es personal, no delegable al sistema de IA ni a auxiliares no jurídicos, y su incumplimiento puede generar responsabilidad disciplinaria y civil.
+
+### 4.2 Protocolo de uso recomendado para despachos
+
+Con base en el análisis anterior, proponemos el siguiente protocolo mínimo de uso de herramientas de investigación jurídica con IA:
+
+**1. Evaluación previa de la herramienta:** antes de incorporar una herramienta al flujo de trabajo, el despacho debe conocer su tasa de alucinación documentada en estudios independientes y los modos de fallo prevalentes.
+
+**2. Uso como punto de partida, no como punto final:** la herramienta genera un primer borrador o una lista de referencias candidatas. No genera el producto final verificado.
+
+**3. Verificación activa de cada cita:** toda referencia jurídica debe ser localizada en la fuente primaria, comprobando que el holding citado corresponde realmente a lo que el caso sostiene y que la autoridad no ha sido revocada.
+
+**4. Alerta ante respuestas extensas:** las respuestas más largas contienen más proposiciones verificables y, por tanto, mayor probabilidad acumulada de error. La longitud no es indicador de calidad.
+
+**5. Documentación del proceso:** el despacho debe documentar el uso de herramientas de IA en la elaboración de escritos y el proceso de verificación realizado, tanto por razones de responsabilidad profesional como de cumplimiento del Reglamento de IA en su dimensión de supervisión humana efectiva.
+
+**6. Verificación especial tras cualquier modificación automatizada:** si la herramienta de IA o cualquier otra herramienta automatizada modifica el documento (reducción, reformateado, traducción), la verificación de citas debe repetirse sobre la versión modificada.
+
+### 4.3 La pregunta pendiente: ¿cómo se regula la fiabilidad de las herramientas jurídicas con IA?
+
+El estudio concluye señalando la ausencia de un mecanismo institucional independiente de evaluación de herramientas de IA jurídica equivalente al que el NIST proporciona para el reconocimiento facial en Estados Unidos.
+
+Esta ausencia es especialmente grave porque las organizaciones mejor dotadas para evaluar estas herramientas (los grandes despachos) tienen incentivos para no publicar sus resultados internos y las organizaciones sin recursos no pueden costear la evaluación.
+
+La AESIA (Agencia Española de Supervisión de IA), cuya puesta en funcionamiento se espera en 2026, tendrá competencias de supervisión en el mercado español. La AEPD mantiene competencias sobre los aspectos de protección de datos de estas herramientas.
+
+La coordinación entre ambas autoridades, junto con la acción de la Oficina de IA de la Comisión Europea, determinará la arquitectura real de supervisión de un mercado que, mientras tanto, sigue operando a partir de afirmaciones comerciales no verificadas y sanciones disciplinarias caso por caso.
+
+La promesa del RAG no era infundada: la reducción de alucinaciones respecto a modelos de propósito general es real. El problema es que "mejor que ChatGPT sin acceso a bases de datos" no equivale a "apto para uso profesional sin verificación humana". Esa confusión, activamente fomentada por el marketing de algunos proveedores, es la que el Reglamento de IA, la normativa deontológica y, cada vez más, la jurisprudencia sancionadora están comenzando a corregir.
+
+---
+
+## Referencias
+
+**Normativa**
+
+- Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024 (Reglamento de IA)
+- Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (RGPD)
+- Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)
+- Real Decreto 135/2021, de 2 de marzo, por el que se aprueba el Estatuto General de la Abogacía Española
+
+**Doctrina de autoridades**
+
+- AEPD, *Adecuación al RGPD de tratamientos que incorporan Inteligencia Artificial* (2020)
+- CEPD, *Dictamen 5/2021 sobre la propuesta de Reglamento de Inteligencia Artificial* (2021)
+- The State Bar of California, *Practical Guidance for Use of Generative Artificial Intelligence in Practice of Law* (2023)
+- New York State Bar Association Task Force on Artificial Intelligence, *Report and Recommendations* (2024)
+
+**Jurisprudencia**
+
+- EFD USA, Inc. v. Band Pro Film & Digital, Inc., No. B335951 (Cal. Ct. App. 2d Dist. Feb. 18, 2026)
+- Moffatt v. Air Canada, 2024 BCCRT 149 (British Columbia Civil Resolution Tribunal, 2024)
+
+**Doctrina científica**
+
+- Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C.D. y Ho, D.E., "Hallucination-Free? Assessing Reliability of Leading AI Legal Research Tools", *Journal of Empirical Legal Studies* (2025), DOI: 10.1111/jels.12413
+- Dahl, M., Magesh, V., Suzgun, M. y Ho, D.E., "Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models", *Journal of Legal Analysis* 16, no. 1 (2024), pp. 64-93
+- Guha, N. et al., "LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models" (2023), arXiv:2308.11462

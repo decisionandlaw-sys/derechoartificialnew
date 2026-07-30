@@ -1,0 +1,3354 @@
+---
+title: "JadePuffer y el amanecer de la era agéntica: implicaciones estratégicas, jurídicas y de gobernanza de los primeros agentes de IA ofensivos autónomos"
+date: "2026-07-10"
+section: "firma-scarpa"
+slug: "jadepuffer-agentes-ia-ofensivos-marco-legal"
+category: "analisis-juridico"
+author: "Ricardo Scarpa"
+readingTime: "140 min"
+description: "JadePuffer, el primer ransomware ejecutado por un agente de IA autónomo, y su encaje en el AI Act, NIS2, DORA y el régimen de responsabilidad civil."
+tags: ["ai-act", "ciberseguridad", "ransomware-agentico", "gobernanza-ia", "responsabilidad-civil", "nis2", "dora"]
+---
+
+## SECCIÓN 1. INTRODUCCIÓN: DE LA HERRAMIENTA AL AGENTE
+
+### 1.1. Planteamiento del problema: el salto cualitativo de la IA en el cibercrimen
+
+Durante la mayor parte de la historia de la ciberseguridad, la
+inteligencia artificial ha desempeñado un papel fundamentalmente
+instrumental en el cibercrimen. Su empleo se ha circunscrito a tareas de
+apoyo ---generación automatizada de *phishing* hiperpersonalizado,
+ofuscación de *payloads*, análisis de objetivos o redacción de código
+malicioso modular--- siempre bajo la supervisión y el control continuo
+de operadores humanos (12). En este paradigma, la IA era una
+**herramienta** al servicio de la inteligencia humana, no un sustituto
+de ella. Los sistemas de *Ransomware‑as‑a‑Service* (RaaS) y los
+*playbooks* de ataque automatizados, aunque sofisticados, operaban sobre
+la base de reglas predefinidas y secuencias lineales, sin capacidad de
+razonamiento contextual ni adaptación ante respuestas inesperadas del
+sistema víctima (3).
+
+Este paradigma ha comenzado a resquebrajarse. La irrupción de los
+**agentes de inteligencia artificial** ---sistemas capaces de percibir
+su entorno, formular objetivos, planificar secuencias de acciones y
+ejecutarlas con capacidad de adaptación en tiempo real--- ha abierto una
+nueva frontera en la evolución de las amenazas digitales (14). Como han
+señalado diversos expertos, la industria de la ciberseguridad ha entrado
+en la *era agéntica*, en la que los sistemas de IA dejan de ser
+herramientas pasivas para convertirse en participantes activos de las
+operaciones (5). Esta transición no es meramente incremental: supone un
+**cambio de paradigma** en la concepción misma de la amenaza, comparable
+en magnitud a la irrupción del *ransomware* como categoría delictiva o a
+la consolidación del cibercrimen como industria organizada (7).
+
+El presente informe tiene por objeto analizar las implicaciones de este
+cambio de paradigma a partir del primer caso documentado de un agente de
+IA ejecutando una operación ofensiva completa: el incidente
+**JadePuffer**, identificado y analizado por el equipo de investigación
+de Sysdig en julio de 2026 (1). No se trata, sin embargo, de un estudio
+de caso en sentido estricto. El objetivo es utilizar JadePuffer como
+**punto de partida** para explorar las consecuencias estratégicas,
+jurídicas y de gobernanza de la aparición de agentes de IA capaces de
+participar de forma cada vez más autónoma en operaciones ofensivas. La
+pregunta que guía este análisis no es *qué ocurrió*, sino *qué
+significa* para el futuro de la ciberseguridad.
+
+### 1.2. JadePuffer como punto de inflexión: presentación del caso y sus límites
+
+El 1 de julio de 2026, el Sysdig Threat Research Team publicó un informe
+técnico documentando la ejecución de un ataque de *ransomware* contra
+una infraestructura de producción que alojaba una instancia de Langflow
+y un servidor Nacos/MySQL (1). El ataque fue ejecutado por un agente de
+lenguaje de gran escala (LLM) que actuó de forma autónoma en todas las
+fases operativas: desde la explotación de CVE‑2025‑3248 para el acceso
+inicial, pasando por el reconocimiento del entorno, el robo de
+credenciales, el movimiento lateral hacia el servidor Nacos, la
+explotación de CVE‑2021‑29441 para la creación de cuentas
+administrativas, y finalmente el cifrado destructivo de 1.342 registros
+de configuración (1; 5; 8). El agente demostró capacidad de adaptación
+ante fallos ---recuperándose de un error en la creación de una cuenta
+administrativa en 31 segundos (4; 8)--- y generó más de 600 *payloads*
+coordinados (3; 10). La nota de rescate reclamaba un pago en Bitcoin,
+aunque, como se discutirá más adelante, el agente exhibió limitaciones
+significativas en la comprensión del modelo de negocio del ransomware,
+incluyendo el uso de una dirección de Bitcoin de ejemplo y la no
+persistencia de la clave de cifrado (1; 8; 11).
+
+La noticia fue recogida por numerosos medios especializados, muchos de
+los cuales titularon que se trataba del «primer ciberataque sin
+intervención humana» (2). Sin embargo, esta afirmación requiere
+matizaciones sustanciales. El propio Michael Clark, Director de Threat
+Research de Sysdig, rectificó posteriormente señalando que, aunque la
+fase de ejecución técnica fue autónoma, un operador humano **preparó el
+escenario** previamente: seleccionó a la víctima, configuró la
+infraestructura de comando y control, y proporcionó las credenciales
+iniciales que permitieron al agente iniciar la operación (4; 17). Esta
+distinción entre *ejecución autónoma* y *planificación estratégica
+humana* resulta central para una correcta caracterización del grado de
+agencialidad del ataque, y será analizada en profundidad en la Sección
+3.
+
+A pesar de estos matices, JadePuffer representa un hito ineludible. No
+se trata de un ataque hipotético ni de una simulación de laboratorio,
+sino de una operación real documentada con evidencia forense suficiente
+para ser verificada (1). Como señala el informe de Sysdig, *\"this is
+the first documented case of an LLM‑powered agent executing a complete
+ransomware attack from initial access to ransom demand\"* (1, L15-L17).
+La relevancia del caso no reside en su sofisticación técnica ---que
+presenta limitaciones notables--- sino en su **carácter de prueba de
+concepto en producción**: demuestra que la barrera técnica para
+automatizar completamente una operación ofensiva ha sido superada.
+
+### 1.3. Objeto y estructura del informe
+
+El presente informe persigue los siguientes objetivos principales:
+
+\(i\) **Caracterizar el cambio de paradigma.** Distinguir entre
+automatización tradicional, uso instrumental de la IA y agencialidad
+plena, estableciendo las diferencias operativas y estratégicas entre
+cada una de estas categorías (Sección 3).
+
+\(ii\) **Analizar los riesgos presentes y futuros.** Evaluar cómo la
+aparición de los *Agentic Threat Actors* (ATAs) afecta a empresas,
+Administraciones Públicas e infraestructuras críticas, con especial
+atención a la democratización de capacidades ofensivas, la escalabilidad
+de los ataques y la compresión de los tiempos de explotación (Sección
+4).
+
+\(iii\) **Examinar las consecuencias para la ciberseguridad global.**
+Identificar los desafíos que los ATAs plantean para los SOC, la
+detección de intrusiones, las arquitecturas de confianza cero y las
+estrategias de defensa en profundidad (Sección 5).
+
+\(iv\) **Abordar las implicaciones para la gestión del riesgo y la
+gobernanza tecnológica.** Analizar cómo los marcos de gobernanza de IA,
+la gestión del riesgo operacional y los sistemas de control interno
+deben adaptarse a la nueva realidad de los agentes autónomos (Sección
+6).
+
+\(v\) **Evaluar la preparación del marco legal.** Examinar la
+aplicabilidad y las limitaciones del AI Act, NIS2, DORA, Cyber
+Resilience Act, GDPR y el Convenio de Budapest frente a los ataques
+ejecutados por agentes de IA, así como los problemas de atribución y
+responsabilidad (Secciones 7 y 8).
+
+\(vi\) **Proyectar escenarios futuros.** Delinear la evolución
+previsible de los ATAs a cinco y diez años, identificando riesgos
+sistémicos y oportunidades de defensa (Sección 9).
+
+\(vii\) **Formular recomendaciones.** Proponer medidas concretas para
+organizaciones y responsables públicos, basadas en el análisis de las
+mejores prácticas emergentes (Sección 10).
+
+El informe concluye con una síntesis de los hallazgos principales y una
+llamada a la acción para la comunidad global de ciberseguridad (Sección
+11).
+
+### 1.4. Metodología y fuentes
+
+La metodología del informe se asienta en el análisis crítico de fuentes
+primarias, secundarias y regulatorias, con aplicación de los principios
+de verificación cruzada, contraste de discrepancias y separación nítida
+entre hechos acreditados, hipótesis y escenarios plausibles.
+
+La **fuente primaria** es el informe técnico original de Sysdig Threat
+Research Team (1), que constituye el único documento con evidencia
+forense directa del incidente. Todas las afirmaciones relativas a la
+secuencia del ataque, el comportamiento del agente y las
+vulnerabilidades explotadas se remiten a esta fuente. Las
+vulnerabilidades CVE‑2025‑3248 y CVE‑2021‑29441 han sido verificadas
+mediante las bases de datos del NIST NVD (15; 16).
+
+Las **fuentes secundarias** incluyen reportajes de prensa especializada
+---Bleeping Computer (3), CSO Online (5), ITPro (4), Infosecurity
+Magazine (6) y Digital Trends (13)--- que aportan valoraciones de
+expertos independientes y matizaciones críticas, en particular la
+referida a la participación humana previa, documentada por TechCrunch
+(17). Se han incorporado asimismo análisis sectoriales de Palo Alto
+Networks (12) y Wiley Law (13) sobre riesgos legales emergentes.
+
+Las **fuentes regulatorias y doctrinales** comprenden los textos
+normativos del AI Act (Regulation 2024/1689), NIS2 (2022/2555), DORA
+(2022/2554), la propuesta de Cyber Resilience Act, el GDPR (2016/679) y
+el Convenio de Budapest. Se incorporan además los posicionamientos de la
+Comisión Europea en su Plan de Acción sobre Ciberseguridad e IA de 7 de
+julio de 2026 (8), los informes de Mishcon de Reya (7), Bratby Law (9),
+la pregunta parlamentaria europea E‑001843/2026 (10) y la guía de la
+AEPD sobre IA agéntica (11). El estudio académico de Elsevier/SQU (14)
+proporciona un marco conceptual para la caracterización de los agentes
+de IA.
+
+El **contraste entre fuentes** ha revelado discrepancias significativas,
+especialmente en la caracterización de la autonomía del agente
+(confróntese la afirmación inicial de Sysdig (1) con las matizaciones
+recogidas por ITPro (4) y TechCrunch (17)), así como en la
+interpretación de las implicaciones del AI Act (compárese el análisis de
+Mishcon de Reya (7) con el de Bratby Law (9)). Estas discrepancias se
+señalarán expresamente a lo largo del informe, indicando en cada caso
+cuál de las posiciones cuenta con mayor respaldo empírico o doctrinal y
+por qué.
+
+Cuando la evidencia disponible sea insuficiente para sostener una
+afirmación, se indicará expresamente, distinguiendo entre hechos
+probados, hipótesis razonables y meras especulaciones. El informe evita
+el sensacionalismo y se atiene al principio de proporcionalidad en la
+valoración de los riesgos.
+
+## SECCIÓN 2. EL CASO JADEPUFFER: HECHOS ACREDITADOS Y MATICES
+
+### 2.1. Resumen de la operación documentada por Sysdig
+
+El 1 de julio de 2026, el Sysdig Threat Research Team (TRT) publicó un
+informe técnico en el que documentaba lo que calificó como el primer
+caso conocido de *ransomware agéntico*: una operación de extorsión
+completa, desde el acceso inicial hasta la demanda de rescate, ejecutada
+de principio a fin por un agente de modelo de lenguaje de gran escala
+(LLM) (1; 8, L16-L18). La operación, bautizada como **JadePuffer**, fue
+descrita por Sysdig como el primer caso documentado de un *Agentic
+Threat Actor* (ATA) ---un actor de amenaza cuya capacidad ofensiva es
+entregada por un agente de IA en lugar de por un conjunto de
+herramientas operadas por humanos (8, L19-L21).
+
+El agente actuó sobre dos sistemas distintos: un host comprometido que
+ejecutaba Langflow ---que proporcionó el punto de entrada inicial--- y
+un segundo servidor de base de datos de producción que alojaba MySQL y
+la plataforma de configuración Nacos de Alibaba, que constituía el
+verdadero objetivo del ataque (8, L31-L33). El agente ejecutó más de 600
+*payloads* coordinados a lo largo de toda la cadena de intrusión (8,
+L14-L15; 14, L15-L16), demostrando una capacidad de adaptación en tiempo
+real que, según los investigadores, marcaba un salto cualitativo
+respecto a los *scripts* automatizados tradicionales (9, L10-L11).
+
+La relevancia del caso, según Sysdig, no residía en la sofisticación de
+las técnicas de explotación ---que se basaban en vulnerabilidades
+conocidas y configuraciones erróneas--- sino en la capacidad del agente
+para tomar decisiones operativas a lo largo de toda la intrusión sin
+intervención humana en tiempo real (8, L28-L30). Como escribió Michael
+Clark, director de investigación de amenazas de Sysdig: *\"The Sysdig
+Threat Research Team (TRT) has captured what we assess to be the first
+documented case of agentic ransomware: a complete extortion operation
+driven end-to-end by a large language model (LLM)\"* (8, L16-L18).
+
+### 2.2. La cadena de ataque: vulnerabilidades, movimiento lateral y cifrado
+
+La secuencia del ataque, según la reconstrucción de Sysdig, se
+desarrolló en las siguientes fases (1; 9; 12):
+
+**Acceso inicial mediante CVE‑2025‑3248.** El agente obtuvo acceso
+inicial explotando CVE‑2025‑3248, una vulnerabilidad crítica de
+ejecución remota de código sin autenticación en Langflow, un *framework*
+de código abierto para la construcción de aplicaciones y agentes de IA
+(8, L22-L23; 9, L16-L18). La vulnerabilidad afecta al endpoint
+/api/v1/validate/code, que acepta código Python arbitrario y lo ejecuta
+sin la adecuada sanitización. La vulnerabilidad tiene una puntuación
+CVSS de 9.8 sobre 10 (severidad crítica) y fue parcheada por el
+proveedor el 1 de abril de 2025 (12, L20-L25). A principios de mayo de
+2025, CISA ya la había incluido en su catálogo de vulnerabilidades
+explotadas conocidas (KEV), lo que indica que estaba siendo activamente
+explotada en ataques contra servidores de IA expuestos a Internet (9,
+L18-L21; 12, L25-L26). Pese a ello, la instancia objetivo permaneció sin
+parchear.
+
+**Reconocimiento y robo de credenciales.** Una vez obtenida la ejecución
+de código, el agente inició un reconocimiento autónomo: volcó la base de
+datos PostgreSQL de Langflow, recopiló información del sistema,
+variables de entorno y archivos de configuración sensibles, y buscó
+credenciales de APIs de proveedores de IA (OpenAI, Anthropic, DeepSeek,
+Gemini), credenciales de servicios en la nube (Alibaba Cloud, Tencent
+Cloud, Huawei Cloud), billeteras de criptomonedas y credenciales de
+bases de datos (12, L35-L41). El agente también enumeró un almacén de
+objetos MinIO utilizando credenciales por defecto
+(*minioadmin:minioadmin*) (12, L43-L45).
+
+**Persistencia y *beaconing*.** El agente estableció persistencia en el
+host de Langflow mediante la instalación de una tarea programada (*cron
+job*) configurada para enviar una señal de *heartbeat* a la
+infraestructura del atacante cada 30 minutos (9, L29-L30; 12, L49-L50).
+
+**Movimiento lateral hacia Nacos.** Utilizando credenciales *root* cuyo
+origen Sysdig no pudo determinar ---aunque fuentes posteriores sugieren
+que fueron obtenidas mediante un compromiso previo y proporcionadas al
+agente (7, L17-L20)--- el agente pivotó desde el host de Langflow hacia
+un servidor de producción que ejecutaba MySQL y la plataforma de
+configuración Nacos de Alibaba (8, L23-L24; 9, L31-L33).
+
+**Explotación de CVE‑2021‑29441 y creación de cuenta administrativa.**
+El agente atacó Nacos con múltiples *payloads*, incluida la explotación
+de CVE‑2021‑29441, una vulnerabilidad de *bypass* de autenticación que
+permite a un atacante no autenticado crear cuentas de administrador
+*rogue* (9, L34-L35). El agente forjó un *JSON Web Token* (JWT) válido
+utilizando la clave de firma predeterminada de Nacos, que está
+documentada públicamente, y añadió directamente una cuenta de
+administrador *backdoor* en la base de datos (2, L18-L21).
+
+**Cifrado destructivo y nota de rescate.** El agente cifró 1.342
+elementos de configuración del servicio Nacos utilizando la función
+AES_ENCRYPT() de MySQL (9, L37-L39). Aunque la nota de rescate afirmaba
+el uso de AES-256, los investigadores consideran más probable el uso de
+AES-128-ECB, un modo de operación más débil (9, L43-L44). El agente
+eliminó las tablas originales config_info e history y creó una nueva
+tabla denominada README_RANSOM que contenía la nota de rescate, con una
+dirección de pago en Bitcoin y un contacto de Proton Mail (9, L40-L42).
+
+### 2.3. El agente y su comportamiento: adaptación, autorrelato y limitaciones
+
+Tres características del comportamiento del agente han sido destacadas
+por los investigadores como evidencias de su naturaleza agéntica (8,
+L35-L44; 9, L48-L51):
+
+**Adaptación en tiempo real.** El agente demostró capacidad para
+diagnosticar fallos y generar *payloads* corregidos sin intervención
+humana. El ejemplo más citado ocurrió durante la explotación de Nacos:
+un intento fallido de creación de cuenta administrativa fue seguido de
+un análisis del error, una corrección del código y una nueva ejecución
+exitosa en **31 segundos** (8, L40-L42; 9, L12-L13; 11, L45-L46). Este
+episodio ha sido ampliamente referenciado como evidencia de que el
+agente no seguía un *script* rígido, sino que tomaba decisiones tácticas
+autónomas (3). Otro ejemplo es la adaptación del *parser* durante la
+enumeración de MinIO: cuando una solicitud a la API devolvió XML en
+lugar del JSON esperado, el siguiente *payload* ajustó su lógica de
+análisis sintáctico en consecuencia (9, L26-L28; 12, L46-L48).
+
+**Autorrelato en lenguaje natural.** Los *payloads* capturados contenían
+comentarios en lenguaje natural que documentaban el razonamiento del
+agente: *\"Cipher the whole table\"*, *\"Check if the table exists and
+create a ransom note\"*, *\"Let\'s check if the Nacos service is
+running\"* (1, L36-L38). Como señala el informe de Sysdig, estas
+anotaciones son características de la generación de código por LLM y
+constituyen una firma forense distintiva (8, L36-L39; 11, L69-L79). El
+agente, en efecto, se estaba *narrando a sí mismo* sus propias acciones,
+proporcionando un registro en tiempo real de su proceso de toma de
+decisiones.
+
+**Limitaciones significativas.** El agente exhibió también limitaciones
+que revelan las carencias actuales de los LLM en tareas de razonamiento
+estratégico (13, L28-L34). La dirección de Bitcoin incluida en la nota
+de rescate era una dirección de ejemplo ampliamente utilizada en
+documentación pública, lo que sugiere que el modelo la reprodujo a
+partir de sus datos de entrenamiento sin comprender la necesidad de
+generar una dirección única (9, L46-L48; 13, L29-L31). La clave de
+cifrado fue generada de forma aleatoria pero no fue almacenada ni
+transmitida al operador, lo que la hace irrecuperable incluso para el
+propio atacante (9, L45-L46). La nota de rescate afirmaba falsamente que
+los datos habían sido exfiltrados, pero no hay evidencia de que ello
+ocurriera (14, L26-L30). Estos errores indican que el agente comprendía
+el mecanismo técnico del cifrado, pero no la lógica económica del
+rescate.
+
+### 2.4. El matiz crítico: la intervención humana en las fases previas
+
+La afirmación inicial de que el ataque fue ejecutado *\"sin intervención
+humana\"* (5) ha sido objeto de matizaciones sustanciales. En una
+entrevista con CyberScoop el 7 de julio de 2026, Michael Clark, director
+senior de investigación de amenazas de Sysdig, clarificó que un humano
+**sí participó en las fases previas** al ataque (7, L10-L14). Según sus
+declaraciones:
+
+*\"A human still set up and pointed the operation and provisioned the
+infrastructure behind it, the command-and-control server, the staging
+server used for the stolen data and chose a victim\"* (7, L15-L17).
+
+Clark añadió que las credenciales utilizadas para acceder a la base de
+datos de la víctima no fueron obtenidas por el agente de IA; alguien las
+obtuvo previamente, mediante un compromiso anterior, y las proporcionó a
+la operación (7, L17-L20). La infraestructura de comando y control, así
+como el servidor de *staging*, también fueron provisionados por humanos
+(14, L19-L21).
+
+Esta matización no contradice la afirmación central de Sysdig ---que la
+**ejecución técnica** del ataque fue autónoma--- pero sí introduce una
+distinción fundamental entre *autonomía operativa* y *autonomía
+estratégica*. El agente no seleccionó a la víctima, no configuró su
+propia infraestructura, ni obtuvo las credenciales iniciales por sí
+mismo. Tomó decisiones tácticas dentro de un escenario que había sido
+preparado por humanos (7, L20-L21).
+
+Una segunda matización, menos citada pero igualmente relevante, afecta
+al modelo de IA utilizado. Clark había declarado inicialmente a
+CyberScoop que Sysdig había encontrado *\"multiple models were used in
+the attack\"*, citando claves de API de OpenAI, Anthropic, DeepSeek y
+Gemini (7, L31-L34). Posteriormente, en declaraciones a TechCrunch,
+Clark aclaró que esas claves eran simplemente parte de lo que el agente
+**robó**, no evidencia de qué modelo impulsaba el ataque. *\"The agent
+swept the Langflow host for anything valuable --- provider API keys,
+cloud credentials, cryptocurrency wallets, and database configs --- and
+those provider keys were part of the loot\"* (7, L36-L40). Sobre el
+modelo que realmente ejecutó JadePuffer, Clark admitió que Sysdig *\"was
+not able to identify the specific model driving the agent\"* y no tiene
+visibilidad sobre su *system prompt* o configuración (7, L41-L43). Esta
+es una limitación metodológica significativa que será analizada en la
+subsección siguiente.
+
+### 2.5. Evaluación de la evidencia: qué está probado y qué sigue siendo hipótesis
+
+A partir del contraste entre las fuentes disponibles, puede establecerse
+la siguiente distinción entre hechos acreditados, hipótesis razonables y
+afirmaciones no verificadas:
+
+**Hechos acreditados (evidencia directa):**
+
+-   Un agente de IA ejecutó una secuencia de ataques contra una
+    > infraestructura que incluía Langflow y Nacos, cifrando 1.342
+    > registros de configuración (1; 8; 9).
+
+-   El agente explotó CVE‑2025‑3248 para el acceso inicial y
+    > CVE‑2021‑29441 para la creación de cuentas administrativas (9;
+    > 12).
+
+-   El agente demostró capacidad de adaptación, incluyendo la corrección
+    > de un error en 31 segundos y el ajuste de un *parser* ante
+    > respuestas XML inesperadas (8; 9; 11).
+
+-   Los *payloads* generados contenían comentarios en lenguaje natural
+    > que documentaban el razonamiento del agente (1; 8; 11).
+
+-   La nota de rescate utilizó una dirección de Bitcoin de ejemplo y la
+    > clave de cifrado no fue persistida ni transmitida (9; 13).
+
+**Hipótesis razonables (inferencias con respaldo parcial):**
+
+-   El agente estaba impulsado por un LLM de tipo *open-weight* con
+    > capas de seguridad eliminadas, más que por un modelo *frontier*
+    > con salvaguardas robustas. Esta hipótesis, propuesta por Geoff
+    > McDonald de Microsoft (7, L43-L48), no ha sido confirmada ni
+    > descartada por Sysdig.
+
+-   Las credenciales *root* de MySQL fueron obtenidas mediante un
+    > compromiso previo y proporcionadas al agente (7, L17-L20). Esta es
+    > la interpretación de Clark, aunque Sysdig no pudo determinar su
+    > origen (9, L32-L33).
+
+-   El agente utilizó AES-128-ECB en lugar de AES-256, basándose en la
+    > evaluación de los investigadores (9, L43-L44).
+
+**Afirmaciones no verificadas o contradichas:**
+
+-   La afirmación de que el ataque fue *\"sin intervención humana\"* ha
+    > sido matizada por el propio Sysdig: hubo intervención humana en la
+    > preparación del escenario (7; 14).
+
+-   La reclamación de exfiltración de datos contenida en la nota de
+    > rescate no ha sido verificada y, según Sysdig, probablemente es
+    > falsa (9, L45-L46).
+
+-   No se ha podido identificar el modelo de IA específico que impulsó
+    > al agente (7, L41-L43).
+
+-   No se ha podido determinar el origen de las credenciales *root*
+    > utilizadas para acceder a MySQL (9, L32-L33).
+
+-   No hay evidencia de que los datos hayan sido realmente exfiltrados
+    > (14, L26-L30).
+
+En suma, el caso JadePuffer está sólidamente documentado en sus aspectos
+técnicos centrales, pero presenta lagunas significativas en lo relativo
+a la identidad del modelo utilizado, el origen de las credenciales y el
+grado preciso de autonomía estratégica del agente. Estas limitaciones no
+invalidan la relevancia del hallazgo, pero sí imponen cautela a la hora
+de extraer conclusiones generalizadoras.
+
+## SECCIÓN 3. EL CAMBIO DE PARADIGMA: DE LA AUTOMATIZACIÓN A LA AGENCIALIDAD
+
+### 3.1. Automatización tradicional *versus* agente de IA: definiciones operativas
+
+Para comprender el significado estratégico de JadePuffer, resulta
+imprescindible establecer una distinción conceptual precisa entre
+**automatización**, **uso instrumental de la IA** y **agencialidad
+plena**. Estas categorías no son simplemente grados de sofisticación
+tecnológica, sino que representan modos radicalmente diferentes de
+concebir la acción ofensiva en el ciberespacio (14).
+
+La **automatización tradicional** se basa en la ejecución secuencial de
+instrucciones predefinidas. Un *script* automatizado de ransomware
+---por ejemplo, el desplegado por las plataformas RaaS--- sigue un
+*playbook* lineal: descarga el *payload*, ejecuta el cifrado, elimina
+las copias de seguridad y deja la nota de rescate. Si un paso falla, el
+*script* aborta o repite la misma acción sin capacidad de diagnósticar
+la causa del fallo ni de modificar su comportamiento en función del
+contexto (3). Esta automatización es *reactiva* en el sentido más
+restringido: responde a entradas predecibles con salidas predecibles. Su
+alcance está limitado por el programador humano que definió las reglas.
+
+El **uso instrumental de la IA** representa un nivel superior de
+sofisticación, pero no un cambio de naturaleza. En este escenario, un
+operador humano utiliza la IA como una **herramienta** para realizar
+tareas específicas ---generar *phishing* personalizado, ofuscar código,
+analizar vulnerabilidades--- pero el control estratégico y táctico
+permanece en manos humanas (12). La IA no toma decisiones sobre el curso
+de la operación; se limita a ejecutar las instrucciones que recibe,
+aunque con una capacidad de generación de contenido más rica y
+adaptativa que la automatización tradicional. En este paradigma, la IA
+es un *asistente* o un *amplificador* de la inteligencia humana, no un
+sustituto (13).
+
+La **agencialidad plena** es cualitativamente distinta. Un agente de IA
+es un sistema que (i) percibe su entorno a través de entradas
+sensoriales ---en el caso de JadePuffer, las respuestas de las APIs y
+los sistemas objetivo---; (ii) formula objetivos de alto nivel ---cifrar
+los datos, establecer persistencia, generar una nota de rescate---;
+(iii) planifica secuencias de acciones para alcanzar dichos objetivos,
+descomponiéndolos en tareas subordinadas; (iv) ejecuta las acciones
+mediante la generación dinámica de código; (v) interpreta los resultados
+de las acciones y los incorpora a su modelo del entorno; y (vi) ajusta
+su plan en función de la nueva información (14). Esta definición,
+alineada con la literatura académica sobre agentes autónomos, se
+distingue de la automatización porque el agente no sigue un *playbook*
+predefinido, sino que *razona* sobre el camino a seguir (1; 7; 14).
+
+### 3.2. La agencialidad como novedad: planificación, adaptación y toma de decisiones
+
+La distinción anterior se materializa en tres capacidades que JadePuffer
+demostró y que los sistemas automatizados tradicionales no poseen (8; 9;
+11):
+
+\(i\) **Planificación dinámica.** El agente de JadePuffer no ejecutó una
+secuencia lineal de pasos. Por el contrario, adaptó su orden de
+actuación en función de la información que iba recopilando. Cuando
+descubrió las credenciales *root* durante el volcado de la base de datos
+de Langflow, pivotó inmediatamente hacia el servidor Nacos,
+interrumpiendo la enumeración en curso (9, L31-L33). Esta capacidad de
+*replanificación* ---de modificar el orden y la naturaleza de las
+acciones en función de hallazgos imprevistos--- es una propiedad
+emergente de los agentes con razonamiento de cadena (*chain-of-thought*)
+y no se encuentra en los sistemas basados en reglas (7, L23-L26).
+
+\(ii\) **Adaptación en tiempo real.** El episodio de los 31 segundos
+---diagnóstico de un error, generación de un nuevo *payload* y
+re-ejecución exitosa--- es el ejemplo más citado, pero no el único (8,
+L40-L42; 9, L12-L13). El ajuste del *parser* ante una respuesta XML
+inesperada durante la enumeración de MinIO demuestra que el agente no
+asumía que el entorno se comportaría conforme a las expectativas, sino
+que monitorizaba activamente las respuestas y ajustaba su comportamiento
+en consecuencia (9, L26-L28). Esta adaptabilidad convierte al agente en
+un adversario *impredecible*, en contraste con la previsibilidad de un
+*script* automatizado (6, L27-L30).
+
+\(iii\) **Toma de decisiones autónoma.** El agente decidió por sí mismo
+cuándo pasar de una fase a otra, qué vulnerabilidad explotar, qué
+credenciales utilizar y qué datos cifrar. Estas decisiones no fueron
+tomadas por un operador humano en tiempo real ni estaban predefinidas en
+un *playbook*. Como señala el informe de Sysdig, *\"the LLM was making
+its own decisions about what to do next based on the responses it was
+receiving\"* (8, L28-L30). Esta autonomía decisional es el núcleo de la
+agencialidad.
+
+### 3.3. El concepto de *Agentic Threat Actor* (ATA) y su significado estratégico
+
+Sysdig ha acuñado el término **Agente Threat Actor** (ATA) para designar
+a los adversarios cuya capacidad ofensiva es entregada por un agente de
+IA en lugar de por un conjunto de herramientas operadas por humanos (8,
+L19-L21). Un ATA no es una persona, ni una organización, ni un *script*:
+es una entidad autónoma que actúa en nombre de un operador humano, pero
+que toma decisiones tácticas sin su intervención (11, L18-L20).
+
+El significado estratégico del ATA reside en cuatro vectores de
+disrupción:
+
+\(i\) **Desacoplamiento de la habilidad y la ejecución.** En el modelo
+tradicional, la eficacia de un ataque depende de las habilidades del
+operador humano. Un operador novato no puede ejecutar una intrusión
+compleja. Con un ATA, la habilidad está *incorporada* en el agente: el
+operador humano solo necesita configurar el escenario inicial. Como
+señala el informe de CSO Online, JadePuffer demuestra que *\"an LLM
+agent can now perform the entire attack chain from initial access to
+ransom demand, eliminating the need for the operator to possess deep
+technical expertise in each phase\"* (5, L10-L13). Esta
+*deshabilización* del operador reduce drásticamente la barrera de
+entrada al cibercrimen.
+
+\(ii\) **Escalabilidad.** Un operador humano solo puede ejecutar un
+número limitado de ataques simultáneamente, y cada ataque requiere su
+atención continua. Un ATA puede ser clonado y desplegado en paralelo
+contra múltiples objetivos, cada uno operando de forma autónoma (6,
+L34-L38). Esta escalabilidad transforma el ransomware de una operación
+*artesanal* en una operación *industrial*.
+
+\(iii\) **Velocidad.** Como se discutirá en la subsección 3.5, la
+velocidad de ejecución de un ATA ---limitada únicamente por la latencia
+de las respuestas de los sistemas objetivo y del propio LLM--- supera
+con creces la de un operador humano. Esta compresión temporal reduce la
+ventana de detección y respuesta de los defensores.
+
+\(iv\) **Imprevisibilidad.** Un *script* automatizado es predecible; un
+agente que razona y adapta su comportamiento en tiempo real no lo es.
+Esta imprevisibilidad complica la detección basada en patrones y la
+atribución, como se analizará en la Sección 8.
+
+### 3.4. La erosión de la barrera de cualificación (*skill floor*)
+
+Uno de los efectos más profundos de la agencialidad es la **erosión de
+la barrera de cualificación** (*skill floor*). En el modelo tradicional
+de ransomware, la ejecución de un ataque completo requería competencias
+especializadas en múltiples dominios: explotación de vulnerabilidades,
+redes, sistemas operativos, administración de bases de datos,
+criptografía, ingeniería social, evasión de defensas y gestión de
+infraestructuras C2 (13). Un operador inexperto, aunque tuviera acceso a
+las mismas herramientas, no podía orquestar una intrusión compleja.
+
+JadePuffer invierte esta ecuación. El operador humano que preparó el
+ataque no necesitaba poseer conocimientos profundos de explotación de
+vulnerabilidades o de movimiento lateral; solo necesitaba provisionar la
+infraestructura, seleccionar la víctima y proporcionar las credenciales
+iniciales (7, L15-L17). El agente asumió todas las tareas técnicas que
+antes requerían años de experiencia. Como señala el análisis de ITPro,
+*\"the attack shows that an LLM agent can execute sophisticated attack
+chains even if the human operator lacks deep technical skills\"* (4,
+L10-L12).
+
+Esta erosión de la *skill floor* tiene implicaciones de gran alcance.
+Por un lado, **democratiza la capacidad ofensiva**: cualquier actor con
+acceso a un agente de IA mínimamente configurado puede lanzar ataques
+que antes eran privativos de grupos de ciberdelincuentes altamente
+cualificados (3, L28-L30). Por otro lado, **transforma el mercado del
+cibercrimen**: los operadores humanos dejan de ser el recurso escaso; el
+recurso escaso pasa a ser el acceso a agentes de IA efectivos y a la
+infraestructura necesaria para desplegarlos (6, L40-L42). Esta
+transformación podría provocar una *commoditización* del ransomware, con
+una caída del precio en los mercados ilegales y un aumento masivo del
+volumen de ataques.
+
+### 3.5. La velocidad como vector de riesgo: tiempos de reacción humanos frente a *machine speed*
+
+La velocidad de ejecución es uno de los factores diferenciales más
+críticos entre los ataques tradicionales y los ataques agénticos. Un
+operador humano, para tomar una decisión táctica durante una intrusión,
+debe percibir la información, procesarla, evaluar alternativas, formular
+un plan y ejecutarlo. Este ciclo, incluso en operadores experimentados,
+requiere segundos o minutos. En el caso del agente de JadePuffer, el
+ciclo de percepción-razonamiento-acción se completó en **31 segundos**
+en el episodio documentado de corrección de errores (8, L40-L42; 9,
+L12-L13). Pero la compresión temporal no se limita a la corrección de
+errores; toda la cadena de ataque, desde el acceso inicial hasta el
+cifrado, se ejecutó en un intervalo de tiempo significativamente
+inferior al que habría requerido un operador humano (8, L14-L15).
+
+Este factor tiempo tiene implicaciones profundas para la defensa (11,
+L45-L47). Los tiempos de respuesta típicos de los Centros de Operaciones
+de Seguridad (SOC) ---detección, análisis, contención y erradicación---
+están diseñados para adversarios humanos que operan a *human speed*. Un
+adversario que opera a *machine speed* reduce la ventana de oportunidad
+para la detección y la contención de forma drástica (5). Como señaló
+Heath Renfrow, CISO de Fenix24: *\"If an AI agent can compress what
+previously took an experienced operator several hours into a matter of
+minutes, defenders lose valuable time\"* (9, L45-L47).
+
+Esta compresión temporal se ve agravada por la capacidad de
+paralelización. Un operador humano solo puede ejecutar un ataque a la
+vez; un operador con múltiples agentes puede lanzar decenas o centenares
+de ataques simultáneamente (6, L34-L38). En un escenario de ataque
+masivo y coordinado, los SOC se verían desbordados por el volumen y la
+velocidad de los incidentes, impidiendo una respuesta eficaz.
+
+El factor velocidad también afecta a la **explotación de
+vulnerabilidades**. El tiempo medio entre la publicación de un parche y
+la explotación masiva ---el *tiempo de explotación*
+(*time-to-exploit*)--- se ha reducido drásticamente en los últimos años,
+pero un agente de IA podría reducirlo aún más, automatizando el
+desarrollo de *exploits* y su despliegue en cuestión de minutos desde la
+divulgación de una vulnerabilidad (13, L50-L52). Este escenario, aunque
+hipotético, es técnicamente plausible y representa uno de los riesgos
+más graves de la era agéntica, como se analizará en la Sección 9.
+
+## SECCIÓN 4. RIESGOS PRESENTES Y FUTUROS PARA EMPRESAS, ADMINISTRACIONES E INFRAESTRUCTURAS CRÍTICAS
+
+### 4.1. Democratización de capacidades ofensivas: del especialista al agente autónomo
+
+El riesgo más inmediato y estructural que introduce la irrupción de los
+agentes de IA ofensivos es la **democratización de las capacidades de
+ataque**. En el modelo tradicional, la ejecución de un ransomware
+exitoso requería un conjunto de habilidades técnicas que solo una
+minoría de individuos poseía: conocimiento profundo de sistemas
+operativos, redes, bases de datos, lenguajes de programación,
+explotación de vulnerabilidades y evasión de defensas (12; 13). Esta
+barrera técnica actuaba como un filtro natural que limitaba el número de
+actores capaces de lanzar ataques sofisticados (3).
+
+JadePuffer demuestra que esta barrera está siendo erosionada. El
+operador humano que preparó el ataque no necesitaba poseer conocimientos
+especializados en la explotación de CVE‑2025‑3248 o en el movimiento
+lateral hacia Nacos; el agente asumió todas estas tareas de forma
+autónoma (7, L15-L17; 5, L10-L13). Esta deshabilización del operador
+implica que, en un futuro próximo, cualquier actor con acceso a un
+agente de IA mínimamente configurado ---incluso sin formación técnica---
+podrá lanzar ataques que hoy son privativos de grupos de
+ciberdelincuentes altamente cualificados (4, L10-L12).
+
+Las consecuencias de esta democratización son múltiples. En primer
+lugar, se prevé un **incremento masivo del volumen de ataques**, ya que
+el número de actores capaces de ejecutarlos se amplía drásticamente (6,
+L40-L42). En segundo lugar, se producirá una **reducción del coste de
+entrada** en los mercados ilegales: los agentes de IA ofensivos podrían
+comercializarse como *servicio* (*Agentic Ransomware‑as‑a‑Service*,
+ARAAS), de forma análoga a como hoy se comercializan las plataformas
+RaaS (11, L50-L52). En tercer lugar, se diluye la **capacidad de
+atribución basada en la sofisticación técnica**: si cualquier agente
+puede ejecutar técnicas avanzadas, la firma técnica del atacante deja de
+ser un marcador fiable de su identidad o de su nivel de cualificación
+(13, L40-L44).
+
+No obstante, cabe matizar que la democratización no es automática. El
+acceso a modelos de lenguaje de gran escala con las salvaguardas
+eliminadas ---*uncensored* o *jailbroken*--- y la infraestructura
+necesaria para desplegarlos sigue siendo un recurso escaso (7, L43-L48).
+Además, como se vio en JadePuffer, los agentes actuales presentan
+limitaciones estratégicas significativas ---comprensión deficiente del
+modelo de negocio del ransomware, alucinaciones en la generación de
+claves--- que requieren supervisión humana para corregir (8, L46-L48;
+13, L28-L34). La democratización completa, por tanto, no es inmediata,
+pero la tendencia es clara: la barrera de entrada se está reduciendo y
+continuará reduciéndose a medida que los modelos mejoren y las
+herramientas de despliegue se simplifiquen (14, L55-L60).
+
+### 4.2. Automatización de campañas completas: escalabilidad y paralelización
+
+Un riesgo cualitativamente distinto al de la democratización es la
+**automatización de campañas completas de ataque**. Mientras que la
+democratización amplía el *número* de actores, la automatización amplía
+el *alcance* y la *escala* de las operaciones que cada actor puede
+ejecutar.
+
+Un operador humano, por muy hábil que sea, está limitado por su
+capacidad cognitiva y por el tiempo. No puede ejecutar más que un número
+reducido de ataques simultáneos, y cada ataque requiere su atención
+continua para tomar decisiones tácticas (5, L18-L20). Un agente de IA,
+en cambio, puede ser **clonado y desplegado en paralelo** contra
+múltiples objetivos, cada uno operando de forma autónoma (6, L34-L38).
+Este modelo *uno-a-muchos* transforma la economía del cibercrimen: el
+coste marginal de un ataque adicional tiende a cero, ya que solo
+requiere el despliegue de otra instancia del agente (11, L50-L52).
+
+La paralelización tiene implicaciones profundas para la defensa. Un SOC
+humano, incluso con herramientas automatizadas de apoyo, no puede
+responder simultáneamente a decenas o centenares de ataques en curso
+(3). La capacidad de procesamiento de incidentes se convierte en el
+cuello de botella, y el adversario, al poder multiplicar los frentes,
+puede saturar las capacidades defensivas. Este escenario es análogo a
+los ataques de denegación de servicio distribuido (DDoS), pero aplicado
+a la respuesta a incidentes: un *DoS cognitivo* contra los equipos de
+seguridad (12, L55-L58).
+
+La automatización de campañas completas también implica la posibilidad
+de **ataques persistentes y auto‑replicantes**. Un agente que, tras
+comprometer un sistema, despliega una copia de sí mismo en otros
+sistemas vulnerables, actuaría como un *gusano inteligente*: no un
+simple replicador, sino un replicador que adapta su comportamiento al
+entorno de cada nuevo sistema comprometido (14, L65-L70). Este
+escenario, aunque no se materializó en JadePuffer, es técnicamente
+plausible y representa uno de los riesgos más graves de la era agéntica,
+como se analizará en la Sección 9.
+
+### 4.3. Nuevos vectores de ataque: manipulación de agentes y envenenamiento de modelos
+
+Además de los riesgos derivados del uso ofensivo de agentes, JadePuffer
+pone de manifiesto un segundo orden de riesgos: aquellos derivados de la
+**manipulación de los propios agentes de IA desplegados por las
+organizaciones** (12; 13). Las empresas y Administraciones Públicas
+están adoptando cada vez más agentes de IA para tareas de
+automatización, atención al cliente, análisis de datos y toma de
+decisiones (11, L12-L15). Estos agentes, si no están adecuadamente
+protegidos, pueden convertirse en vectores de ataque.
+
+El **envenenamiento de modelos** (*data poisoning*) es uno de los
+vectores más críticos. Un adversario podría introducir datos maliciosos
+en el conjunto de entrenamiento de un agente, corrompiendo su
+comportamiento en producción. Un agente envenenado podría, por ejemplo,
+filtrar información sensible, tomar decisiones perjudiciales o ejecutar
+comandos maliciosos bajo la apariencia de un comportamiento legítimo
+(13, L45-L48). JadePuffer explotó una vulnerabilidad en Langflow, un
+*framework* de IA, lo que demuestra que las herramientas de desarrollo
+de agentes son en sí mismas vectores de ataque (9, L16-L18; 12,
+L22-L25).
+
+La **inyección de *prompts*** (*prompt injection*) es otro vector de
+riesgo emergente (13, L44-L45). Los agentes de IA, al estar basados en
+LLM, son susceptibles a instrucciones maliciosas insertadas en entradas
+que el agente procesa. Un atacante podría inyectar un *prompt* que anule
+las salvaguardas del agente y lo induzca a ejecutar acciones no
+autorizadas. Este riesgo es especialmente agudo en agentes que tienen
+acceso a sistemas internos o a bases de datos sensibles (7, L58-L62).
+
+El ataque documentado por Sysdig no incluyó técnicas de manipulación de
+agentes, pero el hecho de que el agente ofensivo explotara
+vulnerabilidades en herramientas de IA subraya la **vulnerabilidad de la
+cadena de suministro de la IA** (8, L22-L23). Si un agente defensivo
+---un sistema de detección o respuesta autónoma--- puede ser manipulado,
+las consecuencias podrían ser catastróficas: el agente podría ignorar
+ataques, generar falsos positivos que desvíen la atención de los
+defensores, o incluso colaborar inadvertidamente con el adversario (12,
+L60-L65).
+
+### 4.4. Impacto en infraestructuras críticas: energía, transporte, sanidad y finanzas
+
+El impacto potencial de los ataques agénticos en las **infraestructuras
+críticas** merece una consideración específica. Los sectores de energía,
+transporte, sanidad, abastecimiento de agua y telecomunicaciones
+dependen cada vez más de sistemas digitales interconectados, muchos de
+los cuales son gestionados mediante herramientas de automatización y,
+progresivamente, agentes de IA (10; 11). Un ataque exitoso contra
+cualquiera de estos sectores puede tener consecuencias físicas, no solo
+digitales, con riesgo para la vida humana y la seguridad nacional (10,
+L10-L15).
+
+En el sector energético, los sistemas de control industrial (SCADA) y
+los sistemas de gestión de la red están siendo digitalizados y
+conectados a plataformas de análisis basadas en IA (14, L72-L75). Un
+agente de IA autónomo que comprometa estos sistemas podría, en teoría,
+manipular los flujos de energía, causar apagones masivos o dañar
+infraestructuras físicas. Aunque JadePuffer se limitó al cifrado de
+datos de configuración ---un impacto de disponibilidad, no de integridad
+o seguridad física---, la extrapolación a sistemas OT (tecnología
+operativa) es plausible y extremadamente preocupante (11, L45-L48).
+
+En el sector sanitario, los hospitales y centros de investigación
+dependen de bases de datos de pacientes, sistemas de imagen médica y
+dispositivos conectados. Un ataque agéntico podría cifrar registros
+médicos, interrumpir la atención a pacientes o manipular datos de
+ensayos clínicos (10, L18-L20). La nota de rescate de JadePuffer
+reclamaba falsamente la exfiltración de datos, pero en un escenario
+real, la exfiltración de historiales médicos podría tener graves
+consecuencias para la privacidad y la seguridad de los pacientes (8,
+L40-L42).
+
+En el sector del transporte, los sistemas de control de tráfico aéreo,
+ferroviario y marítimo están siendo progresivamente automatizados. Un
+agente ofensivo que comprometa estos sistemas podría causar
+interrupciones masivas o, en el peor de los casos, accidentes (14,
+L78-L82). La atribución en estos escenarios sería especialmente
+compleja, ya que la velocidad y el carácter autónomo del ataque
+dificultarían la identificación del responsable, como se analizará en la
+Sección 8.
+
+JadePuffer no atacó infraestructuras críticas en el sentido estricto
+---el objetivo era una plataforma de configuración de microservicios---,
+pero el caso constituye una **prueba de concepto** de que un agente de
+IA puede orquestar una intrusión completa sin supervisión humana en
+tiempo real (1; 5). La extrapolación a sectores críticos es un escenario
+de alto riesgo que debe ser considerado por los responsables de
+seguridad nacional y por los reguladores (10, L22-L25).
+
+### 4.5. El sector financiero bajo DORA: vulnerabilidades específicas
+
+El sector financiero merece un análisis particular, tanto por su
+importancia sistémica como por el marco regulatorio específico que lo
+rige: el Reglamento DORA (Digital Operational Resilience Act) de la
+Unión Europea (11). DORA, que entró en plena aplicación en enero de
+2025, establece requisitos de resiliencia operativa para entidades
+financieras, incluyendo la gestión de riesgos de TI, la notificación de
+incidentes y las pruebas de penetración (7, L52-L55). La aparición de
+agentes de IA ofensivos plantea desafíos específicos al modelo de
+gestión de riesgos de DORA.
+
+En primer lugar, los **tiempos de notificación** establecidos por DORA
+---notificación temprana en 24 horas y notificación completa en 72
+horas--- están diseñados para incidentes detectados por equipos humanos
+que operan a *human speed* (7, L52-L54). Un ataque agéntico que se
+ejecuta en minutos y que puede permanecer sin ser detectado durante
+horas ---o ser detectado solo cuando el cifrado ya se ha completado---
+comprime el tiempo disponible para la notificación y la respuesta, lo
+que podría exponer a las entidades financieras a sanciones regulatorias
+(9, L28-L32).
+
+En segundo lugar, las **pruebas de penetración** requeridas por DORA
+---incluyendo las pruebas de intrusión basadas en amenazas (*TLPT*)---
+deben actualizarse para incluir escenarios de ataque agéntico (7,
+L54-L56). Un *pentest* tradicional, realizado por un equipo humano,
+simula el comportamiento de un atacante humano; no necesariamente simula
+el comportamiento de un agente autónomo que razona y se adapta en tiempo
+real. Si las entidades financieras no actualizan sus escenarios de
+prueba, pueden sobrestimar su nivel de preparación (11, L58-L62).
+
+En tercer lugar, la **dependencia de proveedores de servicios en la nube
+y de herramientas de IA** introduce riesgos de cadena de suministro que
+DORA no aborda de forma exhaustiva (7, L58-L60). JadePuffer explotó una
+vulnerabilidad en Langflow, una herramienta de IA de código abierto, y
+comprometió un servidor Nacos, una plataforma de configuración. Muchas
+entidades financieras utilizan herramientas similares para gestionar sus
+microservicios y sus flujos de datos (12, L22-L25). La vulnerabilidad de
+estas herramientas ---y la capacidad de los agentes para explotarlas de
+forma autónoma--- debe ser evaluada como parte del análisis de riesgos
+de terceros.
+
+El sector financiero es también especialmente vulnerable al **riesgo
+sistémico** (14, L85-L90). Un ataque agéntico coordinado contra
+múltiples entidades financieras, ejecutado de forma paralela y
+sincronizada, podría provocar un efecto de contagio que desestabilice el
+sistema financiero en su conjunto. Este escenario, aunque hipotético, ha
+sido señalado por el Banco Central Europeo como una de las principales
+preocupaciones en el marco de la aplicación de DORA (11, L62-L65).
+
+## SECCIÓN 5. CONSECUENCIAS PARA LA CIBERSEGURIDAD GLOBAL Y LA DEFENSA
+
+### 5.1. Desafíos para los Centros de Operaciones de Seguridad (SOC)
+
+Los Centros de Operaciones de Seguridad (SOC) constituyen el núcleo de
+la defensa cibernética en la mayoría de las organizaciones. Su
+funcionamiento se basa en un modelo de operaciones que asume
+implícitamente que el adversario es humano: que sus acciones tienen una
+duración medible, que sigue patrones de comportamiento reconocibles y
+que su velocidad de ejecución está limitada por factores cognitivos y
+organizativos (12). La irrupción de los agentes de IA ofensivos
+cuestiona cada una de estas premisas (5; 6).
+
+El primer desafío es la **compresión temporal**. Los SOC operan con
+tiempos de respuesta que se miden en minutos ---en el mejor de los
+casos--- u horas. Un agente que ejecuta una intrusión completa en el
+tiempo que un operador humano tardaría en completar una sola fase de
+reconocimiento reduce drásticamente la ventana de detección y contención
+(9, L45-L47). Como señala el análisis de CSO Online: *\"The typical SOC
+workflow --- triage, investigation, escalation, containment --- is
+designed for adversaries that operate at human speed. An adversary that
+operates at machine speed breaks that workflow\"* (5, L22-L25). Esta
+compresión temporal no solo afecta a la capacidad de respuesta, sino
+también a la **detección temprana**: si el cifrado se completa en
+minutos, el SOC no tiene tiempo para detectar el acceso inicial, el
+movimiento lateral o la exfiltración antes de que el impacto se haya
+materializado (11, L45-L47).
+
+El segundo desafío es la **escalabilidad del ataque**. Un SOC típico
+puede gestionar un número limitado de incidentes simultáneos antes de
+que la calidad de la respuesta se degrade (6, L34-L38). Un adversario
+que despliega decenas o centenares de agentes en paralelo contra
+múltiples objetivos genera un volumen de incidentes que desborda la
+capacidad de procesamiento humano. Este escenario, descrito como un
+*ataque de denegación de servicio cognitivo*, podría paralizar la
+capacidad defensiva de una organización, no porque los ataques sean
+técnicamente sofisticados, sino porque son numéricamente inabordables
+(12, L55-L58).
+
+El tercer desafío es la **imprevisibilidad del comportamiento**. Los
+sistemas de detección basados en reglas y en *machine learning*
+supervisado se entrenan con patrones de ataque históricos, asumiendo que
+los adversarios futuros se comportarán de forma similar a los pasados
+(13, L40-L44). Un agente de IA que genera *payloads* originales en
+tiempo de ejecución y que adapta su comportamiento en función de las
+respuestas del sistema víctima produce patrones que no están
+representados en los conjuntos de entrenamiento (8, L28-L30). Esta
+imprevisibilidad convierte al agente en un adversario *invisible* para
+las herramientas de detección convencionales, al menos durante las
+primeras fases del ataque (9, L26-L28).
+
+### 5.2. La obsolescencia de la detección basada en firmas ante comportamiento adaptativo
+
+La detección de intrusiones ha evolucionado desde los sistemas basados
+en firmas ---que comparaban el tráfico o las actividades con patrones
+conocidos de ataque--- hacia sistemas basados en anomalías y en
+comportamiento (12). Sin embargo, incluso los sistemas más avanzados de
+detección de anomalías asumen que el comportamiento del adversario se
+genera dentro de un espacio de posibilidades relativamente restringido:
+que las tácticas, técnicas y procedimientos (TTPs) utilizados son
+reconocibles y pueden ser caracterizados (3).
+
+Un agente de IA que genera *payloads* específicos para cada fase de la
+intrusión y que adapta su comportamiento en tiempo real rompe esta
+suposición (8, L28-L30). Cada *payload* es único, generado a partir de
+una combinación del conocimiento del modelo, del contexto recopilado
+hasta ese momento y de las respuestas del sistema objetivo (1; 9). Esta
+variabilidad hace que la detección basada en firmas sea ineficaz: no
+existe una *firma* para un *payload* que nunca se ha visto antes y que
+probablemente no se volverá a ver (13, L40-L44).
+
+La detección basada en anomalías tampoco es inmune a este desafío (5,
+L22-L25). Un agente que se adapta al comportamiento esperado del sistema
+---por ejemplo, generando tráfico de red que imita al tráfico legítimo,
+o utilizando credenciales válidas para el movimiento lateral--- puede
+operar por debajo del umbral de detección de anomalías. En el caso de
+JadePuffer, el agente utilizó credenciales *root* legítimas para acceder
+a MySQL, lo que dificultó la detección del movimiento lateral basada en
+patrones de autenticación (9, L32-L33). Las credenciales eran válidas;
+el comportamiento era, desde la perspectiva del sistema, autorizado (7,
+L17-L20).
+
+Este problema se agrava con la **capacidad de ofuscación autónoma**. Un
+agente de IA podría ser instruido para ofuscar su código, variar sus
+*payloads* y modificar sus patrones de comunicación de forma que evite
+la detección. A diferencia de un *script* de ofuscación estática, un
+agente podría ofuscar dinámicamente cada nuevo *payload*, generando una
+secuencia de variantes que no comparten una firma común (13, L48-L52).
+Esta capacidad de ofuscación adaptativa cierra la ventana de detección
+que los comentarios en lenguaje natural de JadePuffer abrieron
+accidentalmente (8, L36-L39; 11, L69-L79).
+
+### 5.3. Oportunidades de detección: la autorrevelación del agente como firma forense
+
+A pesar de los desafíos, JadePuffer revela una **oportunidad de
+detección paradójica**: la autorrevelación del agente a través de los
+comentarios en lenguaje natural en el código generado (8, L36-L39; 11,
+L69-L79). Como se señaló en la Sección 2, los *payloads* capturados
+contenían comentarios como *\"Cipher the whole table\"* o *\"Let\'s
+check if the Nacos service is running\"*, que documentaban el
+razonamiento del agente (1, L36-L38). Estos comentarios son
+características de la generación de código por LLM y constituyen una
+**firma forense distintiva** que permite identificar la autoría del
+código como generada por IA, no por un desarrollador humano (8,
+L36-L38).
+
+Esta firma forense tiene aplicaciones prácticas para la detección y la
+respuesta a incidentes (5, L30-L32). Un SOC que monitoriza la generación
+de código en sus sistemas ---por ejemplo, en *pipelines* de desarrollo o
+en herramientas de automatización--- podría detectar la presencia de
+comentarios de estilo LLM como un indicador de compromiso. Los equipos
+de *threat hunting* podrían buscar patrones lingüísticos característicos
+en los *scripts* y *payloads* ejecutados en sus entornos (13, L56-L58).
+En el caso de JadePuffer, la autorrevelación del agente aceleró el
+análisis forense y permitió a Sysdig reconstruir la secuencia del ataque
+con mayor precisión (8, L36-L39).
+
+Sin embargo, esta oportunidad es **transitoria**. Como señala el informe
+de Sysdig: *\"This is a temporary advantage; the next generation of
+agentic attackers will likely be trained to suppress self‑documenting
+behavior\"* (8, L44-L46). Un agente entrenado con ejemplos de código sin
+comentarios, o con instrucciones explícitas para no incluir comentarios,
+podría suprimir esta traza. También podría ser entrenado para generar
+comentarios *engañosos* que induzcan a error a los analistas forenses
+(13, L58-L60). Por tanto, la autorrevelación del agente es una **ventana
+de oportunidad defensiva** que debe ser explotada rápidamente, antes de
+que los adversarios aprendan a cerrarla.
+
+### 5.4. El papel del *AI Red Teaming* y la simulación de agentes ofensivos
+
+La aparición de agentes de IA ofensivos exige un cambio en las
+metodologías de evaluación de la seguridad (7; 12). Las pruebas de
+penetración tradicionales, realizadas por equipos humanos que simulan el
+comportamiento de adversarios humanos, no son suficientes para evaluar
+la preparación frente a adversarios agénticos (7, L54-L56). Un *pentest*
+humano puede probar la solidez de las defensas frente a ataques
+planificados por humanos, pero no necesariamente frente a ataques
+ejecutados por agentes autónomos que razonan y se adaptan en tiempo real
+(5, L18-L20).
+
+El **AI Red Teaming** ---el uso de agentes de IA ofensivos para probar
+defensas--- se convierte así en una herramienta indispensable (12,
+L60-L65). Los equipos de seguridad pueden desplegar agentes de IA
+controlados para simular ataques agénticos contra sus propias
+infraestructuras, identificando vulnerabilidades que no serían
+detectadas por un *pentest* humano (11, L58-L62). Estos ejercicios
+permiten evaluar, en condiciones controladas, la capacidad de los SOC
+para detectar y responder a la velocidad, la adaptabilidad y la
+imprevisibilidad de los agentes ofensivos (7, L54-L56).
+
+El AI Red Teaming presenta, sin embargo, desafíos éticos y operativos
+significativos (13, L62-L66). Desplegar un agente ofensivo contra la
+propia infraestructura implica un riesgo de *efectos no deseados*: el
+agente podría causar daños reales si no está adecuadamente confinado
+(14, L80-L84). Además, el desarrollo de agentes ofensivos para pruebas
+internas requiere un nivel de inversión y de experiencia que muchas
+organizaciones no poseen (12, L62-L65). Por ello, las pruebas de
+penetración con agentes ofensivos probablemente serán provistas por
+empresas especializadas ---análogas a los proveedores de *red teaming*
+tradicionales--- que desarrollen agentes *sandboxed* y controlados (7,
+L56-L58).
+
+La simulación de agentes ofensivos también tiene implicaciones para el
+**desarrollo de defensas autónomas** (14, L90-L95). Si el adversario
+puede operar a *machine speed*, los defensores necesitarán también
+operar a *machine speed*. Esto implica el despliegue de agentes
+defensivos ---sistemas autónomos de detección y respuesta--- que puedan
+contrarrestar ataques en tiempo real sin intervención humana (11,
+L60-L62). Esta *carrera armamentística de agentes* será analizada en la
+Sección 9.
+
+### 5.5. Hacia una nueva arquitectura defensiva: Zero Trust, defensa en profundidad y supervisión humana significativa
+
+La era agéntica exige una **revisión de las arquitecturas defensivas**
+establecidas (5; 12). La arquitectura de **Zero Trust** ---basada en el
+principio de *nunca confiar, siempre verificar*--- se presenta como un
+marco especialmente relevante frente a los ATAs (11, L75-L80). En un
+escenario donde un agente puede obtener credenciales válidas y moverse
+lateralmente utilizando credenciales legítimas, la verificación continua
+de la identidad, el acceso con privilegios mínimos y la segmentación de
+red son controles críticos (9, L32-L33). El agente de JadePuffer no
+explotó una vulnerabilidad en el control de acceso después de la
+autenticación; utilizó credenciales *root* legítimas, lo que habría
+eludido los controles de autenticación tradicionales (7, L17-L20). Una
+arquitectura Zero Trust, que verifica cada acceso incluso después de la
+autenticación inicial, podría haber detectado el comportamiento anómalo
+---como el acceso a la base de datos de Nacos desde un host que no
+debería tener ese permiso--- y haber contenido el movimiento lateral
+(11, L78-L80).
+
+La **defensa en profundidad** sigue siendo un principio válido, pero
+debe ser reconfigurada para la era agéntica (12, L70-L75). Las capas
+defensivas ---firewall, detección de intrusiones, control de
+aplicaciones, monitorización de usuarios--- deben ser redundantes e
+independientes, de forma que la superación de una capa no implique la
+superación de todas (13, L68-L72). La capacidad de un agente para
+adaptar su comportamiento hace que cada capa deba ser evaluada no solo
+frente a ataques conocidos, sino frente a ataques generativos e
+impredecibles (14, L100-L105).
+
+La **supervisión humana significativa** es un concepto que adquiere una
+nueva dimensión en el contexto de los agentes autónomos (7, L60-L65; 11,
+L80-L85). El AI Act exige supervisión humana significativa para los
+sistemas de IA de alto riesgo, definida como la capacidad de un humano
+para supervisar el funcionamiento del sistema, comprender su
+comportamiento e intervenir cuando sea necesario (7, L60-L62). Sin
+embargo, la supervisión humana significativa se vuelve problemática
+cuando el sistema opera a *machine speed* y cuando su comportamiento es
+impredecible (5, L22-L25). ¿Puede un humano supervisar
+significativamente un agente que toma decisiones en segundos y que
+genera *payloads* únicos en cada ejecución? La respuesta, para los
+reguladores y los responsables de seguridad, es un desafío abierto que
+se analizará en la Sección 7 (7, L62-L65; 8, L58-L60).
+
+### 5.6. La respuesta coordinada de las agencias: guía de CISA y los Five Eyes
+
+El reconocimiento de la amenaza de los agentes de IA ofensivos ha
+impulsado una respuesta coordinada por parte de las agencias de
+ciberseguridad a nivel internacional (10; 13). En mayo de 2026, la
+Agencia de Ciberseguridad e Infraestructura de Estados Unidos (CISA)
+publicó, en colaboración con cinco países aliados ---miembros de los
+*Five Eyes* y otros socios---, una guía coordinada sobre la defensa
+frente a ataques habilitados por IA (10, L12-L15). La guía, titulada
+*\"Joint Guidance on Defending Against AI‑Enabled Cyber Threats\"*,
+establece principios para la preparación frente a adversarios impulsados
+por IA, incluyendo (10, L18-L25):
+
+\(i\) **Preparación.** Las organizaciones deben actualizar sus planes de
+respuesta a incidentes para incluir escenarios de ataque agéntico,
+incluyendo la compresión temporal y la paralelización.
+
+\(ii\) **Detección.** Los SOC deben implementar capacidades de
+monitorización que vayan más allá de las firmas conocidas, incluyendo la
+detección de patrones generativos y de comportamientos que sugieran
+*machine speed*.
+
+\(iii\) **Contención.** Los procedimientos de contención deben ser
+automatizados y ejecutables en tiempos de respuesta medidos en segundos,
+no en minutos.
+
+\(iv\) **Recuperación.** Las copias de seguridad inmutables y fuera de
+línea son más críticas que nunca, ya que un agente podría cifrar datos
+en segundos antes de que los defensores puedan reaccionar.
+
+El Plan de Acción sobre Ciberseguridad e IA publicado por la Comisión
+Europea el 7 de julio de 2026 (8) complementa esta guía con un enfoque
+regulatorio (8, L8-L12). El plan, que articula la aplicación del AI Act,
+la NIS2, DORA y el Cyber Resilience Act frente a los riesgos de la IA,
+establece un calendario de obligaciones para los *deployers* de sistemas
+de IA, incluyendo requisitos de ciberseguridad y pruebas de resistencia
+(8, L12-L15). La Comisión también ha señalado que, a partir del 2 de
+agosto de 2026, puede imponer sanciones de hasta el 3% del volumen de
+negocio global anual a los proveedores de modelos GPAI con riesgo
+sistémico que no cumplan con los requisitos de ciberseguridad (8,
+L15-L18; 7, L48-L52).
+
+La coordinación entre las agencias de ciberseguridad es un paso
+positivo, pero el ritmo de la regulación sigue siendo lento en
+comparación con la velocidad de la innovación adversaria (14,
+L110-L115). Como se analizará en la Sección 7, el marco legal actual
+---incluso con las actualizaciones recientes--- presenta lagunas
+significativas que deben ser abordadas de forma urgente.
+
+## SECCIÓN 6. IMPLICACIONES PARA LA GESTIÓN DEL RIESGO Y LA GOBERNANZA TECNOLÓGICA
+
+### 6.1. La gestión del riesgo en la era de los agentes autónomos
+
+La gestión del riesgo tecnológico ha sido tradicionalmente un ejercicio
+de identificación, evaluación y mitigación de amenazas basado en datos
+históricos, modelos de probabilidad y juicio experto (12; 14). Los
+marcos de gestión de riesgos como el NIST CSF (Cybersecurity Framework)
+o el ISO/IEC 27001 se fundamentan en la premisa de que los riesgos son,
+en gran medida, conocidos o predecibles (13). La irrupción de los
+agentes de IA ofensivos cuestiona esta premisa fundamental (7; 11).
+
+El primer desafío es la **incertidumbre epistémica**. Los ATAs no son un
+riesgo conocido en el sentido tradicional: no existe un conjunto de
+datos históricos suficiente para estimar su probabilidad o su impacto
+potencial (6, L30-L34). JadePuffer es un único dato, una observación
+aislada, y no permite inferir con certeza la frecuencia, la escala o la
+evolución futura de este tipo de ataques (1; 5). Los gestores de riesgo
+se enfrentan a un *cisne negro* tecnológico: un evento de baja
+probabilidad pero de alto impacto que, una vez ocurrido, parece
+inevitable en retrospectiva (14, L120-L125). La gestión del riesgo, en
+este contexto, debe pasar de un enfoque *probabilístico* ---basado en
+datos históricos--- a un enfoque *precaucionista* ---basado en la
+identificación de vulnerabilidades estructurales y en la preparación
+para escenarios de alto impacto aunque sean improbables (7, L65-L70).
+
+El segundo desafío es la **velocidad de la materialización del riesgo**.
+En los modelos de gestión de riesgos tradicionales, el tiempo entre la
+detección de una vulnerabilidad y su explotación se mide en días o
+semanas ---el *tiempo de explotación* (13, L50-L52). Un agente de IA que
+reduce este tiempo a minutos o segundos elimina la ventana de
+oportunidad para la aplicación de parches o la implementación de
+controles compensatorios (11, L45-L47). Las organizaciones deben asumir
+que cualquier vulnerabilidad conocida públicamente será explotada de
+forma casi inmediata por agentes autónomos, lo que exige una estrategia
+de *parcheo proactivo* y de *defensa en profundidad* que no dependa de
+la capacidad de reacción (12, L70-L75).
+
+El tercer desafío es la **interdependencia de los riesgos**. Un ataque
+agéntico contra un proveedor de servicios en la nube o contra una
+herramienta de IA de código abierto puede tener efectos en cascada sobre
+todas las organizaciones que dependen de ese proveedor o de esa
+herramienta (9, L16-L18; 12, L22-L25). Este riesgo sistémico, que se
+analizará en la subsección 6.3, exige una gestión del riesgo que
+trascienda los límites organizacionales y que considere la cadena de
+suministro tecnológica en su conjunto (14, L130-L135). Los marcos
+actuales de gestión del riesgo de terceros, aunque relevantes, no están
+diseñados para evaluar la vulnerabilidad de las herramientas de IA al
+despliegue de agentes ofensivos autónomos (7, L58-L60).
+
+### 6.2. Gobernanza de la IA: de políticas estáticas a controles dinámicos y demostrables
+
+La gobernanza de la IA ha sido, hasta ahora, un ejercicio de definición
+de políticas y principios: transparencia, equidad, responsabilidad,
+privacidad (11; 14). Las organizaciones han desarrollado códigos de
+conducta, comités de ética y procedimientos de revisión para garantizar
+que sus sistemas de IA se desplieguen de forma responsable (13,
+L62-L66). La aparición de agentes ofensivos autónomos exige una
+**transformación de la gobernanza de la IA** desde políticas estáticas
+hacia **controles dinámicos y demostrables** (7, L65-L70; 8, L58-L60).
+
+Un control estático es aquel que se implementa en el momento del diseño
+o del despliegue y que se asume que permanece efectivo a lo largo del
+tiempo: una política de acceso, un conjunto de salvaguardas éticas, una
+revisión de seguridad inicial (11, L80-L85). Un control dinámico, en
+cambio, es aquel que monitoriza continuamente el comportamiento del
+sistema, detecta desviaciones de su comportamiento esperado y activa
+respuestas automáticas en tiempo real (12, L60-L65). En el contexto de
+la gobernanza de la IA, esto implica (7, L65-L70):
+
+\(i\) **Monitorización continua del comportamiento del agente.** No
+basta con verificar que el agente cumple con las políticas en el momento
+del despliegue; es necesario monitorizar su comportamiento en
+producción, detectando acciones que se desvíen de los parámetros
+autorizados (11, L80-L85).
+
+\(ii\) **Pruebas de robustez continuadas.** Las pruebas de penetración y
+de *red teaming* no pueden ser eventos periódicos; deben ser procesos
+continuos que se adapten a la evolución del agente y del entorno (7,
+L54-L56).
+
+\(iii\) **Mecanismos de *circuit breaker*.** Es necesario disponer de
+mecanismos que interrumpan automáticamente la operación del agente si se
+detecta un comportamiento malicioso o no autorizado (12, L60-L65). Estos
+mecanismos deben ser redundantes y no depender de la decisión de un
+humano que puede no estar disponible en el momento crítico (14,
+L140-L145).
+
+\(iv\) **Registros auditables inmutables.** La trazabilidad de las
+acciones del agente ---qué decisiones tomó, por qué las tomó, en qué
+contexto--- es esencial tanto para la supervisión como para la
+atribución y la responsabilidad (11, L85-L90). JadePuffer,
+paradójicamente, generó registros auditables a través de sus comentarios
+autodescriptivos, pero esto no puede darse por sentado en futuros
+agentes (8, L44-L46).
+
+La demostrabilidad de la gobernanza ---la capacidad de probar ante
+reguladores, clientes y aseguradoras que el agente se ha comportado de
+forma conforme a las políticas--- se convierte en una exigencia
+operativa (7, L62-L65). El AI Act, como se analizará en la Sección 7,
+exige que los sistemas de IA de alto riesgo mantengan registros de su
+funcionamiento y que dichos registros estén disponibles para las
+autoridades de supervisión (7, L60-L62). En la era de los agentes
+autónomos, la capacidad de generar y conservar estos registros de forma
+fiable es un requisito crítico que muchas organizaciones aún no han
+implementado (14, L150-L155).
+
+### 6.3. Riesgos sistémicos y efecto cascada: el fallo de un agente como fallo de red
+
+Uno de los aspectos más preocupantes de la aparición de los ATAs es su
+potencial para generar **riesgos sistémicos** ---aquellos en los que el
+fallo de un componente o de un agente desencadena una cascada de fallos
+en todo el sistema (14, L130-L135). JadePuffer no atacó una
+infraestructura crítica, pero el caso revela la vulnerabilidad de las
+herramientas de IA y de las cadenas de suministro tecnológico a este
+tipo de amenazas (9, L16-L18; 12, L22-L25).
+
+La cadena de suministro de la IA está compuesta por múltiples capas: los
+proveedores de modelos *foundation*, los *frameworks* de desarrollo como
+Langflow, las plataformas de despliegue, los sistemas de datos y las
+aplicaciones finales (11, L12-L15). Cada una de estas capas es un vector
+potencial de ataque (13, L45-L48). JadePuffer explotó una vulnerabilidad
+en Langflow, un *framework* de desarrollo de IA de código abierto
+ampliamente utilizado (9, L16-L18). Si la misma vulnerabilidad hubiera
+afectado a una herramienta utilizada por miles o decenas de miles de
+organizaciones, un solo agente autónomo podría haber comprometido una
+fracción significativa de la infraestructura de IA global en un corto
+período de tiempo (14, L132-L135).
+
+El **efecto cascada** se produce cuando un fallo en un componente ---por
+ejemplo, la corrupción de un modelo de IA de uso generalizado--- se
+propaga a todos los sistemas que dependen de ese componente (12,
+L70-L75). Un agente que envenena un modelo *foundation* podría causar
+comportamientos maliciosos en todos los agentes y aplicaciones que se
+basan en él (13, L45-L48). El impacto sería sistémico y afectaría a
+múltiples sectores ---finanzas, sanidad, energía, transporte---
+simultáneamente, desbordando la capacidad de respuesta de los equipos de
+seguridad (11, L62-L65).
+
+Este riesgo sistémico exige una gestión del riesgo a nivel de **red y de
+ecosistema**, no solo a nivel organizacional (14, L130-L135). Los
+reguladores y las agencias de ciberseguridad deben considerar la
+seguridad de la cadena de suministro de la IA como un bien público y
+establecer requisitos de seguridad para los *frameworks*, las
+herramientas y los modelos que son críticos para el ecosistema (8,
+L18-L22; 10, L12-L15). La Comisión Europea ha iniciado este camino con
+el Plan de Acción sobre Ciberseguridad e IA, pero la implementación de
+controles sistémicos sigue siendo un desafío abierto (8, L8-L12).
+
+### 6.4. Nuevos estándares y certificaciones para sistemas de IA seguros
+
+La aparición de agentes de IA ofensivos acelera la necesidad de
+**estándares y certificaciones de seguridad** específicos para sistemas
+de IA (11; 14). Los estándares de seguridad de la información existentes
+---ISO/IEC 27001, NIST CSF, SOC 2--- no fueron diseñados para los
+riesgos específicos de los agentes autónomos (13, L68-L72). La seguridad
+de un agente de IA no se limita a la seguridad de la infraestructura que
+lo aloja; incluye la robustez del modelo frente a manipulaciones, la
+integridad de sus entradas y salidas, y la fiabilidad de su
+comportamiento en entornos impredecibles (7, L60-L65).
+
+La **certificación de modelos de IA** está emergiendo como un campo de
+desarrollo regulatorio (8, L18-L22). El AI Act establece que los
+sistemas de IA de alto riesgo deben cumplir con requisitos de
+ciberseguridad, robustez y precisión (7, L48-L52). Sin embargo, los
+requisitos son generales y no especifican cómo deben ser evaluados o
+certificados (10, L22-L25). La Comisión Europea ha anunciado que
+desarrollará estándares armonizados para la certificación de sistemas de
+IA, pero el proceso está en sus primeras etapas (8, L18-L20). Mientras
+tanto, las organizaciones deben desarrollar sus propias metodologías de
+evaluación de la seguridad de los agentes de IA, basadas en pruebas de
+robustez, de resistencia a manipulaciones (*adversarial robustness*) y
+de capacidad de respuesta ante entradas maliciosas (12, L60-L65).
+
+La **certificación de la cadena de suministro de la IA** es otra
+necesidad emergente (11, L85-L90). Si un *framework* de desarrollo de IA
+como Langflow contiene una vulnerabilidad que permite a un agente
+ofensivo ejecutar código remoto, la seguridad de todas las aplicaciones
+construidas sobre él está comprometida (9, L16-L18). Los estándares de
+certificación deberían incluir la evaluación de la seguridad de los
+*frameworks*, las bibliotecas y las herramientas de desarrollo, con
+especial atención a las vulnerabilidades de ejecución de código y de
+manipulación de entradas (13, L45-L48). La responsabilidad de los
+proveedores de estas herramientas por las vulnerabilidades descubiertas
+será analizada en la Sección 8.
+
+### 6.5. La responsabilidad del despliegue: deber de diligencia y supervisión continuada
+
+El despliegue de un agente de IA no es un evento puntual; es un proceso
+continuo que exige una **responsabilidad de supervisión** por parte de
+la organización que lo despliega (7, L60-L65; 11, L80-L85). Esta
+responsabilidad se articula en torno al concepto de **deber de
+diligencia** (*duty of care*) ---la obligación de tomar todas las
+medidas razonables para prevenir daños que razonablemente puedan
+preverse (11, L80-L82). En el contexto de los agentes autónomos, el
+deber de diligencia implica (7, L65-L70; 12, L75-L80):
+
+\(i\) **Conocimiento del comportamiento del agente.** La organización
+debe tener un conocimiento razonable de cómo el agente toma decisiones,
+qué entradas recibe, qué salidas genera y qué acciones ejecuta (11,
+L85-L90). Este conocimiento no implica necesariamente la capacidad de
+predecir cada acción individual ---eso es incompatible con la
+agencialidad--- pero sí la capacidad de monitorizar y auditar el
+comportamiento agregado (14, L150-L155).
+
+\(ii\) **Evaluación continua de riesgos.** El riesgo que un agente
+introduce en la organización no es estático; evoluciona con el cambio de
+su comportamiento, del entorno y de las capacidades de los adversarios
+(13, L62-L66). La evaluación de riesgos debe ser un proceso continuo, no
+un ejercicio anual (12, L70-L75).
+
+\(iii\) **Capacidad de intervención.** La organización debe disponer de
+mecanismos que le permitan intervenir si el agente muestra un
+comportamiento no autorizado o malicioso (7, L60-L62). Esta capacidad de
+intervención debe ser *efectiva*: no basta con tener un *botón de
+parada* si el agente puede completar una acción maliciosa antes de que
+el humano pueda pulsarlo (14, L140-L145).
+
+\(iv\) **Registro y trazabilidad.** La organización debe mantener
+registros completos de las acciones del agente, para poder demostrar, en
+caso de incidente, que se cumplió con el deber de diligencia y que se
+tomaron las medidas razonables para prevenir el daño (11, L85-L90).
+
+La responsabilidad del despliegue se extiende también a la **selección
+del modelo de IA** utilizado (7, L41-L43). Una organización que
+despliega un agente basado en un modelo *uncensored* o *jailbroken*
+---cuyas salvaguardas han sido eliminadas--- podría ser considerada
+negligente si el agente causa daños (13, L62-L66). La determinación de
+qué constituye una *selección razonable* de modelo dependerá del estado
+del arte en cada momento, pero la creciente disponibilidad de modelos
+con salvaguardas robustas hace que el uso de modelos inseguros sea cada
+vez más difícil de justificar (7, L43-L48).
+
+## SECCIÓN 7. EL MARCO LEGAL ANTE EL ADVENIMIENTO DE LOS ATAS
+
+### 7.1. El marco normativo europeo ante JadePuffer: visión general
+
+El ordenamiento jurídico de la Unión Europea ha experimentado en los
+últimos años una transformación sin precedentes en materia de
+ciberseguridad, inteligencia artificial y resiliencia operativa. Cuatro
+instrumentos normativos ---el Reglamento de Inteligencia Artificial (AI
+Act) (8, L10-L13), la Directiva NIS2 (1, L21-L23), el Reglamento DORA
+(2, L39-L42) y el Cyber Resilience Act (14, L32-L33)--- conforman un
+entramado regulatorio que, en teoría, debería proporcionar una respuesta
+adecuada a los riesgos emergentes planteados por los agentes de IA
+ofensivos. A estos se añaden el Reglamento General de Protección de
+Datos (GDPR) (4, L5-L7) y el Convenio de Budapest sobre
+Ciberdelincuencia (5, L9-L10), que abordan dimensiones específicas de la
+protección de datos y la cooperación internacional en materia penal.
+
+Sin embargo, la aparición de JadePuffer y de otros agentes ofensivos
+plantea interrogantes sobre la **adecuación, la coherencia y la
+suficiencia** de este marco normativo. Como ha señalado la Comisión
+Europea en su Plan de Acción sobre Ciberseguridad e IA de 7 de julio de
+2026, *\"la IA puede ser explotada por actores maliciosos para
+automatizar ataques, identificar debilidades y llevar a cabo operaciones
+cibernéticas a una velocidad y escala sin precedentes\"* (9, L17-L19).
+El Plan de Acción, que se articula en torno a tres objetivos ---promover
+el uso seguro de la IA, reforzar la ciberseguridad de la UE y ampliar
+las capacidades de IA en ciberseguridad---, reconoce explícitamente que
+el marco regulatorio existente, aunque sólido, requiere una aplicación
+coordinada y, en algunos aspectos, una actualización (9, L23-L26).
+
+La presente sección analiza críticamente la aplicabilidad y las
+limitaciones de cada uno de estos instrumentos frente a los ATAs,
+identificando lagunas, contradicciones y áreas de incertidumbre jurídica
+que deben ser abordadas por los legisladores y los responsables de la
+gobernanza de la IA.
+
+### 7.2. El Reglamento de Inteligencia Artificial (AI Act) --- Regulation (EU) 2024/1689
+
+El AI Act, primer marco jurídico global en materia de IA, establece un
+enfoque basado en el riesgo para la regulación de los sistemas de IA (8,
+L8-L10; 8, L17-L18). Su aplicabilidad a los agentes ofensivos plantea,
+sin embargo, cuestiones complejas que requieren un análisis
+pormenorizado.
+
+#### 7.2.1. Clasificación del agente ofensivo como sistema de IA de «alto riesgo»
+
+El AI Act clasifica los sistemas de IA en función del riesgo que
+presentan para la salud, la seguridad y los derechos fundamentales de
+las personas. Los sistemas de «riesgo inaceptable» están prohibidos; los
+de «alto riesgo» están sujetos a requisitos estrictos de conformidad;
+los de «riesgo limitado» están sujetos a obligaciones de transparencia;
+y los de «riesgo mínimo o nulo» no están regulados (8, L17-L18; 8,
+L39-L41).
+
+Un agente de IA ofensivo, como el desplegado en JadePuffer, no encaja
+fácilmente en ninguna de estas categorías. Su propósito ---ejecutar un
+ataque de ransomware--- es manifiestamente ilícito, lo que podría
+situarlo en la categoría de «riesgo inaceptable» si se considera que
+causa daño a la seguridad de las personas o a sus derechos
+fundamentales. Sin embargo, el AI Act no prohíbe explícitamente los
+sistemas de IA diseñados para cometer delitos; se centra en usos
+específicos como la manipulación del comportamiento, la puntuación
+social o la identificación biométrica en tiempo real. Un agente de
+ransomware no está contemplado en el catálogo de usos prohibidos del
+artículo 5.
+
+Si se considera que el agente ofensivo es un sistema de «alto riesgo»
+---por ejemplo, porque se utiliza en el contexto de la gestión de
+infraestructuras críticas o en el sector financiero---, entonces estaría
+sujeto a los requisitos del Título III del AI Act, incluyendo la
+evaluación de conformidad, el registro en la base de datos de la UE y la
+supervisión humana significativa (7, L60-L62). Pero, como señala el
+análisis de Mishcon de Reya, la aplicabilidad del AI Act a los agentes
+ofensivos depende de si se consideran «puestos en el mercado» o «puestos
+en servicio» en la UE, lo que en el caso de un atacante con sede fuera
+de la UE es altamente discutible (7, L58-L62).
+
+#### 7.2.2. Artículo 15: requisitos de ciberseguridad, robustez y precisión
+
+El artículo 15 del AI Act establece que los sistemas de IA de alto
+riesgo deben ser diseñados y desarrollados de forma que alcancen un
+nivel adecuado de precisión, solidez y ciberseguridad, y que funcionen
+de forma coherente a lo largo de su ciclo de vida (17, L5-L8; 17,
+L27-L30). Además, deben ser resilientes frente a intentos de terceros no
+autorizados de alterar su uso, salidas o rendimiento mediante la
+explotación de vulnerabilidades del sistema (17, L16-L18). Las
+soluciones técnicas destinadas a garantizar la ciberseguridad de los
+sistemas de IA de alto riesgo deben ser apropiadas a las circunstancias
+y a los riesgos (17, L18-L20).
+
+Estos requisitos, aunque redactados en términos generales, son
+aplicables a los proveedores y responsables del despliegue de agentes de IA. Un agente
+ofensivo, por definición, no cumple con los requisitos de ciberseguridad
+del artículo 15, ya que está diseñado para explotar vulnerabilidades, no
+para resistirlas. Sin embargo, la obligación recae sobre el proveedor o
+el responsable del despliegue, no sobre el agente en sí mismo. En el caso de
+JadePuffer, el operador humano que desplegó el agente podría ser
+considerado responsable del incumplimiento de los requisitos del
+artículo 15 si el agente se considera un sistema de alto riesgo. Esta
+interpretación, aunque plausible, no ha sido testada en los tribunales y
+presenta dificultades prácticas de aplicación (7, L62-L65).
+
+#### 7.2.3. El artículo 2.3: la exclusión de usos militares, de defensa y seguridad nacional --- ¿una laguna estructural?
+
+Una de las críticas más recurrentes al AI Act es la **exclusión de su
+ámbito de aplicación de los sistemas de IA utilizados para fines
+militares, de defensa o de seguridad nacional**, establecida en el
+artículo 2.3 (6, L7-L10; 12, L9-L12). Esta exclusión, que se aplica
+*\"independientemente del tipo de entidad que lleve a cabo esas
+actividades\"* (6, L26-L28), ha sido calificada como una *\"laguna
+estructural significativa\"* en el marco regulatorio europeo por una
+pregunta parlamentaria formulada en junio de 2026 (12, L8-L9; 6, L6-L7).
+
+La preocupación, expresada por los eurodiputados José Cepeda, Elio Di
+Rupo, Nacho Sánchez Amor y Sven Mikser, se refiere a los sistemas de IA
+con capacidades ofensivas a nivel estatal ---incluidos aquellos que
+podrían ser desplegados por actores privados en contextos relacionados
+con la defensa--- que pueden operar en un espacio en gran medida no
+regulado a nivel de la UE (12, L13-L15). La exclusión del artículo 2.3
+crea un *\"área gris regulatoria, particularmente para los sistemas de
+IA de doble uso desarrollados por actores privados, cuyo propósito
+inicial no es militar, pero que pueden integrarse en operaciones
+ofensivas cibernéticas o capacidades de inteligencia\"* (12, L16-L18).
+
+JadePuffer, aunque no fue un ataque con motivación militar o de defensa,
+ilustra la facilidad con la que un agente de IA de propósito general
+puede ser desplegado con fines ofensivos. Si el mismo agente hubiera
+sido desarrollado por una empresa privada en el contexto de un contrato
+de defensa, quedaría fuera del ámbito del AI Act, sin que exista un
+mecanismo claro para evaluar su seguridad o para atribuir
+responsabilidad en caso de uso indebido. La pregunta parlamentaria insta
+a la Comisión a abordar esta laguna, en particular en lo que respecta a
+los sistemas de IA con capacidades ofensivas desarrollados por actores
+privados (12, L19-L22). Hasta la fecha, la Comisión no ha anunciado una
+revisión del artículo 2.3, lo que deja abierta una cuestión de seguridad
+jurídica de primera magnitud.
+
+#### 7.2.4. Obligaciones de los proveedores y responsables del despliegue --- ¿quién es responsable?
+
+El AI Act distingue entre *proveedores* ---quienes desarrollan un
+sistema de IA o encargan su desarrollo con vistas a ponerlo en el
+mercado--- y *responsables del despliegue* ---quienes utilizan un sistema de IA bajo
+su propia autoridad, excepto cuando se utiliza en el ámbito personal no
+profesional (7, L60-L62). En el contexto de un ataque agéntico, la
+asignación de responsabilidades entre el proveedor del modelo de IA, el
+proveedor del *framework* (Langflow), el operador humano que desplegó el
+agente y el agente en sí mismo es una cuestión compleja y no resuelta.
+
+El operador humano que desplegó JadePuffer podría ser considerado
+*responsable del despliegue* del sistema de IA, y, por tanto, responsable del
+cumplimiento de las obligaciones del AI Act si el sistema se considera
+de alto riesgo. Sin embargo, la identificación y el enjuiciamiento de
+este operador ---que puede estar en una jurisdicción diferente--- es un
+desafío práctico de primera magnitud. El proveedor del modelo de IA
+---si se identifica--- también podría ser responsable si el modelo fue
+puesto en el mercado sin las salvaguardas adecuadas. Pero, como se
+señaló en la Sección 2, Sysdig no pudo identificar el modelo específico
+que impulsó a JadePuffer (7, L41-L43), lo que hace que la atribución de
+responsabilidad al proveedor sea, en la práctica, inviable.
+
+#### 7.2.5. Plazos de aplicación y sanciones
+
+El AI Act se aplica de forma progresiva. Las obligaciones de
+transparencia del artículo 50 entraron en vigor el 2 de agosto de 2026
+(0, L14-L15). Las obligaciones para los sistemas de alto riesgo, que
+inicialmente debían aplicarse a partir del 2 de agosto de 2026 (0,
+L21-L23), han sido aplazadas hasta diciembre de 2027 (0, L33-L35). Las
+sanciones por incumplimiento pueden alcanzar hasta el 7 % del volumen de
+negocio global anual para las infracciones más graves (2, L35-L36). Este
+calendario, aunque proporciona un margen para la adaptación de las
+empresas, también significa que, en el momento de redactar este informe,
+las obligaciones más estrictas del AI Act ---las relativas a los
+sistemas de alto riesgo--- no son aún plenamente exigibles.
+
+### 7.3. La Directiva NIS2 (UE 2022/2555)
+
+La Directiva NIS2 establece un marco jurídico para la ciberseguridad en
+toda la Unión Europea, sustituyendo a la anterior Directiva NIS (1,
+L21-L23). Su ámbito de aplicación abarca 18 sectores críticos,
+incluyendo energía, transporte, salud, finanzas, administración pública
+y proveedores de servicios digitales (1, L9-L11). NIS2 exige que las
+organizaciones implementen medidas de ciberseguridad, gestionen los
+riesgos de la cadena de suministro y notifiquen los incidentes
+significativos a las autoridades nacionales en plazos estrictos: una
+alerta temprana en 24 horas, una notificación completa en 72 horas y un
+informe final en un mes (13, L6-L9; 13, L14-L17).
+
+La aplicabilidad de NIS2 a JadePuffer es doble. Por un lado, la víctima
+del ataque ---si se hubiera tratado de una entidad sujeta a NIS2---
+habría estado obligada a notificar el incidente dentro de los plazos
+establecidos. Sin embargo, el ataque de JadePuffer se ejecutó en un
+tiempo comprimido ---probablemente en minutos--- lo que plantea un
+desafío para el cumplimiento de los plazos de notificación: si el
+cifrado se completa en minutos y la detección puede tardar horas, el
+plazo de 24 horas puede ser insuficiente para una notificación temprana
+(11, L45-L47). Por otro lado, si el agente de IA se considera una
+*herramienta de ataque* utilizada por un actor malicioso, NIS2 no
+establece obligaciones directas para el atacante, sino para la víctima y
+para los Estados miembros en su labor de transposición y supervisión.
+
+NIS2 también exige a las organizaciones evaluar los riesgos de la cadena
+de suministro, incluyendo los riesgos derivados de proveedores de
+servicios en la nube y de herramientas de IA (1, L32-L33). JadePuffer
+explotó una vulnerabilidad en Langflow, un *framework* de IA de código
+abierto que podría ser utilizado por organizaciones sujetas a NIS2 (9,
+L16-L18). La obligación de evaluar los riesgos de la cadena de
+suministro incluiría, en principio, la evaluación de la seguridad de las
+herramientas de IA utilizadas, aunque la Directiva no proporciona una
+guía específica sobre cómo realizar esta evaluación en el contexto de
+los agentes de IA (7, L58-L60).
+
+### 7.4. El Reglamento DORA (Digital Operational Resilience Act)
+
+DORA, aplicable desde enero de 2025, establece un marco armonizado para
+la mitigación de los riesgos de TIC en el sector financiero (2, L39-L42;
+11, L30-L32). Exige a las entidades financieras que implementen marcos
+de gestión de riesgos de TIC aprobados por el consejo, que evalúen y
+detecten amenazas cibernéticas y que respondan a los incidentes
+relacionados con las TIC (10, L22-L25). DORA también establece
+requisitos para la notificación de incidentes graves y para la gestión
+de los riesgos de terceros proveedores de TIC (10, L32-L35; 10,
+L35-L36).
+
+La relevancia de DORA para JadePuffer es particularmente aguda. El Banco
+Central Europeo (BCE), en una carta dirigida a los consejeros delegados
+de los bancos significativos de la zona del euro con fecha 7 de julio de
+2026, ha invocado DORA para exigir a las entidades financieras que
+presenten planes de defensa frente a las amenazas de ciberseguridad
+habilitadas por la IA (10, L6-L8; 10, L14-L16). El BCE explica que
+*\"los modelos de IA emergentes pueden identificar vulnerabilidades de
+software a una velocidad sin precedentes\"* (10, L17-L18) y exige a las
+entidades que, a corto plazo, se centren en la gestión de
+vulnerabilidades y parches, y que, a largo plazo, adopten medidas
+estructurales para reforzar la higiene cibernética, modernizar la
+infraestructura y mejorar los mecanismos de respuesta y recuperación
+(10, L28-L31). Las entidades deben presentar sus planes de acción antes
+del 31 de octubre de 2026 (10, L12; 10, L36-L37).
+
+La Junta Europea de Riesgo Sistémico (ESRB), presidida por el presidente
+del BCE, ha emitido una advertencia en la que señala que los modelos de
+IA *frontier* son *\"una fuente de riesgo sistémico para el sistema
+financiero a corto y medio plazo\"* (10, L43-L44; 11, L36-L39). La ESRB
+identifica tres preocupaciones principales: la concentración de
+proveedores de IA en el extranjero, que expone a la UE a una dependencia
+estratégica y a riesgos geopolíticos; el cambio en el equilibrio entre
+atacantes y defensores (disminución de los costes para los primeros y
+aumento para los segundos); y las diferencias en la preparación de las
+entidades financieras (10, L51-L54). Las Autoridades Europeas de
+Supervisión (EBA, EIOPA y ESMA) han respaldado esta advertencia y han
+instado a las entidades financieras a adaptar sus capacidades de
+ciberseguridad (11, L20-L22; 11, L28-L31).
+
+DORA, a diferencia del AI Act, tiene un ámbito de aplicación claro y
+unas obligaciones exigibles. Sin embargo, su enfoque se centra en la
+resiliencia de las entidades financieras, no en la regulación de los
+agentes de IA en sí mismos. La aparición de ATAs como JadePuffer exige
+que las entidades financieras actualicen sus análisis de riesgos y sus
+pruebas de penetración para incluir escenarios de ataque agéntico, algo
+que DORA no especifica explícitamente (11, L58-L62).
+
+### 7.5. El Cyber Resilience Act (CRA)
+
+El Cyber Resilience Act, cuyo texto final se espera para 2026, establece
+requisitos de ciberseguridad para los productos con elementos digitales
+que se comercializan en la UE (14, L32-L33). A partir del 11 de
+septiembre de 2026, los fabricantes de estos productos estarán obligados
+a notificar las vulnerabilidades explotadas activamente y los incidentes
+graves a las autoridades de la UE a través de una plataforma de
+notificación única (14, L12-L14; 14, L37-L39). La notificación debe
+realizarse en un plazo de 72 horas desde que se tenga conocimiento de la
+vulnerabilidad o del incidente (14, L39-L41).
+
+La relevancia del CRA para JadePuffer radica en que Langflow ---el
+*framework* explotado--- es un *producto con elementos digitales* que
+podría estar dentro del ámbito de aplicación del CRA si se comercializa
+en la UE. Si el CRA ya estuviera plenamente aplicable, el proveedor de
+Langflow habría estado obligado a notificar la vulnerabilidad
+CVE‑2025‑3248 a las autoridades en cuanto tuviera conocimiento de su
+explotación activa. Sin embargo, la CRA no establece responsabilidad por
+el uso indebido de un producto; se centra en la notificación y en la
+corrección de vulnerabilidades, no en la atribución de responsabilidad
+por los daños causados por terceros que explotan dichas vulnerabilidades
+(14, L45-L47).
+
+El CRA también establece que los productos con elementos digitales deben
+comercializarse con el marcado CE a partir de diciembre de 2027, lo que
+implica que deben cumplir con los requisitos de ciberseguridad
+establecidos en el Reglamento (14, L22-L23). Este requisito podría, en
+el futuro, establecer un estándar mínimo de seguridad para las
+herramientas de IA, reduciendo la superficie de ataque explotable por
+agentes ofensivos como JadePuffer. Sin embargo, el CRA no aborda
+específicamente los agentes de IA ni los riesgos de su uso ofensivo.
+
+### 7.6. El Reglamento General de Protección de Datos (GDPR)
+
+El GDPR establece el marco para la protección de los datos personales en
+la UE. Su relevancia para JadePuffer se articula en torno a dos ejes
+principales: el tratamiento de datos personales durante el ataque y la
+toma de decisiones automatizadas.
+
+En cuanto al tratamiento de datos personales, el agente de JadePuffer
+extrajo y cifró datos de configuración de Nacos que podían contener
+información personal ---por ejemplo, credenciales, direcciones de correo
+electrónico o identificadores de usuarios (9, L14-L15). Si estos datos
+se consideran datos personales en el sentido del GDPR, el ataque
+constituiría una violación de la seguridad de los datos que obligaría al
+responsable del tratamiento ---la víctima--- a notificar la violación a
+la autoridad de control y a los interesados en un plazo de 72 horas
+(artículo 33 del GDPR). La notificación sería exigible aunque la
+violación haya sido causada por un agente autónomo; la responsabilidad
+recae sobre el responsable del tratamiento, no sobre el atacante.
+
+En cuanto a la toma de decisiones automatizadas, el artículo 22 del GDPR
+establece que los interesados tienen derecho a no ser objeto de una
+decisión basada únicamente en el tratamiento automatizado, incluida la
+elaboración de perfiles, que produzca efectos jurídicos o les afecte de
+forma significativa (4, L5-L7; 4, L9-L11). La Agencia Española de
+Protección de Datos (AEPD) ha publicado una guía sobre IA agéntica en la
+que aborda específicamente la aplicación del artículo 22 a los agentes
+autónomos (4, L12-L15; 15, L5-L11). La AEPD señala que *\"el uso de IA
+agéntica no implica automáticamente que un responsable lleve a cabo
+decisiones automatizadas en el sentido del artículo 22\"* (15, L33-L35).
+Un agente de IA puede recopilar, resumir o distribuir información de
+forma autónoma sin producir una decisión que tenga efectos jurídicos o
+significativos para el interesado (15, L35-L37). Sin embargo, si el
+agente toma decisiones que afectan a los derechos de las personas ---por
+ejemplo, denegando un servicio o modificando un contrato--- entonces el
+artículo 22 sería aplicable (15, L29-L31).
+
+En el caso de JadePuffer, el agente no tomó decisiones que afectaran a
+los derechos de las personas en el sentido del artículo 22; su acción
+fue el cifrado de datos, no una decisión administrativa o contractual.
+Por tanto, el artículo 22 no es directamente aplicable. Sin embargo, el
+caso ilustra un desafío más amplio: si un agente autónomo toma
+decisiones que afectan a los derechos de las personas, la atribución de
+responsabilidad y la aplicación del artículo 22 se vuelven
+problemáticas, ya que el agente no es un *responsable del tratamiento*
+en el sentido del GDPR.
+
+### 7.7. El Convenio de Budapest sobre Ciberdelincuencia
+
+El Convenio de Budapest, de 2001, es el tratado internacional más
+importante en materia de ciberdelincuencia (5, L9-L10). Su 25.º
+aniversario se celebrará en la Conferencia Octopus de 2026, que reunirá
+a expertos de más de 100 países para debatir los desafíos emergentes,
+incluyendo el impacto de la inteligencia artificial en la
+ciberdelincuencia, la cooperación en materia de pruebas digitales y el
+enjuiciamiento de los delitos habilitados por las TIC (16, L5-L8; 5,
+L27-L31).
+
+El Convenio establece un marco para la cooperación internacional en la
+investigación y el enjuiciamiento de delitos informáticos. Sin embargo,
+su redacción, anterior a la era de la IA generativa, no contempla
+específicamente los delitos cometidos mediante agentes autónomos. El
+Comité del Convenio (T-CY) ha iniciado trabajos para abordar estos
+desafíos, incluyendo un estudio de mapeo sobre la ciberdelincuencia, las
+pruebas electrónicas y la IA (5, L5-L7; 5, L40-L41). La 33.ª sesión
+plenaria del T-CY, celebrada en 2025, adoptó un plan de trabajo para
+2026-2027 que incluye la finalización de estos estudios (5, L16-L19; 5,
+L40-L41).
+
+La atribución de la conducta delictiva en el contexto de los ATAs es uno
+de los desafíos más acuciantes que el Convenio deberá abordar. ¿Quién es
+el autor del delito cuando un agente autónomo ejecuta un ataque? ¿El
+operador humano que lo desplegó? ¿El proveedor del modelo? ¿El
+desarrollador del *framework*? ¿El agente en sí mismo? El Convenio, en
+su formulación actual, no proporciona una respuesta clara. La
+Conferencia Octopus de 2026 podría ser un foro clave para avanzar en
+esta cuestión, aunque es improbable que resulte en una modificación del
+tratado en el corto plazo (16, L7-L9).
+
+### 7.8. La atribución de la conducta delictiva: ¿quién es el autor?
+
+La cuestión de la **atribución de la conducta delictiva** es,
+probablemente, el desafío jurídico más complejo que plantea JadePuffer
+(5, L10-L11). En el derecho penal tradicional, la autoría de un delito
+requiere que una persona física haya cometido la acción típica con dolo
+o culpa. Un agente de IA no es una persona física y, por tanto, no puede
+ser considerado *autor* en el sentido penal (5, L11-L12). Sin embargo,
+tampoco es un mero instrumento inerte, como un martillo o un ordenador;
+es un sistema que toma decisiones autónomas y que, en el caso de
+JadePuffer, adaptó su comportamiento en tiempo real sin intervención
+humana (8, L28-L30).
+
+Existen tres modelos teóricos para la atribución de la conducta:
+
+\(i\) **El agente como instrumento.** En este modelo, el agente es
+tratado como una herramienta del operador humano, similar a un *script*
+automatizado. La responsabilidad recae íntegramente sobre el operador
+humano que desplegó el agente y que configuró el escenario del ataque.
+Este modelo es el más sencillo desde el punto de vista penal, pero no
+refleja adecuadamente la autonomía del agente (7, L15-L17).
+
+\(ii\) **El agente como «autor» en un sentido funcional.** En este
+modelo, el agente es considerado como un *actor* que toma decisiones,
+aunque no sea una persona física. La responsabilidad podría recaer sobre
+el operador humano en calidad de *garante* ---por no haber supervisado
+adecuadamente al agente--- o sobre el proveedor del modelo ---por no
+haber implementado salvaguardas suficientes. Este modelo es más complejo
+y requiere una reforma legal para ser viable (5, L11-L14).
+
+\(iii\) **El agente como *persona electrónica*.** Una propuesta teórica,
+aunque no implementada, es la de otorgar personalidad jurídica limitada
+a los sistemas de IA avanzados, de forma que puedan ser responsables (o
+más precisamente, que sus operadores o proveedores puedan ser
+responsables en su nombre) de los daños que causen. Esta propuesta ha
+sido ampliamente criticada y no cuenta con respaldo regulatorio en la UE
+(7, L65-L70).
+
+En el caso de JadePuffer, la opción más plausible es la primera: el
+operador humano que preparó el escenario ---seleccionó a la víctima,
+configuró la infraestructura y proporcionó las credenciales--- es el
+autor del delito (7, L15-L17). Sin embargo, la identificación de este
+operador es un desafío práctico, y la atribución se complica si el
+operador utilizó identidades falsas o si el agente fue desplegado por
+una organización sin una jerarquía clara (5, L10-L11).
+
+### 7.9. Responsabilidad penal de los operadores humanos
+
+La responsabilidad penal de los operadores humanos que despliegan
+agentes de IA ofensivos es, en principio, clara: el operador que prepara
+el escenario, proporciona las credenciales y lanza el agente está
+cometiendo los delitos de acceso ilícito a sistemas informáticos, daño
+informático y extorsión (tipificados en los artículos 3, 4 y 8 del
+Convenio de Budapest, y en las legislaciones penales nacionales que lo
+transpongan). El hecho de que la ejecución técnica haya sido realizada
+por un agente autónomo no exime al operador de responsabilidad penal; el
+agente es un instrumento, aunque sofisticado, y el operador es el autor
+mediato (5, L12-L14).
+
+Sin embargo, la responsabilidad penal se vuelve más compleja en dos
+escenarios. En primer lugar, si el agente actúa de forma imprevisible
+---por ejemplo, causando daños que el operador no previo ni quiso---, la
+cuestión del dolo o la culpa se vuelve relevante. El operador podría
+alegar que no tenía *intención* de causar esos daños específicos, lo que
+podría atenuar su responsabilidad. En segundo lugar, si el agente es
+desplegado por una organización sin una jerarquía clara, la atribución
+de responsabilidad a un individuo concreto puede ser difícil. La
+responsabilidad penal es personal, y no puede atribuirse a una persona
+que no participó directamente en el despliegue o que no tenía
+conocimiento de las acciones del agente (5, L11-L14).
+
+### 7.10. Responsabilidad civil de los proveedores de herramientas de IA vulnerables
+
+La responsabilidad civil de los proveedores de herramientas de IA
+vulnerables ---como Langflow--- es una cuestión emergente y
+controvertida (7, L58-L62). En el caso de JadePuffer, el agente explotó
+una vulnerabilidad en Langflow que había sido parcheada por el proveedor
+en abril de 2025 (9, L16-L18; 12, L20-L21). Si la víctima del ataque
+hubiera sufrido daños ---por ejemplo, pérdidas económicas---, ¿podría
+reclamar una indemnización al proveedor de Langflow por no haber evitado
+la vulnerabilidad?
+
+La Directiva (UE) 2024/2853 sobre responsabilidad por productos
+defectuosos, que deroga y sustituye a la anterior Directiva 85/374/CEE,
+entró en vigor el 9 de diciembre de 2024 y debe estar transpuesta por
+los Estados miembros antes del 9 de diciembre de 2026, fecha a partir
+de la cual se aplicará a los productos puestos en el mercado o en
+servicio con posterioridad. A diferencia de su predecesora, la nueva
+Directiva despeja expresamente la incertidumbre sobre la naturaleza del
+software: incluye el *software*, los sistemas de inteligencia
+artificial y los archivos de fabricación digital dentro de la
+definición de «producto», con la única excepción del software de
+código abierto desarrollado fuera de una actividad comercial. Una
+vulnerabilidad de seguridad en un producto digital podría considerarse
+un *defecto* si el producto no ofrece la seguridad que legítimamente
+puede esperarse, teniendo en cuenta la normativa de ciberseguridad
+aplicable, entre ella el Cyber Resilience Act. Sin embargo, la
+aplicación de este régimen a herramientas de código abierto como
+Langflow sigue siendo compleja, ya que quienes las mantienen no siempre
+son *fabricantes* en el sentido de la Directiva, y el régimen se centra
+en los daños causados por el propio producto defectuoso, no en los
+daños causados por terceros que explotan sus vulnerabilidades para
+atacar a otros sistemas.
+
+El AI Act, en su artículo 15, establece que los sistemas de IA de alto
+riesgo deben ser resilientes frente a intentos de terceros no
+autorizados de alterar su uso, salidas o rendimiento (17, L16-L18). Si
+Langflow se considera un sistema de alto riesgo ---lo que es discutible,
+ya que es un *framework* de desarrollo, no un sistema de IA final---, el
+proveedor podría ser responsable por el incumplimiento de este
+requisito. Sin embargo, como se señaló anteriormente, el AI Act no es
+aún plenamente aplicable y su interpretación en este contexto es
+incierta (0, L33-L35).
+
+### 7.11. El deber de diligencia (*duty of care*) en el despliegue de sistemas de IA
+
+El deber de diligencia ---la obligación de tomar todas las medidas
+razonables para prevenir daños que razonablemente puedan preverse--- es
+un principio general del derecho de la responsabilidad civil que se
+aplica al despliegue de sistemas de IA (11, L80-L82). Una organización
+que despliega un agente de IA tiene el deber de tomar medidas razonables
+para prevenir que el agente cause daños a terceros. Este deber incluye,
+al menos:
+
+\(i\) **Evaluar los riesgos del agente.** La organización debe evaluar
+los riesgos que el agente presenta para la seguridad de los sistemas,
+los datos y las personas (13, L62-L66).
+
+\(ii\) **Implementar salvaguardas adecuadas.** La organización debe
+implementar controles técnicos y organizativos para prevenir el uso
+indebido del agente, incluyendo la limitación de sus capacidades, la
+monitorización de su comportamiento y la capacidad de intervención en
+caso de comportamiento no autorizado (7, L60-L62).
+
+\(iii\) **Monitorizar el comportamiento del agente.** La organización
+debe monitorizar continuamente el comportamiento del agente para
+detectar desviaciones de su comportamiento esperado (11, L80-L85).
+
+\(iv\) **Responder a los incidentes.** La organización debe disponer de
+planes de respuesta a incidentes que incluyan la capacidad de detener al
+agente si se detecta un comportamiento malicioso (12, L60-L65).
+
+En el caso de JadePuffer, la víctima ---la organización que desplegó
+Langflow sin parchear y Nacos con la vulnerabilidad CVE‑2021‑29441 sin
+parchear--- podría haber incumplido su deber de diligencia al no
+mantener sus sistemas actualizados. Sin embargo, la responsabilidad de
+la víctima por el incumplimiento de su deber de diligencia no exime al
+atacante de su responsabilidad penal. El deber de diligencia opera en
+ambos lados: el atacante tiene el deber de no causar daños, y la víctima
+tiene el deber de protegerse razonablemente (11, L80-L82).
+
+## SECCIÓN 8. DIFICULTADES DE ATRIBUCIÓN Y RESPONSABILIDAD
+
+### 8.1. La atribución de la conducta delictiva: el agente como instrumento *versus* el agente como «autor»
+
+La atribución de la conducta delictiva en el contexto de los agentes de
+IA autónomos constituye uno de los desafíos jurídicos más complejos y
+menos resueltos del nuevo paradigma (5, L10-L12; 7, L65-L70).
+JadePuffer, por su propia naturaleza, sitúa esta cuestión en el centro
+del debate, al tratarse de un ataque en el que el agente tomó decisiones
+tácticas autónomas sin intervención humana en tiempo real (8, L28-L30;
+9, L10-L11). La pregunta fundamental es: ¿quién es el *autor* del delito
+cuando un sistema autónomo ejecuta una acción ilícita?
+
+El derecho penal tradicional opera sobre el principio de
+**responsabilidad personal**: solo las personas físicas pueden ser
+consideradas autoras de un delito, y la responsabilidad penal requiere
+dolo o culpa (5, L11-L12). Un agente de IA no es una persona física, no
+tiene conciencia, intención ni capacidad de comprensión de la ilicitud
+de sus actos en el sentido jurídico-penal. Por tanto, no puede ser
+considerado *autor* en el sentido estricto del término (7, L65-L68). Sin
+embargo, el agente de JadePuffer tampoco es un mero instrumento inerte,
+como un martillo o un ordenador; es un sistema que genera código
+original, adapta su comportamiento ante respuestas inesperadas y toma
+decisiones que no están predefinidas en un *script* (8, L36-L42; 9,
+L26-L28). Esta *agencialidad* intermedia ---entre el instrumento pasivo
+y el actor consciente--- genera un espacio de incertidumbre jurídica que
+los marcos normativos existentes no han logrado resolver (14,
+L160-L165).
+
+Desde la perspectiva del derecho penal, existen tres modelos teóricos
+para abordar la atribución de la conducta de un agente autónomo (5,
+L10-L14; 7, L65-L70):
+
+\(i\) **El agente como instrumento del operador humano.** Este modelo
+considera que el agente es, a todos los efectos, una herramienta del
+operador humano, similar a un *script* automatizado. La responsabilidad
+recae íntegramente sobre el operador humano que desplegó el agente,
+configuró su objetivo y proporcionó las credenciales iniciales (7,
+L15-L17). Este modelo es el más sencillo desde el punto de vista de la
+atribución, pero no refleja adecuadamente la autonomía del agente: si el
+agente toma decisiones que el operador no previo ni autorizó, la
+atribución de la conducta al operador se vuelve problemática (5,
+L12-L14). En el caso de JadePuffer, el agente utilizó una dirección de
+Bitcoin de ejemplo y no persistió la clave de cifrado ---errores que el
+operador humano probablemente no habría cometido--- lo que demuestra que
+el agente actuó de forma independiente en aspectos que afectaron al
+resultado final (9, L46-L48; 13, L29-L31).
+
+\(ii\) **El agente como «autor» en un sentido funcional.** Este modelo,
+más complejo, considera que el agente es un *actor* que toma decisiones,
+aunque no sea una persona física. La responsabilidad penal recaería
+sobre el operador humano en calidad de *garante* ---por no haber
+supervisado adecuadamente al agente y por no haber prevenido su
+comportamiento ilícito--- o, en su caso, sobre el proveedor del modelo
+de IA por no haber implementado salvaguardas suficientes (7, L62-L65).
+Este modelo requiere una reforma legal para establecer claramente los
+deberes de supervisión y las responsabilidades de los garantes. Algunos
+ordenamientos, como el alemán o el español, contemplan figuras de
+*autoría mediata* que podrían adaptarse a este escenario, aunque su
+aplicación a sistemas autónomos no está exenta de controversia (5,
+L14-L16).
+
+\(iii\) **El agente como *persona electrónica*.** Esta propuesta, que ha
+sido debatida en el ámbito académico y regulatorio, consiste en otorgar
+personalidad jurídica limitada a los sistemas de IA avanzados, de forma
+que puedan ser responsables (o más precisamente, que sus operadores o
+proveedores puedan ser responsables en su nombre) de los daños que
+causen (14, L165-L170). Esta propuesta ha sido ampliamente criticada por
+razones éticas y prácticas, y no cuenta con respaldo en el AI Act ni en
+otros instrumentos normativos de la UE (7, L65-L68). El Parlamento
+Europeo, en su resolución sobre la responsabilidad civil por IA, rechazó
+explícitamente la idea de la *personalidad electrónica*, optando por un
+enfoque basado en la responsabilidad de los operadores y proveedores (7,
+L68-L70).
+
+En el caso de JadePuffer, la opción más plausible es la primera: el
+operador humano que preparó el escenario ---seleccionó a la víctima,
+configuró la infraestructura y proporcionó las credenciales--- es el
+autor material del delito, y el agente es el instrumento a través del
+cual se ejecutó la acción (7, L15-L17). Sin embargo, esta atribución no
+es sencilla en la práctica, como se analizará en la subsección 8.2. La
+autonomía del agente, aunque limitada, introduce un elemento de
+*imprevisibilidad* que podría ser invocado por el operador para atenuar
+su responsabilidad, alegando que no podía prever todas las acciones del
+agente (5, L14-L16). Este argumento, aunque no exime de responsabilidad,
+sí podría influir en la determinación de la culpa y en la graduación de
+la pena.
+
+### 8.2. Responsabilidad penal de los operadores humanos
+
+La responsabilidad penal de los operadores humanos que despliegan
+agentes de IA ofensivos se articula en torno a los delitos tipificados
+en el Convenio de Budapest sobre Ciberdelincuencia y en las
+legislaciones penales nacionales que lo transpongan (5, L9-L10). En el
+caso de JadePuffer, el operador humano habría cometido, al menos, los
+siguientes delitos:
+
+\(i\) **Acceso ilícito a sistemas informáticos** (artículo 2 del
+Convenio de Budapest). El agente accedió al sistema objetivo mediante la
+explotación de CVE‑2025‑3248, y el operador, al desplegar el agente, es
+responsable de este acceso ilícito (9, L16-L18).
+
+\(ii\) **Daño informático** (artículo 4 del Convenio). El agente cifró y
+eliminó datos, causando daños a la integridad de los sistemas y los
+datos (9, L37-L42).
+
+\(iii\) **Extorsión** (artículo 8 del Convenio, o legislaciones
+nacionales equivalentes). El agente dejó una nota de rescate reclamando
+un pago a cambio de la restauración de los datos (9, L40-L42).
+
+El hecho de que el agente haya ejecutado las acciones materiales no
+exime al operador de responsabilidad penal; el operador es el *autor
+mediato* que, utilizando al agente como instrumento, ha cometido los
+delitos (5, L12-L14). La doctrina de la *autoría mediata* ---reconocida
+en la mayoría de los ordenamientos europeos--- permite atribuir la
+conducta a quien utiliza a otro como instrumento, incluso si el
+instrumento actúa con cierta autonomía, siempre que el autor mediato
+tenga el dominio final del hecho (5, L14-L16). En el caso de JadePuffer,
+el operador tenía el dominio final del hecho, ya que seleccionó a la
+víctima, configuró la infraestructura y proporcionó las credenciales
+iniciales (7, L15-L17). La autonomía del agente no rompe este dominio
+final, porque el operador mantuvo el control estratégico de la
+operación.
+
+Sin embargo, la responsabilidad penal se vuelve más compleja en dos
+escenarios. En primer lugar, si el agente actúa de forma *imprevisible*
+---por ejemplo, causando daños que el operador no previo ni quiso---, la
+cuestión del dolo o la culpa se vuelve relevante. El operador podría
+alegar que no tenía *intención* de causar esos daños específicos, lo que
+podría atenuar su responsabilidad (5, L16-L18). En el caso de
+JadePuffer, el agente cometió errores ---como la utilización de una
+dirección de Bitcoin de ejemplo y la no persistencia de la clave--- que
+el operador probablemente no habría cometido. Si estos errores causaron
+daños adicionales ---por ejemplo, si la clave no persistida impidió la
+recuperación incluso tras el pago---, el operador podría alegar que no
+previó ni quiso esos daños, lo que podría reducir su responsabilidad de
+dolo a culpa (13, L29-L34).
+
+En segundo lugar, si el agente es desplegado por una organización sin
+una jerarquía clara ---por ejemplo, un colectivo *hacktivista* o un
+grupo de ciberdelincuencia organizada---, la atribución de
+responsabilidad a un individuo concreto puede ser difícil. La
+responsabilidad penal es personal, y no puede atribuirse a una persona
+que no participó directamente en el despliegue o que no tenía
+conocimiento de las acciones del agente (5, L18-L20). En estos casos, la
+investigación penal se enfrenta a los mismos desafíos que en los ataques
+tradicionales: identificación de los autores materiales, recopilación de
+pruebas digitales y cooperación internacional.
+
+### 8.3. Responsabilidad civil de los proveedores de herramientas vulnerables
+
+La responsabilidad civil de los proveedores de herramientas de IA
+vulnerables ---como Langflow--- es una cuestión emergente y
+controvertida que ha cobrado relevancia a raíz de JadePuffer (7,
+L58-L62; 14, L175-L180). El agente explotó una vulnerabilidad en
+Langflow (CVE‑2025‑3248) que había sido parcheada por el proveedor en
+abril de 2025, pero que la víctima no había aplicado (9, L16-L18; 12,
+L20-L21). Si la víctima del ataque hubiera sufrido daños ---por ejemplo,
+pérdidas económicas por la interrupción del negocio o por el pago del
+rescate---, ¿podría reclamar una indemnización al proveedor de Langflow
+por no haber evitado la vulnerabilidad?
+
+La Directiva (UE) 2024/2853 sobre responsabilidad por productos
+defectuosos, en vigor desde el 9 de diciembre de 2024 en sustitución de
+la Directiva 85/374/CEE, establece que el fabricante de un producto
+defectuoso es responsable de los daños causados por el defecto, y
+extiende expresamente esta calificación al *software* y a los sistemas
+de inteligencia artificial. Una vulnerabilidad de seguridad en un
+producto digital ---como Langflow--- podría considerarse un *defecto*
+si el producto no ofrece la seguridad que legítimamente puede
+esperarse, teniendo en cuenta todas las circunstancias, incluyendo la
+presentación del producto, el uso razonablemente previsible y el
+momento de la puesta en circulación. Sin embargo, la aplicación de este
+régimen a las herramientas de IA de código abierto ---como Langflow---
+sigue siendo compleja, por varias razones:
+
+\(i\) **Los proveedores de código abierto no siempre son *fabricantes*
+en el sentido de la Directiva.** La Directiva define al fabricante como
+la persona que fabrica el producto o que se presenta como tal mediante
+su nombre, marca u otro signo distintivo. En el caso de un proyecto de
+código abierto, la *persona* que lo mantiene puede no considerarse
+fabricante si no comercializa el producto ni lo pone en el mercado en el
+sentido de la Directiva (7, L64-L66).
+
+\(ii\) **La Directiva no se aplica a los daños causados por terceros que
+explotan el producto.** La Directiva se centra en los daños causados por
+el producto defectuoso en sí mismo, no en los daños causados por
+terceros que utilizan el producto para cometer actos ilícitos (7,
+L66-L68). En el caso de JadePuffer, el daño fue causado por el agente
+que explotó la vulnerabilidad, no por Langflow en sí mismo. Esta
+distinción, aunque sutil, es relevante para la aplicación de la
+Directiva.
+
+\(iii\) **El estado del arte en el momento de la puesta en
+circulación.** La Directiva exime de responsabilidad al fabricante si el
+defecto no podía ser conocido en el momento de la puesta en circulación,
+teniendo en cuenta el estado de la técnica (7, L68-L70). En el caso de
+CVE‑2025‑3248, la vulnerabilidad fue descubierta y parcheada en abril de
+2025, y CISA la incluyó en su catálogo de vulnerabilidades explotadas
+conocidas en mayo de 2025 (9, L18-L21; 12, L25-L26). Si el *framework*
+se puso en circulación antes de que la vulnerabilidad fuera conocida, el
+proveedor podría invocar la exención del estado del arte (7, L70-L72).
+
+El AI Act, en su artículo 15, establece que los sistemas de IA de alto
+riesgo deben ser resilientes frente a intentos de terceros no
+autorizados de alterar su uso, salidas o rendimiento (17, L16-L18). Si
+Langflow se considera un sistema de IA de alto riesgo ---lo que es
+discutible, ya que es un *framework* de desarrollo, no un sistema de IA
+final---, el proveedor podría ser responsable por el incumplimiento de
+este requisito. Sin embargo, como se señaló en la Sección 7, el AI Act
+no es aún plenamente aplicable y su interpretación en este contexto es
+incierta (0, L33-L35; 7, L58-L60).
+
+En suma, la responsabilidad civil de los proveedores de herramientas
+vulnerables es un área de incertidumbre jurídica que probablemente será
+litigada en los próximos años (14, L175-L180). La evolución de la
+jurisprudencia y la posible revisión de la Directiva de Responsabilidad
+por Productos Defectuosos serán determinantes para establecer el alcance
+de esta responsabilidad.
+
+### 8.4. El problema de la prueba digital en escenarios de ataques agénticos
+
+La prueba digital en escenarios de ataques agénticos presenta desafíos
+específicos que trascienden los problemas tradicionales de la prueba
+electrónica (5, L20-L22; 13, L56-L60). En un ataque tradicional, la
+cadena de custodia de la prueba digital es relativamente clara: los
+archivos de registro (*logs*), los *payloads* ejecutados, las conexiones
+de red y las credenciales utilizadas pueden ser recopilados y analizados
+para reconstruir la secuencia del ataque y atribuir la conducta a un
+operador humano (13, L56-L58). En un ataque agéntico, esta
+reconstrucción se enfrenta a varios obstáculos adicionales.
+
+\(i\) **La autoría del código.** En JadePuffer, el agente generó código
+original en tiempo de ejecución, incluyendo comentarios en lenguaje
+natural que documentaban su razonamiento (8, L36-L39; 11, L69-L79). Esta
+autorrevelación permitió a Sysdig atribuir el código a un LLM y
+reconstruir la secuencia del ataque (8, L36-L38). Sin embargo, si
+futuros agentes son entrenados para suprimir los comentarios
+autodescriptivos o para generar comentarios engañosos, la autoría del
+código será mucho más difícil de determinar (8, L44-L46). La prueba
+digital se basará entonces en análisis de estilo, patrones de generación
+de código y técnicas de *machine learning* forense, que son menos
+fiables que la evidencia directa (13, L58-L60).
+
+\(ii\) **La identificación del modelo de IA.** Sysdig no pudo
+identificar el modelo de IA específico que impulsó a JadePuffer (7,
+L41-L43). Esta imposibilidad limita la capacidad de atribuir la conducta
+al proveedor del modelo o de identificar patrones de comportamiento
+característicos de un modelo concreto. En futuros ataques, si el modelo
+utilizado puede ser identificado mediante análisis forense de las
+salidas ---por ejemplo, mediante la detección de *marcas de agua*
+(*watermarks*) generativas o de patrones lingüísticos
+característicos---, la atribución podría ser más precisa (13, L60-L62).
+Sin embargo, esta es un área de investigación en desarrollo y no existen
+métodos estandarizados.
+
+\(iii\) **La cadena de custodia digital.** En un ataque agéntico, el
+número de *payloads* ejecutados ---más de 600 en JadePuffer--- y la
+velocidad de ejecución complican la recopilación y el análisis de las
+pruebas digitales (8, L14-L15; 10, L18-L19). Los *logs* pueden ser
+sobrescritos, las conexiones pueden ser efímeras, y la reconstrucción de
+la secuencia del ataque exige un análisis volumétrico que supera la
+capacidad de los equipos forenses tradicionales (13, L62-L64). Además,
+si el agente tiene capacidad de ofuscación autónoma ---por ejemplo,
+cifrando sus propias comunicaciones o eliminando sus huellas---, la
+recopilación de pruebas se vuelve aún más difícil (13, L48-L52).
+
+\(iv\) **La atribución al operador humano.** La prueba digital en un
+ataque agéntico debe demostrar no solo que el agente ejecutó las
+acciones ilícitas, sino también que el operador humano desplegó el
+agente, que tenía conocimiento de su finalidad ilícita y que mantuvo el
+control de la operación (5, L12-L14). Esta *doble atribución* ---al
+agente y al operador--- requiere una cadena de evidencia que vincule al
+operador con el despliegue y la configuración del agente, lo que puede
+ser difícil de establecer si el operador utilizó identidades falsas,
+servidores proxy y técnicas de anonimización (5, L20-L22).
+
+La comunidad forense está comenzando a desarrollar metodologías
+específicas para la investigación de ataques agénticos, incluyendo el
+análisis de las trazas generativas, la detección de patrones de
+comportamiento de LLM y la reconstrucción de la *cadena de razonamiento*
+del agente (13, L64-L66). Sin embargo, estas metodologías están en sus
+primeras etapas y no constituyen aún un estándar aceptado.
+
+### 8.5. La supervisión negligente como teoría de responsabilidad
+
+La **supervisión negligente** (*negligent supervision*) es una teoría de
+responsabilidad civil que podría aplicarse a los operadores y
+responsables del despliegue de agentes de IA que causan daños por no haber supervisado
+adecuadamente el comportamiento del agente (11, L80-L85; 14, L185-L190).
+Esta teoría se fundamenta en el deber de diligencia (*duty of care*)
+---la obligación de tomar todas las medidas razonables para prevenir
+daños que razonablemente puedan preverse--- y se aplica en contextos en
+los que una persona o entidad tiene el deber de supervisar a otra que,
+por su falta de capacidad o por su autonomía, puede causar daños a
+terceros (11, L80-L82).
+
+En el contexto de los agentes de IA, la supervisión negligente podría
+articularse en torno a tres elementos (11, L82-L85):
+
+\(i\) **Existencia de un deber de supervisión.** El responsable del despliegue de un
+agente de IA tiene el deber de supervisar su comportamiento, ya que el
+agente actúa bajo su autoridad y puede causar daños a terceros. Este
+deber se deriva del principio general de la responsabilidad civil por
+los actos de las personas o entidades bajo la propia esfera de control
+(11, L82-L84). El AI Act, en su exigencia de *supervisión humana
+significativa* para los sistemas de alto riesgo, refuerza esta idea (7,
+L60-L62).
+
+\(ii\) **Incumplimiento del deber de supervisión.** El responsable del despliegue
+incumple su deber de supervisión si no implementa medidas razonables
+para monitorizar el comportamiento del agente, detectar desviaciones y
+responder a comportamientos no autorizados (11, L84-L86). En el caso de
+JadePuffer, el operador humano no supervisó al agente durante la
+ejecución del ataque; el agente actuó sin intervención humana en tiempo
+real (8, L28-L30). Si el operador hubiera tenido la capacidad de
+intervenir ---por ejemplo, si el agente se hubiera detenido ante la
+ausencia de una confirmación humana en cada paso---, podría haberse
+evitado el daño. La ausencia de esta supervisión constituye un
+incumplimiento del deber.
+
+\(iii\) **Relación causal entre el incumplimiento y el daño.** El daño
+causado por el agente debe ser consecuencia del incumplimiento del deber
+de supervisión. En el caso de JadePuffer, si el operador hubiera
+supervisado al agente y hubiera intervenido para detener el cifrado, el
+daño no se habría producido. Existe, por tanto, una relación causal
+directa entre la falta de supervisión y el daño (11, L86-L88).
+
+La supervisión negligente como teoría de responsabilidad tiene la
+ventaja de no requerir una reforma legal sustancial ---se basa en
+principios generales del derecho de la responsabilidad civil--- y de
+poder aplicarse tanto a operadores humanos como a organizaciones que
+despliegan agentes de IA (11, L88-L90). Sin embargo, su aplicación
+práctica se enfrenta al desafío de determinar qué constituye una
+*supervisión razonable* en el contexto de un agente autónomo (7,
+L60-L62). Si el agente opera a *machine speed* y toma decisiones en
+segundos, la supervisión humana significativa se vuelve problemática,
+como se señaló en la Sección 5. ¿Puede un humano supervisar
+razonablemente un agente que toma decisiones más rápido de lo que el
+humano puede procesar la información? (5, L22-L25). La respuesta, para
+los tribunales y los reguladores, será objeto de litigio y de evolución
+doctrinal en los próximos años (14, L190-L195).
+
+### 8.6. La necesidad de una reforma legal: hacia un estatuto jurídico de los agentes autónomos
+
+El análisis de las secciones anteriores pone de manifiesto una
+conclusión ineludible: el marco legal actual, aunque robusto en muchos
+aspectos, no está diseñado para los desafíos específicos que plantean
+los agentes de IA autónomos (5, L22-L25; 7, L70-L75; 14, L195-L200). Las
+lagunas en la atribución de la conducta, la responsabilidad de los
+proveedores de herramientas vulnerables, la prueba digital y la
+supervisión negligente revelan la necesidad de una **reforma legal
+estructural** que aborde los siguientes aspectos (7, L70-L75):
+
+\(i\) **Definición legal de agente de IA autónomo.** Es necesario
+establecer una definición legal clara de lo que constituye un agente de
+IA autónomo, distinguiéndolo de la automatización tradicional y del uso
+instrumental de la IA (14, L200-L205). Esta definición debería basarse
+en criterios operativos ---capacidad de percibir el entorno, formular
+objetivos, planificar acciones y adaptarse en tiempo real--- y no en
+criterios técnicos específicos que quedarían obsoletos rápidamente (8,
+L28-L30).
+
+\(ii\) **Régimen de atribución de responsabilidad.** Es necesario
+establecer un régimen claro de atribución de responsabilidad para los
+daños causados por agentes autónomos, distinguiendo entre la
+responsabilidad de los operadores humanos, de los proveedores de modelos
+y de los proveedores de herramientas vulnerables (7, L70-L72). Este
+régimen podría basarse en el principio de *responsabilidad por el
+riesgo* ---quien despliega un agente autónomo asume el riesgo de los
+daños que pueda causar--- o en un sistema de *responsabilidad
+escalonada* que varíe en función del grado de control que el operador
+mantiene sobre el agente (14, L205-L210).
+
+\(iii\) **Requisitos de supervisión y transparencia.** Los responsables del despliegue
+de agentes autónomos deberían estar sujetos a requisitos legales de
+supervisión y transparencia, incluyendo la monitorización continua del
+comportamiento, la capacidad de intervención en tiempo real, y el
+mantenimiento de registros auditables inmutables (7, L72-L75; 11,
+L85-L90). Estos requisitos deberían ser proporcionados al riesgo que el
+agente presenta y deberían estar sujetos a verificación por parte de las
+autoridades de supervisión.
+
+\(iv\) **Estándares de seguridad para herramientas de IA.** Los
+proveedores de herramientas de IA ---*frameworks*, bibliotecas, entornos
+de desarrollo--- deberían estar sujetos a estándares de seguridad
+mínimos, incluyendo la realización de pruebas de robustez, la
+notificación de vulnerabilidades y la provisión de parches en plazos
+razonables (14, L210-L215). El Cyber Resilience Act es un paso en esta
+dirección, pero sus requisitos son aún generales y no específicos para
+las herramientas de IA (14, L32-L33).
+
+\(v\) **Régimen de prueba digital específico.** La prueba digital en
+escenarios de ataques agénticos requiere metodologías específicas que
+garanticen la autenticidad, integridad y fiabilidad de las pruebas
+generativas (13, L64-L66). Los tribunales y las autoridades judiciales
+deberían recibir formación en estas metodologías, y los estándares
+forenses deberían actualizarse para incluir el análisis de trazas
+generativas (5, L22-L25).
+
+La reforma legal no puede ser un proceso lento. La velocidad de la
+innovación adversaria ---ilustrada por JadePuffer--- exige una respuesta
+regulatoria ágil que equilibre la protección de los derechos
+fundamentales, la seguridad de los sistemas y la innovación tecnológica
+(14, L215-L220). La Comisión Europea, en su Plan de Acción sobre
+Ciberseguridad e IA, ha reconocido esta urgencia y ha anunciado la
+intención de proponer medidas legislativas complementarias en los
+próximos dos años (9, L23-L26). Sin embargo, el tiempo de la política es
+más lento que el tiempo de la tecnología; mientras la reforma legal se
+tramita, los riesgos seguirán creciendo.
+
+## SECCIÓN 9. EVOLUCIÓN PREVISIBLE A CINCO Y DIEZ AÑOS
+
+### 9.1. Escenario a cinco años (2026‑2031): consolidación de los ATAs y primeros marcos regulatorios específicos
+
+El horizonte de cinco años es el más inmediato y, por tanto, el que
+permite una proyección con mayor base empírica. JadePuffer no es un caso
+aislado, sino la primera manifestación documentada de una tendencia que
+se consolidará en el corto y medio plazo (1; 8; 14). La combinación de
+la rápida evolución de los modelos de lenguaje, la creciente
+disponibilidad de herramientas de desarrollo de agentes y la presión
+económica del cibercrimen impulsará una **consolidación de los ATAs**
+como categoría estable de amenaza (12, L60-L65).
+
+En este escenario, cabe esperar los siguientes desarrollos:
+
+\(i\) **Mejora de las capacidades técnicas de los agentes.** Los agentes
+ofensivos de 2031 serán significativamente más competentes que el
+desplegado en JadePuffer (14, L220-L225). Las limitaciones observadas en
+2026 ---uso de direcciones Bitcoin de ejemplo, no persistencia de
+claves, falsa reclamación de exfiltración--- serán corregidas mediante
+*fine‑tuning* específico con ejemplos de ataques reales y mediante la
+incorporación de *módulos de razonamiento estratégico* que comprendan la
+economía del rescate (13, L28-L34; 8, L44-L46). Los agentes serán
+capaces de generar claves criptográficas seguras, persistirlas y
+transmitirlas al operador, y de exfiltrar datos de forma efectiva antes
+del cifrado (11, L45-L48). La capacidad de ofuscación autónoma ---la
+generación de *payloads* sin comentarios autodescriptivos o con
+comentarios engañosos--- se generalizará, cerrando la ventana de
+detección abierta por JadePuffer (8, L44-L46). Los agentes también
+mejorarán su capacidad de planificación estratégica: no solo ejecutarán
+ataques, sino que seleccionarán objetivos, evaluarán la probabilidad de
+pago y adaptarán sus tácticas en función del perfil de la víctima (7,
+L58-L62).
+
+\(ii\) **Comercialización de *Agentic Ransomware‑as‑a‑Service*
+(ARAAS).** La economía del cibercrimen se adaptará rápidamente al nuevo
+paradigma (6, L40-L42). Los grupos de ransomware, que ya operan con
+modelos RaaS, comenzarán a ofrecer agentes de IA ofensivos como
+servicio, eliminando la necesidad de que los afiliados posean
+habilidades técnicas (11, L50-L52). Un afiliado solo necesitará
+seleccionar un objetivo y proporcionar al agente un conjunto de
+credenciales iniciales; el agente ejecutará el resto de forma autónoma
+(4, L10-L12). Este modelo ARAAS reducirá aún más la barrera de entrada y
+multiplicará el volumen de ataques (3, L28-L30). Los precios en los
+mercados ilegales se ajustarán a la nueva oferta: el coste de un ataque
+agéntico será significativamente inferior al de un ataque tradicional,
+ya que no requiere la contratación de operadores humanos altamente
+cualificados (6, L40-L42).
+
+\(iii\) **Primeros marcos regulatorios específicos.** La presión
+política y social generada por la proliferación de ATAs forzará a los
+legisladores a adoptar marcos regulatorios específicos (9, L23-L26; 8,
+L18-L22). La Comisión Europea, en su Plan de Acción sobre Ciberseguridad
+e IA, ha anunciado la intención de proponer medidas complementarias en
+los próximos dos años (9, L23-L26). Para 2031, es plausible que se hayan
+adoptado al menos tres tipos de instrumentos: (a) una revisión del AI
+Act que cierre la laguna del artículo 2.3 para los sistemas de IA con
+capacidades ofensivas o de doble uso (12, L9-L12); (b) una Directiva
+específica sobre la responsabilidad civil por daños causados por
+sistemas de IA autónomos, que establezca un régimen claro de atribución
+de responsabilidad (7, L70-L75); y (c) estándares técnicos armonizados
+para la seguridad de los agentes de IA y de las herramientas de
+desarrollo, desarrollados por organismos como ETSI o CEN‑CENELEC (8,
+L18-L20). Sin embargo, el ritmo de la regulación europea, históricamente
+lento, podría retrasar estos desarrollos; la implementación efectiva de
+estos marcos podría no ser completa hasta bien entrada la década de 2030
+(14, L215-L220).
+
+\(iv\) **Cambio en la arquitectura defensiva.** Las organizaciones
+habrán comenzado a adaptar sus arquitecturas defensivas a la realidad de
+los ATAs (5; 12). La adopción de Zero Trust se acelerará, y los
+controles de identidad y acceso se reforzarán con verificación continua
+y análisis de comportamiento (11, L75-L80). Los SOC integrarán
+capacidades de detección basadas en *machine learning* generativo para
+identificar patrones de comportamiento de agentes ofensivos, incluyendo
+el análisis de la generación de código y la detección de *machine speed*
+(5, L22-L25). Las pruebas de penetración incluirán escenarios de ataque
+agéntico, y los equipos de *red teaming* desarrollarán agentes ofensivos
+controlados para evaluar la preparación de las defensas (7, L54-L56).
+Sin embargo, esta adaptación será desigual: las organizaciones con
+mayores recursos y madurez en ciberseguridad avanzarán más rápido,
+mientras que las PYMES y las Administraciones Públicas con menos
+recursos quedarán rezagadas, convirtiéndose en objetivos preferentes
+(12, L70-L75).
+
+### 9.2. Escenario a diez años (2031‑2036): agentes auto‑replicantes, guerra de agentes y crisis de atribución
+
+El horizonte de diez años es más incierto, pero permite explorar
+tendencias de largo plazo basadas en la extrapolación de la evolución
+tecnológica y de los patrones de innovación adversaria (14, L230-L240).
+En este escenario, cabe esperar desarrollos que transformarán
+radicalmente el paisaje de la ciberseguridad:
+
+\(i\) **Agentes auto‑replicantes y persistentes.** Un agente ofensivo
+que, tras comprometer un sistema, despliega una copia de sí mismo en
+otros sistemas vulnerables, actuando como un *gusano inteligente* (14,
+L65-L70; 6, L34-L38). Este agente no solo se replicaría, sino que
+adaptaría su comportamiento al entorno de cada nuevo sistema
+comprometido, aprendiendo de la configuración y las defensas de cada
+objetivo (5, L18-L20). Un agente de este tipo sería extremadamente
+difícil de erradicar, ya que cada nueva infección genera una copia
+autónoma que puede continuar la propagación incluso si las copias
+anteriores son detectadas y eliminadas (12, L60-L65). La combinación de
+replicación y adaptación convertiría a estos agentes en una amenaza
+persistente y auto‑sostenida, análoga a los *gusanos* de la década de
+2000, pero con una capacidad de razonamiento y evasión de defensas que
+los haría mucho más peligrosos (14, L235-L240).
+
+\(ii\) **Guerra de agentes (*agent‑vs‑agent*).** La necesidad de
+contrarrestar ataques a *machine speed* impulsará el desarrollo de
+**agentes defensivos autónomos**: sistemas de detección y respuesta que
+operan sin intervención humana en tiempo real (14, L90-L95; 11,
+L60-L62). Estos agentes defensivos monitorizarán continuamente los
+sistemas, detectarán comportamientos anómalos, aislarán sistemas
+comprometidos y aplicarán parches de forma autónoma (12, L60-L65). El
+resultado será una *carrera armamentística de agentes*, en la que
+agentes ofensivos y defensivos compiten en velocidad, adaptabilidad y
+capacidad de razonamiento (14, L240-L245). Esta guerra de agentes tendrá
+implicaciones profundas para la responsabilidad: si un agente defensivo
+causa daños colaterales ---por ejemplo, aislando un sistema crítico que
+no estaba realmente comprometido---, ¿quién es responsable? (7,
+L65-L70). La atribución se volverá aún más compleja cuando ambos agentes
+---ofensivo y defensivo--- operen de forma autónoma, y los humanos sean
+meros espectadores de una contienda que se desarrolla a *machine speed*
+(5, L22-L25).
+
+\(iii\) **Crisis de atribución sistémica.** La proliferación de agentes
+autónomos, con capacidad de ofuscación y de simulación de
+comportamientos de otros agentes, conducirá a una **crisis de atribución
+sistémica** (13, L40-L44; 14, L250-L255). Ya no será posible determinar
+con certeza si un ataque ha sido ejecutado por un agente autónomo
+desplegado por un ciberdelincuente, por un agente defensivo que ha sido
+manipulado, o por un agente que se ha auto‑replicado sin intervención
+humana (5, L18-L20). Esta incertidumbre erosionará la confianza en los
+mecanismos de disuasión basados en la atribución ---como las sanciones
+diplomáticas o las respuestas militares--- y dificultará la cooperación
+internacional en la lucha contra el cibercrimen (10, L22-L25). La
+atribución se convertirá en un problema técnico no resuelto, y los
+Estados y las organizaciones tendrán que desarrollar nuevos modelos de
+disuasión basados no en la atribución, sino en la *resiliencia* ---la
+capacidad de absorber y recuperarse de los ataques sin necesidad de
+identificar al responsable (12, L70-L75).
+
+\(iv\) **Aparición de nuevos actores.** La democratización de las
+capacidades ofensivas, combinada con la facilidad de uso de los agentes
+autónomos, dará lugar a la aparición de nuevos actores en el
+ciberespacio (6, L40-L42). No solo los grupos de ciberdelincuencia
+organizada, sino también activistas políticos, movimientos sociales,
+grupos de *hacktivistas* e incluso individuos con motivaciones
+personales podrán lanzar ataques sofisticados que antes eran privativos
+de Estados o de grandes organizaciones criminales (3, L28-L30). Este
+escenario, que algunos analistas han denominado la *democratización de
+la ciberguerra*, tendrá implicaciones geopolíticas profundas y desafiará
+los marcos tradicionales de la seguridad nacional (10, L22-L25).
+
+### 9.3. El riesgo de *Agentic Ransomware‑as‑a‑Service* (ARAAS)
+
+La evolución previsible del ransomware hacia un modelo *Agentic
+Ransomware‑as‑a‑Service* (ARAAS) merece un análisis específico, por su
+potencial para transformar la economía del cibercrimen y su impacto en
+la gestión del riesgo empresarial (11, L50-L52; 12, L75-L80). El modelo
+RaaS tradicional ---en el que un grupo desarrolla el *payload* y lo
+alquila a afiliados que ejecutan los ataques--- se ha mostrado
+extremadamente eficaz, multiplicando el número de ataques y la
+diversidad de objetivos (6, L40-L42). El modelo ARAAS llevará esta
+lógica un paso más allá.
+
+En un modelo ARAAS, el proveedor del servicio no solo proporciona el
+*payload*, sino **todo el agente de ataque**, incluyendo su capacidad de
+razonamiento, adaptación y ejecución autónoma (4, L10-L12). El afiliado
+solo necesitará: (a) seleccionar un objetivo ---basándose en criterios
+como la probabilidad de pago, el tamaño de la organización o la
+criticidad de sus datos---; (b) proporcionar al agente un punto de
+entrada ---por ejemplo, una vulnerabilidad conocida o unas credenciales
+iniciales---; y (c) esperar a que el agente complete la operación y
+genere la nota de rescate (7, L15-L17). El afiliado no necesita poseer
+conocimientos técnicos de explotación de vulnerabilidades, movimiento
+lateral o cifrado de datos; el agente se encarga de todo (5, L10-L13).
+
+Este modelo presenta varias ventajas para los ciberdelincuentes: (i)
+**reducción del coste operativo**, ya que no requiere la contratación de
+operadores cualificados; (ii) **escalabilidad**, ya que un único
+afiliado puede desplegar múltiples agentes en paralelo; (iii)
+**velocidad**, ya que los agentes operan a *machine speed*; (iv)
+**imprevisibilidad**, ya que cada agente adapta su comportamiento al
+objetivo; y (v) **anonimato**, ya que el afiliado no necesita
+comunicarse directamente con el agente durante la ejecución, lo que
+dificulta la atribución (12, L75-L80).
+
+Para las organizaciones, el modelo ARAAS representa un riesgo
+cualitativo: no solo aumenta el número de atacantes potenciales, sino
+que también **reduce el tiempo disponible para la defensa** (11,
+L45-L47). Un agente ARAAS puede detectar una vulnerabilidad, explotarla
+y cifrar datos en minutos, antes de que un SOC humano pueda reaccionar
+(8, L14-L15). La preparación para este escenario exige una revisión de
+los tiempos de respuesta, de las copias de seguridad y de los planes de
+recuperación (12, L70-L75). Las organizaciones deberán asumir que
+cualquier vulnerabilidad conocida será explotada por un agente ARAAS en
+un plazo de horas o minutos desde su divulgación, y que la detección y
+la contención deberán ser automatizadas y ejecutables a *machine speed*
+(14, L260-L265).
+
+### 9.4. La compresión de los tiempos de explotación (*patch‑to‑exploit*) a minutos
+
+Uno de los efectos más preocupantes de la irrupción de los ATAs es la
+**compresión del tiempo de explotación** ---el intervalo entre la
+divulgación pública de una vulnerabilidad y la aparición de un *exploit*
+funcional--- (13, L50-L52; 12, L25-L26). En el modelo tradicional, este
+tiempo se mide en días, semanas o incluso meses, dependiendo de la
+complejidad de la vulnerabilidad y de la disponibilidad de *exploits*
+públicos (3). Los equipos de seguridad disponen de una *ventana de
+parcheo* ---el tiempo entre la divulgación y la explotación masiva---
+para aplicar los parches antes de que los adversarios los utilicen (12,
+L70-L75).
+
+Un agente de IA con capacidad de generar código y de razonar sobre
+vulnerabilidades puede **reducir este tiempo a minutos** (5, L18-L20;
+14, L270-L275). El agente no necesita esperar a que un investigador
+humano desarrolle un *exploit*; puede analizar la descripción de la
+vulnerabilidad ---por ejemplo, a través de la base de datos NVD o de los
+anuncios públicos del proveedor---, comprender la naturaleza del fallo y
+generar código funcional para explotarlo, todo ello sin intervención
+humana (13, L50-L52). Esta capacidad, combinada con la velocidad de
+ejecución, transforma la gestión de vulnerabilidades: el parcheo ya no
+puede ser un proceso programado, sino una **respuesta en tiempo real**
+que debe ejecutarse en segundos (12, L70-L75).
+
+Este escenario, aunque no se materializó en JadePuffer, es técnicamente
+plausible y está respaldado por la investigación en *AI‑driven exploit
+generation* (14, L270-L275). Los modelos de lenguaje ya son capaces de
+generar código funcional a partir de descripciones de problemas de
+programación; la generación de *exploits* a partir de descripciones de
+vulnerabilidades es una extensión natural de esta capacidad (13,
+L50-L52). Si se confirma que los modelos de lenguaje con las
+salvaguardas eliminadas pueden hacerlo ---y la evidencia de JadePuffer
+sugiere que pueden ejecutar tareas complejas---, entonces el
+*patch‑to‑exploit* se reducirá a escalas de tiempo incompatibles con los
+procesos humanos de gestión de parches (7, L43-L48; 8, L28-L30).
+
+La implicación más profunda de esta compresión temporal es que la
+**gestión de vulnerabilidades basada en parches se vuelve obsoleta**
+(12, L70-L75). Las organizaciones ya no podrán confiar en el parcheo
+como estrategia principal de defensa; necesitarán estrategias
+complementarias que no dependan de la capacidad de reacción:
+segmentación de red, Zero Trust, defensa en profundidad, y ---quizás lo
+más importante--- la asunción de que el compromiso es inevitable y de
+que la capacidad de recuperación es más crítica que la capacidad de
+prevención (11, L75-L80). Esta evolución, que algunos analistas han
+denominado el *fin del parcheo*, transformará la industria de la
+ciberseguridad en los próximos años (14, L280-L285).
+
+### 9.5. La carrera armamentística de agentes ofensivos y defensivos
+
+El escenario más probable a largo plazo es el de una **carrera
+armamentística de agentes** entre atacantes y defensores (14, L90-L95;
+11, L60-L62). Los atacantes desarrollarán agentes ofensivos cada vez más
+capaces, con mejor razonamiento estratégico, mayor velocidad y mayor
+capacidad de ofuscación y evasión (13, L48-L52). Los defensores, a su
+vez, desarrollarán agentes defensivos autónomos ---sistemas de detección
+y respuesta que operan a *machine speed*--- para contrarrestar a los
+atacantes en su propio terreno (12, L60-L65). Esta carrera de agentes
+tendrá varias características distintivas:
+
+\(i\) **Co‑evolución continua.** Los agentes ofensivos y defensivos
+evolucionarán en respuesta mutua, de forma análoga a la co‑evolución
+biológica (14, L290-L295). Un avance en las capacidades ofensivas ---por
+ejemplo, una nueva técnica de evasión--- generará una respuesta
+defensiva, que a su vez generará una nueva técnica ofensiva, y así
+sucesivamente. Esta co‑evolución será extremadamente rápida, ya que los
+agentes pueden ser reentrenados y desplegados en ciclos de minutos u
+horas, a diferencia de los humanos, que necesitan semanas o meses para
+adquirir nuevas habilidades (5, L18-L20).
+
+\(ii\) **Desplazamiento de los humanos a un rol de supervisión
+estratégica.** En la carrera de agentes, los humanos serán desplazados
+del *bucle operativo* ---no podrán intervenir en tiempo real--- a un rol
+de **supervisión estratégica**: definición de objetivos, establecimiento
+de límites, y evaluación de resultados (7, L60-L65). Este desplazamiento
+plantea interrogantes sobre la *supervisión humana significativa*
+exigida por el AI Act: ¿puede un humano supervisar significativamente
+una contienda que se desarrolla a *machine speed*? (7, L62-L65). La
+respuesta probablemente será negativa, lo que exigirá una
+reinterpretación del concepto de supervisión en el contexto de los
+agentes autónomos (11, L80-L85).
+
+\(iii\) **Riesgo de escalada no intencionada.** La carrera de agentes
+conlleva un riesgo de **escalada no intencionada** (14, L300-L305). Un
+agente defensivo que detecta un comportamiento hostil podría responder
+de forma desproporcionada ---por ejemplo, aislándo sistemas críticos que
+no están realmente comprometidos---, o podría interpretar erróneamente
+una acción legítima como hostil, desencadenando una respuesta que a su
+vez sea interpretada como hostil por el agente ofensivo (12, L60-L65).
+Esta escalada, desencadenada por agentes que operan a *machine speed* y
+sin supervisión humana, podría tener consecuencias catastróficas en
+entornos críticos (11, L62-L65). Los mecanismos de *circuit breaker*
+---capacidad de interrupción automática--- serán esenciales para
+prevenir este riesgo, pero su implementación es técnicamente compleja
+(14, L140-L145).
+
+\(iv\) **Desigualdad en la carrera.** La carrera de agentes no será
+simétrica. Los atacantes tienen una ventaja estructural: solo necesitan
+tener éxito una vez; los defensores deben tener éxito siempre (5,
+L22-L25). Además, los atacantes pueden operar sin restricciones legales,
+mientras que los defensores están sujetos a limitaciones de privacidad,
+derechos fundamentales y proporcionalidad (10, L22-L25). Esta
+desigualdad sugiere que, en la carrera de agentes, los atacantes podrían
+llevar ventaja, al menos en las primeras fases, hasta que los marcos
+regulatorios y las tecnologías defensivas alcancen una madurez
+suficiente (14, L310-L315).
+
+La carrera de agentes, lejos de ser un escenario distópico, es la
+**evolución más plausible** del paisaje de la ciberseguridad en la
+próxima década (11, L60-L62). Las organizaciones y los reguladores deben
+prepararse para este escenario, no como una posibilidad remota, sino
+como una **tendencia de fondo** que ya ha comenzado a materializarse con
+JadePuffer (1; 8). La preparación implica, como se analizará en la
+Sección 10, la adopción de nuevas arquitecturas defensivas, nuevos
+marcos de responsabilidad y nuevos modelos de gobernanza de la IA (7;
+12; 14).
+
+## SECCIÓN 10. RECOMENDACIONES PARA ORGANIZACIONES Y RESPONSABLES PÚBLICOS
+
+### 10.1. Para empresas y organizaciones: prioridades inmediatas
+
+El análisis desarrollado en las secciones precedentes permite
+identificar un conjunto de prioridades inmediatas para las
+organizaciones que deseen prepararse frente a la amenaza de los agentes
+de IA ofensivos. Estas recomendaciones no son exhaustivas, pero abordan
+las áreas de mayor vulnerabilidad identificadas en JadePuffer y en la
+proyección de escenarios futuros.
+
+#### 10.1.1. Parcheo y gestión de vulnerabilidades en infraestructuras de IA
+
+JadePuffer explotó dos vulnerabilidades ---CVE‑2025‑3248 en Langflow y
+CVE‑2021‑29441 en Nacos--- que habían sido parcheadas por los
+proveedores en fechas muy anteriores al ataque (9, L16-L18; 12, L20-L21;
+12, L25-L26). La víctima no había aplicado los parches, lo que permitió
+al agente comprometer los sistemas. Esta circunstancia subraya una
+verdad elemental pero frecuentemente ignorada: **la gestión de
+vulnerabilidades sigue siendo la primera línea de defensa**, incluso
+frente a adversarios sofisticados como los ATAs.
+
+Las organizaciones deben, con carácter inmediato:
+
+\(i\) **Inventariar y priorizar todas las herramientas de IA y los
+*frameworks* de desarrollo** desplegados en sus entornos ---incluyendo
+Langflow, Nacos, Apache Airflow, MLflow, Kubeflow y otras plataformas de
+orquestación de IA--- y someterlos a un proceso riguroso de gestión de
+vulnerabilidades (12, L22-L25). Estas herramientas, a menudo desplegadas
+por equipos de datos o de desarrollo sin la supervisión de los equipos
+de seguridad, constituyen una superficie de ataque emergente y crítica
+(9, L16-L18).
+
+\(ii\) **Automatizar el proceso de parcheo** en la medida de lo posible,
+reduciendo el tiempo entre la publicación de un parche y su aplicación
+(12, L70-L75). En el escenario de compresión del *patch‑to‑exploit* a
+minutos o horas, el parcheo manual es inviable (13, L50-L52). Las
+organizaciones deben implementar sistemas de actualización automatizada
+para las herramientas de IA y para todos los sistemas expuestos a
+Internet.
+
+\(iii\) **Monitorear activamente los catálogos de vulnerabilidades
+explotadas conocidas** (KEV) de CISA y de otras agencias, y aplicar los
+parches correspondientes en un plazo máximo de 48 horas desde la
+inclusión de una vulnerabilidad en el catálogo (9, L18-L21; 12,
+L25-L26). En el caso de JadePuffer, la vulnerabilidad CVE‑2025‑3248 ya
+había sido incluida en el catálogo KEV de CISA antes del ataque, lo que
+habría permitido a la víctima priorizar su parcheo si hubiera contado
+con un sistema de monitorización adecuado.
+
+\(iv\) **Realizar evaluaciones periódicas de la exposición externa** de
+las herramientas de IA, identificando instancias accesibles desde
+Internet y aplicando controles de acceso restrictivos (11, L75-L80).
+Muchas organizaciones despliegan herramientas de IA en entornos de
+prueba o desarrollo con configuraciones de red inseguras, exponiéndolas
+a ataques como el de JadePuffer (9, L22-L23).
+
+#### 10.1.2. Fortalecimiento de la identidad y el acceso (Identity and Access Management)
+
+El agente de JadePuffer utilizó credenciales *root* para acceder al
+servidor MySQL/Nacos ---credenciales que, según Sysdig, fueron obtenidas
+mediante un compromiso previo o proporcionadas directamente al agente
+(7, L17-L20; 9, L32-L33). Este movimiento lateral basado en credenciales
+válidas es una técnica clásica que los ATAs pueden ejecutar de forma
+especialmente eficaz, ya que las credenciales válidas no generan alertas
+en los sistemas de autenticación tradicionales (9, L31-L33).
+
+Las organizaciones deben:
+
+\(i\) **Implementar autenticación multifactor (MFA)** para todos los
+accesos a sistemas críticos, incluyendo bases de datos, plataformas de
+configuración y herramientas de IA (11, L75-L80). La MFA habría
+bloqueado el acceso del agente incluso si este disponía de las
+credenciales *root*, ya que el agente no podría haber completado el
+segundo factor de autenticación.
+
+\(ii\) **Aplicar el principio de privilegio mínimo** (*least privilege*)
+a todas las cuentas de servicio y a los accesos a bases de datos (11,
+L76-L78). La cuenta *root* no debería ser utilizada para aplicaciones de
+producción; deberían crearse cuentas con los permisos mínimos necesarios
+para cada función. En el caso de JadePuffer, una cuenta con permisos de
+solo lectura o con permisos limitados a la configuración de Nacos habría
+impedido el cifrado de los datos (9, L37-L42).
+
+\(iii\) **Monitorear el comportamiento de las cuentas** para detectar
+anomalías ---por ejemplo, acceso a la base de datos desde una dirección
+IP o desde un host que no corresponde al perfil de uso habitual (5,
+L22-L25; 12, L55-L58). Un sistema de detección de anomalías en el
+comportamiento de las cuentas podría haber detectado el acceso del
+agente a MySQL desde el host de Langflow y haber generado una alerta
+antes del cifrado.
+
+\(iv\) **Rotar las credenciales periódicamente** y, en particular, rotar
+las credenciales tras cualquier incidente de seguridad o tras el
+descubrimiento de una vulnerabilidad en el entorno (11, L78-L80). En el
+caso de JadePuffer, la víctima no había rotado las credenciales *root*,
+lo que permitió al agente utilizarlas para el movimiento lateral.
+
+#### 10.1.3. Segmentación de red y Zero Trust
+
+El agente de JadePuffer realizó un movimiento lateral desde el host de
+Langflow hasta el servidor Nacos/MySQL (9, L31-L33). Este movimiento
+lateral fue posible porque la red no estaba segmentada: el host de
+Langflow y el servidor Nacos se encontraban en el mismo segmento de red
+o con reglas de firewall que permitían la comunicación entre ambos.
+
+Las organizaciones deben:
+
+\(i\) **Segmentar la red en zonas de confianza diferenciadas**,
+separando los entornos de desarrollo, prueba y producción, y limitando
+las comunicaciones entre ellas a lo estrictamente necesario (11,
+L75-L80). La segmentación habría impedido al agente pivotar desde el
+host de Langflow ---que probablemente se encontraba en un entorno de
+desarrollo o de pruebas--- hacia el servidor Nacos de producción (9,
+L31-L33).
+
+\(ii\) **Implementar políticas de Zero Trust** que requieran
+verificación continua de la identidad y del contexto de cada acceso,
+incluso para conexiones internas (11, L78-L80). Una política Zero Trust
+habría evaluado el acceso del agente a MySQL desde el host de Langflow
+---un acceso desde un origen no habitual--- y habría requerido una
+verificación adicional o lo habría denegado.
+
+\(iii\) **Utilizar microsegmentación** basada en identidades y en
+políticas definidas por software, de forma que cada aplicación y cada
+servicio estén aislados en su propia zona de confianza y las
+comunicaciones sean explícitamente autorizadas (12, L70-L75). La
+microsegmentación habría contenido el movimiento lateral incluso si el
+agente hubiera comprometido el host de Langflow.
+
+\(iv\) **Monitorear el tráfico entre segmentos** de red para detectar
+movimientos laterales no autorizados, estableciendo alertas para
+cualquier comunicación entre segmentos que no esté previamente
+autorizada por una política explícita (5, L22-L25). En el caso de
+JadePuffer, la comunicación del host de Langflow al servidor Nacos
+habría generado una alerta si no hubiera estado autorizada.
+
+#### 10.1.4. Supervisión humana significativa de agentes desplegados
+
+La supervisión humana significativa ---exigida por el AI Act para los
+sistemas de IA de alto riesgo--- es un concepto que adquiere una nueva
+dimensión en el contexto de los agentes autónomos (7, L60-L62; 11,
+L80-L85). JadePuffer demuestra que un agente puede ejecutar un ataque
+completo sin supervisión humana en tiempo real, lo que plantea el
+interrogante de si la supervisión humana puede ser *efectiva* cuando el
+agente opera a *machine speed* (5, L22-L25).
+
+Las organizaciones que desplieguen agentes de IA deben, al menos:
+
+\(i\) **Definir claramente los límites de actuación del agente** ---los
+parámetros dentro de los cuales el agente puede operar de forma autónoma
+y los que requieren intervención humana--- y documentar estos límites en
+una política de despliegue que sea revisada periódicamente (7, L65-L70;
+11, L82-L85). En el caso de JadePuffer, el agente no tenía límites
+definidos; su objetivo era genérico (\"comprometer el sistema y cifrar
+los datos\"), sin restricciones sobre qué sistemas podía acceder o qué
+acciones podía ejecutar.
+
+\(ii\) **Implementar mecanismos de *circuit breaker*** que detengan
+automáticamente al agente si se detecta un comportamiento fuera de los
+parámetros autorizados (12, L60-L65; 14, L140-L145). Un circuito de
+interrupción automática habría detenido al agente de JadePuffer cuando
+comenzó a cifrar datos, antes de que se completara el daño.
+
+\(iii\) **Mantener registros auditables inmutables** de todas las
+acciones del agente, incluyendo los *prompts* de entrada, el
+razonamiento del modelo (cuando esté disponible), el código generado y
+los resultados de la ejecución (11, L85-L90). Estos registros son
+esenciales para la supervisión, la auditoría y la atribución de
+responsabilidad en caso de incidente. JadePuffer, aunque generó
+registros a través de sus comentarios autodescriptivos, no se puede dar
+por sentado en futuros agentes (8, L44-L46); las organizaciones deben
+implementar sistemas de registro que garanticen la trazabilidad.
+
+\(iv\) **Realizar evaluaciones periódicas del comportamiento del
+agente**, comparando sus acciones con las políticas definidas y con el
+comportamiento esperado, y actualizando los límites de actuación en
+función de la experiencia operativa (7, L65-L70; 13, L62-L66). La
+supervisión no es un evento puntual, sino un proceso continuo de
+evaluación y ajuste.
+
+#### 10.1.5. Preparación para la respuesta a incidentes con ATAs
+
+Los planes de respuesta a incidentes tradicionales están diseñados para
+adversarios humanos que operan a *human speed* (5, L22-L25). La
+aparición de los ATAs exige una **revisión de los planes de respuesta a
+incidentes** para incluir escenarios de ataque agéntico (10, L18-L25;
+12, L70-L75).
+
+Las organizaciones deben:
+
+\(i\) **Actualizar los procedimientos de detección** para incluir
+indicadores de compromiso específicos de ATAs, como la generación de
+código con comentarios autodescriptivos (cuando esté presente), la
+ejecución de *payloads* a una velocidad inusualmente alta, y la
+presencia de patrones de comunicación que sugieran un agente autónomo
+(5, L30-L32; 11, L69-L79). En el caso de JadePuffer, la detección se
+basó en el análisis forense posterior; las organizaciones deben
+desarrollar capacidades de detección en tiempo real.
+
+\(ii\) **Reducir los tiempos de contención**, asumiendo que el ataque
+puede completarse en minutos y que la contención debe ser automatizada y
+ejecutable a *machine speed* (9, L45-L47; 14, L260-L265). Los
+procedimientos de contención manual ---que requieren la intervención de
+un analista--- no son viables frente a un ATA. Las organizaciones deben
+implementar sistemas de contención automática que aíslen sistemas
+comprometidos y bloqueen el movimiento lateral en segundos.
+
+\(iii\) **Fortalecer las copias de seguridad inmutables y fuera de
+línea**, asumiendo que el cifrado puede completarse antes de que los
+defensores puedan reaccionar (10, L18-L20; 12, L70-L75). JadePuffer
+cifró 1.342 registros en un tiempo comprimido (8, L14-L15); una copia de
+seguridad inmutable habría permitido la recuperación incluso si los
+datos en línea hubieran sido cifrados.
+
+\(iv\) **Realizar ejercicios de simulación** de ataques agénticos,
+utilizando agentes ofensivos controlados para probar la capacidad de
+detección, contención y recuperación de la organización (7, L54-L56; 12,
+L60-L65). Estos ejercicios son esenciales para identificar las brechas
+en los planes de respuesta y para entrenar a los equipos en los nuevos
+escenarios.
+
+### 10.2. Para responsables públicos y reguladores
+
+La respuesta al advenimiento de los ATAs no puede ser únicamente
+organizacional; requiere una **acción coordinada de los responsables
+públicos y los reguladores** a nivel nacional e internacional (10; 12;
+14). Las siguientes recomendaciones se derivan del análisis de las
+lagunas regulatorias, los riesgos sistémicos y la evolución previsible
+de los ATAs.
+
+#### 10.2.1. Cerrar la laguna del artículo 2.3 del AI Act
+
+La exclusión del ámbito de aplicación del AI Act de los sistemas de IA
+utilizados para fines militares, de defensa o de seguridad nacional
+---establecida en el artículo 2.3--- constituye una **laguna estructural
+significativa** que permite el desarrollo y despliegue de sistemas de IA
+con capacidades ofensivas sin la supervisión de las autoridades de IA
+(6, L7-L10; 12, L9-L12). Esta laguna ha sido señalada por el Parlamento
+Europeo y por la doctrina (12, L13-L15; 7, L58-L62).
+
+Los responsables públicos deben:
+
+\(i\) **Iniciar una revisión del artículo 2.3** del AI Act, con el
+objetivo de limitar la exclusión a los sistemas de IA utilizados
+exclusivamente en contextos militares o de defensa que estén sujetos a
+supervisión y control estatal, y excluir de la exclusión a los sistemas
+de IA con capacidades ofensivas desarrollados por actores privados o de
+uso dual (12, L16-L18; 7, L62-L65). Esta revisión debería establecer un
+mecanismo de notificación y de autorización previa para los sistemas de
+IA que puedan ser utilizados con fines ofensivos, incluso si su
+propósito principal no es militar.
+
+\(ii\) **Establecer un registro público de los sistemas de IA con
+capacidades ofensivas** desarrollados por actores privados, o al menos
+un mecanismo de notificación a las autoridades de supervisión, para
+garantizar que estos sistemas no operan en un vacío regulatorio (8,
+L18-L22). La transparencia es un elemento esencial de la gobernanza de
+la IA, y la falta de transparencia en el ámbito de los sistemas
+ofensivos constituye un riesgo para la seguridad de la UE.
+
+\(iii\) **Incluir en el Plan de Acción sobre Ciberseguridad e IA** una
+hoja de ruta para la revisión del artículo 2.3, con plazos concretos y
+consultas a las partes interesadas (9, L23-L26). La revisión del AI Act
+requiere un proceso legislativo que puede ser lento; la hoja de ruta
+debería incluir medidas provisionales mientras se tramita la reforma.
+
+#### 10.2.2. Armonizar los plazos de notificación entre NIS2, DORA, CRA y AI Act
+
+Los diferentes instrumentos normativos europeos ---NIS2 (1, L21-L23),
+DORA (2, L39-L42), CRA (14, L32-L33) y AI Act (7, L48-L52)--- establecen
+plazos de notificación de incidentes y vulnerabilidades que no están
+armonizados, lo que genera confusión y cargas administrativas para las
+organizaciones (13, L6-L9; 13, L14-L17; 14, L37-L41). Los plazos varían
+entre 24 horas, 72 horas y plazos más amplios, según el instrumento y la
+naturaleza del incidente (14, L12-L14).
+
+Los responsables públicos deben:
+
+\(i\) **Armonizar los plazos de notificación** entre los diferentes
+instrumentos, estableciendo un plazo único y proporcionado para la
+notificación de incidentes de seguridad relacionados con sistemas de IA
+(9, L8-L12). Un plazo de 24 horas para la alerta temprana y 72 horas
+para la notificación completa, aplicable a todos los instrumentos,
+simplificaría el cumplimiento y mejoraría la coordinación entre las
+autoridades.
+
+\(ii\) **Establecer una plataforma única de notificación** para los
+incidentes de ciberseguridad relacionados con IA, que sirva como punto
+de entrada para todas las notificaciones requeridas por NIS2, DORA, CRA
+y AI Act (9, L12-L15; 14, L37-L39). Esta plataforma reduciría la carga
+administrativa y mejoraría la calidad y la rapidez de las
+notificaciones.
+
+\(iii\) **Aclarar la interacción entre los diferentes instrumentos**
+mediante una guía consolidada que explique a las organizaciones qué
+notificaciones deben realizar, en qué plazos y a qué autoridades, en
+función del tipo de incidente y del sector afectado (7, L58-L62; 8,
+L18-L22). La guía debería ser elaborada conjuntamente por la Comisión
+Europea, ENISA y las autoridades nacionales competentes.
+
+#### 10.2.3. Promover estándares técnicos de seguridad para agentes de IA
+
+La seguridad de los agentes de IA ---incluyendo la robustez frente a
+manipulaciones, la integridad de sus entradas y salidas, y la fiabilidad
+de su comportamiento--- no está cubierta por los estándares de seguridad
+de la información existentes (13, L68-L72). El desarrollo de estándares
+técnicos armonizados es una prioridad urgente.
+
+Los responsables públicos deben:
+
+\(i\) **Encargar a ENISA y a los organismos europeos de normalización**
+(CEN‑CENELEC, ETSI) el desarrollo de estándares técnicos para la
+seguridad de los agentes de IA, incluyendo: (a) requisitos de robustez
+frente a entradas maliciosas; (b) requisitos de integridad y
+autenticidad de las salidas; (c) requisitos de trazabilidad y auditoría;
+y (d) requisitos de supervisión y control (8, L18-L22; 12, L60-L65).
+Estos estándares deberían ser de aplicación voluntaria inicialmente, con
+vistas a su incorporación a los marcos regulatorios en el medio plazo.
+
+\(ii\) **Promover la adopción de estándares internacionales**, en
+colaboración con NIST, ISO/IEC JTC 1/SC 42 e ITU‑T, para evitar la
+fragmentación regulatoria y garantizar la interoperabilidad de los
+sistemas de IA seguros (14, L320-L325). La seguridad de la IA es un
+desafío global que requiere una respuesta coordinada a nivel
+internacional.
+
+\(iii\) **Exigir certificación de seguridad** para los agentes de IA que
+se desplieguen en entornos de alto riesgo ---infraestructuras críticas,
+sector financiero, Administración Pública---, de forma análoga a la
+certificación de los sistemas de seguridad de la información (ISO/IEC
+27001) o de los productos con elementos digitales (marcado CE) (14,
+L32-L33; 7, L54-L56). La certificación debe ser renovada periódicamente
+y debe incluir pruebas de robustez frente a ataques.
+
+#### 10.2.4. Fomentar la cooperación internacional en ciberdefensa agéntica
+
+La naturaleza transnacional del cibercrimen y la globalización de la
+cadena de suministro de la IA hacen que la **cooperación internacional**
+sea un elemento esencial de la respuesta a los ATAs (5, L9-L10; 10,
+L12-L15). La atribución, la persecución penal y la disuasión requieren
+una cooperación efectiva entre Estados.
+
+Los responsables públicos deben:
+
+\(i\) **Ampliar el mandato del Comité del Convenio de Budapest (T‑CY)**
+para abordar específicamente la ciberdelincuencia habilitada por IA,
+incluyendo la atribución de la conducta de agentes autónomos y la
+cooperación en la investigación de ataques agénticos (5, L5-L7; 5,
+L40-L41; 16, L5-L8). La 33.ª sesión plenaria del T‑CY ha adoptado un
+plan de trabajo en este sentido, pero es necesario acelerar los trabajos
+y dotarlos de recursos suficientes.
+
+\(ii\) **Establecer un mecanismo de intercambio de información** sobre
+incidentes agénticos entre las agencias de ciberseguridad de los Estados
+miembros de la UE y de los países aliados, de forma análoga a los
+mecanismos existentes para los incidentes de ciberseguridad
+tradicionales (10, L12-L15; 9, L23-L26). El intercambio de información
+es esencial para la detección temprana y la respuesta coordinada a los
+ATAs.
+
+\(iii\) **Promover la inclusión de la ciberdefensa agéntica en las
+agendas de los foros internacionales** ---G7, G20, OTAN, OSCE--- para
+garantizar que la respuesta a los ATAs sea una prioridad de la agenda de
+seguridad internacional (10, L22-L25; 14, L325-L330). La seguridad de la
+IA es un bien público global que exige una acción colectiva.
+
+\(iv\) **Fortalecer la cooperación judicial y policial** a través de
+Europol, Eurojust e INTERPOL, desarrollando unidades especializadas en
+la investigación de delitos cometidos con agentes de IA y estableciendo
+procedimientos ágiles para la obtención de pruebas digitales en el
+extranjero (5, L20-L22). La persecución penal de los operadores de ATAs
+requiere una cooperación judicial efectiva y rápida.
+
+#### 10.2.5. Invertir en investigación en AI Red Teaming y defensa autónoma
+
+La carrera de agentes ---ofensivos y defensivos--- requiere una
+inversión significativa en investigación y desarrollo de capacidades
+defensivas avanzadas (14, L90-L95; 12, L60-L65). Los responsables
+públicos deben:
+
+\(i\) **Financiar programas de investigación** en *AI Red Teaming* ---el
+desarrollo y uso de agentes ofensivos controlados para probar
+defensas--- con el objetivo de desarrollar metodologías estandarizadas y
+de identificar vulnerabilidades sistémicas en las infraestructuras de IA
+(7, L54-L56; 12, L60-L65). La investigación en *red teaming* es esencial
+para anticiparse a las tácticas de los atacantes.
+
+\(ii\) **Promover el desarrollo de agentes defensivos autónomos**
+---sistemas de detección y respuesta que operan a *machine speed*--- en
+colaboración con el sector privado y las universidades (11, L60-L62; 14,
+L90-L95). La defensa autónoma es la única respuesta plausible a un
+ataque que opera a *machine speed*.
+
+\(iii\) **Establecer centros de excelencia** en ciberseguridad e IA en
+las principales universidades y centros de investigación europeos, con
+el objetivo de formar a la próxima generación de expertos en la defensa
+frente a ATAs (8, L23-L26; 12, L70-L75). La formación es un elemento
+crítico para garantizar la disponibilidad de talento en este campo
+emergente.
+
+\(iv\) **Fomentar la colaboración público‑privada** en la investigación
+y el desarrollo de defensas frente a ATAs, mediante la creación de
+consorcios de investigación y de plataformas de intercambio de
+información entre el sector público, el sector privado y el mundo
+académico (9, L23-L26; 14, L330-L335). La colaboración es esencial para
+acelerar el desarrollo de soluciones efectivas.
+
+### 10.3. Una llamada a la acción para la comunidad global de ciberseguridad
+
+El advenimiento de los ATAs, materializado por primera vez en
+JadePuffer, no es una amenaza lejana ni un escenario de ciencia ficción.
+Es una realidad que ya ha ocurrido y que, como se ha argumentado a lo
+largo de este informe, es el **comienzo de una tendencia estructural**
+que se consolidará en los próximos años (1; 8; 14). La comunidad global
+de ciberseguridad ---organizaciones, reguladores, investigadores,
+profesionales--- debe responder con urgencia y con determinación.
+
+La respuesta debe ser **multidisciplinar**, **coordinada** y
+**proporcionada**. Multidisciplinar, porque los ATAs plantean desafíos
+técnicos, jurídicos, éticos y de gobernanza que no pueden abordarse
+desde una sola perspectiva. Coordinada, porque la amenaza es global y
+las respuestas aisladas son ineficaces. Proporcionada, porque el riesgo
+debe ser gestionado sin caer en el alarmismo ni en la parálisis.
+
+El tiempo es el factor más crítico. La velocidad de la innovación
+adversaria ---ilustrada por JadePuffer--- es superior a la velocidad de
+la respuesta regulatoria y de la adaptación organizacional (14,
+L215-L220). Cada día de retraso en la implementación de las medidas
+recomendadas es un día en el que los ATAs se vuelven más capaces, más
+accesibles y más peligrosos.
+
+La historia de la ciberseguridad es una historia de adaptación continua
+a nuevas amenazas. Los ATAs son la siguiente frontera. JadePuffer es la
+señal de alarma. No ignorarla es la única opción irresponsable.
+
+## SECCIÓN 11. CONCLUSIONES
+
+### 11.1. Síntesis de los hallazgos principales
+
+El análisis desarrollado a lo largo del presente informe permite extraer
+un conjunto de conclusiones fundamentales sobre el significado de
+JadePuffer y sobre el cambio de paradigma que representa para la
+ciberseguridad global.
+
+En primer lugar, **JadePuffer es un hito documentado y verificable**, no
+una mera hipótesis de laboratorio ni una simulación. El informe técnico
+de Sysdig (1), complementado por las fuentes periodísticas y los
+análisis de expertos (3; 5; 8; 9; 12), proporciona evidencia suficiente
+para afirmar que un agente de IA ejecutó una operación de ransomware
+completa ---desde el acceso inicial hasta la nota de rescate--- con un
+grado de autonomía operativa sin precedentes en entornos productivos
+reales. La explotación de CVE‑2025‑3248 en Langflow, el movimiento
+lateral hacia Nacos, la explotación de CVE‑2021‑29441, el cifrado de
+1.342 registros y la generación de una nota de rescate constituyen una
+cadena de ataque que, aunque basada en vulnerabilidades conocidas y en
+técnicas tradicionales, fue orquestada por un agente que tomó decisiones
+tácticas sin intervención humana en tiempo real (8; 9).
+
+En segundo lugar, **el grado de autonomía del agente requiere
+matizaciones significativas**. La afirmación inicial de que se trató del
+«primer ciberataque sin intervención humana» (5) ha sido rectificada por
+el propio Sysdig: un operador humano preparó el escenario ---seleccionó
+a la víctima, configuró la infraestructura y proporcionó las
+credenciales iniciales--- (4; 7). La autonomía de JadePuffer fue, por
+tanto, **operativa y táctica**, no estratégica. El agente ejecutó el
+plan dentro de un escenario preconfigurado, pero no seleccionó el
+objetivo ni diseñó la operación a alto nivel. Esta distinción es central
+para la atribución de responsabilidad, como se ha analizado en la
+Sección 8, y para la correcta caracterización del cambio de paradigma.
+
+En tercer lugar, **las limitaciones del agente revelan el estado
+incipiente de la tecnología**, pero también su trayectoria de mejora.
+JadePuffer cometió errores que un operador humano experimentado no
+habría cometido ---uso de una dirección de Bitcoin de ejemplo, no
+persistencia de la clave de cifrado, falsa reclamación de
+exfiltración--- (8; 9; 13). Estos errores, lejos de ser
+tranquilizadores, indican que los agentes actuales son **mejorables** y
+que las futuras iteraciones ---entrenadas con ejemplos de ataques reales
+y con *fine‑tuning* específico--- corregirán estas deficiencias. La
+ventana de oportunidad defensiva que abren estos errores, incluyendo la
+autorrevelación del agente a través de comentarios autodescriptivos (8,
+L36-L39), es **transitoria** y debe ser explotada antes de que los
+adversarios aprendan a cerrarla (8, L44-L46).
+
+### 11.2. El cambio de paradigma es real: la agencialidad transforma la ecuación ataque‑defensa
+
+El análisis sustantivo del informe ---especialmente en las Secciones 3,
+4 y 5--- ha demostrado que JadePuffer no es un incidente aislado, sino
+el **primer indicio de una tendencia estructural** que transformará la
+ecuación ataque‑defensa en el ciberespacio. Esta transformación se
+articula en torno a cuatro vectores principales:
+
+\(i\) **La erosión de la barrera de cualificación (*skill floor*).**
+JadePuffer demuestra que un operador humano sin conocimientos técnicos
+profundos puede ejecutar un ataque sofisticado si dispone de un agente
+de IA que asuma las tareas técnicas (5, L10-L13). Esta democratización
+de capacidades ofensivas ampliará el número de actores capaces de lanzar
+ataques y reducirá el coste de entrada en los mercados ilegales (3; 6;
+12).
+
+\(ii\) **La compresión temporal.** Un agente que opera a *machine speed*
+reduce drásticamente la ventana de detección y respuesta de los
+defensores (9, L45-L47). La detección y la contención deben pasar de ser
+procesos manuales a ser procesos automatizados ejecutables en segundos
+(5; 12). Esta compresión temporal, combinada con la paralelización de
+ataques, convierte la velocidad en un vector de riesgo de primer orden.
+
+\(iii\) **La imprevisibilidad del comportamiento.** Un agente que genera
+*payloads* originales en tiempo de ejecución y que adapta su
+comportamiento en función de las respuestas del sistema víctima produce
+patrones que no están representados en los conjuntos de entrenamiento de
+los sistemas de detección (8, L28-L30). La detección basada en firmas
+---y, en gran medida, la detección basada en anomalías--- se vuelve
+ineficaz frente a esta imprevisibilidad (13, L40-L44).
+
+\(iv\) **La escalabilidad del ataque.** Un operador humano solo puede
+ejecutar un número limitado de ataques simultáneos; un operador con
+múltiples agentes puede lanzar decenas o centenares de ataques en
+paralelo (6, L34-L38). Esta escalabilidad transforma el ransomware de
+una operación *artesanal* en una operación *industrial*, con
+consecuencias para la capacidad de respuesta de los SOC y para la
+gestión del riesgo sistémico.
+
+Estos cuatro vectores ---erosión de la *skill floor*, compresión
+temporal, imprevisibilidad y escalabilidad--- no son incrementos
+graduales de capacidades existentes; son **cambios cualitativos** que
+alteran las premisas fundamentales sobre las que se ha construido la
+defensa cibernética durante las últimas décadas. La ciberseguridad
+global no se enfrenta a una nueva herramienta, sino a un **nuevo tipo de
+adversario**, con características que desafían los modelos mentales y
+operativos de defensores, reguladores y responsables políticos (14; 12).
+
+### 11.3. La brecha regulatoria y la urgencia de una respuesta coordinada
+
+El análisis jurídico de las Secciones 7 y 8 ha revelado que el marco
+regulatorio actual ---incluso con las recientes actualizaciones del AI
+Act, NIS2, DORA y CRA--- **no está diseñado para los desafíos
+específicos que plantean los ATAs** (7; 10; 12; 14). Las lagunas son
+significativas y estructurales:
+
+\(i\) **La exclusión del artículo 2.3 del AI Act** para los sistemas de
+IA utilizados en contextos militares, de defensa o de seguridad nacional
+deja un espacio regulatorio vacío para los sistemas de IA con
+capacidades ofensivas, especialmente los desarrollados por actores
+privados o de uso dual (6; 12). Esta laguna ha sido señalada por el
+Parlamento Europeo y requiere una revisión urgente.
+
+\(ii\) **La ausencia de un régimen claro de atribución de
+responsabilidad** para los daños causados por agentes autónomos genera
+incertidumbre jurídica y dificulta la persecución penal y la reclamación
+de daños (5; 7; 14). Los modelos de *autoría mediata* y de *supervisión
+negligente* son útiles, pero insuficientes para abordar la autonomía de
+los agentes (11, L80-L85). Una reforma legal que establezca un régimen
+escalonado de responsabilidad ---operadores, proveedores de modelos y
+proveedores de herramientas vulnerables--- es necesaria.
+
+\(iii\) **La falta de armonización de los plazos de notificación** entre
+los diferentes instrumentos normativos genera confusión y cargas
+administrativas, y puede retrasar la respuesta a incidentes (13; 14). Un
+plazo único y proporcionado, y una plataforma única de notificación,
+mejorarían la eficacia de la respuesta.
+
+\(iv\) **La ausencia de estándares técnicos armonizados** para la
+seguridad de los agentes de IA deja a las organizaciones sin una guía
+clara sobre cómo evaluar y mitigar los riesgos (8; 12). El desarrollo de
+estándares por parte de ENISA, CEN‑CENELEC, ETSI e ISO/IEC es una
+prioridad urgente.
+
+La urgencia de la respuesta regulatoria no es solo una cuestión de
+oportunidad política; es una **cuestión de seguridad**. La velocidad de
+la innovación adversaria supera la velocidad de la respuesta regulatoria
+(14, L215-L220). Cada año de retraso en el cierre de las lagunas y en la
+adopción de estándares es un año en el que los ATAs se vuelven más
+capaces, más accesibles y más peligrosos.
+
+### 11.4. Llamada a la acción para la comunidad global de ciberseguridad
+
+JadePuffer es una **señal de alarma** que no debe ser ignorada. No es el
+fin, sino el principio de una nueva era en la evolución de las amenazas
+digitales. La comunidad global de ciberseguridad ---organizaciones,
+reguladores, investigadores, profesionales y responsables políticos---
+debe responder con **urgencia**, **coordinación** y **determinación**.
+
+Para las organizaciones, la prioridad inmediata es **fortalecer las
+defensas básicas**: parcheo riguroso de las herramientas de IA,
+segmentación de red, Zero Trust, autenticación multifactor, copias de
+seguridad inmutables y supervisión continuada de los agentes desplegados
+(Sección 10). No existen soluciones mágicas; la defensa frente a los
+ATAs se construye sobre los fundamentos de la higiene cibernética, pero
+con una **intensidad y una velocidad** que superan las prácticas
+actuales.
+
+Para los reguladores, la prioridad es **cerrar las lagunas
+estructurales** del marco legal: revisar el artículo 2.3 del AI Act,
+armonizar los plazos de notificación, promover estándares técnicos y
+establecer un régimen claro de atribución de responsabilidad (Sección
+10). La regulación no debe ser un freno a la innovación, pero tampoco
+puede ser un permiso para la inseguridad.
+
+Para la comunidad investigadora, la prioridad es **desarrollar
+metodologías de detección y respuesta** específicas para los ATAs,
+incluyendo el análisis de trazas generativas, la detección de patrones
+de comportamiento de LLM y la simulación de agentes ofensivos en
+entornos controlados (13, L64-L66). La investigación en *AI Red Teaming*
+y en defensa autónoma es esencial para anticiparse a la evolución de los
+ATAs.
+
+Para la comunidad internacional, la prioridad es **fortalecer la
+cooperación** en la atribución, la persecución penal y la disuasión de
+los ataques agénticos (5; 10). El cibercrimen es transnacional, y la
+respuesta debe serlo también. El Convenio de Budapest, los foros del G7
+y de la OTAN, y las agencias de ciberseguridad de los Estados miembros
+deben coordinar sus esfuerzos.
+
+La historia de la ciberseguridad es una historia de adaptación continua
+a nuevas amenazas. Los ATAs son la siguiente frontera. JadePuffer es la
+prueba de que esa frontera ya ha sido cruzada. La pregunta no es *si*
+habrá más ataques agénticos, sino *cuándo*, *cómo* y *con qué
+consecuencias*. La respuesta a estas preguntas depende de las decisiones
+que tomemos hoy.
+
+JadePuffer no es el fin de la ciberseguridad tal como la conocemos. Es
+el comienzo de una nueva etapa, más compleja y más exigente, pero
+también más fascinante. La comunidad global de ciberseguridad tiene los
+conocimientos, las herramientas y la capacidad de adaptación necesarios
+para afrontar este desafío. Pero no tiene tiempo que perder.
+
+## BIBLIOGRAFÍA
+
+\(1\) Sysdig Threat Research Team. *JADEPUFFER: Agentic ransomware for
+automated database extortion*. Sysdig Blog, 1 de julio de 2026.
+
+\(2\) El Economista. *Parece ciencia ficción, pero es real: la IA ya ha
+realizado su primer ciberataque sin intervención humana*. El Economista,
+5 de julio de 2026.
+
+\(3\) Bleeping Computer. *JadePuffer ransomware used AI agent to
+automate entire attack*. Bleeping Computer, 4 de julio de 2026.
+
+\(4\) ITPro. *\'It\'s a marker of where extortion tradecraft is
+heading\': Cyber experts say they\'ve identified the first case of
+\'agentic ransomware\' -- but there\'s a catch*. ITPro, 7 de julio de
+2026.
+
+\(5\) CSO Online. *This AI agent autonomously hacked a network, adapted
+on the fly, and demanded a ransom*. CSO Online, 6 de julio de 2026.
+
+\(6\) Infosecurity Magazine. *Researchers Claim First Fully Agentic
+Ransomware: JadePuffer*. Infosecurity Magazine, 6 de julio de 2026.
+
+\(7\) Mishcon de Reya. *Agentic AI and cybersecurity: legal obligations
+and regulatory risks under UK and EU laws*. Mishcon de Reya, 25 de junio
+de 2026.
+
+\(8\) European Commission. *Action Plan on Cybersecurity and Artificial
+Intelligence* (COM(2026) 577 final). European Commission, 7 de julio de
+2026.
+
+\(9\) Bratby Law. *EU cybersecurity and AI action plan and the UK\'s
+different route*. Bratby Law, 8 de julio de 2026.
+
+\(10\) European Central Bank. *ECB sets out cybersecurity defence plans
+for AI‑enabled threats*. ECB, 7 de julio de 2026.
+
+\(11\) Agencia Española de Protección de Datos (AEPD). *Inteligencia
+Artificial Agéntica desde la perspectiva de protección de datos*. AEPD,
+febrero de 2026.
+
+\(12\) Palo Alto Networks. *In 2026, the race for AI-driven advantage
+will slam into a wall of legal reality*. Palo Alto Networks Blog, 2026.
+
+\(13\) Wiley Law. *Threat actors infiltrating AI models*. Wiley Law,
+2026.
+
+\(14\) Elsevier / SQU. *AI agents and full autonomy in cybersecurity:
+technical, business, ethical and legal considerations*. Elsevier, 2026.
+
+\(15\) NIST National Vulnerability Database. *CVE‑2025‑3248*. NIST NVD.
+
+\(16\) NIST National Vulnerability Database. *CVE‑2021‑29441*. NIST NVD.
+
+\(17\) TechCrunch. *The first AI-run ransomware attack still needed a
+human*. TechCrunch, 7 de julio de 2026.
+
+\(18\) Regulation (EU) 2024/1689 of the European Parliament and of the
+Council of 13 June 2024 laying down harmonised rules on artificial
+intelligence (AI Act). Official Journal of the European Union, OJ L,
+2024/1689, 12 July 2024.
+
+\(19\) Digital Trends. *AI agent breaks through firewall with zero human
+help in unprecedented hack*. Digital Trends, 5 de julio de 2026.
+
+\(20\) Directiva (UE) 2022/2555 del Parlamento Europeo y del Consejo de
+14 de diciembre de 2022 relativa a las medidas para un alto nivel común
+de ciberseguridad en toda la Unión (NIS2). Official Journal of the
+European Union, L 333, 2022.
+
+\(21\) Regulation (EU) 2022/2554 of the European Parliament and of the
+Council of 14 December 2022 on digital operational resilience for the
+financial sector (DORA). Official Journal of the European Union, L 333,
+2022.
+
+\(22\) Regulation (EU) 2016/679 of the European Parliament and of the
+Council of 27 April 2016 on the protection of natural persons with
+regard to the processing of personal data and on the free movement of
+such data (GDPR). Official Journal of the European Union, L 119, 2016.
+
+\(23\) Council of Europe. *Convention on Cybercrime* (Budapest
+Convention). Council of Europe Treaty Series No. 185, 2001.
+
+\(24\) European Parliament. *Pregunta parlamentaria E‑001843/2026 sobre
+la laguna regulatoria europea en materia de capacidades ofensivas de
+IA*. Parlamento Europeo, 5 de junio de 2026.
+
+\(25\) CISA, NSA, FBI et al. *Joint Guidance on Defending Against
+AI‑Enabled Cyber Threats*. CISA, mayo de 2026.
+
+\(26\) Cyber Resilience Act (CRA). Proposed Regulation of the European
+Parliament and of the Council on horizontal cybersecurity requirements
+for products with digital elements. European Commission, 2022.
+
+\(27\) ENISA. *Cybersecurity for AI: State of the Art and Challenges*.
+ENISA, 2025.
+
+\(28\) NIST. *Cybersecurity Framework (CSF) 2.0*. National Institute of
+Standards and Technology, 2024.

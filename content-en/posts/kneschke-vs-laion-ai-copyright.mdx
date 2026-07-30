@@ -1,0 +1,142 @@
+---
+title: "AI and Intellectual Property: The Data Lifecycle and Text and Data Mining under the Prism of the Kneschke vs. LAION Case"
+date: "2026-02-15"
+category: "intellectual-property-ai"
+tags: ["generative-ai", "intellectual-property", "data-mining", "kneschke-laion-case", "opt-out"]
+pdf: ""
+author: "Ricardo Scarpa"
+---
+
+# AI and Intellectual Property: The Data Lifecycle and Text and Data Mining under the Prism of the Kneschke vs. LAION Case
+Ricardo Scarpa
+
+## DETAILED INDEX  
+### CHAPTER 1: INTRODUCTION AND METHODOLOGICAL FRAMEWORK  
+- 1.1. Object and Scope of Study   
+- 1.2. Multidisciplinary Methodology   
+- 1.3. Justification and Legal Certainty   
+### CHAPTER 2: TECHNOLOGICAL CONTEXT: FROM DATA MINING TO GENERATIVE AI  
+- 2.1. Evolution of AI Models: From Deep Learning to Transformers   
+- 2.2. The Data Chain: Capture, Processing, and Curation   
+- 2.3. Automated Analytical Techniques: Definition and Stages of TDM   
+- 2.4. Advanced Architectures: Retrieval Augmented Generation (RAG)   
+### CHAPTER 3: EUROPEAN REGULATORY FRAMEWORK: COPYRIGHT AND AI LAW  
+- 3.1. Directive (EU) 2019/790 (CDSM): Articles 3 and 4   
+- 3.2. Regulation (EU) 2024/1689 (AI Act): Transparency Obligations   
+- 3.3. Legal Requirements for Rights Reservation (Opt-out)   
+### CHAPTER 4: ANALYSIS OF THE KNESCHKE VS. LAION CASE: A JURISPRUDENTIAL MILESTONE  
+- 4.1. Background and Facts of the Litigation   
+- 4.2. Interpretation of the Scientific Research Exception (§ 60d UrhG)   
+- 4.3. The Debate on Commercial Purpose and Research Purpose   
+- 4.4. The Doctrine on Opt-out in Natural Language   
+### CHAPTER 5: TECHNICAL IMPLEMENTATION OF LEGAL LIMITS  
+- 5.1. Input Management Protocols: REP, TDMRep, and ai.txt   
+- 5.2. Traceability and Provenance: Soft-binding (ISCC) vs. Hard-binding (C2PA)   
+- 5.3. Output Mitigation Measures: Watermarks and Fingerprints   
+### CHAPTER 6: CRITICAL ASSESSMENT AND FUTURE PROSPECTS  
+- 6.1. Divergences in National Transpositions: The Spanish Case   
+- 6.2. The Transparency Paradox and Trade Secrets   
+- 6.3. Toward a Licensed and Remunerated Data Market   
+- 6.4. Final Conclusion: The Institutional Role of IP Offices 
+
+## CHAPTER 1: INTRODUCTION AND METHODOLOGICAL FRAMEWORK
+
+### 1.1. Object and Scope of Study  
+The central problem identified in this research is the irreconcilable tension between intellectual property protection and the promotion of technological innovation in the field of generative AI. As highlighted in the EUIPO report (2025) on generative AI development from a copyright perspective, there exists a conflict of opposing interests: rights holders consider that the use of their works to train models without consent is a harmful act, while developers maintain that training is an analytical technique protected by legal exceptions.  
+This interaction is complex and manifests in three fronts:  
+- **Technical Perspective:** Based on massive content processing through Text and Data Mining (TDM), where, according to Carlini et al. (2023), there is a risk that models may memorize training sequences and produce "regurgitations" or explicit reproductions of the original work in the output. 
+- **Legal Perspective:** Focused on Articles 3 and 4 of Directive (EU) 2019/790 (CDSM), which distinguish between mining for scientific research and commercial purposes, with significant implications for business model design in the AI sector.  
+
+### 1.2. Multidisciplinary Methodology  
+The analysis adopts a hybrid technical-legal approach, integrating data analysis tools with hermeneutic principles to evaluate the viability of TDM exceptions. It is based on the European regulatory framework, with special emphasis on German (UrhG) and Spanish (LPI) transposition, and is complemented by recent jurisprudential cases such as Kneschke vs. LAION (2025).  
+
+### 1.3. Justification and Legal Certainty  
+The need for this study arises from opacity in the AI data chain, where lack of traceability generates legal uncertainty for rights holders and developers. The objective is to provide a roadmap for a "data lifecycle" that complies with rights reservation (opt-out) and the AI Act's transparency obligations.  
+
+## CHAPTER 2: TECHNOLOGICAL CONTEXT: FROM DATA MINING TO GENERATIVE AI
+
+### 2.1. Evolution of AI Models: From Deep Learning to Transformers  
+Generative AI models, such as Stable Diffusion or GPT-4, are trained using deep learning techniques requiring massive datasets. Transformers, introduced by Vaswani et al. (2017), enable parallel processing of sequences, facilitating the extraction of complex patterns from texts and images.  
+
+### 2.2. The Data Chain: Data Capture, Processing, and Curation  
+The data chain begins with massive web content capture through crawlers, followed by processing (filtering, normalization) and curation (duplicate removal, enrichment). Datasets such as LAION-5B contain 5.850 billion image-text pairs, indexing URLs for training.  
+
+### 2.3. Automated Analytical Techniques: Definition and Stages of TDM  
+TDM is defined as any automated process that analyzes digital data to generate knowledge. Its stages include extraction, analysis, and synthesis, with "regurgitation" risks if models memorize training data.  
+
+### 2.4. Advanced Architectures: Retrieval Augmented Generation (RAG)  
+RAG mitigates hallucinations by consulting external databases during inference, improving accuracy. However, it does not solve provenance problems in initial training.  
+
+## CHAPTER 3: EUROPEAN REGULATORY FRAMEWORK: COPYRIGHT AND AI LAW
+
+### 3.1. Directive (EU) 2019/790 (CDSM): Articles 3 and 4  
+Article 3 allows TDM for scientific research without opt-out, while Article 4 allows opt-out for commercial TDM. Transposition varies: Germany (§ 60d UrhG) excludes commercial purposes, Spain (Art. 13 LPI) allows opt-out in natural language.  
+
+### 3.2. Regulation (EU) 2024/1689 (AI Act): Transparency Obligations  
+The AI Act imposes transparency on training data for general-purpose models, obligating disclosure of summaries of copyright-protected datasets.  
+
+### 3.3. Legal Requirements for Rights Reservation (Opt-out)  
+The opt-out must be machine-readable (e.g., robots.txt, TDMRep), but the Hamburg Court accepts natural language if detectable. It does not apply retroactively to already-mined data.  
+
+## CHAPTER 4: ANALYSIS OF THE KNESCHKE VS. LAION CASE: A JURISPRUDENTIAL MILESTONE
+
+### 4.1. Background and Facts of the Litigation  
+Photographer Robert Kneschke sued LAION for using his photo in the LAION-5B dataset without consent, alleging copyright infringement.  
+
+### 4.2. Interpretation of the Scientific Research Exception (§ 60d UrhG)  
+The court rejected that LAION was "scientific" by distributing the dataset for commercial purposes, invalidating the exception.  
+
+### 4.3. The Debate on Commercial Purpose and Research Purpose  
+LAION argued non-commercial purpose, but the court prioritized economic impact over the holder.  
+
+### 4.4. The Doctrine on Opt-out in Natural Language  
+Opt-out in general terms (natural language) was valid, even without machine-readable format, establishing jurisprudence.  
+
+## CHAPTER 5: TECHNICAL IMPLEMENTATION OF LEGAL LIMITS
+
+### 5.1. Input Management Protocols: REP, TDMRep, and ai.txt  
+REP allows opt-out in robots.txt, TDMRep in metadata, ai.txt in site files.  
+
+### 5.2. Traceability and Provenance: Soft-binding (ISCC) vs. Hard-binding (C2PA)  
+ISCC uses external fingerprints, C2PA uses embedded cryptography to trace data origin.  
+
+### 5.3. Output Mitigation Measures: Watermarks and Fingerprints  
+Invisible watermarks (e.g., Stable Diffusion) and fingerprints detect AI-generated outputs.  
+
+## CHAPTER 6: CRITICAL ASSESSMENT AND FUTURE PROSPECTS
+
+### 6.1. Divergences in National Transpositions: The Spanish Case  
+Spain allows opt-out in natural language, but lacks clarity in technical implementation.  
+
+### 6.2. The Transparency Paradox and Trade Secrets  
+The AI Act requires transparency, but conflicts with dataset trade secrets.  
+
+### 6.3. Toward a Licensed and Remunerated Data Market  
+Future: Paid licenses for datasets, with models like Adobe Firefly.  
+
+### 6.4. Final Conclusion: The Institutional Role of IP Offices  
+Offices like EUIPO must lead opt-out and traceability standardization.  
+
+## GLOSSARY OF TECHNICAL AND LEGAL TERMS  
+- Common Crawl: The world's largest web dataset, serving as the textual foundation for training most language models (LLM).  
+- LAION-5B: A massive dataset containing 5.850 billion image-text pairs, technically functioning as a hyperlink index for training generative AI image models.  
+
+## 3. Legal Framework and Intellectual Property  
+- Rights Reservation (Opt-out): The active decision by a rights holder to exclude their works from the general commercial data mining exception under Article 4 of the CDSM Directive. For online content, this reservation is only valid if made by machine-readable means.  
+- Machine-readable: A format structured in such a way that tracking software can identify, interpret, and process it autonomously without human intervention. The Hamburg Higher Regional Court distinguishes between the "detectability" of text and its "interpretability" by automated processes.  
+- Lawful Access: A prerequisite for benefiting from TDM exceptions, defined as access obtained with the rights holder's consent or through subscriptions, absolutely excluding the use of pirated content.  
+- Data Laundering: A phenomenon where exceptions for scientific research mining (Art. 3 CDSM), which do not allow author opposition, are exploited to build databases that are then used by commercial entities under Article 4's regime.  
+- Three-Step Test: An international copyright standard establishing that exceptions may only be applied in specific cases that do not conflict with the normal exploitation of the work nor unjustifiably prejudice the rights holder's interests.  
+
+## 4. Architectures and Technical Solutions  
+- Retrieval Augmented Generation (RAG): A technique that combines generative models with external document retrieval mechanisms to provide more current and contextually rich responses. It acts as a "memory search" system in real-time during the inference phase.  
+- Transformer: A neural network architecture designed for sequential data that uses self-attention mechanisms to process all elements of a sequence simultaneously.  
+- Watermarking: A technique to embed information or metadata intrinsically in the content itself (image, audio, or text), which may be visible or invisible.  
+- Fingerprinting: Generation of a unique identifier based on file characteristics that allows comparison with external databases to identify protected works without altering the original file.  
+- ISCC (International Standard Content Code): A fingerprinting standard that uses soft-binding to associate rights metadata with files externally, allowing information recovery even if internal metadata is deleted.  
+- C2PA: A strong-binding (hard-binding) standard that uses cryptography to embed a provenance manifest directly inside the file container.  
+
+## Related Articles
+
+- [The Getty Images v. Stability AI Case Under the EU Artificial Intelligence Regulation](/scarpa-firm/getty-images-v-stability-ai)
+- [Generative AI and Copyright in the EU: European Parliament Study](/regulation/ia-generativa-copyright-estudio-ue)

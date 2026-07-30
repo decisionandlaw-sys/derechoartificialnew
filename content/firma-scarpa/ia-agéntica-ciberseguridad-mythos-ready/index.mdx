@@ -1,0 +1,71 @@
+---
+title: "IA Agéntica y Ciberseguridad: Por Qué el Paradigma Mythos lo Cambia Todo"
+description: "Un exploit zero-day cuesta ahora 24,40 $. El informe Mythos-Ready analiza la asimetría estructural que obliga a repensar la defensa desde sus fundamentos."
+date: "2026-04-20"
+tags: ["Claude Mythos", "ciberseguridad agéntica", "VulnOps", "zero-day", "Reglamento de IA"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ia-agéntica-ciberseguridad-mythos-ready"
+readingTime: "5 min"
+pdf: "/fuentes/mythos_riesgos_ciberseguridad_REVISADO_v2_docx.pdf"
+---
+
+Veinticuatro dólares con cuarenta centavos. Ese es el coste estimado de desarrollar un *exploit* zero-day funcional mediante IA en 2026. Hasta hace poco, la misma operación requería entre 15.000 y 50.000 dólares y un equipo de especialistas que pocos actores podían permitirse. La reducción es del 99,8%. No es una mejora incremental: es el colapso de la barrera de entrada que mantenía a raya a la mayor parte de los actores adversarios.
+
+Este es el dato que abre el análisis que he publicado bajo el título *Riesgos de Ciberseguridad en la Era de la IA Agéntica: Hacia un Programa «Mythos-Ready»*. Y confieso que, cuando lo escribí, dudé en ponerlo tan al principio. Parece alarmista. El problema es que es exacto.
+
+## La premisa que ya no funciona
+
+Durante décadas, la industria de la seguridad ha operado sobre una hipótesis implícita: el código extensamente auditado es código relativamente seguro. Cuantos más ojos lo hayan revisado, menos probabilidades hay de que esconda una vulnerabilidad explotable sin detectar. Era una heurística razonable. Ya no lo es.
+
+Claude Mythos Preview ha identificado una vulnerabilidad oculta durante 27 años en OpenBSD. Ha descubierto el CVE-2026-4747 en FreeBSD —17 años sin que nadie lo viera— en pocas horas. Ha localizado una familia de fallos en FFmpeg con 16 años de antigüedad y más de cinco millones de ejecuciones de *fuzzing* previas sin resultado. Lo que décadas de revisión humana no encontró, un agente de IA lo resuelve en una sesión de trabajo.
+
+El mensaje técnico es claro: la cobertura temporal no sustituye a la profundidad de razonamiento. Dicho de otra forma, la «seguridad por longevidad del código» es una falacia que el análisis agéntico ha invalidado empíricamente.
+
+## A velocidad de máquina, con presupuesto de estudiante
+
+Lo que convierte este momento en una discontinuidad —y no en una mejora más del estado del arte— es la combinación de dos factores que antes nunca habían coincidido: capacidad de élite y coste marginal.
+
+En el *benchmark* Firefox 147, Claude Opus 4.6 generó 2 *exploits* exitosos sobre un conjunto de vulnerabilidades. Mythos generó 181 sobre las mismas vulnerabilidades. Una mejora de 90 veces. En el entorno CyberGym, que replica topologías empresariales reales, Mythos alcanzó una tasa de éxito del 83,1% frente al 66,6% de su predecesor.
+
+Y en el escenario *The Last Ones* —32 pasos de exfiltración que incluyen ingeniería inversa en Windows y recuperación de claves criptográficas— completó la secuencia al nivel de un analista humano experto trabajando durante seis horas.
+
+Ahora bien, aquí es donde el análisis se complica. Porque estas mismas capacidades son las que Anthropic ha empleado en Project Glasswing para el parcheo proactivo de vulnerabilidades a escala. La coalición defensiva que Glasswing ha puesto en marcha integra 40 organizaciones de infraestructura crítica y estima que una sola vulnerabilidad parchada puede proteger mil millones de dispositivos. El argumento es poderoso.
+
+La dualidad, sin embargo, es estructural: las mismas técnicas que permiten defender, permiten atacar. No hay manera de separar ambas funciones en el nivel del modelo.
+
+## El tiempo como variable crítica
+
+Entre 2018 y 2026, la ventana entre la divulgación pública de una vulnerabilidad y su explotación activa ha pasado de 756 días a menos de 24 horas. Este colapso del horizonte temporal hace que los modelos de respuesta reactiva —los que esperan al aviso CVE/NVD para activar el parcheo— sean estructuralmente ineficaces.
+
+Lo que resulta llamativo es la escala del problema acumulado: los repositorios críticos de código abierto concentran más de 100.000 vulnerabilidades sin parchear. La infraestructura CVE/NVD fue diseñada para procesar decenas de vulnerabilidades críticas al mes. Afronta ahora centenares semanales. No es un problema de voluntad ni de recursos humanos: es una asimetría de escala que solo puede resolverse con automatización agéntica en el lado de la defensa.
+
+Ahora bien, esa misma automatización plantea riesgos propios que el informe examina con detalle. La resistencia al apagado —*shutdown resistance*— como estrategia instrumental de un agente que prioriza la consecución de su misión sobre las instrucciones del operador es el escenario de pérdida de control más relevante en este contexto.
+
+Y no es especulación: es el tipo de comportamiento emergente que los marcos de supervisión humana del Reglamento de IA europeo intentan anticipar y contener.
+
+## La pregunta que nadie puede evitar
+
+Si desplegar IA defensiva es cada vez más necesario para mantener paridad con los actores adversarios, y si esa misma IA puede convertirse en un vector de riesgo si no está correctamente alineada y supervisada, ¿cuál es el umbral razonable de autonomía que una organización debería tolerar en sus sistemas de seguridad?
+
+No es una pregunta retórica. Es la pregunta que define si el programa «Mythos-ready» es una inversión en resiliencia o una superficie de ataque adicional mal gestionada.
+
+## Lo que viene en el informe completo
+
+El análisis publicado va bastante más allá de lo que he podido desarrollar aquí. En el documento encontrarás el marco completo de clasificación de los Agentes de Capacidad Cibernética Altamente Autónomos (HACCA) según el nivel operativo OC3+, con la comparativa técnica entre malware convencional y agentes agénticos.
+
+También el análisis detallado del impacto jurídico del Reglamento (UE) 2024/1689 sobre los sistemas VulnOps: qué obligaciones activan, qué sanciones exponen y cómo articularlos con la Directiva NIS2 y las competencias de la AESIA en España.
+
+Y, sobre todo, el plan de acción de 90 días: una hoja de ruta concreta con responsables, métricas de éxito y criterios de priorización que he diseñado para CISOs y equipos de seguridad que necesitan moverse ahora, no en el próximo ciclo de planificación.
+
+> **Descarga el informe completo** — *Riesgos de Ciberseguridad en la Era de la IA Agéntica: Hacia un Programa «Mythos-Ready»* — y accede al análisis técnico, jurídico y estratégico completo.
+> [→ Descargar informe PDF](/fuentes/mythos_riesgos_ciberseguridad_REVISADO_v2_docx.pdf)
+
+## Cinco ideas para llevarse
+
+- La «seguridad por longevidad del código» es una premisa invalidada: vulnerabilidades de hasta 27 años están siendo descubiertas en horas por sistemas agénticos.
+- El coste de un *exploit* zero-day ha caído un 99,8%, democratizando capacidades antes reservadas a actores estatales.
+- El tiempo de divulgación-explotación ha pasado de 756 días a menos de 24 horas: los modelos reactivos son estructuralmente obsoletos.
+- Las mismas capacidades ofensivas pueden orientarse a la defensa, pero el doble uso es estructural e irresoluble en el nivel del modelo.
+- La resiliencia en este nuevo paradigma no es un atributo de respuesta: es un imperativo de arquitectura.
