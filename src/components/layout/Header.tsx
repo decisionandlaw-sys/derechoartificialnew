@@ -116,14 +116,14 @@ function MegaNav({
               <Link
                 href={isEnglish ? "/en/about-us" : "/quienes-somos"}
                 onClick={onClose}
-                className="block text-sm text-caption hover:text-foreground transition-colors mb-3"
+                className="block text-sm text-foreground/70 hover:text-foreground transition-colors mb-3"
               >
                 {isEnglish ? "About Us" : "Quiénes somos"}
               </Link>
               <Link
                 href={isEnglish ? "/en/contact" : "/contacto"}
                 onClick={onClose}
-                className="block text-sm text-caption hover:text-foreground transition-colors mb-6"
+                className="block text-sm text-foreground/70 hover:text-foreground transition-colors mb-6"
               >
                 {isEnglish ? "Contact" : "Contacto"}
               </Link>
@@ -136,13 +136,13 @@ function MegaNav({
               </Link>
             </div>
             <div className="flex items-center gap-5">
-              <a href="https://x.com/DArtificia59954" target="_blank" rel="noreferrer" className="text-caption hover:text-foreground transition-colors" aria-label="X">
+              <a href="https://x.com/DArtificia59954" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="X">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46L20 4"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/derecho-artificial/" target="_blank" rel="noreferrer" className="text-caption hover:text-foreground transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/derecho-artificial/" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="LinkedIn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61587246221582" target="_blank" rel="noreferrer" className="text-caption hover:text-foreground transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61587246221582" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="Facebook">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
               </a>
             </div>
@@ -226,11 +226,11 @@ export function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`font-display text-[10px] tracking-[0.1em] px-2.5 py-1.5 whitespace-nowrap transition-colors shrink-0 ${
-                      isActive
-                        ? "text-foreground"
-                        : "text-caption hover:text-foreground"
-                    }`}
+              className={`font-display text-[10px] tracking-[0.1em] px-2.5 py-1.5 whitespace-nowrap transition-colors shrink-0 ${
+                       isActive
+                         ? "text-foreground"
+                         : "text-foreground/70 hover:text-foreground"
+                     }`}
                   >
                     {item.name}
                   </Link>
@@ -241,7 +241,7 @@ export function Header() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 type="button"
-                className="text-caption hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors"
                 aria-label="Buscar"
               >
                 <Search className="h-4 w-4" strokeWidth={2} />
@@ -249,7 +249,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleLangToggle}
-                className="font-display text-[10px] tracking-[0.12em] text-caption hover:text-foreground transition-colors"
+                className="font-display text-[10px] tracking-[0.12em] text-foreground/70 hover:text-foreground transition-colors"
               >
                 {isEnglish ? "ES" : "EN"}
               </button>

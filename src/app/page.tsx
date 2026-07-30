@@ -62,10 +62,10 @@ export default function HomePage() {
               <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
                 Derecho<br />Artificial
               </h1>
-              <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground/80 mt-5 max-w-md">
+              <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground mt-5 max-w-md">
                 Derecho, ética y regulación de la IA
               </p>
-              <p className="text-sm md:text-base text-body leading-relaxed mt-3 max-w-md">
+              <p className="text-sm md:text-base text-foreground/85 leading-relaxed mt-3 max-w-md">
                 Análisis jurídico del Reglamento IA y su impacto legal. Guías prácticas para abogados y profesionales del compliance.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mt-6">
@@ -79,26 +79,25 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-2 border-l border-[hsl(var(--divider)/0.5)] pl-6 lg:pl-8 pt-1">
-              <span className="font-display text-[10px] tracking-[0.15em] text-caption block mb-4">
+              <span className="font-display text-[11px] tracking-[0.2em] text-foreground block mb-5">
                 ÚLTIMOS ANÁLISIS
               </span>
-              <div className="flex flex-col gap-0">
+              <div className="flex flex-col">
                 {posts.sort((a, b) => b.dateMs - a.dateMs).slice(0, 4).map((post) => (
                   <Link
                     key={post.slug}
                     href={post.url}
-                    className="group py-3 border-t border-[hsl(var(--divider)/0.3)] first:border-t-0"
+                    className="group py-4 border-t border-[hsl(var(--divider)/0.5)] first:border-t-0"
                   >
-                    <span className="font-display text-[9px] tracking-[0.15em] text-newsroom block mb-1">
+                    <span className="font-display text-[11px] tracking-[0.15em] text-newsroom block mb-1.5">
                       {sectionLabelForUrl(post.url).toUpperCase()}
                     </span>
-                    <h3 className="font-display text-sm md:text-base leading-[1.15] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150 pr-1">
+                    <h3 className="font-display text-base md:text-lg leading-[1.15] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150">
                       {post.title}
                     </h3>
-                    <span className="text-[11px] text-caption mt-1.5 block">
+                    <span className="text-[11px] text-[hsl(var(--text-caption))] mt-2 block">
                       {formatDate(post.dateMs)}
                     </span>
-                    <span className="inline-flex text-foreground/30 group-hover:text-newsroom transition-all duration-150 go-icon text-xs mt-0.5">→</span>
                   </Link>
                 ))}
               </div>
@@ -113,30 +112,40 @@ export default function HomePage() {
             <h2 className="font-display font-bold text-[clamp(1.75rem,3vw,2.75rem)] tracking-tight text-[hsl(var(--foreground))]">
               Últimas novedades por sección
             </h2>
-            <p className="text-sm md:text-base text-[hsl(var(--text-body))] leading-relaxed mt-3">
+            <p className="text-sm md:text-base text-foreground/85 leading-relaxed mt-3">
               Explora nuestros últimos briefings, ensayos y actualizaciones. Selección editorial para aportar criterio técnico y jurídico.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sectionGroups.map((sec) => (
+            {sectionGroups.map((sec, secIdx) => (
               <div key={sec.route} className="border border-[hsl(var(--divider)/0.5)]">
-                <Link href={sec.href} className="group block relative aspect-[2.29/1] overflow-hidden bg-[hsl(var(--muted))] border-b border-[hsl(var(--divider)/0.3)]">
-                  <span className="absolute inset-0 flex items-center justify-center p-6 font-display text-[clamp(1.75rem,4vw,3.5rem)] leading-[0.9] tracking-[-0.03em] text-foreground/15 group-hover:text-newsroom/25 transition-colors duration-300 select-none">
-                    {sec.label}
+                <div className="h-[3px] bg-newsroom" />
+                <div className="relative overflow-hidden bg-[hsl(var(--muted))] border-b border-[hsl(var(--divider)/0.3)]">
+                  <span className="absolute top-3 right-5 font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.85] tracking-[-0.08em] text-foreground/5 select-none pointer-events-none">
+                    {String(secIdx + 1).padStart(2, "0")}
                   </span>
-                </Link>
+                  <Link href={sec.href} className="block px-5 md:px-6 py-5 md:py-6">
+                    <span className="font-display text-[11px] tracking-[0.2em] text-newsroom">
+                      {sec.label.toUpperCase()}
+                    </span>
+                  </Link>
+                </div>
 
                 <div className="divide-y divide-[hsl(var(--divider)/0.3)]">
-                  {sec.entries.slice(0, 2).map((entry) => (
+                  {sec.entries.slice(0, 2).map((entry, entryIdx) => (
                     <Link key={entry.slug} href={entry.url} className="group block p-5 md:p-6 hover:bg-[hsl(var(--highlight))] transition-colors">
                       <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0 flex-1">
-                          <h3 className="font-display font-bold text-lg md:text-xl leading-[1.05] tracking-tight text-[hsl(var(--foreground))] pr-2">
+                          <h3 className={`font-display font-bold leading-[0.95] tracking-tight text-foreground ${
+                            entryIdx === 0
+                              ? "text-2xl md:text-3xl"
+                              : "text-lg md:text-xl"
+                          }`}>
                             {entry.title}
                           </h3>
                           {entry.excerpt && (
-                            <p className="text-xs md:text-sm text-[hsl(var(--text-body))] leading-relaxed mt-2 line-clamp-2">
+                            <p className="text-xs md:text-sm text-foreground/80 leading-relaxed mt-3 line-clamp-2">
                               {entry.excerpt}
                             </p>
                           )}
@@ -144,13 +153,13 @@ export default function HomePage() {
                             {formatDate(entry.dateMs)}
                           </span>
                         </div>
-                        <span className="shrink-0 text-[hsl(var(--foreground)/0.3)] group-hover:text-[hsl(var(--foreground))] transition-all duration-200 go-icon text-lg mt-1">→</span>
+                        <span className="shrink-0 text-foreground/30 group-hover:text-foreground transition-all duration-200 go-icon text-lg mt-1">→</span>
                       </div>
                     </Link>
                   ))}
                 </div>
 
-                <Link href={sec.href} className="block border-t border-[hsl(var(--divider)/0.3)] p-3 md:p-4 text-center text-[11px] font-medium uppercase tracking-[0.15em] text-[hsl(var(--text-caption))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--highlight))] transition-colors">
+                <Link href={sec.href} className="block border-t border-[hsl(var(--divider)/0.3)] p-3 md:p-4 text-center text-[11px] font-medium uppercase tracking-[0.15em] text-foreground/60 hover:text-foreground hover:bg-[hsl(var(--highlight))] transition-colors">
                   Ver todas <span className="go-icon">→</span>
                 </Link>
               </div>
