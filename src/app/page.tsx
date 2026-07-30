@@ -46,28 +46,33 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="relative overflow-hidden bg-[hsl(var(--muted))] border-b border-[hsl(var(--divider))]">
-        <div className="absolute inset-0">
-          <Image src="/images/heroes/home-hero.jpg" alt="" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsla(0,0%,2.4%,0.92)] via-[hsla(0,0%,2.4%,0.7)] to-[hsla(0,0%,2.4%,0.3)]" />
-        </div>
-        <div className="container-wide relative z-10 py-24 md:py-36">
-          <h1 className="font-display font-black text-[clamp(3.5rem,8vw,7rem)] leading-[0.85] tracking-[-0.04em] text-[hsl(var(--foreground))] max-w-[90%]">
-            Derecho Artificial
-          </h1>
-          <p className="font-display font-bold text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.1] tracking-[-0.02em] text-[hsl(var(--foreground)/0.8)] mt-4 max-w-[50%]">
-            Derecho, ética y regulación de la IA
-          </p>
-          <p className="text-sm md:text-base text-[hsl(var(--text-body))] leading-relaxed mt-4 max-w-[40%]">
-            Análisis jurídico del Reglamento IA y su impacto legal. Guías prácticas para abogados y profesionales del compliance.
-          </p>
-          <div className="flex gap-4 mt-8">
-            <Link href="/guias-ia" className="inline-flex items-center px-6 py-3 bg-[hsl(var(--foreground))] text-[hsl(var(--background))] text-sm font-semibold tracking-wide uppercase hover:opacity-85 transition-opacity">
-              Ver guías IA <span className="go-icon ml-2">→</span>
-            </Link>
-            <Link href="#secciones" className="inline-flex items-center px-6 py-3 border border-[hsl(var(--border))] text-[hsl(var(--foreground))] text-sm font-semibold tracking-wide uppercase hover:bg-[hsl(var(--card))] transition-colors">
-              Explorar secciones <span className="go-icon ml-2">→</span>
-            </Link>
+      <section className="border-b border-[hsl(var(--divider))]">
+        <div className="container-wide py-20 md:py-28 lg:py-36">
+          <div className="max-w-[90%] lg:max-w-[80%]">
+            <span className="font-display text-xs tracking-[0.2em] text-newsroom mb-6 block">
+              DERECHO E INTELIGENCIA ARTIFICIAL
+            </span>
+            <h1 className="font-display text-[clamp(3rem,10vw,9rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
+              Derecho<br />Artificial
+            </h1>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:mt-10">
+            <div>
+              <p className="font-display text-xl md:text-2xl leading-[1.15] tracking-[-0.02em] text-foreground/85">
+                Derecho, ética y regulación de la IA
+              </p>
+              <p className="text-sm md:text-base text-body leading-relaxed mt-4 max-w-lg">
+                Análisis jurídico del Reglamento IA y su impacto legal. Guías prácticas para abogados y profesionales del compliance.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 items-start md:justify-end md:self-end">
+              <Link href="/guias-ia" className="inline-flex items-center px-6 py-3 bg-newsroom text-white text-sm font-semibold tracking-wide uppercase hover:opacity-85 transition-opacity">
+                Ver guías IA <span className="go-icon ml-2">→</span>
+              </Link>
+              <Link href="#secciones" className="inline-flex items-center px-6 py-3 border border-[hsl(var(--border))] text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-[hsl(var(--card))] transition-colors">
+                Explorar secciones <span className="go-icon ml-2">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

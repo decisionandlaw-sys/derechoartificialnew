@@ -16,9 +16,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Barlow Condensed"', '"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-archivo)', '"Barlow Condensed"', 'system-ui', '-apple-system', 'sans-serif'],
         sans: ['"Inter"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
         serif: ['"PT Serif"', 'Georgia', '"Times New Roman"', 'serif'],
+        condensed: ['"Barlow Condensed"', '"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.4' }],
@@ -71,6 +72,7 @@ export default {
         caption: "hsl(var(--text-caption))",
         divider: "hsl(var(--divider))",
         highlight: "hsl(var(--highlight))",
+        newsroom: "#D9381E",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&family=PT+Serif:wght@400;400i;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=PT+Serif:wght@400;400i;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -13,75 +13,42 @@
     @apply font-sans bg-background text-foreground antialiased text-base;
   }
 
-  h1, h2, h3, h4 {
-    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
-  }
-
   p {
     @apply text-left;
   }
 
   :root {
-    --background: 0 0% 2.4%;
-    --foreground: 0 0% 89%;
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 89%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 89%;
-    --primary: 0 0% 89%;
-    --primary-foreground: 0 0% 6%;
-    --secondary: 0 0% 11%;
-    --secondary-foreground: 0 0% 89%;
-    --muted: 0 0% 11%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 16.9%;
-    --accent-foreground: 0 0% 89%;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 8 76% 48%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 89%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 8 76% 48%;
     --radius: 0rem;
-    --text-body: 0 0% 75%;
-    --text-caption: 0 0% 55%;
-    --divider: 0 0% 15%;
-    --highlight: 0 0% 10%;
-  }
-
-  .light {
-    --background: 0 0% 89%;
-    --foreground: 0 0% 2.4%;
-    --card: 0 0% 93%;
-    --card-foreground: 0 0% 2.4%;
-    --popover: 0 0% 93%;
-    --popover-foreground: 0 0% 2.4%;
-    --primary: 0 0% 89%;
-    --primary-foreground: 0 0% 6%;
-    --secondary: 0 0% 82%;
-    --secondary-foreground: 0 0% 2.4%;
-    --muted: 0 0% 82%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 75%;
-    --accent-foreground: 0 0% 2.4%;
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 65%;
-    --input: 0 0% 65%;
-    --ring: 0 0% 2.4%;
-    --radius: 0rem;
-    --text-body: 0 0% 20%;
-    --text-caption: 0 0% 45%;
-    --divider: 0 0% 75%;
-    --highlight: 0 0% 85%;
+    --text-body: 0 0% 72%;
+    --text-caption: 0 0% 48%;
+    --divider: 0 0% 14%;
+    --highlight: 0 0% 8%;
   }
 }
 
 @layer components {
   .font-display {
-    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
+    font-family: var(--font-archivo), "Barlow Condensed", system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
   }
 
   .scrollbar-none {
@@ -159,12 +126,11 @@
   }
 
   .prose-lg {
-    h1, h2, h3, h4 {
-      font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-    }
+  h1, h2, h3, h4 {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+  }
     p, li {
       font-family: "PT Serif", Georgia, "Times New Roman", serif;
     }
@@ -240,10 +206,10 @@
 
   /* Serif headings → display font in page content areas */
   h1.font-serif, h2.font-serif, h3.font-serif, h4.font-serif {
-    font-family: "Barlow Condensed", "Inter", system-ui, -apple-system, sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
-    line-height: 0.95 !important;
+    font-family: var(--font-archivo), "Barlow Condensed", system-ui, -apple-system, sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 0.92 !important;
   }
 
   /* Dark theme override: bg-white → card */
