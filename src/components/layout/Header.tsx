@@ -7,22 +7,22 @@ import { Search, X } from "lucide-react";
 
 const navigationES = [
   { name: "Firma Scarpa", href: "/firma-scarpa" },
-  { name: "Normativa IA", href: "/normativa" },
-  { name: "Jurisprudencia IA", href: "/jurisprudencia" },
-  { name: "Guías IA", href: "/guias-ia" },
-  { name: "Propiedad Intelectual IA", href: "/propiedad-intelectual-ia" },
-  { name: "Ética IA", href: "/etica-ia" },
+  { name: "Normativa\u00A0IA", href: "/normativa" },
+  { name: "Jurisprudencia\u00A0IA", href: "/jurisprudencia" },
+  { name: "Guías\u00A0IA", href: "/guias-ia" },
+  { name: "Propiedad Intelectual\u00A0IA", href: "/propiedad-intelectual-ia" },
+  { name: "Ética\u00A0IA", href: "/etica-ia" },
   { name: "IA Global", href: "/global-ia" },
 ];
 
 const navigationEN = [
   { name: "Scarpa Firm", href: "/firma-scarpa" },
-  { name: "AI Regulation", href: "/normativa" },
-  { name: "AI Jurisprudence", href: "/jurisprudencia" },
-  { name: "AI News", href: "/en/ai-news" },
-  { name: "AI Intellectual Property", href: "/propiedad-intelectual-ia" },
-  { name: "AI Ethics", href: "/etica-ia" },
-  { name: "Global AI", href: "/global-ia" },
+  { name: "AI\u00A0Regulation", href: "/normativa" },
+  { name: "AI\u00A0Jurisprudence", href: "/jurisprudencia" },
+  { name: "AI\u00A0News", href: "/en/ai-news" },
+  { name: "AI Intellectual\u00A0Property", href: "/propiedad-intelectual-ia" },
+  { name: "AI\u00A0Ethics", href: "/etica-ia" },
+  { name: "Global\u00A0AI", href: "/global-ia" },
 ];
 
 const esEnRouteMap: Record<string, string> = {

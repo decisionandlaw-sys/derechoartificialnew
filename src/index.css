@@ -242,7 +242,7 @@
   }
 
   .article-pdf-btn {
-    @apply inline-flex items-center justify-center px-5 py-2.5 bg-[hsl(var(--foreground))] text-[hsl(var(--background))] text-xs font-semibold tracking-wide uppercase hover:opacity-80 transition-opacity;
+    @apply inline-flex items-center justify-center px-5 py-2.5 border-2 border-[hsl(var(--accent))] text-[hsl(var(--accent))] text-xs font-semibold tracking-wide uppercase bg-transparent hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))] transition-colors;
   }
 
   /* Dark theme global overrides — replaces light-themed utility classes */
