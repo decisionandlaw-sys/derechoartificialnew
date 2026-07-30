@@ -35,11 +35,11 @@ export async function RelatedArticles({
 
   if (related.length === 0) {
     return (
-      <section className="mt-12 border-t border-divider/20 pt-6">
+      <section className="mt-12 pt-8 border-t border-[hsl(var(--divider)/0.3)]">
         <h2 className="font-display font-bold text-xl tracking-tight text-foreground mb-4">
           Artículos relacionados
         </h2>
-        <p className="text-xs text-caption">Próximamente más análisis relacionados.</p>
+        <p className="text-xs text-[hsl(var(--text-caption))]">Próximamente más análisis relacionados.</p>
       </section>
     );
   }
@@ -51,32 +51,37 @@ export async function RelatedArticles({
 
 function RelatedArticlesList({ articles, title }: { articles: any[]; title: string }) {
   return (
-    <section className="mt-12 border-t border-divider/20 pt-6">
-      <h2 className="font-display font-bold text-xl tracking-tight text-foreground mb-5">{title}</h2>
+    <section className="mt-12 pt-8 border-t border-[hsl(var(--divider)/0.3)]">
+      <h2 className="font-display font-bold text-xl tracking-tight text-foreground mb-6">{title}</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((item) => (
           <a
             key={item.url}
             href={item.url}
-            className="group block border border-divider/20 p-4 hover:border-foreground/30 transition-colors"
+            className="group block border border-[hsl(var(--divider)/0.3)] hover:border-[hsl(var(--accent))] transition-colors"
           >
-            <h3 className="font-display font-bold text-base tracking-tight text-foreground mb-2 line-clamp-2">
-              {item.frontmatter.title}
-              <span className="inline-flex ml-2 text-foreground/40 group-hover:text-foreground transition-all duration-200 go-icon text-xs">→</span>
-            </h3>
-            <div className="flex items-center justify-between mt-2">
-              <time className="text-[10px] text-caption">{item.frontmatter.date}</time>
-              {item.frontmatter.category && (
-                <span className="text-[10px] font-medium text-caption uppercase tracking-[0.1em] border border-divider/20 px-1.5 py-0.5">
-                  {item.frontmatter.category.replace("-", " ")}
-                </span>
+            <div className="h-[2px] bg-[hsl(var(--accent))]" />
+            <div className="p-5">
+              <h3 className="font-display font-bold text-base leading-[0.95] tracking-tight text-foreground group-hover:text-[hsl(var(--accent))] transition-colors mb-3 line-clamp-2">
+                {item.frontmatter.title}
+                <span className="inline-flex ml-2 text-foreground/30 group-hover:text-foreground transition-all duration-200 go-icon text-xs">→</span>
+              </h3>
+              <div className="flex items-center justify-between gap-2">
+                <time className="text-[11px] text-[hsl(var(--text-caption))] shrink-0">
+                  {(item.frontmatter.date || "").replace(/-/g, "/")}
+                </time>
+                {item.frontmatter.category && (
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[hsl(var(--accent))] shrink-0">
+                    {item.frontmatter.category.replace("-", " ")}
+                  </span>
+                )}
+              </div>
+              {item.excerpt && (
+                <p className="text-xs text-[hsl(var(--text-body))] mt-3 line-clamp-2 leading-relaxed">
+                  {item.excerpt}
+                </p>
               )}
             </div>
-            {item.excerpt && (
-              <p className="text-xs text-body mt-2 line-clamp-2">
-                {item.excerpt}
-              </p>
-            )}
           </a>
         ))}
       </div>

@@ -161,6 +161,12 @@
     color: hsl(var(--accent)) !important;
   }
 
+  .prose-editorial h2,
+  .prose-editorial h3,
+  .prose-editorial h4 {
+    color: hsl(var(--foreground));
+  }
+
   .article-toc {
     border-top: 1px solid hsl(var(--divider) / 0.5);
     border-bottom: 1px solid hsl(var(--divider) / 0.5);
