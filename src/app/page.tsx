@@ -1,5 +1,4 @@
 ﻿import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from '@/lib/mdx-utils';
 
@@ -21,19 +20,26 @@ export const metadata: Metadata = {
 };
 
 const SECTIONS = [
-  { route: "firma-scarpa",             label: "Firma Scarpa",             href: "/firma-scarpa",             image: "/images/heroes/firma-scarpa-hero.jpg" },
-  { route: "normativa",                label: "Normativa IA",             href: "/normativa",                image: "/images/heroes/normativa-ia-hero.jpg" },
-  { route: "jurisprudencia",           label: "Jurisprudencia IA",        href: "/jurisprudencia",           image: "/images/heroes/jurisprudencia-ia-hero.jpg" },
-  { route: "guias-ia",                 label: "Guías IA",                 href: "/guias-ia",                 image: "/images/heroes/guias-ia-hero.jpg" },
-  { route: "propiedad-intelectual-ia", label: "Propiedad Intelectual IA", href: "/propiedad-intelectual-ia", image: "/images/heroes/propiedad-intelectual-ia-hero.jpg" },
-  { route: "etica-ia",                 label: "Ética IA",                 href: "/etica-ia",                 image: "/images/heroes/etica-ia-hero.jpg" },
-  { route: "global-ia",                label: "IA Global",                href: "/global-ia",                image: "/images/heroes/ia-global-hero.jpg" },
+  { route: "firma-scarpa",             label: "Firma Scarpa",             href: "/firma-scarpa" },
+  { route: "normativa",                label: "Normativa IA",             href: "/normativa" },
+  { route: "jurisprudencia",           label: "Jurisprudencia IA",        href: "/jurisprudencia" },
+  { route: "guias-ia",                 label: "Guías IA",                 href: "/guias-ia" },
+  { route: "propiedad-intelectual-ia", label: "Propiedad Intelectual IA", href: "/propiedad-intelectual-ia" },
+  { route: "etica-ia",                 label: "Ética IA",                 href: "/etica-ia" },
+  { route: "global-ia",                label: "IA Global",                href: "/global-ia" },
 ];
 
 function formatDate(value: string | number): string {
   const d = typeof value === "number" ? new Date(value) : new Date(value);
   if (Number.isNaN(d.getTime())) return "";
   return d.toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function sectionLabelForUrl(url: string): string {
+  for (const s of SECTIONS) {
+    if (url.startsWith(`/${s.route}/`)) return s.label;
+  }
+  return "";
 }
 
 export default function HomePage() {
@@ -83,13 +89,16 @@ export default function HomePage() {
                     href={post.url}
                     className="group py-3 border-t border-[hsl(var(--divider)/0.3)] first:border-t-0"
                   >
+                    <span className="font-display text-[9px] tracking-[0.15em] text-newsroom block mb-1">
+                      {sectionLabelForUrl(post.url).toUpperCase()}
+                    </span>
                     <h3 className="font-display text-sm md:text-base leading-[1.15] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150 pr-1">
                       {post.title}
-                      <span className="inline-flex ml-1.5 text-foreground/30 group-hover:text-newsroom transition-all duration-150 go-icon">→</span>
                     </h3>
                     <span className="text-[11px] text-caption mt-1.5 block">
                       {formatDate(post.dateMs)}
                     </span>
+                    <span className="inline-flex text-foreground/30 group-hover:text-newsroom transition-all duration-150 go-icon text-xs mt-0.5">→</span>
                   </Link>
                 ))}
               </div>
@@ -112,14 +121,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sectionGroups.map((sec) => (
               <div key={sec.route} className="border border-[hsl(var(--divider)/0.5)]">
-                <Link href={sec.href} className="group block relative aspect-[2.29/1] overflow-hidden bg-[hsl(var(--muted))]">
-                  <Image src={sec.image} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 50vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsla(0,0%,2.4%,0.85)] to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                    <span className="font-display font-bold text-xl md:text-2xl text-[hsl(var(--foreground))] tracking-tight">
-                      {sec.label}
-                    </span>
-                  </div>
+                <Link href={sec.href} className="group block relative aspect-[2.29/1] overflow-hidden bg-[hsl(var(--muted))] border-b border-[hsl(var(--divider)/0.3)]">
+                  <span className="absolute inset-0 flex items-center justify-center p-6 font-display text-[clamp(1.75rem,4vw,3.5rem)] leading-[0.9] tracking-[-0.03em] text-foreground/15 group-hover:text-newsroom/25 transition-colors duration-300 select-none">
+                    {sec.label}
+                  </span>
                 </Link>
 
                 <div className="divide-y divide-[hsl(var(--divider)/0.3)]">
