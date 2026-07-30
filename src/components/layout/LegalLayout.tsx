@@ -29,7 +29,7 @@ export function LegalLayout({
       ) : (
         <section className="border-b border-divider/30">
           <div className="container-narrow py-10 md:py-14">
-            <span className="inline-block mb-4 text-[10px] font-semibold uppercase tracking-[0.15em] text-caption border border-divider/30 px-2 py-1 rounded-none">
+            <span className="inline-block mb-4 text-[10px] font-semibold uppercase tracking-[0.15em] text-caption border border-divider/30 px-3 py-1 rounded-none">
               {category}
             </span>
             <h1 className="font-display font-black text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.9] tracking-[-0.03em] text-foreground mb-5">
@@ -64,7 +64,7 @@ export function LegalLayout({
         </section>
       )}
 
-      <section className="py-10 md:py-14">
+      <section className="pt-16 pb-10 md:py-14">
         <div className="container-narrow">
           <div className="prose-editorial">
             {children}
