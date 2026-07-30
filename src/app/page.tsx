@@ -159,7 +159,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <Link href={sec.href} className="block px-5 md:px-6 py-3 md:py-4 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/60 hover:text-[hsl(var(--newsroom))] border-t border-[hsl(var(--divider)/0.3)] hover:bg-[hsl(var(--highlight))] transition-colors">
+                <Link href={sec.href} className="block p-5 md:p-6 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/60 hover:text-newsroom hover:bg-[hsl(var(--highlight))] transition-colors">
                   Ver todas <span className="go-icon">→</span>
                 </Link>
               </div>
