@@ -17,4 +17,5 @@ next-env.d.ts
 backups/
 content/
 content-en/
-global-ia/
+/global-ia/
+/images/

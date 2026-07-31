@@ -152,7 +152,7 @@ export default async function NormativaPage() {
   const config: SectionConfig = {
     title: "Normativa",
     description: "Marco regulatorio completo sobre Inteligencia Artificial: AI Act europeo, normativa española, directrices de AESIA y estándares internacionales de cumplimiento para empresas y profesionales del sector legal.",
-    heroImage: "/images/heroes/normativa-ia-hero.jpg",
+    heroImage: "/images/sections/normativa-ia.png",
     heroAlt: "Normativa",
     footerTitle: "Enfoque normativo",
     footerDescription: "Análisis exhaustivo del marco regulatorio de IA con enfoque práctico para profesionales. Desglosamos obligaciones, plazos de cumplimiento y responsabilidades para facilitar la implementación efectiva en organizaciones españolas y europeas.",

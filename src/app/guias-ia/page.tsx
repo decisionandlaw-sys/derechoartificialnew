@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { getAllPosts } from "@/lib/mdx-utils";
+import { SectionBanner } from "@/components/layout/SectionBanner";
 
 export const revalidate = 3600;
 
@@ -81,18 +82,8 @@ export default async function ActualidadIAPage() {
       <StructuredData data={breadcrumbJsonLd} />
       <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Guías IA", href: "/guias-ia" }]} />
 
-      <main className="section-spacing">
-        <div className="relative w-full h-64 md:h-96">
-          <img
-            src="/images/heroes/guias-ia-hero.jpg"
-            alt="Guías IA"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
-          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-            <h1 className="font-display font-black text-[clamp(2rem,5vw,4rem)] text-foreground leading-[0.9] tracking-[-0.03em]">Guías IA</h1>
-          </div>
-        </div>
+      <main className="pb-16 md:pb-24">
+        <SectionBanner title="Guías IA" image="/images/heroes/guias-ia-hero.jpg" />
 
         <div className="container mx-auto px-4 py-8">
           <p className="lead text-left max-w-3xl">

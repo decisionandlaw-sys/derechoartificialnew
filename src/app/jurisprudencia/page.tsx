@@ -144,7 +144,7 @@ export default async function JurisprudenciaPage() {
   const config: SectionConfig = {
     title: "Jurisprudencia",
     description: "Repositorio crítico de resoluciones judiciales y administrativas que definen el Derecho de la IA. Analizamos sentencias que sientan precedente sobre transparencia algorítmica, responsabilidad civil y protección de derechos fundamentales en la era digital.",
-    heroImage: "/images/heroes/jurisprudencia-ia-hero.jpg",
+    heroImage: "/images/sections/jurisprudencia-ia.png",
     heroAlt: "Jurisprudencia",
     footerTitle: "Enfoque jurisprudencial",
     footerDescription: "Análisis crítico de precedentes judiciales con impacto directo en la práctica profesional. Cada sentencia se examina desde la perspectiva del Derecho aplicable, identificando estándares y tendencias que moldean el futuro de la regulación de IA.",

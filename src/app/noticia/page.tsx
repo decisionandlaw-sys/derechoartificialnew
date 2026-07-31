@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllNoticias } from "@/lib/mdx-utils";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
+import { SectionBanner } from "@/components/layout/SectionBanner";
 
 export const metadata: Metadata = {
   title: "Noticias - Derecho Artificial",
@@ -43,21 +44,18 @@ export default async function NoticiaPage() {
   return (
     <>
       <StructuredData data={breadcrumbJsonLd} />
-      <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <div className="border-b border-divider/30">
-          <div className="max-w-5xl mx-auto px-6 py-24">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-caption mb-4">Actualidad</p>
-            <h1 className="font-display font-black text-[clamp(2rem,5vw,4rem)] text-foreground leading-[0.9] tracking-[-0.03em] mb-4">Noticias</h1>
-            <p className="text-base text-body max-w-2xl leading-relaxed">
-              Últimas noticias sobre inteligencia artificial, derecho, tecnología y regulación. 
-              Mantente informado sobre los desarrollos más recientes en IA legal.
-            </p>
-          </div>
+      <main className="pb-16 md:pb-24">
+        <SectionBanner title="Actualidad IA" image="/images/sections/actualidad-ia.png" />
+
+        <div className="container mx-auto px-4 py-8">
+          <p className="lead text-left max-w-3xl">
+            Últimas noticias sobre inteligencia artificial, derecho, tecnología y regulación.
+            Mantente informado sobre los desarrollos más recientes en IA legal.
+          </p>
         </div>
 
         {/* Content Section */}
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 pt-4 pb-16">
           <div className="grid gap-6">
             {noticiaPosts.length === 0 ? (
               <div className="text-center py-12">
@@ -116,7 +114,7 @@ export default async function NoticiaPage() {
             )}
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }

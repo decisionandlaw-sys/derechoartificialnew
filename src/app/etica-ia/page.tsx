@@ -50,7 +50,7 @@ export default async function EticaIAPage() {
   const config: SectionConfig = {
     title: "Ética IA",
     description: "Análisis sobre ética algorítmica, responsabilidad profesional y gobernanza de sistemas de IA. Casos y guías sobre riesgos éticos, negligencia profesional y su impacto en derechos fundamentales.",
-    heroImage: "/images/heroes/etica-ia-hero.jpg",
+    heroImage: "/images/sections/etica-ia.png",
     heroAlt: "Ética IA",
     footerTitle: "Enfoque ético",
     footerDescription: "Exploramos las implicaciones morales y profesionales de la implementación de sistemas de IA. Analizamos casos reales de sesgo algorítmico, responsabilidad legal y los límites éticos de la automatización en el ámbito legal.",

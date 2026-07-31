@@ -52,7 +52,7 @@ export default async function PropiedadIntelectualIAPage() {
   const config: SectionConfig = {
     title: "Propiedad Intelectual IA",
     description: "Análisis exhaustivo sobre propiedad intelectual en la era de la inteligencia artificial. Derechos de autor, marcas, patentes y los nuevos desafíos legales que plantea la IA generativa.",
-    heroImage: "/images/heroes/propiedad-intelectual-ia-hero.jpg",
+    heroImage: "/images/sections/propiedad-intelectual-ia.png",
     heroAlt: "Propiedad Intelectual IA",
     footerTitle: "Enfoque de propiedad intelectual",
     footerDescription: "Exploramos las tensiones entre la creatividad humana y la generación automatizada. Analizamos casos clave como Disney vs. Midjourney, Thomson Reuters vs. Ross Intelligence, y el futuro del copyright en sistemas de IA.",

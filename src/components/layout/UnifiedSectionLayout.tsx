@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
+import { SectionBanner } from "@/components/layout/SectionBanner";
 
 export type UnifiedItem = {
   id: string;
@@ -42,24 +42,9 @@ export function UnifiedSectionLayout({ config, items }: UnifiedSectionLayoutProp
   return (
     <>
       <StructuredData data={breadcrumbJsonLd} />
-      <main className="section-spacing">
-        {/* Hero Section */}
-        <div className="relative w-full h-64 md:h-96">
-          <Image
-            src={config.heroImage}
-            alt={config.heroAlt}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" />
-          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-2xl">
-              {config.title}
-            </h1>
-          </div>
-        </div>
+      <main className="pb-16 md:pb-24">
+        {/* Hero Banner */}
+        <SectionBanner title={config.title} image={config.heroImage} alt={config.heroAlt} />
 
         {/* Description Section */}
         <div className="container mx-auto px-4 py-8">
