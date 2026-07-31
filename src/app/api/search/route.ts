@@ -1,6 +1,18 @@
 import { NextResponse } from "next/server";
 import { getAllPosts } from "@/lib/mdx-utils";
 
+const SECTION_LABELS: Record<string, string> = {
+  jurisprudencia: "Jurisprudencia",
+  normativa: "Normativa",
+  "firma-scarpa": "Firma Scarpa",
+  "etica-ia": "Ética IA",
+  "propiedad-intelectual-ia": "Propiedad Intelectual IA",
+  "global-ia": "IA Global",
+  "guias-ia": "Guías IA",
+  "glosario-ia-legal": "Glosario",
+  noticia: "Actualidad",
+};
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("q")?.trim().toLowerCase() ?? "";
@@ -22,14 +34,16 @@ export async function GET(request: Request) {
     })
     .slice(0, 8)
     .map((post) => {
-      const category = (post.frontmatter.category || "blog").toString().toLowerCase();
+      const route = (post.url || "/").split("/")[1] || "";
+      const category =
+        SECTION_LABELS[route] ?? (post.frontmatter.category || "blog").toString();
       return {
         slug: post.slug,
         title: post.frontmatter.title,
         category,
         date: post.frontmatter.date,
         excerpt: post.excerpt,
-        url: `/${category}/${post.slug}`,
+        url: post.url,
       };
     });
 

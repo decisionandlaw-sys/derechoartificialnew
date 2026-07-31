@@ -16,16 +16,24 @@ type SearchResult = {
 
 interface SearchBarProps {
   className?: string;
+  focusOnMount?: boolean;
 }
 
-export function SearchBar({ className }: SearchBarProps) {
+export function SearchBar({ className, focusOnMount }: SearchBarProps) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const timeoutRef = useRef<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (focusOnMount) {
+      inputRef.current?.focus();
+    }
+  }, [focusOnMount]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -131,6 +139,7 @@ export function SearchBar({ className }: SearchBarProps) {
       <div className="flex items-center gap-2 rounded-md border border-input bg-background px-2 py-1 text-sm focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 focus-within:ring-offset-background">
         <Search className="h-4 w-4 text-muted-foreground" />
         <input
+          ref={inputRef}
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}

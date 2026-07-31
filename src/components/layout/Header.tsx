@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Search, X } from "lucide-react";
+import { SearchBar } from "@/components/SearchBar";
 
 const navigationES = [
   { name: "Firma Scarpa", href: "/firma-scarpa" },
@@ -82,7 +83,14 @@ function MegaNav({
 }) {
   return (
     <>
-      {open && <div className="fixed inset-0 z-40 bg-[rgba(0,0,0,0.6)]" onClick={onClose} />}
+      {open && (
+        <button
+          type="button"
+          aria-label="Cerrar menú"
+          onClick={onClose}
+          className="fixed inset-0 z-40 bg-[rgba(0,0,0,0.6)] cursor-default"
+        />
+      )}
       <div
         className={`fixed top-0 right-0 z-50 h-full w-[min(380px,100%)] bg-background border-l border-[hsl(var(--border))] transition-transform duration-300 ease-[cubic-bezier(.39,.575,.565,1)] ${
           open ? "translate-x-0" : "translate-x-full"
@@ -156,6 +164,7 @@ function MegaNav({
 export function Header() {
   const pathname = usePathname() ?? "/";
   const [megaNavOpen, setMegaNavOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const isEnglish = pathname.startsWith("/en");
   const navigation = isEnglish ? navigationEN : navigationES;
@@ -168,6 +177,15 @@ export function Header() {
     }
     return () => { document.body.style.overflow = ""; };
   }, [megaNavOpen]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSearchOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [searchOpen]);
 
   const getAlternateRoute = () => {
     if (isEnglish) {
@@ -241,8 +259,11 @@ export function Header() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 type="button"
+                onClick={() => setSearchOpen(true)}
                 className="text-foreground/70 hover:text-foreground transition-colors"
                 aria-label="Buscar"
+                aria-expanded={searchOpen}
+                aria-haspopup="dialog"
               >
                 <Search className="h-4 w-4" strokeWidth={2} />
               </button>
@@ -259,6 +280,26 @@ export function Header() {
           </div>
         </div>
       </header>
+
+      {searchOpen && (
+        <>
+          <button
+            type="button"
+            aria-label="Cerrar buscador"
+            onClick={() => setSearchOpen(false)}
+            className="fixed inset-0 z-40 bg-[rgba(0,0,0,0.6)] cursor-default"
+          />
+          <div
+            role="dialog"
+            aria-label="Buscador"
+            className="fixed inset-x-0 top-[52px] z-50 border-b border-[hsl(var(--divider))] bg-background shadow-lg"
+          >
+            <div className="container-wide py-4">
+              <SearchBar focusOnMount className="mx-auto w-full max-w-2xl" />
+            </div>
+          </div>
+        </>
+      )}
 
       <div className="h-[52px]" />
     </>
