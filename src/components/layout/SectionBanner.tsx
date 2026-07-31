@@ -1,5 +1,26 @@
 import Image from "next/image";
 
+interface SectionImageStyle {
+  objectPosition?: string;
+  gradientClassName?: string;
+}
+
+const SECTION_IMAGE_STYLES: Record<string, SectionImageStyle> = {
+  "/images/sections/normativa-ia.png": { objectPosition: "28% 55%" },
+  "/images/sections/jurisprudencia-ia.png": {
+    objectPosition: "50% 52%",
+    gradientClassName:
+      "bg-gradient-to-t from-black/95 via-black/60 via-[58%] to-transparent",
+  },
+  "/images/sections/firma-scarpa.png": { objectPosition: "62% 68%" },
+  "/images/sections/etica-ia.png": { objectPosition: "35% 50%" },
+  "/images/sections/propiedad-intelectual-ia.png": {
+    objectPosition: "55% 58%",
+  },
+  "/images/sections/ia-global.png": { objectPosition: "60% 58%" },
+  "/images/sections/actualidad-ia.png": { objectPosition: "60% 58%" },
+};
+
 interface SectionBannerProps {
   title: string;
   image: string;
@@ -8,6 +29,10 @@ interface SectionBannerProps {
 }
 
 export function SectionBanner({ title, image, alt, kicker }: SectionBannerProps) {
+  const imageStyle = SECTION_IMAGE_STYLES[image];
+  const gradientClassName =
+    imageStyle?.gradientClassName ??
+    "bg-gradient-to-t from-black/85 via-black/25 to-transparent";
   return (
     <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden border-t-[3px] border-[hsl(var(--accent))]">
       <Image
@@ -17,8 +42,9 @@ export function SectionBanner({ title, image, alt, kicker }: SectionBannerProps)
         priority
         sizes="100vw"
         className="object-cover"
+        style={imageStyle?.objectPosition ? { objectPosition: imageStyle.objectPosition } : undefined}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+      <div className={`absolute inset-0 ${gradientClassName}`} />
       <div className="absolute inset-0 flex items-end">
         <div className="container mx-auto px-4 pb-10 md:pb-14">
           {kicker && (
