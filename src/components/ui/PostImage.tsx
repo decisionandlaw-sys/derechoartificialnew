@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface PostImageProps {
   src: string;
@@ -19,7 +20,11 @@ export function PostImage({
 }: PostImageProps) {
   return (
     <div
-      className={`relative w-full overflow-hidden bg-[hsl(var(--muted))] ${aspectClassName} ${className}`}
+      className={cn(
+        "relative w-full overflow-hidden bg-[hsl(var(--muted))]",
+        aspectClassName,
+        className,
+      )}
     >
       <Image
         src={src}

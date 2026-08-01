@@ -88,17 +88,28 @@ export default function HomePage() {
                   <Link
                     key={post.slug}
                     href={post.url}
-                    className="group py-4 border-t border-[hsl(var(--divider)/0.5)] first:border-t-0"
+                    className="group py-4 border-t border-[hsl(var(--divider)/0.5)] first:border-t-0 flex items-start justify-between gap-4"
                   >
-                    <span className="font-display text-[11px] tracking-[0.15em] text-newsroom block mb-1.5">
-                      {sectionLabelForUrl(post.url).toUpperCase()}
-                    </span>
-                    <h3 className="font-display text-lg md:text-xl leading-[0.95] tracking-tight font-bold text-foreground group-hover:text-newsroom transition-colors duration-150">
-                      {post.frontmatter.title}
-                    </h3>
-                    <span className="text-[11px] text-[hsl(var(--text-caption))] mt-2 block">
-                      {formatDate(post.dateMs)}
-                    </span>
+                    <div className="min-w-0 flex-1">
+                      <span className="font-display text-[11px] tracking-[0.15em] text-newsroom block mb-1.5">
+                        {sectionLabelForUrl(post.url).toUpperCase()}
+                      </span>
+                      <h3 className="font-display text-lg md:text-xl leading-[0.95] tracking-tight font-bold text-foreground group-hover:text-newsroom transition-colors duration-150">
+                        {post.frontmatter.title}
+                      </h3>
+                      <span className="text-[11px] text-[hsl(var(--text-caption))] mt-2 block">
+                        {formatDate(post.dateMs)}
+                      </span>
+                    </div>
+                    {getFeaturedImage(post) && (
+                      <PostImage
+                        src={getFeaturedImage(post)!}
+                        alt={post.frontmatter.title}
+                        sizes="64px"
+                        aspectClassName="w-14 h-14 md:w-16 md:h-16"
+                        className="shrink-0 mt-1"
+                      />
+                    )}
                   </Link>
                 ))}
               </div>
