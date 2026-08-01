@@ -42,16 +42,16 @@ export function LegalLayout({
                 className="mb-6"
               />
             )}
-            <span className="inline-block mb-4 text-[10px] font-semibold uppercase tracking-[0.15em] text-caption border border-divider/30 px-3 py-1 rounded-none">
+            <span className="inline-block mb-4 text-sm md:text-base font-bold uppercase tracking-[0.15em] text-caption border border-divider/30 px-3 py-1.5 rounded-none">
               {category}
             </span>
             <h1 className="font-display font-black text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.9] tracking-[-0.03em] text-foreground mb-5">
               {title}
             </h1>
-            <div className="flex items-center gap-3 text-xs text-caption">
+            <div className="flex flex-wrap items-center gap-3 text-sm md:text-base text-caption">
               {date && (
                 <>
-                  <time dateTime={date}>
+                  <time dateTime={date} className="font-medium">
                     {new Date(date).toLocaleDateString("es-ES", {
                       year: "numeric",
                       month: "long",
