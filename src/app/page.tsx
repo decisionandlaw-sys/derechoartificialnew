@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getFeaturedImage, type PostData } from '@/lib/mdx-utils';
 import { PostImage } from "@/components/ui/PostImage";
 
@@ -118,28 +119,24 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="border-b border-[hsl(var(--divider))]">
-        <div className="container-wide py-12 md:py-16 lg:py-20">
-          <span className="font-display text-[10px] tracking-[0.25em] text-newsroom mb-5 block">
-            DERECHO E INTELIGENCIA ARTIFICIAL
-          </span>
+      <section className="relative overflow-hidden border-b border-[hsl(var(--divider))]">
+        <Image
+          src="/images/hero-derecho-artificial.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div aria-hidden className="absolute inset-0 bg-black/30" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+        <div className="relative container-wide py-16 md:py-24 lg:py-28">
           <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
             Derecho<br />Artificial
           </h1>
           <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground mt-5 max-w-md">
             Derecho, ética y regulación de la IA
           </p>
-          <p className="text-sm md:text-base text-foreground/85 leading-relaxed mt-3 max-w-md">
-            Análisis jurídico del Reglamento IA y su impacto legal. Guías prácticas para abogados y profesionales del compliance.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 mt-6">
-            <Link href="/guias-ia" className="inline-flex items-center justify-center px-6 py-3 bg-newsroom text-white text-sm font-semibold tracking-wide uppercase rounded-none hover:bg-white hover:text-newsroom transition-all duration-150">
-              Ver guías IA <span className="go-icon ml-2">→</span>
-            </Link>
-            <Link href="#secciones" className="inline-flex items-center justify-center px-6 py-3 border border-[hsl(var(--border))] text-foreground text-sm font-semibold tracking-wide uppercase rounded-none hover:bg-foreground hover:text-background transition-all duration-150">
-              Explorar secciones <span className="go-icon ml-2">→</span>
-            </Link>
-          </div>
         </div>
       </section>
 
