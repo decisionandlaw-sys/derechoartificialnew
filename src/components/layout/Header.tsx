@@ -225,7 +225,7 @@ export function Header() {
         getAlternateRoute={getAlternateRoute}
       />
 
-      <header className="fixed top-0 z-30 w-full bg-background border-b border-[hsl(var(--divider))]">
+      <header className="fixed top-0 z-[35] w-full bg-background border-b border-[hsl(var(--divider))]">
         <div className="container-wide">
           <div className="flex items-center justify-between h-[52px]">
             <Link href={isEnglish ? "/en" : "/"} className="flex items-center gap-3 group shrink-0 mr-4">

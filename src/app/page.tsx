@@ -61,7 +61,7 @@ function FeaturedPost({ post, showKicker = true }: { post: PostData; showKicker?
             {sectionLabelForUrl(post.url).toUpperCase()}
           </span>
         )}
-        <h3 className="font-display font-bold text-[clamp(1.5rem,3vw,2.5rem)] leading-[0.95] tracking-tight text-foreground group-hover:text-newsroom transition-colors duration-150">
+        <h3 className="font-display font-bold text-[clamp(1.5rem,3vw,2.5rem)] leading-[0.95] tracking-tight text-foreground">
           {post.frontmatter.title}
         </h3>
         <span className="text-[11px] text-[hsl(var(--text-caption))] mt-3 block">
@@ -85,7 +85,7 @@ function CompactItem({ post, showKicker = true }: { post: PostData; showKicker?:
             {sectionLabelForUrl(post.url).toUpperCase()}
           </span>
         )}
-        <h4 className="font-display text-lg md:text-xl leading-[0.95] tracking-tight font-bold text-foreground group-hover:text-newsroom transition-colors duration-150">
+        <h4 className="font-display text-lg md:text-xl leading-[0.95] tracking-tight font-bold text-foreground">
           {post.frontmatter.title}
         </h4>
         <span className="text-[11px] text-[hsl(var(--text-caption))] mt-2 block">

@@ -74,46 +74,47 @@ export function CookieBanner() {
   return (
     <div
       className={cn(
-        "fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-[99] transition-all duration-700 ease-in-out transform",
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0",
+        "fixed bottom-0 inset-x-0 z-[99] transition-all duration-700 ease-in-out transform",
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0",
       )}
     >
-      <div className="bg-[hsl(var(--card))] text-foreground p-6 border border-divider/30">
-        <h3 className="font-display font-bold text-lg mb-3">Privacidad y Transparencia</h3>
-
-        <p className="text-body text-sm leading-relaxed mb-4">
-          En Derecho Artificial utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle
-          publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación.
-          <br />
-          <Link
-            href="/cookies"
-            className="text-foreground underline underline-offset-2 hover:text-foreground/70 transition-colors mt-1 inline-block"
-          >
-            Leer Política de Cookies
-          </Link>
-        </p>
-
-        <div className="flex flex-col space-y-3">
-          <div className="flex gap-3">
-            <Button
-              onClick={() => saveConsent("all")}
-              className="flex-1 bg-foreground text-background hover:opacity-80 font-medium"
-            >
-              Aceptar todas
-            </Button>
-            <Button
-              onClick={() => saveConsent("essential")}
-              variant="outline"
-              className="flex-1 border-divider/50 text-caption hover:border-foreground/50 hover:text-foreground"
-            >
-              Rechazar opcionales
-            </Button>
+      <div className="bg-[hsl(var(--card))] text-foreground border-t border-divider/30 shadow-[0_-8px_30px_rgba(0,0,0,0.5)]">
+        <div className="container-wide py-4 md:py-5 flex flex-col md:flex-row md:items-center gap-4">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-display font-bold text-base mb-1">Privacidad y Transparencia</h3>
+            <p className="text-body text-sm leading-relaxed">
+              En Derecho Artificial utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarle
+              publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación.
+              <Link
+                href="/cookies"
+                className="text-foreground underline underline-offset-2 hover:text-foreground/70 transition-colors ml-2 whitespace-nowrap"
+              >
+                Leer Política de Cookies
+              </Link>
+            </p>
           </div>
 
-          <div className="text-center">
-            <Link href="/cookies" className="text-xs text-caption hover:text-foreground transition-colors">
-              Configurar
-            </Link>
+          <div className="shrink-0 flex flex-col sm:flex-row sm:items-center gap-3">
+            <div className="flex gap-3">
+              <Button
+                onClick={() => saveConsent("all")}
+                className="flex-1 sm:flex-none bg-foreground text-background hover:opacity-80 font-medium px-5"
+              >
+                Aceptar todas
+              </Button>
+              <Button
+                onClick={() => saveConsent("essential")}
+                variant="outline"
+                className="flex-1 sm:flex-none border-divider/50 text-caption hover:border-foreground/50 hover:text-foreground px-5"
+              >
+                Rechazar opcionales
+              </Button>
+            </div>
+            <div className="text-center">
+              <Link href="/cookies" className="text-xs text-caption hover:text-foreground transition-colors">
+                Configurar
+              </Link>
+            </div>
           </div>
         </div>
       </div>
