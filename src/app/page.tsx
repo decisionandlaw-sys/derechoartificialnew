@@ -134,7 +134,7 @@ export default function HomePage() {
           <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.85] tracking-[-0.04em] text-foreground">
             Derecho<br />Artificial
           </h1>
-          <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground mt-5 max-w-md">
+          <p className="font-display text-lg md:text-xl leading-[1.2] tracking-[-0.02em] text-foreground mt-5 max-w-md md:max-w-none">
             Derecho, ética y regulación de la IA
           </p>
         </div>
