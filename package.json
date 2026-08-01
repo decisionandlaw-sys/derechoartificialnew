@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "prebuild": "node scripts/convert-sfpro.mjs",
     "generate-md": "node scripts/generate-md-from-html.mjs",
     "deploy-content": "node scripts/deploy-content.mjs",
     "deploy-content:dry": "node scripts/deploy-content.mjs --dry",
