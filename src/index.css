@@ -148,6 +148,12 @@
     text-decoration-color: hsl(var(--foreground));
   }
 
+  .prose-editorial a,
+  .prose a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
   .prose-editorial sup {
     color: hsl(var(--accent)) !important;
     font-weight: 600;
