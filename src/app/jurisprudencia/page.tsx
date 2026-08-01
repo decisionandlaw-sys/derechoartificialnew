@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/jurisprudencia",
     languages: {
       "es-ES": "/jurisprudencia",
-      "en-US": "/en/jurisprudence",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

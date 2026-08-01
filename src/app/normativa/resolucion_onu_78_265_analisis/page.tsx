@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/normativa/resolucion-onu-78-265-analisis",
     languages: {
       "es-ES": "/normativa/resolucion-onu-78-265-analisis",
-      "en-US": "/en/legislation/un-resolution-78-265-analysis",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

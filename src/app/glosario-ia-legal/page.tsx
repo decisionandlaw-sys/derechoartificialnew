@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://derechoartificial.com/glosario-ia-legal",
     languages: {
       es: "https://derechoartificial.com/glosario-ia-legal",
-      en: "https://derechoartificial.com/en/legal-ai-glossary",
+      en: "https://decisionandlaw.com/",
     },
   },
   openGraph: {

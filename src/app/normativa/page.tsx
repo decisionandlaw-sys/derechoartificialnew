@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: "/normativa",
     languages: {
       "es-ES": "/normativa",
-      "en-US": "/en/legislation",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

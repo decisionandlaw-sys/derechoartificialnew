@@ -317,11 +317,6 @@
       "permanent": true
     },
     {
-      "source": "/en/global-ai",
-      "destination": "/en",
-      "permanent": true
-    },
-    {
       "source": "/jurisprudencia/citaciones-falsas-ia-abogados-sanciones",
       "destination": "/jurisprudencia/payne-v-state-ia-citas-falsas-abogada-sancionada-georgia",
       "permanent": true

@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/normativa/dma_review_ia_analisis",
     languages: {
       "es-ES": "/normativa/dma_review_ia_analisis",
-      "en-US": "/en/legislation/dma-review-ai-gatekeepers",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

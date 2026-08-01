@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "/guias-ia",
     languages: {
       "es-ES": "/guias-ia",
-      "en-US": "/en/ai-news",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

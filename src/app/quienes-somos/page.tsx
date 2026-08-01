@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: "/quienes-somos",
     languages: {
       "es-ES": "/quienes-somos",
-      "en-US": "/en/about-us",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

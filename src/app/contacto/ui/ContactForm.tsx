@@ -7,64 +7,36 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
-export function ContactForm({ locale = "es" }: { locale?: "es" | "en" }) {
+export function ContactForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const successParam = locale === "es" ? "enviado" : "sent";
-  const hasSuccess = useMemo(() => searchParams.get(successParam) === "1", [searchParams, successParam]);
+  const hasSuccess = useMemo(() => searchParams.get("enviado") === "1", [searchParams]);
 
-  const t =
-    locale === "es"
-      ? {
-          success:
-            "Gracias por tu mensaje. Hemos recibido correctamente tu consulta y responderemos en los próximos días hábiles.",
-          error: "No se ha podido enviar el mensaje. Inténtalo de nuevo.",
-          nameLabel: "Nombre",
-          namePlaceholder: "Su nombre",
-          emailLabel: "Correo electrónico",
-          emailPlaceholder: "correo@ejemplo.com",
-          subjectLabel: "Asunto",
-          subjectPlaceholder: "Motivo de su mensaje",
-          messageLabel: "Mensaje",
-          messagePlaceholder: "Escriba su mensaje aquí...",
-          submitIdle: "Enviar mensaje",
-          submitBusy: "Enviando...",
-          consent:
-            "Al enviar este formulario, aceptas que Derecho Artificial trate tus datos para responder a tu consulta.",
-          validation: {
-            nameRequired: "El nombre es obligatorio.",
-            emailRequired: "El correo electrónico es obligatorio.",
-            emailInvalid: "El correo electrónico no es válido.",
-            subjectRequired: "El asunto es obligatorio.",
-            messageRequired: "El mensaje es obligatorio.",
-          },
-          successRedirect: "/contacto?enviado=1",
-        }
-      : {
-          success:
-            "Thank you for your message. We have received your inquiry and will respond within the next few business days.",
-          error: "Message could not be sent. Please try again.",
-          nameLabel: "Name",
-          namePlaceholder: "Your name",
-          emailLabel: "Email",
-          emailPlaceholder: "email@example.com",
-          subjectLabel: "Subject",
-          subjectPlaceholder: "Reason for your message",
-          messageLabel: "Message",
-          messagePlaceholder: "Write your message here...",
-          submitIdle: "Send message",
-          submitBusy: "Sending...",
-          consent:
-            "By sending this form, you agree that Derecho Artificial may process your data to respond to your inquiry.",
-          validation: {
-            nameRequired: "Name is required.",
-            emailRequired: "Email is required.",
-            emailInvalid: "Email is not valid.",
-            subjectRequired: "Subject is required.",
-            messageRequired: "Message is required.",
-          },
-          successRedirect: "/en/contact?sent=1",
-        };
+  const t = {
+    success:
+      "Gracias por tu mensaje. Hemos recibido correctamente tu consulta y responderemos en los próximos días hábiles.",
+    error: "No se ha podido enviar el mensaje. Inténtalo de nuevo.",
+    nameLabel: "Nombre",
+    namePlaceholder: "Su nombre",
+    emailLabel: "Correo electrónico",
+    emailPlaceholder: "correo@ejemplo.com",
+    subjectLabel: "Asunto",
+    subjectPlaceholder: "Motivo de su mensaje",
+    messageLabel: "Mensaje",
+    messagePlaceholder: "Escriba su mensaje aquí...",
+    submitIdle: "Enviar mensaje",
+    submitBusy: "Enviando...",
+    consent:
+      "Al enviar este formulario, aceptas que Derecho Artificial trate tus datos para responder a tu consulta.",
+    validation: {
+      nameRequired: "El nombre es obligatorio.",
+      emailRequired: "El correo electrónico es obligatorio.",
+      emailInvalid: "El correo electrónico no es válido.",
+      subjectRequired: "El asunto es obligatorio.",
+      messageRequired: "El mensaje es obligatorio.",
+    },
+    successRedirect: "/contacto?enviado=1",
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);

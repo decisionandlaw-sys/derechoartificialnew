@@ -48,7 +48,7 @@ export default function ContactoPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
               <div className="lg:col-span-2">
                 <Suspense fallback={null}>
-                  <ContactForm locale="es" />
+                  <ContactForm />
                 </Suspense>
               </div>
 

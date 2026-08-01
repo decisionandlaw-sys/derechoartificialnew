@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/normativa/ley_dinamarca_deepfakes_analisis",
     languages: {
       "es-ES": "/normativa/ley_dinamarca_deepfakes_analisis",
-      "en-US": "/en/legislation/denmark-deepfakes-law-analysis",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

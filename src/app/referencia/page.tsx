@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "/referencia",
     languages: {
       "es-ES": "/referencia",
-      "en-US": "/en",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

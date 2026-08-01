@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: "/global-ia",
     languages: {
       "es-ES": "/global-ia",
-      "en-US": "/en/global-ai",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

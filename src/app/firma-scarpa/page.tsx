@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: "/firma-scarpa",
     languages: {
       "es-ES": "/firma-scarpa",
-      "en-US": "/en/scarpa-firm",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

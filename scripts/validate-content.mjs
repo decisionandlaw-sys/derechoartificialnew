@@ -5,7 +5,7 @@ import matter from "gray-matter";
 const repoRoot = process.cwd();
 const strict = process.argv.includes("--strict");
 
-const contentRoots = ["content", "content-en"];
+const contentRoots = ["content"];
 const allowedSections = new Set([
   "analisis-juridico",
   "analisis",
@@ -144,7 +144,7 @@ function sectionFromPath(filePath) {
 
 function publicRouteFor(filePath, data) {
   const root = contentRootFor(filePath);
-  const langPrefix = root === "content-en" ? "/en" : "";
+  const langPrefix = "";
   const slug = String(data.slug || slugFromPath(filePath)).trim();
   const section = normalizeSection(data.section || data.category || sectionFromPath(filePath));
   const routeSection = sectionRoutes[section];

@@ -38,22 +38,22 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/en",
+        destination: "https://decisionandlaw.com/",
+        statusCode: 301,
+      },
+      {
+        source: "/en/:path*",
+        destination: "https://decisionandlaw.com/",
+        statusCode: 301,
+      },
+      {
         source: "/recursos",
         destination: "/guias-ia",
         permanent: true,
       },
       {
         source: "/recursos/noticias",
-        destination: "/guias-ia",
-        permanent: true,
-      },
-      {
-        source: "/en/ai-news",
-        destination: "/guias-ia",
-        permanent: true,
-      },
-      {
-        source: "/en/ai-news/:slug*",
         destination: "/guias-ia",
         permanent: true,
       },

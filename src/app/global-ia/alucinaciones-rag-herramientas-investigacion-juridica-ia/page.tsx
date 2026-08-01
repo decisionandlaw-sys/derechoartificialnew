@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     canonical: "/global-ia/alucinaciones-rag-herramientas-investigacion-juridica-ia",
     languages: {
       "es-ES": "/global-ia/alucinaciones-rag-herramientas-investigacion-juridica-ia",
-      "en-US": "/en/global-ai/rag-hallucinations-legal-research-tools",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

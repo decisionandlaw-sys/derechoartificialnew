@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     canonical: "/normativa/ley-ia-italiana-analisis",
     languages: {
       "es-ES": "/normativa/ley-ia-italiana-analisis",
-      "en-US": "/en/legislation/italian-ai-law-analysis",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {

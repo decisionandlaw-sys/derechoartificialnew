@@ -16,37 +16,6 @@ const navigationES = [
   { name: "IA Global", href: "/global-ia" },
 ];
 
-const navigationEN = [
-  { name: "Scarpa Firm", href: "/firma-scarpa" },
-  { name: "AI\u00A0Regulation", href: "/normativa" },
-  { name: "AI\u00A0Jurisprudence", href: "/jurisprudencia" },
-  { name: "AI\u00A0News", href: "/en/ai-news" },
-  { name: "AI Intellectual\u00A0Property", href: "/propiedad-intelectual-ia" },
-  { name: "AI\u00A0Ethics", href: "/etica-ia" },
-  { name: "Global\u00A0AI", href: "/global-ia" },
-];
-
-const esEnRouteMap: Record<string, string> = {
-  "/": "/en",
-  "/firma-scarpa": "/en/scarpa-firm",
-  "/jurisprudencia": "/en/jurisprudence",
-  "/guias-ia": "/en/ai-news",
-  "/normativa": "/en/legislation",
-  "/propiedad-intelectual-ia": "/en",
-  "/etica-ia": "/en",
-  "/global-ia": "/en",
-  "/recursos": "/en/ai-news",
-};
-
-const enEsRouteMap: Record<string, string> = {
-  "/en": "/",
-  "/en/scarpa-firm": "/firma-scarpa",
-  "/en/jurisprudence": "/jurisprudencia",
-  "/en/ai-news": "/guias-ia",
-  "/en/legislation": "/normativa",
-  "/en/guides-protocols": "/recursos/guias",
-};
-
 function HamburgerButton({ open, onClick }: { open: boolean; onClick: () => void }) {
   return (
     <button
@@ -72,14 +41,10 @@ function MegaNav({
   open,
   onClose,
   navigation,
-  isEnglish,
-  getAlternateRoute,
 }: {
   open: boolean;
   onClose: () => void;
   navigation: { name: string; href: string }[];
-  isEnglish: boolean;
-  getAlternateRoute: () => string;
 }) {
   return (
     <>
@@ -122,26 +87,26 @@ function MegaNav({
           <div className="mt-auto">
             <div className="border-t border-[hsl(var(--divider))] pt-6 mb-6">
               <Link
-                href={isEnglish ? "/en/about-us" : "/quienes-somos"}
+                href="/quienes-somos"
                 onClick={onClose}
                 className="block text-sm text-foreground/70 hover:text-foreground transition-colors mb-3"
               >
-                {isEnglish ? "About Us" : "Quiénes somos"}
+                Quiénes somos
               </Link>
               <Link
-                href={isEnglish ? "/en/contact" : "/contacto"}
+                href="/contacto"
                 onClick={onClose}
                 className="block text-sm text-foreground/70 hover:text-foreground transition-colors mb-6"
               >
-                {isEnglish ? "Contact" : "Contacto"}
+                Contacto
               </Link>
-              <Link
-                href={getAlternateRoute()}
+              <a
+                href="https://decisionandlaw.com/"
                 onClick={onClose}
                 className="text-sm font-semibold text-foreground hover:text-newsroom transition-colors"
               >
-                {isEnglish ? "Versión en español" : "English version"} →
-              </Link>
+                English version →
+              </a>
             </div>
             <div className="flex items-center gap-5">
               <a href="https://x.com/DArtificia59954" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-foreground transition-colors" aria-label="X">
@@ -166,8 +131,7 @@ export function Header() {
   const [megaNavOpen, setMegaNavOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const isEnglish = pathname.startsWith("/en");
-  const navigation = isEnglish ? navigationEN : navigationES;
+  const navigation = navigationES;
 
   useEffect(() => {
     if (megaNavOpen) {
@@ -187,48 +151,18 @@ export function Header() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [searchOpen]);
 
-  const getAlternateRoute = () => {
-    if (isEnglish) {
-      if (enEsRouteMap[pathname]) return enEsRouteMap[pathname];
-      if (pathname.startsWith("/en/scarpa-firm")) return "/firma-scarpa";
-      if (pathname.startsWith("/en/legislation")) return "/normativa";
-      if (pathname.startsWith("/en/jurisprudence")) return "/jurisprudencia";
-      if (pathname.startsWith("/en/guides-protocols")) return "/recursos/guias";
-      if (pathname.startsWith("/en/ai-news")) return "/guias-ia";
-      return "/";
-    }
-    if (esEnRouteMap[pathname]) return esEnRouteMap[pathname];
-    if (pathname.startsWith("/firma-scarpa")) return "/en/scarpa-firm";
-    if (pathname.startsWith("/normativa")) return "/en/legislation";
-    if (pathname.startsWith("/jurisprudencia")) return "/en/jurisprudence";
-    if (pathname.startsWith("/recursos/guias")) return "/en/guides-protocols";
-    if (pathname.startsWith("/recursos")) return "/en/ai-news";
-    if (pathname.startsWith("/guias-ia")) return "/en/ai-news";
-    if (pathname.startsWith("/propiedad-intelectual-ia")) return "/en";
-    if (pathname.startsWith("/etica-ia")) return "/en";
-    if (pathname.startsWith("/global-ia")) return "/en";
-    return "/en";
-  };
-
-  const handleLangToggle = () => {
-    const target = getAlternateRoute();
-    window.location.href = target;
-  };
-
   return (
     <>
       <MegaNav
         open={megaNavOpen}
         onClose={() => setMegaNavOpen(false)}
         navigation={navigation}
-        isEnglish={isEnglish}
-        getAlternateRoute={getAlternateRoute}
       />
 
       <header className="fixed top-0 z-[35] w-full bg-background border-b border-[hsl(var(--divider))]">
         <div className="container-wide">
           <div className="flex items-center justify-between h-[52px]">
-            <Link href={isEnglish ? "/en" : "/"} className="flex items-center gap-3 group shrink-0 mr-4">
+            <Link href="/" className="flex items-center gap-3 group shrink-0 mr-4">
               <div className="w-8 h-8 bg-foreground text-background flex items-center justify-center font-display text-xs leading-none">
                 DA
               </div>
@@ -267,13 +201,12 @@ export function Header() {
               >
                 <Search className="h-4 w-4" strokeWidth={2} />
               </button>
-              <button
-                type="button"
-                onClick={handleLangToggle}
+              <a
+                href="https://decisionandlaw.com/"
                 className="font-display text-[10px] tracking-[0.12em] text-foreground/70 hover:text-foreground transition-colors"
               >
-                {isEnglish ? "ES" : "EN"}
-              </button>
+                EN
+              </a>
               <div className="w-px h-4 bg-[hsl(var(--divider))]" />
               <HamburgerButton open={megaNavOpen} onClick={() => setMegaNavOpen(!megaNavOpen)} />
             </div>

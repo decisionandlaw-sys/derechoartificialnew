@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     canonical: "https://derechoartificial.com/normativa",
     languages: {
       es: "https://derechoartificial.com/normativa",
-      en: "https://derechoartificial.com/en/blog/eu-ai-act-guide-2026",
+      en: "https://decisionandlaw.com/",
     },
   },
 };

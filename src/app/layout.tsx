@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       "es-ES": "/",
-      "en-US": "/en",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   robots: {
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/logo-icono.png" />
         <link rel="alternate" hrefLang="es" href="https://derechoartificial.com/" />
-        <link rel="alternate" hrefLang="en" href="https://derechoartificial.com/en" />
+        <link rel="alternate" hrefLang="en" href="https://decisionandlaw.com/" />
         <link rel="alternate" hrefLang="x-default" href="https://derechoartificial.com/" />
         <StructuredData
           data={[

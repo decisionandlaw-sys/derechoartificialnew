@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/normativa/sb53_california_analisis",
     languages: {
       "es-ES": "/normativa/sb53_california_analisis",
-      "en-US": "/en/legislation/sb53-california-transparency-frontier-ai",
+      "en-US": "https://decisionandlaw.com/",
     },
   },
   openGraph: {
