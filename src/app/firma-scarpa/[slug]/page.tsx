@@ -14,7 +14,7 @@ import type { ResourceEntry } from "@/lib/resources";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { getPostBySlug, getAllPosts, getHeroImage } from "@/lib/mdx-utils";
+import { getPostBySlug, getAllPosts, getHeroImage, getFeaturedImage } from "@/lib/mdx-utils";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -218,6 +218,7 @@ export default async function FirmaScarpaSlugPage({
         category={category === "firma-scarpa" ? "Firma Scarpa" : (category || "Firma Scarpa")}
         author={{ name: "Ricardo Scarpa", href: "/quienes-somos" }}
         date={date}
+        image={getFeaturedImage(mdxPost)}
       >
         {mdxPost.frontmatter.pdf && (
           <div className="article-pdf-box mb-12">

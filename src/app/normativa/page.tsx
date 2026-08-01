@@ -3,7 +3,7 @@ import type { ResolvedContentEntry } from "@/lib/content";
 import { getContentEntry, listContentSlugs } from "@/lib/content";
 import type { ResourceEntry } from "@/lib/resources";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
-import { getAllPosts } from "@/lib/mdx-utils";
+import { getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import { UnifiedSectionLayout, type UnifiedItem, type SectionConfig } from "@/components/layout/UnifiedSectionLayout";
 
 export const metadata: Metadata = {
@@ -88,6 +88,7 @@ export default async function NormativaPage() {
       meta: `${formatDate(post.frontmatter.date)} · ${post.frontmatter.author || "Derecho Artificial"}`,
       dateMs: dateMs,
       displayDateMs: dateMs,
+      image: getFeaturedImage(post) ?? undefined,
     };
   });
 

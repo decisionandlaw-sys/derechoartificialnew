@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
-import { getAllPosts } from "@/lib/mdx-utils";
+import { getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import { SectionBanner } from "@/components/layout/SectionBanner";
+import { PostImage } from "@/components/ui/PostImage";
 
 export const revalidate = 3600;
 
@@ -63,6 +64,7 @@ export default async function ActualidadIAPage() {
         meta: metaParts.join(" · "),
         dateMs: d || 0,
         displayDateMs: d || 0,
+        image: getFeaturedImage(p) ?? undefined,
       };
     })
     .sort((a, b) => (b.displayDateMs ?? b.dateMs) - (a.displayDateMs ?? a.dateMs));
@@ -99,6 +101,16 @@ export default async function ActualidadIAPage() {
                 href={item.href}
                 className="block card-elevated p-8 hover:border-foreground/30 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, 896px"
+                    aspectClassName="aspect-[16/7]"
+                    priority
+                    className="mb-6"
+                  />
+                )}
                 <div className="flex flex-col gap-4">
                   <p className="text-xs uppercase tracking-[0.25em] text-primary font-bold">
                     Destacado
@@ -133,6 +145,15 @@ export default async function ActualidadIAPage() {
                 href={item.href}
                 className="card-elevated p-6 hover:border-primary/20 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    aspectClassName="aspect-[16/9]"
+                    className="mb-5"
+                  />
+                )}
                 <p className="text-xs uppercase tracking-[0.25em] text-caption mb-3">{item.badge}</p>
                 <h2 className="font-display font-bold text-2xl text-foreground mb-4 tracking-tight">{item.title}</h2>
                 {item.description && <p className="text-body mb-6">{item.description}</p>}

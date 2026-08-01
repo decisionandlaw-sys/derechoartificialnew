@@ -5,8 +5,9 @@ import { getContentEntry, listContentSlugs } from "@/lib/content";
 import type { ResourceEntry } from "@/lib/resources";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
-import { getAllPosts } from "@/lib/mdx-utils";
+import { getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import { SectionBanner } from "@/components/layout/SectionBanner";
+import { PostImage } from "@/components/ui/PostImage";
 
 // Revalidación automática cada hora
 export const revalidate = 3600;
@@ -97,6 +98,7 @@ export default async function FirmaScarpaPage() {
       meta: `${formatDate(post.frontmatter.date)} · ${post.frontmatter.author || "Ricardo Scarpa"}`,
       dateMs: dateMs,
       displayDateMs: dateMs,
+      image: getFeaturedImage(post) ?? undefined,
     };
   });
 
@@ -109,6 +111,7 @@ export default async function FirmaScarpaPage() {
     meta: string;
     dateMs: number;
     displayDateMs?: number;
+    image?: string;
   };
 
   const contentItems: UnifiedItem[] = sortedEntries.map((entry) => {
@@ -206,6 +209,16 @@ export default async function FirmaScarpaPage() {
                 href={item.href}
                 className="block card-elevated p-8 hover:border-foreground/30 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, 896px"
+                    aspectClassName="aspect-[16/7]"
+                    priority
+                    className="mb-6"
+                  />
+                )}
                 <div className="flex flex-col gap-4">
                   <p className="text-xs uppercase tracking-[0.25em] text-primary font-bold">
                     {item.badge}
@@ -240,6 +253,15 @@ export default async function FirmaScarpaPage() {
                 href={item.href}
                 className="card-elevated p-6 hover:border-primary/20 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    aspectClassName="aspect-[16/9]"
+                    className="mb-5"
+                  />
+                )}
                 <p className="text-xs uppercase tracking-[0.25em] text-caption mb-3">Análisis</p>
                 <h2 className="font-display font-bold text-2xl text-foreground mb-4 tracking-tight">{item.title}</h2>
                 {item.description && <p className="text-body mb-6">{item.description}</p>}

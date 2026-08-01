@@ -11,7 +11,7 @@ import { LegalLayout } from "@/components/layout/LegalLayout";
 import { Button } from "@/components/ui/button";
 import type { ResourceEntry } from "@/lib/resources";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
-import { getPostBySlug, getAllPosts } from "@/lib/mdx-utils";
+import { getPostBySlug, getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
@@ -163,6 +163,7 @@ export default async function ActualidadIASlugPage({ params }: { params: Promise
         category="Guías IA"
         author={{ name: "Ricardo Scarpa", href: "/quienes-somos" }}
         date={date}
+        image={getFeaturedImage(mdxPost)}
       >
         <div className="prose prose-lg max-w-none">
           <ReactMarkdown

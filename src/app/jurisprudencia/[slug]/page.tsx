@@ -8,7 +8,7 @@ import {
 } from "@/components/seo/StructuredData";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { getPostBySlug, getAllPosts, getHeroImage } from "@/lib/mdx-utils";
+import { getPostBySlug, getAllPosts, getHeroImage, getFeaturedImage } from "@/lib/mdx-utils";
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
@@ -162,6 +162,7 @@ export default async function JurisprudenciaSlugPage({ params }: { params: Promi
         category={category === "jurisprudencia" ? "Jurisprudencia" : (category || "Jurisprudencia")}
         author={{ name: "Ricardo Scarpa", href: "/quienes-somos" }}
         date={date}
+        image={getFeaturedImage(mdxPost)}
       >
         {pdfUrl ? (
           <div className="article-pdf-box mb-12">

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import { HmcIndicator } from "@/components/HmcIndicator";
+import { PostImage } from "@/components/ui/PostImage";
 
 interface LegalLayoutProps {
   children: ReactNode;
@@ -8,6 +9,7 @@ interface LegalLayoutProps {
   category: string;
   date?: string;
   hero?: ReactNode;
+  image?: string;
   author?: {
     name: string;
     href?: string;
@@ -20,6 +22,7 @@ export function LegalLayout({
   category,
   date,
   hero,
+  image,
   author = { name: "Ricardo Scarpa", href: "/quienes-somos" }
 }: LegalLayoutProps) {
   return (
@@ -29,6 +32,16 @@ export function LegalLayout({
       ) : (
         <section className="border-b border-divider/30">
           <div className="container-narrow py-10 md:py-14">
+            {image && (
+              <PostImage
+                src={image}
+                alt={title}
+                sizes="(max-width: 640px) 100vw, 704px"
+                aspectClassName="aspect-[16/7]"
+                priority
+                className="mb-6"
+              />
+            )}
             <span className="inline-block mb-4 text-[10px] font-semibold uppercase tracking-[0.15em] text-caption border border-divider/30 px-3 py-1 rounded-none">
               {category}
             </span>

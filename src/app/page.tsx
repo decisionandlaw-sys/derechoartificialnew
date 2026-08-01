@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from '@/lib/mdx-utils';
+import { getAllPosts, getFeaturedImage } from '@/lib/mdx-utils';
+import { PostImage } from "@/components/ui/PostImage";
 
 export const revalidate = 60;
 
@@ -153,7 +154,18 @@ export default function HomePage() {
                             {formatDate(entry.dateMs)}
                           </span>
                         </div>
-                        <span className="shrink-0 text-foreground/30 group-hover:text-foreground transition-all duration-200 go-icon text-lg mt-1">→</span>
+                        <div className="flex shrink-0 items-start gap-3">
+                          {getFeaturedImage(entry) && (
+                            <PostImage
+                              src={getFeaturedImage(entry)!}
+                              alt={entry.frontmatter.title}
+                              sizes="96px"
+                              aspectClassName="w-16 h-16 md:w-20 md:h-20"
+                              className="hidden sm:block"
+                            />
+                          )}
+                          <span className="text-foreground/30 group-hover:text-foreground transition-all duration-200 go-icon text-lg mt-1">→</span>
+                        </div>
                       </div>
                     </Link>
                   ))}

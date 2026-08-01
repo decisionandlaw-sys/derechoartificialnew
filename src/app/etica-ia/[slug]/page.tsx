@@ -8,7 +8,7 @@ import {
   createGenericArticleJsonLd,
 } from "@/components/seo/StructuredData";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { getPostBySlug, getAllPosts, getHeroImage } from "@/lib/mdx-utils";
+import { getPostBySlug, getAllPosts, getHeroImage, getFeaturedImage } from "@/lib/mdx-utils";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
@@ -119,6 +119,7 @@ export default async function EticaIASlugPage({
         category="Ética IA"
         author={{ name: author || "Ricardo Scarpa", href: "/quienes-somos" }}
         date={date}
+        image={getFeaturedImage(mdxPost)}
       >
         {pdf && (
           <div className="article-pdf-box mb-12">

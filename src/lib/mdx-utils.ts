@@ -184,6 +184,59 @@ export function getHeroImage(section: string): string {
   return `${HERO_BASE_PATH}/default.jpg`;
 }
 
+// ─── Imagen destacada de artículo ────────────────────────────────────────────
+
+const POST_IMAGE_EXT = /\.(jpe?g|png|webp|avif)$/i;
+const _postImageCache: Record<string, string[]> = {};
+
+/**
+ * Lista las imágenes disponibles en public/images/posts/<route>/ (cacheado).
+ */
+function listPostImages(route: string): string[] {
+  if (_postImageCache[route]) return _postImageCache[route];
+  let files: string[] = [];
+  try {
+    const dir = path.join(ROOT, 'public', 'images', 'posts', route);
+    files = fs
+      .readdirSync(dir)
+      .filter((f) => POST_IMAGE_EXT.test(f))
+      .sort();
+  } catch {
+    // Carpeta inexistente -> sin imágenes
+  }
+  _postImageCache[route] = files;
+  return files;
+}
+
+/**
+ * Asigna de forma determinística (por slug) una imagen de la carpeta
+ * public/images/posts/<route>/ correspondiente a la sección del post.
+ */
+export function getPostImage(route: string, slug: string): string | null {
+  const files = listPostImages(route);
+  if (files.length === 0) return null;
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+  }
+  return `/images/posts/${route}/${files[hash % files.length]}`;
+}
+
+/**
+ * Imagen destacada de un post: prioriza el campo `image` del frontmatter;
+ * si no lo tiene, asigna aleatoriamente (determinista por slug) una imagen
+ * de la sección correspondiente a la URL del post.
+ */
+export function getFeaturedImage(post: PostData): string | null {
+  const fmImage = post.frontmatter.image;
+  if (fmImage) {
+    return fmImage.startsWith('/') ? fmImage : `/${fmImage}`;
+  }
+  const route = post.url.split('/').filter(Boolean)[0];
+  if (!route) return null;
+  return getPostImage(route, post.slug);
+}
+
 // ─── Lector de nueva arquitectura ────────────────────────────────────────────
 
 /**

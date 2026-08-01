@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllPosts } from "@/lib/mdx-utils";
+import { getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import { UnifiedSectionLayout, type UnifiedItem, type SectionConfig } from "@/components/layout/UnifiedSectionLayout";
 
 export const metadata: Metadata = {
@@ -46,6 +46,7 @@ export default async function PropiedadIntelectualIAPage() {
       meta: `${formatDate(post.frontmatter.date)} · ${post.frontmatter.author || "Derecho Artificial"}`,
       dateMs: dateMs,
       displayDateMs: dateMs,
+      image: getFeaturedImage(post) ?? undefined,
     };
   }).sort((a, b) => (b.displayDateMs ?? b.dateMs) - (a.displayDateMs ?? a.dateMs));
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { StructuredData, createBreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { SectionBanner } from "@/components/layout/SectionBanner";
+import { PostImage } from "@/components/ui/PostImage";
 
 export type UnifiedItem = {
   id: string;
@@ -12,6 +13,7 @@ export type UnifiedItem = {
   meta: string;
   dateMs: number;
   displayDateMs?: number;
+  image?: string;
 };
 
 export type SectionConfig = {
@@ -62,6 +64,16 @@ export function UnifiedSectionLayout({ config, items }: UnifiedSectionLayoutProp
                 href={item.href}
                 className="block card-elevated p-8 hover:border-foreground/30 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, 896px"
+                    aspectClassName="aspect-[16/7]"
+                    priority
+                    className="mb-6"
+                  />
+                )}
                 <div className="flex flex-col gap-4">
                   <p className="text-xs uppercase tracking-[0.25em] text-primary font-bold">
                     {item.badge}
@@ -97,6 +109,15 @@ export function UnifiedSectionLayout({ config, items }: UnifiedSectionLayoutProp
                 href={item.href}
                 className="card-elevated p-6 hover:border-foreground/30 transition-all duration-300"
               >
+                {item.image && (
+                  <PostImage
+                    src={item.image}
+                    alt={item.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    aspectClassName="aspect-[16/9]"
+                    className="mb-5"
+                  />
+                )}
                 <p className="text-xs uppercase tracking-[0.25em] text-caption mb-3">
                   {item.badge}
                 </p>
