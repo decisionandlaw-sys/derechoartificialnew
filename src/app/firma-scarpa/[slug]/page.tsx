@@ -418,6 +418,7 @@ export default async function FirmaScarpaSlugPage({
           title={jsonEntry.title}
           category="Firma Scarpa"
           date={jsonEntry.datePublished}
+          image={jsonEntry.image}
           author={{
             name: "Ricardo Scarpa",
             href: "/quienes-somos",

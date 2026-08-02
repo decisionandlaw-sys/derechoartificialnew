@@ -11,6 +11,7 @@ export type ContentEntry = {
   datePublished: string;
   author: string;
   body: string;
+  image?: string;
 };
 
 export type ResolvedContentEntry = ContentEntry & {
@@ -132,6 +133,7 @@ export async function getContentEntry(
       datePublished: parsed.datePublished,
       author: parsed.author,
       body: parsed.body,
+      image: parsed.image,
       urlPath,
       url: `${siteUrl}${urlPath}`,
       html: renderMarkdownToHtml(parsed.body),

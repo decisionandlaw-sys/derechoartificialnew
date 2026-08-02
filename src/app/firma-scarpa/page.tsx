@@ -134,6 +134,7 @@ export default async function FirmaScarpaPage() {
       meta: parts.join(" · "),
       dateMs: safeTime,
       displayDateMs: displayMs,
+      image: entry.image,
     };
   });
 
