@@ -38,14 +38,15 @@ export function PostImage({
         className="object-cover"
       />
       {watermark && (
-        <img
-          src={HM_BADGE_SRC}
-          alt=""
-          aria-hidden="true"
-          className="hm-badge"
-          loading="lazy"
-          decoding="async"
-        />
+        <span className="hm-badge" aria-hidden="true">
+          <img
+            src={HM_BADGE_SRC}
+            alt=""
+            className="hm-badge-seal"
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
       )}
     </div>
   );

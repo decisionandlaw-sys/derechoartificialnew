@@ -52,14 +52,15 @@ export function NewsCard({ title, date, source, url, summary, tags, image }: New
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          <img
-            src={HM_BADGE_SRC}
-            alt=""
-            aria-hidden="true"
-            className="hm-badge"
-            loading="lazy"
-            decoding="async"
-          />
+          <span className="hm-badge" aria-hidden="true">
+            <img
+              src={HM_BADGE_SRC}
+              alt=""
+              className="hm-badge-seal"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
         </div>
       )}
 

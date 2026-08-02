@@ -45,14 +45,15 @@ export function SectionBanner({ title, image, alt, kicker }: SectionBannerProps)
         className="object-cover"
         style={imageStyle?.objectPosition ? { objectPosition: imageStyle.objectPosition } : undefined}
       />
-      <img
-        src={HM_BADGE_SRC}
-        alt=""
-        aria-hidden="true"
-        className="hm-badge"
-        loading="lazy"
-        decoding="async"
-      />
+      <span className="hm-badge" aria-hidden="true">
+        <img
+          src={HM_BADGE_SRC}
+          alt=""
+          className="hm-badge-seal"
+          loading="lazy"
+          decoding="async"
+        />
+      </span>
       <div className={`absolute inset-0 ${gradientClassName}`} />
       <div className="absolute inset-0 flex items-end">
         <div className="container mx-auto px-4 pb-10 md:pb-14">

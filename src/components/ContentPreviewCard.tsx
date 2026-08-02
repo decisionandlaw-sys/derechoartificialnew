@@ -72,14 +72,15 @@ export function ContentPreviewCard({ item, size = "medium" }: ContentPreviewCard
               className="object-cover object-[50%_65%] scale-[1.08]"
             />
           )}
-          <img
-            src={HM_BADGE_SRC}
-            alt=""
-            aria-hidden="true"
-            className="hm-badge"
-            loading="lazy"
-            decoding="async"
-          />
+          <span className="hm-badge" aria-hidden="true">
+            <img
+              src={HM_BADGE_SRC}
+              alt=""
+              className="hm-badge-seal"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
         </div>
       )}
       <p className="text-xs uppercase tracking-[0.25em] text-caption mb-3">{item.badge}</p>

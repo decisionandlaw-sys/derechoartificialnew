@@ -129,14 +129,15 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <img
-          src="/badges/human-machine.webp"
-          alt=""
-          aria-hidden="true"
-          className="hm-badge"
-          loading="lazy"
-          decoding="async"
-        />
+        <span className="hm-badge" aria-hidden="true">
+          <img
+            src="/badges/human-machine-red.webp"
+            alt=""
+            className="hm-badge-seal"
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
         <div aria-hidden className="absolute inset-0 bg-black/30" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
         <div className="relative container-wide py-16 md:py-24 lg:py-28">
