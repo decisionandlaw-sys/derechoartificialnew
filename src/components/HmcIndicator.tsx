@@ -21,27 +21,27 @@ export function HmcIndicator({ type = "human-led-machine-oversight" }: HmcIndica
   return (
     <aside className="hmc-indicator mt-16 pt-8 border-t border-border/50">
       <div className="flex items-start gap-4">
-        <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 border border-border bg-muted/30 flex items-center justify-center p-1.5 rounded-none">
+        <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 border border-border bg-muted/30 flex items-center justify-center p-1.5 rounded-none">
           <Image
-            src="/images/hmc-human-led-machine-oversight.svg"
+            src="/badges/human-machine.webp"
             alt={config.title}
-            width={44}
-            height={50}
-            className="w-full h-full"
+            width={48}
+            height={48}
+            className="w-full h-full object-contain"
           />
         </div>
-        <div className="space-y-1">
-          <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+        <div className="space-y-1.5">
+          <p className="text-sm md:text-base font-semibold tracking-wider text-muted-foreground uppercase">
             {config.badge}
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-lg">
             {config.description}
           </p>
           <a
             href="https://www.digitaldubai.ae/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-xs text-muted-foreground/60 hover:text-primary transition-colors underline underline-offset-2"
+            className="inline-block text-sm md:text-base text-muted-foreground/60 hover:text-primary transition-colors underline underline-offset-2"
           >
             DFF HMC Classification System
           </a>

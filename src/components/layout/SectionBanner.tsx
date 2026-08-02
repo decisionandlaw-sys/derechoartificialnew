@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HM_BADGE_SRC } from "@/components/ui/WatermarkedImage";
 
 interface SectionImageStyle {
   objectPosition?: string;
@@ -43,6 +44,14 @@ export function SectionBanner({ title, image, alt, kicker }: SectionBannerProps)
         sizes="100vw"
         className="object-cover"
         style={imageStyle?.objectPosition ? { objectPosition: imageStyle.objectPosition } : undefined}
+      />
+      <img
+        src={HM_BADGE_SRC}
+        alt=""
+        aria-hidden="true"
+        className="hm-badge"
+        loading="lazy"
+        decoding="async"
       />
       <div className={`absolute inset-0 ${gradientClassName}`} />
       <div className="absolute inset-0 flex items-end">

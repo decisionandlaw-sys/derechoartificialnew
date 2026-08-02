@@ -12,6 +12,7 @@ import { getPostBySlug, getAllPosts, getHeroImage, getFeaturedImage } from "@/li
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
+import { WatermarkedImage } from "@/components/ui/WatermarkedImage";
 
 type Params = {
   slug: string;
@@ -157,7 +158,7 @@ export default async function IAGlobalSlugPage({
           <ReactMarkdown
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             components={{
-              img: (props: any) => <img {...props} loading="lazy" decoding="async" />,
+              img: (props: any) => <WatermarkedImage {...props} loading="lazy" decoding="async" />,
             }}
           >
             {mdxPost.content}

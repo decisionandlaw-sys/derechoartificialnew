@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HM_BADGE_SRC } from "@/components/ui/WatermarkedImage";
 
 interface NewsCardProps {
   title: string;
@@ -50,6 +51,14 @@ export function NewsCard({ title, date, source, url, summary, tags, image }: New
             loading="lazy"
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <img
+            src={HM_BADGE_SRC}
+            alt=""
+            aria-hidden="true"
+            className="hm-badge"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       )}

@@ -383,6 +383,35 @@
   .group:hover .go-icon {
     transform: translateX(4px);
   }
+
+  /* Sello Human/Machine — marca de agua sobre imágenes */
+  .hm-watermark {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+  }
+
+  .hm-watermark > img:first-child {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hm-badge {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: clamp(28px, 5vw, 56px);
+    width: auto;
+    max-width: none;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  }
 }
 
 ::-webkit-scrollbar {

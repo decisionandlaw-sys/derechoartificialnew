@@ -12,6 +12,7 @@ import { getPostBySlug, getAllPosts, getHeroImage, getFeaturedImage } from "@/li
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
+import { WatermarkedImage } from "@/components/ui/WatermarkedImage";
 
 type Params = {
   slug: string;
@@ -133,7 +134,7 @@ export default async function PropiedadIntelectualIASlugPage({
           </div>
         )}
         <div className="mx-auto">
-          <ReactMarkdown rehypePlugins={[rehypeRaw, rehypeSanitize]}>
+          <ReactMarkdown rehypePlugins={[rehypeRaw, rehypeSanitize]} components={{ img: (props: any) => <WatermarkedImage {...props} loading="lazy" decoding="async" /> }}>
             {mdxPost.content}
           </ReactMarkdown>
         </div>

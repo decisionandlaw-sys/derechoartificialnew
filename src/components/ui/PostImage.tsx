@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { HM_BADGE_SRC } from "@/components/ui/WatermarkedImage";
 
 interface PostImageProps {
   src: string;
@@ -8,6 +9,7 @@ interface PostImageProps {
   aspectClassName?: string;
   priority?: boolean;
   className?: string;
+  watermark?: boolean;
 }
 
 export function PostImage({
@@ -17,6 +19,7 @@ export function PostImage({
   aspectClassName = "aspect-[16/9]",
   priority = false,
   className = "",
+  watermark = true,
 }: PostImageProps) {
   return (
     <div
@@ -34,6 +37,16 @@ export function PostImage({
         priority={priority}
         className="object-cover"
       />
+      {watermark && (
+        <img
+          src={HM_BADGE_SRC}
+          alt=""
+          aria-hidden="true"
+          className="hm-badge"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
     </div>
   );
 }

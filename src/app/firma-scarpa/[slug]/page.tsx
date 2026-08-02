@@ -19,6 +19,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
+import { WatermarkedImage } from "@/components/ui/WatermarkedImage";
 
 // Map slugs to PDF files
 const PDF_MAPPING: Record<string, string> = {
@@ -236,7 +237,7 @@ export default async function FirmaScarpaSlugPage({
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
             components={{
-              img: (props: any) => <img {...props} loading="lazy" decoding="async" />,
+              img: (props: any) => <WatermarkedImage {...props} loading="lazy" decoding="async" />,
             }}
           >
             {mdxPost.content}

@@ -100,6 +100,7 @@ function CompactItem({ post, showKicker = true }: { post: PostData; showKicker?:
           sizes="96px"
           aspectClassName="w-16 h-16 md:w-20 md:h-20"
           className="shrink-0 mt-1 hidden sm:block"
+          watermark={false}
         />
       )}
     </Link>
@@ -127,6 +128,14 @@ export default function HomePage() {
           priority
           sizes="100vw"
           className="object-cover object-center"
+        />
+        <img
+          src="/badges/human-machine.webp"
+          alt=""
+          aria-hidden="true"
+          className="hm-badge"
+          loading="lazy"
+          decoding="async"
         />
         <div aria-hidden className="absolute inset-0 bg-black/30" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />

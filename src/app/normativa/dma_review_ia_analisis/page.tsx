@@ -10,6 +10,7 @@ import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 import { defaultSchema } from 'hast-util-sanitize';
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { WatermarkedImage } from "@/components/ui/WatermarkedImage";
 
 const sanitizeSchema = {
   ...defaultSchema,
@@ -201,7 +202,7 @@ export default async function DMAReviewIAPage() {
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, [rehypeSanitize, { schema: sanitizeSchema }]]}
             components={{
-              img: (props: any) => <img {...props} loading="lazy" decoding="async" />,
+              img: (props: any) => <WatermarkedImage {...props} loading="lazy" decoding="async" />,
             }}
           >
             {post.content}

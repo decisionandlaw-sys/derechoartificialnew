@@ -14,6 +14,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
 import { defaultSchema } from 'hast-util-sanitize';
+import { WatermarkedImage } from "@/components/ui/WatermarkedImage";
 
 const sanitizeSchema = {
   ...defaultSchema,
@@ -181,7 +182,7 @@ export default async function JurisprudenciaSlugPage({ params }: { params: Promi
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, [rehypeSanitize, { schema: sanitizeSchema }]]}
             components={{
-              img: (props: any) => <img {...props} loading="lazy" decoding="async" />,
+              img: (props: any) => <WatermarkedImage {...props} loading="lazy" decoding="async" />,
             }}
           >
             {mdxPost.content}
