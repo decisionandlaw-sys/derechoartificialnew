@@ -182,7 +182,7 @@ async function main() {
   spawnSync("git", ["config", "user.email", "bot@derechoartificial.com"], { stdio: "ignore" });
   spawnSync("git", ["config", "user.name", "SEO Bot"], { stdio: "ignore" });
 
-  const add = spawnSync("git", ["add", "content/"], { encoding: "utf8" });
+  const add = spawnSync("git", ["add", "-f", "content/"], { encoding: "utf8" });
   if (add.status !== 0) {
     console.error(add.stderr || "ERROR: git add falló");
     process.exitCode = 1;

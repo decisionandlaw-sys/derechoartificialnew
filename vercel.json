@@ -3,22 +3,22 @@
   "redirects": [
     {
       "source": "/fuentes/:path*",
-      "destination": "https://raw.githubusercontent.com/artificialderecho-ux/derecho-artificial-perspectivas/main/public/fuentes/:path*",
+      "destination": "https://raw.githubusercontent.com/decisionandlaw-sys/derechoartificialnew/main/public/fuentes/:path*",
       "permanent": false
     },
     {
       "source": "/Recursos/Fuentes/:path*",
-      "destination": "https://raw.githubusercontent.com/artificialderecho-ux/derecho-artificial-perspectivas/main/public/Recursos/Fuentes/:path*",
+      "destination": "https://raw.githubusercontent.com/decisionandlaw-sys/derechoartificialnew/main/public/Recursos/Fuentes/:path*",
       "permanent": false
     },
     {
       "source": "/assets/docs/:path*",
-      "destination": "https://raw.githubusercontent.com/artificialderecho-ux/derecho-artificial-perspectivas/main/public/assets/docs/:path*",
+      "destination": "https://raw.githubusercontent.com/decisionandlaw-sys/derechoartificialnew/main/public/assets/docs/:path*",
       "permanent": false
     },
     {
       "source": "/big-brother-watch-analisis-cedh.pdf",
-      "destination": "https://raw.githubusercontent.com/artificialderecho-ux/derecho-artificial-perspectivas/main/public/big-brother-watch-analisis-cedh.pdf",
+      "destination": "https://raw.githubusercontent.com/decisionandlaw-sys/derechoartificialnew/main/public/big-brother-watch-analisis-cedh.pdf",
       "permanent": false
     },
     {

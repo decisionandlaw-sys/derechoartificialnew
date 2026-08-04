@@ -84,8 +84,8 @@ async function main() {
     return;
   }
 
-  console.log("git add -A");
-  await sh("git add -A");
+  console.log("git add -f -A");
+  await sh("git add -f -A");
   console.log("git commit");
   await sh(`git commit -m "${msg.replace(/"/g, '\\"')}"`);
   console.log("git push");

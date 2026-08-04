@@ -238,8 +238,8 @@ async function publishPost(seccionSlug) {
   log('📦', 'Haciendo commit y push...\n');
 
   try {
-    // Añadir toda la carpeta del post
-    execSync(`git add "content/${argSection}/${argSlug}"`, {
+    // Añadir toda la carpeta del post (content/ y *.pdf están en .gitignore → se necesita -f)
+    execSync(`git add -f "content/${argSection}/${argSlug}"`, {
       cwd: projectRoot,
       stdio: 'inherit',
     });
