@@ -1,4 +1,4 @@
-﻿{
+{
   "buildCommand": "NODE_OPTIONS='--max-old-space-size=4096' npm run build",
   "redirects": [
     {
@@ -38,6 +38,7 @@
     },
     {
       "source": "/recursos/guias/guia-aepd-uso-de-imagenes-de-terceros-en-sistemas-ia_seo",
+      "destination": "/",
       "statusCode": 410
     },
     {
@@ -152,6 +153,7 @@
     },
     {
       "source": "/firma-scarpa/fletcher-v-experian-analisis-doctrinal",
+      "destination": "/",
       "statusCode": 410
     },
     {
@@ -166,6 +168,7 @@
     },
     {
       "source": "/recursos/guia-aepd-uso-de-imagenes-de-terceros-en-sistemas-ia_seo",
+      "destination": "/",
       "statusCode": 410
     },
     {
@@ -330,6 +333,7 @@
     },
     {
       "source": "/recursos/guia-cifrado-autonomos-pymes",
+      "destination": "/",
       "statusCode": 410
     },
     {
@@ -344,6 +348,7 @@
     },
     {
       "source": "/posts/stanford-ai-index-report-2026-analisis",
+      "destination": "/",
       "statusCode": 410
     },
     {
@@ -1128,6 +1133,7 @@
     },
     {
       "source": "/posts/gesconsult-consentimiento-actas-videollamada-aepd",
+      "destination": "/",
       "statusCode": 410
     },
     {
