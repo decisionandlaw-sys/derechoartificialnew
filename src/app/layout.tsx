@@ -28,7 +28,7 @@ import {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://derechoartificial.com"),
+  metadataBase: new URL("https://www.derechoartificial.com"),
   title: {
     default: "Regulación IA: AI Act, RGPD y compliance | Derecho Artificial",
     template: "%s | Derecho Artificial",
@@ -94,16 +94,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/logo-icono.png" />
-        <link rel="alternate" hrefLang="es" href="https://derechoartificial.com/" />
+        <link rel="alternate" hrefLang="es" href="https://www.derechoartificial.com/" />
         <link rel="alternate" hrefLang="en" href="https://decisionandlaw.com/" />
-        <link rel="alternate" hrefLang="x-default" href="https://derechoartificial.com/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.derechoartificial.com/" />
         <StructuredData
           data={[
             createOrganizationJsonLd(),
             createWebSiteJsonLd(),
             createPersonJsonLd({
               name: "Ricardo Scarpa",
-              url: "https://derechoartificial.com/quienes-somos",
+              url: "https://www.derechoartificial.com/quienes-somos",
               description:
                 "Responsable editorial de Derecho Artificial. Licenciado en Derecho por la Universidad Europea de Madrid. Máster en Informática Jurídica por la UNED. Máster en Dirección de Empresas Audiovisuales por el Instituto de Empresa (IE) de Madrid.",
             }),

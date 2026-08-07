@@ -75,7 +75,7 @@ export async function generateMetadata({
     const { title, description, category, section, date } = mdxPost.frontmatter;
     const metaDescription =
       mdxPost.excerpt || description || "Monitor editorial de novedades regulatorias sobre inteligencia artificial.";
-    const canonical = `https://derechoartificial.com/guias-ia/${slug}`;
+    const canonical = `https://www.derechoartificial.com/guias-ia/${slug}`;
     return {
       title,
       description: metaDescription,
@@ -112,9 +112,9 @@ export async function generateMetadata({
     resourceEntry?.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 158) ??
     entry.title.slice(0, 158);
 
-  const canonical = jsonEntry?.urlPath ? `https://derechoartificial.com${jsonEntry.urlPath}` : `https://derechoartificial.com/guias-ia/${entry.slug}`;
+  const canonical = jsonEntry?.urlPath ? `https://www.derechoartificial.com${jsonEntry.urlPath}` : `https://www.derechoartificial.com/guias-ia/${entry.slug}`;
 
-  const ogImage = "https://derechoartificial.com/og-default-1200x630.jpg";
+  const ogImage = "https://www.derechoartificial.com/og-default-1200x630.jpg";
 
   return {
     title,
@@ -221,21 +221,21 @@ export default async function ActualidadIASlugPage({ params }: { params: Promise
       "author": { 
         "@type": "Person", 
         "name": authorName,
-        "url": "https://derechoartificial.com/quienes-somos"
+        "url": "https://www.derechoartificial.com/quienes-somos"
       },
       "publisher": { 
         "@type": "Organization", 
         "name": "Derecho Artificial",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://derechoartificial.com/logo-principal.png"
+          "url": "https://www.derechoartificial.com/logo-principal.png"
         }
       },
       "datePublished": jsonEntry.datePublished,
       "dateModified": jsonEntry.datePublished,
       "image": {
         "@type": "ImageObject",
-        "url": "https://derechoartificial.com/og-default-1200x630.jpg",
+        "url": "https://www.derechoartificial.com/og-default-1200x630.jpg",
         "width": 1200,
         "height": 630
       },
@@ -287,7 +287,7 @@ export default async function ActualidadIASlugPage({ params }: { params: Promise
   const postDate = (entry as any).date || (entry as any).publishedAt || (entry as any).updatedAt || datePublished;
 
   const jsonLd = createNewsArticleJsonLd({
-    url: `https://derechoartificial.com/guias-ia/${entry.slug}`,
+    url: `https://www.derechoartificial.com/guias-ia/${entry.slug}`,
     headline: entry.title,
     description: entry.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 200),
     datePublished: postDate,
@@ -295,7 +295,7 @@ export default async function ActualidadIASlugPage({ params }: { params: Promise
   });
 
   const genericJsonLd = createGenericArticleJsonLd({
-    url: `https://derechoartificial.com/guias-ia/${entry.slug}`,
+    url: `https://www.derechoartificial.com/guias-ia/${entry.slug}`,
     headline: entry.title,
     description: entry.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 200),
     datePublished: postDate,
@@ -310,27 +310,27 @@ export default async function ActualidadIASlugPage({ params }: { params: Promise
     "author": { 
       "@type": "Person", 
       "name": "Ricardo Scarpa",
-      "url": "https://derechoartificial.com/quienes-somos"
+      "url": "https://www.derechoartificial.com/quienes-somos"
     },
     "publisher": { 
       "@type": "Organization", 
       "name": "Derecho Artificial",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://derechoartificial.com/logo-principal.png"
+        "url": "https://www.derechoartificial.com/logo-principal.png"
       }
     },
     "datePublished": postDate,
     "dateModified": (entry as any).updatedAt || postDate,
     "image": {
       "@type": "ImageObject",
-      "url": "https://derechoartificial.com/og-default-1200x630.jpg",
+      "url": "https://www.derechoartificial.com/og-default-1200x630.jpg",
       "width": 1200,
       "height": 630
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://derechoartificial.com/guias-ia/${entry.slug}`
+      "@id": `https://www.derechoartificial.com/guias-ia/${entry.slug}`
     }
   };
 

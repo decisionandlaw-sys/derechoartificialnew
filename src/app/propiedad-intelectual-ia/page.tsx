@@ -60,11 +60,11 @@ export default async function PropiedadIntelectualIAPage() {
     breadcrumbItems: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Propiedad Intelectual IA",
-        url: "https://derechoartificial.com/propiedad-intelectual-ia",
+        url: "https://www.derechoartificial.com/propiedad-intelectual-ia",
       },
     ],
     metadata: metadata,

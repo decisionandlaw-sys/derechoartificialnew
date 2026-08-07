@@ -84,15 +84,15 @@ export default async function DMAReviewIAPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: "DMA Review IA",
-        url: "https://derechoartificial.com/normativa/dma_review_ia_analisis",
+        url: "https://www.derechoartificial.com/normativa/dma_review_ia_analisis",
       },
     ],
   });

@@ -3,7 +3,7 @@ import { listContentSlugs, getContentEntry, ContentSection } from '@/lib/content
 import { getAllPosts } from '@/lib/mdx-utils';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://derechoartificial.com';
+  const baseUrl = 'https://www.derechoartificial.com';
 
   // 1. Páginas estáticas
   const staticPages: MetadataRoute.Sitemap = [

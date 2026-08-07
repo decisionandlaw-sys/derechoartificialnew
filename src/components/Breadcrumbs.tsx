@@ -7,7 +7,7 @@ export function Breadcrumbs({ items }: { items: { label: string; href: string }[
        "@type": "ListItem", 
        position: index + 1, 
        name: item.label, 
-       item: `https://derechoartificial.com${item.href}`, 
+       item: `https://www.derechoartificial.com${item.href}`, 
      })), 
    }; 
   

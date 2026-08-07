@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://derechoartificial.com/sitemap.xml",
+    sitemap: "https://www.derechoartificial.com/sitemap.xml",
   };
 }

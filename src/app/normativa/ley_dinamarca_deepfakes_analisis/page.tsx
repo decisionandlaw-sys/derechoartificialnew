@@ -84,15 +84,15 @@ export default async function LeyDinamarcaDeepfakesPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: "Ley Danesa Deepfakes",
-        url: "https://derechoartificial.com/normativa/ley_dinamarca_deepfakes_analisis",
+        url: "https://www.derechoartificial.com/normativa/ley_dinamarca_deepfakes_analisis",
       },
     ],
   });

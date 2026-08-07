@@ -58,11 +58,11 @@ export default async function EticaIAPage() {
     breadcrumbItems: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Ética IA",
-        url: "https://derechoartificial.com/etica-ia",
+        url: "https://www.derechoartificial.com/etica-ia",
       },
     ],
     metadata: metadata,

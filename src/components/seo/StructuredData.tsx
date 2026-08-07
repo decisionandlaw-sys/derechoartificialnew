@@ -8,7 +8,7 @@ export function StructuredData({ data }: { data: JsonLdValue }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: toJsonLd(data) }} />;
 }
 
-const siteUrl = "https://derechoartificial.com";
+const siteUrl = "https://www.derechoartificial.com";
 
 export function createOrganizationJsonLd() {
   return {
@@ -88,7 +88,7 @@ export function createArticleJsonLd(params: {
   authorName?: string;
   image?: string;
 }) {
-  const siteUrl = "https://derechoartificial.com";
+  const siteUrl = "https://www.derechoartificial.com";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -105,8 +105,8 @@ export function createArticleJsonLd(params: {
     author: {
       "@type": "Person",
       name: params.authorName ?? "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos",
-      "@id": "https://derechoartificial.com/quienes-somos"
+      url: "https://www.derechoartificial.com/quienes-somos",
+      "@id": "https://www.derechoartificial.com/quienes-somos"
     },
     publisher: {
       "@type": "Organization",
@@ -141,14 +141,14 @@ export function createGenericArticleJsonLd(params: {
     "author": {
       "@type": "Person",
       "name": params.authorName ?? "Ricardo Scarpa",
-      "url": "https://derechoartificial.com/quienes-somos"
+      "url": "https://www.derechoartificial.com/quienes-somos"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Derecho Artificial",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://derechoartificial.com/logo-principal.png"
+        "url": "https://www.derechoartificial.com/logo-principal.png"
       }
     },
     "datePublished": params.datePublished,
@@ -182,8 +182,8 @@ export function createNewsArticleJsonLd(params: {
     author: {
       "@type": "Person",
       name: params.authorName ?? "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos",
-      "@id": "https://derechoartificial.com/quienes-somos",
+      url: "https://www.derechoartificial.com/quienes-somos",
+      "@id": "https://www.derechoartificial.com/quienes-somos",
     },
     publisher: {
       "@id": `${siteUrl}/#organization`,
@@ -213,8 +213,8 @@ export function createLegalDecisionJsonLd(params: {
     author: {
       "@type": "Person",
       name: "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos",
-      "@id": "https://derechoartificial.com/quienes-somos"
+      url: "https://www.derechoartificial.com/quienes-somos",
+      "@id": "https://www.derechoartificial.com/quienes-somos"
     },
     publisher: {
       "@id": `${siteUrl}/#organization`
@@ -245,8 +245,8 @@ export function createLegislationJsonLd(params: {
     author: {
       "@type": "Person",
       name: "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos",
-      "@id": "https://derechoartificial.com/quienes-somos"
+      url: "https://www.derechoartificial.com/quienes-somos",
+      "@id": "https://www.derechoartificial.com/quienes-somos"
     },
     publisher: {
       "@id": `${siteUrl}/#organization`
@@ -297,8 +297,8 @@ export function createLegalArticleJsonLd(params: {
     author: {
       "@type": "Person",
       name: params.authorName ?? "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos",
-      "@id": "https://derechoartificial.com/quienes-somos"
+      url: "https://www.derechoartificial.com/quienes-somos",
+      "@id": "https://www.derechoartificial.com/quienes-somos"
     },
     publisher: {
       "@type": "Organization",

@@ -84,15 +84,15 @@ export default async function ResolucionONUPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: "Resolución ONU 78/265",
-        url: "https://derechoartificial.com/normativa/resolucion-onu-78-265-analisis",
+        url: "https://www.derechoartificial.com/normativa/resolucion-onu-78-265-analisis",
       },
     ],
   });

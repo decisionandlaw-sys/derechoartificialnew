@@ -3,9 +3,9 @@ import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://derechoartificial.com/normativa",
+    canonical: "https://www.derechoartificial.com/normativa",
     languages: {
-      es: "https://derechoartificial.com/normativa",
+      es: "https://www.derechoartificial.com/normativa",
       en: "https://decisionandlaw.com/",
     },
   },

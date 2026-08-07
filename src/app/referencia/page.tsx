@@ -190,8 +190,8 @@ export default async function ReferenciaPage() {
 
   const breadcrumbJsonLd = createBreadcrumbJsonLd({
     items: [
-      { name: "Derecho Artificial", url: "https://derechoartificial.com" },
-      { name: "Referencia", url: "https://derechoartificial.com/referencia" },
+      { name: "Derecho Artificial", url: "https://www.derechoartificial.com" },
+      { name: "Referencia", url: "https://www.derechoartificial.com/referencia" },
     ],
   });
 
@@ -208,7 +208,7 @@ export default async function ReferenciaPage() {
           name: "Referencia | Derecho Artificial",
           description:
             "Mapa de valor y capacidades editoriales: legislación, jurisprudencia, actualidad y biblioteca técnica y ética.",
-          url: "https://derechoartificial.com/referencia",
+          url: "https://www.derechoartificial.com/referencia",
         }}
       />
       <StructuredData
@@ -216,9 +216,9 @@ export default async function ReferenciaPage() {
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Derecho Artificial",
-          url: "https://derechoartificial.com",
-          logo: "https://derechoartificial.com/logo-principal.png",
-          sameAs: ["https://derechoartificial.com/quienes-somos"],
+          url: "https://www.derechoartificial.com",
+          logo: "https://www.derechoartificial.com/logo-principal.png",
+          sameAs: ["https://www.derechoartificial.com/quienes-somos"],
         }}
       />
       <StructuredData
@@ -231,7 +231,7 @@ export default async function ReferenciaPage() {
           provider: {
             "@type": "Organization",
             name: "Derecho Artificial",
-            url: "https://derechoartificial.com",
+            url: "https://www.derechoartificial.com",
           },
         }}
       />

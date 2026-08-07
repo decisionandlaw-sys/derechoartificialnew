@@ -17,7 +17,7 @@ export function SEOHead({
   ogType = "article",
   keywords,
 }: SEOHeadProps): Metadata {
-  const baseUrl = "https://derechoartificial.com";
+  const baseUrl = "https://www.derechoartificial.com";
   const defaultImage = "/logo-principal.png";
   const finalImage = ogImage ? (ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`) : defaultImage;
 

@@ -90,11 +90,11 @@ export default async function GlobalIAPage() {
     breadcrumbItems: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Global IA",
-        url: "https://derechoartificial.com/global-ia",
+        url: "https://www.derechoartificial.com/global-ia",
       },
     ],
     metadata: metadata,

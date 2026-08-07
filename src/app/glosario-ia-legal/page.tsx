@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: "Glosario de IA Legal y Regulación Europea | Derecho Artificial",
   description: "Diccionario especializado en términos de Inteligencia Artificial, EU AI Act, Legaltech y ética digital. Definiciones clave para abogados y empresas.",
   alternates: {
-    canonical: "https://derechoartificial.com/glosario-ia-legal",
+    canonical: "https://www.derechoartificial.com/glosario-ia-legal",
     languages: {
-      es: "https://derechoartificial.com/glosario-ia-legal",
+      es: "https://www.derechoartificial.com/glosario-ia-legal",
       en: "https://decisionandlaw.com/",
     },
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Glosario de IA Legal y Regulación Europea",
     description: "Diccionario especializado en términos de Inteligencia Artificial, EU AI Act, Legaltech y ética digital.",
-    url: "https://derechoartificial.com/glosario-ia-legal",
+    url: "https://www.derechoartificial.com/glosario-ia-legal",
     siteName: "Derecho Artificial",
     locale: "es_ES",
     images: [{

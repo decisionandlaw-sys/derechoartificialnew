@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     const { title, description, category } = mdxPost.frontmatter;
     const metaDescription =
       mdxPost.excerpt || description || "Análisis jurídico experto sobre normativa en IA.";
-    const canonical = `https://derechoartificial.com/${category}/${slug}`;
+    const canonical = `https://www.derechoartificial.com/${category}/${slug}`;
     const ogImage = getHeroImage("normativa");
     return {
       title,
@@ -97,7 +97,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const entry = await getSectionResourceEntry("normativa", slug);
   if (!entry) return {};
   const description = entry.description || entry.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 158) || "Análisis jurídico experto sobre IA por Ricardo Scarpa";
-  const canonical = `https://derechoartificial.com/normativa/${entry.slug}`;
+  const canonical = `https://www.derechoartificial.com/normativa/${entry.slug}`;
   const ogImage = getHeroImage("normativa");
 
   return {
@@ -197,7 +197,7 @@ export default async function NormativaSlugPage({ params }: { params: Promise<Pa
   const entry = await getSectionResourceEntry("normativa", slug);
   if (!entry) notFound();
 
-  const url = `https://derechoartificial.com/normativa/${entry.slug}`;
+  const url = `https://www.derechoartificial.com/normativa/${entry.slug}`;
   const description = entry.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 200);
 
   const datePublished =
@@ -215,21 +215,21 @@ export default async function NormativaSlugPage({ params }: { params: Promise<Pa
     "author": { 
       "@type": "Person", 
       "name": "Ricardo Scarpa",
-      "url": "https://derechoartificial.com/quienes-somos"
+      "url": "https://www.derechoartificial.com/quienes-somos"
     },
     "publisher": { 
       "@type": "Organization", 
       "name": "Derecho Artificial",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://derechoartificial.com/logo-principal.png"
+        "url": "https://www.derechoartificial.com/logo-principal.png"
       }
     },
     "datePublished": postDate,
     "dateModified": (entry as any).updatedAt || postDate,
     "image": {
       "@type": "ImageObject",
-      "url": "https://derechoartificial.com/og-default-1200x630.jpg",
+      "url": "https://www.derechoartificial.com/og-default-1200x630.jpg",
       "width": 1200,
       "height": 630
     },
@@ -479,11 +479,11 @@ export default async function NormativaSlugPage({ params }: { params: Promise<Pa
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: entry.title,

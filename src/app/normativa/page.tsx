@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import type { ResolvedContentEntry } from "@/lib/content";
 import { getContentEntry, listContentSlugs } from "@/lib/content";
 import type { ResourceEntry } from "@/lib/resources";
@@ -160,11 +160,11 @@ export default async function NormativaPage() {
     breadcrumbItems: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
     ],
     metadata: metadata,

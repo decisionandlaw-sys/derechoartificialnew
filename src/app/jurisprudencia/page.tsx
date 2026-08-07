@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { getSectionResourceEntry, listSectionResourceSlugs } from "@/lib/resources";
 import { getAllPosts, getFeaturedImage } from "@/lib/mdx-utils";
 import { UnifiedSectionLayout, type UnifiedItem, type SectionConfig } from "@/components/layout/UnifiedSectionLayout";
@@ -152,11 +152,11 @@ export default async function JurisprudenciaPage() {
     breadcrumbItems: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Jurisprudencia",
-        url: "https://derechoartificial.com/jurisprudencia",
+        url: "https://www.derechoartificial.com/jurisprudencia",
       },
     ],
     metadata: metadata,

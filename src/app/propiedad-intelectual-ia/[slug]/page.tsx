@@ -38,7 +38,7 @@ export async function generateMetadata({
   }
 
   const { title, description, category, date } = mdxPost.frontmatter;
-  const canonical = `https://derechoartificial.com/${category}/${slug}`;
+  const canonical = `https://www.derechoartificial.com/${category}/${slug}`;
   const metaDescription =
     mdxPost.excerpt ||
     description ||
@@ -88,7 +88,7 @@ export default async function PropiedadIntelectualIASlugPage({
   const { title, date, category, pdf, author } = mdxPost.frontmatter;
 
   const jsonLd = createArticleJsonLd({
-    url: `https://derechoartificial.com/${category}/${slug}`,
+    url: `https://www.derechoartificial.com/${category}/${slug}`,
     headline: title,
     description: mdxPost.excerpt,
     datePublished: date,
@@ -96,7 +96,7 @@ export default async function PropiedadIntelectualIASlugPage({
   });
 
   const genericJsonLd = createGenericArticleJsonLd({
-    url: `https://derechoartificial.com/${category}/${slug}`,
+    url: `https://www.derechoartificial.com/${category}/${slug}`,
     headline: title,
     description: mdxPost.excerpt,
     datePublished: date,

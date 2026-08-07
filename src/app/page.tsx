@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, getFeaturedImage, type PostData } from '@/lib/mdx-utils';
@@ -7,7 +7,7 @@ import { PostImage } from "@/components/ui/PostImage";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://derechoartificial.com"),
+  metadataBase: new URL("https://www.derechoartificial.com"),
   title: "Regulación IA: AI Act, RGPD y compliance",
   description:
     "Domina el AI Act, el RGPD y la jurisprudencia IA. Análisis jurídico, guías de compliance y sentencias comentadas para abogados y DPO.",

@@ -21,7 +21,7 @@ export type ResolvedContentEntry = ContentEntry & {
   dateMs: number;
 };
 
-const siteUrl = "https://derechoartificial.com";
+const siteUrl = "https://www.derechoartificial.com";
 
 function primaryContentDir(section: ContentSection) {
   return path.join(process.cwd(), "src", "content", section);

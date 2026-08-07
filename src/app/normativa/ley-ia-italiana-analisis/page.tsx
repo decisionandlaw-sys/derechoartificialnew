@@ -83,15 +83,15 @@ export default async function LeyIAItalianaPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: "Ley Italiana IA",
-        url: "https://derechoartificial.com/normativa/ley-ia-italiana-analisis",
+        url: "https://www.derechoartificial.com/normativa/ley-ia-italiana-analisis",
       },
     ],
   });

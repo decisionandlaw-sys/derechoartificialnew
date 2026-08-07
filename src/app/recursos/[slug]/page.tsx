@@ -48,7 +48,7 @@ export default async function RecursoPage({ params }: { params: Promise<Params> 
   const entry = await getResourceEntry(slug);
   if (!entry) notFound();
 
-  const url = `https://derechoartificial.com/recursos/${entry.slug}`;
+  const url = `https://www.derechoartificial.com/recursos/${entry.slug}`;
   const description = entry.summaryHtml.replace(/<[^>]+>/g, "").slice(0, 200);
 
   const datePublished =
@@ -64,20 +64,20 @@ export default async function RecursoPage({ params }: { params: Promise<Params> 
     author: { 
       "@type": "Person", 
       name: "Ricardo Scarpa",
-      url: "https://derechoartificial.com/quienes-somos"
+      url: "https://www.derechoartificial.com/quienes-somos"
     },
     publisher: { 
       "@type": "Organization", 
       name: "Derecho Artificial",
       logo: {
         "@type": "ImageObject",
-        url: "https://derechoartificial.com/logo-principal.png"
+        url: "https://www.derechoartificial.com/logo-principal.png"
       }
     },
     datePublished: datePublished,
     "image": {
       "@type": "ImageObject",
-      "url": "https://derechoartificial.com/og-default-1200x630.jpg",
+      "url": "https://www.derechoartificial.com/og-default-1200x630.jpg",
       "width": 1200,
       "height": 630
     },

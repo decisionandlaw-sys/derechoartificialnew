@@ -9,7 +9,7 @@ import { StructuredData, createLegalArticleJsonLd } from "@/components/seo/Struc
 const title = "IA Agéntica y RGPD: Guía Completa sobre Protección de Datos Personales";
 const description =
   "Guía práctica del impacto de la IA agéntica en el RGPD: vulnerabilidades, EIPD, prompt injection, shadow-leak y gobernanza arquitectónica. Obligaciones y recomendaciones 2026.";
-const url = "https://derechoartificial.com/normativa/ia-agentica";
+const url = "https://www.derechoartificial.com/normativa/ia-agentica";
 const image = "/images/normativa.jpg";
 const datePublished = "2026-02-18";
 

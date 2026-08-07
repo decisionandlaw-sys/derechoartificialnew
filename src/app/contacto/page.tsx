@@ -25,7 +25,7 @@ export default function ContactoPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          mainEntityOfPage: "https://derechoartificial.com/contacto",
+          mainEntityOfPage: "https://www.derechoartificial.com/contacto",
           name: "Contacto - Derecho Artificial",
           description:
             "Formulario de contacto para consultas jurídicas sobre IA, correcciones y colaboraciones editoriales.",

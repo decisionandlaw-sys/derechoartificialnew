@@ -74,8 +74,8 @@ export default async function ActualidadIAPage() {
 
   const breadcrumbJsonLd = createBreadcrumbJsonLd({
     items: [
-      { name: "Derecho Artificial", url: "https://derechoartificial.com" },
-      { name: "Guías IA", url: "https://derechoartificial.com/guias-ia" },
+      { name: "Derecho Artificial", url: "https://www.derechoartificial.com" },
+      { name: "Guías IA", url: "https://www.derechoartificial.com/guias-ia" },
     ],
   });
 

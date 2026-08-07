@@ -84,15 +84,15 @@ export default async function SB53CaliforniaPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Normativa",
-        url: "https://derechoartificial.com/normativa",
+        url: "https://www.derechoartificial.com/normativa",
       },
       {
         name: "SB 53 California",
-        url: "https://derechoartificial.com/normativa/sb53_california_analisis",
+        url: "https://www.derechoartificial.com/normativa/sb53_california_analisis",
       },
     ],
   });

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import type { ResolvedContentEntry } from "@/lib/content";
 import { getContentEntry, listContentSlugs } from "@/lib/content";
@@ -181,11 +181,11 @@ export default async function FirmaScarpaPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Firma Scarpa",
-        url: "https://derechoartificial.com/firma-scarpa",
+        url: "https://www.derechoartificial.com/firma-scarpa",
       },
     ],
   });

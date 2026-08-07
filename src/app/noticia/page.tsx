@@ -32,11 +32,11 @@ export default async function NoticiaPage() {
     items: [
       {
         name: "Derecho Artificial",
-        url: "https://derechoartificial.com",
+        url: "https://www.derechoartificial.com",
       },
       {
         name: "Noticias",
-        url: "https://derechoartificial.com/noticia",
+        url: "https://www.derechoartificial.com/noticia",
       },
     ],
   });
