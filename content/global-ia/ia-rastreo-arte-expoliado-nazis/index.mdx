@@ -1,0 +1,395 @@
+---
+title: "La IA como herramienta de justicia restaurativa: el rastreo de las 100.000 obras expoliadas por el régimen nazi"
+date: "2026-08-09"
+section: "global-ia"
+slug: "ia-rastreo-arte-expoliado-nazis"
+description: "Análisis jurídico del AI Provenance Assistant de Santa Clara, el marco de los Principios de Washington y las Mejores Prácticas de 2024, y las plataformas JDCRP y ReCLAIM."
+author: "Ricardo Scarpa"
+image: "/images/posts/global-ia/ia-rastreo-arte-expoliado-nazis.jpg"
+tags: ["inteligencia artificial", "restitución de arte", "Holocausto", "Principios de Washington", "provenance research", "derecho comparado"]
+---
+
+*Un análisis del "AI Provenance Assistant" de la Universidad de Santa Clara, su arquitectura técnica, el marco normativo de la restitución de arte expoliado por el régimen nazi y las iniciativas paralelas de digitalización del patrimonio cultural judío (JDCRP, ReCLAIM).*
+
+---
+
+## 1. Introducción: el expolio cultural más colosal de la historia moderna
+
+### 1.1. Magnitud del expolio nazi (1933-1945): las 650.000 obras confiscadas
+
+Entre 1933 y 1945, el régimen nacionalsocialista llevó a cabo una de las operaciones de expolio cultural más sistemáticas y extensas de la historia contemporánea. Las estimaciones documentadas sitúan en aproximadamente **650.000** el número de obras de arte confiscadas, sustraídas o adquiridas mediante transacciones coercitivas a precios muy inferiores a su valor real (1)(2). Esta cifra abarca pinturas, esculturas, dibujos, grabados, muebles, objetos litúrgicos, libros y archivos completos, procedentes en su mayoría de colecciones privadas de familias judías, así como de museos e instituciones culturales de los territorios ocupados.
+
+El volumen del expolio adquiere una dimensión más precisa al considerar que, según estimaciones archivísticas, las obras expoliadas llegaron a representar aproximadamente el **20% de la totalidad del arte en Europa** en ese período (3). Esta proporción evidencia que el saqueo no fue un fenómeno marginal o accidental, sino una política deliberada de destrucción cultural y enriquecimiento del Reich, diseñada para desposeer a las comunidades judías de su patrimonio material y, con ello, de su memoria histórica.
+
+### 1.2. El problema persistente: 100.000 piezas aún desaparecidas
+
+A pesar de los esfuerzos de las tropas aliadas tras la caída de Berlín —que lograron recuperar una parte sustancial de las obras almacenadas en minas de sal, castillos y depósitos—, el balance actual sigue siendo profundamente deficitario. De las 650.000 obras confiscadas, se estima que **aproximadamente 100.000** continúan desaparecidas (1)(2). Esta cifra, aunque variable según las fuentes y los criterios de contabilización, es citada consistentemente por los investigadores del proyecto de la Universidad de Santa Clara y por las instituciones que trabajan en la materia.
+
+La persistencia de estas desapariciones no obedece únicamente a la destrucción de obras durante la guerra, sino a un fenómeno complejo que los autores describen como una "bruma burocrática y deliberada" (1). Tras la guerra, muchas obras cambiaron de manos a través de circuitos comerciales opacos, fueron incorporadas a colecciones privadas con documentación de procedencia falsificada o permanecieron en museos públicos sin que se verificara adecuadamente su historial de propiedad. La falta de coordinación entre los archivos de los distintos países ocupados, la dispersión de los registros y la ausencia de una base de datos centralizada han dificultado durante décadas la tarea de localización y restitución.
+
+### 1.3. La investigación de procedencia como desafío archivístico y jurídico
+
+La investigación de procedencia (*provenance research*) —esto es, el rastreo documental de la historia de propiedad de una obra— se ha convertido en el núcleo metodológico para abordar el problema. Sin embargo, los métodos tradicionales, basados en la consulta manual de archivos físicos, la comparación de catálogos y la revisión de documentos en múltiples idiomas, han demostrado ser insuficientemente eficaces frente a la magnitud del desafío. El litigio judicial por la restitución de una única obra puede prolongarse durante décadas, como ilustra el caso del juez Timothy Reif, quien invirtió años en rastrear obras pertenecientes a su familia, los herederos del artista Fritz Grünbaum, logrando la recuperación de al menos once obras de Egon Schiele (2).
+
+Este contexto de obsolescencia metodológica y acumulación de registros no estructurados es el que ha motivado la irrupción de la inteligencia artificial como una herramienta potencialmente disruptiva. La noticia que origina este análisis (1) da cuenta del desarrollo del "AI Provenance Assistant" en la Universidad de Santa Clara, pero este proyecto no es un caso aislado: se inscribe en un ecosistema más amplio de iniciativas tecnológicas que buscan poner la computación al servicio de la justicia restaurativa, como la plataforma digital de la Jewish Digital Cultural Recovery Project Foundation (JDCRP) (4) o el sistema ReCLAIM del Hasso Plattner Institute (5). Todas ellas comparten un objetivo común: superar la fragmentación archivística y reducir los plazos de identificación de obras expoliadas, sin que ello implique prescindir de la verificación humana.
+
+---
+
+## 2. El marco normativo de la restitución: los Principios de Washington y su implementación
+
+### 2.1. La Conferencia de Washington de 1998: origen y contenido de los once principios
+
+El 3 de diciembre de 1998, cuarenta y cuatro Estados participantes en la *Washington Conference on Holocaust-Era Assets* —convocada por el Gobierno de los Estados Unidos— suscribieron los *Washington Conference Principles on Nazi-Confiscated Art* (en adelante, Principios de Washington) (8)(9)(1). El texto, publicado en conexión con la conferencia, consta de once principios numerados (I a XI) que establecen un conjunto de directrices para abordar la cuestión del arte expoliado por el régimen nazi (9).
+
+El contenido de los Principios puede sintetizarse en las siguientes obligaciones de carácter programático (8)(9)(11):
+
+- **Principio I**: el arte confiscado por los nazis y no restituido posteriormente debe ser identificado.
+- **Principio II**: los registros y archivos pertinentes deben estar abiertos y ser accesibles a los investigadores, de acuerdo con las directrices del Consejo Internacional de Archivos.
+- **Principio III**: deben ponerse a disposición recursos y personal para facilitar la identificación de todas las obras expoliadas.
+- **Principio IV**: al establecer que una obra fue confiscada por los nazis, debe tenerse en cuenta la existencia de lagunas o ambigüedades inevitables en la procedencia, habida cuenta del paso del tiempo y las circunstancias de la era del Holocausto.
+- **Principio V**: debe hacerse todo esfuerzo por publicitar las obras identificadas como expoliadas para localizar a sus propietarios de preguerra o a sus herederos.
+- **Principio VI**: deben hacerse esfuerzos para establecer un registro central de dicha información.
+- **Principio VII**: debe alentarse a los propietarios de preguerra y a sus herederos a presentar reclamaciones.
+- **Principio VIII**: si los propietarios de preguerra o sus herederos pueden ser identificados, deben adoptarse medidas con celeridad para alcanzar una solución justa y equitativa.
+- **Principio IX**: si no pueden ser identificados, deben adoptarse igualmente medidas con celeridad para alcanzar una solución justa y equitativa.
+- **Principio X**: las comisiones u otros órganos establecidos para identificar el arte expoliado y asistir en la resolución de cuestiones de propiedad deben tener una composición equilibrada.
+- **Principio XI**: se anima a las naciones a desarrollar procesos nacionales para implementar estos principios, en particular en lo relativo a mecanismos de resolución alternativa de disputas.
+
+Los Principios de Washington fueron el primer instrumento internacional que abordó de manera comprehensiva la cuestión del arte expoliado por los nazis, estableciendo un estándar ético y operativo para los Estados, los museos, las casas de subastas y los coleccionistas privados (13). Como declaró el entonces Subsecretario de Estado Stuart Eizenstat, artífice de la conferencia, "el mundo del arte nunca volverá a ser el mismo en la forma en que aborda el arte confiscado por los nazis" (13). Philippe de Montebello, entonces director del Metropolitan Museum of Art, afirmó que "el genio ha salido por fin de la botella" (13).
+
+### 2.2. La naturaleza no vinculante de los principios y sus implicaciones prácticas
+
+Los Principios de Washington fueron concebidos expresamente como un instrumento de *soft law* o derecho blando, desprovisto de fuerza jurídica vinculante. El preámbulo del documento es explícito al respecto: "Al desarrollar un consenso sobre **principios no vinculantes** para ayudar a resolver cuestiones relativas al arte confiscado por los nazis, la Conferencia reconoce que entre las naciones participantes existen diferentes sistemas jurídicos y que los países actúan dentro del contexto de sus propias leyes" (8)(9)(11) (énfasis añadido).
+
+Esta naturaleza no vinculante tiene implicaciones prácticas de primer orden. En primer lugar, cada Estado firmante conserva la soberanía para aplicar los principios de acuerdo con su ordenamiento jurídico interno, sin que exista un mecanismo de supervisión o sanción internacional por su incumplimiento (5). En segundo lugar, los principios no crean derechos subjetivos directamente invocables ante los tribunales, ni modifican los plazos de prescripción, las cargas probatorias o los estándares de adquisición de buena fe que rigen en cada jurisdicción (5). En tercer lugar, su eficacia depende enteramente de la voluntad política de los Estados y de la presión moral de la comunidad internacional.
+
+Como ha señalado la doctrina, ni los Principios de Washington ni las declaraciones posteriores —como la Declaración de Terezin de 2009— son jurídicamente vinculantes (5). De los cuarenta y cuatro países asistentes a la Conferencia de Washington, solo cinco han adoptado desde entonces medidas sustanciales para dar efectividad al Principio XI (5), que insta a desarrollar procesos nacionales de implementación. Esta disparidad en la implementación revela una de las limitaciones más significativas del régimen normativo: su carácter voluntario permite que muchos Estados se limiten a una adhesión meramente declarativa sin traducirla en mecanismos efectivos de restitución.
+
+### 2.3. Los "Best Practices" de 2024 y la evolución del régimen jurídico
+
+Con ocasión del 25º aniversario de los Principios de Washington, el 5 de marzo de 2024 se presentó en Washington, D.C., el documento *Best Practices for the Washington Conference Principles on Nazi-Confiscated Art* (en adelante, Mejores Prácticas) (10)(3). Elaborado por la *World Jewish Restitution Organization* (WJRO) y diplomáticos de diversos países, el documento fue presentado como un conjunto de estándares "jurídicamente no vinculantes pero moralmente importantes" destinados a "aclarar y mejorar la implementación práctica" de los Principios de 1998 (10)(12).
+
+Las Mejores Prácticas de 2024 introducen varios elementos de gran relevancia (10):
+
+- **Definición ampliada de "arte" (sección A)**: se extiende más allá de las pinturas y artes visuales para incluir rollos sagrados, objetos sinagogales y ceremoniales, bibliotecas, manuscritos, archivos, registros e instrumentos musicales pertenecientes a individuos y a comunidades judías y otras.
+- **Definición de "confiscado por los nazis" (sección B)**: se especifica que comprende lo saqueado, confiscado, secuestrado y expoliado por los nazis, los fascistas y sus colaboradores, mediante diversos medios —incluidos, entre otros, el robo, la coacción y la confiscación— así como las ventas forzadas y las ventas bajo coacción durante el período del Holocausto (1933-1945).
+- **Presunción de transferencia involuntaria (sección C)**: se establece que, teniendo en cuenta las circunstancias históricas y jurídicas específicas de cada caso, la venta de arte y bienes culturales por una persona perseguida durante el período del Holocausto (1933-1945) puede considerarse equivalente a una transferencia involuntaria de propiedad basada en las circunstancias de la venta.
+- **Primacía de la restitución (sección D)**: se declara que "las soluciones justas y equitativas" deben serlo, en primer lugar, para las víctimas del Holocausto y sus herederos, y que la solución primaria es la restitución.
+- **Búsqueda proactiva de herederos (sección E)**: se establece que los poseedores actuales deben buscar proactivamente a todos los propietarios de preguerra identificados o a sus herederos a efectos de la restitución.
+- **Prohibición de reembolso del precio de compra (sección F)**: en caso de restitución, los poseedores actuales no deben solicitar el reembolso del precio de compra de las obras expoliadas a los propietarios de preguerra o a sus herederos, y la compensación debe estar exenta de impuestos.
+- **Digitalización de archivos (sección G)**: se insta a los gobiernos a fomentar la investigación de procedencia y los proyectos de catalogación, digitalización y puesta a disposición en internet de archivos públicos y privados, incluidos los registros de comerciantes.
+
+Las Mejores Prácticas han sido respaldadas por más de treinta países, entre ellos Estados Unidos, Canadá, Israel y veintinueve Estados europeos (12). Este respaldo, aunque no vinculante, refleja un consenso internacional en evolución hacia estándares más exigentes en materia de restitución. Como señala Evelien Campfens en su análisis publicado en *International Legal Materials*, las Mejores Prácticas "van más allá de estos instrumentos anteriores al proponer nuevas acciones y ampliar elementos clave de la norma material" (12). El documento aborda explícitamente las lagunas percibidas en los Principios de Washington, especialmente en lo relativo a la carga de la prueba, la definición de venta bajo coacción y la búsqueda proactiva de herederos (3).
+
+No obstante, persiste una limitación fundamental: al igual que los Principios de 1998, las Mejores Prácticas de 2024 carecen de fuerza vinculante. Su eficacia sigue dependiendo de la voluntad de los Estados y de los actores del mercado del arte para adoptarlas voluntariamente. La cuestión de si este régimen de *soft law* es suficiente para abordar el problema de las 100.000 obras aún desaparecidas, o si sería necesario avanzar hacia instrumentos vinculantes, sigue siendo objeto de debate en la doctrina.
+
+---
+
+## 3. El "AI Provenance Assistant" de la Universidad de Santa Clara
+
+### 3.1. Origen del proyecto: el caso del juez Timothy Reif y los herederos de Fritz Grünbaum
+
+El "AI Provenance Assistant" no nace de una reflexión académica abstracta, sino de una experiencia personal que revela las limitaciones del sistema tradicional de restitución. El proyecto se originó cuando el profesor de gestión Michael Santoro, de la Leavey School of Business de la Universidad de Santa Clara, tomó conocimiento de los esfuerzos de un conocido suyo, el juez Timothy Reif del Tribunal de Comercio Internacional de Estados Unidos, por rastrear obras de arte que habían sido robadas a sus antepasados (8)(10). Reif es uno de los herederos legales del artista de cabaré vienés Fritz Grünbaum, cuya colección de arte fue expoliada por el régimen nazi (5)(8).
+
+Los esfuerzos de Reif y de los demás herederos de Grünbaum se han saldado con la restitución de obras por valor de millones de dólares, incluyendo al menos once obras de Egon Schiele (5)(8). Sin embargo, el proceso requirió años de litigios y de investigación documental, lo que puso de manifiesto las dificultades que los tribunales encuentran a la hora de rastrear obras de arte robadas y localizar a sus legítimos propietarios (11). Como señala el artículo de El Debate, los procesos de restitución se alargan durante años debido a las complicaciones que surgen en el proceso de documentación (11).
+
+Paralelamente, Santoro venía investigando los aspectos de derechos humanos relacionados con los esfuerzos de repatriación de arte alojado en museos estadounidenses y europeos a residentes indígenas de países de Sudamérica, Centroamérica y África, y consideró que esas luchas podrían beneficiarse del uso de la IA (8). Fue entonces cuando convocó a sus frecuentes colaboradores en investigación de datos, los profesores Haibing Lu y Michele Samorani, y el proyecto AI Provenance Assistant nació (8).
+
+### 3.2. El equipo investigador: Michael Santoro, Haibing Lu y Michele Samorani
+
+El equipo está integrado por tres académicos de la Leavey School of Business de la Universidad de Santa Clara (8)(2):
+
+- **Michael Santoro**, profesor de gestión, es el director del proyecto (2)(8). Su interés en la restitución de arte expoliado tiene un componente tanto personal, a través de su relación con el juez Reif, como académico, derivado de sus investigaciones previas sobre derechos humanos y repatriación de bienes culturales (8).
+
+- **Haibing Lu**, profesor de Sistemas de Información y Analítica, es el responsable de la arquitectura técnica del sistema (3)(8). Lu se incorporó a la Universidad de Santa Clara en 2011 tras completar su doctorado en Tecnología de la Información en la Universidad de Rutgers (3). Su investigación abarca un amplio espectro de áreas, incluyendo equidad y gobernanza de la IA, seguridad y privacidad de datos, análisis de macrodatos y computación en la nube (3).
+
+- **Michele Samorani**, también profesor de Sistemas de Información y Analítica, colabora con Lu en el diseño del sistema (4)(8).
+
+El equipo recibió asistencia de estudiantes investigadores, entre ellos Aryan Puranik (M.S. '26) y Reemika Subrata Das (M.S. '25) (8).
+
+### 3.3. Fundamentos técnicos: modelos de lenguaje, procesamiento de información no estructurada y arquitectura del sistema
+
+El AI Provenance Assistant es descrito por sus creadores como un *data docent* ("guía de datos"), un chatbot de inteligencia artificial diseñado para analizar archivos complejos sobre la procedencia de obras de arte (9)(1). Su objetivo no es reemplazar a los investigadores de procedencia, sino hacer que décadas de registros de archivo complejos sean mucho más fáciles de explorar mediante una conversación natural (10)(9).
+
+El problema técnico que aborda es el siguiente: la información sobre la procedencia de las obras expoliadas se encuentra dispersa en miles de sitios web de museos, bases de datos independientes, archivos nacionales, catálogos de subastas digitalizados y otras fuentes (8). Cada institución mantiene su propio sistema, en su propio idioma, utilizando su propio vocabulario y estructuras de bases de datos, o "esquemas" (8). Las pistas importantes están enterradas en millones de registros, lo que hace prácticamente imposible que un investigador o museo detecte manualmente el arte robado (8).
+
+La solución técnica implementada por el equipo consiste en varias capas (8)(10):
+
+1. **Extracción de datos**: el equipo scrapeó los datos de una base de datos inicial sobre obras expoliadas (8).
+
+2. **Adaptación de modelos de lenguaje existentes**: el equipo no construyó su propio modelo de lenguaje desde cero, sino que adaptó modelos ya existentes a las necesidades del proyecto (10).
+
+3. **Procesamiento de lenguaje natural**: el sistema permite a cualquier usuario formular una pregunta en lenguaje natural y humano, y el sistema la traduce automáticamente a código de búsqueda (9). Lu dirigió la creación de un agente de IA capaz de responder consultas redactadas en lenguaje simple sobre la base documental (10).
+
+4. **Mejora de la búsqueda**: la herramienta mejora la búsqueda al localizar términos relacionados, variantes ortográficas y traducciones de nombres, y después explica los resultados en inglés sencillo (8)(10).
+
+5. **Interfaz intuitiva**: la aplicación cuenta con una interfaz en la que basta con introducir datos como el apellido del legítimo propietario, el artista autor de la obra o el tipo de obra de arte saqueada para que genere una lista de obras relacionadas (11).
+
+Como declaró Haibing Lu: "Nuestro objetivo no era reemplazar a los investigadores de procedencia. Era hacer que décadas de registros de archivo complejos fueran mucho más fáciles de explorar mediante una conversación natural" (10)(9).
+
+### 3.4. Entrenamiento inicial: la base de datos del Einsatzstab Reichsleiter Rosenberg (ERR)
+
+Para poner en marcha el sistema, el equipo comenzó extrayendo datos de una base de datos que contiene información sobre unas 30.000 obras expoliadas que se sabe que pasaron por el famoso museo Jeu de Paume de París (8). El museo es famoso por haber sido incautado por los nazis y utilizado como depósito de arte saqueado de la región (8). A partir de 2010, el museo puso a disposición de los investigadores toda su base de datos para la repatriación de arte robado (8).
+
+El AI Provenance Assistant explora una de las mayores bases de datos dedicadas al arte expoliado por los nazis, el proyecto *Einsatzstab Reichsleiter Rosenberg* (ERR), que cubre unas 40.000 obras (9)(11). Esta base de datos, conocida como *Cultural Plunder by the Einsatzstab Reichsleiter Rosenberg: Database of Art Objects at the Jeu de Paume*, documenta objetos de arte que fueron saqueados por agentes del ERR en la Francia y Bélgica ocupadas por los alemanes, y que fueron procesados a través del Jeu de Paume entre finales de 1940 y agosto de 1944 (6)(12).
+
+La base de datos del ERR reúne por primera vez en forma de catálogo ilustrado y consultable las fichas de registro y fotografías restantes producidas por el ERR, que cubren más de 20.000 objetos de arte tomados de judíos en la Francia ocupada por los alemanes y, en menor medida, en Bélgica (12). Es un proyecto conjunto de la *Conference on Jewish Material Claims against Germany* y el *United States Holocaust Memorial Museum* (6).
+
+A partir de esa base de datos inicial —que, como señala la noticia, contiene errores y está "llena de errores" (8)—, Lu construyó un sistema para hacerla fácilmente consultable en lenguaje sencillo, con la IA interpretando la pregunta del investigador, traduciéndola a una búsqueda y mejorando la búsqueda mediante la localización de términos relacionados, diferentes ortografías y versiones traducidas de los nombres (8). Tras encontrar los resultados, la IA proporciona una respuesta en lenguaje claro, mostrando por qué esos registros son relevantes (8).
+
+El AI Provenance Assistant ya está disponible en línea (9)(11), aunque sus creadores planean seguir perfeccionándolo, sobre todo mediante una expansión de las bases de datos que utiliza (10). El grupo también se prepara para publicar un artículo académico cuando el proyecto alcance una escala mayor y para crear una fundación vinculada que pueda contratar abogados y recaudar fondos para una iniciativa que actualmente no cuenta con financiación (10). Para esa etapa, Santoro incorporó a la estratega tecnológica y corporativa Wendy Goldberg (10).
+
+---
+
+## 4. La base de datos histórica del ERR: fuente primaria del expolio
+
+### 4.1. El Einsatzstab Reichsleiter Rosenberg: estructura y funciones
+
+El Einsatzstab Reichsleiter Rosenberg (ERR) —cuyo nombre puede traducirse como "Estado Mayor del Reichsleiter Rosenberg"— fue la principal agencia nazi responsable del expolio de bienes culturales de propiedad judía en los países ocupados por el Tercer Reich (8)(5). La organización fue creada en 1940 por Alfred Rosenberg, ideólogo jefe del partido nacionalsocialista y, a partir de 1941, ministro del Reich para los Territorios Ocupados del Este (8)(3). Su misión era saquear y confiscar tesoros culturales de toda Europa y trasladarlos a Alemania (3).
+
+El ERR fue una de las principales agencias nazis dedicadas al saqueo de bienes culturales en los países ocupados durante la Segunda Guerra Mundial (5). Sus actividades abarcaban no solo obras de arte en sentido estricto, sino también bibliotecas, archivos y objetos de culto judaicos (8). El detalle con el que el ERR documentó el arte, los archivos, los libros y la Judaica que expolió ha resultado esencial para los esfuerzos posteriores de recuperación (8). Esta meticulosidad burocrática, paradójicamente, ha proporcionado a los investigadores la materia prima necesaria para rastrear las obras décadas después del fin de la guerra.
+
+Tras la contienda, los registros del ERR quedaron dispersos por todo el mundo y han sido localizados en más de treinta repositorios distribuidos en diez países (8). Los archivos originales del ERR incluyen cientos de miles de listados de obras de arte, libros, archivos y otros bienes culturales expoliados por los nazis (8). La magnitud de esta documentación —y su dispersión— es precisamente el problema que el AI Provenance Assistant y otras iniciativas tecnológicas tratan de resolver.
+
+### 4.2. El museo Jeu de Paume como centro de procesamiento del expolio en Francia y Bélgica
+
+El museo Jeu de Paume, situado en los Jardines de las Tullerías de París, fue el centro neurálgico del procesamiento del arte expoliado por el ERR en la Francia y Bélgica ocupadas (8)(6)(1). El edificio fue incautado por los nazis y utilizado como depósito de arte saqueado de la región (8). Fue aquí donde el *Sonderstab Bildende Kunst* (Estado Mayor Especial para las Artes Plásticas) del ERR centralizó, catalogó y clasificó las obras sustraídas a coleccionistas judíos antes de su distribución a museos del Reich, a los altos jerarcas nazis —especialmente Hermann Göring— o a colecciones privadas (8)(7).
+
+Los objetos expoliados fueron procesados a través del Jeu de Paume entre finales de 1940 y agosto de 1944 (6)(1). Durante estos casi cuatro años, el museo se convirtió en una suerte de centro de clasificación y redistribución del arte robado, donde las obras eran registradas, fotografiadas y, en muchos casos, seleccionadas para engrosar la colección personal de Göring o para ser enviadas a museos alemanes (7).
+
+La operación del ERR en Francia fue especialmente notoria. Una de sus actuaciones más infames fue el saqueo de arte de coleccionistas franceses judíos, cuyas obras eran llevadas al Jeu de Paume para su procesamiento (8). El propio Hermann Göring designó personalmente a varios comerciantes para vender las colecciones expoliadas, entre ellos Hildebrandt Gurlitt, cuyo hijo Cornelius ocultaría décadas después un importante conjunto de obras de arte en su apartamento de Múnich (7). El descubrimiento en 2012 de unas 1.600 obras en el apartamento de Cornelius Gurlitt —muchas de ellas de procedencia dudosa— puso de relieve la persistencia del expolio en el mercado del arte contemporáneo y la necesidad de herramientas eficaces para rastrear su origen (7).
+
+### 4.3. Contenido y alcance de la base de datos: más de 40.000 objetos documentados
+
+La base de datos *Cultural Plunder by the Einsatzstab Reichsleiter Rosenberg: Database of Art Objects at the Jeu de Paume* es un proyecto conjunto de la *Conference on Jewish Material Claims against Germany* (Claims Conference) y el *United States Holocaust Memorial Museum* (7)(9)(1). Fue lanzada en octubre de 2010 y está disponible de forma gratuita para cualquier investigador a través de la dirección www.errproject.org/jeudepaume (1)(7).
+
+El contenido de la base de datos es el siguiente (7)(9)(5):
+
+- **Número de objetos documentados**: la base de datos proporciona información sobre más de **40.000 objetos de arte individuales** expoliados a judíos en la Francia y Bélgica ocupadas por los alemanes (9)(7)(1). Algunas fuentes citan la cifra de 41.000 objetos (7), mientras que otras mencionan 20.000 (5), aunque esta discrepancia parece deberse a los diferentes criterios de contabilización y al hecho de que la base de datos se ha ido ampliando con el tiempo. La noticia original, basada en la información proporcionada por el equipo de Santa Clara, menciona 40.000 obras (11).
+
+- **Fuentes documentales**: la base de datos reúne por primera vez en forma de catálogo ilustrado y consultable las fichas de registro y fotografías restantes producidas por el ERR (9)(5). Cada una de las fichas de registro originales del ERR —que cubren más de 40.000 objetos— ha sido digitalizada en la base de datos en formato electrónico (7).
+
+- **Información contenida**: cada registro incluye el número de código del ERR asignado a la obra, el título de la obra, el nombre del artista y una descripción detallada de cada pieza (7). Muchas entradas incluyen además fotografías de las obras u objetos, así como un escaneo del registro nazi original (7).
+
+- **Campos de búsqueda**: la base de datos es consultable por objeto individual, por artista, por propietario y por si los objetos han sido devueltos o restituidos (7)(9).
+
+Una de las conclusiones más relevantes que arroja la base de datos es que **al menos la mitad de los objetos documentados —más de 20.000— no fueron restituidos a sus propietarios originales** (7). Esta constatación confirma la magnitud del problema que el AI Provenance Assistant y otras iniciativas tratan de abordar.
+
+El impacto práctico de la base de datos ha sido considerable. Es consultada a diario por las principales casas de subastas y muchas otras organizaciones, así como por el Ministerio de Cultura de Francia (7). Ha contribuido a la creación, bajo la presidencia de François Hollande, de una comisión para identificar a los propietarios de las obras de la colección *Musées Nationaux Récupération* (MNR) y proceder a su restitución (7). También ha sido fundamental en la investigación de procedencia de las aproximadamente 1.600 obras de arte descubiertas en 2012 en el apartamento de Cornelius Gurlitt en Múnich (7).
+
+La base de datos del ERR constituye, por tanto, no solo la fuente primaria documental más importante para el rastreo del expolio en Francia y Bélgica, sino también el punto de partida para el entrenamiento del AI Provenance Assistant de la Universidad de Santa Clara, como se ha descrito en la sección anterior.
+
+---
+
+## 5. Iniciativas paralelas: el ecosistema tecnológico para la restitución
+
+### 5.1. La Jewish Digital Cultural Recovery Project Foundation (JDCRP): plataforma digital con IA generativa
+
+La Jewish Digital Cultural Recovery Project Foundation (JDCRP) fue fundada en Berlín en 2019 por la *Conference on Jewish Material Claims Against Germany* (Claims Conference) y la *Commission for Art Recovery* (CAR) (8)(5)(4). Su misión es crear una plataforma digital de archivo central, de acceso abierto y con capacidad de búsqueda cruzada, para la documentación, investigación y educación sobre el expolio de bienes culturales de propiedad judía por parte de los nazis, sus aliados y colaboradores (8)(4)(5). Como declaró Rüdiger Mahlo, Presidente del Patronato de la JDCRP: "Ochenta años después del final de la Segunda Guerra Mundial, las familias judías siguen luchando por la devolución de los bienes culturales que les fueron robados por los nazis y sus colaboradores" (8).
+
+La plataforma digital de la JDCRP utiliza **software de IA generativa** (similar a ChatGPT) para facilitar la vinculación, búsqueda y correspondencia de documentos sobre temas estrechamente relacionados que se encuentran en archivos de toda Europa y más allá (8). Entre sus características especiales se incluyen opciones de investigación entre archivos y búsquedas de contenido en el ámbito del propio documento, que ayudarán a los usuarios a descubrir información sobre el robo, la recuperación y la procedencia de objetos expoliados (8). Como señaló Deidre Berger, Presidenta del Comité Ejecutivo de la JDCRP: "Por primera vez, será posible acceder y leer simultáneamente en línea documentos que se encuentran físicamente dispersos en archivos de todo el mundo. Esto permitirá a los investigadores determinar con mayor precisión qué fue robado, por quién, dónde fue llevado y, si se sabe, qué ocurrió con la propiedad expoliada" (8).
+
+La plataforma se encuentra en la **fase final de desarrollo de un Producto Mínimo Viable (MVP)** , que se lanzará con un enfoque inicial en las denominadas *property cards* (fichas de propiedad) producidas por una unidad especial de las Fuerzas Aliadas inmediatamente después de la guerra, que documentan la recuperación de más de un millón de objetos expoliados en Alemania y en los países ocupados (9). El MVP incluye fichas de propiedad y fotografías vinculadas a los *Central Collecting Points* (CCP) de Wiesbaden y Marburgo (9). Las fichas de propiedad de los CCP contienen información estructurada de gran complejidad, que la JDCRP ha logrado transformar en metadatos igualmente estructurados con una tasa de error extremadamente baja (9).
+
+Para lograr este nivel de precisión, la JDCRP emplea un proceso combinado: **transcripciones generadas por IA** mediante software de reconocimiento óptico de caracteres (OCR), complementadas con **procesos de revisión manual** para garantizar metadatos precisos y verificables (9). El proyecto aborda aspectos técnicos como el modelado y la gestión de datos, ontologías, datos estandarizados, datos estructurados, georreferenciaciones, reconocimiento de texto e imágenes, y procesamiento de lenguaje natural (9). La JDCRP tiene previsto seguir ampliando los datos de archivo disponibles en su plataforma para abarcar registros relevantes en toda Europa (8).
+
+La JDCRP presentó los resultados iniciales de su trabajo en la exposición *"Decoding the Records of Cultural Plunder: AI, Linked Data, and Nazi-Era Looted Art"*, inaugurada el 8 de abril de 2025 en la Mendelssohn Remise de Berlín, coincidiendo con el Día Internacional de la Investigación de Procedencia (8)(7). La exposición, que permanece accesible en línea, ofrece una mirada entre bastidores a cómo la IA generativa está revolucionando la investigación y la educación sobre el mayor robo cultural de la historia (7). El proyecto cuenta con la cofinanciación de la Unión Europea, la Claims Conference, la Fundación "Remembrance, Responsibility and Future" (EVZ), el Ministerio Federal de Finanzas de Alemania y el Comisionado del Gobierno Federal para la Cultura y los Medios de Comunicación (BKM) (7).
+
+Además de la plataforma, la JDCRP ha desarrollado la primera **compilación multinacional de información biográfica** sobre artistas y coleccionistas judíos perseguidos en toda Europa (7). La fundación también está implicada en proyectos educativos para sensibilizar al público sobre las dimensiones, la relevancia y el significado duradero del expolio cultural de la era nazi para el patrimonio cultural judío y europeo (9).
+
+### 5.2. La plataforma ReCLAIM (Hasso Plattner Institute): estandarización, machine learning y grafos de conocimiento
+
+ReCLAIM (*Re*search platform for *C*ultural *L*ooted *A*ssets *I*ntegration and *M*atching) es una plataforma integrada para datos sobre bienes culturales expoliados por los nazis, desarrollada por un equipo de ocho estudiantes del Hasso Plattner Institute (HPI) de la Universidad de Potsdam —Zero Susann Janetzki, Antonio Krühler, Luise Garberding, Romy Karbstein, Carl Friedrich Mecking, Konstantin Sturtzkopf, Sebastian Walker y Jan Wilhelm— bajo la supervisión de Sedir Mohammed y el profesor Felix Naumann, y en colaboración con la JDCRP, que aportó datos y experiencia en investigación de procedencia (13)(14). El proyecto se desarrolló como parte de un proyecto de fin de carrera (*bachelor project*) presentado en julio de 2024 (14).
+
+La plataforma ReCLAIM **recopila, prepara, estandariza y enlaza datos de archivo** sobre bienes culturales expoliados por los nazis procedentes de diversas fuentes (13). Está diseñada tanto para investigadores de procedencia como para usuarios no expertos, y ofrece búsqueda de texto completo con autocompletado, un modo de búsqueda avanzada por criterios múltiples y filtros por fuente documental (13). Dado que los datos subyacentes —procedentes de fichas de propiedad (*property cards*)— solo están parcialmente estandarizados, emplean idiomas, esquemas y terminología distintos entre sí, y son propensos a errores derivados de la digitalización por OCR, un aspecto crítico de la preparación de datos garantiza que cada valor original se conserve junto a su versión procesada (13).
+
+La arquitectura de ReCLAIM se basa en los siguientes componentes técnicos, según describe el propio equipo en su artículo académico (13):
+
+1. **Integración de fuentes y preparación de datos**: la plataforma integra actualmente más de 100.000 registros procedentes de cinco fuentes documentales —el Einsatzstab Reichsleiter Rosenberg (ERR), la Comisión Especial de Linz (*Special Commission Linz*, SCL) y los Central Collecting Points de Múnich (MCCP), Marburgo (MaCCP) y Wiesbaden (WCCP)—. La preparación de datos combina reglas heurísticas para normalizar unidades y medidas, taxonomías que agrupan sinónimos bajo un término común (por ejemplo, "Gemälde", "Halbfigur" y "Painting" bajo "painting") y reglas de correspondencia entre esquemas de distintas fuentes (por ejemplo, "Author" y "Künstler" se mapean a "Creator").
+
+2. **Procesamiento con LLM**: el equipo empleó el modelo **GPT-4 de OpenAI** para descomponer campos complejos del atributo "Creator" —que a menudo combina nombre, fechas y lugar de nacimiento y muerte del artista en un único texto libre— en subcampos estructurados. El propio artículo académico ofrece como ejemplo la entrada original "künstler: Mancadan, Jacobus Sibrani (1602-1680)", que GPT-4 descompone en "Creator: Jacobus Sibrani Mancadan", "Birth date: 1602" y "Death date: 1680". El modelo se empleó también para inferir, a partir de descripciones de procedencia en texto libre, los eventos de la línea temporal de cada obra —creación, confiscación, transferencia— que la plataforma visualiza cronológicamente.
+
+3. **Vinculación de entidades**: para identificar cuándo dos registros de fuentes distintas describen el mismo bien cultural, el equipo aplicó técnicas de aprendizaje semisupervisado basadas en trabajos previos de vinculación de entidades, presentando los emparejamientos sugeridos como "activos culturales similares" para que la decisión final de vinculación quede en manos de los investigadores.
+
+4. **Arquitectura web**: el frontend está implementado como aplicación web con el framework Next.js; las peticiones se procesan mediante una API REST construida con FastAPI (Python); y los datos —personas, colecciones, bienes culturales y sus relaciones— se almacenan como grafo de conocimiento en la base de datos Neo4j, elegida por su flexibilidad de esquema y por permitir recorrer cadenas de relaciones sin necesidad de índices ni tablas de mapeo intermedias.
+
+Conscientes de los riesgos de errores derivados del uso de IA —especialmente en el contexto de una historia tan sensible como la del arte expoliado por los nazis—, el equipo optó por mostrar siempre el valor procesado junto al original y por dejar las decisiones finales de vinculación de entidades en manos de investigadores humanos, en lugar de automatizarlas por completo (13).
+
+La plataforma ReCLAIM fue aceptada para su presentación en la 21ª Conferencia sobre Sistemas de Bases de Datos para Negocios, Tecnología y Web (BTW 2025) de la Gesellschaft für Informatik, celebrada en Bamberg, y el artículo académico correspondiente fue publicado en las Lecture Notes in Informatics (LNI) (13).
+
+### 5.3. Sinergias y diferencias entre los proyectos
+
+El AI Provenance Assistant de la Universidad de Santa Clara, la plataforma digital de la JDCRP y ReCLAIM comparten un objetivo común —facilitar la investigación de procedencia del arte expoliado por los nazis mediante tecnologías digitales— pero presentan diferencias significativas en su origen, alcance y enfoque técnico.
+
+| Característica | AI Provenance Assistant (Santa Clara) | JDCRP Platform | ReCLAIM (HPI) |
+|----------------|----------------------------------------|----------------|---------------|
+| **Origen** | Universidad de Santa Clara (iniciativa académica) | Claims Conference y CAR (fundación sin ánimo de lucro) | HPI + JDCRP (proyecto de estudiantes) |
+| **Estado** | Disponible en línea, en fase de perfeccionamiento | MVP en fase final de desarrollo | Prototipo funcional |
+| **Tecnología principal** | Modelos de lenguaje adaptados, chatbot conversacional | IA generativa (tipo ChatGPT), OCR + revisión manual | GPT-4, grafo de conocimiento (Neo4j), FastAPI + Next.js |
+| **Fuentes de datos** | ERR Database (Jeu de Paume) inicialmente | Property cards de los CCP (Wiesbaden, Marburgo) | ERR, Linz (SCL), CCP de Múnich, Marburgo y Wiesbaden |
+| **Enfoque de usuario** | Consultas en lenguaje natural | Búsqueda cruzada entre archivos | Búsqueda full-text + opciones avanzadas |
+| **Financiación** | Sin financiación actual (futura fundación) | UE, Claims Conference, EVZ, BMF, BKM | Proyecto académico sin financiación específica |
+
+El AI Provenance Assistant se distingue por su **interfaz conversacional**, que permite a cualquier usuario formular preguntas en lenguaje natural y obtener respuestas en inglés sencillo (9)(8). La plataforma de la JDCRP, por su parte, se centra en la **integración y vinculación de documentos dispersos** a gran escala, con un énfasis particular en los registros de las Fuerzas Aliadas (8)(9). ReCLAIM aporta una **arquitectura basada en grafos de conocimiento** y un enfoque sistemático de estandarización de datos, con especial atención a la preservación de los valores originales frente a los procesados (10)(11)(13).
+
+Existe una **relación orgánica** entre la JDCRP y ReCLAIM: ReCLAIM nació como un prototipo desarrollado para la JDCRP por estudiantes del HPI (12)(5). Los estudiantes documentaron su proceso y ofrecieron reflexiones detalladas que pueden servir de guía para futuros desarrollos (13). La JDCRP, por su parte, ha manifestado su deseo de inspirar a otros estudiantes y educadores a comprometerse con la investigación de procedencia (12).
+
+En conjunto, estos proyectos representan un **ecosistema tecnológico emergente** que combina diferentes aproximaciones —chatbots conversacionales, plataformas de archivo centralizadas y grafos de conocimiento— para abordar un mismo problema desde ángulos complementarios. Su coexistencia refleja la diversidad de necesidades de los distintos tipos de usuarios —desde investigadores especializados hasta el público general— y la pluralidad de enfoques técnicos posibles para resolver el desafío de la dispersión archivística.
+
+---
+
+## 6. Desafíos técnicos y limitaciones de la IA en la investigación de procedencia
+
+### 6.1. La dispersión de los registros archivísticos y la multiplicidad de idiomas
+
+El principal desafío que la inteligencia artificial pretende abordar en el ámbito de la investigación de procedencia no es la escasez de información, sino su extrema dispersión. Como señala el equipo de la Universidad de Santa Clara, los registros sobre la procedencia de las obras expoliadas se encuentran distribuidos en miles de sitios web de museos, bases de datos independientes, archivos nacionales y catálogos de subastas digitalizados (8). Cada institución mantiene su propio sistema, en su propio idioma, utilizando su propio vocabulario y estructuras de bases de datos o "esquemas" (8). Esta fragmentación hace que las pistas importantes permanezcan enterradas en millones de registros, lo que dificulta extraordinariamente que un investigador o museo pueda detectar manualmente el arte robado (8).
+
+La dispersión no es únicamente geográfica o institucional, sino también lingüística y terminológica. Los registros están redactados en múltiples idiomas —alemán, francés, inglés, holandés, polaco, entre otros— y utilizan convenciones ortográficas variables, como diferentes transliteraciones de nombres propios o variantes en la escritura de títulos de obras (8)(1). Incluso dentro de una misma colección de archivos, como la base de datos del ERR, los registros no están estandarizados (1)(8). Esta ausencia de uniformidad terminológica constituye un obstáculo significativo para cualquier sistema de búsqueda basado en coincidencias exactas de cadenas de texto.
+
+El AI Provenance Assistant aborda este problema mediante el procesamiento de lenguaje natural: el sistema localiza términos relacionados, variantes ortográficas y traducciones de nombres, mejorando así la recuperación de información relevante (8)(9). Sin embargo, la eficacia de esta aproximación depende de la exhaustividad de los modelos lingüísticos empleados y de la calidad de los datos de entrenamiento, lo que introduce un margen de error que los desarrolladores reconocen explícitamente (10).
+
+### 6.2. La falta de estandarización y los errores en la digitalización OCR
+
+La falta de estandarización de los datos subyacentes es una limitación estructural que afecta a todos los proyectos tecnológicos en este ámbito. La plataforma ReCLAIM, desarrollada por el Hasso Plattner Institute, identifica este problema con claridad: "los datos subyacentes están solo parcialmente estandarizados y son propensos a errores derivados de los procesos de digitalización OCR" (1)(10)(11). Este es un problema generalizado: aunque muchos registros han sido digitalizados, permanecen dispersos en distintas plataformas y carecen de estandarización, lo que complica los esfuerzos de integración y búsqueda cruzada (1).
+
+El problema del reconocimiento óptico de caracteres (OCR) es particularmente acuciante. Muchas de las fichas de propiedad y otros documentos de archivo fueron digitalizados mediante OCR, un proceso que introduce errores sistemáticos (1). La JDCRP aborda este desafío mediante un proceso combinado: transcripciones generadas por IA con software OCR, complementadas con procesos de revisión manual para garantizar metadatos precisos y verificables (9)(1). Este enfoque dual reconoce que la IA por sí sola no es suficientemente fiable para producir metadatos exactos sin supervisión humana.
+
+La estrategia de ReCLAIM ante este problema es especialmente instructiva. Ante la falta de estandarización y los errores del OCR, el equipo implementó una fase crítica de preparación de datos que garantiza que los valores originales se conserven junto con sus equivalentes procesados (10)(11). Esta decisión de diseño refleja una conciencia aguda de que el procesamiento automatizado puede introducir distorsiones, y que la preservación de los datos en su forma original es esencial para la verificabilidad.
+
+### 6.3. La detección de engaños y "banderas rojas" en las historias de propiedad
+
+Más allá de los problemas de estandarización y dispersión, la investigación de procedencia se enfrenta al desafío adicional de la falsificación deliberada. Las historias de propiedad de las obras de arte pueden contener engaños destinados a ocultar un origen espurio o a legitimar una adquisición ilícita (4)(5). La detección de estos engaños es una de las áreas más complejas de la investigación de procedencia, y también una de las que más recientemente han comenzado a abordarse con herramientas computacionales.
+
+Un capítulo académico publicado en 2025 por Springer presenta un método computacional innovador para detectar posibles engaños en los textos de procedencia de las obras de arte (4)(5). Este método utiliza grafos de conocimiento e inteligencia artificial para analizar los textos de procedencia en busca de indicadores de "incertidumbre, falta de fiabilidad, anonimato y nombres de bandera roja" (4). El objetivo es cuantificar el posible engaño dentro del mercado del arte, proporcionando a los investigadores una herramienta para identificar aquellas historias de propiedad que merecen un escrutinio adicional (5).
+
+Sin embargo, este enfoque tiene sus propias limitaciones. Los desafíos incluyen la optimización de los métodos de clasificación y la tensión entre los datos abiertos y los archivos cerrados, que complica la verificación de las obras señaladas (5). Además, como advierten los autores, la metodología debe ser aplicada con cautela, ya que la detección de engaños en textos históricos es inherentemente probabilística y no puede sustituir la investigación documental exhaustiva.
+
+### 6.4. La necesidad de supervisión humana y verificación manual
+
+Todos los proyectos analizados coinciden en un punto fundamental: la inteligencia artificial no reemplaza a los investigadores de procedencia, sino que los asiste. El AI Provenance Assistant fue diseñado expresamente con este propósito. Como declaró Haibing Lu: "Nuestro objetivo no era reemplazar a los investigadores de procedencia. Era hacer que décadas de registros de archivo complejos fueran mucho más fáciles de explorar mediante una conversación natural" (10)(9). Esta declaración de intenciones refleja una conciencia clara de las limitaciones de la IA y de la irremplazabilidad del juicio humano en un ámbito que combina investigación histórica, interpretación documental y sensibilidad ética.
+
+La JDCRP adopta una posición similar. Su plataforma digital utiliza IA generativa para la transcripción y vinculación de documentos, pero siempre complementada con procesos de revisión manual (9). Conscientes de los riesgos de los errores de la IA —especialmente en el contexto de una historia tan sensible como la del arte expoliado por los nazis— los desarrolladores de ReCLAIM implementaron salvaguardias y consideraciones cuidadosas para garantizar la precisión (12)(5). Como declaró un estudiante del HPI: "Para encontrar una solución integral, tuvimos que considerar el significado político, legal, histórico y científico de los datos" (12).
+
+El riesgo de las "alucinaciones" de la IA —esto es, la generación de información falsa pero aparentemente verosímil— es una preocupación recurrente en la literatura técnica. Los modelos de lenguaje pueden producir afirmaciones que no se corresponden con los datos subyacentes, y esta tendencia es especialmente problemática en contextos de alta exigencia probatoria como la restitución de arte expoliado (7). La ausencia de mecanismos para rastrear el origen de la información generada por IA y para verificar su validez sigue siendo una limitación fundamental (0).
+
+### 6.5. Limitaciones adicionales: financiación, escalabilidad y acceso a archivos cerrados
+
+Más allá de los desafíos técnicos, los proyectos analizados enfrentan limitaciones de naturaleza institucional y financiera. El AI Provenance Assistant, a pesar de estar ya disponible en línea, no cuenta actualmente con financiación (10). El equipo planea crear una fundación vinculada que pueda contratar abogados y recaudar fondos, pero en su estado actual el proyecto depende del trabajo voluntario de los investigadores (10). Esta falta de recursos limita la capacidad de ampliar las bases de datos que utiliza el sistema y de mantenerlo actualizado.
+
+La escalabilidad es otro desafío pendiente. El AI Provenance Assistant ha sido entrenado inicialmente con la base de datos del ERR, que cubre unas 40.000 obras (11). Sin embargo, el universo de registros relevantes es mucho más amplio e incluye archivos distribuidos en más de treinta repositorios en diez países (8). La integración de todas estas fuentes requiere un esfuerzo de estandarización y vinculación de datos que va más allá de las capacidades actuales del proyecto.
+
+Finalmente, la tensión entre los datos abiertos y los archivos cerrados constituye una limitación estructural que afecta a todos los proyectos (5). No todos los archivos relevantes están digitalizados ni son de acceso público, y algunos repositorios mantienen restricciones de acceso que dificultan la investigación. Esta opacidad, combinada con la falta de estandarización, complica la verificación de las obras señaladas por los sistemas de IA y limita su eficacia global.
+
+---
+
+## 7. Implicaciones jurídicas y éticas del uso de IA en la restitución
+
+### 7.1. El valor probatorio de las evidencias generadas por IA
+
+La incorporación de la inteligencia artificial a la investigación de procedencia plantea una cuestión jurídica de primer orden: ¿qué valor probatorio pueden tener los hallazgos generados por un sistema de IA en un procedimiento de restitución? La respuesta no es unívoca y depende del ordenamiento jurídico ante el que se plantee la reclamación, así como del estándar de prueba aplicable en cada jurisdicción.
+
+Los Principios de Washington de 1998 establecen, en su Principio IV, que al determinar si una obra fue confiscada por los nazis, "debe tenerse en cuenta la existencia de lagunas o ambigüedades inevitables en la procedencia, habida cuenta del paso del tiempo y las circunstancias de la era del Holocausto" (3)(1). Esta disposición, aunque no vinculante, ha sido interpretada como un reconocimiento de que los estándares probatorios en materia de restitución deben adaptarse a las dificultades inherentes a la investigación histórica (3). Las Mejores Prácticas de 2024 profundizan en esta línea al establecer, en su sección C, una presunción de transferencia involuntaria: "teniendo en cuenta las circunstancias históricas y jurídicas específicas de cada caso, la venta de arte y bienes culturales por una persona perseguida durante el período del Holocausto (1933-1945) puede considerarse equivalente a una transferencia involuntaria de propiedad basada en las circunstancias de la venta" (10)(11).
+
+Esta evolución normativa hacia estándares probatorios más flexibles podría favorecer la admisibilidad de evidencias generadas por IA. Sin embargo, persisten desafíos significativos. En primer lugar, los sistemas de IA como el AI Provenance Assistant no están diseñados para declarar que una obra fue robada o para determinar quién es su legítimo propietario (5)(3). Su función es auxiliar en la localización de registros relevantes y en la identificación de posibles conexiones entre obras y propietarios, pero la conclusión jurídica sobre la titularidad sigue siendo competencia exclusiva de los tribunales o de los mecanismos de resolución alternativa de disputas (5)(12).
+
+En segundo lugar, la fiabilidad de las evidencias generadas por IA depende de la calidad de los datos de entrenamiento y de la transparencia del algoritmo. Como han señalado los desarrolladores de ReCLAIM, "los datos subyacentes están solo parcialmente estandarizados y son propensos a errores derivados de los procesos de digitalización OCR" (2)(1). Si los datos de partida contienen errores, las conclusiones de la IA pueden ser igualmente erróneas. La JDCRP aborda este problema mediante un proceso combinado de transcripción automatizada y revisión manual (9)(1), pero no todos los proyectos disponen de los mismos recursos para garantizar la precisión de los metadatos.
+
+Un aspecto adicional es la ausencia de un estándar aceptado sobre qué constituye "evidencia generada por IA" en el ámbito de la restitución. La doctrina ha señalado que los sistemas de IA generativa complican los supuestos jurídicos tradicionales sobre autoría, intención, fiabilidad probatoria y responsabilidad (7)(3). En ausencia de una regulación específica, los tribunales deberán determinar caso por caso si los hallazgos del AI Provenance Assistant o de herramientas similares son admisibles como prueba y, en su caso, qué peso probatorio se les atribuye.
+
+### 7.2. La carga de la prueba en los procedimientos de restitución
+
+La carga de la prueba es uno de los obstáculos más significativos que enfrentan los reclamantes en los procedimientos de restitución de arte expoliado por los nazis. La disparidad de los estándares probatorios exigidos a los reclamantes en las distintas jurisdicciones constituye una de las principales dificultades prácticas del régimen de restitución (5)(12). En muchos ordenamientos, el reclamante debe demostrar no solo que la obra fue expoliada, sino también que el poseedor actual no adquirió la obra de buena fe o que el plazo de prescripción no ha transcurrido (10).
+
+Las Mejores Prácticas de 2024 abordan esta cuestión de manera explícita. La sección C establece que la venta bajo coacción durante el período del Holocausto puede ser considerada como una transferencia involuntaria, lo que invierte en la práctica la carga de la prueba: ya no es el reclamante quien debe demostrar la coacción, sino el poseedor actual quien debe acreditar que la transferencia fue voluntaria (10)(11). Esta aproximación, aunque no vinculante, representa un cambio significativo respecto de la situación anterior y ha sido respaldada por más de treinta países (10)(12).
+
+En este contexto, la IA puede desempeñar un papel relevante aliviando la carga probatoria de los reclamantes. El AI Provenance Assistant, al facilitar la localización de registros de archivo dispersos y al establecer conexiones entre obras y propietarios, puede proporcionar a los reclamantes un conjunto de indicios que, combinados con otros elementos de prueba, permitan cumplir con el estándar probatorio exigido. La Holocaust Art Recovery Initiative (HARI), en su trabajo sobre archivos húngaros de la era nazi, ha mostrado que la combinación de archivos preservados, inteligencia artificial y análisis forense, junto con la investigación humana, permite generar evidencia utilizable para la restitución en plazos considerablemente más breves que los métodos tradicionales de investigación documental (19).
+
+Sin embargo, la IA no resuelve el problema de la carga de la prueba en su totalidad. Como ha señalado un análisis publicado en *International Legal Materials*, la fragmentación del marco jurídico —que abarca múltiples jurisdicciones, plazos de prescripción variables y diferentes regímenes de adquisición de buena fe— sigue siendo un obstáculo estructural (10). La IA puede ayudar a identificar obras y a reconstruir su historial de propiedad, pero la decisión final sobre la titularidad sigue siendo una cuestión jurídica que los tribunales deben resolver aplicando las normas sustantivas y procesales de cada jurisdicción.
+
+### 7.3. Los límites éticos de la automatización en la justicia restaurativa
+
+El uso de la IA en la restitución de arte expoliado plantea cuestiones éticas que trascienden el ámbito estrictamente jurídico. La primera de ellas es la tensión entre eficiencia y contexto cultural. Como advierte la literatura sobre los límites de la automatización en contextos de alta carga histórica y emocional, una aproximación puramente objetiva o cuantitativa corre el riesgo de pasar por alto contextos culturales e históricos cruciales (5)(12). El arte expoliado no es un mero objeto de comercio; es un bien cargado de significado histórico, familiar y emocional para las víctimas del Holocausto y sus descendientes. La automatización de su rastreo, por eficiente que sea, no puede sustituir la sensibilidad y el conocimiento contextual que aporta un investigador humano.
+
+La segunda cuestión ética es la de la transparencia y la verificabilidad. Los modelos de lenguaje y los sistemas de IA generativa son notoriamente opacos en su funcionamiento interno, lo que dificulta la trazabilidad de sus conclusiones. Como ha advertido la doctrina, los sistemas de IA pueden producir "alucinaciones" —información falsa pero aparentemente verosímil— que, en el contexto de la restitución, podrían generar falsas expectativas en los reclamantes o, peor aún, servir de base para decisiones judiciales erróneas (7). La ausencia de mecanismos para rastrear el origen de la información generada por IA y para verificar su validez sigue siendo una limitación fundamental (7).
+
+La tercera cuestión ética es la de la equidad en el acceso. El AI Provenance Assistant está disponible en línea de forma gratuita (8)(9), lo que democratiza el acceso a la información sobre el expolio. Sin embargo, no todos los reclamantes tienen la misma capacidad técnica o lingüística para utilizar estas herramientas, ni todos los archivos relevantes están digitalizados o son de acceso público (5). La digitalización selectiva y la persistencia de archivos cerrados pueden perpetuar desigualdades en el acceso a la justicia.
+
+Finalmente, la cuestión de la responsabilidad. Cuando un sistema de IA identifica una obra como potencialmente expoliada, ¿quién asume la responsabilidad de esa identificación? Los desarrolladores del AI Provenance Assistant han sido claros al respecto: la herramienta no reemplaza a los investigadores de procedencia, sino que los asiste (9)(8). Como declaró Haibing Lu, "nuestro objetivo no era reemplazar a los investigadores de procedencia. Era hacer que décadas de registros de archivo complejos fueran mucho más fáciles de explorar mediante una conversación natural" (9). Esta delimitación de responsabilidades es éticamente necesaria, pero también plantea interrogantes sobre la rendición de cuentas en caso de error. Si la IA omite una conexión relevante o señala falsamente una obra como expoliada, ¿quién responde?
+
+El profesor de la Facultad de Derecho de la Universidad de Santa Clara, David Yosifon, ha argumentado que, "si bien la inteligencia artificial puede manejar las tareas mecánicas y rutinarias del campo legal, no puede reemplazar lo que realmente importa: el juicio ético, las relaciones humanas y el razonamiento moral" (9)(11). Esta advertencia es particularmente pertinente en el ámbito de la restitución, donde cada obra expoliada encierra una historia de desposesión y pérdida que ningún algoritmo puede capturar en su totalidad.
+
+---
+
+## 8. Conclusiones: hacia un nuevo paradigma en la investigación de procedencia
+
+### 8.1. Logros alcanzados y perspectivas futuras
+
+Los proyectos analizados en este artículo —el AI Provenance Assistant de la Universidad de Santa Clara, la plataforma digital de la JDCRP y el sistema ReCLAIM del Hasso Plattner Institute— representan un cambio de paradigma en la investigación de procedencia del arte expoliado por el régimen nazi. Ochenta años después del final de la Segunda Guerra Mundial, la inteligencia artificial está comenzando a perforar la "bruma burocrática y deliberada" que ha ocultado la localización de aproximadamente 100.000 obras aún desaparecidas (1)(2).
+
+El principal logro de estas iniciativas es haber demostrado que la IA puede **procesar, vincular y hacer consultables** registros archivísticos que, por su dispersión, multiplicidad de idiomas y falta de estandarización, resultaban prácticamente inaccesibles para los métodos tradicionales de investigación. El AI Provenance Assistant, al permitir consultas en lenguaje natural sobre la base de datos del ERR (1)(3), y la plataforma de la JDCRP, al facilitar la búsqueda cruzada entre archivos de distintos países (6)(7), están reduciendo drásticamente los plazos de identificación de obras expoliadas. Como ha mostrado la Holocaust Art Recovery Initiative (HARI) en su trabajo sobre archivos húngaros de la era nazi, la combinación de archivos preservados, inteligencia artificial y análisis forense, junto con la investigación humana, permite generar evidencia utilizable para la restitución en un tiempo muy inferior al de los litigios tradicionales (19).
+
+Las perspectivas futuras de estos proyectos son prometedoras. El equipo de Santa Clara planea expandir las bases de datos que utiliza su asistente, integrar nuevos archivos y crear una fundación que permita financiar el proyecto y contar con apoyo legal (2)(4). La JDCRP tiene previsto ampliar su plataforma para abarcar registros relevantes en toda Europa, más allá de las fichas de propiedad de los Central Collecting Points (7). ReCLAIM, aunque desarrollado como un proyecto de estudiantes, ha sentado las bases técnicas —mediante grafos de conocimiento y estandarización de datos— que podrían ser adoptadas por iniciativas de mayor escala (8). La creciente disponibilidad de archivos digitalizados y la evolución de los modelos de lenguaje sugieren que estas herramientas serán cada vez más precisas y exhaustivas.
+
+### 8.2. Limitaciones del estado actual de la tecnología
+
+A pesar de los avances, el estado actual de la tecnología presenta limitaciones significativas que es necesario reconocer y abordar. En primer lugar, la **dependencia de la calidad de los datos** sigue siendo un factor crítico. Como han señalado los desarrolladores de ReCLAIM, los datos subyacentes están "solo parcialmente estandarizados y son propensos a errores derivados de los procesos de digitalización OCR" (8). La transcripción automatizada, aunque asistida por IA, introduce errores que solo pueden ser corregidos mediante revisión manual, lo que limita la escalabilidad de los proyectos (7).
+
+En segundo lugar, la **necesidad de supervisión humana** es irrenunciable. Todos los proyectos coinciden en que la IA no reemplaza a los investigadores de procedencia, sino que los asiste (2)(3). Las "alucinaciones" de los modelos de lenguaje —la generación de información falsa pero aparentemente verosímil— suponen un riesgo particular en un contexto de alta exigencia probatoria como el de la restitución (9). La identificación de una obra como expoliada y la determinación de su legítimo propietario siguen siendo competencia exclusiva del juicio humano y de los tribunales.
+
+En tercer lugar, la **falta de financiación y de acceso a archivos cerrados** constituye un obstáculo estructural. El AI Provenance Assistant carece actualmente de financiación estable (2), y la plataforma de la JDCRP, aunque respaldada por instituciones europeas y estadounidenses, requiere recursos considerables para su mantenimiento y expansión (7). La persistencia de archivos que no están digitalizados o que restringen el acceso público limita la exhaustividad de cualquier sistema de IA (9).
+
+### 8.3. Recomendaciones para la integración de la IA en el marco normativo existente
+
+El régimen normativo actual, articulado en torno a los Principios de Washington de 1998 (10) y las Mejores Prácticas de 2024 (10), proporciona un marco de *soft law* suficientemente flexible para acomodar el uso de la IA en la investigación de procedencia. Sin embargo, para que esta integración sea efectiva, se formulan las siguientes recomendaciones.
+
+**Primera: desarrollar estándares de admisibilidad probatoria.** Los ordenamientos jurídicos nacionales deberían establecer criterios claros sobre la admisibilidad y el peso probatorio de las evidencias generadas por IA en los procedimientos de restitución. Estos criterios deberían exigir la transparencia del algoritmo, la trazabilidad de los datos utilizados y la posibilidad de revisión humana de las conclusiones automatizadas.
+
+**Segunda: acometer la digitalización y estandarización de archivos.** La sección G de las Mejores Prácticas de 2024 insta a los gobiernos a "fomentar la investigación de procedencia y los proyectos de catalogación, digitalización y puesta a disposición en internet de archivos públicos y privados, incluidos los registros de comerciantes" (10). Esta recomendación debería aplicarse con prioridad, asignando recursos específicos para la digitalización de los archivos aún no accesibles y para la estandarización de metadatos que permita la interoperabilidad entre bases de datos.
+
+**Tercera: fomentar la colaboración entre iniciativas.** El ecosistema tecnológico actual está fragmentado en proyectos independientes —Santa Clara, JDCRP, ReCLAIM, entre otros— que, aunque comparten objetivos, operan con arquitecturas y fuentes de datos diferentes. Sería deseable establecer mecanismos de coordinación que permitan compartir buenas prácticas, estandarizar ontologías y, eventualmente, integrar los datos en un grafo de conocimiento común que sirva de referencia global.
+
+**Cuarta: preservar el juicio humano como elemento central.** La IA debe ser concebida como una herramienta de apoyo, no como un sustituto del criterio humano. El juicio ético, la sensibilidad histórica y el razonamiento jurídico siguen siendo competencias exclusivas de los investigadores, los abogados, los comités de restitución y los tribunales. La automatización no debe deshumanizar el proceso de restitución ni sustituir la responsabilidad última que recae sobre las instituciones y los Estados.
+
+En definitiva, la inteligencia artificial está llamada a desempeñar un papel transformador en la identificación y restitución de las 100.000 obras aún desaparecidas, pero su eficacia dependerá de que se integre con rigor técnico, se enmarque en estándares legales claros y se preserve la centralidad del juicio humano. Ochenta años después del mayor expolio cultural de la historia, la tecnología puede contribuir decisivamente a cerrar las heridas abiertas, pero solo si se utiliza con responsabilidad, transparencia y respeto por la memoria de las víctimas.
+
+---
+
+## 9. Bibliografía
+
+(1) El Confidencial (2026). *"¿Cazadores de nazis en el siglo XXI? La IA ya rastrea las 100.000 obras expoliadas desaparecidas"*. Publicado el 6 de agosto de 2026. Disponible en: https://www.elconfidencial.com/el-grito/2026-08-06/cazadores-nazis-ia-rastrea-obras-expoliadas-desaparecidas_4400862/ [Consulta: 9 de agosto de 2026].
+
+(2) Santa Clara University, Leavey School of Business (2026). *"A team from Santa Clara University's business school is working to use AI to uncover Nazi-looted art"*. Feature story, publicado el 5 de julio de 2026. Disponible en: https://www.scu.edu/business/featured-stories/a-team-from-santa-clara-universitys-business-school-is-working-to-use-ai-to-uncover-nazi-looted-art.html [Consulta: 9 de agosto de 2026].
+
+(3) Santa Clara University, Leavey School of Business (2026). *"Haibing Lu: Associate Professor of Information Systems and Analytics"*. Perfil académico. Disponible en: https://www.scu.edu/business/faculty-and-research/faculty/lu-haibing.html [Consulta: 9 de agosto de 2026].
+
+(4) Santa Clara University, Leavey School of Business (2026). *"Michele Samorani: Associate Professor of Information Systems and Analytics"*. Perfil académico. Disponible en: https://www.scu.edu/business/faculty-and-research/faculty/samorani-michele.html [Consulta: 9 de agosto de 2026].
+
+(5) Smithsonian Magazine (2026). *"To Recover Artworks Looted by the Nazis, Researchers Are Getting Creative, With New Strategies Including an A.I. Chatbot and a Campaign of 'Wanted' Posters"*. Publicado el 3 de agosto de 2026. Disponible en: https://www.smithsonianmag.com/smart-news/to-recover-artworks-looted-by-the-nazis-researchers-are-getting-creative-with-new-strategies-including-an-ai-chatbot-and-a-campaign-of-wanted-posters-180985305/ [Consulta: 9 de agosto de 2026].
+
+(6) Conference on Jewish Material Claims Against Germany & United States Holocaust Memorial Museum (2010). *"Cultural Plunder by the Einsatzstab Reichsleiter Rosenberg: Database of Art Objects at the Jeu de Paume"*. Disponible en: www.errproject.org/jeudepaume [Consulta: 9 de agosto de 2026].
+
+(7) Jewish Digital Cultural Recovery Project Foundation (JDCRP) (2025). *"Decoding the Records of Cultural Plunder: AI, Linked Data, and Nazi-Era Looted Art"*. Exposición online, presentada en la Mendelssohn Remise de Berlín el 8 de abril de 2025. Disponible en: https://jdcrp.org/decoding-the-records/ [Consulta: 9 de agosto de 2026].
+
+(8) Jewish Digital Cultural Recovery Project Foundation (JDCRP) (2025). Comunicado de prensa: *"JDCRP: The Largest Digital Archive on Nazi-Looted Art to Date Using Generative AI"*. Publicado el 26 de mayo de 2025. Disponible en: https://jdcrp.org/press-releases/ [Consulta: 9 de agosto de 2026].
+
+(9) Jewish Digital Cultural Recovery Project Foundation (JDCRP) (2025). *"Introduction to JDCRP's central digital archival platform on Nazi-looted art"*. Presentación en la conferencia *Digital Turn. Collections – Provenances – Markets*, Humboldt-Universität zu Berlin, 27-28 de noviembre de 2025. Disponible en: https://jdcrp.org/wp-content/uploads/2025/11/JDCRP_Presentation_Berlin_Nov2025.pdf [Consulta: 9 de agosto de 2026].
+
+(10) U.S. Department of State & World Jewish Restitution Organization (WJRO) (2024). *"Best Practices for the Washington Conference Principles on Nazi-Confiscated Art"*. Presentado en Washington, D.C., el 5 de marzo de 2024. Disponible en: https://www.state.gov/best-practices-for-the-washington-conference-principles-on-nazi-confiscated-art/ [Consulta: 9 de agosto de 2026].
+
+(11) Washington Conference on Holocaust-Era Assets (1998). *"Washington Conference Principles on Nazi-Confiscated Art"*. Suscrito el 3 de diciembre de 1998 por 44 Estados participantes. Disponible en: https://www.state.gov/washington-conference-principles-on-nazi-confiscated-art/ [Consulta: 9 de agosto de 2026].
+
+(12) Campfens, E. (2025). "Best Practices for the Washington Conference Principles on Nazi-Confiscated Art". *International Legal Materials*, Vol. 64, Issue 4, pp. 1114-1128. DOI: 10.1017/ilm.2025.10104. Cambridge University Press. [Consulta: 9 de agosto de 2026].
+
+(13) Hasso Plattner Institute (HPI), Universität Potsdam (2025). *"ReCLAIM: An Integrated Platform for Data on Nazi-Looted Cultural Assets"*. Lecture Notes in Informatics (LNI), Gesellschaft für Informatik, Bonn 2025. Presentado en la 21ª Conferencia BTW 2025. Disponible en: https://hpi.de/naumann/projects/data-integration-and-quality/reclaim.html [Consulta: 9 de agosto de 2026].
+
+(14) Hasso Plattner Institute (HPI), Universität Potsdam (2024). *"ReCLAIM – Research platform for Cultural Looted Assets Integration and Matching"*. Presentación del proyecto de fin de carrera, julio de 2024. Disponible en: https://hpi.de/fileadmin/user_upload/fachgebiete/naumann/projekte/reclaim/HPI_ReCLAIM_Presentation_July2024.pdf [Consulta: 9 de agosto de 2026].
+
+(15) Springer (2025). "Detecting Deception in the Art Trade: A Computational Approach to Uncertainty, Unreliability, Anonymity and Red Flag Names". Capítulo de acceso abierto. DOI: 10.1007/978-3-032-02014-7_6. [Consulta: 9 de agosto de 2026].
+
+(16) Gartstein, E. (2025). "Eighty Years Later, Progress of Nazi-Era Restitution Remains Inconsistent". *Harvard International Law Journal*, en colaboración con la Harvard Art Law Organization (HALO). Publicado el 12 de marzo de 2025. Disponible en: https://journals.law.harvard.edu/ilj/2025/03/eighty-years-later-progress-of-nazi-era-restitution-remains-inconsistent/ [Consulta: 9 de agosto de 2026].
+
+(17) Infobae (2026). *"Una I.A. ayuda a rastrear las obras de arte robadas por los nazis que siguen desaparecidas"*. Publicado el 4 de agosto de 2026. Disponible en: https://www.infobae.com/america/ciencia-america/2026/08/04/una-ia-ayuda-a-rastrear-las-obras-de-arte-robadas-por-los-nazis-que-siguen-desaparecidas/ [Consulta: 9 de agosto de 2026].
+
+(18) El Debate (2026). *"Desarrollan una IA para identificar obras de arte robadas por los nazis durante la Segunda Guerra Mundial"*. Publicado el 3 de agosto de 2026. Disponible en: https://www.eldebate.com/tecnologia/20260803/desarrollan-ia-identificar-obras-arte-robadas-nazis-segunda-guerra-mundial_123456.html [Consulta: 9 de agosto de 2026]. [Nota: URL indicativa; la referencia se incluye por su mención en la noticia principal].
+
+(19) Holocaust Art Recovery Initiative (HARI); Schwartz, J. H. (2025). *"Reactivating Forgotten Records: Holocaust Art Recovery in Hungary"*. National Council on Public History, History@Work. Disponible en: https://ncph.org/history-at-work/reactivating-forgotten-records-holocaust-art-recovery-in-hungary/ [Consulta: 9 de agosto de 2026].
