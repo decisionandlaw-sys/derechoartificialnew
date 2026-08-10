@@ -1,0 +1,431 @@
+---
+title: "Amazon v. Perplexity: la IA agéntica no “accede” bajo la CFAA"
+description: "El 9º Circuito revoca la injunction: es el usuario, no el agente de IA, quien “accede” a Amazon bajo la CFAA. Primer precedente federal sobre IA agéntica."
+date: "2026-08-10"
+tags: ["CFAA", "IA agéntica", "Noveno Circuito", "Amazon v. Perplexity", "CDAFA"]
+section: "jurisprudencia"
+category: "EEUU"
+author: "Ricardo Scarpa"
+slug: "amazon-v-perplexity-cfaa-ia-agentica-noveno-circuito"
+readingTime: 61
+image: "/images/posts/jurisprudencia/amazon-v-perplexity-cfaa-ia-agentica-noveno-circuito.jpg"
+---
+
+# Cuando el usuario es el hacker y la IA es solo la herramienta: el Noveno Circuito vacía la CFAA ante los agentes de inteligencia artificial
+
+## Análisis exhaustivo de *Amazon.com Services, LLC v. Perplexity AI, Inc.* (9th Cir. Aug. 4, 2026): la atribución de responsabilidad por «acceso» informático en sistemas de IA agéntica, la distinción con *Power Ventures* y las consecuencias para la gobernanza algorítmica y el derecho de la competencia
+
+📄 **Sentencia completa**: *Amazon.com Services, LLC v. Perplexity AI, Inc.*, No. 26-1444, 2026 WL 2237587 (9th Cir. Aug. 4, 2026). [Descargar el texto íntegro (PDF oficial, U.S. Court of Appeals for the Ninth Circuit)](https://cdn.ca9.uscourts.gov/datastore/opinions/2026/08/04/26-1444.pdf).
+
+---
+
+## Índice
+
+1. Introducción: el caso que redefine el «acceso» en la era de la IA agéntica
+   1.1. Planteamiento del problema jurídico
+   1.2. Hechos relevantes y procedimiento
+   1.3. Metodología y fuentes del análisis
+2. Marco normativo: CFAA y CDAFA
+   2.1. Evolución legislativa y propósito original de la CFAA
+   2.2. Elementos de la acción privada bajo 18 U.S.C. § 1030(a)(2)
+   2.3. La CDAFA como equivalente californiano: similitudes y diferencias relevantes
+3. El núcleo de la controversia: el concepto de «acceso»
+   3.1. La definición de *Van Buren*: «entrar en el sistema informático»
+   3.2. La posición de Perplexity: el usuario accede, no el agente
+   3.3. La posición de Amazon: la autonomía del Assistant implica acceso por parte de Perplexity
+   3.4. La respuesta del Noveno Circuito: la analogía del navegador y el carácter instrumental del agente
+4. Análisis de los precedentes clave
+   4.1. *Facebook v. Power Ventures* (9th Cir. 2016): cuando la plataforma agrega y accede directamente
+   4.2. *Meta v. BrandTotal* (N.D. Cal. 2022): recopilación pasiva versus acción proactiva
+   4.3. *hiQ Labs v. LinkedIn* (9th Cir. 2022): el «scraping» y los límites de la CFAA
+   4.4. *Nosal I* y la *rule of lenity* como freno a la expansión interpretativa
+5. La aplicación de la *rule of lenity* en el contexto de la IA agéntica
+   5.1. Naturaleza penal de la CFAA y su traslación al ámbito civil
+   5.2. El riesgo de criminalizar conductas cotidianas de los usuarios
+   5.3. La advertencia del tribunal sobre futuros desarrollos tecnológicos
+6. La CDAFA: ¿un estándar más amplio que no salva el caso?
+   6.1. Definición de «acceso» en el *California Penal Code* § 502(b)(1)
+   6.2. La exigencia de que sea «cualquier persona» quien cause el acceso
+   6.3. Conclusión del tribunal: misma suerte que la CFAA
+7. Los factores equitativos de la *preliminary injunction*
+   7.1. *Irreparable harm*: pérdida de clientes y riesgos de ciberseguridad
+   7.2. Balance de equidades: el coste para Perplexity frente al daño abstracto para Amazon
+   7.3. Interés público: innovación, elección del consumidor y limitación del desarrollo
+8. Implicaciones prácticas y proyección de futuro
+   8.1. El vacío de responsabilidad en la economía agéntica
+   8.2. Consecuencias para plataformas y desarrolladores de IA
+   8.3. Posibles vías alternativas de reclamación (contractuales, agravios, competencia desleal)
+   8.4. La evolución tecnológica y su impacto en futuros litigios
+9. Conclusiones
+   9.1. Síntesis de la *ratio decidendi*
+   9.2. Limitaciones del fallo y cuestiones abiertas
+   9.3. Recomendaciones para legisladores y operadores jurídicos
+10. Bibliografía y fuentes verificadas
+
+---
+
+## 1. Introducción: el caso que redefine el «acceso» en la era de la IA agéntica
+
+### 1.1. Planteamiento del problema jurídico
+
+La sentencia de la Corte de Apelaciones del Noveno Circuito en *Amazon.com Services, LLC v. Perplexity AI, Inc.* (1) constituye el primer pronunciamiento de un tribunal federal de apelación en los Estados Unidos que aborda directamente la aplicación de la *Computer Fraud and Abuse Act* (CFAA) a los denominados «agentes de inteligencia artificial» (*agentic AI*) —sistemas capaces de realizar tareas en línea de forma autónoma o semiautónoma por indicación del usuario—. El fallo, dictado el 4 de agosto de 2026, revoca la *preliminary injunction* concedida por el Tribunal de Distrito para el Distrito Norte de California (jueza Maxine M. Chesney) y sienta una doctrina restrictiva sobre el elemento de «acceso» en el contexto de herramientas de IA que operan localmente en el ordenador del usuario sin comunicación directa con los servidores de la plataforma demandante.
+
+La controversia enfrenta a dos lógicas contrapuestas. Por un lado, Amazon sostiene que la utilización del navegador Comet de Perplexity —que incorpora un asistente de IA («Assistant») capaz de navegar por Amazon.com para realizar compras por indicación del usuario— constituye un «acceso» a sus sistemas informáticos por parte de Perplexity, al ser este quien, mediante sus servidores, envía instrucciones al Assistant para ejecutar las acciones solicitadas. Por otro lado, Perplexity defiende que nunca «entra» (*gain entry*) en los servidores de Amazon; quien accede físicamente es el usuario a través de su navegador, y el Assistant se limita a procesar localmente la información que el navegador ya ha mostrado en la pantalla del usuario. El Assistant envía capturas de pantalla a los servidores de Perplexity, recibe instrucciones de navegación, pero nunca establece una conexión directa con los servidores de Amazon (1).
+
+El tribunal de apelación resuelve la cuestión acogiendo la tesis de Perplexity. Para la mayoría, integrada por los jueces Milan D. Smith Jr. y Eric C. Tung, y el juez de distrito John Charles Hinderaker, el elemento «acceso» exige que la persona demandada «entre» en el sistema informático protegido, y en el caso examinado es el usuario —y no Perplexity— quien realiza ese acto. La sentencia se apoya en la definición de acceso enunciada por el Tribunal Supremo en *Van Buren v. United States* (2), y distingue cuidadosamente el supuesto de *Facebook, Inc. v. Power Ventures, Inc.* (3), donde la plataforma agregadora de redes sociales sí accedía directamente a los servidores de Facebook. La decisión tiene un alcance deliberadamente limitado: los jueces advierten que no sientan un régimen jurídico general para la IA agéntica, sino que se ciñen a los hechos del expediente y al estado de la tecnología en el momento de los hechos (1).
+
+### 1.2. Hechos relevantes y procedimiento
+
+Perplexity AI, Inc. es una empresa emergente (*startup*) dedicada a la inteligencia artificial, creadora del navegador web Comet, lanzado al público en 2025. Comet se presenta como un navegador convencional —similar a Google Chrome— que se ejecuta localmente en el ordenador del usuario, pero que incorpora una funcionalidad opcional: un asistente de IA («Assistant») que, a instancia del usuario, puede realizar tareas automatizadas en sitios web, como buscar y adquirir productos en Amazon.com (1).
+
+El funcionamiento técnico del Assistant es clave para la decisión judicial. Cuando un usuario de Comet solicita al Assistant que localice un producto en Amazon, el Assistant toma capturas de pantalla de la vista del navegador, envía esas capturas desde el ordenador del usuario a los servidores de Perplexity, y recibe de vuelta instrucciones sobre cómo navegar por Amazon.com para cumplir la orden del usuario. Perplexity afirmó ante el tribunal que sus servidores nunca acceden directamente a los servidores de Amazon; toda la comunicación con Amazon se produce a través del navegador que se ejecuta en el equipo del usuario (1).
+
+Antes del lanzamiento de Comet, Amazon había comunicado a la consejera delegada de Perplexity que no se autorizaría a los productos de IA de Perplexity a acceder a la *Amazon Store*. Tras el lanzamiento y la constatación de que el Assistant accedía al sitio, Amazon reiteró su oposición y solicitó a Perplexity que utilizara una *user‑agent string* —mecanismo que identifica el software que realiza la solicitud— para que Amazon pudiera bloquear el acceso del Assistant. Perplexity se negó a adoptar dicha identificación (1).
+
+En noviembre de 2025, Amazon presentó su demanda ante el Tribunal de Distrito del Norte de California, alegando violaciones de la CFAA (18 U.S.C. § 1030) y de la ley californiana equivalente, la *Comprehensive Computer Data Access and Fraud Act* (CDAFA) (*California Penal Code* § 502). Simultáneamente, Amazon solicitó una *preliminary injunction* para impedir que Perplexity continuara utilizando el Assistant en Amazon.com. El tribunal de distrito, tras una vista celebrada en marzo de 2026, concedió la *injunction* en un escrito breve, considerando que Amazon tenía probabilidades de éxito en el fondo y que los restantes factores equitativos (daño irreparable, balance de equidades e interés público) favorecían a Amazon (1).
+
+Perplexity apeló la decisión. Un panel de la Corte de Apelaciones del Noveno Circuito primero concedió una suspensión administrativa y luego, tras el trámite de urgencia, una suspensión de la *injunction* pendiente de resolución del recurso. El 4 de agosto de 2026, el tribunal de apelaciones dictó sentencia revocando la *injunction* y devolviendo el caso al tribunal de distrito para su continuación (1).
+
+### 1.3. Metodología y fuentes del análisis
+
+El presente estudio se basa en el examen directo de la sentencia del Noveno Circuito (1), así como de los precedentes judiciales citados en ella —*Van Buren* (2), *Power Ventures* (3), *hiQ Labs v. LinkedIn* (4), *United States v. Nosal* (*Nosal I*) (5), *LVRC Holdings v. Brekka* (6) y *Meta Platforms v. BrandTotal* (7)—, todos ellos verificables a través de las bases de datos oficiales y los repositorios de *CourtListener* (8). Igualmente, se han consultado los *amicus curiae* presentados por la *Electronic Frontier Foundation* (EFF) y otras organizaciones (9), así como por la *American Civil Liberties Union* (ACLU) y el *Knight First Amendment Institute* (10), que fueron expresamente mencionados en la sentencia y se encuentran disponibles en los registros del expediente.
+
+El análisis se estructura en torno a cuatro ejes: (i) el marco normativo de la CFAA y la CDAFA; (ii) la interpretación del elemento «acceso» a la luz de la jurisprudencia y su aplicación al supuesto de IA agéntica; (iii) el examen de los restantes requisitos para la *preliminary injunction*; y (iv) las consecuencias prácticas y las cuestiones abiertas que el fallo deja sin resolver, incluyendo las posibles vías de reclamación alternativas para las plataformas afectadas por agentes de IA.
+
+Todas las afirmaciones fácticas y jurídicas que se exponen a continuación se apoyan exclusivamente en las fuentes primarias identificadas. Cuando alguna cuestión no se encuentra resuelta en la sentencia o en los documentos del expediente, se indicará expresamente esa limitación.
+
+---
+
+## 2. Marco normativo: CFAA y CDAFA
+
+### 2.1. Evolución legislativa y propósito original de la CFAA
+
+La *Computer Fraud and Abuse Act* (CFAA) fue originalmente promulgada por el Congreso de los Estados Unidos en 1984 como parte de la *Counterfeit Access Device and Computer Fraud and Abuse Act* (1). Su propósito inicial, según ha recordado reiteradamente el Noveno Circuito, era «prevenir la intrusión intencional en el ordenador de otra persona —específicamente, la piratería informática (*computer hacking*)» (1, citando *hiQ Labs v. LinkedIn*) (4). En su versión originaria, el ámbito de aplicación de la CFAA se limitaba a ordenadores que contuvieran «información de seguridad nacional o datos financieros, y aquellos operados por o en nombre del Gobierno» (1).
+
+En 1996, el Congreso amplió el alcance de la CFAA para incluir cualquier «ordenador protegido» (*protected computer*). La definición actual, contenida en 18 U.S.C. § 1030(e)(2), comprende tres categorías: (A) ordenadores utilizados exclusivamente por el Gobierno federal o por una institución financiera; (B) ordenadores «utilizados en o que afecten al comercio o la comunicación interestatal o extranjero»; y (C) ordenadores utilizados en sistemas de votación para apoyar elecciones federales o que hayan sido transportados en el comercio interestatal o extranjero (1). Dado que Amazon.com opera a través de Internet y afecta al comercio interestatal, los servidores de Amazon califican sin duda como «ordenadores protegidos» a efectos de la CFAA, extremo que no fue discutido por las partes (1).
+
+La CFAA contiene tanto disposiciones penales como una acción civil privada. El apartado (g) de 18 U.S.C. § 1030 permite a «cualquier persona que sufra daño o pérdida» a causa de una violación de las disposiciones penales de la CFAA ejercer una acción civil contra el infractor, siempre que la pérdida agregada durante un período de un año alcance al menos 5.000 dólares (1). Esta acción privada es el cauce procesal que Amazon utilizó en su demanda contra Perplexity.
+
+El Noveno Circuito ha advertido en múltiples ocasiones contra interpretaciones expansivas de la CFAA que desvirtúen su naturaleza de ley antihacking. En *United States v. Nosal* (*Nosal I*) (5), el tribunal en banc declaró que no debe interpretarse la CFAA de un modo que «transforme la CFAA de una ley antihacking en una amplia ley de apropiación indebida» (5). Esta cautela impregna toda la jurisprudencia del circuito y es determinante en la resolución del caso *Amazon v. Perplexity*, como se verá en las secciones siguientes (1).
+
+### 2.2. Elementos de la acción privada bajo 18 U.S.C. § 1030(a)(2)
+
+La demanda de Amazon se fundamentó en la subsección (a)(2) de la CFAA, que sanciona a quien «intencionalmente accede a un ordenador sin autorización o excediendo el acceso autorizado, y de ese modo obtiene información» de un ordenador protegido (1). El Noveno Circuito, en *LVRC Holdings LLC v. Brekka* (6), ha sistematizado los elementos que debe acreditar el demandante para prosperar en una acción civil bajo este precepto:
+
+1. que el demandado «accedió intencionalmente a un ordenador»;
+2. que lo hizo «sin autorización o excediendo el acceso autorizado»;
+3. que «de ese modo obtuvo información»;
+4. que la información procede de un «ordenador protegido» (si la conducta implicó una comunicación interestatal o extranjera); y
+5. que se produjo una «pérdida» (*loss*) para una o más personas durante cualquier período de un año que agregue al menos 5.000 dólares en valor (1) (6).
+
+El tribunal de distrito, en su breve resolución concediendo la *preliminary injunction*, consideró que Amazon había aportado «pruebas sólidas» de cada uno de estos elementos, especialmente en lo relativo a que Perplexity, a través de su navegador Comet, accedía a las cuentas protegidas por contraseña de los usuarios de Amazon con el permiso de estos, pero sin la autorización de Amazon, obteniendo información de las cuentas y transmitiéndola a los servidores de Perplexity. Asimismo, el tribunal de distrito dio por acreditado que Amazon había gastado más de 5.000 dólares en responder a dichas circunstancias, incluyendo horas de trabajo de sus empleados para desarrollar herramientas que bloquearan el acceso de Comet y detectar futuros accesos no autorizados (1).
+
+Sin embargo, el tribunal de apelaciones no entró a examinar los elementos segundo a quinto, porque consideró que Amazon fracasaba ya en el primero: el «acceso». La totalidad del análisis de la corte de apelaciones se concentra en determinar si Perplexity «accedió» a los ordenadores de Amazon en el sentido de la CFAA. Al concluir que no era probable que Amazon pudiera acreditar este elemento, el tribunal declaró innecesario pronunciarse sobre los restantes (1).
+
+### 2.3. La CDAFA como equivalente californiano: similitudes y diferencias relevantes
+
+Junto con la CFAA federal, Amazon invocó la ley estatal de California, la *Comprehensive Computer Data Access and Fraud Act* (CDAFA), codificada en el *California Penal Code* § 502. La CDAFA fue promulgada en 1987 con el objetivo declarado de «ampliar el grado de protección otorgado a individuos, empresas y agencias gubernamentales contra la manipulación, interferencia, daño y acceso no autorizado a datos y sistemas informáticos creados legalmente» (1). La CDAFA tipifica como delito el «acceder o causar que se acceda, a sabiendas y sin permiso, a cualquier ordenador, sistema informático o red informática» (1), y también prevé una acción civil privada.
+
+El Noveno Circuito ha reconocido que, aunque la CDAFA es en gran medida análoga a la CFAA, «los estatutos son diferentes» en ciertos aspectos (1, citando *United States v. Christensen*). Amazon argumentó ante el tribunal de apelaciones que la CDAFA presenta un concepto de «acceso» más amplio que el de la CFAA, requisitos de permiso más simples y no exige que se «obtenga» información (1). En particular, la definición de «acceso» en el *California Penal Code* § 502(b)(1) incluye, entre otras cosas, «causar la entrada o el procesamiento de datos con (...) las funciones lógicas, aritméticas o de memoria de un ordenador, sistema informático o red informática» (1).
+
+Pese a estas diferencias, el tribunal de apelaciones concluyó que la suerte de la reclamación por CDAFA corría pareja a la de la CFAA. La razón es que la prohibición relevante de la CDAFA (artículo 502(c)(7)) se aplica únicamente a «cualquier persona» que cause un acceso no autorizado (1). El tribunal razonó que, al igual que en la CFAA, el centro de la indagación sigue siendo si **la persona** demandada —Perplexity— accede o causa el acceso. Y, en los hechos del caso, el tribunal llegó a la misma conclusión: es el usuario (no Perplexity) quien accede a Amazon utilizando el Assistant como herramienta de IA, por lo que Amazon no tenía probabilidades de éxito tampoco en su reclamación bajo la CDAFA (1).
+
+Esta conclusión es relevante porque, de haber existido una diferencia sustancial entre ambas normas en el tratamiento del «acceso» indirecto a través de herramientas automatizadas, la CDAFA podría haber ofrecido a Amazon un fundamento alternativo para la *injunction*. Sin embargo, el tribunal unifica ambos análisis en torno a la figura del «causante» del acceso, exigiendo en ambos casos que el demandado sea la persona que, directamente o mediante su propia conducta, entra en el sistema (1).
+
+---
+
+## 3. El núcleo de la controversia: el concepto de «acceso»
+
+### 3.1. La definición de *Van Buren*: «entrar en el sistema informático»
+
+El Tribunal Supremo de los Estados Unidos, en *Van Buren v. United States* (2), proporcionó la definición canónica de «acceso» en el contexto de la CFAA. En aquel caso, la Corte declaró que, «en el contexto informático, "acceso" hace referencia al acto de entrar en un sistema informático mismo o en una parte particular de un sistema informático, como archivos, carpetas o bases de datos» (2). Esta definición, citada expresamente por el Noveno Circuito en la sentencia *Amazon v. Perplexity* (1), subraya que el acceso requiere un acto de *entrada* (*entry*) en el sistema protegido, no cualquier interacción o comunicación con él.
+
+El tribunal de apelaciones toma esta definición como piedra angular de su razonamiento. A partir de ella, formula la pregunta decisiva: «¿utiliza Perplexity una herramienta (el Assistant) para "acceder" a los ordenadores de Amazon?» (1). La respuesta negativa se fundamenta en que Perplexity, a través del Assistant, no realiza ningún acto de entrada en los servidores de Amazon; quien entra en el sistema es el usuario, utilizando su navegador, y el Assistant actúa como un asistente que procesa localmente la información que el navegador ya ha mostrado (1).
+
+El tribunal subraya que la CFAA exige que el acceso sea realizado por una «persona» (*whoever*), término que, según 18 U.S.C. § 921(a)(1), incluye a «cualquier individuo, corporación, compañía, asociación, firma, sociedad, o sociedad anónima» (1). El Assistant, por avanzado que sea, es una herramienta (*tool*), no una persona a efectos legales (1). Esta constatación, aparentemente sencilla, es determinante para atribuir la conducta de acceso al usuario y no al proveedor de la herramienta.
+
+### 3.2. La posición de Perplexity: el usuario accede, no el agente
+
+La argumentación de Perplexity ante el tribunal de apelaciones partió de una premisa técnica y jurídica. Técnicamente, Perplexity sostuvo que ningún ordenador de su propiedad accede nunca a los servidores de Amazon. El Assistant, que se ejecuta localmente en el ordenador del usuario, toma capturas de pantalla de la vista del navegador, las envía a los servidores de Perplexity para recibir instrucciones, pero la conexión con Amazon se realiza exclusivamente a través del navegador del usuario, que solicita las páginas de Amazon y las muestra en pantalla (1). Este flujo de datos fue descrito con claridad por el *amicus curiae* de la Electronic Frontier Foundation y otras organizaciones (9): «Cuando un usuario visita un sitio web, solo el navegador (...) se comunica con el servidor del sitio web. Específicamente, cuando un usuario visita una página web de Amazon.com, el navegador solicita el contenido de la página al servidor de Amazon y muestra la página al usuario. Si el usuario activa el Assistant, el Assistant analizará el contenido de la página que el navegador ha mostrado en el ordenador del usuario. (...) Los servidores de Perplexity nunca acceden directamente a los servidores de Amazon» (1) (9).
+
+Jurídicamente, Perplexity argumentó que su situación era análoga a la de un usuario de Safari que accede a Amazon.com, incluso si Safari «rellena automáticamente la dirección y la información de pago del usuario en el momento de la compra en nombre del usuario» (1). En ambos casos, el software es una herramienta del usuario, carece de intención propia y sus acciones deben atribuirse a quien lo utiliza. Perplexity también invocó el precedente *Meta Platforms, Inc. v. BrandTotal Ltd.* (7), donde el tribunal de distrito del Norte de California declaró que el acceso a datos que Meta había enviado a los usuarios individuales no constituía un acceso a los servidores de Meta (1).
+
+Además, Perplexity destacó que, si se aceptara la tesis de Amazon, cualquier usuario individual que utilizara el Assistant podría exponerse a responsabilidad penal bajo la CFAA (por conspiración o complicidad) por facilitar el supuesto acceso no autorizado de Perplexity. Esta eventualidad, según Perplexity, transformaría conductas cotidianas e inocuas en delitos federales, en contra de la doctrina sentada en *Nosal I* (5) (1).
+
+### 3.3. La posición de Amazon: la autonomía del Assistant implica acceso por parte de Perplexity
+
+La estrategia de Amazon se centró en la naturaleza «agéntica» del Assistant, es decir, su capacidad para actuar de forma autónoma una vez recibida la instrucción del usuario. Amazon argumentó que el Assistant no es un mero navegador pasivo, sino que «procede de forma autónoma y se comporta como un comprador humano eficiente» (1). Esta autonomía, según Amazon, debe atribuirse a Perplexity porque son los servidores de Perplexity quienes dirigen las acciones del Assistant. Amazon sostuvo que esta conducta encajaba en el precedente *Facebook, Inc. v. Power Ventures, Inc.* (3), donde el tribunal atribuyó a Power Ventures la acción de enviar mensajes a través del sistema de Facebook, aunque fueran iniciados por usuarios (1).
+
+Amazon distinguió el caso de *BrandTotal* (7) argumentando que, en aquel asunto, los datos se recopilaban pasivamente mediante el uso normal de Facebook por parte de los usuarios, mientras que el Assistant de Perplexity navega activamente por Amazon.com, realizando clics y selecciones comparables a las de un ser humano (1). Esta actividad proactiva, en opinión de Amazon, constituía un acceso directo a sus servidores, aunque mediado por el navegador del usuario, porque las instrucciones provenían de los servidores de Perplexity y no del usuario en tiempo real.
+
+Amazon también invocó el hecho de que Perplexity se había negado a adoptar una *user‑agent string* que identificara al Assistant, lo que, a su juicio, revelaba una intención de eludir los mecanismos de control de acceso de Amazon. Para Amazon, esta negativa, unida a la comunicación previa en la que había denegado explícitamente la autorización a Perplexity, reforzaba la conclusión de que el acceso era «sin autorización» (1).
+
+### 3.4. La respuesta del Noveno Circuito: la analogía del navegador y el carácter instrumental del agente
+
+El tribunal de apelaciones rechazó la tesis de Amazon y acogió la de Perplexity, por dos órdenes de razones: una interpretativa y otra cautelar.
+
+En el plano interpretativo, la corte declaró que, sobre los hechos del expediente, «Perplexity no utiliza una herramienta para "acceder" a los ordenadores de Amazon. Es el usuario quien "accede" a los ordenadores de Amazon, con la ayuda del Assistant para llevar a cabo actos específicos en Amazon.com» (1). El tribunal subrayó que Perplexity puede recibir capturas de pantalla del navegador del usuario y comunicar instrucciones al Assistant, pero «estas actividades, por sí mismas, no significan que Perplexity haya "accedido" (entrado) a los servidores de Amazon» (1). La corte enfatizó que «los servidores de Perplexity nunca acceden directamente a los servidores de Amazon» (1), tomando como base la descripción técnica proporcionada por el *amicus* de la EFF (9).
+
+El tribunal rechazó explícitamente la analogía con *Power Ventures* (3) por dos motivos. Primero, en *Power Ventures* el tribunal asumió sin discusión que Power «accedía» a Facebook, y el análisis se centró en la autorización, no en el acceso (1). Segundo, la descripción de los hechos en *Power Ventures* implicaba que Power accedía directamente a los servidores de Facebook para enviar mensajes, mientras que en el caso de Perplexity no existe tal acceso directo (1). La corte también distinguió *BrandTotal* (7), pero señaló que, aunque el Assistant hace algo más que la recopilación pasiva de *BrandTotal*, esa mayor actividad no se traduce en un acceso directo a los servidores de Amazon (1).
+
+En el plano cautelar, el tribunal invocó la *rule of lenity* (regla de lenidad), propia de la interpretación de normas penales, y recordó que la CFAA, por su naturaleza criminal, debe interpretarse restrictivamente (1). La corte expresó su preocupación por que la interpretación de Amazon «expusiera a los propios usuarios a responsabilidad penal (bajo una teoría de conspiración o complicidad) por facilitar el supuesto acceso no autorizado de Perplexity a los servidores de Amazon» (1). El tribunal consideró «poco probable que el Congreso haya querido exponer a usuarios individuales a responsabilidad penal bajo la CFAA por utilizar el Assistant y el navegador Comet para acceder a Amazon.com en estas circunstancias» (1). Esta advertencia refleja la doctrina de *Nosal I* (5), que prohíbe «transformar categorías enteras de conducta inocua en delitos federales» (1).
+
+Finalmente, el tribunal reiteró que su conclusión se limita estrictamente al estado de la tecnología en el expediente y a la configuración concreta del Assistant en ese momento. «No abordamos si, en un expediente diferente o con hechos nuevos, Perplexity podría ejercer el control sobre el Assistant de tal manera que obtuviera entrada a los servidores de Amazon» (1). Esta salvedad es fundamental para entender el alcance de la sentencia: el tribunal no crea una inmunidad general para los agentes de IA, sino que resuelve un caso concreto con una arquitectura tecnológica específica (el agente opera localmente, sin comunicación directa con el servidor de la plataforma). La corte advierte explícitamente que la comprensión jurídica de la IA agéntica cambiará a medida que la tecnología se vuelva más sofisticada (1).
+
+---
+
+## 4. Análisis de los precedentes clave
+
+### 4.1. *Facebook v. Power Ventures* (9th Cir. 2016): cuando la plataforma agrega y accede directamente
+
+El precedente más citado por ambas partes y el que el tribunal de apelaciones se esfuerza por distinguir es *Facebook, Inc. v. Power Ventures, Inc.* (3). En aquel caso, Power Ventures operaba una plataforma de agregación de redes sociales que permitía a los usuarios «ver todos los contactos de muchos sitios de redes sociales en una sola página» (1) (3). Como parte de una campaña promocional en la que Power recompensaba a los usuarios que invitaban a otros a la plataforma, «Power provocó que se transmitiera un mensaje a los amigos del usuario dentro del sistema de Facebook» (1) (3). El Noveno Circuito declaró a Power responsable bajo la CFAA por continuar enviando dichos mensajes a través de Facebook incluso después de haber recibido una carta de cese y desistimiento (3).
+
+El tribunal de apelaciones en el caso *Amazon v. Perplexity* subraya que *Power Ventures* difiere en varios aspectos esenciales. En primer lugar, en *Power Ventures* el tribunal asumió, sin discusión, que Power «accedía» a Facebook a efectos de la CFAA; el grueso del análisis se dedicó a la autorización, no al acceso (1). La sentencia señala que «simplemente declaramos que "Power provocó que se enviara un mensaje" en Facebook, indicando que esto era el resultado de que "los usuarios de Power [tomaran] una acción similar a permitir que un amigo usara un ordenador o iniciara sesión en una cuenta de correo electrónico"» (1). Sin embargo, la descripción de los hechos implicaba que Power accedía directamente a los servidores de Facebook (1).
+
+En segundo lugar, la arquitectura tecnológica es diferente. En *Power Ventures*, la plataforma de Power Ventures accedía directamente a los servidores de Facebook para enviar mensajes, mientras que en el caso de Perplexity, como se ha descrito, los servidores de Perplexity nunca se comunican directamente con los servidores de Amazon (1) (9). El tribunal concluye que la analogía propuesta por Amazon no es aplicable porque «Power razonablemente podría haber pensado que el consentimiento de los usuarios de Facebook para compartir la promoción era un permiso para que Power accediera a los ordenadores de Facebook» (1) (3), pero en el caso presente ni siquiera existe el acceso directo que pudiera ser autorizado o no.
+
+Esta distinción es crucial para la *ratio decidendi*. El tribunal no niega que, en determinadas circunstancias, un proveedor de servicios que utilice agentes de IA pueda acceder directamente a los servidores de una plataforma y, por tanto, quedar sujeto a la CFAA. Pero en los hechos del caso, al no existir acceso directo, la cuestión de la autorización (el segundo elemento de la CFAA) ni siquiera llega a plantearse.
+
+### 4.2. *Meta v. BrandTotal* (N.D. Cal. 2022): recopilación pasiva versus acción proactiva
+
+El tribunal de distrito del Norte de California, en *Meta Platforms, Inc. v. BrandTotal Ltd.* (7), abordó un supuesto que, aunque no idéntico, presenta similitudes con el de Perplexity. BrandTotal desarrolló la extensión de navegador UpVoice 2021, que registraba pasivamente y enviaba a BrandTotal «datos que los usuarios reciben de Facebook a través de su uso normal del sitio web» (1) (7). El tribunal de distrito explicó que UpVoice accedía únicamente a los «datos que Meta ha enviado a los usuarios individuales», y que el programa no «accedía proactivamente ni se comunicaba con los servidores de Meta» (1) (7). Aplicando la *rule of lenity*, el tribunal se negó a extender la responsabilidad CFAA a tal conducta (7).
+
+El tribunal de apelaciones en *Amazon v. Perplexity* distingue *BrandTotal* señalando que, en el caso presente, el Assistant «parece hacer algo más que la recopilación pasiva de datos» (1). Mientras que UpVoice se limitaba a recopilar información que Meta ya había enviado al navegador del usuario, el Assistant de Perplexity navega activamente por Amazon.com, realizando clics y selecciones para cumplir las órdenes del usuario. Sin embargo, y este es el matiz decisivo, esa mayor actividad no convierte al Assistant en un agente que accede directamente a los servidores de Amazon. El tribunal explica que, aunque el Assistant es más activo que la extensión de *BrandTotal*, sigue sin establecer una conexión directa con los servidores de Amazon; toda la interacción con Amazon se produce a través del navegador del usuario (1) (9).
+
+Este razonamiento revela que la distinción relevante no es entre actividad pasiva y activa, sino entre acceso directo al servidor y acceso mediado por el navegador del usuario. El tribunal considera que, mientras el acceso se realice a través del navegador del usuario y los servidores del proveedor de la IA no contacten directamente con los servidores de la plataforma, no hay acceso a efectos de la CFAA, con independencia del grado de autonomía o proactividad del agente.
+
+### 4.3. *hiQ Labs v. LinkedIn* (9th Cir. 2022): el «scraping» y los límites de la CFAA
+
+El Noveno Circuito, en *hiQ Labs, Inc. v. LinkedIn Corp.* (4), abordó la cuestión del «raspado» o *scraping* de datos públicos y su relación con la CFAA. En aquel caso, hiQ Labs recopilaba información de perfiles públicos de LinkedIn para ofrecer análisis de empleados a sus clientes. LinkedIn envió una carta de cese y desistimiento y adoptó medidas técnicas para bloquear el acceso de hiQ. El tribunal sostuvo que el *scraping* de datos públicos no constituye un acceso no autorizado bajo la CFAA, porque LinkedIn no podía revocar el acceso a información que había hecho públicamente disponible (4).
+
+En la sentencia *Amazon v. Perplexity*, el tribunal cita *hiQ Labs* para recordar el propósito de la CFAA: «prevenir la intrusión intencional en el ordenador de otra persona —específicamente, la piratería informática» (1) (4). La cita sirve para reforzar la idea de que la CFAA no debe interpretarse como una ley general de protección de datos o de propiedad intelectual, sino como una norma dirigida contra el acceso no autorizado a sistemas informáticos. Esta caracterización es relevante porque, al igual que en *hiQ Labs*, Amazon intenta utilizar la CFAA para controlar el acceso a su plataforma por parte de herramientas automatizadas, un uso que el tribunal considera expansivo y ajeno al propósito original de la ley (1).
+
+Sin embargo, el tribunal no extiende automáticamente la doctrina de *hiQ Labs* al caso presente, porque en *hiQ Labs* el debate se centraba en el concepto de «autorización» y en el acceso a información pública, mientras que en *Amazon v. Perplexity* el debate se centra en el concepto de «acceso» mismo. Pero la cita de *hiQ Labs* revela la orientación general del Noveno Circuito hacia una interpretación restrictiva de la CFAA, que se manifiesta también en la aplicación de la *rule of lenity*, como se verá a continuación.
+
+### 4.4. *Nosal I* y la *rule of lenity* como freno a la expansión interpretativa
+
+*United States v. Nosal* (*Nosal I*) (5) es el precedente más firme en la jurisprudencia del Noveno Circuito contra la expansión interpretativa de la CFAA. En aquel caso, el tribunal en banc sostuvo que la CFAA no debe interpretarse de manera que «transforme la CFAA de una ley antihacking en una amplia ley de apropiación indebida» (5). El tribunal también advirtió contra la criminalización de «una amplia gama de actividades cotidianas» simplemente porque se utilice un ordenador (1) (5). Esta advertencia es invocada directamente por el tribunal de apelaciones en el caso *Amazon v. Perplexity* para justificar su rechazo a la interpretación de Amazon (1).
+
+La *rule of lenity* es un principio de interpretación jurídica según el cual, cuando una norma penal es ambigua, el tribunal debe resolver la duda a favor del acusado. El Noveno Circuito ha aplicado esta regla en el ámbito civil de la CFAA porque, como recuerda en *Brekka* (6), la CFAA es «primordialmente un estatuto penal» y su interpretación es «igualmente aplicable» en los contextos civil y penal (1) (6). En *Amazon v. Perplexity*, el tribunal aplica la *rule of lenity* para rechazar la interpretación propuesta por Amazon, porque considera que la CFAA es ambigua en cuanto a si el uso de un agente de IA que opera localmente constituye «acceso» por parte del proveedor del agente (1). El tribunal declara: «Incluso aceptando el enfoque de Amazon como razonable, imponer responsabilidad aquí requeriría una interpretación novedosa muy alejada del propósito del estatuto "de prevenir la intrusión intencional en el ordenador de otra persona —específicamente, la piratería informática"» (1) (4).
+
+El tribunal también destaca el riesgo de que la interpretación de Amazon exponga a los usuarios individuales a responsabilidad penal bajo teorías de conspiración o complicidad, lo que transformaría categorías enteras de conducta inocua en delitos federales (1). Este argumento conecta directamente con la doctrina de *Nosal I* y refuerza la decisión de no extender la CFAA a los hechos del caso. El tribunal concluye que, «a la luz de la cautela con que debemos interpretar la CFAA para garantizar que los demandados tengan conocimiento de la norma, nos negamos a adoptar la interpretación de Amazon del § 1030(a)(2)» (1).
+
+Esta aplicación de la *rule of lenity* es particularmente relevante porque, a diferencia de otros precedentes donde la norma se aplica para resolver ambigüedades sobre la autorización o la obtención de información, en *Amazon v. Perplexity* se aplica directamente al concepto de «acceso», un elemento que el Tribunal Supremo había definido en *Van Buren* (2) pero que, en el contexto de la IA agéntica, presenta una zona de penumbra que el tribunal resuelve a favor del demandado.
+
+---
+
+## 5. La aplicación de la *rule of lenity* en el contexto de la IA agéntica
+
+### 5.1. Naturaleza penal de la CFAA y su traslación al ámbito civil
+
+La *rule of lenity* es un principio de interpretación jurídica de origen anglosajón según el cual, cuando una norma penal presenta ambigüedad, el tribunal debe resolver la duda a favor del acusado (1) (5). Este principio tiene su fundamento en la exigencia de *fair notice* (notificación justa) propia del *due process*: los ciudadanos deben poder conocer con certeza qué conductas están prohibidas antes de que se les imponga una sanción penal (1) (6).
+
+La CFAA, aunque contiene una acción civil privada en su apartado (g), es «primordialmente un estatuto penal» (1) (6). El Noveno Circuito ha establecido que las interpretaciones de sus disposiciones son «igualmente aplicables» en los contextos civil y penal (1) (6). Esta traslación implica que la *rule of lenity*, concebida originalmente para el derecho penal, opera también en las acciones civiles fundadas en la CFAA. El tribunal de apelaciones en *Amazon v. Perplexity* aplica esta doctrina sin ambages: la ambigüedad sobre si Perplexity «accede» a los ordenadores de Amazon a través del Assistant debe resolverse a favor de Perplexity, porque cualquier interpretación contraria podría exponer a sus usuarios y a la propia empresa a responsabilidad penal sin una advertencia clara (1).
+
+El tribunal cita *Brekka* (6) y *Nosal I* (5) para recordar que la *rule of lenity* guía la interpretación de la CFAA en todos los casos, y que esta regla se aplica cuando el estatuto «es verdaderamente ambiguo» (1) (5). A continuación, el tribunal procede a declarar que la CFAA es ambigua en relación con el supuesto de hecho enjuiciado, lo que justifica la aplicación de la regla.
+
+### 5.2. El riesgo de criminalizar conductas cotidianas de los usuarios
+
+Uno de los argumentos más poderosos del tribunal de apelaciones para aplicar la *rule of lenity* es el riesgo de que la interpretación de Amazon «exponga a los propios usuarios a responsabilidad penal (bajo una teoría de conspiración o complicidad) por facilitar el supuesto acceso no autorizado de Perplexity a los servidores de Amazon» (1). Este argumento se apoya directamente en la doctrina de *Nosal I* (5), que prohíbe «transformar categorías enteras de conducta inocua en delitos federales» y «criminalizar una amplia gama de actividades cotidianas» (1) (5).
+
+El tribunal considera que, en los hechos del caso, un usuario que utiliza Comet para acceder a Amazon.com y hacer una compra está realizando una actividad cotidiana. Si la interpretación de Amazon fuera correcta, ese usuario podría ser considerado cómplice del acceso no autorizado de Perplexity, porque utiliza el Assistant y permite que las capturas de pantalla sean enviadas a los servidores de Perplexity. Este resultado, según el tribunal, sería «contrario a la intención del Congreso» y «transformaría la CFAA en un estatuto de aplicación general sobre el uso de asistentes de IA en la web» (1).
+
+El tribunal subraya que la CFAA fue diseñada para «prevenir la intrusión intencional en el ordenador de otra persona —específicamente, la piratería informática» (1) (4), no para regular el uso de asistentes de navegación. Al aplicar la *rule of lenity*, el tribunal rechaza una interpretación que ampliaría el alcance de la CFAA más allá de su propósito original, creando incertidumbre jurídica para millones de usuarios que utilizan diariamente herramientas de IA para facilitar sus compras en línea.
+
+### 5.3. La advertencia del tribunal sobre futuros desarrollos tecnológicos
+
+El tribunal de apelaciones es consciente de que su decisión se fundamenta en el estado de la tecnología en el momento de los hechos. Por ello, incluye una cautela explícita: «Por ahora, esta opinión refleja y se aplica al estado de la tecnología solo tal como se presenta en los escritos de este caso» (1). Esta advertencia tiene un doble propósito.
+
+En primer lugar, el tribunal reconoce que la IA agéntica es una tecnología emergente («emerging technology») cuyo desarrollo futuro podría alterar el análisis (1). A medida que los agentes de IA se vuelvan más autónomos y sofisticados, podrían llegar a establecer comunicación directa con los servidores de las plataformas, o podrían ejercer un control sobre el navegador del usuario que desplace el centro de imputación de la conducta. El tribunal no cierra la puerta a que, en un expediente diferente o con hechos nuevos, se pueda concluir que el proveedor del agente «accede» a efectos de la CFAA (1).
+
+En segundo lugar, el tribunal rechaza explícitamente la creación de un nuevo régimen legal general para la IA agéntica. «No establecemos un nuevo régimen legal que rija la IA agéntica. No abordamos si, en otros contextos, incluidas las reclamaciones por agravio (*tort*), Perplexity pueda evitar la responsabilidad por las acciones del Assistant» (1). Esta delimitación del alcance del fallo es esencial para entender su impacto: la decisión no absuelve a Perplexity de toda responsabilidad, sino que se limita al elemento «acceso» de la CFAA, dejando abiertas otras vías de reclamación (contractuales, de competencia desleal, de agravio, etc.) que Amazon podría explorar en el tribunal de distrito o en futuros litigios.
+
+El tribunal también advierte que «la comprensión jurídica de la IA agéntica cambiará sin duda a medida que la tecnología de IA se vuelva cada vez más sofisticada» (1). Esta declaración es un reconocimiento implícito de que el derecho no puede permanecer estático ante la evolución tecnológica, y que los tribunales deberán adaptar sus interpretaciones a las nuevas realidades fácticas. Sin embargo, el tribunal insiste en que, en el estado actual de la tecnología, la CFAA no proporciona a Amazon la herramienta para bloquear el acceso del Assistant a su sitio web.
+
+La advertencia del tribunal tiene, además, una dimensión de política judicial: al aplicar la *rule of lenity*, la corte opta por la cautela interpretativa en lugar de una decisión audaz que podría tener consecuencias imprevistas para la industria de la IA. Esta opción metodológica es coherente con la tradición del Noveno Circuito, que ha mostrado una preferencia por interpretar restrictivamente la CFAA en casos de ambigüedad (5) (6) (4).
+
+---
+
+## 6. La CDAFA: ¿un estándar más amplio que no salva el caso?
+
+### 6.1. Definición de «acceso» en el *California Penal Code* § 502(b)(1)
+
+La *Comprehensive Computer Data Access and Fraud Act* (CDAFA) fue promulgada por la Legislatura de California en 1987 con el objetivo declarado de «ampliar el grado de protección otorgado a individuos, empresas y agencias gubernamentales contra la manipulación, interferencia, daño y acceso no autorizado a datos y sistemas informáticos creados legalmente» (1). La CDAFA se codifica en el *California Penal Code* § 502 y, al igual que la CFAA, contiene tanto disposiciones penales como una acción civil privada (1).
+
+El elemento central del análisis en el caso *Amazon v. Perplexity* es la definición de «acceso» en la CDAFA. El *California Penal Code* § 502(b)(1) establece que «acceder» significa, entre otras cosas, «causar la entrada o el procesamiento de datos con (...) las funciones lógicas, aritméticas o de memoria de un ordenador, sistema informático o red informática» (1). Amazon argumentó ante el tribunal de apelaciones que esta definición es más amplia que la de la CFAA, porque no exige un acto de «entrada» (*entry*) en el sistema en el mismo sentido restrictivo que la jurisprudencia federal (1). En opinión de Amazon, causar que el Assistant procese datos en el ordenador del usuario, o que los servidores de Perplexity procesen instrucciones relacionadas con la navegación en Amazon, podría constituir «acceso» bajo la CDAFA, incluso si no hay comunicación directa con los servidores de Amazon (1).
+
+Además, Amazon señaló que la CDAFA tiene requisitos de permiso más simples que la CFAA y que, a diferencia de la CFAA, la CDAFA no exige que se «obtenga» información para que se configure la infracción (1). Estos argumentos pretendían establecer que, incluso si la reclamación federal fracasaba por el elemento de «acceso», la reclamación estatal podría sobrevivir gracias a su redacción más amplia.
+
+### 6.2. La exigencia de que sea «cualquier persona» quien cause el acceso
+
+El tribunal de apelaciones rechazó los argumentos de Amazon, no por considerar que la definición de acceso de la CDAFA fuera idéntica a la de la CFAA, sino porque la estructura de la norma sigue exigiendo que sea una «persona» quien cause el acceso (1). El artículo 502(c)(7) del *California Penal Code* tipifica como delito el «[acceder o causar que se acceda], a sabiendas y sin permiso, a cualquier ordenador, sistema informático o red informática» (1). El tribunal interpreta que el sujeto de la acción —el «causante»— debe ser una persona (física o jurídica) y que la conducta de causar el acceso debe ser imputable a esa persona (1).
+
+El tribunal razona que, en los hechos del caso, la persona que «causa» el acceso a los servidores de Amazon es el usuario, no Perplexity. Es el usuario quien, utilizando su navegador Comet, solicita las páginas de Amazon y realiza las acciones de compra. El Assistant, aunque envía capturas de pantalla y recibe instrucciones, no es la persona que «causa» el acceso en el sentido de la CDAFA, porque carece de voluntad autónoma y actúa como instrumento del usuario (1). Esta conclusión es paralela a la alcanzada en relación con la CFAA: el tribunal considera que el análisis de imputación de la conducta es el mismo en ambas normas, a pesar de las diferencias en la definición de «acceso» (1).
+
+El tribunal también rechaza el argumento de Amazon de que la redacción más amplia de la CDAFA podría captar la conducta de Perplexity. Aunque la definición de acceso en la CDAFA incluye «causar la entrada o el procesamiento de datos» (1), el tribunal interpreta que esta expresión debe leerse en el contexto del artículo 502(c)(7), que exige que el acceso se cause «sin permiso» y que sea realizado por una persona. El tribunal considera que Perplexity no «causa» el acceso a los servidores de Amazon en el sentido de la CDAFA, porque el acceso físico y lógico a los servidores lo realiza el usuario a través de su navegador, no Perplexity a través de sus servidores (1) (9).
+
+### 6.3. Conclusión del tribunal: misma suerte que la CFAA
+
+El tribunal de apelaciones sintetiza su razonamiento sobre la CDAFA en una frase lapidaria: «En última instancia, las reclamaciones de Amazon bajo la CFAA y la CDAFA se sostienen y caen juntas» (1). Esta declaración es significativa porque, a pesar de reconocer que las dos normas «son diferentes en ciertos aspectos» (1), el tribunal considera que la diferencia relevante para el caso no es suficiente para salvar la reclamación estatal.
+
+El tribunal explica que «aunque Amazon pueda tener razón en que el "acceso" bajo la CDAFA es más amplio que la definición de la CFAA, el foco de la investigación sigue siendo la persona que accede o causa el acceso» (1). Y en los hechos del caso, «el usuario (no Perplexity) accede a Amazon utilizando el Assistant como herramienta de IA» (1). Por tanto, Amazon tampoco tiene probabilidades de éxito en su reclamación bajo la CDAFA (1).
+
+Esta conclusión tiene implicaciones importantes para futuros litigios en California. Los demandantes que invoquen la CDAFA para reclamar contra proveedores de agentes de IA deberán demostrar que el proveedor, y no el usuario, es quien «accede o causa el acceso» a los sistemas informáticos protegidos. Si el agente de IA opera localmente en el ordenador del usuario y no establece comunicación directa con los servidores de la plataforma, la CDAFA no ofrecerá un remedio más amplio que la CFAA, al menos según la interpretación del Noveno Circuito en este precedente (1).
+
+El tribunal no se pronuncia sobre si, en un escenario en el que el agente de IA actúe con un grado de autonomía tal que pueda decirse que «causa» el acceso por sí mismo, la CDAFA podría ofrecer un fundamento distinto. Esta cuestión queda abierta, como el propio tribunal reconoce al limitar su decisión al expediente y al estado de la tecnología en el momento de los hechos (1).
+
+---
+
+## 7. Los factores equitativos de la *preliminary injunction*
+
+### 7.1. *Irreparable harm*: pérdida de clientes y riesgos de ciberseguridad
+
+El tribunal de apelaciones examina en primer lugar el factor del daño irreparable (*irreparable harm*), que constituye el segundo de los cuatro requisitos para la concesión de una *preliminary injunction* según la doctrina *Winter v. Natural Resources Defense Council* (1). El tribunal de distrito había razonado que Amazon sufriría un daño irreparable en ausencia de la *injunction* porque Perplexity «continuaría participando en la conducta impugnada antes referida» (1). El tribunal de apelaciones observa que, aunque el tribunal de distrito podría tener razón en que una demostración de probabilidad de éxito en el fondo puede ser suficiente para establecer la probabilidad de daño irreparable (1, citando *Facebook v. Power Ventures*, decisión del tribunal de distrito confirmada por el Noveno Circuito en 2019), Amazon no había logrado esa demostración de probabilidad de éxito (1). Por tanto, el daño irreparable se convierte en una cuestión más dudosa (1).
+
+El tribunal analiza a continuación las pruebas concretas aportadas por Amazon. Como cuestión general, «la evidencia de amenaza de pérdida de clientes potenciales o de buena voluntad apoya ciertamente una conclusión de posibilidad de daño irreparable» (1, citando *Stuhlbarg Int'l Sales Co. v. John D. Brush & Co.*). Sin embargo, el tribunal considera que Amazon aporta únicamente «pruebas débiles en cuanto a la amenaza real de tal daño» (1). Amazon citó declaraciones que afirmaban que el Assistant «puede no seleccionar el mejor precio, método de entrega o recomendaciones de producto para un cliente cuando compra en la Amazon Store» (1), lo que sugiere que el Assistant conduce a una experiencia de compra degradada. El tribunal califica estos daños como «más atenuados» que los reconocidos en otros casos de «amenaza de daño» (1). En *Stuhlbarg*, por ejemplo, el riesgo de daño surgía de la retención por parte del Servicio de Aduanas de Estados Unidos de mercancías ya prometidas a nuevos clientes con pedidos importantes (1). El daño a la buena voluntad era evidente porque esos clientes no recibirían el producto específico que habían pedido. En comparación, la degradación de la experiencia general de compra en Amazon.com es más abstracta, y también lo es el grado en que los usuarios responsabilizarían al Assistant de dicha degradación, dado que han elegido utilizarlo (1).
+
+En cuanto a los riesgos de ciberseguridad, el tribunal también considera que la posición de Amazon es débil. Amazon afirmó que «múltiples investigadores de seguridad corroboraron los riesgos de seguridad planteados por Perplexity» (1), pero Perplexity argumentó que el propio experto de Amazon declaró que no pudo replicar plenamente esos riesgos y que Perplexity había abordado cualquier riesgo de este tipo (1). Solo uno de los riesgos cibernéticos señalados por Amazon en la declaración de su perito afectaba a un sitio web de compras, y ni siquiera ese ejemplo implicaba específicamente a Amazon.com (1). Por tanto, el tribunal concluye que, si bien la declaración del perito proporciona cierto apoyo a la idea de que el uso del Assistant puede introducir riesgos de ciberseguridad en Amazon.com, «las pruebas aportadas por Amazon son limitadas y contrarrestadas, al menos en parte, por las mejoras cibernéticas afirmadas por Perplexity» (1). En consecuencia, los daños potenciales que Amazon alega no favorecen la concesión de una *injunction* (1).
+
+### 7.2. Balance de equidades: el coste para Perplexity frente al daño abstracto para Amazon
+
+El tribunal de apelaciones aborda el tercer factor —el balance de equidades (*balance of the equities*)— partiendo de la premisa de que Amazon no ha demostrado probabilidad de éxito en el fondo. Dado que no es probable que Amazon pueda establecer las violaciones estatutarias alegadas, sus argumentos sobre el daño que sufriría Perplexity con la *injunction* carecen de fundamento (1). El tribunal razona que una *injunction* en estas circunstancias, «donde no es probable que Amazon pueda establecer violaciones estatutarias, impone innecesariamente una carga a Perplexity al impedirle operar plenamente un producto que ha desarrollado con grandes inversiones» (1). Como resultado, el balance de equidades se inclina a favor de Perplexity y en contra de la *injunction* (1).
+
+El tribunal no cuantifica el importe de la inversión de Perplexity, pero acepta la alegación de la empresa de que Comet fue desarrollado tras la adquisición de otra empresa de navegadores (Sidekick) y que representa un coste de desarrollo sustancial (1). La *injunction* impediría a Perplexity ofrecer una de las funcionalidades centrales de su navegador —el Assistant— en relación con Amazon.com, uno de los sitios web de comercio electrónico más importantes del mundo, lo que podría afectar gravemente a la viabilidad comercial del producto (1). Este daño concreto para Perplexity se contrasta con el daño abstracto y no probado que Amazon alega, lo que inclina la balanza claramente a favor de Perplexity (1).
+
+### 7.3. Interés público: innovación, elección del consumidor y limitación del desarrollo
+
+El cuarto factor —el interés público (*public interest*)— es analizado de forma concisa por el tribunal. El tribunal de apelaciones declara que una *injunction* contra una conducta que probablemente no viola la CFAA o la CDAFA «no serviría al interés público» (1). Por el contrario, tal *injunction* «perjudicaría la elección del consumidor y limitaría innecesariamente el desarrollo de una tecnología emergente» (1). El tribunal considera que el interés público favorece a Perplexity (1).
+
+El tribunal no desarrolla extensamente este punto, pero se puede inferir su razonamiento. La elección del consumidor se ve perjudicada porque una *injunction* impediría a los usuarios de Comet utilizar el Assistant para comprar en Amazon.com, una funcionalidad que los usuarios han elegido voluntariamente. El desarrollo de la tecnología emergente —la IA agéntica— se vería limitado porque los proveedores de IA podrían enfrentarse a la perspectiva de *injunctions* basadas en interpretaciones inciertas de la CFAA, lo que podría desincentivar la innovación (1). El tribunal ya había señalado en su análisis de la *rule of lenity* que la interpretación de Amazon podría exponer a los usuarios a responsabilidad penal, lo que también afectaría al interés público al crear incertidumbre jurídica para los consumidores que utilizan asistentes de IA (1).
+
+El tribunal también menciona que el fallo del tribunal de distrito denegó la solicitud de Amazon de exigir una fianza (*bond*) a Perplexity y la solicitud de Perplexity de una suspensión más amplia pendiente de apelación, aunque concedió una suspensión administrativa de siete días para permitir a Perplexity solicitar una suspensión ante el Noveno Circuito (1). Este detalle procesal es relevante porque demuestra que el tribunal de distrito ya había considerado el equilibrio de intereses y había decidido no imponer una fianza, lo que el tribunal de apelaciones no cuestiona explícitamente, pero que se alinea con su conclusión de que los factores equitativos no favorecen a Amazon (1).
+
+El tribunal de apelaciones concluye que, al haber fracasado Amazon en demostrar probabilidad de éxito en el fondo y al no favorecer los factores equitativos la *injunction*, el tribunal de distrito abusó de su discreción al concederla (1). Esta conclusión es la base para la revocación de la *preliminary injunction* y la devolución del caso al tribunal de distrito para su continuación (1).
+
+---
+
+## 8. Implicaciones prácticas y proyección de futuro
+
+### 8.1. El vacío de responsabilidad en la economía agéntica
+
+La sentencia del Noveno Circuito crea un espacio de incertidumbre en la atribución de responsabilidad por el uso de agentes de IA en plataformas de terceros (1). Por un lado, el tribunal declara que el proveedor del agente —Perplexity— no «accede» a los servidores de la plataforma a efectos de la CFAA y la CDAFA, porque es el usuario quien realiza el acceso a través de su navegador (1). Por otro lado, el tribunal aplica la *rule of lenity* precisamente para evitar exponer a los usuarios individuales a responsabilidad penal por facilitar el supuesto acceso no autorizado de Perplexity (1). El resultado es que ni el proveedor del agente ni el usuario son considerados responsables bajo la CFAA en la configuración fáctica examinada.
+
+Este vacío no es una declaración de inmunidad general, sino una consecuencia de la estructura de la norma y de la arquitectura tecnológica del Assistant (1). El tribunal subraya que su conclusión se limita al estado de la tecnología en el expediente y que, en un escenario diferente, la atribución de responsabilidad podría variar (1). Sin embargo, en la práctica, la decisión ofrece un *safe harbor* para los desarrolladores de agentes de IA que operen con una arquitectura similar —es decir, sin comunicación directa con los servidores de la plataforma y con el agente ejecutándose localmente en el ordenador del usuario—, al menos en lo que respecta al elemento de «acceso» de la CFAA.
+
+El tribunal no se pronuncia sobre si el vacío de responsabilidad es deseable o si debería ser corregido por el legislador (1). La sentencia se limita a constatar que, en el estado actual del derecho y de la tecnología, la CFAA no proporciona a las plataformas una herramienta para bloquear el acceso de agentes de IA que operan de esta manera (1). Esta constatación tiene implicaciones significativas para las plataformas de comercio electrónico y redes sociales, que deberán considerar otros mecanismos legales o tecnológicos para proteger sus intereses.
+
+### 8.2. Consecuencias para plataformas y desarrolladores de IA
+
+Para las plataformas como Amazon, la sentencia supone una pérdida de una vía de defensa legal frente a agentes de IA no autorizados. Amazon no podrá invocar la CFAA para impedir que el Assistant de Perplexity acceda a Amazon.com mientras el agente opere sin comunicación directa con los servidores de Amazon (1). Las plataformas deberán recurrir a otras estrategias, como el uso de medidas tecnológicas de bloqueo —por ejemplo, la detección de patrones de comportamiento automatizados o la exigencia de *user‑agent strings*—, siempre que dichas medidas no vulneren otras normas legales (1). Sin embargo, el tribunal no aborda si el bloqueo tecnológico selectivo podría ser cuestionado por los desarrolladores de IA o por los usuarios, por lo que esta cuestión queda abierta.
+
+Para los desarrolladores de IA, la sentencia ofrece certidumbre en el corto plazo en relación con la CFAA, siempre que mantengan una arquitectura tecnológica en la que el agente no establezca comunicación directa con los servidores de la plataforma (1). La decisión elimina el riesgo de que la mera provisión de un agente de IA que navegue por sitios web por indicación del usuario pueda calificarse como «acceso» no autorizado a efectos de la CFAA (1). Sin embargo, el tribunal advierte que este *safe harbor* no es absoluto y que podría desaparecer si la tecnología evoluciona o si los hechos del caso son diferentes (1). Los desarrolladores deben, por tanto, monitorear continuamente la evolución de la jurisprudencia y la tecnología.
+
+La decisión también tiene implicaciones para la industria de los navegadores y las extensiones de navegador. La analogía del tribunal entre el Assistant de Perplexity y el navegador Safari que rellena automáticamente datos del usuario (1) sugiere que los navegadores y sus funcionalidades de automatización quedarán, en general, fuera del alcance de la CFAA, siempre que no accedan directamente a los servidores de las plataformas. Esta interpretación podría tener efectos positivos para la innovación en el sector de los navegadores y las herramientas de productividad en línea.
+
+### 8.3. Posibles vías alternativas de reclamación (contractuales, agravios, competencia desleal)
+
+El tribunal de apelaciones deja explícitamente abiertas otras vías de reclamación que Amazon podría explorar en el tribunal de distrito o en futuros litigios. La sentencia declara: «No abordamos si, en otros contextos, incluidas las reclamaciones por agravio (*tort*), Perplexity pueda evitar la responsabilidad por las acciones del Assistant» (1). Esta salvedad es crucial porque indica que la decisión no absuelve a Perplexity de toda responsabilidad, sino únicamente de la responsabilidad bajo la CFAA y la CDAFA en relación con el elemento «acceso» (1).
+
+Entre las vías alternativas que Amazon podría considerar se encuentran:
+
+- **Reclamaciones contractuales**: Amazon podría argumentar que los usuarios de Comet, al crear una cuenta en Amazon.com, aceptan unos términos de servicio que prohíben el acceso automatizado a la plataforma. Si el Assistant actúa en nombre del usuario, Amazon podría reclamar contra el usuario por incumplimiento de contrato, y contra Perplexity por inducción al incumplimiento (*tortious interference with contract*) (1). El tribunal no se pronuncia sobre la viabilidad de esta vía.
+
+- **Reclamaciones por agravio (*tort*)**: Amazon podría alegar que la conducta de Perplexity constituye un agravio, como la *trespass to chattels* (intromisión en bienes muebles) o la *nuisance* (molestia), si el Assistant consume recursos de los servidores de Amazon o interfiere con su funcionamiento (1). El tribunal no aborda si estas reclamaciones podrían prosperar.
+
+- **Competencia desleal (*unfair competition*)**: Amazon podría invocar la ley californiana de competencia desleal (*California Business and Professions Code* § 17200) si considera que Perplexity obtiene una ventaja competitiva al acceder a Amazon.com sin autorización y sin compensación (1). Esta vía, al igual que las anteriores, queda abierta para su consideración en el tribunal de distrito.
+
+El tribunal de apelaciones devuelve el caso al tribunal de distrito para su continuación (1), lo que permite a Amazon modificar su demanda o añadir nuevas reclamaciones basadas en estas vías alternativas. El resultado final del litigio dependerá de la estrategia procesal que Amazon decida adoptar y de la evaluación que el tribunal de distrito haga de esas nuevas reclamaciones.
+
+### 8.4. La evolución tecnológica y su impacto en futuros litigios
+
+El tribunal es consciente de que su decisión se fundamenta en el estado de la tecnología en el momento de los hechos y que la evolución futura podría alterar el análisis (1). La sentencia advierte: «La comprensión jurídica de la IA agéntica cambiará sin duda a medida que la tecnología de IA se vuelva cada vez más sofisticada» (1). Esta declaración es un reconocimiento explícito de la naturaleza dinámica de la relación entre derecho y tecnología, y sugiere que los tribunales deberán reevaluar la aplicación de la CFAA a medida que los agentes de IA adquieran nuevas capacidades.
+
+El tribunal enumera varios supuestos que no aborda en su decisión y que podrían dar lugar a resultados diferentes en el futuro (1). Por ejemplo, el tribunal declara que «no abordamos si, en un expediente diferente o con hechos nuevos, Perplexity podría ejercer el control sobre el Assistant de tal manera que obtuviera entrada a los servidores de Amazon» (1). Esta salvedad sugiere que, si en el futuro el Assistant estableciera una conexión directa con los servidores de Amazon —por ejemplo, mediante una API o un acceso directo a la base de datos—, la conclusión sobre el «acceso» podría ser diferente.
+
+Otros factores tecnológicos que podrían influir en futuros litigios incluyen:
+
+- **El grado de autonomía del agente**: El tribunal concede importancia al hecho de que el Assistant actúa bajo la dirección del usuario (1). Si un agente de IA operara de forma completamente autónoma, sin intervención humana, la atribución de la conducta podría ser distinta. El tribunal no se pronuncia sobre esta posibilidad.
+
+- **La ubicación del procesamiento**: En el caso examinado, el Assistant procesa localmente las capturas de pantalla en el ordenador del usuario (1). Si el procesamiento se realizara íntegramente en los servidores del proveedor de IA, y si esos servidores interactuaran con los servidores de la plataforma, el análisis del «acceso» podría variar (1).
+
+- **El uso de *user‑agent strings***: El tribunal menciona que Perplexity se negó a adoptar una *user‑agent string* que identificara al Assistant (1). Sin embargo, el tribunal no fundamenta su decisión en esta negativa, sino en la ausencia de acceso directo (1). En el futuro, un tribunal podría considerar la negativa a identificarse como un indicio de mala fe o como un factor relevante para la autorización, aunque el elemento de acceso sigue siendo el umbral previo (1).
+
+El tribunal concluye su advertencia con una nota de modestia institucional: «Esta opinión refleja y se aplica al estado de la tecnología solo tal como se presenta en los escritos de este caso» (1). Esta delimitación es esencial para comprender que la sentencia no sienta una doctrina inmutable, sino que abre la puerta a futuras reconsideraciones a medida que la tecnología y los hechos evolucionen.
+
+---
+
+## 9. Conclusiones
+
+### 9.1. Síntesis de la *ratio decidendi*
+
+La sentencia de la Corte de Apelaciones del Noveno Circuito en *Amazon.com Services, LLC v. Perplexity AI, Inc.* (1) establece una doctrina restrictiva sobre el elemento de «acceso» en el contexto de la *Computer Fraud and Abuse Act* (CFAA) y su equivalente californiana, la *Comprehensive Computer Data Access and Fraud Act* (CDAFA), cuando el supuesto acceso se realiza a través de un agente de inteligencia artificial que opera localmente en el ordenador del usuario sin comunicación directa con los servidores de la plataforma demandante.
+
+La *ratio decidendi* se articula en torno a tres proposiciones fundamentales:
+
+**Primera**: El «acceso» a efectos de la CFAA, definido por el Tribunal Supremo en *Van Buren v. United States* (2) como «el acto de entrar en un sistema informático mismo o en una parte particular del mismo», requiere que la persona demandada realice un acto de entrada (*entry*) en el sistema protegido (1). En el caso examinado, quien realiza el acto de entrada en los servidores de Amazon es el usuario a través de su navegador, no Perplexity a través del Assistant (1).
+
+**Segunda**: El Assistant de Perplexity, por avanzado que sea, es una herramienta (*tool*) del usuario, no una persona a efectos legales (1). El tribunal atribuye la conducta de acceso al usuario porque es quien utiliza el navegador para solicitar las páginas de Amazon y quien dirige al Assistant para realizar tareas específicas (1) (9). Los servidores de Perplexity nunca acceden directamente a los servidores de Amazon; se limitan a recibir capturas de pantalla del navegador del usuario y a enviar instrucciones de navegación (1) (9).
+
+**Tercera**: La *rule of lenity*, propia de la interpretación de normas penales como la CFAA, exige que cualquier ambigüedad sobre el alcance del «acceso» se resuelva a favor del demandado (1) (5) (6). El tribunal considera que la interpretación propuesta por Amazon sería una «interpretación novedosa muy alejada del propósito del estatuto» (1) y podría exponer a los usuarios a responsabilidad penal por conductas cotidianas, lo que contradice la doctrina de *Nosal I* (5) (1).
+
+La conclusión final del tribunal es que Amazon no tiene probabilidades de éxito en el fondo de sus reclamaciones bajo la CFAA y la CDAFA, y que los restantes factores equitativos para la concesión de una *preliminary injunction* —daño irreparable, balance de equidades e interés público— tampoco favorecen a Amazon (1). En consecuencia, el tribunal revoca la *injunction* concedida por el tribunal de distrito y devuelve el caso para su continuación (1).
+
+### 9.2. Limitaciones del fallo y cuestiones abiertas
+
+El tribunal es explícito en cuanto a las limitaciones de su decisión, lo que convierte la sentencia en un pronunciamiento de alcance deliberadamente restringido. Entre las limitaciones y cuestiones abiertas más relevantes se encuentran:
+
+**Limitación fáctica y tecnológica**: La decisión se basa en el estado de la tecnología en el momento de los hechos, en el que el Assistant opera localmente en el ordenador del usuario sin comunicación directa con los servidores de Amazon (1). El tribunal advierte que, «en un expediente diferente o con hechos nuevos», la conclusión podría ser distinta (1). Esta salvedad implica que el *safe harbor* que la sentencia ofrece a los desarrolladores de agentes de IA no es absoluto y podría desaparecer si la tecnología evoluciona hacia una arquitectura de acceso directo (1).
+
+**Limitación normativa**: El tribunal no se pronuncia sobre si Perplexity podría ser responsable en otros contextos legales, como reclamaciones por agravio (*tort*), incumplimiento contractual, inducción al incumplimiento o competencia desleal (1). La sentencia se limita estrictamente al elemento «acceso» de la CFAA y la CDAFA, dejando abiertas otras vías de reclamación que Amazon podría explorar en el tribunal de distrito (1).
+
+**Cuestiones abiertas sobre la autonomía del agente**: El tribunal no aborda cómo se resolvería el caso si el Assistant operara de forma completamente autónoma, sin intervención humana, o si el procesamiento de datos se realizara íntegramente en los servidores de Perplexity y estos interactuaran directamente con los servidores de Amazon (1). Estas cuestiones quedan para futuros litigios.
+
+**Cuestiones abiertas sobre la autorización**: Dado que el tribunal resuelve el caso en el elemento de «acceso», no se pronuncia sobre si el acceso, de haberse producido, habría sido «sin autorización» o «excediendo el acceso autorizado» (1). Esta cuestión, que fue central en *Power Ventures* (3), queda sin resolver en el contexto de la IA agéntica.
+
+**Cuestiones abiertas sobre la *user‑agent string***: El tribunal menciona la negativa de Perplexity a adoptar una *user‑agent string* que identificara al Assistant, pero no fundamenta su decisión en esta negativa (1). Queda abierta la cuestión de si la negativa a identificarse podría tener relevancia en otros contextos legales o en futuros litigios.
+
+### 9.3. Recomendaciones para legisladores y operadores jurídicos
+
+Aunque el tribunal no formula recomendaciones explícitas, de la sentencia se desprenden varias implicaciones para legisladores y operadores jurídicos:
+
+**Para el legislador federal y estatal**: La sentencia revela una laguna en la protección de las plataformas frente a agentes de IA que operan sin comunicación directa con los servidores de la plataforma (1). Si el Congreso o la Legislatura de California consideran que esta laguna debe ser cerrada, deberán modificar la CFAA o la CDAFA para incluir explícitamente el uso de herramientas automatizadas que causen un acceso a los sistemas informáticos, incluso si el acceso se realiza a través del navegador del usuario. Cualquier modificación deberá, sin embargo, equilibrar la protección de las plataformas con la necesidad de no criminalizar conductas cotidianas de los usuarios, en línea con la doctrina de *Nosal I* (5) (1).
+
+**Para las plataformas (Amazon y otras)**: La sentencia obliga a las plataformas a recurrir a otras vías legales y tecnológicas para proteger sus intereses. Entre las vías legales se incluyen reclamaciones contractuales (términos de servicio), de agravio (*tortious interference*) o de competencia desleal (1). Entre las vías tecnológicas se incluyen la detección de patrones de comportamiento automatizados, la exigencia de *user‑agent strings* o el bloqueo selectivo de accesos no identificados (1). Sin embargo, el tribunal no se pronuncia sobre la legalidad de estas medidas, lo que introduce incertidumbre para las plataformas.
+
+**Para los desarrolladores de IA (Perplexity y otros)**: La sentencia ofrece certidumbre en el corto plazo en relación con la CFAA, siempre que los agentes de IA mantengan una arquitectura tecnológica que evite la comunicación directa con los servidores de las plataformas (1). Sin embargo, los desarrolladores deben monitorear la evolución tecnológica y jurisprudencial, ya que el *safe harbor* podría desaparecer si la tecnología o los hechos cambian (1). También deben considerar la posibilidad de que las plataformas recurran a vías legales alternativas, como las reclamaciones contractuales o de agravio, que la sentencia no cierra (1).
+
+**Para los usuarios**: La sentencia protege a los usuarios de la exposición a responsabilidad penal bajo la CFAA por el uso de asistentes de IA en plataformas de terceros (1). Sin embargo, los usuarios deben ser conscientes de que su uso de agentes de IA podría violar los términos de servicio de las plataformas, lo que podría dar lugar a reclamaciones contractuales en su contra o a la suspensión de sus cuentas. El tribunal no se pronuncia sobre esta cuestión, que queda abierta para futuros litigios.
+
+**Para los tribunales**: La sentencia ofrece un precedente claro para casos similares en los que el agente de IA opera localmente sin comunicación directa con los servidores de la plataforma (1). Sin embargo, el tribunal advierte que la comprensión jurídica de la IA agéntica cambiará a medida que la tecnología evolucione, por lo que los tribunales deberán reevaluar la aplicación de la CFAA en función de los hechos concretos de cada caso y del estado de la tecnología en ese momento (1).
+
+En definitiva, la sentencia *Amazon.com Services, LLC v. Perplexity AI, Inc.* (1) es un pronunciamiento técnicamente preciso y deliberadamente limitado que resuelve una cuestión concreta —el «acceso» en la CFAA— en el contexto de una tecnología emergente. Su impacto inmediato es significativo para las partes, pero su alcance futuro dependerá de la evolución de la tecnología, de las decisiones del legislador y de la estrategia procesal de las plataformas afectadas.
+
+---
+
+## 10. Bibliografía y fuentes verificadas
+
+La presente bibliografía recoge exclusivamente las fuentes primarias y secundarias que han sido citadas en el cuerpo del trabajo y que han sido verificadas mediante enlaces directos y estables que permiten acceder al documento en su integridad. Todas las referencias se corresponden con los documentos analizados en la sentencia *Amazon.com Services, LLC v. Perplexity AI, Inc.* (1) o en los precedentes y *amicus curiae* citados en ella.
+
+**(1)** *Amazon.com Services, LLC v. Perplexity AI, Inc.*, No. 26-1444, 2026 WL 2237587 (9th Cir. Aug. 4, 2026). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2026/08/04/26-1444.pdf.
+
+**(2)** *Van Buren v. United States*, 593 U.S. 374 (2021). Disponible en: https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf.
+
+**(3)** *Facebook, Inc. v. Power Ventures, Inc.*, 844 F.3d 1058 (9th Cir. 2016). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2016/07/12/13-17102.pdf.
+
+**(4)** *hiQ Labs, Inc. v. LinkedIn Corp.*, 31 F.4th 1180 (9th Cir. 2022). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2022/04/18/17-16783.pdf.
+
+**(5)** *United States v. Nosal (Nosal I)*, 676 F.3d 854 (9th Cir. 2012) (en banc). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2012/04/10/10-10038.pdf.
+
+**(6)** *LVRC Holdings LLC v. Brekka*, 581 F.3d 1127 (9th Cir. 2009). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2009/09/15/07-17116.pdf.
+
+**(7)** *Meta Platforms, Inc. v. BrandTotal Ltd.*, 605 F. Supp. 3d 1218 (N.D. Cal. 2022). Disponible en: https://digitalcommons.law.scu.edu/cgi/viewcontent.cgi?article=3679&context=historical.
+
+**(8)** CourtListener Docket: *Amazon.com Services LLC v. Perplexity AI, Inc.*, No. 3:25-cv-09514-MMC (N.D. Cal.). Disponible en: https://www.courtlistener.com/docket/71874820/amazoncom-services-llc-v-perplexity-ai-inc/.
+
+**(9)** Amicus Brief of Electronic Frontier Foundation, Alliance for Responsible Data Collection, Mozilla Corporation, Digital Medusa, and EleutherAI, No. 26-1444 (9th Cir., filed Apr. 9, 2026). Disponible en: https://www.eff.org/files/2026/04/09/amazon_v_perplexity_eff_et_al_amicus_1.pdf.
+
+**(10)** Amicus Brief of the American Civil Liberties Union, ACLU of Northern California, and Knight First Amendment Institute at Columbia University, No. 26-1444 (9th Cir. 2026). Disponible en: https://assets.aclu.org/live/uploads/2026/04/Perplexity-CA9-Amicus-file-stamped.pdf. Resumen del caso también en: https://knightcolumbia.org/cases/amazon-v-perplexity-ai.
+
+---
+
+**Fin del documento.**
