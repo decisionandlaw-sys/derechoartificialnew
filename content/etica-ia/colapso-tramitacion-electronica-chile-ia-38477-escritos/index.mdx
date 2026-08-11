@@ -1,0 +1,604 @@
+---
+title: "El día que el robot saturó la justicia: 38.477 escritos en 72 horas y el colapso de la tramitación electrónica chilena"
+date: "2026-08-11"
+section: "etica-ia"
+slug: "colapso-tramitacion-electronica-chile-ia-38477-escritos"
+author: "Ricardo Scarpa"
+image: "/images/posts/etica-ia/colapso-tramitacion-electronica-chile-ia-38477-escritos.jpg"
+readingTime: "75 min"
+description: "Un abogado presentó 38.477 escritos generados con IA en 72 horas y colapsó la Oficina Judicial Virtual chilena. Análisis doctrinal con derecho comparado (EEUU, Singapur, España, Reino Unido, Australia)."
+tags: ["etica-ia", "abuso-procesal", "inteligencia-artificial", "chile", "derecho-comparado", "regla-11", "ABA"]
+---
+
+*Un caso sin precedentes en Iberoamérica expone las vulnerabilidades de diseño de los sistemas judiciales digitales frente a la automatización masiva no regulada, y obliga a replantear la gobernanza de la inteligencia artificial en el proceso civil*
+
+---
+
+## Índice
+
+**Sección 1. Los hechos: cronología, cifras y actores del colapso**  
+1.1. El abogado Paul Chateau y sus clientes institucionales  
+1.2. El objeto de los escritos: renuncias de patrocinio y solicitudes de desarchivo  
+1.3. La mecánica automatizada: uso de un «agente externo» o bot  
+1.4. La magnitud del impacto: 38.477 escritos, entre 500 y 900 por tribunal, en tres días  
+1.5. El bloqueo inmediato por la Corporación Administrativa del Poder Judicial (CAPJ)
+
+**Sección 2. La reacción institucional del Poder Judicial**  
+2.1. El oficio del Comité de Jueces Civiles de Santiago a la presidenta de la Corte Suprema  
+2.2. La calificación jurídica: «abuso procesal» ex artículo 2 letra d de la Ley 20.886  
+2.3. Las medidas solicitadas: investigación penal y disciplinaria, prohibición temporal de IA, e implementación de controles técnicos (Captcha)  
+2.4. El pleno extraordinario de la Corte Suprema y el informe encargado al Departamento de Informática
+
+**Sección 3. El marco normativo vigente en Chile**  
+3.1. La Ley 20.886 (2015) de tramitación electrónica: diseño pre-IA y ausencia de previsiones frente a automatización masiva  
+3.2. La interpretación extensiva del «abuso procesal» aplicado a conductas automatizadas: problemas de tipicidad y proporcionalidad  
+3.3. La inexistencia de una ley general de IA en Chile al momento de los hechos (julio 2026)  
+3.4. Los instrumentos institucionales previos: lineamientos éticos sobre IA generativa y el Código de Ética Judicial
+
+**Sección 4. La dimensión técnica y de diseño de la Oficina Judicial Virtual (OJV)**  
+4.1. Arquitectura de la plataforma: carencia de controles anti-bot (ausencia de Captcha)  
+4.2. La vulnerabilidad estructural: sistemas concebidos para flujo humano, no para ataques de automatización  
+4.3. La respuesta técnica: bloqueo de IP como medida paliativa, no estructural  
+4.4. Lecciones para el diseño de plataformas judiciales resilientes
+
+**Sección 5. El debate sobre la inteligencia artificial en el sistema judicial**  
+5.1. La posición del Comité de Jueces: prohibición cautelar de IA hasta política institucional  
+5.2. La reacción de Legaltech (Altech A.G.): oposición a la prohibición y defensa de la innovación  
+5.3. La intervención del Centro Chileno de Inteligencia Artificial (CCHIA): gobernanza y uso responsable  
+5.4. El problema de fondo: confundir el uso indebido de una herramienta con la herramienta misma  
+5.5. La paradoja de la regulación: el proyecto de Ley de IA en Chile
+
+**Sección 6. Derecho comparado: sanciones y regulación del mal uso de IA en tribunales**  
+6.1. Estados Unidos: casos de sanciones económicas por citas jurisprudenciales ficticias generadas por IA  
+6.2. El caso Sullivan & Cromwell: la élite de Wall Street ante las alucinaciones de IA  
+6.3. Singapur: multas a abogados por presentar casos inexistentes creados por IA  
+6.4. España: sanciones por citas jurisprudenciales inventadas  
+6.5. Reino Unido: la consulta del Civil Justice Council sobre nuevas reglas para el uso de IA en documentos judiciales  
+6.6. Australia: la Practice Note y Judicial Guidelines del Tribunal Supremo de Victoria  
+6.7. El deber de competencia tecnológica del abogado: ABA Formal Opinion 512
+
+**Sección 7. Análisis jurídico-procesal del caso**  
+7.1. La naturaleza de los escritos presentados: actos de mero trámite o actos con afectación sustancial  
+7.2. El principio de buena fe procesal y su aplicación a conductas automatizadas  
+7.3. La proporcionalidad de la sanción: ¿prohibir la IA o sancionar al infractor?  
+7.4. El problema de la carga de la prueba: ¿quién debe demostrar la intencionalidad del abuso?
+
+**Sección 8. Consecuencias prácticas y riesgos sistémicos**  
+8.1. El colapso operativo de los tribunales civiles durante el episodio  
+8.2. El impacto en la tramitación de causas de terceros (efecto dominó)  
+8.3. El riesgo de replicación del modus operandi por otros operadores  
+8.4. La erosión de la confianza en el sistema de justicia digital
+
+**Sección 9. Propuestas de política institucional y reforma normativa**  
+9.1. La necesidad de una política institucional unificada del Poder Judicial sobre IA  
+9.2. La actualización de las condiciones de uso de la OJV para incluir cláusulas anti-automatización  
+9.3. La incorporación de controles técnicos obligatorios (Captcha, límite de presentaciones por período, autenticación reforzada)  
+9.4. La reforma de la Ley 20.886 para tipificar expresamente el abuso mediante automatización  
+9.5. La articulación con la futura Ley de IA en Chile (proyecto en tramitación)
+
+**Sección 10. Conclusiones y perspectiva académica**  
+10.1. El caso como síntoma de una disrupción tecnológica no anticipada  
+10.2. La tensión entre eficiencia procesal y seguridad del sistema  
+10.3. La responsabilidad del operador jurídico en el uso de herramientas automatizadas  
+10.4. Líneas de investigación futuras: diseño de sistemas judiciales resilientes, gobernanza algorítmica y estándares éticos
+
+---
+
+## Sección 1. Los hechos: cronología, cifras y actores del colapso
+
+### 1.1. El abogado Paul Chateau y sus clientes institucionales
+
+El protagonista del episodio es **Paul Andrés Chateau Undurraga**, abogado habilitado para el ejercicio profesional en Chile y usuario de la Oficina Judicial Virtual (OJV) del Poder Judicial. Según la información publicada, Chateau había mantenido una relación de patrocinio y representación con diversos clientes de gran tamaño en el ámbito del retail financiero y de servicios. Las fuentes periodísticas coinciden en señalar que, al momento de los hechos, el abogado representaba o había representado recientemente a **Banco Santander, Caja Los Andes, CAT Cencosud y Los Parques Cementerio** (1) (2) (5).
+
+El contexto que motiva la actuación automatizada es, según las mismas fuentes, la necesidad de formalizar el cese de su representación respecto de todos estos clientes. Chateau habría dejado de prestar servicios a dichas entidades y, para desvincularse jurídicamente de todas las causas en las que figuraba como patrocinante, optó por un mecanismo de tramitación masiva en lugar del procedimiento ordinario, que habría exigido la presentación individualizada de cada renuncia (1) (4). La fuente no aclara si Chateau notificó previamente a sus clientes de esta decisión ni si existía algún conflicto o desacuerdo que hubiera motivado la urgencia de la desvinculación.
+
+### 1.2. El objeto de los escritos: renuncias de patrocinio y solicitudes de desarchivo
+
+Los 38.477 escritos que ingresó en el sistema no eran demandas ni recursos de naturaleza compleja, sino dos categorías de actos procesales de tramitación relativamente sencilla:
+
+1. **Renuncias de patrocinio y poder**: notificaciones formales al tribunal mediante las cuales el abogado comunica que cesa en la representación judicial de sus clientes. Se trata de un acto unilateral que no requiere, en principio, aceptación de la contraparte, aunque sí debe ser puesto en conocimiento del tribunal y de las partes.
+2. **Solicitudes de desarchivo**: peticiones dirigidas a los tribunales para que reabran causas que se encontraban en estado de archivo, generalmente por inactividad procesal. Este tipo de solicitud, si bien es un trámite, requiere que el tribunal verifique el cumplimiento de los presupuestos legales para el desarchivo (1) (3).
+
+La naturaleza de estos escritos es relevante desde la perspectiva del análisis de daño procesal: aunque formalmente no son actos de decisión judicial (no son sentencias ni autos interlocutorios), su ingreso masivo genera una carga de tramitación que consume recursos administrativos y jurisdiccionales, al exigir que el personal del tribunal procese, ingrese al sistema y, en el caso de los desarchivos, resuelva fundadamente sobre la procedencia de la reapertura. La fuente no aclara si los desarchivos solicitados correspondían efectivamente a causas en las que Chateau había tenido participación o si algunas de ellas pertenecían a otros abogados del mismo bufete.
+
+### 1.3. La mecánica automatizada: uso de un «agente externo» o bot
+
+El elemento central que diferencia este caso de un mero exceso de trabajo es la utilización de un mecanismo de automatización. Según declaraciones del propio afectado al *call center* de la OJV y las averiguaciones internas del Poder Judicial, Chateau utilizó un **«software o robot informático externo»** para inyectar los escritos en la plataforma (6) (4).
+
+Las fuentes técnicas indican que este «agente externo» actuó como un bot que replicaba la interacción humana con la interfaz de la OJV, pero a una velocidad y volumen imposibles de alcanzar manualmente. El sistema no fue «hackeado» en el sentido de vulnerar sus mecanismos de seguridad o acceder a información restringida; más bien, el abogado explotó la ausencia de controles anti-automatización en el diseño de la plataforma. La OJV, concebida originalmente para la tramitación electrónica de escritos por parte de operadores humanos (abogados, procuradores y funcionarios), carecía de mecanismos de verificación como *Captcha*, límites de frecuencia por usuario o sistemas de detección de tráfico anómalo (2) (4). La fuente no aclara qué tipo de software específico utilizó Chateau —si era una herramienta de automatización de procesos robóticos (RPA), un script personalizado o un sistema basado en inteligencia artificial en sentido estricto— ni si el abogado contaba con asistencia técnica externa para su implementación.
+
+### 1.4. La magnitud del impacto: 38.477 escritos, entre 500 y 900 por tribunal, en tres días
+
+El volumen de escritos presentados entre el **25 y el 28 de julio de 2026** es la cifra que ha dado la notoriedad al caso: **38.477 escritos** en un período de aproximadamente 72 horas (1) (2) (3).
+
+Esta cifra, por sí misma, ya resulta desproporcionada si se compara con el flujo habitual de la OJV, pero su impacto se multiplica al distribuirse territorialmente. Según los reportes, el bot dirigió los escritos a todos los tribunales civiles del país, lo que supuso que algunos juzgados recibieran entre **500 y 900 presentaciones en un solo día**, una carga de trabajo que excede con creces la capacidad de procesamiento humano y técnico de cualquier órgano judicial (1) (2). El propio Comité de Jueces Civiles de Santiago, en su oficio a la Corte Suprema, cuantifica el dato y lo califica como un evento inédito que generó una «saturación absoluta» de la plataforma. La fuente no aclara si el flujo fue constante durante los tres días o si se concentró en momentos específicos, ni si el sistema generó alertas automáticas antes de llegar al colapso total.
+
+### 1.5. El bloqueo inmediato por la Corporación Administrativa del Poder Judicial (CAPJ)
+
+Ante la evidencia del colapso, la respuesta técnica más inmediata provino de la **Corporación Administrativa del Poder Judicial (CAPJ)**, el organismo encargado de la gestión informática y administrativa de los tribunales chilenos. La CAPJ procedió a **bloquear la dirección IP** desde la cual se estaban originando los envíos masivos, identificada como la del abogado Paul Chateau (4) (5).
+
+Esta medida, aunque efectiva para detener el flujo de nuevos escritos, tuvo un carácter eminentemente paliativo y reactivo. No abordó la vulnerabilidad estructural del sistema ni impidió que, en el futuro, otro operador pudiera replicar la misma conducta utilizando una IP diferente, un *proxy* o un conjunto de direcciones rotatorias. La CAPJ, además, remitió los antecedentes completos a la Corte Suprema para que esta adoptara las decisiones institucionales y disciplinarias que correspondieran (4). La fuente no aclara si, tras el bloqueo, los escritos ya ingresados fueron procesados con normalidad o si algunos de ellos quedaron en un estado de «pendiente» o «rechazo» por razones técnicas. Tampoco existe evidencia suficiente, en las fuentes periodísticas disponibles, para afirmar que el abogado intentara eludir el bloqueo mediante otros mecanismos técnicos, ni que se haya realizado un análisis forense posterior para determinar con precisión el alcance de la automatización utilizada.
+
+---
+
+## Sección 2. La reacción institucional del Poder Judicial
+
+### 2.1. El oficio del Comité de Jueces Civiles de Santiago a la presidenta de la Corte Suprema
+
+El lunes 27 de julio de 2026, la presidenta de la Corte Suprema, Gloria Ana Chevesich, recibió un oficio del Comité de Jueces Civiles de Santiago que activó la alarma institucional en el Poder Judicial (1). La jueza Rocío Pérez Gamboa, del Décimo Séptimo Juzgado Civil de Santiago, fue la encargada de exponer el problema en nombre del comité (1).
+
+El oficio relata que todo comenzó el sábado 25 de julio, cuando el jefe del Sistema Informático de Tramitación de Causas Civiles (Sitci), Sebastián Ojeda, reportó que el abogado Paul Chateau estaba realizando un ingreso masivo de escritos —principalmente de «desarchivo» y «renuncia patrocinio y poder»— en todos los tribunales con competencia civil del país (1). Hasta el lunes a las 11:30 horas, en menos de tres días, Chateau había ingresado 38.477 escritos, lo que equivalía a entre 500 y 900 escritos por tribunal, en una situación que iba en aumento (1) (2).
+
+El oficio subraya la gravedad de la situación desde la perspectiva de los magistrados: «Todo lo indicado, además de aumentar considerablemente nuestra carga de trabajo, influye en el clima de cada tribunal, toda vez que no contamos con los recursos técnicos ni humanos disponibles para enfrentar esta contingencia» (1) (3). La jueza Pérez denunció que el ingreso masivo no solo afectaba la operatividad, sino que generaba un ambiente de tensión en los tribunales, desbordados por una situación para la que no estaban preparados (1).
+
+El oficio también recoge la declaración verbal del propio abogado al Call Center de la OJV, en la que señalaba que prestaba servicios a varios clientes —Santander, Caja Los Andes, CAT Cencosud, Los Parques Cementerio— y que, al haber dejado de hacerlo, renunció al patrocinio y poder en las causas que llevaba, utilizando un «agente externo» (robot) para no tener que ingresar los escritos causa por causa (1) (2). La fuente no aclara si el oficio fue remitido por el Comité en su totalidad o si alguna de sus integrantes manifestó una opinión discrepante respecto de las medidas solicitadas.
+
+### 2.2. La calificación jurídica: «abuso procesal» ex artículo 2 letra d de la Ley 20.886
+
+El Comité de Jueces Civiles calificó el comportamiento del abogado como «abuso procesal» y «uso abusivo de las herramientas tecnológicas» (1) (2) (3). El fundamento normativo de esta calificación es el artículo 2 letra d inciso segundo de la Ley 20.886, que establece la tramitación electrónica de los procedimientos judiciales (1).
+
+La ley 20.886, publicada en 2015, fue concebida en un contexto tecnológico muy anterior a la irrupción masiva de la inteligencia artificial y los bots de automatización. Su artículo 2 letra d establece, en términos generales, la obligación de los intervinientes de actuar con buena fe y lealtad procesal en el uso de las herramientas electrónicas. El inciso segundo, invocado por el Comité de Jueces, sanciona el «abuso procesal» entendido como la utilización de los medios tecnológicos con fines distintos a los que justifican su existencia o de manera que se obstaculice el normal desenvolvimiento del proceso.
+
+El oficio sostiene que la conducta de Chateau «da cuenta de un uso abusivo de las herramientas tecnológicas y de acuerdo a lo dispuesto en el artículo 2 letra d inciso segundo de la ley 20.886, constituye derechamente 'abuso procesal'» (1). Esta calificación es relevante porque, de ser confirmada, podría dar lugar a sanciones disciplinarias e incluso penales, como el propio Comité solicitó. La fuente no aclara si existen precedentes jurisprudenciales en Chile que hayan aplicado esta norma a supuestos de automatización masiva. El caso parece ser inédito, lo que plantea interrogantes sobre si el marco legal vigente, diseñado para un entorno de tramitación electrónica manual, resulta adecuado para sancionar conductas automatizadas no previstas en su diseño original (12).
+
+### 2.3. Las medidas solicitadas: investigación penal y disciplinaria, prohibición temporal de IA, e implementación de controles técnicos (Captcha)
+
+El oficio del Comité de Jueces Civiles contiene tres órdenes de peticiones, que reflejan una estrategia de respuesta en distintos planos: el técnico-inmediato, el disciplinario-penal y el normativo-institucional.
+
+En primer lugar, los jueces solicitaron, como medida urgente, la restricción del ingreso de escritos masivos mediante el bloqueo de la dirección IP del usuario, al amparo del párrafo 10 de las condiciones de uso de la Oficina Judicial Virtual (OJV) (1). Esta medida ya había sido implementada por la Corporación Administrativa del Poder Judicial (CAPJ) antes incluso de la remisión del oficio, pero los jueces pidieron que se mantuviera mientras se resolvía el asunto (1) (2).
+
+En segundo lugar, solicitaron que se mantenga restringido el acceso del abogado a la plataforma, que se le pida un informe para evaluar eventuales responsabilidades disciplinarias e incluso penales, y que se investiguen posibles responsabilidades penales (1) (2) (3). La fuente no aclara si la solicitud de investigación penal se fundamenta en la existencia de un delito específico —como obstrucción a la administración de justicia, daño informático o falsificación de instrumento público— o si se trata de una remisión genérica al Ministerio Público para que determine la eventual comisión de ilícitos.
+
+En tercer lugar, y esta es la petición de mayor alcance institucional, los jueces solicitaron a la Corte Suprema que prohíba el uso de inteligencia artificial para el ingreso de escritos «mientras no exista una política institucional clara tendiente al control y buen uso de los instrumentos tecnológicos» (1) (2) (3). Asimismo, pidieron que se dispongan «medidas tecnológicas adecuadas y urgentes para evitar el ingreso masivo de escritos (tales como el uso de un Captcha) y la extracción masiva de datos» (2).
+
+Esta doble petición —prohibición cautelar de IA e implementación de controles técnicos— revela una tensión subyacente: por un lado, se reconoce la necesidad de medidas inmediatas para evitar la repetición del episodio; por otro, se asume que la solución estructural pasa por una política institucional que aún no existe. La fuente no aclara si los jueces propusieron un plazo para la vigencia de la prohibición cautelar ni si sugirieron algún mecanismo de revisión periódica de la medida.
+
+### 2.4. El pleno extraordinario de la Corte Suprema y el informe encargado al Departamento de Informática
+
+Conocida la situación, la Corte Suprema convocó a un pleno extraordinario el martes 28 de julio para abordar el asunto (1). El máximo tribunal acordó solicitar un informe al Departamento de Informática de la Corporación Administrativa del Poder Judicial (CAPJ) para evaluar las medidas técnicas necesarias y determinar el alcance de lo ocurrido (1) (2).
+
+Paralelamente, la CAPJ ya había bloqueado la IP del abogado, lo que permitió que la OJV y el portal del Poder Judicial recuperaran su funcionamiento normal (2). Sin embargo, la Corte Suprema pidió a la CAPJ un informe más detallado sobre lo solicitado por los jueces civiles, para poder evaluar cómo responder a nivel técnico-informático (2). La fuente no aclara si el pleno extraordinario adoptó algún acuerdo adicional más allá de la solicitud de informe, ni si se pronunció sobre la petición de prohibición del uso de IA. Tampoco existe evidencia suficiente, en las fuentes periodísticas disponibles, para afirmar que la Corte Suprema haya adoptado ya una decisión final sobre el caso. El pleno parece haber quedado a la espera del informe técnico del Departamento de Informática para adoptar una resolución más fundada (2).
+
+Un dato adicional relevante es que, durante el colapso, el Departamento de Informática debió elaborar un «escrito tipo» para responder de manera automática, pues el sistema se encontraba tan saturado que los abogados no podían ingresar escritos en la plataforma (2). Esta medida de emergencia evidencia la gravedad del colapso operativo y la necesidad de soluciones inmediatas para restablecer el servicio. La fuente no aclara si el «escrito tipo» fue una respuesta automática que se generaba para cada presentación o si se trató de un mecanismo de contingencia para filtrar el tráfico entrante.
+
+---
+
+## Sección 3. El marco normativo vigente en Chile
+
+### 3.1. La Ley 20.886 (2015) de tramitación electrónica: diseño pre-IA y ausencia de previsiones frente a automatización masiva
+
+La Ley N° 20.886, publicada el 18 de diciembre de 2015, constituye el pilar normativo de la tramitación digital de los procedimientos judiciales en Chile (7). La ley modificó el Código de Procedimiento Civil y el Código Orgánico de Tribunales para permitir la tramitación electrónica de las causas, estableciendo que los procesos judiciales se tramitarán en soporte digital, utilizando firmas electrónicas avanzadas y garantizando la conservación de los registros (7).
+
+El artículo 2 de la ley establece los principios generales que rigen la tramitación electrónica (7). Entre ellos, el **principio de equivalencia funcional del soporte electrónico** (letra a), que otorga validez y efectos jurídicos plenos a los actos suscritos por medio de firma electrónica; el **principio de fidelidad** (letra b), que exige el registro íntegro y sucesivo de todas las actuaciones en la carpeta electrónica; el **principio de publicidad** (letra c), que garantiza el pleno acceso de todas las personas a la carpeta electrónica, con las excepciones legales; y el **principio de buena fe** (letra d), que exige a las partes y a todos los intervinientes actuar con lealtad y probidad en el uso de las herramientas electrónicas (7).
+
+El inciso final del artículo 2 letra c contiene una disposición especialmente relevante: «Se prohíbe el tratamiento masivo de los datos personales contenidos en el sistema de tramitación electrónica del Poder Judicial, sin su autorización previa» (7). La infracción de esta norma, cometida por entes públicos y privados, será sancionada conforme a la Ley N° 19.628 sobre protección de datos (7).
+
+El diseño normativo de 2015, sin embargo, no contempló la irrupción de la inteligencia artificial ni de los bots de automatización masiva. Como ha señalado la doctrina, la digitalización del proceso judicial en 2015 no fue acompañada de una política institucional actualizada que contemplara los riesgos de la automatización (2). La ley fue concebida para un entorno de tramitación electrónica manual —en el que cada abogado ingresaría los escritos uno por uno— y no para un escenario en el que un agente externo pudiera replicar la interacción humana a una velocidad y volumen inalcanzables (9). El artículo 2 letra d de la ley, aunque establece el principio de buena fe, no tipifica expresamente la presentación masiva automatizada como una modalidad de abuso procesal.
+
+### 3.2. La interpretación extensiva del «abuso procesal» aplicado a conductas automatizadas: problemas de tipicidad y proporcionalidad
+
+El oficio del Comité de Jueces Civiles califica la conducta del abogado como «abuso procesal» al amparo del artículo 2 letra d inciso segundo de la Ley 20.886 (1) (9). La doctrina procesal chilena ha entendido tradicionalmente el abuso procesal como la utilización de las facultades procesales con fines distintos a aquellos para los que fueron concebidas, o de manera que se obstaculice el normal desenvolvimiento del proceso.
+
+Sin embargo, la aplicación de esta figura a conductas automatizadas presenta desafíos interpretativos significativos. En primer lugar, el abuso procesal suele requerir un elemento subjetivo —la intencionalidad de perjudicar u obstaculizar— que en el caso de una automatización masiva no resulta evidente. El abogado no presentó escritos falsos ni simuló actos inexistentes; presentó renuncias de patrocinio y desarchivos reales, correspondientes a causas en las que efectivamente había representado a sus clientes (9). Lo que produjo el colapso no fue el contenido de los escritos, sino la escala de su presentación (9).
+
+En segundo lugar, el artículo 2 letra d de la Ley 20.886 no tipifica expresamente la presentación masiva automatizada como una modalidad de abuso procesal (7). La interpretación extensiva que realiza el Comité de Jueces, aunque plausible, no está exenta de debate jurídico. Como ha señalado la doctrina, «el dato aún no está acreditado: la propia Corte Suprema pidió un informe técnico antes de resolver» (9).
+
+En tercer lugar, la proporcionalidad de la sanción plantea interrogantes. La petición de prohibir el uso de inteligencia artificial para el ingreso de escritos, mientras no exista una política institucional, podría considerarse una medida desproporcionada si se compara con la naturaleza de la infracción. No se trata de un uso malicioso de la IA para fabricar pruebas o engañar al tribunal, sino de una automatización de actos procesales lícitos (9).
+
+La doctrina también ha señalado que la invocación de la responsabilidad penal es apresurada (9). El candidato natural sería la Ley 21.459 sobre delitos informáticos, que sanciona el ataque a la integridad de un sistema informático; pero ese delito exige dolo, y no está claro que la conducta de Chateau encaje en el tipo penal (9).
+
+### 3.3. La inexistencia de una ley general de IA en Chile al momento de los hechos (julio 2026)
+
+Al momento de los hechos —julio de 2026— Chile no contaba con una ley vigente que regulara de manera integral el uso de la inteligencia artificial (2) (9). El país se encontraba en un proceso de tramitación legislativa de un proyecto de ley sobre la materia, pero aún no había sido aprobado ni promulgado.
+
+El proyecto de ley que regula los sistemas de inteligencia artificial (Boletín N° 16821-19, refundido con el Boletín 15869-19) fue iniciado por Mensaje del Presidente de la República en mayo de 2024 y por una moción parlamentaria (8). La iniciativa tiene por finalidad regular los sistemas de inteligencia artificial, centrándose en reglamentar hipótesis en que pueda existir algún peligro real para las personas (8). La Cámara de Diputadas y Diputados aprobó el proyecto en particular y lo remitió al Senado para su segundo trámite constitucional (8). Al momento del colapso de la OJV, el proyecto se encontraba en tramitación en la Comisión de Desafíos del Futuro, Ciencia, Tecnología e Innovación del Senado (8).
+
+En lo medular, el proyecto regula los usos del sistema de IA, promoviendo su desarrollo ético y sostenible, respetando los derechos fundamentales y los principios democráticos (8). Establece que los usos de los sistemas de IA se clasificarán de acuerdo con su riesgo, en categorías de riesgo inaceptable, alto riesgo, riesgo limitado y sin riesgo evidente (8). La iniciativa también señala que todos los operadores deberán observar principios generales: supervisión humana, seguridad técnica, protección de datos y privacidad, transparencia e identificación, equidad social y de género, bienestar social y medioambiental, rendición de cuentas y responsabilidad, y protección de los derechos de los consumidores y de autor (8). El proyecto crea además un Consejo Asesor Técnico de IA como instancia consultiva que asesorará al Ministerio de Ciencia en temas de IA (8).
+
+La ausencia de una ley de IA en Chile significa que no existía, al momento de los hechos, un marco normativo específico que regulara el uso de sistemas automatizados en el ámbito judicial, más allá de las disposiciones generales de la Ley 20.886 y de los principios del Código de Ética Judicial (2) (12). La fuente no aclara si el proyecto de ley en tramitación contiene disposiciones específicas sobre el uso de sistemas automatizados en el ámbito judicial, ni si el episodio ha generado presiones para incorporar enmiendas que aborden específicamente la presentación masiva de escritos.
+
+### 3.4. Los instrumentos institucionales previos: lineamientos éticos sobre IA generativa y el Código de Ética Judicial
+
+Aunque Chile carecía de una ley general de IA, el Poder Judicial había comenzado a abordar la cuestión mediante instrumentos de soft law y ética judicial. En noviembre de 2025, el Pleno de la Corte Suprema aprobó el primer **Código de Ética Judicial** del país (12). El Código incorpora temáticas muy actuales, como la inteligencia artificial, y releva la supervisión humana y la capacitación permanente en el uso de nuevas tecnologías (12).
+
+Sin embargo, estos lineamientos tenían un alcance limitado. El Código de Ética Judicial se dirige a quienes integran el escalafón primario del Poder Judicial —jueces y funcionarios— y no se extiende a los abogados particulares que utilizan la Oficina Judicial Virtual (12). Como ha señalado la doctrina, «el propio Poder Judicial reconoce que no cuenta con una política sobre uso de sus herramientas tecnológicas» (2). La digitalización del proceso judicial en 2015 no fue acompañada de una política institucional actualizada que contemplara los riesgos de la automatización masiva (9).
+
+Es relevante señalar, a título de precisión, que la Circular N° 031-2026, mencionada en algunas fuentes como referente de buenas prácticas, corresponde al **Poder Judicial de Costa Rica**, no al de Chile. Dicha circular, aprobada en febrero de 2026, establece «Lineamientos básicos para el uso de la Inteligencia Artificial Generativa» por parte de funcionarios judiciales costarricenses (10). El documento, aunque no es aplicable en Chile, ofrece un modelo de gobernanza interna que el Poder Judicial chileno podría considerar.
+
+La fuente no aclara si el Poder Judicial de Chile ha adoptado, al momento de los hechos, algún auto acordado o instrucción general que regule específicamente el uso de herramientas automatizadas por parte de los abogados en la OJV. Tampoco existe evidencia suficiente para afirmar que la Corporación Administrativa del Poder Judicial (CAPJ) hubiera implementado, con anterioridad al episodio, controles técnicos específicos para prevenir la presentación masiva de escritos. Lo que sí está documentado es que el Pleno de la Corte Suprema ha incluido en el Plan Estratégico del Poder Judicial 2026-2030 la definición de una Política Institucional de Inteligencia Artificial, lo que indica que la institución ya había identificado la necesidad de abordar el tema antes del colapso de la OJV (11).
+
+---
+
+## Sección 4. La dimensión técnica y de diseño de la Oficina Judicial Virtual (OJV)
+
+### 4.1. Arquitectura de la plataforma: carencia de controles anti-bot (ausencia de Captcha)
+
+La Oficina Judicial Virtual (OJV) constituye la columna dorsal del sistema de administración de justicia en Chile, toda vez que toda la tramitación de causas de todo el país opera en soporte digital (11). La plataforma permite a los abogados presentar demandas, escritos, oficios y peritajes de forma remota (0).
+
+Sin embargo, el episodio protagonizado por el abogado Chateau expuso una vulnerabilidad de diseño fundamental: la OJV fue concebida sin mecanismos de control que impidieran la presentación automatizada y masiva de escritos. El dato técnico central, como ha señalado el análisis especializado, es que los sistemas de tramitación fueron diseñados asumiendo una cadencia humana, y la automatización disolvió ese supuesto sin infringir supuestamente ninguna regla explícita (6). La plataforma carecía de barreras técnicas básicas como un sistema *Captcha* que verificara que la interacción provenía de un usuario humano y no de un robot (0) (6) (7) (8) (9).
+
+La ausencia de este tipo de control es particularmente significativa si se considera que la OJV se implementó en un contexto pre-bots y pre-inteligencia artificial (11). La plataforma fue diseñada para un flujo de trabajo manual, en el que cada abogado ingresaría los escritos uno por uno, y no para un escenario en el que un agente externo pudiera replicar la interacción humana a una velocidad y volumen inalcanzables para cualquier operador humano.
+
+El Comité de Jueces Civiles de Santiago, en su oficio a la Corte Suprema, identificó expresamente esta carencia y solicitó que se dispusieran «medidas tecnológicas adecuadas y urgentes para evitar el ingreso masivo de escritos (tales como el uso de un Captcha) y la extracción masiva de datos» (0) (7) (9) (10). La fuente no aclara si, con anterioridad al episodio, la Corporación Administrativa del Poder Judicial (CAPJ) había evaluado la incorporación de este tipo de controles o si existía algún estudio de vulnerabilidades de la plataforma.
+
+### 4.2. La vulnerabilidad estructural: sistemas concebidos para flujo humano, no para ataques de automatización
+
+El colapso de la OJV no fue el resultado de un hackeo en el sentido técnico estricto —no se vulneraron mecanismos de seguridad ni se accedió a información restringida— sino de la explotación de una vulnerabilidad estructural: la ausencia de límites de frecuencia por usuario, de sistemas de detección de tráfico anómalo y de verificación de interacción humana (6) (12).
+
+El abogado Chateau utilizó un «agente externo» o robot para inyectar los escritos en la plataforma (9) (10) (11) (13). Cada presentación, considerada individualmente, era formalmente válida —se trataba de renuncias de patrocinio y desarchivos correspondientes a causas en las que efectivamente había representado a sus clientes— pero el fenómeno disruptivo emergió del volumen (6). La plataforma no estaba preparada para absorber 38.477 escritos en 72 horas, equivalentes a entre 500 y 900 presentaciones por tribunal (9) (10) (11).
+
+El oficio del Comité de Jueces lo formula sin eufemismos: «no contamos con los recursos técnicos ni humanos disponibles para enfrentar esta contingencia» (6) (8) (11). Esta declaración revela que la vulnerabilidad no era únicamente técnica, sino también organizativa: los tribunales carecían de la capacidad de absorción necesaria para procesar un volumen de trabajo que excedía con creces cualquier previsión de diseño.
+
+La doctrina especializada ha señalado que el problema revelado es de arquitectura y solución, no de mala fe del litigante (6) (12). Un marco normativo concebido para corregir al litigante desleal no responde adecuadamente a la pregunta de qué hacer con el litigante diligente que opera a velocidad de máquina (6). La buena fe procesal, invocada por el Comité de Jueces al amparo del artículo 2 letra d de la Ley 20.886, es un estándar de conducta, pero el problema revelado es estructural (6). Como ha señalado el análisis de CIPER, «durante años, gran parte de los sistemas digitales públicos fueron concebidos para interactuar con personas y no con softwares. Cada clic suponía un ser humano detrás de una pantalla y cada formulario implicaba tiempo, paciencia y limitaciones físicas. Esa era una restricción natural del mundo analógico trasladada al mundo digital. La inteligencia artificial, los robots y la automatización, simplemente eliminaron esa restricción» (6).
+
+La fuente no aclara si la CAPJ había realizado, con anterioridad al episodio, pruebas de estrés o simulaciones de carga masiva sobre la plataforma. Tampoco existe evidencia suficiente para afirmar que existieran protocolos de respuesta ante incidentes de esta naturaleza.
+
+### 4.3. La respuesta técnica: bloqueo de IP como medida paliativa, no estructural
+
+Ante la evidencia del colapso, la primera medida técnica adoptada fue el bloqueo de la dirección IP desde la cual se originaban los envíos masivos (3) (7) (9) (11) (13). La Corporación Administrativa del Poder Judicial (CAPJ) procedió a esta restricción al amparo del párrafo 10 de las condiciones de uso de la OJV (1).
+
+El bloqueo de IP logró su objetivo inmediato: detener el flujo de nuevos escritos y permitir que la plataforma recuperara su funcionamiento normal (7) (11). Sin embargo, esta medida tuvo un carácter eminentemente paliativo y reactivo. Como ha señalado el análisis especializado, bastaría con que el robot fuera conectado desde otra IP para que el abogado pudiera seguir realizando la misma conducta (11). El bloqueo de IP no aborda la vulnerabilidad estructural del sistema ni impide que, en el futuro, cualquier otro operador pueda replicar el modus operandi utilizando una dirección IP diferente, un proxy o un conjunto de direcciones rotatorias.
+
+La Corte Suprema, consciente de las limitaciones de esta medida, solicitó a la CAPJ un informe técnico para determinar cómo se produjo la carga masiva, cuál fue su impacto efectivo sobre los sistemas institucionales y qué medidas pueden adoptarse para impedir que un episodio similar vuelva a ocurrir (7) (10). El Departamento de Informática de la CAPJ, mientras tanto, debió elaborar un «escrito tipo» para responder de manera automática, pues el sistema se encontraba tan colapsado que los abogados no podían ingresar escritos en la plataforma (7). Esta medida de emergencia evidencia la gravedad del colapso operativo.
+
+La fuente no aclara si, tras el bloqueo de la IP, se adoptaron medidas adicionales de control de acceso, como la suspensión temporal de la cuenta del usuario o la implementación de mecanismos de autenticación reforzada. Tampoco existe evidencia suficiente para afirmar que se haya realizado un análisis forense para determinar con precisión el alcance de la automatización utilizada.
+
+### 4.4. Lecciones para el diseño de plataformas judiciales resilientes
+
+El caso Chateau ofrece lecciones de alcance general para el diseño de sistemas de tramitación electrónica en la era de la inteligencia artificial y la automatización.
+
+En primer lugar, la experiencia evidencia que los sistemas judiciales digitales deben ser diseñados con una arquitectura que contemple escenarios de carga masiva y automatización. La incorporación de controles anti-bot —como *Captcha*, límites de frecuencia por usuario, sistemas de detección de tráfico anómalo y autenticación multifactor— debe considerarse un estándar mínimo de seguridad en plataformas de tramitación electrónica (0) (6).
+
+En segundo lugar, la resiliencia de un sistema no puede depender exclusivamente de medidas reactivas como el bloqueo de IP. Se requiere una aproximación proactiva que incluya pruebas de estrés periódicas, planes de contingencia y capacidad de escalamiento horizontal para absorber picos de demanda.
+
+En tercer lugar, el caso plantea la necesidad de repensar el diseño de las plataformas judiciales no solo desde la perspectiva técnica, sino también desde la normativa y la gobernanza. Como ha señalado el análisis especializado, el incidente abrió la conversación correcta: no quién falló, sino cómo se construyen sistemas judiciales capaces de operar a velocidad de máquina con la influencia de la inteligencia artificial (6). La OJV se implementó en un contexto pre-bots y pre-IA, y es necesario comenzar a pensar en los nuevos escenarios que se abren a partir de esta tecnología (11).
+
+El análisis de CIPER ha resaltado una lección aún más profunda: «Durante años venimos hablando de transformación digital como si consistiera simplemente en digitalizar formularios de papel. Hoy estamos entrando en una etapa completamente distinta: la de los sistemas» (12). La solución, desde esta perspectiva, no pasa por restringir la tecnología, sino por rediseñar los sistemas para la era de la automatización (12).
+
+La fuente no aclara si el Poder Judicial de Chile ha iniciado, a raíz del episodio, un proceso de revisión integral de la arquitectura de la OJV o si existen planes concretos para la incorporación de los controles técnicos solicitados por el Comité de Jueces. Tampoco existe evidencia suficiente para afirmar que se haya elaborado un cronograma para la implementación de estas medidas.
+
+---
+
+## Sección 5. El debate sobre la inteligencia artificial en el sistema judicial
+
+### 5.1. La posición del Comité de Jueces: prohibición cautelar de IA hasta política institucional
+
+El oficio remitido por el Comité de Jueces Civiles de Santiago a la presidenta de la Corte Suprema contiene una petición de alcance institucional que trasciende el caso concreto: la prohibición del uso de inteligencia artificial para el ingreso de escritos mientras no exista una política institucional clara (1) (6) (10).
+
+Los jueces solicitaron expresamente «que se disponga la prohibición del uso de IA para el ingreso de escritos, en tanto no existan una política institucional clara tendiente al control y buen uso de los instrumentos tecnológicos» (1) (6) (10) (14). Esta petición se fundamenta en la constatación de que el Poder Judicial carece, al momento de los hechos, de un marco normativo interno que regule el uso de herramientas automatizadas por parte de los operadores jurídicos que interactúan con la Oficina Judicial Virtual (6) (12).
+
+La propuesta de prohibición cautelar refleja una aproximación preventiva y restrictiva, propia de una institución que se enfrenta a un fenómeno para el que no estaba preparada. Los jueces sostienen que la ausencia de controles técnicos —como la falta de un sistema Captcha que verifique la interacción humana— y la inexistencia de una política institucional hacen necesario un cierre temporal del acceso a la IA para evitar la repetición de episodios similares (1) (6) (10). La fuente no aclara si la prohibición propuesta tendría carácter general para todos los usuarios de la OJV o si se limitaría al abogado infractor. Tampoco existe evidencia suficiente para afirmar que la Corte Suprema haya adoptado ya una decisión sobre esta solicitud.
+
+### 5.2. La reacción de Legaltech (Altech A.G.): oposición a la prohibición y defensa de la innovación
+
+La petición de los jueces generó una reacción inmediata por parte del sector de la tecnología legal. La Asociación Gremial Legaltech Chile (Altech A.G.), que agrupa a 21 empresas del sector, emitió una declaración pública en la que rechazó la propuesta de prohibición y defendió el uso de la inteligencia artificial y la automatización en el ámbito judicial (0) (11).
+
+Altech destacó, en primer lugar, un matiz técnico fundamental: **la automatización no siempre implica inteligencia artificial**. El abogado Chateau utilizó un «agente externo» o robot para automatizar la presentación de escritos, pero no necesariamente un sistema de IA en el sentido estricto del término —esto es, un sistema capaz de aprender, razonar o tomar decisiones autónomas— (11). La distinción es relevante porque una prohibición genérica del uso de IA podría afectar a herramientas legítimas de automatización que no presentan los mismos riesgos que un bot de inyección masiva.
+
+Altech llamó, en consecuencia, a **regular en lugar de prohibir** (11). La asociación sostiene que la respuesta adecuada al episodio no es cerrar la puerta a la innovación tecnológica, sino establecer un marco normativo que delimite los usos permitidos, fije límites operativos y defina responsabilidades. Esta posición coincide con la defendida por el Centro Chileno de Inteligencia Artificial (CCHIA) y refleja una aproximación propia del sector tecnológico: la tecnología no es el problema, sino la ausencia de reglas para su uso (11) (12). La fuente no aclara si Altech ha formulado propuestas concretas de regulación alternativa a la prohibición, ni si ha mantenido reuniones con las autoridades del Poder Judicial para exponer su posición.
+
+### 5.3. La intervención del Centro Chileno de Inteligencia Artificial (CCHIA): gobernanza y uso responsable
+
+La Cámara Chilena de Inteligencia Artificial (CCHIA) también se pronunció sobre el episodio, en una línea similar a la de Altech pero con un enfoque más amplio de gobernanza tecnológica (12).
+
+La CCHIA manifestó su preocupación ante la situación y calificó el episodio como **«una señal de alerta que debe ser abordada desde una perspectiva de gobernanza tecnológica, seguridad, responsabilidad y uso ético de la inteligencia artificial»**, en especial cuando estas herramientas interactúan con plataformas que forman parte de servicios esenciales para la ciudadanía y el funcionamiento de las instituciones (12).
+
+Pedro Herrera, abogado especializado en Derecho e Inteligencia Artificial y Secretario de la CCHIA, señaló: **«Este caso demuestra que la discusión no debe centrarse únicamente en si se utilizó o no inteligencia artificial. El verdadero desafío es establecer bajo qué condiciones, con qué controles y dentro de qué marco de responsabilidad pueden utilizarse sistemas automatizados para interactuar con plataformas institucionales críticas»** (12).
+
+La organización sostuvo que la inteligencia artificial y la automatización pueden generar importantes beneficios para la modernización del Estado, la eficiencia de los procesos y la reducción de cargas administrativas, siempre que su incorporación vaya acompañada de políticas específicas de gobernanza —evaluación de riesgos, trazabilidad de las acciones ejecutadas, mecanismos de auditoría y protocolos de respuesta ante incidentes— tanto en instituciones públicas como privadas (12). La organización reafirmó su disposición a contribuir al debate nacional sobre el uso responsable de estas tecnologías (12).
+
+### 5.4. El problema de fondo: confundir el uso indebido de una herramienta con la herramienta misma
+
+El episodio ha puesto de manifiesto una tensión recurrente en el debate sobre la regulación tecnológica: la dificultad para distinguir entre el uso indebido de una herramienta y la herramienta misma.
+
+El análisis especializado ha señalado que el problema revelado no es de mala fe del litigante, sino de arquitectura y solución (6) (12). La OJV fue implementada en un contexto pre-bots y pre-inteligencia artificial, y el colapso no fue el resultado de un hackeo o de una conducta maliciosa en el sentido tradicional, sino de la explotación de una vulnerabilidad de diseño: la ausencia de controles que limiten la velocidad y el volumen de presentaciones (9). El análisis de CIPER ha subrayado que «durante años, gran parte de los sistemas digitales públicos fueron concebidos para interactuar con personas y no con softwares. Cada clic suponía un ser humano detrás de una pantalla y cada formulario implicaba tiempo, paciencia y limitaciones físicas. Esa era una restricción natural del mundo analógico trasladada al mundo digital. La inteligencia artificial, los robots y la automatización, simplemente eliminaron esa restricción» (6).
+
+Desde esta perspectiva, prohibir el uso de IA en la plataforma sería una respuesta que confunde el síntoma con la causa. El problema no es que el abogado haya utilizado un robot, sino que la plataforma no estaba diseñada para detectar y bloquear un flujo anómalo de escritos. Como ha señalado la doctrina, un marco normativo concebido para corregir al litigante desleal no responde adecuadamente a la pregunta de qué hacer con el litigante diligente que opera a velocidad de máquina (6). La distinción entre automatización e inteligencia artificial, subrayada por Altech, añade una capa adicional de complejidad. No todo robot es IA, y no toda IA es un robot. Una prohibición genérica del «uso de IA» podría afectar a herramientas legítimas de asistencia jurídica —como sistemas de búsqueda de jurisprudencia, generación de borradores o análisis predictivo— que no presentan los mismos riesgos que un bot de inyección masiva (11). La fuente no aclara si el Comité de Jueces, al solicitar la prohibición, tuvo en cuenta esta distinción o si su petición se refería específicamente a la automatización masiva.
+
+### 5.5. La paradoja de la regulación: el proyecto de Ley de IA en Chile
+
+El debate generado por el caso Chateau se produce en un momento de transición normativa en Chile. Al momento de los hechos —julio de 2026— no existía una ley vigente que regulara de manera integral el uso de la inteligencia artificial (2) (12). El proyecto de ley que regula los sistemas de inteligencia artificial (Boletín N° 16821-19), iniciado por Mensaje del Presidente de la República en mayo de 2024, había sido aprobado por la Cámara de Diputadas y Diputados el 13 de octubre de 2025 y se encontraba en tramitación en el Senado (2) (12).
+
+El proyecto establece principios obligatorios para el desarrollo y uso de la IA, prohíbe usos de riesgo inaceptable, fija exigencias para sistemas de alto riesgo y contempla multas de hasta 20.000 UTM, además de un régimen de responsabilidad civil y deberes de confidencialidad (2) (12). Sin embargo, su tramitación aún no había concluido al momento del colapso de la OJV. El proyecto se encontraba en la Comisión de Desafíos del Futuro, Ciencia, Tecnología e Innovación del Senado, donde se han incorporado indicaciones como un artículo que regula los «agentes autónomos» (2) (8).
+
+La ausencia de una ley de IA en Chile significa que no existía, al momento de los hechos, un marco normativo específico que regulara el uso de sistemas automatizados en el ámbito judicial, más allá de las disposiciones generales de la Ley 20.886 y de los principios del Código de Ética Judicial (12). El caso Chateau ha venido a acelerar un debate que, de otro modo, podría haber tardado años en alcanzar la agenda pública. La fuente no aclara si el proyecto de Ley de IA en tramitación contiene disposiciones específicas sobre el uso de sistemas automatizados en el ámbito judicial, ni si el episodio ha generado presiones para incorporar enmiendas que aborden específicamente la presentación masiva de escritos. Tampoco existe evidencia suficiente para afirmar que el Poder Judicial haya iniciado, a raíz del caso, un proceso de elaboración de una política institucional propia sobre IA, más allá de la solicitud formulada por el Comité de Jueces.
+
+---
+
+## Sección 6. Derecho comparado: sanciones y regulación del mal uso de IA en tribunales
+
+### 6.1. Estados Unidos: casos de sanciones económicas por citas jurisprudenciales ficticias generadas por IA
+
+La experiencia estadounidense ofrece el repertorio más amplio y diversificado de sanciones por mal uso de inteligencia artificial en el ámbito judicial, con casos que abarcan desde pequeños bufetes hasta firmas de élite de Wall Street.
+
+El 2 de febrero de 2026, la jueza federal senior Julie Robinson, del Tribunal de Distrito de Kansas, sancionó a los cinco abogados de registro de Lexos Media IP LLC en un litigio por infracción de patentes contra Overstock.com Inc. (15) (16). La decisión respondió a la inclusión de múltiples citas legales, fragmentos de sentencias y referencias jurisprudenciales inexistentes en los escritos de oposición a una exclusión de perito y en la respuesta a una solicitud de juicio sumario (16). Uno de los letrados admitió haber incorporado al escrito citas y fragmentos generados por ChatGPT sin verificarlos antes de su presentación oficial (15). Entre los errores detallados se encuentra la mención de un caso inexistente denominado *Hockett v. City of Topeka*, cuyo número de expediente correspondía en realidad a una apelación de seguridad social no relacionada, además de citas a casos reales que sostenían exactamente lo contrario de lo que el escrito les atribuía (16). La jueza Robinson distribuyó la responsabilidad de forma proporcional al rol de cada letrado: Sandeep Seth, quien reconoció haber incorporado las citas generadas por IA sin cotejarlas, recibió la sanción más severa —una multa de 5.000 dólares, la revocación de su admisión *pro hac vice* ante dicho tribunal y la obligación de informar la sanción a las autoridades disciplinarias de Texas y California—; Christopher Joe, abogado principal del caso y socio gerente del bufete Buether Joe & Counselors, y Kenneth Kula, del mismo bufete, fueron multados con 3.000 dólares cada uno por firmar escritos que no habían revisado, con la obligación adicional, para Joe, de certificar la implantación de nuevos protocolos internos de verificación; David Cooper, abogado local en Kansas, recibió una multa de 1.000 dólares por no cotejar las citas pese a su rol de garante bajo las normas locales; y Michael Doell, el abogado más junior del equipo, fue amonestado sin multa, al considerar la jueza que sus superiores no le habían encomendado revisar el trabajo de Seth (15) (16). El tribunal desestimó el argumento de la falta de intención de engañar, señalando que el estándar de la Regla 11 es de razonabilidad objetiva y que la obligación de verificar la autoridad legal citada no puede delegarse en la tecnología ni en el co-abogado (16).
+
+El 8 de junio de 2026, la jueza federal senior Sharion Aycock, del Distrito Norte de Mississippi, sancionó simultáneamente a los cuatro abogados de ambas partes en un litigio contractual entre el abogado Tom Withers III y la ciudad de Aberdeen por presentar escritos con citas jurisprudenciales inexistentes generadas por IA, y suspendió el juicio previsto (17) (18). Los cuatro letrados fueron apartados del caso; de ellos, dos —Kathleen M. Wilson, representante de Withers, y Kathryn Y. Williams, representante de la ciudad, ambas admitidas *pro hac vice*— fueron además inhabilitadas por dos años para comparecer ante ese tribunal y multadas con 3.500 y 2.500 dólares respectivamente, mientras que los dos abogados locales que las patrocinaron —Shauncey Hunter Ridgeway y Mark McClinton— fueron apartados del caso y multados con 1.000 dólares cada uno, sin inhabilitación (17). La jueza Aycock sostuvo que la obligación de verificar la autoridad legal citada no puede delegarse en la tecnología ni en el co-abogado, y calificó de riesgo particular la actuación del abogado local que actúa como mero «sello de goma» de las presentaciones de un colega admitido temporalmente (18). La magistrada señaló que el caso presentaba «un escenario inusual», al haber incurrido los abogados de ambas partes litigantes en conductas sancionables similares (17).
+
+En abril de 2026, dos abogados del departamento legal de la ciudad de Nueva Orleans renunciaron tras una investigación que encontró citas falsas generadas por IA en una presentación judicial (19). Las renuncias del asistente del fiscal municipal Jalen Harris y del fiscal municipal adjunto James Roquemore siguieron a las sanciones impuestas por el juez federal Carl Barbier, del Distrito Este de Luisiana —250 y 1.000 dólares respectivamente— tras un escrito que incluía nueve citas de jurisprudencia inexistente (19).
+
+### 6.2. El caso Sullivan & Cromwell: la élite de Wall Street ante las alucinaciones de IA
+
+En abril de 2026, Sullivan & Cromwell, uno de los bufetes más prestigiosos de Wall Street, se vio obligado a disculparse ante un juez federal por haber presentado una moción con citas inexactas y errores generados por inteligencia artificial, en el marco del procedimiento de insolvencia de Prince Global Holdings Ltd. ante el Tribunal de Quiebras del Distrito Sur de Nueva York (20). En una carta fechada el 18 de abril dirigida al juez Martin Glenn, Andrew Dietderich, socio codirector del grupo de reestructuración global de la firma, confirmó que las inexactitudes —detectadas por el bufete contrario, Boies Schiller Flexner— incluían «alucinaciones» de IA: citas fabricadas, autoridades tergiversadas y fuentes legales inexistentes (20). «Lamentamos profundamente que esto haya ocurrido», escribió (20).
+
+La carta revela que el bufete mantenía políticas y requisitos de formación exhaustivos que regulaban el uso de herramientas de IA en el trabajo legal, diseñados precisamente para prevenir esta situación, pero que no se siguieron en la preparación de la moción (20).
+
+El caso es especialmente significativo por tratarse de un bufete de primer nivel con recursos y protocolos teóricamente robustos. La fuente no aclara qué tecnología produjo las inexactitudes ni si se impusieron sanciones económicas adicionales más allá de la disculpa pública. El episodio evidencia que incluso las firmas con políticas de IA rigurosas pueden ser víctimas de fallos en la supervisión humana cuando los protocolos no se aplican correctamente.
+
+### 6.3. Singapur: multas a abogados por presentar casos inexistentes creados por IA
+
+El 6 de marzo de 2026, el juez S. Mohan, del Tribunal Superior de Singapur, ordenó a dos abogados, Goh Peck San y Amarjit Singh Sidhu, pagar 5.000 dólares singapurenses (aproximadamente 3.900 USD) cada uno en concepto de costas personales por citar dos autoridades ficticias en los alegatos de conclusión de un caso civil sobre un litigio testamentario (21).
+
+El abogado de registro de los demandados, Goh, había encargado a otro abogado, Singh, que le asistiera en la investigación y redacción de los alegatos; Singh, a su vez, atribuyó la investigación y redacción iniciales a un paralegal que ya no trabajaba en su bufete y declaró desconocer si se habían empleado herramientas de IA, aunque admitió haber revisado los borradores sin detectar las autoridades ficticias antes de remitirlos a Goh (21). Uno de los casos citados combinaba el nombre de una sentencia real con la referencia de otra distinta; el segundo tenía nombre y referencia enteramente inventados (21). Los abogados ofrecieron asumir conjuntamente costas de 1.500 dólares, pero el juez consideró esta cantidad insuficiente dada la gravedad del episodio y ordenó el pago de 5.000 dólares a cada uno, con el fin declarado de recordar a la abogacía singapurense la importancia de verificar todo el material presentado ante los tribunales (21).
+
+### 6.4. España: sanciones por citas jurisprudenciales inventadas
+
+Los tribunales españoles también han comenzado a sancionar a abogados por el uso no verificado de inteligencia artificial, en al menos dos series de resoluciones paralelas. En julio de 2026, el Tribunal Superior de Xustiza de Galicia (TSXG) multó con 1.800 euros a un abogado por presentar ante la Sala de lo Social un recurso elaborado con IA que contenía 24 citas jurisprudenciales de «libérrima creatividad jurídica» (22). El auto, apoyándose en un precedente del Tribunal Superior de Justicia de Canarias (TSJC), señaló que las principales editoriales jurídicas ofrecen suscripciones a herramientas de inteligencia artificial integradas con bases de datos jurisprudenciales verificadas por un importe anual aproximado de entre 1.500 y 3.000 euros, y que la contratación de cualquiera de ellas —o la simple comprobación gratuita a través del Cendoj— habría evitado el resultado enjuiciado (22). El propio TSJC había sancionado, meses antes, dos episodios similares: en un auto de 10 de febrero de 2026, con 420 euros —la mitad del coste aproximado de una suscripción anual a una herramienta de IA jurídica especializada—, a un abogado que incorporó 48 sentencias falsas a un recurso de apelación; y en julio de 2026, con 840 euros, a otro letrado que citó al menos 25 sentencias del Tribunal Supremo y del Tribunal Constitucional inexistentes o ajenas al caso (23) (24).
+
+Según la Sala de lo Penal del TSJC, en su auto de 10 de febrero de 2026, el uso de estas herramientas sin verificación «constituye una quiebra del deber básico de supervisión humana que, como se ha expuesto, resulta indeclinable cuando se emplean herramientas de IA en el ejercicio profesional» (23). La Sala aseguró que no «desconoce ni desdeña» el potencial de las herramientas de IA en el ámbito jurídico, pero afirmó que ello no exime del principio de supervisión humana, «eje vertebrador de todas las actuaciones profesionales que comporten el uso de estos sistemas en el ámbito de la abogacía» (23).
+
+### 6.5. Reino Unido: la consulta del Civil Justice Council sobre nuevas reglas para el uso de IA en documentos judiciales
+
+El 17 de febrero de 2026, el Civil Justice Council (CJC) del Reino Unido, a través de un Working Group presidido por Lord Justice Birss, lanzó una consulta de ocho semanas para determinar si se necesitan nuevas normas procesales que regulen cómo los representantes legales utilizan la IA al preparar alegaciones, declaraciones de testigos e informes periciales (25). El documento de consulta reconoce el creciente papel de la IA en la práctica legal —particularmente para la investigación, la síntesis de materiales y la mejora de la eficiencia— mientras destaca los riesgos que la tecnología plantea para la integridad de los procedimientos judiciales, citando la advertencia de la presidenta de la King's Bench Division, Dame Victoria Sharp, en *Ayinde v. London Borough of Haringey* [2025] EWHC 1383 (Admin), sobre que la sola publicación de directrices resulta insuficiente para atajar el uso indebido de la IA (25).
+
+La consulta cerró el 14 de abril de 2026. En una actualización publicada en julio de 2026, el Working Group adelantó que su orientación provisional es mantener el régimen vigente de responsabilidad profesional para la redacción de escritos, alegaciones y documentos de defensa —sin exigir una declaración específica sobre el uso de IA, siempre que el documento lleve el nombre del representante legal que asume la responsabilidad profesional—, introducir requisitos de transparencia proporcionados para la prueba pericial, y reconocer los retos distintos que plantea la IA para los litigantes que actúan sin representación letrada (26). El informe final del CJC estaba previsto para el resto de 2026 (26).
+
+### 6.6. Australia: la Practice Note y Judicial Guidelines del Tribunal Supremo de Victoria
+
+El 14 de mayo de 2026, el Tribunal Supremo de Victoria (Australia) emitió la Practice Note SC GEN 25 sobre el uso de inteligencia artificial por parte de los usuarios del tribunal —en sustitución de sus directrices de mayo de 2024—, junto con unas Directrices Judiciales separadas para los jueces, en respuesta al informe *Artificial Intelligence in Victoria's Courts and Tribunals* de la Victorian Law Reform Commission (27).
+
+La Practice Note permite el uso de IA, reconociendo su potencial para mejorar el acceso a la justicia, pero exige que los usuarios verifiquen que el contenido producido con IA es actual, completo, preciso y aplicable a la jurisdicción, y precisa expresamente que no basta con pedirle a una herramienta de IA que confirme su propio contenido, ni usar una IA para verificar el resultado de otra (27). Los usuarios deben estar preparados para identificar qué porciones de un documento judicial fueron producidas con IA y explicar cómo verificaron ese contenido, con especial cautela respecto de declaraciones juradas y de testigos (27).
+
+Las Directrices Judiciales, por su parte, establecen que la IA generativa no debe utilizarse para la toma de decisiones judiciales, aunque las herramientas de IA aprobadas por el tribunal pueden utilizarse para asistir a los jueces y al personal en tareas de apoyo: organizar y localizar materiales del caso, elaborar resúmenes y cronologías, apoyar la investigación jurídica y corregir pruebas —usos que, subrayan las Directrices, no sustituyen la lectura o audición de la prueba y los alegatos ni la determinación de los hechos cuando ello corresponda a la decisión judicial (27).
+
+### 6.7. El deber de competencia tecnológica del abogado: ABA Formal Opinion 512
+
+El 29 de julio de 2024, el Comité Permanente de Ética y Responsabilidad Profesional de la American Bar Association (ABA) emitió la Formal Opinion 512, su primer dictamen formal sobre el uso de herramientas de inteligencia artificial generativa por parte de los abogados (28).
+
+La opinión aplica al uso de IA generativa seis Reglas Modelo de Conducta Profesional: la Regla 1.1 (competencia), que exige comprender la capacidad y las limitaciones de estas herramientas y actualizar esa comprensión periódicamente; la Regla 1.6 (confidencialidad); la Regla 1.4 (comunicación con el cliente); la Regla 1.5 (honorarios razonables); las Reglas 5.1 y 5.3 (deberes de supervisión sobre abogados subordinados y personal no letrado); y la Regla 3.3 (deber de veracidad ante el tribunal) (28). La opinión no prohíbe el uso de la IA generativa: la trata como una herramienta que el abogado puede emplear siempre que satisfaga las mismas obligaciones de responsabilidad profesional exigibles a cualquier otro aspecto de su ejercicio (28).
+
+La fuente no aclara si la Formal Opinion 512 ha sido adoptada o incorporada por todos los estados de EE.UU., ni si existen planes para su actualización a la luz de los recientes casos de sanciones. Tampoco existe evidencia suficiente para afirmar que la Opinion 512 aborde específicamente la presentación masiva automatizada de escritos, más allá de los principios generales de competencia y supervisión.
+
+---
+
+## Sección 7. Análisis jurídico-procesal del caso
+
+### 7.1. La naturaleza de los escritos presentados: actos de mero trámite o actos con afectación sustancial
+
+Desde la perspectiva del derecho procesal civil, la distinción entre actos de mero trámite y actos con afectación sustancial resulta relevante para determinar la gravedad de la conducta y la eventual procedencia de sanciones.
+
+Las renuncias de patrocinio y poder, así como las solicitudes de desarchivo, son categorías procesales que, en principio, se inscriben dentro de los denominados actos de impulso procesal o de mero trámite. El patrocinio y poder constituyen la representación judicial que el abogado ejerce en nombre de su cliente; su renuncia es un acto unilateral que el profesional puede ejercer, aunque debe ser notificado al tribunal y a las demás partes para que surta efectos. La solicitud de desarchivo, por su parte, es una petición dirigida al tribunal para que reabra una causa que se encuentra en estado de inactividad, y su resolución requiere que el juez verifique el cumplimiento de los presupuestos legales para el desarchivo (1) (3).
+
+La fuente no aclara si las renuncias de patrocinio presentadas por Chateau afectaban a causas en trámite o a causas ya finalizadas. Tampoco existe evidencia suficiente para determinar si las solicitudes de desarchivo correspondían a causas en las que el abogado había tenido una participación efectiva o si incluían expedientes en los que su representación ya había cesado con anterioridad. Esta ausencia de información impide evaluar si los escritos, considerados individualmente, eran jurídicamente procedentes o si algunos de ellos carecían de fundamento.
+
+El análisis doctrinal ha señalado que el problema no radica en el contenido de los escritos, sino en la escala de su presentación (6) (12). Cada una de las 38.477 presentaciones, considerada aisladamente, era formalmente válida. El fenómeno disruptivo emergió del volumen, no de la naturaleza de los actos procesales (6). Esta constatación es relevante porque plantea interrogantes sobre si el concepto de «abuso procesal», tradicionalmente vinculado a la deslealtad o al empleo de artificios para obstaculizar el proceso, resulta aplicable a una conducta que, en su dimensión individual, es lícita.
+
+### 7.2. El principio de buena fe procesal y su aplicación a conductas automatizadas
+
+El principio de buena fe procesal constituye el fundamento normativo principal de la calificación de «abuso procesal» efectuada por el Comité de Jueces Civiles, al amparo del artículo 2 letra d inciso segundo de la Ley 20.886 (1) (7). La buena fe procesal exige a las partes y a todos los intervinientes en el proceso actuar con lealtad, probidad y respeto a los fines del procedimiento (7).
+
+La aplicación de este principio a conductas automatizadas plantea, sin embargo, desafíos hermenéuticos de primer orden. En primer lugar, la buena fe procesal ha sido concebida tradicionalmente como un estándar de conducta para operadores humanos, no para sistemas automatizados. El abogado Chateau no actuó personalmente en cada una de las 38.477 presentaciones; su conducta consistió en programar un «agente externo» que ejecutó las presentaciones de forma autónoma (1) (4). La pregunta que se plantea es si la intencionalidad del abogado —que consistía en desvincularse de sus clientes de forma eficiente, no en colapsar el sistema— puede ser imputada al robot, y si el principio de buena fe debe extenderse a la conducta del programador del bot (6).
+
+En segundo lugar, el artículo 2 letra d de la Ley 20.886 no tipifica expresamente la presentación masiva automatizada como una modalidad de abuso procesal (7). La interpretación extensiva que realiza el Comité de Jueces, aunque plausible, no está exenta de debate. Como ha señalado la doctrina, «el dato aún no está acreditado: la propia Corte Suprema pidió un informe técnico antes de resolver» (9). La calificación de «abuso procesal» podría requerir la demostración de una intencionalidad específica de obstaculizar el proceso, que no resulta evidente en el caso de Chateau (9).
+
+En tercer lugar, el principio de buena fe procesal debe ser interpretado en el contexto de la transformación digital de la justicia. Como ha señalado el análisis de CIPER, «durante años, gran parte de los sistemas digitales públicos fueron concebidos para interactuar con personas y no con softwares. Cada clic suponía un ser humano detrás de una pantalla y cada formulario implicaba tiempo, paciencia y limitaciones físicas. Esa era una restricción natural del mundo analógico trasladada al mundo digital. La inteligencia artificial, los robots y la automatización, simplemente eliminaron esa restricción» (6). La buena fe procesal es un principio de conducta, pero el problema revelado por el caso Chateau es estructural, no comportamental (6) (12).
+
+### 7.3. La proporcionalidad de la sanción: ¿prohibir la IA o sancionar al infractor?
+
+Una de las cuestiones jurídicas más relevantes que plantea el caso es la proporcionalidad de las sanciones solicitadas por el Comité de Jueces Civiles, en particular la prohibición temporal del uso de inteligencia artificial para el ingreso de escritos (1) (2) (3).
+
+El principio de proporcionalidad, consagrado en el derecho administrativo sancionador y en el derecho procesal, exige que la sanción sea adecuada, necesaria y proporcionada a la gravedad de la infracción. La prohibición del uso de IA en la OJV, mientras no exista una política institucional, podría considerarse una medida desproporcionada si se compara con la naturaleza de la infracción. No se trata de un uso malicioso de la IA para fabricar pruebas o engañar al tribunal, sino de una automatización de actos procesales lícitos (9). La conducta de Chateau no consistió en presentar escritos falsos o fraudulentos, sino en presentar escritos verdaderos a una velocidad y volumen que la plataforma no estaba diseñada para absorber (9).
+
+La doctrina ha señalado que la invocación de la responsabilidad penal es igualmente apresurada (9). El candidato natural sería la Ley 21.459 sobre delitos informáticos, que sanciona el ataque a la integridad de un sistema informático; pero ese delito exige dolo, y no está claro que la conducta de Chateau encaje en el tipo penal (9). El abogado no «atacó» el sistema ni vulneró sus mecanismos de seguridad; simplemente utilizó la plataforma conforme a su diseño, aunque a una escala que los diseñadores no habían previsto (9).
+
+La distinción entre automatización e inteligencia artificial, subrayada por la Asociación Gremial Legaltech Chile (Altech A.G.), añade una capa adicional de complejidad (11). No todo robot es IA, y no toda IA es un robot. Una prohibición genérica del «uso de IA» podría afectar a herramientas legítimas de asistencia jurídica —como sistemas de búsqueda de jurisprudencia, generación de borradores o análisis predictivo— que no presentan los mismos riesgos que un bot de inyección masiva (11). La fuente no aclara si el Comité de Jueces, al solicitar la prohibición, tuvo en cuenta esta distinción o si su petición se refería específicamente a la automatización masiva.
+
+### 7.4. El problema de la carga de la prueba: ¿quién debe demostrar la intencionalidad del abuso?
+
+La carga de la prueba en los procedimientos disciplinarios y sancionadores constituye una cuestión procesal de primer orden. En el caso Chateau, la determinación de si existió «abuso procesal» en el sentido del artículo 2 letra d de la Ley 20.886 requiere la demostración de un elemento subjetivo —la intencionalidad de obstaculizar el normal desenvolvimiento del proceso— que no resulta evidente (1) (7).
+
+El oficio del Comité de Jueces Civiles califica la conducta de Chateau como «abuso procesal» sobre la base de la magnitud del ingreso masivo de escritos (1). Sin embargo, la fuente no aclara si el Comité ha realizado una investigación sobre la intencionalidad del abogado o si la calificación se fundamenta exclusivamente en el resultado objetivo —el colapso del sistema—. La declaración verbal del abogado al Call Center de la OJV, en la que señalaba que utilizó un robot para no tener que ingresar los escritos causa por causa, sugiere que su motivación era la eficiencia, no la obstrucción (1) (2). La fuente no aclara si esta declaración ha sido incorporada formalmente al expediente disciplinario.
+
+El problema de la carga de la prueba se agrava por la naturaleza automatizada de la conducta. ¿Quién debe demostrar que el abogado actuó con la intención de colapsar el sistema? ¿O que era razonablemente previsible que el ingreso masivo de 38.477 escritos en 72 horas causaría un colapso? ¿O, por el contrario, debe ser el abogado quien demuestre que actuó de buena fe y que no podía prever las consecuencias de su automatización? La fuente no aclara si existe jurisprudencia chilena que haya abordado estas cuestiones en supuestos similares.
+
+El análisis comparado ofrece algunas orientaciones. En los casos estadounidenses y singapurenses documentados en la Sección 6, el elemento subjetivo no fue determinante para la imposición de sanciones; los tribunales se centraron en el incumplimiento del deber de supervisión y verificación, y en la presentación de documentos con errores objetivos (8) (9) (10). En el caso Chateau, sin embargo, no se alega que los escritos contuvieran errores o falsedades, sino que fueron presentados en un volumen desproporcionado. La analogía, por tanto, no resulta directa.
+
+La doctrina ha señalado que el problema revelado es de arquitectura y solución, no de mala fe del litigante (6) (12). Un marco normativo concebido para corregir al litigante desleal no responde adecuadamente a la pregunta de qué hacer con el litigante diligente que opera a velocidad de máquina (6). La carga de la prueba en un procedimiento sancionador debería centrarse en determinar si el abogado actuó con la diligencia debida al programar y supervisar su robot, y si las consecuencias del colapso eran razonablemente previsibles. La fuente no aclara si el Poder Judicial ha iniciado una investigación formal que incluya la toma de declaraciones al abogado y el análisis técnico del robot utilizado.
+
+---
+
+## Sección 8. Consecuencias prácticas y riesgos sistémicos
+
+### 8.1. El colapso operativo de los tribunales civiles durante el episodio
+
+El ingreso masivo de 38.477 escritos en un período de 72 horas provocó una situación de colapso operativo sin precedentes en los tribunales civiles de Chile. El oficio del Comité de Jueces Civiles de Santiago describe la gravedad de la situación en términos contundentes: «Todo lo indicado, además de aumentar considerablemente nuestra carga de trabajo, influye en el clima de cada tribunal, toda vez que no contamos con los recursos técnicos ni humanos disponibles para enfrentar esta contingencia» (1) (3). La declaración revela que la vulnerabilidad no era únicamente técnica, sino también organizativa: los tribunales carecían de la capacidad de absorción necesaria para procesar un volumen de trabajo que excedía con creces cualquier previsión de diseño.
+
+El impacto operativo se manifestó en múltiples dimensiones. En primer lugar, la plataforma OJV experimentó una ralentización severa que impidió a otros abogados y operadores judiciales ingresar escritos durante el período de saturación (2). El Departamento de Informática de la CAPJ debió elaborar un «escrito tipo» para responder de manera automática, pues el sistema se encontraba tan colapsado que los abogados no podían ingresar escritos en la plataforma (2). Esta medida de emergencia evidencia que el colapso no solo afectó a los tribunales, sino que paralizó la tramitación electrónica para todos los usuarios del sistema, generando una interrupción del servicio público de administración de justicia.
+
+En segundo lugar, los funcionarios judiciales se vieron desbordados por la necesidad de procesar y gestionar el ingreso masivo de escritos. El oficio del Comité de Jueces alude al «clima de cada tribunal», sugiriendo que la sobrecarga generó tensiones internas y afectó la moral de los equipos de trabajo (1). La fuente no aclara si se adoptaron medidas extraordinarias, como la asignación de personal adicional o la extensión de jornadas laborales, para hacer frente a la contingencia. Tampoco existe evidencia suficiente para afirmar que el colapso haya afectado la salud de los funcionarios o generado bajas laborales.
+
+### 8.2. El impacto en la tramitación de causas de terceros (efecto dominó)
+
+Una de las consecuencias más relevantes del colapso operativo es el impacto en la tramitación de causas de terceros ajenos al incidente. El ingreso masivo de escritos no solo afectó a los tribunales que recibieron las presentaciones de Chateau, sino que generó un efecto dominó que retrasó la tramitación de otras causas pendientes.
+
+La ralentización de la OJV durante el período de saturación impidió que otros abogados pudieran presentar sus escritos con normalidad, lo que pudo haber afectado plazos procesales y causado perjuicios a sus clientes (2). Los tribunales, desbordados por la necesidad de procesar las presentaciones masivas, redujeron su capacidad de atender otras causas, lo que generó retrasos acumulativos en la tramitación de expedientes que no tenían relación con el incidente.
+
+La fuente no aclara si se ha cuantificado el número de causas de terceros que resultaron afectadas por el colapso, ni si se han presentado reclamaciones o recursos por la demora en la tramitación. Tampoco existe evidencia suficiente para afirmar que algún abogado o litigante haya solicitado la declaración de nulidad procesal o la reposición de plazos con fundamento en el colapso del sistema. La ausencia de información sobre estas cuestiones dificulta la evaluación del impacto real del incidente en la administración de justicia y en los derechos de los justiciables.
+
+### 8.3. El riesgo de replicación del modus operandi por otros operadores
+
+El caso Chateau, al hacerse público, ha puesto en evidencia una vulnerabilidad del sistema que otros operadores jurídicos podrían explotar. El modus operandi utilizado por el abogado —la automatización de la presentación de escritos mediante un robot o agente externo— no requiere conocimientos técnicos avanzados y puede ser replicado por cualquier usuario con acceso a la OJV y la capacidad de programar un script o utilizar una herramienta de automatización de procesos robóticos (RPA) (11).
+
+El bloqueo de la IP del abogado, adoptado por la CAPJ como medida paliativa, no aborda la vulnerabilidad estructural del sistema (11). Bastaría con que el robot fuera conectado desde otra IP para que el abogado pudiera seguir realizando la misma conducta (11). Del mismo modo, cualquier otro operador podría replicar el modus operandi utilizando una dirección IP diferente, un proxy o un conjunto de direcciones rotatorias. La ausencia de controles anti-bot —como Captcha, límites de frecuencia por usuario o sistemas de detección de tráfico anómalo— significa que el sistema sigue siendo vulnerable a ataques de automatización (0) (6) (7) (8) (9).
+
+La fuente no aclara si la CAPJ ha implementado, tras el episodio, medidas adicionales de control de acceso más allá del bloqueo de IP. Tampoco existe evidencia suficiente para afirmar que se haya iniciado un proceso de revisión de la arquitectura de la OJV para incorporar los controles técnicos solicitados por el Comité de Jueces (1) (2) (3). El riesgo de replicación se mantiene mientras no se adopten medidas estructurales que impidan la presentación masiva automatizada.
+
+### 8.4. La erosión de la confianza en el sistema de justicia digital
+
+El colapso de la OJV y la consiguiente paralización de la tramitación electrónica durante el período de saturación han generado un impacto reputacional significativo para el Poder Judicial y para el sistema de justicia digital en su conjunto.
+
+La confianza de los ciudadanos en la administración de justicia depende, en buena medida, de la percepción de que el sistema funciona de manera eficiente, accesible y segura. El colapso de la plataforma, provocado por la acción de un único abogado, ha puesto en evidencia las debilidades del sistema digital y ha generado interrogantes sobre su capacidad para adaptarse a los desafíos de la era de la automatización y la inteligencia artificial (12).
+
+El análisis de CIPER ha señalado que el incidente «abrió la conversación correcta: no quién falló, sino cómo se construyen sistemas judiciales capaces de operar a velocidad de máquina con la influencia de la inteligencia artificial» (12). La confianza en el sistema de justicia digital no se restablece únicamente mediante la adopción de medidas técnicas paliativas; requiere una reflexión profunda sobre la gobernanza de la tecnología en el ámbito judicial y la definición de una política institucional que regule el uso de herramientas automatizadas (12).
+
+La fuente no aclara si el Poder Judicial ha adoptado medidas de comunicación pública para explicar a la ciudadanía las causas del colapso y las medidas adoptadas para evitar su repetición. Tampoco existe evidencia suficiente para afirmar que se haya realizado una evaluación del impacto reputacional del incidente o que se hayan diseñado estrategias de restauración de la confianza. La ausencia de información sobre estas cuestiones sugiere que el Poder Judicial podría estar subestimando el daño reputacional causado por el episodio.
+
+El artículo 2 letra c de la Ley 20.886 establece que «se prohíbe el tratamiento masivo de los datos personales contenidos en el sistema de tramitación electrónica del Poder Judicial, sin su autorización previa» (7). La infracción de esta norma, cometida por entes públicos y privados, será sancionada conforme a la Ley N° 19.628 sobre protección de datos (7). La fuente no aclara si el ingreso masivo de escritos por parte de Chateau implicó el tratamiento masivo de datos personales en el sentido de la ley, ni si la Corporación Administrativa del Poder Judicial o el Consejo para la Transparencia han iniciado una investigación al respecto.
+
+---
+
+## Sección 9. Propuestas de política institucional y reforma normativa
+
+### 9.1. La necesidad de una política institucional unificada del Poder Judicial sobre IA
+
+El caso Chateau ha puesto de manifiesto una carencia estructural que trasciende el incidente concreto: la ausencia de una política institucional unificada del Poder Judicial sobre el uso de inteligencia artificial y herramientas automatizadas en el ámbito judicial (1) (6) (12). El propio Comité de Jueces Civiles de Santiago, en su oficio a la Corte Suprema, solicitó «que se disponga la prohibición del uso de IA para el ingreso de escritos, en tanto no existan una política institucional clara tendiente al control y buen uso de los instrumentos tecnológicos» (1) (6) (10) (14). Esta solicitud revela que los jueces reconocen que la solución estructural pasa por una política que aún no existe.
+
+La doctrina especializada ha señalado que el incidente «abrió la conversación correcta: no quién falló, sino cómo se construyen sistemas judiciales capaces de operar a velocidad de máquina con la influencia de la inteligencia artificial» (12). El Poder Judicial chileno ya había identificado la necesidad de abordar la cuestión antes del colapso de la OJV, al incluir en el Plan Estratégico del Poder Judicial 2026-2030 la definición de una Política Institucional de Inteligencia Artificial (11). Sin embargo, el episodio ha acelerado la urgencia de su elaboración.
+
+La política institucional debería abordar, al menos, las siguientes dimensiones: (i) la regulación del uso de herramientas automatizadas por parte de los operadores jurídicos que interactúan con la OJV; (ii) la definición de límites operativos para la presentación de escritos; (iii) el establecimiento de mecanismos de supervisión y auditoría; (iv) la implementación de controles técnicos adecuados; y (v) la definición de un régimen sancionatorio proporcionado a las infracciones. La fuente no aclara si el Poder Judicial ha iniciado formalmente el proceso de elaboración de esta política, más allá de la solicitud formulada por el Comité de Jueces.
+
+### 9.2. La actualización de las condiciones de uso de la OJV para incluir cláusulas anti-automatización
+
+Una de las medidas de más fácil implementación y mayor efectividad inmediata consiste en la actualización de las condiciones de uso de la Oficina Judicial Virtual (OJV). El párrafo 10 de las condiciones de uso fue invocado por la CAPJ para fundamentar el bloqueo de la IP del abogado (1). Sin embargo, las condiciones de uso actuales no contienen disposiciones específicas que regulen la presentación automatizada o masiva de escritos.
+
+La doctrina ha señalado que un marco normativo concebido para corregir al litigante desleal no responde adecuadamente a la pregunta de qué hacer con el litigante diligente que opera a velocidad de máquina (6). La actualización de las condiciones de uso podría incluir cláusulas que: (i) definan explícitamente la presentación automatizada o masiva como una infracción de las condiciones de uso; (ii) establezcan límites de frecuencia de presentación por usuario y por período de tiempo; (iii) prohíban el uso de robots, scripts o agentes externos para interactuar con la plataforma sin autorización expresa; y (iv) prevean sanciones proporcionadas, que podrían ir desde la advertencia hasta la suspensión temporal o definitiva del acceso.
+
+La fuente no aclara si la CAPJ ha iniciado un proceso de revisión y actualización de las condiciones de uso de la OJV a raíz del episodio. Tampoco existe evidencia suficiente para afirmar que se haya consultado a los gremios de abogados o a las asociaciones de legaltech en el marco de dicho proceso. La actualización de las condiciones de uso, aunque necesaria, no constituye por sí misma una solución suficiente si no va acompañada de controles técnicos adecuados.
+
+### 9.3. La incorporación de controles técnicos obligatorios (Captcha, límite de presentaciones por período, autenticación reforzada)
+
+La carencia de controles técnicos en la OJV ha sido identificada como la vulnerabilidad estructural que permitió el ingreso masivo de escritos (0) (6) (7) (8) (9). El Comité de Jueces Civiles solicitó expresamente que se dispongan «medidas tecnológicas adecuadas y urgentes para evitar el ingreso masivo de escritos (tales como el uso de un Captcha) y la extracción masiva de datos» (2). La implementación de estos controles es una medida de eficacia inmediata que no requiere reforma normativa.
+
+Los controles técnicos que deberían incorporarse incluyen, al menos: (i) un sistema *Captcha* que verifique que la interacción proviene de un usuario humano y no de un robot; (ii) límites de frecuencia de presentación por usuario y por período de tiempo (por ejemplo, un número máximo de escritos por hora o por día); (iii) sistemas de detección de tráfico anómalo que identifiquen patrones de comportamiento inusuales; (iv) autenticación multifactor para el acceso a la plataforma; y (v) mecanismos de auditoría que permitan rastrear la actividad de cada usuario.
+
+La doctrina ha señalado que la solución al problema revelado «no pasa por restringir la tecnología, sino por rediseñar los sistemas para la era de la automatización» (12). La incorporación de controles técnicos es un paso necesario, pero no suficiente. Se requiere una aproximación integral que combine medidas técnicas, normativas y de gobernanza.
+
+La fuente no aclara si la CAPJ ha iniciado el proceso de implementación de estos controles técnicos, ni si existe un cronograma para su incorporación. Tampoco existe evidencia suficiente para afirmar que se haya realizado una evaluación de costos y plazos para la implementación de las medidas solicitadas por el Comité de Jueces.
+
+### 9.4. La reforma de la Ley 20.886 para tipificar expresamente el abuso mediante automatización
+
+La Ley 20.886, publicada en 2015, fue concebida en un contexto tecnológico muy anterior a la irrupción masiva de la inteligencia artificial y los bots de automatización (7). Su artículo 2 letra d establece el principio de buena fe procesal, pero no tipifica expresamente la presentación masiva automatizada como una modalidad de abuso procesal (7). La interpretación extensiva que realiza el Comité de Jueces, aunque plausible, no está exenta de debate (9).
+
+La reforma de la Ley 20.886 para incorporar una tipificación expresa del abuso mediante automatización constituiría una solución normativa de largo plazo. La reforma podría: (i) definir el «abuso procesal mediante automatización» como la utilización de sistemas automatizados para presentar escritos en un volumen o velocidad que obstaculice el normal desenvolvimiento del proceso; (ii) establecer un régimen sancionatorio específico para esta conducta; (iii) atribuir al infractor la carga de la prueba sobre la buena fe y la razonabilidad de la automatización; y (iv) facultar a los tribunales para adoptar medidas cautelares, como la suspensión temporal del acceso a la plataforma.
+
+La doctrina ha señalado que la invocación de la responsabilidad penal en el caso Chateau es apresurada (9). El candidato natural sería la Ley 21.459 sobre delitos informáticos, que sanciona el ataque a la integridad de un sistema informático; pero ese delito exige dolo, y no está claro que la conducta de Chateau encaje en el tipo penal (9). La reforma de la Ley 20.886 permitiría establecer un régimen sancionatorio proporcionado, que no dependa de la tipificación penal de una conducta que, en su dimensión individual, es lícita.
+
+La fuente no aclara si existe algún proyecto de reforma de la Ley 20.886 en tramitación en el Congreso Nacional, ni si el caso Chateau ha generado iniciativas legislativas en este sentido. Tampoco existe evidencia suficiente para afirmar que el Poder Judicial haya formulado propuestas concretas de reforma normativa.
+
+### 9.5. La articulación con la futura Ley de IA en Chile (proyecto en tramitación)
+
+El proyecto de ley que regula los sistemas de inteligencia artificial (Boletín N° 16821-19), que se encontraba en tramitación en el Senado al momento del colapso de la OJV, ofrece un marco normativo de alcance general que podría articularse con las necesidades específicas del ámbito judicial (2) (8) (12).
+
+El proyecto establece principios obligatorios para el desarrollo y uso de la IA, prohíbe usos de riesgo inaceptable, fija exigencias para sistemas de alto riesgo y contempla multas de hasta 20.000 UTM, además de un régimen de responsabilidad civil y deberes de confidencialidad (2) (8) (12). En lo medular, el proyecto regula los usos del sistema de IA, promoviendo su desarrollo ético y sostenible, respetando los derechos fundamentales y los principios democráticos (8). Establece que los usos de los sistemas de IA se clasificarán de acuerdo con su riesgo, en categorías de riesgo inaceptable, alto riesgo, riesgo limitado y sin riesgo evidente (8). La iniciativa también señala que todos los operadores deberán observar principios generales: supervisión humana, seguridad técnica, protección de datos y privacidad, transparencia e identificación, equidad social y de género, bienestar social y medioambiental, rendición de cuentas y responsabilidad, y protección de los derechos de los consumidores y de autor (8). El proyecto crea además un Consejo Asesor Técnico de IA (8).
+
+La articulación de la Ley de IA con el ámbito judicial podría producirse a través de: (i) la inclusión de los sistemas de IA utilizados en el ámbito judicial dentro de la categoría de «alto riesgo», lo que sometería su uso a requisitos más estrictos; (ii) el establecimiento de obligaciones específicas de supervisión humana y rendición de cuentas para los operadores judiciales; (iii) la atribución al Poder Judicial de la facultad de dictar normas complementarias para la aplicación de la ley en el ámbito de su competencia; y (iv) la previsión de un régimen sancionatorio específico para las infracciones cometidas en el contexto de la administración de justicia.
+
+La Cámara Chilena de Inteligencia Artificial (CCHIA) ha señalado que la discusión no debe centrarse únicamente en si se utilizó o no inteligencia artificial, sino en establecer bajo qué condiciones, con qué controles y dentro de qué marco de responsabilidad pueden utilizarse sistemas automatizados para interactuar con plataformas institucionales críticas (12). La CCHIA considera especialmente relevante que las instituciones públicas y privadas que incorporen inteligencia artificial, agentes autónomos o sistemas automatizados desarrollen políticas específicas de gobernanza de IA, incluyendo evaluación de riesgos, trazabilidad de las acciones ejecutadas, mecanismos de auditoría y protocolos de respuesta ante incidentes (12).
+
+La fuente no aclara si el proyecto de Ley de IA en tramitación contiene disposiciones específicas sobre el uso de sistemas automatizados en el ámbito judicial, ni si el episodio ha generado presiones para incorporar enmiendas que aborden específicamente la presentación masiva de escritos. Tampoco existe evidencia suficiente para afirmar que el Poder Judicial haya iniciado, a raíz del caso, un proceso de elaboración de una política institucional propia sobre IA que pueda articularse con la futura ley.
+
+---
+
+## Sección 10. Conclusiones y perspectiva académica
+
+### 10.1. El caso como síntoma de una disrupción tecnológica no anticipada
+
+El caso del abogado Paul Chateau y el colapso de la Oficina Judicial Virtual constituye un episodio paradigmático de la disrupción tecnológica en el ámbito de la administración de justicia. No se trata de un incidente aislado ni de una anécdota curiosa, sino de un síntoma de un fenómeno de alcance global: la irrupción de la automatización y la inteligencia artificial en sistemas diseñados para una era pre-digital o, en el mejor de los casos, para una interacción exclusivamente humana.
+
+La doctrina especializada ha señalado que «durante años, gran parte de los sistemas digitales públicos fueron concebidos para interactuar con personas y no con softwares. Cada clic suponía un ser humano detrás de una pantalla y cada formulario implicaba tiempo, paciencia y limitaciones físicas. Esa era una restricción natural del mundo analógico trasladada al mundo digital. La inteligencia artificial, los robots y la automatización, simplemente eliminaron esa restricción» (6). El caso Chateau no revela un problema de mala fe del litigante, sino de arquitectura y diseño institucional (6) (12). La OJV fue implementada en un contexto pre-bots y pre-inteligencia artificial, y su colapso fue la consecuencia previsible de una vulnerabilidad estructural que ningún operador había identificado ni corregido (11).
+
+La ausencia de controles técnicos básicos —como Captcha, límites de frecuencia por usuario o sistemas de detección de tráfico anómalo— evidencia que el diseño de la plataforma no contempló escenarios de automatización masiva (0) (6) (7) (8) (9). La respuesta técnica, limitada al bloqueo de la IP del infractor, fue paliativa y no estructural (11). El marco normativo, representado por la Ley 20.886 de 2015, fue concebido en un contexto tecnológico radicalmente distinto y no contiene previsiones específicas frente a la automatización masiva (7). La interpretación extensiva del «abuso procesal» que realiza el Comité de Jueces, aunque plausible, no está exenta de debate y plantea problemas de tipicidad y proporcionalidad (9).
+
+### 10.2. La tensión entre eficiencia procesal y seguridad del sistema
+
+El caso Chateau pone de manifiesto una tensión fundamental en la administración de justicia digital: la tensión entre la eficiencia procesal y la seguridad del sistema. El abogado Chateau, al automatizar la presentación de renuncias de patrocinio y desarchivos, buscaba eficiencia —desvincularse de sus clientes de forma rápida y sin la carga de la tramitación individualizada— pero su acción generó un colapso que paralizó el sistema y afectó a terceros (1) (2) (3).
+
+Esta tensión no es nueva en el derecho procesal. El principio de buena fe procesal, consagrado en el artículo 2 letra d de la Ley 20.886, busca precisamente conciliar la libertad de las partes para ejercer sus derechos procesales con la necesidad de garantizar el normal desenvolvimiento del proceso (7). Sin embargo, el principio de buena fe fue concebido para operadores humanos, no para sistemas automatizados. La pregunta que el caso plantea es si el principio de buena fe debe extenderse a la conducta del programador del bot y, en caso afirmativo, con qué estándares (6).
+
+La doctrina ha señalado que «un marco normativo concebido para corregir al litigante desleal no responde adecuadamente a la pregunta de qué hacer con el litigante diligente que opera a velocidad de máquina» (6). La solución no pasa por restringir la tecnología ni por sancionar ejemplarmente al infractor, sino por rediseñar los sistemas para la era de la automatización (12). La incorporación de controles técnicos, la actualización de las condiciones de uso de la OJV y la reforma de la Ley 20.886 para tipificar expresamente el abuso mediante automatización son medidas necesarias para restaurar el equilibrio entre eficiencia y seguridad (1) (2) (3) (6) (7) (12).
+
+### 10.3. La responsabilidad del operador jurídico en el uso de herramientas automatizadas
+
+El caso Chateau plantea interrogantes fundamentales sobre la responsabilidad de los operadores jurídicos en el uso de herramientas automatizadas. ¿Hasta qué punto un abogado es responsable de las consecuencias de la automatización que utiliza? ¿Cuál es el estándar de diligencia exigible? ¿Debe el abogado prever los riesgos sistémicos de su actuación automatizada?
+
+El derecho comparado ofrece algunas orientaciones. La ABA Formal Opinion 512 establece que los abogados deben mantener una competencia tecnológica que incluya una «comprensión razonable de los beneficios y riesgos» de las herramientas que utilizan (5). Depender de la IA para generar borradores sin verificar de forma independiente el texto «podría violar el deber de proporcionar una representación competente» (5). Los casos estadounidenses y singapurenses documentados en la Sección 6 han sancionado a abogados por no verificar las citas jurisprudenciales generadas por IA, aunque en esos casos se trataba de errores de contenido (falsedades), no de volumen de presentaciones (8) (9) (10).
+
+En el caso Chateau, sin embargo, no se alega que los escritos contuvieran errores o falsedades, sino que fueron presentados en un volumen desproporcionado. La pregunta es si el abogado tenía el deber de prever que el ingreso masivo de 38.477 escritos en 72 horas causaría un colapso del sistema, y si su conducta fue diligente al programar y supervisar el robot. La fuente no aclara si Chateau realizó una evaluación de riesgos antes de implementar la automatización, ni si consultó a la CAPJ o al Poder Judicial sobre los límites de la plataforma. La ausencia de información sobre estas cuestiones impide una evaluación definitiva de su responsabilidad.
+
+El análisis de CIPER ha señalado que «el incidente abrió la conversación correcta: no quién falló, sino cómo se construyen sistemas judiciales capaces de operar a velocidad de máquina con la influencia de la inteligencia artificial» (12). La responsabilidad del operador jurídico no puede desvincularse de la responsabilidad del diseñador del sistema. La solución al problema revelado por el caso Chateau requiere un enfoque integral que combine la responsabilidad individual del abogado, la actualización de los marcos normativos y el rediseño de los sistemas tecnológicos.
+
+### 10.4. Líneas de investigación futuras: diseño de sistemas judiciales resilientes, gobernanza algorítmica y estándares éticos
+
+El caso Chateau abre múltiples líneas de investigación para el derecho procesal, la informática jurídica y la gobernanza tecnológica. En primer lugar, el diseño de sistemas judiciales resilientes frente a la automatización masiva constituye un desafío de ingeniería y de política pública. ¿Cómo deben diseñarse las plataformas de tramitación electrónica para absorber picos de demanda y detectar patrones de comportamiento anómalos? ¿Qué controles técnicos son necesarios y suficientes para prevenir la saturación del sistema? ¿Cómo se equilibran la accesibilidad y la seguridad?
+
+En segundo lugar, la gobernanza algorítmica en el ámbito judicial requiere una reflexión profunda sobre los marcos normativos aplicables. ¿Debe existir una ley específica que regule el uso de IA en la administración de justicia, o es suficiente con la aplicación de los principios generales del derecho procesal? ¿Qué estándares éticos deben guiar el desarrollo y la implementación de sistemas automatizados en el ámbito judicial? ¿Cómo se garantiza la supervisión humana efectiva sin renunciar a los beneficios de la automatización?
+
+El proyecto de Ley de IA en Chile (Boletín N° 16821-19), que se encontraba en tramitación al momento del colapso de la OJV, ofrece un marco normativo de alcance general que podría articularse con las necesidades específicas del ámbito judicial (2) (8) (12). La articulación de la Ley de IA con el ámbito judicial podría producirse a través de la inclusión de los sistemas de IA utilizados en el ámbito judicial dentro de la categoría de «alto riesgo», lo que sometería su uso a requisitos más estrictos (8). La CCHIA ha señalado que la discusión no debe centrarse únicamente en si se utilizó o no inteligencia artificial, sino en establecer bajo qué condiciones, con qué controles y dentro de qué marco de responsabilidad pueden utilizarse sistemas automatizados para interactuar con plataformas institucionales críticas (12).
+
+En tercer lugar, el caso plantea la necesidad de desarrollar estándares éticos y profesionales para el uso de IA en la práctica legal. La ABA Formal Opinion 512, sin excluir el uso de la IA generativa, sujeta al abogado que la emplea a las mismas obligaciones de competencia, supervisión y veracidad exigibles en cualquier otro aspecto del ejercicio profesional (28). Sin embargo, el contenido concreto de la competencia tecnológica del abogado aún no está definido con precisión. ¿Qué conocimientos técnicos debe tener un abogado para utilizar herramientas de IA de forma competente? ¿Qué nivel de supervisión es exigible? ¿Qué obligaciones de transparencia y rendición de cuentas deben cumplir los abogados que utilizan IA?
+
+El caso Chateau, en definitiva, es un recordatorio de que la transformación digital de la justicia no es un proceso lineal ni exento de riesgos. La digitalización de los procedimientos judiciales, iniciada en Chile con la Ley 20.886 de 2015, fue un paso necesario y beneficioso para la modernización de la justicia. Sin embargo, la digitalización no es un fin en sí mismo, sino un medio para garantizar una justicia más accesible, eficiente y transparente. La irrupción de la inteligencia artificial y la automatización exige una reflexión continua sobre los valores que deben guiar la administración de justicia en la era digital, y sobre los mecanismos institucionales y normativos necesarios para preservarlos.
+
+---
+
+## Bibliografía
+
+(0) La Tercera (28 de julio de 2026). "Alerta por uso de IA: jueces civiles piden a la Suprema duras medidas contra abogado que subió casi 40 mil escritos en tres días". Disponible en: https://www.latercera.com/nacional/noticia/alerta-por-uso-de-ia-jueces-civiles-piden-a-la-suprema-duras-medidas-contra-abogado-que-ha-subido-casi-40-mil-escritos/?outputType=base-amp-type
+
+(1) Emol (28 de julio de 2026). "Sistema del Poder Judicial colapsa luego que abogado ingresara más de 38 mil escritos en tres días: Sospechan uso de IA". Disponible en: https://www.emol.com/noticias/Nacional/2026/07/28/1206935/inteligencia-artificial-caida-poder-judicial.html
+
+(2) 24 Horas (28 de julio de 2026). "Acusan a abogado de enviar 38 mil escritos en solo horas y saturar el sistema: jueces piden prohibir uso de IA en tribunales". Disponible en: https://www.24horas.cl/actualidad/nacional/jueces-piden-prohibir-el-uso-de-ia-en-tribunales-ingreso-masivo-abogado
+
+(3) T13 (28 de julio de 2026). "Uso de IA habría hecho colapsar plataforma del Poder Judicial: La respuesta de la Corte Suprema y qué medidas se adoptaron". Disponible en: https://www.t13.cl/noticia/nacional/uso-ia-habria-hecho-colapsar-plataforma-poder-judicial-respuesta-corte-suprema-28-7-2026
+
+(4) Notichile (29 de julio de 2026). "Chile.- Bloquean Oficina Judicial Virtual a abogado que presentó 38 mil escritos con IA". Disponible en: https://www.notichile.cl/chile/noticia-chile-bloquean-oficina-judicial-virtual-abogado-presento-38-mil-escritos-ia-20260729154051.html
+
+(5) El Pingüino (29 de julio de 2026). "Abogado colapsa sistema al ingresar más de 38 mil escritos usando un bot". Disponible en: https://elpinguino.com/noticia/2026/07/29/abogado-colapsa-sistema-al-ingresar-mas-de-38-mil-escritos-usando-un-bot
+
+(6) MERY NIETO, Rafael (director de Inteligencia Artificial y Derecho, Facultad de Derecho, Universidad Diego Portales), columna de opinión en CIPER Chile (2 de agosto de 2026). "El colapso de un sistema de justicia que nunca imaginó que sería eficiente". Disponible en: https://www.ciperchile.cl/2026/08/02/el-colapso-de-un-sistema-de-justicia-que-nunca-imagino-que-seria-eficiente/
+
+(7) Ley N° 20.886 (2015). "Establece la tramitación electrónica de los procedimientos judiciales". Disponible en: https://www.bcn.cl/leychile/navegar?idNorma=1087109
+
+(8) Biblioteca del Congreso Nacional de Chile. "Proyecto de ley que regula los sistemas de inteligencia artificial (Boletín N° 16821-19)". Disponible en: https://www.bcn.cl
+
+(9) Actualidad Jurídica - DOE (3 de agosto de 2026). "Lo que 38.477 escritos en tres días revelan sobre la IA y la justicia chilena". Disponible en: https://actualidadjuridica.doe.cl
+
+(10) Poder Judicial de Costa Rica, Secretaría General de la Corte. Circular N.° 31-2026, "Reglas y lineamientos éticos para el uso de Inteligencia Artificial Generativa (ChatGPT, Gemini y NotebookLM) por parte de las personas servidoras judiciales" (aprobada en sesión del Consejo Superior N.° 12-2026, 12 de febrero de 2026). Disponible en: https://vlex.co.cr/vid/circular-n-031-secretaria-1115557980
+
+(11) BioBioChile (28 de julio de 2026). "Legaltech responde a jueces y rechaza prohibir la IA tras ingreso masivo de escritos judiciales". Disponible en: https://www.biobiochile.cl
+
+(12) Revista Gerencia — Tecnologías y Comunicaciones en Chile (30 de julio de 2026). "CCHIA llama a fortalecer la gobernanza y el uso responsable de la IA tras alerta por ingreso masivo de escritos al Poder Judicial". Disponible en: https://www.gerencia.cl/inteligencia-artificial/cchia-llama-a-fortalecer-la-gobernanza-y-el-uso-responsable-de-la-ia-tras-alerta-por-ingreso-masivo-de-escritos-al-poder-judicial/
+
+(13) El Mostrador (8 de julio de 2026). "Inteligencia artificial en la justicia: la pregunta actual es cómo regularla". Disponible en: https://www.elmostrador.cl
+
+(14) La Tercera (28 de julio de 2026). "Jueces piden prohibir uso de inteligencia artificial en tribunales tras colapso de sistema por ingreso de 38 mil escritos". Disponible en: https://www.latercera.com
+
+**Derecho comparado**
+
+(15) Virginia Lawyers Weekly / Missouri Lawyers Media (6 de febrero de 2026). "Kansas judge fines attorneys over AI-generated court brief". Disponible en: https://valawyersweekly.com/2026/02/06/kansas-judge-fines-attorneys-over-ai-generated-court-brief/
+
+(16) *Lexos Media IP, LLC v. Overstock.com, Inc.*, No. 22-2324 (D. Kan., 2 de febrero de 2026), orden de sanciones de la jueza Julie A. Robinson. Disponible en: https://www.casemine.com/judgement/us/69830eeb6ae7f664f277f6a9/amp
+
+(17) ABA Journal (1 de abril de 2026). "Federal judge terminates 4 plaintiff and defense attorneys over AI errors". Disponible en: https://www.abajournal.com/news/article/federal-judge-terminates-4-plaintiff-and-defense-attorneys-over-ai-errors
+
+(18) Bloomberg Law (8-9 de junio de 2026). "Lawyers on Both Sides in Mississippi Case Punished for AI Errors". Disponible en: https://news.bloomberglaw.com/litigation/lawyers-on-both-sides-in-mississippi-case-punished-for-ai-errors
+
+(19) ABA Journal (2 de abril de 2026). "2 New Orleans government attorneys resign over use of fake AI citations". Disponible en: https://www.abajournal.com/news/article/2-new-orleans-government-attorneys-resign-over-use-of-fake-ai-citations
+
+(20) The Global Legal Post (22 de abril de 2026). "Sullivan & Cromwell apologises for AI hallucinations in letter to US court". Disponible en: https://www.globallegalpost.com/news/sullivan-cromwell-apologises-for-ai-hallucinations-in-letter-to-us-court-1300253238
+
+(21) VnExpress International (marzo de 2026). "Singapore lawyers fined \$3,900 each for citing AI-generated fake cases". Disponible en: https://e.vnexpress.net/news/tech/tech-news/singapore-lawyers-fined-3-900-each-for-citing-ai-generated-fake-cases-5047712.html
+
+(22) Galicia Press (15 de julio de 2026). "El TSXG multa con 1.800 euros a un abogado gallego por un recurso lleno de sentencias inventadas por la IA". Disponible en: https://www.galiciapress.es/articulo/movimientos/2026-07-15/5954388-tsxg-multa-1800-euros-abogado-gallego-recurso-lleno-sentencias-inventadas-ia
+
+(23) Consejo General del Poder Judicial (CGPJ), Oficina de Comunicación TSJ Canarias. "El TSJ de Canarias multa a un abogado por citar hasta 48 sentencias falsas sugeridas por IA" (auto de 10 de febrero de 2026). Disponible en: https://www.poderjudicial.es/cgpj/es/Poder-Judicial/Noticias-Judiciales/El-TSJ-de-Canarias-multa-a-un-abogado-por-citar-hasta-48-sentencias-falsas-sugeridas-por-IA
+
+(24) Infobae España (29 de julio de 2026). "El TSJC multa con 840 euros a un abogado por citar en un recurso judicial al menos 25 sentencias falsas inventadas por una inteligencia artificial". Disponible en: https://www.infobae.com/espana/2026/07/29/el-tsjc-multa-con-840-euros-a-un-abogado-por-citar-en-un-recurso-judicial-al-menos-25-sentencias-falsas-inventadas-por-una-inteligencia-artificial/
+
+(25) Civil Justice Council / Courts and Tribunals Judiciary (Reino Unido). "Consultation on the Use of AI in preparing court documents" (febrero-abril de 2026). Disponible en: https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/cjc/latest-news/
+
+(26) Herbert Smith Freehills Kramer (julio de 2026). "Civil Justice Council publishes update on consultation responses regarding use of AI for preparing court documents". Disponible en: https://www.hsfkramer.com/notes/litigation/2026-07/civil-justice-council-publishes-update-on-consultation-responses-regarding-use-of-ai-for-preparing-court-documents
+
+(27) Supreme Court of Victoria, Australia (14 de mayo de 2026). "New Practice Note and Judicial Guidelines on the use of artificial intelligence" (SC GEN 25). Disponible en: https://www.supremecourt.vic.gov.au/news/new-practice-note-and-judicial-guidelines-on-the-use-of-artificial-intelligence
+
+(28) American Bar Association, Standing Committee on Ethics and Professional Responsibility. "Formal Opinion 512: Generative Artificial Intelligence Tools" (29 de julio de 2024). Disponible en: https://www.americanbar.org/news/abanews/aba-news-archives/2024/07/aba-issues-first-ethics-guidance-ai-tools/
