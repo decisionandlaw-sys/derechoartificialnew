@@ -99,7 +99,7 @@
   .prose-editorial {
     @apply prose prose-invert max-w-none
     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
-    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
+    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-justify
     prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
     prose-blockquote:border-l-[3px] prose-blockquote:border-[hsl(var(--accent))] prose-blockquote:pl-6 prose-blockquote:italic
     prose-strong:text-[hsl(var(--foreground))]
@@ -113,7 +113,7 @@
   .prose-editorial-light {
     @apply prose prose-neutral max-w-none
     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
-    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-left
+    prose-p:font-serif-custom prose-p:text-[1.0625rem] prose-p:leading-[1.75] prose-p:text-[hsl(var(--text-body))] prose-p:text-justify
     prose-li:font-serif-custom prose-li:text-[1.0625rem] prose-li:leading-[1.75] prose-li:text-[hsl(var(--text-body))]
     prose-blockquote:border-l-[3px] prose-blockquote:border-[hsl(var(--accent))] prose-blockquote:pl-6 prose-blockquote:italic
     prose-strong:text-[hsl(var(--foreground))]
