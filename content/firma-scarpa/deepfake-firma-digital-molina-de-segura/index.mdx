@@ -1,0 +1,353 @@
+---
+title: "Deepfake en tiempo real: así cayó el fraude a la firma digital en España"
+description: "Un ciberdelincuente burló 38 veces la videoidentificación con una máscara digital hasta que un fallo de un segundo lo delató. Análisis penal, de eIDAS y del RGPD."
+date: "2026-08-20"
+tags: ["deepfake", "eIDAS", "certificados digitales", "ciberdelincuencia", "falsedad documental"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "deepfake-firma-digital-molina-de-segura"
+readingTime: 48
+image: "/images/firma-scarpa/deepfake-firma-digital-molina-de-segura/cover.jpg"
+---
+
+# El instante en que la IA dejó de ser invisible: deepfakes en tiempo real, fallos técnicos y la primera detección en España de un fraude de identidad sintética
+
+*Análisis criminológico, técnico y jurídico del caso de Molina de Segura (2026): implicaciones para los sistemas de verificación de identidad por vídeo, la delincuencia impulsada por inteligencia artificial y la respuesta institucional en el marco de la Unión Europea*
+
+---
+
+## Índice
+
+**Sección 1. Introducción: el caso que marca un punto de inflexión**
+- 1.1. Presentación del caso y contexto general
+- 1.2. Relevancia del caso en el panorama de la ciberdelincuencia con IA
+- 1.3. Objetivo y estructura del artículo
+
+**Sección 2. Metodología del fraude: anatomía de un sistema de suplantación con IA**
+- 2.1. El rol de los certificados digitales y la videoidentificación
+- 2.2. *Deepfake* en tiempo real: la máscara digital como herramienta de suplantación
+- 2.3. El sistema de iluminación casero: simulación de hologramas de seguridad
+- 2.4. Capas de anonimización: VPN, líneas telefónicas y dispositivos
+
+**Sección 3. El fallo que lo delató: el instante técnico como punto de quiebre**
+- 3.1. Descripción del incidente: el retraso de procesamiento de «apenas un segundo»
+- 3.2. Análisis técnico de la vulnerabilidad del sistema
+- 3.3. Implicaciones para la fiabilidad de los sistemas de verificación por vídeo
+
+**Sección 4. Marco jurídico y tipificación penal**
+- 4.1. Delito continuado de falsedad documental en documento oficial
+- 4.2. Suplantación de identidad y uso de firmas digitales fraudulentas
+- 4.3. Marco normativo europeo: eIDAS, RGPD y su aplicación al caso
+- 4.4. Consecuencias penales y procesales
+
+**Sección 5. Contexto criminológico: el auge del fraude de identidad sintética**
+- 5.1. Datos sectoriales: el incremento exponencial del fraude de identidad sintética
+- 5.2. La IA como facilitadora del cibercrimen: el informe EU-SOCTA 2025 de Europol
+- 5.3. El caso como paradigma de una nueva generación de delitos
+
+**Sección 6. Respuesta institucional y desafíos para los sistemas de verificación**
+- 6.1. Actuación de la Policía Nacional y de la Unidad Central de Ciberdelincuencia
+- 6.2. Vulnerabilidades de los sistemas automatizados de videoidentificación
+- 6.3. Propuestas técnicas de mitigación: Deepsight, VeriLight y otras aproximaciones
+
+**Sección 7. Conclusiones y prospectiva**
+- 7.1. Síntesis de hallazgos
+- 7.2. Implicaciones para la seguridad digital y la confianza en los certificados electrónicos
+- 7.3. Líneas de investigación futuras
+
+**Bibliografía**
+
+---
+
+## Sección 1. Introducción: el caso que marca un punto de inflexión
+
+### 1.1. Presentación del caso y contexto general
+
+El 11 de agosto de 2026, la Policía Nacional detuvo en Molina de Segura (Murcia, 78.500 habitantes) a un varón de 35 años como presunto autor de un delito continuado de falsedad documental mediante inteligencia artificial (1). Había intentado 38 veces suplantar la identidad de más de 30 personas. Buscaba certificados digitales de firma electrónica a nombre de terceros para abrir cuentas bancarias, pedir préstamos o contratar líneas de teléfono (1)(2).
+
+El método usado ha dado la vuelta al mundo. El investigado empleaba un *deepfake* en tiempo real, una «máscara digital» que superponía el rostro de la víctima sobre el suyo durante las videollamadas de verificación de identidad (2)(3). No lo detuvo la inteligencia policial. Lo detuvo un fallo técnico: durante una de las videoconferencias, un retraso de procesamiento de «apenas un segundo» hizo desaparecer la máscara. Mostró su rostro real. Los operadores del sistema de verificación alertaron a las autoridades (1)(4).
+
+### 1.2. Relevancia del caso en el panorama de la ciberdelincuencia con IA
+
+Las fuentes policiales reconocen algo inédito: es la primera vez en España que se detecta un fraude así, IA usada para burlar sistemas de videoidentificación en directo (5). El caso encaja en una tendencia que ya venía avisada. El informe *EU-SOCTA 2025* de Europol advierte que la IA generativa reduce la barrera de entrada para delitos digitales, y sitúa los *deepfakes* en tiempo real y la clonación de voz entre los cambios estructurales del crimen organizado (7).
+
+El Cybercrime Report de LexisNexis Risk Solutions, publicado en 2026 sobre datos de 2025, documenta que el fraude de identidad sintética, la creación de identidades falsas o la suplantación con IA, se multiplicó por ocho durante 2025 y representa ya el 11 % del fraude global (8). El caso de Molina de Segura da carne a esa cifra: la IA industrializa el engaño, y los sistemas de autenticación facial ya no son infalibles.
+
+### 1.3. Objetivo y estructura del artículo
+
+Este artículo somete el caso a un análisis en tres bloques. El primero describe la anatomía técnica del fraude, la máscara digital, el sistema de iluminación casero, las capas de anonimización con VPN y dispositivos, a partir de fuentes oficiales y periodísticas contrastadas. El segundo examina el encaje jurídico-penal en el Código Penal español y su relación con el marco europeo de firma electrónica (eIDAS) y protección de datos (RGPD), e identifica el delito continuado de falsedad documental y sus posibles concursos. El tercero sitúa el caso en el contexto criminológico del fraude de identidad sintética y evalúa sus implicaciones para los sistemas de verificación y las respuestas institucionales y técnicas.
+
+El trabajo se organiza en siete secciones. La Sección 2 descompone la metodología del fraude. La Sección 3 analiza el fallo técnico que permitió identificar al autor. La Sección 4 aborda el marco jurídico y la tipificación penal. La Sección 5 inserta el caso en las tendencias criminológicas documentadas. La Sección 6 examina la respuesta policial y los desafíos técnicos para los sistemas de verificación, con propuestas de mitigación. La Sección 7 presenta conclusiones y líneas de investigación futura.
+
+---
+
+## Sección 2. Metodología del fraude: anatomía de un sistema de suplantación con IA
+
+### 2.1. El rol de los certificados digitales y la videoidentificación
+
+El entramado buscaba certificados digitales de firma electrónica. El Reglamento eIDAS (UE nº 910/2014) los regula como mecanismos de identificación con plena validez jurídica, equivalentes a la firma manuscrita en relaciones privadas y, en ciertos casos, frente a la administración. Quien obtiene un certificado a nombre de otro puede realizar actos que vinculan al titular: abrir cuentas, pedir préstamos, contratar líneas móviles o presentar declaraciones tributarias (2)(4).
+
+Las empresas que expiden certificados combinan la presentación del DNI con una videoconferencia en directo. El solicitante muestra el DNI ante la cámara; el sistema o el personal de seguridad coteja el rostro de la imagen con la foto del documento. Esa videoidentificación es ya un estándar del sector para cumplir las obligaciones de *know your customer* (KYC) contra el blanqueo de capitales.
+
+El caso destapa una vulnerabilidad inédita en España. El atacante no se limitaba a presentar un DNI falsificado: alteraba su rostro en tiempo real durante la videoconferencia para que coincidiera con la foto del documento (1). El sistema y el personal veían en pantalla el rostro de la víctima. Quien sostenía el documento era el delincuente.
+
+### 2.2. *Deepfake* en tiempo real: la máscara digital como herramienta de suplantación
+
+El núcleo técnico del fraude era un *deepfake* en tiempo real. A diferencia de los *deepfakes* convencionales, que requieren edición posterior, el software del detenido modificaba sus facciones al ritmo de sus propios movimientos durante la videoconferencia (1)(2). Esta técnica, el *face-swapping* en tiempo real o *deepfake* en vivo, usa redes neuronales convolucionales y GAN (*generative adversarial networks*) para superponer un rostro sobre otro con una latencia tan baja que el ojo humano no la percibe.
+
+El investigado aparecía en los vídeos mostrando el DNI falsificado. La IA modificaba su rostro en pantalla hasta hacerlo idéntico al de la foto del documento (1)(2). Las fuentes periodísticas señalan que empezó con técnicas «muy burdas», con marcas de agua del software visibles, pero fue perfeccionando el sistema hasta engañar a los mecanismos automatizados (4). Esa evolución delata aprendizaje por ensayo y error, algo común en delincuentes digitales, y muestra cuánto han bajado las barreras de acceso a estas herramientas.
+
+El sistema no era infalible. En una de las videollamadas, el software sufrió un retraso de procesamiento. Durante apenas un segundo, la máscara digital desapareció. El rostro real del sospechoso quedó al descubierto ante el personal de seguridad (1)(2).
+
+### 2.3. El sistema de iluminación casero: simulación de hologramas de seguridad
+
+Las fuentes oficiales destacan un elemento singular: el «elevado grado de sofisticación del autor» (1). El detenido había montado un sistema de iluminación casero para simular las medidas de seguridad de los DNI.
+
+Usaba focos domésticos con bombillas de colores colocadas de forma estratégica. Recreaba los destellos y las marcas de seguridad que los DNI muestran bajo luz real (1)(2). Balanceaba así los soportes falsificados frente a la cámara web y reproducía los hologramas oficiales (2). Ese «sofisticado montaje» (2) muestra a un delincuente que dominaba tanto la dimensión digital como los elementos físicos de seguridad, y que sabía cómo se comportan bajo distintas condiciones de iluminación.
+
+La máscara digital y el sistema de iluminación, combinados, presentaban ante la cámara una imagen que engañaba tanto al sistema automatizado como al personal de seguridad que supervisaba el proceso.
+
+### 2.4. Capas de anonimización: VPN, líneas telefónicas y dispositivos
+
+El entramado no se limitaba a la videoconferencia. El detenido había desplegado una infraestructura de anonimización para ocultar su rastro.
+
+Usaba VPN (*Virtual Private Networks*) para anonimizar sus conexiones y enmascarar su IP (1). La investigación sobre correos y medios de pago reveló una estructura compleja: más de 320 líneas telefónicas asociadas a 24 dispositivos móviles distintos (1)(2). La mayoría de esas líneas estaban contratadas con identidades suplantadas y adquiridas en puntos de venta geolocalizados en Murcia (1)(2). El dato importa por dos razones. Primero, el detenido no se limitaba a suplantar identidades para obtener certificados; usaba esas mismas identidades para contratar líneas y adquirir dispositivos, y así tejía una red de identidades ficticias que le daba una opacidad alta. Segundo, la geolocalización de los puntos de venta en Murcia, la misma provincia donde residía, sugiere que no logró desvincular del todo la infraestructura de su entorno físico, pese a sus esfuerzos.
+
+El registro domiciliario tras la detención permitió intervenir un ordenador portátil cifrado con software de alto nivel, múltiples teléfonos móviles, dispositivos de almacenamiento y diversa documentación (1)(2). El equipo cifrado apunta a un perfil delictivo avanzado, consciente de que sus dispositivos podían acabar incautados.
+
+---
+
+## Sección 3. El fallo que lo delató: el instante técnico como punto de quiebre
+
+### 3.1. Descripción del incidente: el retraso de procesamiento de «apenas un segundo»
+
+El momento decisivo se produjo durante una de las videoconferencias de verificación. El sistema de IA que modificaba sus facciones sufrió un retraso. Durante «apenas un segundo», la máscara digital desapareció. El rostro real quedó al descubierto ante el personal de seguridad de la entidad emisora.
+
+Las fuentes periodísticas lo llaman «desliz tecnológico» o «error de un solo segundo en la conexión con la aplicación». El comunicado de la Policía Nacional, citado por medios internacionales, usa la expresión «*barely a second*». La brevedad del incidente pesa: la fiabilidad del sistema de verificación se sostuvo sobre un intervalo que un observador humano ni siquiera habría notado, y que resultó suficiente para revelar la manipulación.
+
+La detención no fue inmediata. El fallo permitió a los operadores, o a los técnicos de la empresa en una revisión posterior, identificar al sospechoso. A partir de ahí, las investigaciones lo localizaron y lo detuvieron. Desde una perspectiva procesal, el fallo técnico no funcionó como una flagrancia delictiva; funcionó como un elemento de prueba que orientó la investigación hacia una identidad concreta.
+
+### 3.2. Análisis técnico de la vulnerabilidad del sistema
+
+El incidente destapa una vulnerabilidad estructural de los *deepfakes* en tiempo real: dependen de un procesamiento continuo e ininterrumpido. El *face-swapping* en directo exige ejecutar, en cada fotograma, cuatro pasos: detectar y alinear el rostro original, extraer los rasgos faciales, generar la imagen sintética y superponer la máscara. Cualquier interrupción, una caída de fotogramas, un pico de latencia en la GPU, un error de sincronización, puede apagar la superposición por un instante y dejar ver el rostro original.
+
+Que el fallo ocurriera en directo, y no en un vídeo pregrabado, añade una dimensión distinta. Los sistemas automatizados de verificación detectan manipulaciones en vídeos estáticos mediante inconsistencias en el parpadeo, la iluminación o la textura. La manipulación en tiempo real resulta mucho más difícil de detectar, porque la latencia y la variabilidad de la iluminación dificultan aplicar esos mismos filtros.
+
+Las fuentes no precisan si el fallo se debió a limitaciones del hardware, a una saturación de la red pese a la VPN o a un error del propio software. Esa incertidumbre impide determinar si la vulnerabilidad es propia de la tecnología o si fue una contingencia puntual. Pero el incidente demuestra algo concreto: por sofisticado que sea el sistema de suplantación, su funcionamiento depende de una cadena técnica cuyos eslabones pueden romperse.
+
+### 3.3. Implicaciones para la fiabilidad de los sistemas de verificación por vídeo
+
+El fallo no demuestra que los sistemas de videoidentificación sean infalibles. Al contrario: el delincuente realizó 38 intentos sobre más de 30 identidades y, según algunas fuentes, logró obtener certificados en «múltiples ocasiones». Eso indica que el sistema de verificación fue engañado antes de que el fallo revelara la manipulación.
+
+La entidad emisora no detectó el fraude mediante sus controles de seguridad activos, sino a través de un fallo del propio sistema delictivo. La revisión posterior destapó el fraude. Sin ese fallo, las solicitudes fraudulentas habrían podido seguir. La seguridad del sistema de verificación no dio la talla; fue la imperfección del sistema delictivo, no la fortaleza de la defensa, lo que permitió la detección.
+
+Las implicaciones para prestadores de servicios de certificación y otras entidades que usan videoidentificación son de calado. Los sistemas basados solo en cotejo facial en tiempo real son vulnerables a *deepfakes* de calidad suficiente. Los sistemas automatizados de detección de manipulaciones no son infalibles y pueden ser burlados por delincuentes con un nivel de sofisticación medio-alto. Y hacen falta capas adicionales de verificación, como respuestas a estímulos aleatorios, análisis de profundidad de imagen o autenticación multifactor, que no dependan solo de la apariencia facial.
+
+El comunicado de la Policía Nacional, al destacar el «elevado grado de sofisticación del autor», reconoce que la amenaza no es marginal. Exige revisar los estándares de seguridad aplicables a los procesos de identificación digital.
+
+---
+
+## Sección 4. Marco jurídico y tipificación penal
+
+### 4.1. Delito continuado de falsedad documental en documento oficial
+
+La conducta del investigado encaja, en primer lugar, en el delito de falsedad documental del Título XVIII del Libro II del Código Penal (Ley Orgánica 10/1995) (9). El artículo 390.1 castiga con prisión de tres a seis años, multa de seis a veinticuatro meses e inhabilitación especial de dos a seis años a quien cometa falsedad en documento público, oficial o mercantil en alguna de las circunstancias que enumera (9). El artículo 392 extiende esa responsabilidad a los particulares que cometan en documento público, oficial o mercantil alguna de esas falsedades (9).
+
+Para calificarlo como falsedad documental hay que determinar si el flujo de la videoconferencia, y la imagen sintética que genera el *deepfake*, puede considerarse documento a efectos del artículo 26 del Código Penal. Este define documento como «todo soporte material que exprese o incorpore datos, hechos o narraciones con eficacia probatoria o cualquier otro tipo de relevancia jurídica». La doctrina reciente y la jurisprudencia del Tribunal Supremo tienden a admitir que todo soporte informático que incorpore datos o declaraciones con eficacia probatoria es un documento digital. Si se acepta esa premisa, el empleo de un *deepfake* para suplantar la identidad de la víctima durante la videoconferencia integra el tipo de falsedad en documento oficial o mercantil.
+
+El supuesto tiene una peculiaridad: la falsificación no recae sobre el contenido textual del documento, recae sobre la apariencia de la persona que lo presenta ante el sistema de verificación. Alterar el rostro del investigado hasta que coincidiera con el de la víctima constituye una falsificación de la verdad en un soporte que la entidad emisora tuvo por auténtico. Esa conducta encaja en el supuesto del artículo 390.1.4.º CP, faltar a la verdad en la narración de los hechos, aplicable al particular por la vía del artículo 392. La máscara digital generada con IA no es en sí misma un documento, pero su uso durante la videoconferencia convierte el flujo de imagen en un soporte documental falseado, porque incorpora un dato, la imagen del rostro, que no se corresponde con la realidad.
+
+El detenido habría realizado 38 intentos sobre más de 30 identidades (1). Esa pluralidad de acciones, ejecutadas con el mismo *modus operandi* y con la intención de obtener beneficio patrimonial a través de la firma electrónica, tiene los rasgos de un **delito continuado**. El artículo 74.1 del Código Penal dispone que quien, en ejecución de un plan preconcebido o aprovechando idéntica ocasión, realice una pluralidad de acciones que ofendan a uno o varios sujetos e infrinjan el mismo precepto penal o preceptos de igual o semejante naturaleza, será castigado como autor de un delito continuado con la pena señalada para la infracción más grave, impuesta en su mitad superior, y podrá llegar hasta la mitad inferior de la pena superior en grado. Aquí, la continuidad delictiva elevaría la pena del delito de falsedad documental, porque concurren una pluralidad de acciones, los 38 intentos, y una pluralidad de víctimas, las más de 30 identidades suplantadas.
+
+### 4.2. Suplantación de identidad y uso de firmas digitales fraudulentas
+
+Junto a la falsedad documental, la conducta podría integrar otras figuras en concurso, real o medial. La **usurpación de estado civil** (artículo 401) castiga a quien usurpe el estado civil de otro. La jurisprudencia exige, para su consumación, que la suplantación se mantenga en el tiempo y tenga cierta duración, más allá del uso puntual. Aquí, el detenido usaba las identidades suplantadas para obtener certificados, contratar líneas telefónicas y abrir cuentas bancarias (1)(2). Esa prolongación en el tiempo podría satisfacer el requisito y abrir la puerta a un concurso.
+
+El empleo de las firmas digitales fraudulentas para abrir cuentas, pedir préstamos o contratar líneas (1) podría integrar el delito de **estafa** del artículo 248. La estafa exige engaño bastante, error en la víctima, acto de disposición patrimonial y perjuicio. Aquí el engaño se produjo en dos momentos: primero, ante la entidad emisora de certificados, para obtener la firma; después, ante entidades financieras o comerciales, para obtener bienes o servicios usando la firma fraudulenta. Las fuentes no precisan si el detenido llegó a consumar operaciones que causaran un perjuicio patrimonial efectivo, o si los 38 intentos se limitaron a la obtención de los certificados sin llegar a usarlos. Esa incertidumbre impide saber si el delito de estafa se consumó o si se quedó en tentativa.
+
+El uso de sistemas informáticos podría integrar además el delito de **estafa informática** del artículo 248.2, que castiga a quien, con ánimo de lucro, mediante manipulaciones informáticas o cualquier otro artificio semejante, consigue una transferencia no consentida de activos patrimoniales. La doctrina apunta que emplear un *deepfake* para suplantar la identidad y obtener una transferencia de fondos integra tanto la estafa informática como la falsedad en documento oficial o mercantil.
+
+### 4.3. Marco normativo europeo: eIDAS, RGPD y su aplicación al caso
+
+La obtención fraudulenta de certificados digitales afecta al régimen del **Reglamento (UE) n.º 910/2014**, conocido como eIDAS (6)(11). Este reglamento fija un marco común para la identificación electrónica y los servicios de confianza, incluidas las firmas electrónicas, los sellos, los servicios de confianza y los certificados cualificados (11), con el objetivo de reforzar la confianza en las transacciones electrónicas dentro del mercado interior (6).
+
+El artículo 3.10 del eIDAS define la «firma electrónica» como «los datos en formato electrónico que se adjuntan a otros datos electrónicos o se asocian con ellos de manera lógica y que el firmante utiliza para firmar» (11). El artículo 25.2 añade que la firma electrónica cualificada, basada en un certificado cualificado, tendrá un efecto jurídico equivalente al de una firma manuscrita, y el artículo 25.3 obliga a los Estados miembros a reconocer como tal la firma cualificada basada en un certificado emitido en otro Estado miembro. Obtener por fraude un certificado cualificado a nombre de un tercero vulnera de raíz ese sistema de confianza. El caso demuestra que la seguridad del proceso de verificación de identidad previo a la expedición, requisito indispensable para un certificado cualificado, es el eslabón más débil de la cadena.
+
+Desde la protección de datos, los sistemas de videoidentificación tratan datos biométricos, imágenes faciales, que el **RGPD (UE 2016/679)** considera categoría especial de datos (artículo 9) (10). La Agencia Española de Protección de Datos (AEPD) ha señalado que el tratamiento de datos biométricos, tanto para identificación como para autenticación, constituye un tratamiento de alto riesgo. Para que sea lícito hacen falta dos cosas: una circunstancia que levante la prohibición y una condición que lo legitime.
+
+En la videoidentificación para certificados digitales, el tratamiento de imágenes faciales sirve para verificar la identidad del solicitante. El RGPD exige que ese tratamiento sea adecuado, pertinente y limitado a lo necesario (minimización de datos, artículo 5.1.c) (10). El responsable debe además implementar medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo (artículo 32) (10). El caso revela que los sistemas de videoidentificación pueden no ofrecer el nivel de seguridad que exige el RGPD frente a ataques de *deepfake* en tiempo real, lo que abre interrogantes sobre si las entidades emisoras cumplen su obligación de seguridad.
+
+### 4.4. Consecuencias penales y procesales
+
+De confirmarse los hechos, las consecuencias para el investigado serían considerables. El delito continuado de falsedad documental en documento oficial, con las agravantes que pudieran concurrir (pluralidad de acciones y víctimas, uso de medios tecnológicos avanzados), podría dar lugar a una pena de prisión que, partiendo de la horquilla de tres a seis años del artículo 390, se elevaría por aplicación del artículo 74 hasta la mitad superior de la pena prevista para la infracción más grave, e incluso hasta la mitad inferior de la pena superior en grado. A eso se sumaría multa de seis a veinticuatro meses e inhabilitación especial de dos a seis años.
+
+El investigado podría enfrentarse además a penas por usurpación de estado civil (artículo 401) y estafa (artículo 248), en concurso real o medial con la falsedad documental. El régimen de concurso de delitos (artículos 73 a 78) establece que, en concurso real, se imponen las penas de todas las infracciones, con el límite del triple de la pena más grave; en concurso medial, se impone la pena superior en grado a la prevista para la infracción más grave, sin que pueda exceder de la suma de las penas de las infracciones concurrentes.
+
+La detención se produjo tras el aviso de la entidad emisora, y el procedimiento sigue en fase de instrucción. Las fuentes no aportan datos sobre la situación procesal del detenido, prisión provisional o libertad con cargos, ni sobre un eventual auto de prisión o medidas cautelares. La complejidad técnica del caso, el análisis de los equipos intervenidos, la reconstrucción de las conexiones VPN, la identificación de las identidades suplantadas, sugiere que la instrucción podría alargarse. La incautación de un ordenador portátil cifrado, varios teléfonos y dispositivos de almacenamiento (1) plantea desafíos para la prueba pericial informática, que tendrá que fijar el alcance exacto de la actividad y la eventual existencia de cómplices.
+
+Queda además una cuestión jurídica sin resolver por las fuentes: la eventual aplicación del **Reglamento de IA (UE 2024/1689)** (12). Este reglamento, de entrada escalonada, fija obligaciones para proveedores y usuarios de sistemas de IA según el nivel de riesgo. Conviene precisar el encaje. El catálogo de «usos inaceptables» del artículo 5 enumera prácticas concretas, manipulación subliminal, explotación de vulnerabilidades, categorización biométrica sensible, puntuación social, identificación biométrica remota en tiempo real en espacios públicos con fines policiales, entre otras, que no incluyen de forma expresa el uso de un *deepfake* para cometer falsedad documental. Calificar esta conducta como práctica prohibida del artículo 5 exigiría un ejercicio interpretativo abierto a discusión doctrinal. Encaja mejor el artículo 50 del propio reglamento, que impone obligaciones de transparencia y etiquetado legible por máquina para contenidos sintéticos o manipulados, incluidos los *deepfakes*, aunque esas obligaciones se dirigen ante todo a quien genera o difunde el contenido, no siempre a quien lo emplea para cometer un fraude documental. Las fuentes disponibles no se pronuncian sobre esta cuestión, que queda pendiente de la investigación en curso y, en su caso, de la jurisprudencia.
+
+---
+
+## Sección 5. Contexto criminológico: el auge del fraude de identidad sintética
+
+### 5.1. Datos sectoriales: el incremento exponencial del fraude de identidad sintética
+
+El caso de Molina de Segura no es un episodio aislado. Se inscribe en una tendencia global que documentan los principales informes sectoriales. El Cybercrime Report de LexisNexis Risk Solutions, basado en más de 116.000 millones de transacciones en línea durante 2025 a través de su Digital Identity Network, revela que el fraude de identidad sintética es la tipología delictiva de más rápido crecimiento a nivel mundial (7)(8). Su frecuencia se multiplicó por ocho durante 2025 y pasó a representar el 11 % del fraude total detectado (7)(8).
+
+La identidad sintética combina datos reales de distintas personas, o datos reales con información ficticia, para crear una identidad que no corresponde a ninguna persona real (8). A diferencia de la suplantación tradicional, no tiene una víctima inmediata que dé la voz de alarma, y eso la vuelve muy atractiva para los delincuentes (8). Al no existir una víctima que alerte al instante, y con un rendimiento potencial alto, el fraude sintético seduce a defraudadores de todo el mundo, según el informe (8).
+
+El informe destaca que los delincuentes invierten tiempo en aprender y usar las últimas tecnologías, como la IA generativa, para crear identidades sintéticas más sofisticadas, con apariencia auténtica e incluso con datos históricos de respaldo fraudulentos (8). Esta inversión en aprendizaje marca un cambio de táctica: abandonan el oportunismo a corto plazo y adoptan estrategias a largo plazo, porque crear y establecer una identidad sintética puede exigir meses de preparación (8).
+
+Por zonas, el fenómeno, que antes se consideraba sobre todo estadounidense, se ha extendido a todo el mundo (7). América Latina registró en 2025 un crecimiento muy acusado del fraude de identidad sintética, que alcanzó casi la mitad (48,3 %) del fraude total en la región y que va ligado al crecimiento de los sectores de juego y apuestas en línea (7)(8). El comercio electrónico registró un incremento del 64 % en la tasa de ataques fraudulentos durante 2025; los sitios de juego y apuestas vieron subir los ataques globales un 76 % (8).
+
+El informe de LexisNexis documenta también el crecimiento de los ataques con bots maliciosos, que subieron un 59 % durante 2025 (8). La tecnología de bots ha evolucionado hasta simular el comportamiento humano legítimo, hasta el punto de replicar cómo un consumidor mueve el cursor por una pantalla de inicio de sesión, con un grado de verosimilitud alto que engaña a las últimas herramientas de detección de fraude conductual (8). Esa sofisticación, que incluye el uso de curvas de Bézier para que los movimientos del ratón parezcan más naturales, muestra a delincuentes que adoptan técnicas avanzadas (8). El tráfico de agentes de IA, programas autónomos que ejecutan transacciones sin intervención humana, creció un 450 % entre enero y diciembre de 2025, y plantea un desafío nuevo para la detección del fraude en un entorno donde usuarios legítimos y actores maliciosos recurren cada vez más a agentes automatizados (8).
+
+### 5.2. La IA como facilitadora del cibercrimen: el informe EU-SOCTA 2025 de Europol
+
+El **EU Serious and Organised Crime Threat Assessment (EU-SOCTA) 2025** de Europol sitúa la IA en el centro de la transformación del crimen organizado en la UE (2)(7). El informe, elaborado a partir de datos de los Estados miembros, advierte que las redes criminales han evolucionado hasta convertirse en empresas globales impulsadas por la tecnología, que explotan plataformas digitales, flujos financieros ilícitos y la inestabilidad geopolítica (7).
+
+Un hallazgo clave: la IA generativa reduce la barrera de entrada para delitos digitales, incluido el robo de identidad (7). Los delincuentes usan herramientas de IA para crear medios sintéticos realistas, como clonación de voz y *deepfakes* de vídeo en directo (7). Esas herramientas son fáciles de conseguir y no exigen altos conocimientos técnicos, y así ponen al alcance de cualquiera técnicas que antes solo manejaban actores con recursos considerables (7).
+
+Europol identifica los *deepfakes* y la clonación de voz como tecnologías que impulsan nuevas formas de fraude, extorsión y robo de identidad (2)(7). Los *deepfakes* se usan, por ejemplo, en el «fraude del CEO», donde un delincuente suplanta al máximo responsable de una organización para acceder a fondos (7). Se espera además que estas tecnologías disparen las estafas románticas (7). El informe apunta que la digitalización de ayudas y prestaciones sociales abre nuevas oportunidades para el fraude, porque manipular solicitudes y documentos con IA se vuelve cada vez más accesible (7).
+
+El informe subraya que los modelos de IA generativa no se limitan a falsificar voces y rostros: también redactan mensajes en varios idiomas, crean *malware* sofisticado y, en el extremo más grave, producen material de abuso sexual infantil (7). El resultado es un salto de sofisticación en muchos tipos de delitos: ciberataques, fraude en línea, tráfico de migrantes, tráfico de drogas y tráfico de armas de fuego. Catherine De Bolle, directora ejecutiva de Europol, advirtió en la presentación del informe que los ataques impulsados por IA ganan precisión y capacidad de daño frente a gobiernos, empresas y ciudadanos (7).
+
+El informe sitúa el caso de Molina de Segura en ese proceso de transformación estructural. Lo que en el caso concreto se manifiesta como un fraude de suplantación mediante *deepfake* en tiempo real es una manifestación local de un fenómeno global que Europol describe como un cambio profundo en la naturaleza del crimen organizado impulsado por IA (7). La barrera de entrada más baja, la accesibilidad de las herramientas de IA y la sofisticación creciente de las técnicas dibujan un escenario donde casos como este dejarán de ser excepcionales y pasarán a ser una amenaza recurrente.
+
+### 5.3. El caso como paradigma de una nueva generación de delitos
+
+El caso de Molina de Segura reúne rasgos que lo convierten en un paradigma de la nueva generación de delitos impulsados por IA. Combina varios elementos que el EU-SOCTA 2025 identifica como tendencias emergentes: *deepfakes* en tiempo real para suplantar identidades, creación de identidades sintéticas mediante la superposición de la imagen de una víctima real sobre el rostro del delincuente, y redes de anonimización para ocultar el rastro.
+
+El caso muestra también cómo los delincuentes pasan del oportunismo a corto plazo a estrategias a largo plazo, una tendencia que el informe de LexisNexis señala como propia del fraude de identidad sintética (8). El detenido no dio un golpe aislado. Desplegó un plan sistemático: 38 intentos sobre más de 30 identidades, contratación de más de 320 líneas telefónicas asociadas a 24 dispositivos móviles y adquisición de equipos informáticos cifrados con software de alto nivel (1). Esa planificación exige un tiempo y unos recursos que el mero oportunismo no explica.
+
+El caso ilustra además la sofisticación técnica creciente de estos delincuentes. Dominan las herramientas digitales, el software de *deepfake* en tiempo real, pero han desarrollado también un conocimiento profundo de los elementos físicos de seguridad de los documentos oficiales (el sistema de iluminación casero para simular hologramas) y de las técnicas de anonimización (VPN, múltiples dispositivos y líneas telefónicas). Esa combinación de competencias digitales y físicas, junto con la capacidad de aprender de los propios errores (las fuentes señalan que el detenido comenzó con intentos «muy burdos» y fue perfeccionando su técnica) (4), dibuja el perfil de un delincuente que encaja con la descripción que hace Europol de las redes criminales impulsadas por la tecnología (7).
+
+El caso destapa, por último, una vulnerabilidad estructural de los sistemas de verificación de identidad que el EU-SOCTA 2025 no aborda de forma directa pero que se deriva de sus conclusiones: la dependencia de sistemas automatizados que técnicas de IA cada vez más sofisticadas pueden engañar. El fraude se detectó no por la robustez del sistema de verificación, sino por un fallo del propio sistema delictivo. Ahí está la asimetría entre la velocidad con que innovan los delincuentes y la capacidad de adaptación de los sistemas de defensa.
+
+Desde una perspectiva criminológica, el caso de Molina de Segura marca un punto de inflexión. Demuestra que las advertencias de Europol y LexisNexis no eran especulación, sino realidades ya en marcha. La IA ha industrializado el engaño, y los sistemas tradicionales de autenticación basados en rasgos biométricos faciales han dejado de ser infalibles. El desafío para las instituciones, los prestadores de servicios de certificación y las entidades financieras es a la vez técnico, desarrollar sistemas de detección de *deepfakes* más robustos, y jurídico y regulatorio, actualizar los marcos normativos frente a unas técnicas delictivas que evolucionan más rápido que los procesos legislativos.
+
+Queda abierta la pregunta de si existe una red más amplia de colaboradores o proveedores de servicios detrás del caso. La sofisticación del sistema, software de *deepfake* en tiempo real, equipos cifrados, una infraestructura de anonimización compleja, sugiere que el detenido podría no haber actuado en solitario o, al menos, podría haber accedido a servicios especializados en el mercado ilegal. Las fuentes disponibles no se pronuncian sobre esta cuestión, pendiente de la investigación en curso.
+
+---
+
+## Sección 6. Respuesta institucional y desafíos para los sistemas de verificación
+
+### 6.1. Actuación de la Policía Nacional y de la Unidad Central de Ciberdelincuencia
+
+La investigación que condujo a la detención en Molina de Segura corrió a cargo de la **Policía Nacional**, dentro de las competencias de sus unidades especializadas en ciberdelincuencia (1)(2). El comunicado del Ministerio del Interior del 11 de agosto de 2026 atribuye la operación a la **Unidad Central de Ciberdelincuencia** (UCC) de la Policía Nacional, aunque no precisa si la investigación arrancó de oficio o tras la denuncia de la entidad emisora (1)(2).
+
+La UCC cumplió en 2025 el trigésimo aniversario del primer grupo de investigación de delitos tecnológicos en España. Su función es prevenir, investigar y perseguir las actividades delictivas en las que el uso de nuevas tecnologías o sistemas de información constituye el instrumento o medio fundamental de comisión. Sus competencias cubren delitos relacionados con el patrimonio, el consumo, la indemnidad del menor, la pornografía infantil, la libertad sexual, el honor, la intimidad, las redes sociales, los fraudes, la propiedad intelectual e industrial, y los que atentan contra la confidencialidad, integridad y disponibilidad de los sistemas de información. Además de investigar en primera línea los delitos de mayor complejidad, la UCC apoya y coordina al resto de unidades territoriales.
+
+La investigación exigió analizar una pluralidad de elementos técnicos: rastrear conexiones VPN, identificar más de 320 líneas telefónicas asociadas a 24 dispositivos móviles, examinar correos electrónicos y medios de pago, y peritar los equipos intervenidos en el registro domiciliario, incluido un ordenador portátil cifrado con software de alto nivel (1)(2). Esa multiplicidad de líneas de investigación mide la complejidad técnica de la ciberdelincuencia avanzada y la necesidad de capacidades forenses especializadas.
+
+El registro domiciliario permitió incautar un ordenador portátil cifrado, varios teléfonos móviles, dispositivos de almacenamiento y documentación (1)(2). Los equipos cifrados plantean un desafío adicional: acceder a su contenido puede exigir desencriptación o la colaboración del investigado, que puede acogerse a su derecho a no declarar o a no facilitar las claves. Las fuentes no se pronuncian sobre si se ha logrado acceder al contenido de los equipos intervenidos ni sobre la eventual existencia de colaboradores o cómplices.
+
+El caso mide la importancia creciente de la ciberinteligencia en la investigación criminal. José García Serrano, jefe de la Unidad Central de Ciberdelincuencia, lo resumió así en una entrevista del 3 de diciembre de 2025: «una parte significativa de la criminalidad se ha trasladado del espacio físico al virtual, ocupando lugares que años atrás eran impensables» (16). La respuesta institucional exige capacidades técnicas, sí, pero también coordinación entre las distintas unidades policiales y, en su caso, con autoridades judiciales y organismos internacionales.
+
+### 6.2. Vulnerabilidades de los sistemas automatizados de videoidentificación
+
+El caso de Molina de Segura destapa una vulnerabilidad estructural de los sistemas de verificación por vídeo: dependen de la apariencia facial como factor único o predominante de autenticación. Tal como están configurados hoy, enfrentan una amenaza creciente, porque los *deepfakes* en tiempo real pueden burlar tanto la inspección humana como los sistemas automatizados de detección de manipulaciones.
+
+La tecnología *deepfake* ha llegado a un punto donde distinguir una imagen sintética de una real, a simple vista, se vuelve cada vez más difícil. Eso significa que los sistemas de verificación que dependen solo de la inspección visual por personal humano, o de algoritmos de detección basados en características visibles, son vulnerables por diseño a ataques de *deepfake* de calidad suficiente. La vulnerabilidad no está en la tecnología biométrica en sí; está en depender de un único factor de autenticación, la apariencia facial, un dato que la IA ya sabe fabricar.
+
+La literatura técnica del sector identifica varias categorías de ataques que pueden comprometer los sistemas de videoidentificación (15). Los **ataques de presentación** (*presentation attacks*) consisten en mostrar ante la cámara una imagen o vídeo de la víctima, en una pantalla, impresa o generada de forma sintética, en lugar del propio rostro. Los **ataques de inyección digital** (*digital injection attacks*) inyectan un flujo de vídeo manipulado en el sistema de verificación, sin necesidad de presentar nada ante la cámara. Los **ataques de suplantación en tiempo real** (*real-time impersonation attacks*), el tipo empleado en Molina de Segura, modifican las propias facciones del delincuente en directo mediante un *deepfake*, de modo que el sistema recibe un flujo de vídeo con el rostro de la víctima en lugar del rostro real.
+
+El caso deja ver, además, que los sistemas de videoidentificación no siempre incorporan mecanismos de **detección de vida** (*liveness detection*) lo bastante robustos. Verificar que la persona que aparece en la imagen es un ser humano real, y no una foto, un vídeo pregrabado o una imagen sintética, resulta crítico para prevenir ataques. Los sistemas de primera generación se apoyaban en pruebas simples, detección de parpadeos o solicitud de movimientos concretos como guiñar un ojo o girar la cabeza, que un *deepfake* en tiempo real puede replicar sin dificultad. La evolución de las técnicas de ataque ha obligado a desarrollar métodos más finos: análisis de profundidad de la imagen, detección de inconsistencias en iluminación y textura de la piel, o estímulos aleatorios que el *deepfake* no puede anticipar.
+
+El Informe de amenazas de iProov 2025, publicado el 27 de febrero de ese año, documenta un aumento del 2.665 % en los ataques con cámaras virtuales nativas durante 2024, y un aumento del 300 % en los ataques de intercambio de rostros (*face-swap exploits*) respecto de 2023 (17). Por su parte, el *Q1 2025 Deepfake Incident Report* de Resemble AI, una fuente distinta y con metodología propia, estimó en más de 200 millones de dólares las pérdidas económicas atribuibles al fraude habilitado por *deepfake* solo en el primer trimestre de 2025 (18). Ambos conjuntos de datos, aunque proceden de fuentes distintas y no se pueden comparar entre sí sin matices, apuntan en la misma dirección. El caso de Molina de Segura confirma que estas amenazas ya se materializan en ataques concretos contra sistemas de verificación en España.
+
+### 6.3. Propuestas técnicas de mitigación: Deepsight, VeriLight y otras aproximaciones
+
+La industria y la academia han respondido al desafío con sistemas de detección cada vez más finos. Entre las soluciones más recientes y documentadas están **Deepsight** (Incode Technologies) y **VeriLight** (ACM SIGSAC Conference on Computer and Communications Security 2025) (13)(14).
+
+**Deepsight**, lanzado el 2 de diciembre de 2025, detecta y bloquea *deepfakes*, cámaras virtuales inyectadas y ataques de identidad sintética en menos de 100 milisegundos (13). Opera en tres capas: una capa conductual que identifica patrones de interacción de bots, una capa de integridad que valida la autenticidad de la cámara y el dispositivo, y una capa de percepción que detecta inconsistencias visuales en rostros y escenas (13). La compañía afirma que Deepsight identifica la «huella digital» del modelo generativo empleado, y así aporta información sobre el origen de la amenaza (13). La Universidad de Purdue evaluó su rendimiento en el estudio *«Fit for Purpose? Deepfake Detection in the Real World»* (octubre de 2025), que comparó 24 sistemas de detección comerciales, gubernamentales y académicos. Deepsight fue el detector comercial con mayor precisión y menor tasa de falsos positivos entre nueve sistemas comerciales evaluados (13). En pruebas internas de la propia compañía resultó diez veces más preciso que revisores humanos entrenados (13). El sistema está integrado en la plataforma de identidad de Incode, y lo usan TikTok, Scotiabank y Nubank, protegiendo a millones de usuarios en más de seis millones de sesiones de identidad en directo (13). Experian se ha asociado con Incode para incorporar Deepsight a sus soluciones de identidad y fraude, y cita su propia investigación, según la cual el 72 % de los líderes empresariales espera que el fraude generado por IA, incluidos los *deepfakes*, se convierta en uno de los principales desafíos operativos para 2026 (13).
+
+**VeriLight** es una propuesta académica de la Universidad de Columbia, presentada en la ACM SIGSAC Conference on Computer and Communications Security 2025 (Taipéi, 13 al 17 de octubre de 2025), que aborda la falsificación de vídeos de habla mediante firmas ópticas en directo (14). El sistema genera señales luminosas moduladas, imperceptibles para el ojo humano, en el propio lugar del evento; esas señales codifican rasgos faciales y de movimiento del orador, y quedan embebidas en cualquier grabación auténtica. Un vídeo manipulado no reproducirá esa firma óptica al cotejarlo. Propone así una capa de verificación física, distinta del análisis digital de la imagen, que un *deepfake* no puede replicar sin acceso al dispositivo emisor de la señal. La fuente no especifica el grado de implementación práctica fuera del entorno de investigación, pero el enfoque, combinar estímulos físicos y análisis algorítmico, resulta prometedor para reforzar la videoidentificación frente a ataques.
+
+Otras soluciones incluyen el módulo de **detección de vida premium** de Jumio, lanzado el 18 de junio de 2025, que combina patrones de color aleatorios con análisis de vídeo por IA para confirmar la presencia de un ser humano vivo e identificar signos de suplantación (19). Este enfoque reemplaza o complementa las técnicas de detección de vida de primera generación, parpadeos, profundidad 3D, que se han quedado cortas. El sistema de Jumio se diseñó para el nivel 2 de rendimiento en detección de ataques de presentación (*PAD*) según el marco de pruebas de iBeta, certificación que la compañía obtuvo de forma formal en octubre de 2025 conforme a la norma ISO/IEC 30107-3 (19).
+
+El 1 de febrero de 2025, el Comité Europeo de Normalización (CEN) publicó la especificación técnica **CEN/TS 18099:2025**, pensada para evaluar la resistencia a los ataques de inyección biométrica (15). El documento distingue entre el método de inyección, la vía por la que se introduce el ataque en el sistema, y el instrumento de inyección, el contenido sintético, imagen, vídeo o *deepfake*, que se pretende hacer pasar por auténtico. Se espera que sirva de base para la norma ISO/IEC 25456, aún en desarrollo, que dará orientación armonizada para certificar sistemas de identidad integrados con IA (15). La aparición de estos estándares confirma que el sector reconoce que los sistemas de verificación necesitan mecanismos específicos frente a *deepfakes* y otras técnicas de suplantación impulsadas por IA.
+
+La comunidad técnica coincide en que mitigar el fraude mediante *deepfake* exige un enfoque de defensa en profundidad, una estrategia con varias capas de protección que combine detección de vida para confirmar que la persona es real; análisis de consistencia para detectar inconsistencias en iluminación, textura de la piel y parpadeo; verificación de la integridad del canal para asegurar que el flujo de vídeo no ha sido inyectado ni manipulado; autenticación multifactor que sume a la verificación facial otros factores, como el conocimiento de un secreto o la posesión de un dispositivo; y actualización continua de los modelos de detección para seguir el ritmo de las técnicas de ataque (7)(8)(13).
+
+El caso de Molina de Segura marca la urgencia de esta agenda. El fraude no se detectó por la robustez del sistema de verificación, sino por un fallo del propio sistema delictivo. Sin medidas de mitigación más eficaces, los sistemas de videoidentificación seguirán expuestos a ataques de *deepfake* en tiempo real. Y la confianza en los certificados digitales y en los procesos de identificación remota, pilares de la economía digital y de la administración electrónica, corre riesgo de quebrarse.
+
+---
+
+## Sección 7. Conclusiones y prospectiva
+
+### 7.1. Síntesis de hallazgos
+
+El caso de Molina de Segura marca un hito en la evolución del cibercrimen en España y en Europa. La detención de un presunto autor de 38 intentos de suplantación de identidad mediante *deepfake* en tiempo real, documentada por la Policía Nacional el 11 de agosto de 2026 (1), es la primera constatación operativa en España de una amenaza que ya avisaban los informes de Europol (EU-SOCTA 2025) y LexisNexis (Cybercrime Report): la IA generativa rebaja la barrera de entrada para los delitos digitales y pone al alcance de delincuentes de sofisticación media-alta técnicas que antes solo manejaban actores con recursos altos (7)(8).
+
+El análisis de la metodología revela una combinación inédita de elementos técnicos y físicos: un *deepfake* en tiempo real para superponer el rostro de la víctima, un sistema casero de iluminación con bombillas de colores para simular hologramas, capas de anonimización con VPN, 320 líneas telefónicas y 24 dispositivos móviles, y una evolución progresiva en la calidad del fraude, desde intentos «muy burdos» hasta engañar a sistemas automatizados (1)(2)(4). Ese nivel de sofisticación, sumado a la persistencia delictiva, 38 intentos sobre más de 30 identidades, retrata a un delincuente que invirtió tiempo y recursos en desarrollar un sistema de fraude sistemático, no a un oportunista.
+
+El fallo técnico que permitió identificar al sospechoso, un retraso de procesamiento de «apenas un segundo» que apagó la máscara digital por un instante (1)(2), es el elemento más paradójico del caso. La detención no llegó por la eficacia de los sistemas de seguridad de la entidad emisora; llegó por una vulnerabilidad del propio sistema delictivo. La fiabilidad de los sistemas de videoidentificación, tal como funcionan hoy, depende de que la técnica de ataque siga operando sin fallos, no de la robustez de las defensas. El sistema de verificación fue engañado un número indeterminado de veces antes de que el fallo técnico revelara la manipulación (1)(4).
+
+### 7.2. Implicaciones para la seguridad digital y la confianza en los certificados electrónicos
+
+El caso tiene implicaciones que van más allá del Derecho penal y de la investigación policial: tocan los cimientos de la confianza digital en el mercado interior europeo. El Reglamento eIDAS establece, en su artículo 25.2, que los certificados cualificados amparan una firma electrónica con efecto jurídico equivalente al de una firma manuscrita en todos los Estados miembros (11). Esa equiparación, pilar de la economía digital y de la administración electrónica, da por hecho que el proceso de verificación de identidad previo a la expedición del certificado es fiable y seguro. El caso demuestra que esa presunción puede ser vulnerada mediante *deepfakes* en tiempo real, y eso abre interrogantes sobre la integridad de todo el sistema de firma electrónica cualificada.
+
+Desde la protección de datos, el tratamiento de imágenes faciales para videoidentificación es un tratamiento de datos biométricos de alto riesgo, sujeto a las garantías del RGPD (artículo 9) (3)(10). La vulnerabilidad de los sistemas de videoidentificación frente a *deepfakes* pone en duda si se cumple la obligación de seguridad del artículo 32 del RGPD, que exige medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo (10). Que un sistema de verificación pueda ser burlado mediante un *deepfake* en tiempo real sugiere que el nivel de seguridad implementado podría no ser «adecuado al riesgo» en los términos del RGPD, y eso podría acarrear responsabilidades para las entidades emisoras (3)(10).
+
+Desde el punto de vista criminológico, el caso confirma las tendencias del EU-SOCTA 2025 (7): la IA generativa rebaja la barrera de entrada para los delitos digitales, y los *deepfakes* y la clonación de voz impulsan nuevas formas de fraude, extorsión y robo de identidad (7). El informe de LexisNexis documenta un incremento de ocho veces en el fraude de identidad sintética durante 2025 (8). Esos datos, junto con lo que constata el caso, muestran que la amenaza de los *deepfakes* ya se materializa en ataques concretos.
+
+El caso evidencia también la necesidad de actualizar la normativa, aunque parte de esa actualización ya está en marcha. El Reglamento eIDAS original (2014) no contemplaba la amenaza de los *deepfakes* en tiempo real, ni preveía requisitos específicos para los sistemas de videoidentificación frente a ataques de suplantación con IA. El Reglamento (UE) 2024/1183, conocido como eIDAS 2.0, en vigor desde el 20 de mayo de 2024, introduce la Cartera Europea de Identidad Digital (EUDI Wallet) y refuerza los controles de seguridad exigibles a los prestadores cualificados (20). Pero su calendario de aplicación se extiende hasta diciembre de 2027 para la aceptación obligatoria de la Cartera por determinadas entidades del sector privado, así que buena parte de sus garantías reforzadas todavía no despliega efectos plenos. Las fuentes no permiten determinar si eIDAS 2.0 incorporará requisitos específicos frente a ataques de inyección biométrica o *deepfake* en la fase de identificación remota previa a la expedición del certificado; esa laguna la está cubriendo, por ahora, la normalización técnica, con la especificación CEN/TS 18099 (15), antes que la legislación. El Reglamento de IA (UE 2024/1689) (12), de entrada escalonada, fija obligaciones para proveedores y usuarios de sistemas de IA según nivel de riesgo, y su artículo 50 impone obligaciones de transparencia sobre contenidos sintéticos que encajan mejor con el fenómeno de los *deepfakes* que el catálogo de usos prohibidos del artículo 5. Las fuentes no se pronuncian sobre la aplicación concreta de ninguno de estos dos regímenes al caso, una laguna informativa que deberá resolver la investigación en curso y, en su caso, la jurisprudencia.
+
+### 7.3. Líneas de investigación futuras
+
+El caso abre líneas de investigación que exceden el ámbito jurídico y criminológico de este artículo. Desde la perspectiva técnica, plantea interrogantes sobre las vulnerabilidades propias de los *deepfakes* en tiempo real y sobre la posibilidad de desarrollar sistemas de verificación que no dependan solo de la apariencia facial. El desarrollo de sistemas como Deepsight (13) y VeriLight (14), y la publicación de estándares como CEN/TS 18099:2025 (15), apuntan en esa dirección, pero nadie ha evaluado todavía, de forma independiente, su implementación práctica y su eficacia frente a ataques en tiempo real en entornos comparables al caso español. La investigación futura tendrá que medir la eficacia comparativa de estas soluciones y su integración en los flujos de verificación existentes.
+
+Desde la perspectiva jurídica, el caso deja preguntas sin respuesta en las fuentes disponibles. Falta determinar si el uso de un *deepfake* para cometer un fraude documental encaja mejor en el régimen de transparencia del artículo 50 del Reglamento de IA (12) que en el catálogo de «usos inaceptables» del artículo 5. Falta también fijar el régimen de responsabilidad de las entidades emisoras de certificados por la vulnerabilidad de sus sistemas de videoidentificación frente a ataques de *deepfake*, a la luz del RGPD y de la normativa sectorial. Y falta explorar la eventual responsabilidad de los proveedores de software de *deepfake* por el uso de sus herramientas para cometer delitos, en el terreno de la responsabilidad civil y, en su caso, penal por cooperación necesaria.
+
+Desde la perspectiva criminológica, el caso deja abierta la pregunta de si existe una red más amplia de colaboradores o proveedores de servicios. La sofisticación del sistema desplegado, software de *deepfake* en tiempo real, equipos cifrados, una infraestructura de anonimización compleja, sugiere que el detenido podría no haber actuado solo, o que al menos accedió a servicios especializados en el mercado ilegal. Las fuentes no se pronuncian sobre esta cuestión, que sigue pendiente de la investigación en curso. El caso plantea también la necesidad de estudiar cómo evolucionan las técnicas de *deepfake* en tiempo real, quién puede acceder a ellas sin ser un especialista, y qué medidas de prevención pueden tomar las plataformas y los proveedores de servicios de identidad.
+
+El caso de Molina de Segura funciona como una llamada de atención para instituciones, prestadores de servicios de certificación y entidades financieras. La confianza en los certificados digitales y en los procesos de identificación remota, pilares de la economía digital y de la administración electrónica, depende de que estos sistemas puedan hacer frente a una amenaza que evoluciona más rápido que los procesos legislativos y normativos. La respuesta tendrá que combinar soluciones técnicas, mejores sistemas de detección de vida y de análisis de consistencia; actualizaciones normativas, requisitos específicos para sistemas de videoidentificación dentro de eIDAS 2.0 y de la normativa de protección de datos; y cooperación internacional, intercambio de información y buenas prácticas entre autoridades policiales, reguladores y sector privado.
+
+El caso no es solo la historia de un delincuente al que delató un fallo técnico de «apenas un segundo». Es la prueba de que la IA ha cambiado las reglas del juego en el fraude de identidad, y de que los sistemas que hasta ahora dábamos por seguros necesitan una revisión de fondo para afrontar una amenaza que ya no es futura: es presente.
+
+---
+
+## Bibliografía
+
+**(1)** El País (2026). *Un fallo de la IA que usaba para estafar delata a un ciberdelincuente*. 11 de agosto de 2026. Disponible en: https://elpais.com/espana/2026-08-11/un-fallo-de-la-ia-que-usaba-para-estafar-delata-a-un-ciberdelincuente.html
+
+**(2)** Europa Press (2026). *Detenido al fallar la máscara facial de IA que utilizaba para obtener certificados de firma electrónica*. Comunicado del Ministerio del Interior / Policía Nacional relayado el 11 de agosto de 2026. Disponible en: https://www.europapress.es/murcia/noticia-detenido-fallar-mascara-facial-ia-utilizaba-obtener-certificados-firma-electronica-20260811104537.html
+
+**(3)** La Razón (2026). *Detenido por utilizar una máscara facial de IA para obtener certificados de firma electrónica*. 11 de agosto de 2026. Disponible en: https://www.larazon.es/murcia/detenido-utilizar-mascara-facial-obtener-certificados-firma-electronica_202608116a7ae5b4a046ad6ebcab1d61.html
+
+**(4)** Marca (2026). *Detenido un ciberdelincuente que utilizaba IA y un juego de luces para obtener certificados de firma electrónica*. 12 de agosto de 2026. Disponible en: https://www.marca.com/tiramillas/sucesos/2026/08/12/detenido-ciberdelincuente-utilizaba-ia-juego-luces-obtener-certificados-firma-electronica.html
+
+**(5)** The Register (2026). *Deepfake hiccup unmasks suspected digital certificate fraudster*. 11 de agosto de 2026. Disponible en: https://www.theregister.com/security/2026/08/11/deepfake-hiccup-unmasks-suspected-digital-certificate-fraudster/
+
+**(6)** Help Net Security (2026). *Split-second deepfake glitch blows digital certificate fraudster's cover*. 12 de agosto de 2026. Disponible en: https://www.helpnetsecurity.com/2026/08/12/deepfake-video-identity-verification-fraud-arrest-spain/
+
+**(7)** Europol (2025). *European Union Serious and Organised Crime Threat Assessment 2025 (EU-SOCTA 2025) — The changing DNA of serious and organised crime*. Publications Office of the European Union, Luxembourg. 18 de marzo de 2025. Disponible en: https://www.europol.europa.eu/publication-events/main-reports/changing-dna-of-serious-and-organised-crime
+
+**(8)** LexisNexis Risk Solutions (2026). *Cybercrime Report: Evolving Threats Beneath the Surface*. Análisis de más de 116.000 millones de transacciones a través de la Digital Identity Network durante 2025. Disponible en: https://risk.lexisnexis.com
+
+**(9)** Ley Orgánica 10/1995, de 23 de noviembre, del Código Penal. *Artículos 26, 73, 74, 248, 390, 392 y 401*. Boletín Oficial del Estado, núm. 281, de 24 de noviembre de 1995.
+
+**(10)** Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD). *Artículos 5, 9 y 32*. DOUE L 119/1, de 4 de mayo de 2016.
+
+**(11)** Reglamento (UE) n.º 910/2014 del Parlamento Europeo y del Consejo, de 23 de julio de 2014, relativo a la identificación electrónica y los servicios de confianza para las transacciones electrónicas en el mercado interior (eIDAS). *Artículos 3.10 y 25*. DOUE L 257/73, de 28 de agosto de 2014.
+
+**(12)** Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial). *Artículos 5 y 50*. DOUE L, de 12 de julio de 2024.
+
+**(13)** Incode Technologies (2025). *Deepsight: Breakthrough Deepfake Defense*. Lanzamiento el 2 de diciembre de 2025. Disponible en: https://www.incode.com
+
+**(14)** Schwartz, H.; Yan, X.; Carver, C. J.; Zhou, X. (2025). *Combating Falsification of Speech Videos with Live Optical Signatures*. En: Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security (CCS '25), Taipéi, 13-17 de octubre de 2025. Disponible en: https://dl.acm.org/doi/10.1145/3719027.3765112
+
+**(15)** CEN/TS 18099:2025. *Biometric data injection attack detection*. Comité Europeo de Normalización (CEN). Fecha de publicación: 1 de febrero de 2025.
+
+**(16)** García Serrano, J. (2025). Entrevista. *Red Seguridad*, 3 de diciembre de 2025. Disponible en: https://www.redseguridad.com/entrevistas/entrevista-ciberdelincuencia-jose-garcia-serrano-policia-nacional_20251203.html
+
+**(17)** iProov (2025). *Threat Intelligence Report 2025*. 27 de febrero de 2025. Disponible en: https://www.iproov.com
+
+**(18)** Resemble AI (2025). *Q1 2025 Deepfake Incident Report*. Abril de 2025.
+
+**(19)** Jumio Corporation (2025). *Jumio Launches Premium Liveness Detection Solution for Superior Protection Against Deepfakes and Injection Attacks*. 18 de junio de 2025; y *Jumio Achieves ISO/IEC 30107-3 Level 2 Compliance*. 21 de octubre de 2025. Disponible en: https://www.jumio.com
+
+**(20)** Reglamento (UE) 2024/1183 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, por el que se modifica el Reglamento (UE) n.º 910/2014 en lo que respecta al establecimiento del Marco Europeo de Identidad Digital (eIDAS 2.0). DOUE L, de 30 de abril de 2024. En vigor desde el 20 de mayo de 2024.
