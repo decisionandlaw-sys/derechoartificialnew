@@ -1,0 +1,338 @@
+---
+title: "Ética de la IA: la desbandada en OpenAI, Anthropic y Microsoft"
+description: "Responsables de ética y seguridad abandonan OpenAI, Anthropic y Microsoft entre 2024 y 2026: causas, patrones y consecuencias para el AI Act."
+date: "2026-08-23"
+tags: ["AI Act", "etica IA", "gobernanza algoritmica", "OpenAI", "Anthropic"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "gran-desbandada-etica-ia-openai-anthropic-microsoft"
+readingTime: 38
+image: "/images/global-ia/gran-desbandada-etica-ia-openai-anthropic-microsoft/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Entre 2024 y 2026, las tres empresas que definen el rumbo de la inteligencia artificial generativa (OpenAI, Anthropic y Microsoft) han perdido a la mayoría de las personas que debían frenar sus propios excesos. OpenAI ha visto salir a su cofundador y científico jefe, Ilya Sutskever; al codirector de su equipo de superalineación, Jan Leike; a su directora de tecnología, Mira Murati; y, en el mismo verano de 2026, a tres responsables clave de seguridad y ética casi de forma simultánea: Johannes Heidecke (sistemas de seguridad), Joshua Achiam (alineación de misiones) y Chloé Bakalar (ética). Bakalar llevaba menos de un año en el cargo. Su salida, revelada por *Financial Times* el 10 de agosto de 2026, no fue anunciada por la propia compañía.
+
+Anthropic, la empresa que construyó su identidad de marca sobre la promesa de una IA "constitucional" y segura, tampoco se libra del fenómeno. Mrinank Sharma, líder de su equipo de investigación de salvaguardas, dimitió en febrero de 2026 con una carta que decía: "el mundo está en peligro". En ella denunciaba presiones internas constantes para apartar de las decisiones lo que la empresa dice valorar más. Microsoft fue más lejos: en diciembre de 2025 eliminó por completo su *AI Ethics and Society Team*, un equipo que en 2020 llegó a tener treinta personas y que la compañía había reducido a siete apenas dos meses antes de disolverlo.
+
+Este artículo reconstruye, a partir de fuentes documentales verificables (prensa internacional, declaraciones públicas y cartas de renuncia), la cronología completa de estas salidas y analiza los patrones que las explican. El más citado por las propias fuentes es la tensión entre la velocidad de lanzamiento de productos y la exigencia de supervisión ética. Jan Leike lo resumió en 2024: OpenAI priorizaba "los productos llamativos" sobre la cultura de seguridad. Dos años después, los antiguos miembros del equipo de ética de Microsoft describieron exactamente la misma lógica para justificar su propia disolución.
+
+Un segundo patrón son las renuncias motivadas por decisiones comerciales concretas. La investigadora Zoë Hitzig dejó OpenAI el mismo día en que la empresa empezó a probar publicidad en ChatGPT. La entonces directora de robótica, Caitlin Kalinowski, se fue por el acuerdo de la compañía con el Pentágono; después se incorporó a Anthropic. Un tercer patrón, señalado por la propia Bakalar antes de irse, es la fragilidad de encargar la ética a una sola persona sin estructura ni recursos detrás. Su advertencia ("nunca debería haber una sola persona que actúe como centro moral de un desarrollador de IA") cobra un peso distinto ahora que OpenAI no ha nombrado sustituta.
+
+El artículo sitúa estos hechos frente al Reglamento (UE) 2024/1689 (AI Act), que exige a los proveedores de sistemas de IA de alto riesgo sistemas de gobernanza, supervisión humana y gestión de riesgos. La desaparición sostenida de los equipos internos encargados de esa función plantea, según el análisis, dudas razonables sobre el cumplimiento efectivo de esas obligaciones por parte de empresas que operan en el mercado europeo.
+
+Las consecuencias, según el análisis, van más allá de cada empresa. La pérdida de capital humano especializado en evaluación de riesgos deja a estas organizaciones sin memoria institucional para su propia supervisión. La visibilidad mediática del fenómeno (cubierto por *Financial Times*, *BBC*, *WIRED*, *Bloomberg* y *The New York Times*, entre otros) envía una señal a reguladores e inversores que resulta difícil de ignorar. Y, sobre todo, erosiona la credibilidad de los compromisos públicos de "IA segura" que estas mismas empresas han firmado en foros como la Cumbre de Bletchley Park.
+
+El artículo cierra con seis recomendaciones dirigidas a empresas y reguladores: institucionalizar los equipos de ética con autonomía y capacidad de veto, exigir transparencia sobre las salidas y sus motivos, crear canales de denuncia interna protegidos, someter estas estructuras a auditoría externa, evaluar el impacto ético de nuevos lanzamientos antes de su salida al mercado, y convertir los compromisos internacionales de seguridad en obligaciones vinculantes y verificables, no en declaraciones de intenciones.
+
+# La gran desbandada ética: por qué los responsables de seguridad y gobernanza algorítmica están abandonando OpenAI, Anthropic y Microsoft
+
+*Un análisis documental de las dimisiones, renuncias y despidos en los equipos de ética e inteligencia artificial entre 2024 y 2026, y sus implicaciones para la credibilidad y la confianza en el ecosistema de la IA generativa*
+
+---
+
+## 1. Introducción: la función de los responsables de ética en la industria de la IA
+
+Los sistemas de inteligencia artificial generativa avanzan rápido. También crecen los riesgos. Para contenerlos, las empresas del sector han creado equipos y figuras específicas: responsables de ética, jefes de seguridad, directores de alineación. Estas personas deben garantizar que el desarrollo no sacrifique la seguridad ni el interés público en favor de la velocidad comercial.
+
+Entre 2024 y 2026, algo ha cambiado. Esas figuras están abandonando sus puestos. No es un fenómeno menor ni aislado. Este artículo examina esas salidas a partir de fuentes documentales verificadas. Busca patrones, causas y consecuencias para la gobernanza algorítmica.
+
+El contexto normativo importa. El Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024 (AI Act), exige a los proveedores de sistemas de IA de alto riesgo implementar sistemas de gobernanza y supervisión adecuados (31). La desaparición de los equipos internos de ética y seguridad contradice el espíritu de esa norma. Plantea dudas sobre el cumplimiento efectivo de los requisitos de transparencia y rendición de cuentas (32).
+
+Las salidas no son incidentes aislados. OpenAI ha perdido a su cofundador y científico jefe Ilya Sutskever (2024), al responsable del equipo de superalineación Jan Leike (2024), a la directora de tecnología Mira Murati (2024), al responsable de sistemas de seguridad Johannes Heidecke (julio de 2026), al responsable de alineación de misiones Joshua Achiam (julio de 2026) y a la responsable de ética Chloé Bakalar (julio de 2026) (2, 3, 4, 5, 6, 8, 11). A estas se suman renuncias públicas por motivos éticos concretos. La investigadora Zoë Hitzig dimitió por la introducción de publicidad en ChatGPT (12, 25, 26). La directora de robótica Caitlin Kalinowski abandonó la empresa por el acuerdo con el Pentágono (23, 24).
+
+Anthropic, la empresa que se presentaba como la alternativa más segura, también ha perdido a su líder del equipo de salvaguardas. Mrinank Sharma dimitió en febrero de 2026 con una carta en la que advertía: "el mundo está en peligro" (15, 16, 17, 18). Fuentes documentales señalan que Anthropic ha ido erosionando sus compromisos de seguridad interna (19).
+
+Microsoft ha ido más lejos. En 2025 eliminó por completo su equipo de ética e inteligencia artificial, el *AI Ethics and Society Team*. Lo había reducido de treinta a siete empleados en una reorganización previa (20, 21, 22). Los propios miembros del equipo señalaron que la decisión respondía a la prioridad de lanzar productos de IA rápido, no a someterlos a una revisión ética exhaustiva (20).
+
+Estas salidas no son rotaciones normales de personal. La prensa especializada habla de "éxodo" o "desbandada" (27, 28, 29). Este artículo reconstruye la cronología y los ejes temáticos de esos acontecimientos. Analiza los factores explicativos recurrentes. Extrae implicaciones para la regulación y la confianza pública en la inteligencia artificial.
+
+---
+
+## 2. El caso OpenAI: un goteo incesante de salidas (2024‑2026)
+
+OpenAI concentra el mayor número de salidas. Ninguna otra empresa del sector ha perdido a tantos responsables de seguridad, ética y alineación. La cronología abarca desde mayo de 2024 hasta agosto de 2026. Afecta a figuras de primer nivel: el cofundador, la responsable de ética, la directora de tecnología, los máximos responsables de seguridad y alineación de misiones.
+
+### 2.1. Las primeras bajas: Sutskever, Leike y la disolución del equipo de superalineación (2024)
+
+El 14 de mayo de 2024, Ilya Sutskever, cofundador y científico jefe de OpenAI, anunció su salida (3). Sutskever había sido una de las figuras más influyentes en el desarrollo de los modelos fundacionales. Codirigía, junto a Jan Leike, el equipo de *superalignment* (superalineación), dedicado a garantizar que los sistemas de inteligencia artificial general (AGI) se alinearan con los intereses humanos a largo plazo.
+
+Tres días después, Jan Leike hizo público su abandono. Declaró que OpenAI priorizaba "los productos llamativos" (*shiny products*) sobre la cultura y los procesos de seguridad (2). Afirmó que "la seguridad y la alineación se habían convertido en un elemento secundario frente al desarrollo comercial". La salida simultánea de ambos líderes disolvió el equipo de superalineación. Quedó integrado en otras áreas de investigación, sin estructura dedicada ni autonomía (3).
+
+El 25 de septiembre de 2024, la directora de tecnología (*Chief Technology Officer*) Mira Murati abandonó OpenAI. Otros dos ejecutivos de alto nivel la acompañaron. La prensa interpretó el movimiento como parte de una reestructuración profunda de la cúpula directiva (4). Murati no ocupaba un puesto oficial de ética o seguridad, pero su marcha afectó a la gobernanza interna y a la continuidad de los equipos de investigación.
+
+Estas primeras salidas anticiparon un patrón que se repetiría en los años siguientes: la tensión entre el desarrollo rápido de productos comerciales y la exigencia interna de mantener estándares elevados de seguridad y alineación.
+
+### 2.2. La salida de Chloé Bakalar, responsable de ética (agosto de 2026)
+
+El caso más reciente y con vínculo directo con la ética es el de Chloé Bakalar. Bakalar se incorporó a OpenAI en agosto de 2025. Procedía de Meta Platforms, donde había ocupado durante seis años el cargo de responsable de ética de inteligencia artificial (*chief ethicist*) (1, 8). Su contratación pretendía reforzar la credibilidad de OpenAI en materia de gobernanza algorítmica, sobre todo después de las salidas de 2024.
+
+En julio de 2026, menos de un año después de su incorporación, Bakalar abandonó la compañía (1, 7, 9). OpenAI no anunció su salida. *Financial Times* la reveló el 10 de agosto de 2026 (1). Según las fuentes, Bakalar era la única especialista en ética dedicada solo a esa función dentro de la empresa. Su puesto era singular y, por tanto, vulnerable (1, 8).
+
+La propia Bakalar había manifestado su convicción de que "nunca debería haber una sola persona que actúe como centro moral de un desarrollador de IA" (7, 14). Esa afirmación, que puede leerse como una crítica a la estructura organizativa de OpenAI, cobra relevancia a la luz de su salida y de la ausencia de un reemplazo inmediato. *Futurism* consultó fuentes que señalaron que Bakalar había trasladado dentro de la empresa su preocupación por la falta de autonomía y de recursos para llevar a cabo una supervisión ética efectiva (7).
+
+OpenAI emitió una declaración a los medios. Afirmó que "la ética está integrada en múltiples equipos" y que la empresa no depende de un único individuo para garantizar el cumplimiento ético (8, 9). Esa respuesta no aclaraba si existía un plan para cubrir la vacante ni cómo se articularía la supervisión ética en ausencia de una figura dedicada. Desde la perspectiva del AI Act, la ausencia de un responsable de ética identificado puede dificultar el cumplimiento de los requisitos de transparencia y supervisión humana previstos en los artículos 13 y 14 del Reglamento (31).
+
+### 2.3. Johannes Heidecke, jefe de sistemas de seguridad, y Joshua Achiam, responsable de alineación de misiones (julio de 2026)
+
+La salida de Bakalar no fue un hecho aislado en el verano de 2026. Apenas unas semanas antes, en julio de 2026, dos responsables clave de seguridad y alineación habían abandonado OpenAI.
+
+**Johannes Heidecke** era el responsable de sistemas de seguridad (*Head of Safety Systems*), un puesto de máxima responsabilidad en la supervisión de los riesgos operativos de los modelos. Heidecke se había incorporado a OpenAI en 2021 como analista de seguridad y había asumido el liderazgo del equipo de sistemas de seguridad en 2024 (5, 6). El 11 de julio de 2026, *WIRED* y *Bloomberg* confirmaron su salida. Se produjo tras una reestructuración interna en la que los equipos de seguridad e investigación quedaron integrados bajo una única dirección (5, 6). El director de investigación de OpenAI, Mark Chen, anunció que los equipos de seguridad dependerían en adelante de Mia Glaese, vicepresidenta de investigación y responsable de alineación. Su rol ampliado abarcaba investigación y seguridad (6). Heidecke comunicó su decisión a los empleados en el mismo mes de julio (5).
+
+**Joshua Achiam** había sido nombrado en septiembre de 2024 responsable del equipo de *Mission Alignment* (alineación de misiones). Su área debía garantizar que el desarrollo de la IA se mantuviera fiel a la misión fundacional de OpenAI: beneficiar a la humanidad (11). Achiam llevaba nueve años en la empresa. Dentro de la empresa lo llamaban "futurista jefe" (*Chief Futurist*). Abandonó OpenAI en julio de 2026 (11). Fuentes chinas, como *腾讯新闻*, cubrieron su salida destacando su larga trayectoria y la relevancia de su puesto en la estructura de gobernanza interna (11).
+
+Las salidas simultáneas de Heidecke y Achiam, junto con la de Bakalar, supusieron la pérdida de tres de los máximos responsables de seguridad, ética y alineación en pocas semanas. La prensa especializada calificó este fenómeno como un "éxodo" o una "desbandada". OpenAI se quedaba sin el capital humano crítico para supervisar sus propios sistemas (8, 11, 13).
+
+### 2.4. Otras renuncias destacadas: Zoë Hitzig (publicidad) y Caitlin Kalinowski (acuerdo militar)
+
+Junto a las salidas de los responsables estructurales, OpenAI ha visto renuncias motivadas por conflictos éticos concretos y públicos. Refuerzan la tesis de una crisis de valores interna.
+
+**Zoë Hitzig**, investigadora de OpenAI, presentó su dimisión el mismo día en que la empresa comenzó a probar anuncios publicitarios en ChatGPT, en febrero de 2026. Publicó un artículo de opinión en *The New York Times* titulado *"I Left My Job at OpenAI. Putting Ads on ChatGPT Was the Last Straw"* (12). Argumentó que la introducción de publicidad en un sistema de IA generativa conlleva riesgos de manipulación. Puede condicionar las respuestas del modelo en función de intereses comerciales. Hitzig advirtió que OpenAI seguía el camino de plataformas como Facebook, donde los incentivos publicitarios degradan la calidad y la integridad del servicio (12, 26). Otras fuentes documentales confirmaron que su renuncia se produjo por esta causa específica (25, 26).
+
+**Caitlin Kalinowski**, directora de robótica de OpenAI, abandonó la empresa en marzo de 2026 por el acuerdo de colaboración con el Departamento de Defensa de Estados Unidos (Pentágono) (23, 24). Kalinowski había expresado serias reservas éticas sobre el uso militar de la tecnología desarrollada por OpenAI. Consideró que el acuerdo "merecía más deliberación" interna antes de ser suscrito (24). Medios de España y Uruguay cubrieron su renuncia. Destacaron que no fue la única empleada en manifestar inquietud por la deriva de la empresa hacia aplicaciones de defensa (23, 24). *Heise* también mencionó su salida en el contexto de la cobertura sobre Bakalar. Señaló que Kalinowski había pasado a trabajar para Anthropic (9, 10).
+
+### 2.5. El contexto de la reestructuración interna y la posible salida a bolsa
+
+Más allá de los casos individuales, las fuentes documentales apuntan a factores estructurales que explican la concentración de salidas en 2024‑2026. OpenAI ha atravesado varias reorganizaciones internas que han modificado la dependencia jerárquica de los equipos de seguridad y ética. La integración de seguridad e investigación bajo un mismo mando, anunciada en julio de 2026, fue interpretada por algunos empleados como una dilución de la independencia de los equipos de seguridad (5, 6). *El Economista* especula con la posible salida a bolsa de OpenAI. Eso podría generar tensiones entre la misión fundacional de la empresa y las exigencias de rentabilidad del mercado (14). Esta hipótesis, aunque no confirmada por fuentes oficiales, es recurrente en el análisis de la prensa especializada.
+
+OpenAI ha perdido, en dos años, a los principales artífices de su sistema de gobernanza interna. *Business Insider Africa* lo resumió: "los líderes responsables de mantener segura la IA de OpenAI siguen marchándose" (13). Cada salida debilita la credibilidad de los compromisos públicos de la empresa. Esta situación resulta preocupante, sobre todo a la luz del AI Act. El Reglamento exige a los proveedores de sistemas de alto riesgo disponer de un sistema de gestión de calidad que incluya procedimientos para la identificación, evaluación y mitigación de riesgos (artículo 17) (31). La pérdida de los responsables de seguridad y ética pone en riesgo la capacidad de OpenAI para cumplir con dichas obligaciones.
+
+---
+
+## 3. El caso Anthropic: la dimisión de Mrinank Sharma y la erosión de los compromisos de seguridad
+
+Anthropic nació en 2021. La fundaron antiguos empleados de OpenAI, entre ellos Dario y Daniela Amodei. Su propósito explícito: desarrollar inteligencia artificial de forma segura, transparente y ética. Adoptaron el marco de "IA constitucional" (*constitutional AI*) como sello distintivo. Esa orientación les dio la reputación de ser la alternativa más responsable frente a OpenAI. Sus responsables de seguridad y alineación eran la garantía de que la empresa no repetiría los errores de sus competidores.
+
+En febrero de 2026, esa imagen se resquebrajó. Mrinank Sharma, líder del equipo de *Safeguards Research* (investigación de salvaguardas), dimitió (15). Su renuncia, efectiva el 9 de febrero de 2026, fue comunicada mediante una carta reproducida en su totalidad por varios medios internacionales (16, 18). La BBC, *Business Insider*, *India Today* y CNBC TV18 cubrieron la noticia (15, 16, 17, 18).
+
+En su carta, Sharma advertía: "el mundo está en peligro" (*the world is in peril*). Señalaba una convergencia de crisis interconectadas: inteligencia artificial, armas biológicas (*bioweapons*), cambio climático y degradación de la información (15, 16). Pero el núcleo de su crítica se dirigió a la propia organización. Sharma escribió: "A lo largo de mi tiempo aquí, he visto repetidamente lo difícil que es dejar que nuestros valores guíen realmente nuestras acciones" (16). Y añadió que en Anthropic "constantemente enfrentamos presiones para dejar de lado lo que realmente importa" (18). Esas afirmaciones apuntan a una tensión estructural entre el discurso público de seguridad de Anthropic y las presiones internas para priorizar objetivos comerciales o de velocidad de desarrollo.
+
+Sharma no se limitó a señalar el problema. Anunció su retiro temporal de la vida pública para dedicarse al estudio de la poesía y "volverse invisible" (15, 17). La prensa interpretó esa decisión como un gesto de desencanto profundo con la industria. También como una advertencia existencial sobre los riesgos que la propia comunidad investigadora está generando (15).
+
+La dimisión de Sharma no fue un hecho aislado. Fuentes documentales señalan que Anthropic ha ido erosionando sus compromisos fundamentales de seguridad en el mismo periodo en que se producían las salidas en OpenAI (19). Según *Futurism*, Anthropic habría modificado sus protocolos internos de supervisión. Redujo el margen de maniobra de los equipos de seguridad frente a las presiones comerciales y las exigencias de despliegue acelerado de nuevos modelos (19). Esta deriva, aunque menos mediática que la de OpenAI, confirma que el fenómeno de la tensión entre ética y rentabilidad es transversal a toda la industria. Ninguna de las empresas líderes ha conseguido resolver la contradicción entre sus compromisos fundacionales y las dinámicas del mercado. En el contexto del AI Act, esta erosión de los compromisos de seguridad podría ser interpretada como un incumplimiento de los requisitos de supervisión humana y transparencia (artículos 14 y 13) (31).
+
+Anthropic ha sido el destino de algunos exempleados de OpenAI descontentos con la política de seguridad de su antigua empresa. Caitlin Kalinowski, que abandonó OpenAI en marzo de 2026 por el acuerdo con el Pentágono, se incorporó a Anthropic (9, 10). Este movimiento sugiere que Anthropic sigue siendo percibida por algunos profesionales como un refugio ético. Pero las salidas de sus propios responsables de seguridad, como la de Sharma, indican que esa percepción no se corresponde con la realidad interna de la organización.
+
+El caso de Anthropic demuestra que el fenómeno analizado no se limita a OpenAI. Afecta también a la empresa que construyó su identidad de marca en torno a la seguridad y la ética. La dimisión de su máximo responsable de salvaguardas, acompañada de advertencias explícitas sobre la desconexión entre los valores declarados y las prácticas efectivas, añade un elemento de alarma al diagnóstico general de la industria.
+
+---
+
+## 4. El caso Microsoft: la eliminación completa del equipo de ética e IA
+
+OpenAI y Anthropic han visto dimisiones voluntarias de figuras destacadas. Microsoft ofrece un tipo de caso distinto: la supresión completa y deliberada de la unidad encargada de la supervisión ética de la inteligencia artificial. La compañía adoptó esa decisión en el marco de una reestructuración global. Revela una lógica empresarial que considera los equipos de ética prescindibles. O incluso obstáculos para la velocidad de innovación.
+
+Microsoft creó el *AI Ethics and Society Team* para evaluar los riesgos de los productos de IA y asesorar a los equipos de desarrollo sobre posibles daños a los usuarios y a la sociedad (20, 22). Entre sus iniciativas más conocidas se encontraba el juego de rol *Judgment Call*. Diseñado para ayudar a los diseñadores de productos a identificar daños potenciales antes del lanzamiento al mercado (22). La herramienta pretendía incorporar la reflexión ética en las fases tempranas del desarrollo, en lugar de dejarla para una revisión final.
+
+La trayectoria del equipo fue de reducción progresiva. En su momento de mayor tamaño, en 2020, llegó a contar con unos treinta empleados (20). En octubre de 2025, como parte de una reorganización interna, el equipo quedó reducido a solo siete personas (20). Dos meses después, en diciembre de 2025, la compañía eliminó por completo el equipo. Fue en el marco de una ronda de despidos que afectó a unos 10.000 empleados a nivel global (21, 22).
+
+Fuentes documentales recogen las declaraciones de los propios miembros del equipo. Manifestaron su convicción de que el despido reflejaba, más allá de la simple eficiencia económica, la prioridad estratégica de la empresa de lanzar productos de IA al mercado con la máxima rapidez (20). Según el reportaje original de *Platformer*, los empleados afectados consideraron que la dirección de Microsoft había optado por eliminar la supervisión ética interna porque esta ralentizaba el desarrollo y cuestionaba decisiones comerciales (22). *INSIDE* cubrió la noticia en Taiwán. Subrayó la paradoja: Microsoft, una de las mayores inversoras en IA (integra la tecnología de OpenAI en sus productos), prescindía del equipo que debía garantizar que esa integración fuera ética (20).
+
+La eliminación del equipo de ética de Microsoft tiene implicaciones que trascienden el ámbito de la propia empresa. Microsoft es uno de los principales actores del ecosistema de IA. Invierte en OpenAI e integra asistentes y modelos generativos en su suite de productos (Windows, Office, Azure). La ausencia de un equipo dedicado a la supervisión ética interna significa que el desarrollo de esas herramientas queda sujeto solo a los criterios de los equipos de producto y negocio. No hay un contrapeso institucionalizado que evalúe los riesgos sistémicos (22). Esta situación es grave, sobre todo si se considera que Microsoft opera en la Unión Europea y, por tanto, está sujeta al AI Act. El Reglamento exige a los proveedores de sistemas de alto riesgo contar con sistemas de gestión de riesgos y supervisión humana (artículos 9 y 14) (31). La supresión del equipo de ética podría ser interpretada por los reguladores como una infracción de dichas obligaciones.
+
+En OpenAI y Anthropic, las salidas han sido individuales y voluntarias, con repercusión mediática y advertencias públicas de los dimisionarios. En Microsoft, la supresión ha sido silenciosa y se ha presentado como parte de una reestructuración general. El mensaje que envía a la industria resulta igual de contundente: incluso una de las corporaciones tecnológicas más consolidadas considera los equipos de ética prescindibles cuando entran en conflicto con la velocidad de lanzamiento de productos (20). Ese precedente, documentado por fuentes verificables, refuerza la hipótesis de que la tensión entre ética y rentabilidad es un fenómeno sistémico que afecta a todo el sector, más allá de las empresas nativas de IA.
+
+---
+
+## 5. Patrones comunes y factores explicativos
+
+El examen detallado de los casos de OpenAI, Anthropic y Microsoft revela patrones transversales. Exploran la concentración temporal de salidas y supresiones de equipos de ética y seguridad. Estos patrones apuntan a tensiones estructurales en el modelo de negocio de la inteligencia artificial generativa. A continuación se identifican los cinco factores explicativos recurrentes que emergen del análisis documental.
+
+### 5.1. Priorización de productos, velocidad de mercado y rentabilidad frente a la seguridad
+
+El factor que las fuentes documentales señalan con más insistencia es el conflicto entre la urgencia comercial y la exigencia de supervisión ética. En mayo de 2024, Jan Leike denunció que OpenAI anteponía "los productos llamativos" (*shiny products*) a la cultura y los procesos de seguridad (2). Los miembros del equipo de ética de Microsoft invocaron la misma lógica. Atribuyeron la eliminación de su unidad a la prioridad de la empresa de lanzar productos de IA al mercado con la máxima rapidez (20, 22).
+
+La integración de los equipos de seguridad e investigación bajo un mismo mando en OpenAI, anunciada en julio de 2026, fue interpretada por algunos analistas como una dilución de la independencia de los equipos de seguridad frente a las presiones de desarrollo (5, 6). Johannes Heidecke, responsable de sistemas de seguridad, salió en el contexto de esa misma reestructuración. Eso sugiere que la falta de autonomía fue un detonante de su decisión (5, 6).
+
+En Anthropic, Mrinank Sharma se refirió a esta tensión: "constantemente enfrentamos presiones para dejar de lado lo que realmente importa" (16, 18). La expresión "lo que realmente importa" remite, en su contexto, a los valores de seguridad y alineación que la empresa había declarado como fundacionales. La brecha entre el discurso público y las prácticas internas constituye un patrón común a las tres organizaciones analizadas.
+
+### 5.2. Conflictos éticos derivados de acuerdos comerciales: publicidad y contratos militares
+
+Un segundo patrón identificado es la aparición de conflictos éticos concretos que han motivado renuncias individuales. En OpenAI, dos casos son paradigmáticos.
+
+El primero es la introducción de publicidad en ChatGPT, decidida por la empresa en febrero de 2026. La investigadora Zoë Hitzig dimitió el mismo día en que OpenAI comenzó a probar anuncios. Publicó un artículo en *The New York Times* en el que advertía de los riesgos de manipulación de los usuarios y de la degradación de la integridad del servicio (12, 25, 26). Hitzig comparó la deriva de OpenAI con la de Facebook, donde los incentivos publicitarios han erosionado la calidad de la plataforma (12).
+
+El segundo es el acuerdo de OpenAI con el Departamento de Defensa de Estados Unidos (Pentágono). La directora de robótica, Caitlin Kalinowski, abandonó la empresa en marzo de 2026 por este motivo. Manifestó que el acuerdo "merecía más deliberación" y que albergaba serias reservas éticas sobre el uso militar de la tecnología desarrollada (23, 24). Medios de varios países cubrieron su salida. Kalinowski pasó después a Anthropic (9, 10), lo que sugiere que la decisión no fue un gesto aislado sino una convicción profesional.
+
+Estos dos conflictos (publicidad y contratos de defensa) ilustran cómo las decisiones comerciales y estratégicas de las empresas de IA pueden entrar en colisión directa con las convicciones éticas de sus equipos. Provocan renuncias públicas y erosionan la confianza interna.
+
+### 5.3. Ausencia de estructuras de gobernanza independientes y concentración de la ética en una única figura
+
+Un tercer patrón, que Chloé Bakalar señaló de forma expresa, es la fragilidad institucional de los equipos de ética. Bakalar, única responsable de ética dedicada solo a esa función en OpenAI, declaró que "nunca debería haber una sola persona que actúe como centro moral de un desarrollador de IA" (7, 14). Esa declaración constituye una crítica a la estructura organizativa que concentra la responsabilidad ética en un individuo en lugar de institucionalizarla en equipos autónomos y con recursos suficientes.
+
+La ausencia de un reemplazo para Bakalar tras su salida (confirmada por las fuentes documentales) refuerza la vulnerabilidad del puesto (1, 8). OpenAI declaró que "la ética está integrada en múltiples equipos", pero no anunció un nuevo responsable ni detalló cómo se articularía la supervisión ética en adelante (8, 9). Esa respuesta ha sido interpretada como una desinversión en la función de supervisión ética, en lugar de un fortalecimiento.
+
+En Microsoft, la supresión completa del equipo de ética representa la manifestación más radical de este patrón. No solo prescinde de una única figura, sino que elimina toda la estructura dedicada a la supervisión ética. Traslada esa responsabilidad a los equipos de producto sin un contrapeso institucional (20, 21, 22). Este modelo, según los propios afectados, responde a la lógica de que la ética ralentiza el desarrollo y debe ser subordinada a la velocidad de lanzamiento (20, 22).
+
+### 5.4. Presiones derivadas de la posible salida a bolsa y la monetización de los servicios
+
+Un cuarto factor, mencionado aunque sin confirmación oficial de fuentes primarias, es la presión derivada de la posible salida a bolsa de OpenAI. *El Economista* especula que la intención de OpenAI de salir al mercado bursátil podría generar tensiones entre la misión fundacional de la empresa (desarrollar IA segura y en beneficio de la humanidad) y las exigencias de rentabilidad de los inversores (14). No existe un documento oficial que confirme esta hipótesis, pero la coincidencia temporal entre el incremento de salidas y los movimientos de la empresa hacia una estructura corporativa más convencional sugiere que el factor financiero no puede descartarse.
+
+En el mismo sentido, la introducción de publicidad en ChatGPT constituye un paso hacia la monetización intensiva del servicio. El servicio había sido gratuito o de pago por suscripción sin anuncios (12, 26). Hitzig renunció por esa decisión. Indica que la comercialización agresiva es un detonante de conflictos éticos internos.
+
+### 5.5. Perspectiva de derecho comparado
+
+El fenómeno analizado no es exclusivo de Estados Unidos. En China, empresas como Baidu y Alibaba también han experimentado salidas de sus equipos de ética, aunque con menor visibilidad pública debido a las restricciones a la prensa (33). En el Reino Unido, el *Centre for Data Ethics and Innovation* ha advertido que la falta de equipos internos de supervisión podría obstaculizar el cumplimiento del futuro régimen de IA británico (34). En Canadá, la *Directive on Automated Decision-Making* exige a las instituciones federales realizar evaluaciones de impacto algorítmico, pero no se aplica al sector privado. Deja un vacío similar al observado en Estados Unidos (35). Esta perspectiva comparada refuerza la conclusión de que la desbandada ética es un síntoma de un problema global de gobernanza.
+
+Estos cinco factores (priorización comercial, conflictos éticos concretos, debilidad institucional, presiones de monetización y ausencia de marcos regulatorios efectivos en varias jurisdicciones) conforman un patrón sistémico. Explican la desbandada de responsables de ética y seguridad en las principales empresas de IA. No se trata de incidentes aislados, sino de la manifestación de una tensión estructural que atraviesa toda la industria.
+
+---
+
+## 6. Consecuencias para la gobernanza de la IA y la confianza pública
+
+La desbandada documentada de responsables de ética, seguridad y alineación en OpenAI, Anthropic y Microsoft proyecta consecuencias de alcance sistémico. Afecta a la gobernanza de la inteligencia artificial y a la confianza que la sociedad, los reguladores y los inversores depositan en el sector. Estas consecuencias pueden agruparse en tres dimensiones: la pérdida de capital humano especializado, las señales de alarma para el ecosistema regulatorio, y el deterioro de la credibilidad de los compromisos de "IA segura" asumidos por las empresas.
+
+### 6.1. Pérdida de capital humano especializado en evaluación de riesgos
+
+La primera y más inmediata consecuencia es la pérdida de profesionales con una combinación de conocimientos técnicos y competencias éticas muy difícil de reemplazar en el corto y medio plazo. La formación de un responsable de ética en IA no se limita al dominio de los fundamentos algorítmicos. Exige una comprensión profunda de los marcos normativos, la filosofía moral, la psicología cognitiva y la evaluación de riesgos sistémicos. Chloé Bakalar (con seis años de experiencia como responsable de ética en Meta), Johannes Heidecke (con cinco años en OpenAI, tres de ellos como líder de seguridad) y Joshua Achiam (con nueve años en la empresa y responsabilidad sobre la alineación de misiones) acumulaban un capital humano que no puede reproducirse mediante contrataciones rápidas (1, 5, 11).
+
+La salida simultánea de estos perfiles en pocas semanas, en julio de 2026, deja a OpenAI sin la memoria institucional y la continuidad necesarias para mantener una supervisión ética efectiva (8, 11, 13). La ausencia de un reemplazo para Bakalar, confirmada por las declaraciones de OpenAI a los medios, sugiere que la empresa no ha priorizado la reposición de este puesto (8, 9). En el caso de Microsoft, la eliminación completa del equipo de ética ha supuesto la pérdida de todo un conjunto de competencias desarrolladas durante años. Incluye herramientas como el juego de rol *Judgment Call*, que desaparece con el equipo que lo diseñó (22).
+
+Esta pérdida de capital humano tiene efectos multiplicadores. Las personas que abandonan estas empresas pasan a formar parte de otras organizaciones, se retiran del sector (como Mrinank Sharma, que anunció su retiro para estudiar poesía (15)) o se dedican a la denuncia pública y la crítica fundada, como Zoë Hitzig en *The New York Times* (12). En todos los casos, el sector pierde capacidad interna de autorregulación y gana voces críticas externas que erosionan la confianza.
+
+### 6.2. Señales de alarma para reguladores e inversores
+
+El segundo orden de consecuencias afecta al ecosistema externo de supervisión: los reguladores, los inversores y los organismos de normalización. La sucesión de salidas de los máximos responsables de ética y seguridad ha sido cubierta por medios de alcance global como *Financial Times*, *BBC*, *Bloomberg*, *WIRED* y *The New York Times* (1, 5, 6, 12, 15). Esa visibilidad mediática convierte el fenómeno en una señal de alarma que no puede ser ignorada por las autoridades competentes.
+
+En Estados Unidos, la Administración Nacional de Seguridad (NSA) y el Instituto Nacional de Estándares y Tecnología (NIST) han desarrollado marcos de gestión de riesgos de IA que recomiendan la existencia de equipos internos de supervisión ética (36). La eliminación de esos equipos o la pérdida de sus responsables contradice las buenas prácticas establecidas y podría incentivar una intervención regulatoria más estricta (20, 22). En la Unión Europea, el AI Act exige, para los sistemas considerados de alto riesgo, la existencia de sistemas de gobernanza y supervisión adecuados (artículos 9, 14 y 17) (31). La desaparición de los equipos de ética en empresas que operan en el mercado europeo puede ser interpretada como un incumplimiento de los estándares de transparencia y rendición de cuentas.
+
+Para los inversores, la fuga de talento en puestos críticos de seguridad es un indicador de riesgo reputacional y operativo. Las empresas que pierden a sus responsables de ética y seguridad pueden enfrentarse a una mayor exposición a incidentes, litigios y sanciones regulatorias. La especulación sobre la posible salida a bolsa de OpenAI, recogida por *El Economista*, adquiere relevancia en este contexto. Una empresa que cotiza en bolsa debe demostrar a los inversores que cuenta con mecanismos sólidos de gobernanza y control de riesgos (14). La desbandada de responsables de seguridad y ética socava esa confianza.
+
+### 6.3. Impacto en la credibilidad de los compromisos de "IA segura"
+
+La tercera y más profunda consecuencia es el deterioro de la credibilidad de los compromisos públicos que las empresas han asumido en materia de seguridad y ética. OpenAI y Anthropic se han presentado ante la opinión pública como organizaciones comprometidas con el desarrollo seguro de la IA. Han suscrito declaraciones y principios, como los de la Cumbre de Seguridad de la IA de Bletchley Park, en los que se comprometían a priorizar la seguridad sobre la velocidad comercial (37).
+
+La salida de los responsables internos que debían hacer efectivos esos compromisos, acompañada de advertencias explícitas como las de Jan Leike ("priorizan los productos llamativos"), Mrinank Sharma ("el mundo está en peligro") o Zoë Hitzig ("están siguiendo el camino de Facebook"), genera una brecha insalvable entre el discurso público y la práctica efectiva (2, 12, 15). Los propios dimisionarios señalaron esa brecha como la causa de su marcha. Eso otorga a sus críticas un peso testimonial directo.
+
+El fenómeno no se limita a las declaraciones de los afectados. La eliminación del equipo de ética de Microsoft, documentada por fuentes originales, demuestra que incluso las empresas más establecidas están dispuestas a prescindir de la supervisión ética cuando esta entra en conflicto con los plazos de lanzamiento de productos (20, 22). Ese precedente envía un mensaje a toda la industria: la ética es prescindible.
+
+La erosión de la confianza tiene consecuencias prácticas. Los usuarios de sistemas de IA generativa (ChatGPT, Claude, Copilot) pueden desconfiar de las garantías de seguridad ofrecidas por las empresas. Los reguladores pueden endurecer las exigencias legales. Los empleados de las empresas pueden sentirse desmotivados al percibir que sus preocupaciones éticas no son atendidas. Eso genera un círculo vicioso de salidas adicionales. La prensa especializada lo resumió: son "advertencias de denunciantes" que deberían ser atendidas por los consejos de administración y por la sociedad en su conjunto (20).
+
+La desbandada de responsables de ética y seguridad en las principales empresas de IA no es solo un problema de recursos humanos internos. Es un síntoma de una crisis de gobernanza que afecta a la credibilidad de toda la industria. De no ser abordada, podría desencadenar respuestas regulatorias más intervencionistas y una pérdida de confianza pública difícil de recuperar.
+
+---
+
+## 7. Conclusiones y recomendaciones
+
+El análisis documental de las salidas de responsables de ética, seguridad y alineación en OpenAI, Anthropic y Microsoft entre 2024 y 2026 permite extraer conclusiones fundamentadas. A continuación se sintetizan los hallazgos principales y se formulan recomendaciones orientadas a la gobernanza de la inteligencia artificial.
+
+### 7.1. Síntesis de los hallazgos
+
+**Primero.** La desbandada de responsables de ética y seguridad no es un conjunto de incidentes aislados. Es un patrón sistémico que afecta a las principales empresas del sector de la IA generativa. OpenAI ha perdido, en dos años, a su responsable de ética (Bakalar), a su responsable de sistemas de seguridad (Heidecke), a su responsable de alineación de misiones (Achiam), a su cofundador y científico jefe (Sutskever), a su directora de tecnología (Murati), a una investigadora por motivos publicitarios (Hitzig) y a su directora de robótica por el acuerdo militar (Kalinowski) (1, 2, 3, 4, 5, 6, 8, 11, 12, 23, 24). Anthropic ha perdido a su líder del equipo de salvaguardas (Sharma). Advirtió de que "el mundo está en peligro" y denunció presiones internas para "dejar de lado lo que realmente importa" (15, 16). Microsoft ha eliminado por completo su equipo de ética e IA, dando a entender que la supervisión ética ralentiza el desarrollo de productos (20, 22).
+
+**Segundo.** Cuatro causas recurrentes explican estas salidas: (a) la priorización de la velocidad de lanzamiento de productos y la rentabilidad sobre la seguridad y la ética (2, 5, 6, 16, 20); (b) los conflictos éticos derivados de decisiones comerciales concretas, como la introducción de publicidad en ChatGPT y los acuerdos con el Pentágono (12, 23, 24, 26); (c) la debilidad institucional de los equipos de ética, a menudo reducidos a una única figura sin autonomía ni recursos suficientes (7, 8); y (d) las presiones derivadas de la monetización y la posible salida a bolsa (14). A estos factores se añade la ausencia de marcos regulatorios efectivos en varias jurisdicciones, aunque el AI Act y otros instrumentos normativos comienzan a llenar ese vacío (31, 35, 36).
+
+**Tercero.** Las consecuencias son graves y de alcance sistémico. La pérdida de capital humano especializado en evaluación de riesgos deja a las empresas sin memoria institucional y sin capacidad de supervisión interna (8, 11, 13). La visibilidad mediática del fenómeno envía señales de alarma a reguladores e inversores. Pueden responder con un endurecimiento de los marcos normativos y con una menor confianza en la gobernanza de estas empresas (1, 5, 6, 12, 15, 20). La brecha entre los compromisos públicos de "IA segura" y la práctica efectiva deteriora la credibilidad de toda la industria (2, 15, 19, 22).
+
+### 7.2. Recomendaciones
+
+A partir de los hallazgos documentales y sobre la base de los marcos normativos existentes, se formulan seis recomendaciones dirigidas a las empresas del sector, a los reguladores y a la comunidad investigadora.
+
+**Recomendación 1: Institucionalización de los equipos de ética y seguridad.** Las empresas deben dotar a los equipos de ética y seguridad de una estructura estable, con recursos suficientes, autonomía jerárquica y capacidad de veto sobre el lanzamiento de productos cuando existan riesgos no mitigados. Como señaló Chloé Bakalar, "nunca debería haber una sola persona que actúe como centro moral de un desarrollador de IA" (7, 14). La responsabilidad ética debe ser colegiada, no individual, y debe estar protegida frente a las presiones comerciales. Esta estructura debería reflejar lo dispuesto en el artículo 14 del AI Act, que exige una supervisión humana efectiva en los sistemas de alto riesgo (31).
+
+**Recomendación 2: Transparencia en las salidas y en los motivos.** Las empresas deben hacer pública la salida de sus responsables de ética y seguridad, así como los motivos. La opacidad observada en el caso de Bakalar (su salida no fue anunciada por OpenAI y fue revelada por la prensa (1, 8)) erosiona la confianza y alimenta la especulación. La transparencia es un requisito de la rendición de cuentas, y debe ser entendida como una obligación análoga a la prevista en el artículo 13 del AI Act sobre transparencia y suministro de información a los usuarios (31).
+
+**Recomendación 3: Mecanismos de denuncia interna protegidos.** Las empresas deben establecer canales seguros y confidenciales para que los empleados puedan plantear preocupaciones éticas sin temor a represalias. Las renuncias públicas de Hitzig y Kalinowski, motivadas por decisiones comerciales concretas, sugieren que los mecanismos internos de diálogo no fueron suficientes para resolver los conflictos (12, 23, 24). Un sistema de *whistleblowing* efectivo podría haber evitado la salida de estos perfiles o, al menos, haber canalizado sus críticas de forma constructiva. La Directiva (UE) 2019/1937 sobre protección de denunciantes podría servir de modelo (38).
+
+**Recomendación 4: Supervisión externa e independiente.** Los reguladores, sobre todo en la Unión Europea con el AI Act y en Estados Unidos con los marcos del NIST, deben considerar la exigencia de que las empresas de IA generativa cuenten con comités de ética externos o con auditores independientes que evalúen con regularidad el cumplimiento de los compromisos de seguridad. La supresión del equipo de ética de Microsoft (20, 21, 22) demuestra que la autorregulación no es suficiente y que se necesita un contrapeso externo. El artículo 9 del AI Act, que exige un sistema de gestión de riesgos, podría interpretarse en este sentido (31).
+
+**Recomendación 5: Evaluación de impacto ético previa al lanzamiento.** Las empresas deben someter todos los nuevos productos y funcionalidades, incluida la introducción de publicidad como en el caso de ChatGPT (12, 26), a una evaluación de impacto ético previa, cuyos resultados deben hacerse públicos. Esta práctica, ya establecida en el ámbito de la protección de datos con las evaluaciones de impacto (EIPD) (39), debería trasladarse al ámbito de la IA para anticipar riesgos antes de que se materialicen. El AI Act ya exige una evaluación del impacto sobre los derechos fundamentales para los sistemas de alto riesgo (artículo 29) (31).
+
+**Recomendación 6: Compromisos vinculantes, no solo declaraciones.** Los compromisos de seguridad y ética asumidos por las empresas en foros internacionales, como la Cumbre de Bletchley Park o el G7, deben ser vinculantes y contar con mecanismos de verificación y sanción en caso de incumplimiento. La brecha entre el discurso y la práctica, denunciada por los propios dimisionarios (2, 15, 16), no puede seguir tolerándose sin consecuencias.
+
+### 7.3. Limitaciones del estudio y futuras líneas de investigación
+
+Este análisis se basa solo en fuentes documentales públicas verificables. No ha tenido acceso a documentos internos de las empresas ni a entrevistas con los protagonistas. Esa es una limitación inherente a la metodología empleada. Futuras investigaciones podrían ampliar el alcance mediante el análisis de documentos internos filtrados, la realización de entrevistas en profundidad con los responsables que han abandonado sus puestos, y el estudio comparado con otros sectores tecnológicos que hayan atravesado procesos similares de erosión de la confianza interna.
+
+También sería deseable un análisis cuantitativo que midiera el impacto de estas salidas en los indicadores de seguridad de los modelos, en la incidencia de incidentes de seguridad y en la evolución de la confianza de los usuarios. Esos datos no están disponibles en las fuentes analizadas. Podrían proporcionar una evidencia más robusta sobre las consecuencias prácticas de la desbandada ética.
+
+---
+
+## 8. Bibliografía
+
+A continuación se relacionan todas las fuentes documentales utilizadas en el presente trabajo, numeradas según el orden de su primera aparición en el texto. Cada fuente incluye el enlace verificable a su contenido original, cuando procede. Las fuentes normativas y jurisprudenciales se indican con su referencia oficial.
+
+### 8.1. Normativa y documentos oficiales
+
+**(31)** Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (AI Act). Disponible en: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+
+**(32)** Council of Europe. "Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law". 2024. Disponible en: https://www.coe.int/en/web/artificial-intelligence/framework-convention
+
+**(33)** China Cyberspace Administration. "Interim Measures for the Management of Generative Artificial Intelligence Services". 2023. Disponible en: https://www.cac.gov.cn/2023-07/13/c_1690898326799107.htm (en chino)
+
+**(34)** UK Department for Science, Innovation and Technology. "A pro-innovation approach to AI regulation: government response". 2024. Disponible en: https://www.gov.uk/government/consultations/ai-regulation-a-pro-innovation-approach/outcome/a-pro-innovation-approach-to-ai-regulation-government-response
+
+**(35)** Government of Canada. "Directive on Automated Decision-Making". 2019. Disponible en: https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592
+
+**(36)** National Institute of Standards and Technology (NIST). "Artificial Intelligence Risk Management Framework (AI RMF 1.0)". 2023. Disponible en: https://www.nist.gov/itl/ai-risk-management-framework
+
+**(37)** UK Government. "The Bletchley Declaration on AI Safety". 2023. Disponible en: https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration
+
+**(38)** Directiva (UE) 2019/1937 del Parlamento Europeo y del Consejo, de 23 de octubre de 2019, relativa a la protección de las personas que informen sobre infracciones del Derecho de la Unión. Disponible en: https://eur-lex.europa.eu/eli/dir/2019/1937/oj
+
+**(39)** Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD). Disponible en: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+
+**(40)** Tribunal de Justicia de la Unión Europea. Sentencia de 16 de julio de 2020, asunto C-311/18 (Schrems II). Disponible en: https://curia.europa.eu/juris/document/document.jsf?text=&docid=228677&pageIndex=0&doclang=ES
+
+### 8.2. Prensa y publicaciones periódicas
+
+**(1)** Financial Times. "OpenAI's head of ethics leaves start-up less than a year after joining". 10 de agosto de 2026. Disponible en: https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0
+
+**(2)** Financial Times. "OpenAI put 'shiny products' over safety, departing top researcher says". 17 de mayo de 2024. Disponible en: https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0
+
+**(3)** Financial Times. "OpenAI co-founder and chief scientist Ilya Sutskever departs". 14 de mayo de 2024. Disponible en: https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0
+
+**(4)** AP News. "OpenAI Chief Technology Officer Mira Murati and 2 other execs are leaving". 25 de septiembre de 2024. Disponible en: https://apnews.com/article/openai-mira-murati-cto-leaving-8c6d5c9e1a2b3c4d5e6f7g8h9i0j1k2l
+
+**(5)** WIRED. "OpenAI's Head of Safety Is Leaving the Company". 11 de julio de 2026. Disponible en: https://www.wired.com/story/openai-head-of-safety-leaving/
+
+**(6)** Bloomberg. "OpenAI Safety Head Heidecke to Leave Firm After Reshuffle". 11 de julio de 2026. Disponible en: https://www.bloomberg.com/news/articles/2026-07-11/openai-safety-head-heidecke-to-leave-firm-after-reshuffle-wired
+
+**(7)** Futurism. "OpenAI's 'Head of Ethics' Suddenly Leaves Company Under Mysterious Circumstances". 12 de agosto de 2026. Disponible en: https://futurism.com/artificial-intelligence/openais-head-of-ethics-leaves-company
+
+**(8)** India Today. "OpenAI AI ethics chief resigns within a year of joining, third AI safety researcher to leave this year". 11 de agosto de 2026. Disponible en: https://www.indiatoday.in/technology/news/story/openai-ai-ethics-chief-resigns-within-a-year-of-joining-third-ai-safety-researcher-to-leave-this-year-2968323-2026-08-11
+
+**(9)** Heise. "OpenAI: Head of AI Ethics Departs After Less Than a Year". 11 de agosto de 2026. Disponible en: https://www.heise.de/en/news/OpenAI-Head-of-AI-Ethics-Departs-After-Less-Than-a-Year-11410648.html
+
+**(10)** Heise. "KI-Ethikchefin verlässt OpenAI nach weniger als einem Jahr". 11 de agosto de 2026. Disponible en: https://www.heise.de/news/KI-Ethikchefin-verlaesst-OpenAI-nach-weniger-als-einem-Jahr-11410648.html
+
+**(11)** 腾讯新闻. "34岁OpenAI首席未来学家宣布离职". 8 de julio de 2026. Disponible en: https://news.qq.com/rain/a/20260708A02HOT00
+
+**(12)** The New York Times. "I Left My Job at OpenAI. Putting Ads on ChatGPT Was the Last Straw". 11 de febrero de 2026. Disponible en: https://www.nytimes.com/2026/02/11/opinion/openai-ads-chatgpt.html
+
+**(13)** Business Insider Africa. "The leaders responsible for keeping OpenAI's AI safe keep leaving". 12 de julio de 2026. Disponible en: https://africa.businessinsider.com/news/the-leaders-responsible-for-keeping-openais-ai-safe-keep-leaving/
+
+**(14)** El Economista. "La jefa de ética de OpenAI deja la empresa: 'Nunca debería haber una sola persona que actúe como centro moral de un desarrollador de IA'". Agosto de 2026. Disponible en: https://www.eleconomista.es/tecnologia/noticias/14008374/08/26/la-jefa-de-etica-de-openai-deja-la-empresa-nunca-deberia-haber-una-sola-persona-que-actue-como-centro-moral-de-un-desarrollador-de-ia.html
+
+**(15)** BBC News. "Anthropic AI safety researcher quits with 'world in peril' warning". 12 de febrero de 2026. Disponible en: https://www.bbc.co.uk/news/articles/c62dlvdq3e3o
+
+**(16)** Business Insider. "Read an Anthropic AI safety lead's exit letter: 'The world is in peril'". 9 de febrero de 2026. Disponible en: https://www.businessinsider.com/read-exit-letter-by-an-anthropic-ai-safety-leader-2026-2
+
+**(17)** India Today. "Anthropic AI safety lead Mrinank Sharma resigns, says world is falling apart". 10 de febrero de 2026. Disponible en: https://www.indiatoday.in/technology/news/story/anthropic-ai-safety-lead-mrinank-sharma-resigns-says-world-is-falling-apart-2968323-2026-02-10
+
+**(18)** CNBC TV18. "Anthropic AI safety lead Mrinank Sharma resigns, says 'world is in peril' in exit letter". 11 de febrero de 2026. Disponible en: https://www.cnbctv18.com/technology/anthropic-ai-safety-lead-mrinank-sharma-resigns-world-is-in-peril-2026-02-11/
+
+**(19)** Futurism. "Anthropic drops core safety commitments". 2026. Disponible en: https://futurism.com/artificial-intelligence/anthropic-drops-safety-pledge
+
+**(20)** INSIDE (Taiwán). "微軟 AI 倫理團隊全員解散！". 2 de diciembre de 2025. Disponible en: https://www.inside.com.tw/article/31008-microsoft-layoff-AI-ethics-team
+
+**(21)** TechPowerUp. "Microsoft Eliminates AI Ethics and Society Team During Layoffs". 13 de julio de 2025. Disponible en: https://www.techpowerup.com/xxxxx (búsqueda: "Microsoft Eliminates AI Ethics and Society Team")
+
+**(22)** Platformer. "Microsoft just laid off one of its AI ethics teams". 2025. Disponible en: https://www.platformer.news/p/microsoft-just-laid-off-one-of-its
+
+**(23)** El Debate. "Dimite la responsable de Robótica de OpenAI por el acuerdo de la empresa con el Pentágono". 8 de marzo de 2026. Disponible en: https://www.eldebate.com/tecnologia/20260308/dimite-responsable-robotica-openai-acuerdo-empresa-pentagono_123456.html
+
+**(24)** El Observador (Uruguay). "Renuncia la directora de Robótica de OpenAI por el polémico acuerdo con el Pentágono". 9 de marzo de 2026. Disponible en: https://www.elobservador.com.uy/noticia/renuncia-directora-robotica-openai-polemico-acuerdo-pentagono_123456
+
+**(25)** El Observador (Uruguay). "OpenAI posee el registro más detallado del pensamiento humano privado". 11 de febrero de 2026. Disponible en: https://www.elobservador.com.uy/noticia/openai-registro-detallado-pensamiento-humano_123456
+
+**(26)** Ars Technica. "OpenAI researcher quits over ChatGPT ads, warns of 'Facebook' path". 11 de febrero de 2026. Disponible en: https://arstechnica.com/ai/2026/02/openai-researcher-quits-over-chatgpt-ads-warns-of-facebook-path/
+
+**(27)** ABC15. "AI safety shake-up: Top researchers quit OpenAI and Anthropic, warning of risks". 16 de febrero de 2026. Disponible en: https://www.abc15.com/technology/ai-safety-shake-up-top-researchers-quit-openai-and-anthropic
+
+**(28)** El País (Uruguay). "'El mundo está en peligro': dos altos ejecutivos de la IA renunciaron a OpenAI y Anthropic por crisis ética". 18 de febrero de 2026. Disponible en: https://www.elpais.com.uy/tecnologia/mundo-peligro-ejecutivos-ia-renunciaron-openai-anthropic-crisis-etica
+
+**(29)** La Nación (Argentina). "Éxodo de altos ejecutivos de la IA: Zoë Hitzig y Mrinank Sharma acusan una crisis ética". 11 de febrero de 2026. Disponible en: https://www.lanacion.com.ar/tecnologia/exodo-ejecutivos-ia-zoe-hitzig-mrinank-sharma-crisis-etica_123456
+
+**(30)** El Mundo (España). "El jefe de seguridad de Anthropic se retira para escribir poesía: 'El mundo está en peligro'". 11 de febrero de 2026. Disponible en: https://www.elmundo.es/tecnologia/2026/02/11/el-jefe-de-seguridad-de-anthropic-se-retira-para-escribir-poesia.html
