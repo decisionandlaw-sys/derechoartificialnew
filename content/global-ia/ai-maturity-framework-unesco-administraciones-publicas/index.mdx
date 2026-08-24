@@ -1,0 +1,771 @@
+---
+title: "AI Maturity Framework de UNESCO para administraciones públicas"
+description: "Análisis del AI Maturity Framework de UNESCO: seis pilares, cuatro niveles de madurez y metodología de autoevaluación para la administración pública."
+date: "2026-08-24"
+tags: ["AI Maturity Framework", "UNESCO", "inteligencia artificial", "administración pública", "gobernanza de IA"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "ai-maturity-framework-unesco-administraciones-publicas"
+readingTime: 59
+image: "/images/global-ia/ai-maturity-framework-unesco-administraciones-publicas/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+UNESCO publicó en 2025 el *AI Maturity Framework: A self-positioning guide for public administrations*, un instrumento metodológico que permite a cualquier administración pública evaluar su nivel de preparación para adoptar sistemas de inteligencia artificial y trazar una hoja de ruta para desarrollar sus capacidades. El documento nace de un encargo concreto: la Dirección General de Apoyo a las Reformas Estructurales de la Comisión Europea financió el proyecto "AI-Ready Flemish Public Administration", que UNESCO ejecutó para el AI Expertise Centre de Digital Flanders. La consultora Stratejai redactó el contenido bajo supervisión de UNESCO, y el marco se distribuye en acceso abierto bajo licencia CC-BY-SA 3.0 IGO.
+
+El marco no certifica ni audita. Ofrece un lenguaje común para que equipos directivos, técnicos y personal operativo describan dónde está su organización y hacia dónde quiere ir. Se estructura en seis pilares (Estrategia y Valor, Personas y Cultura, Tecnología e Infraestructura, Operaciones de IA y Ecosistema, Gobernanza, Ética y Riesgo, y Datos) que a su vez se dividen en veintinueve categorías. Cada categoría se evalúa con arreglo a cuatro niveles progresivos de madurez: Basic, Ready, Dynamic y Advanced, que describen una trayectoria desde procesos informales y reactivos hasta prácticas integradas, monitorizadas y sometidas a mejora continua.
+
+El pilar de gobernanza, ética y riesgo tiene especial interés para quienes trabajan en cumplimiento normativo: el marco pide evaluar de forma explícita el cumplimiento del RGPD y del Reglamento de IA europeo, junto con la transparencia, la explicabilidad y la gestión de riesgos asociados a sesgos, seguridad y privacidad. También remite al Marco de Evaluación de Riesgos de la propia UNESCO como referencia para las evaluaciones de nivel Dynamic. El pilar de datos cubre desde la identificación y preparación de conjuntos de datos hasta el uso de datos sintéticos y la comprensión del dominio sustantivo, un aspecto que muchas administraciones suelen dejar fuera de sus diagnósticos de madurez tecnológica.
+
+La metodología de autoevaluación sigue cinco pasos: comprender el marco y los niveles, evaluar cada categoría con evidencias observables, identificar brechas y prioridades, sintetizar los resultados por pilar mediante hojas resumen y consolidar todo en un cuadro de mando global que distingue entre acciones inmediatas y prioridades a largo plazo. UNESCO insiste en que la evaluación debe apoyarse en documentos, procesos y ejemplos concretos, no en percepciones subjetivas, y recomienda que participen perfiles diversos (estratégicos, técnicos, jurídicos y de dominio) para evitar diagnósticos sesgados hacia una sola función.
+
+El marco no fija un destino único. Una administración local pequeña no necesita el mismo nivel de sofisticación que una agencia reguladora, y el propio documento advierte contra perseguir el nivel Advanced en todas las categorías sin relación con la misión de la organización. Tampoco sirve para comparar entidades entre sí ni para construir rankings: su utilidad es interna, como herramienta de planificación.
+
+El análisis identifica también sus límites. El carácter autoevaluativo introduce un riesgo de sesgo que la exigencia de evidencias solo mitiga en parte. El marco nació para un contexto administrativo concreto, el flamenco, y algunas categorías pueden reflejar supuestos de ese entorno que otras administraciones tendrán que adaptar. No incluye metodología para estimar costes ni para priorizar el gasto, y funciona como una fotografía de un momento dado en un ámbito, la madurez en IA, que cambia con rapidez.
+
+Para las administraciones públicas que empiezan a estructurar su estrategia de inteligencia artificial, el AI Maturity Framework ofrece algo poco frecuente en la literatura sobre gobernanza algorítmica: un instrumento operativo, con campos de autoevaluación concretos, hojas de síntesis y un cuadro de mando final, en lugar de un tratado exclusivamente conceptual. El artículo desarrolla en detalle los seis pilares, las veintinueve categorías y los criterios de cada nivel de madurez, con referencias precisas a las páginas del documento original.
+
+# La inteligencia artificial en la administración pública: un marco de madurez para la transformación digital responsable
+
+*Análisis técnico del AI Maturity Framework de UNESCO como herramienta de autoevaluación y planificación estratégica para administraciones públicas.*
+
+---
+
+## Sección 1: Presentación y contexto del marco de madurez en IA
+
+### 1.1. Origen y finalidad del documento
+
+La UNESCO publicó en 2025 el *"AI Maturity Framework – A self-positioning guide for public administrations"* (1). Este instrumento metodológico permite a las administraciones públicas evaluar su nivel de preparación para adoptar sistemas de inteligencia artificial y trazar una hoja de ruta para desarrollar sus capacidades (1, p. 7).
+
+El marco no impone un nivel de madurez objetivo. Ofrece un lenguaje común y un referente conceptual para que cada organización determine su posición actual, defina su estado deseado y planifique los pasos intermedios (1, p. 7). Es una herramienta de posicionamiento estratégico, no un sistema de certificación ni de auditoría externa.
+
+La consultora Stratejai, formada por Stefano Sedola, Andrea Pescino y Enrico Sartor, redactó el documento bajo la supervisión de Shazade Jameson. Hiba Bachiri y Jzan Tamielle Villanos diseñaron la cubierta y la maquetación (1, p. 2). El informe se publica en acceso abierto con licencia CC-BY-SA 3.0 IGO, lo que permite su reutilización siempre que se respeten los términos de atribución y compartición en igualdad (1, p. 2).
+
+### 1.2. El proyecto "AI-Ready Flemish Public Administration"
+
+El marco nace de una cooperación institucional concreta. La Comisión Europea, a través de su Dirección General de Apoyo a las Reformas Estructurales (DG REFORM), financió el proyecto *"AI-Ready Flemish Public Administration"*. La UNESCO lo ejecutó (1, p. 7). El destinatario final es el AI Expertise Centre de Digital Flanders, la entidad encargada de impulsar la adopción de la IA en la administración pública flamenca (1, p. 55).
+
+El marco apoya a este centro en su misión de integrar la IA en los procesos gubernamentales de Flandes (1, p. 7). Este origen le confiere un doble carácter: responde a necesidades prácticas de una administración concreta y aspira a ser un modelo de aplicación general, extrapolable a cualquier organización pública (1, p. 7).
+
+### 1.3. Ámbito de aplicación y destinatarios
+
+El marco se diseñó para administraciones públicas, pero el documento explicita que sirve para organizaciones de cualquier tipo y tamaño (1, p. 7). Los desafíos de la adopción de la IA (estrategia, talento, infraestructura, gobernanza ética y datos) son transversales.
+
+Los destinatarios son equipos directivos, especialistas técnicos y personal operativo (1, p. 7). La guía puede utilizarse por equipos individuales o en talleres transversales. El documento recomienda incorporar perspectivas diversas (estratégicas, operativas, técnicas, jurídicas y de dominio) para obtener una visión completa de las capacidades reales (1, p. 9).
+
+El marco no se limita a describir buenas prácticas. Incluye una estructura de autoevaluación con campos específicos para registrar evidencias, identificar fortalezas y carencias, y establecer acciones de mejora (1, p. 9). Es una herramienta de planificación operativa, no un tratado teórico.
+
+---
+
+## Sección 2: Estructura conceptual del AI Maturity Framework
+
+### 2.1. Propósito y funciones del marco
+
+El AI Maturity Framework es un instrumento de diagnóstico y planificación, no un estándar de certificación. Su propósito es doble: evaluar las capacidades existentes de una organización en IA y facilitar una planificación integral para su mejora (1, p. 7).
+
+El documento subraya que no prescribe un nivel de madurez concreto como objetivo deseable. Cada organización determina su propio ritmo y prioridades según su misión, recursos y contexto operativo (1, p. 7). El marco no establece una escala jerárquica de excelencia, sino un referente para que cada entidad compare su situación actual con su aspiración y secuencie los pasos intermedios.
+
+La función última del marco es dotar a los equipos directivos, especialistas y personal operativo de un lenguaje compartido para abordar el reto de la IA de manera colaborativa (1, p. 7). Al emplear una terminología y una estructura comunes, el marco reduce la ambigüedad interpretativa y permite que actores con formaciones muy diversas (gestores, ingenieros, juristas, especialistas en datos) dialoguen sobre un mismo referente.
+
+### 2.2. Los seis pilares fundamentales
+
+El marco se organiza en torno a seis pilares o áreas de capacidad. Cada pilar agrupa un conjunto de categorías específicas (1, p. 7-8):
+
+**Pilar 1: Estrategia y Valor.** Define la visión de IA, su alineamiento con los objetivos organizacionales, la planificación, la identificación de casos de uso y la medición del valor generado.
+
+**Pilar 2: Personas y Cultura.** Evalúa las competencias disponibles, el liderazgo, las estructuras organizativas y las condiciones culturales necesarias para el éxito de la IA.
+
+**Pilar 3: Tecnología e Infraestructura.** Analiza los entornos de desarrollo, los recursos computacionales, las arquitecturas técnicas y las plataformas que soportan los sistemas de IA.
+
+**Pilar 4: Operaciones de IA y Ecosistema.** Cubre el despliegue, la monitorización, la interoperabilidad, las alianzas externas y la reutilización de componentes.
+
+**Pilar 5: Gobernanza, Ética y Riesgo en IA.** Examina los mecanismos de rendición de cuentas, el cumplimiento normativo, las salvaguardas éticas y la mitigación de riesgos.
+
+**Pilar 6: Datos (enfoque específico para IA).** Se centra en la identificación de datos, su preparación, el acceso, los datos sintéticos y la comprensión del dominio sustantivo (1, p. 8).
+
+Cada pilar contiene un número variable de categorías (generalmente cinco) que desglosan el área de capacidad en componentes operativos más concretos. Esta estructura dual permite examinar la organización tanto desde una perspectiva holística como de manera granular (1, p. 7).
+
+### 2.3. Los niveles de madurez: Basic, Ready, Dynamic, Advanced
+
+El marco utiliza cuatro niveles progresivos de madurez para caracterizar la evolución de una organización, desde esfuerzos iniciales y aislados hasta prácticas optimizadas e integradas (1, p. 8). Cada nivel se define con arreglo a los siguientes criterios:
+
+- **Nivel 1: Basic (Básico).** Los procesos son informales, no documentados, inconsistentes, reactivos o dependen de esfuerzos individuales. La conciencia o capacidad en IA es limitada (1, p. 8).
+
+- **Nivel 2: Ready (Preparado).** Los procesos están documentados y se siguen de manera general, aunque solo a nivel de proyecto o de equipo. Existen capacidades y estándares básicos repetibles. Hay una intencionalidad definida y una conciencia creciente (1, p. 8).
+
+- **Nivel 3: Dynamic (Dinámico).** Los procesos están estandarizados, integrados y se aplican de forma coherente en las partes relevantes. El rendimiento se mide cuantitativamente y se gestiona de manera activa. Las prácticas pasan de ser reactivas a proactivas (1, p. 8).
+
+- **Nivel 4: Advanced (Avanzado).** Los procesos se mejoran continuamente a partir de conocimientos cuantitativos y bucles de retroalimentación. El foco está en la optimización, la innovación y el refinamiento proactivo. Las capacidades están profundamente integradas y se aprovechan estratégicamente (1, p. 8).
+
+La progresión entre niveles no es un recorrido obligatorio y lineal. Una organización puede presentar niveles diferentes en distintos pilares. El objetivo no es alcanzar el nivel Advanced en todos ellos, sino alcanzar aquellos que resulten pertinentes para su misión y su contexto.
+
+### 2.4. Metodología de autoevaluación
+
+La guía de autoposicionamiento establece un proceso estructurado en cinco pasos, diseñado para ser aplicado por equipos individuales o en talleres transversales (1, p. 9). El documento recomienda que la evaluación se base en evidencias observables (procesos, documentación y ejemplos concretos) y que refleje la práctica típica, no casos excepcionales (1, p. 9).
+
+**Paso 1: Comprender el marco y los niveles de madurez.** Los participantes revisan los seis pilares, las categorías y las definiciones de cada nivel. Esta fase garantiza una interpretación homogénea de la terminología y de la trayectoria de desarrollo esperada (1, p. 9).
+
+**Paso 2: Realizar las evaluaciones por categoría.** Los evaluadores revisan las descripciones de madurez y determinan qué nivel refleja mejor la práctica actual. La guía proporciona campos de autoevaluación: nivel actual, evidencias, fortalezas, carencias, nivel futuro deseado y acciones necesarias (1, p. 9).
+
+**Paso 3: Identificar brechas y prioridades.** Una vez completadas las evaluaciones, la organización revisa los resultados para identificar áreas de fortaleza, lagunas de capacidad, el nivel de madurez deseado y las acciones requeridas para progresar (1, p. 9).
+
+**Paso 4: Sintetizar los resultados para determinar la madurez por pilar.** Mediante las hojas resumen que figuran al final de cada sección del pilar, la organización agrega los resultados de las categorías para obtener una calificación global de madurez para cada pilar. Este proceso incluye la identificación de categorías críticas que puedan condicionar o "capar" la madurez global del pilar (1, p. 9).
+
+**Paso 5: Finalizar la evaluación y definir puntos de acción.** Una vez completadas todas las evaluaciones por pilar, la organización consolida los resultados en el cuadro de mando global. Esta visión holística constituye la base para priorizar acciones concretas (1, p. 9-10).
+
+El documento enfatiza que la evaluación más eficaz incorpora perspectivas diversas (estratégica, operativa, técnica, jurídica y de dominio) para asegurar una comprensión completa de las capacidades reales (1, p. 9). El marco se acompaña de un cuaderno de trabajo (*workbook*) disponible para descarga, que facilita el llenado digital de los campos de autoevaluación (1, p. 11).
+
+---
+
+## Sección 3: Análisis detallado del Pilar 1 - Estrategia y Valor
+
+### 3.1. Categoría 1.1: Visión y ambición en IA
+
+**Descripción y relevancia**
+
+Esta categoría evalúa el grado en que la organización define el papel y el impacto que espera de la IA en el cumplimiento de su misión (1, p. 13). Una visión de IA bien articulada proporciona dirección, alineamiento y motivación para el conjunto de iniciativas. Sin una visión clara, los proyectos de IA se desarrollan de manera inconexa, con un enfoque táctico y sin capacidad para generar valor estratégico (1, p. 13).
+
+**Niveles de madurez**
+
+El marco establece cuatro niveles progresivos para esta categoría (1, p. 13):
+
+- *Nivel Basic:* No existe una visión de IA definida o, en su caso, se formulan ideas vagas. La IA se menciona sin objetivos específicos o se aborda de manera oportunista, sin una dirección clara.
+
+- *Nivel Ready:* Se ha documentado una visión de IA de alto nivel, comprendida por los principales grupos de interés. La organización ha identificado algunas formas concretas en que la IA podría beneficiar su misión, aunque la conexión con los objetivos estratégicos puede ser aún limitada.
+
+- *Nivel Dynamic:* La visión de IA está claramente definida, comunicada a toda la organización y vinculada a objetivos medibles. Se han identificado capacidades habilitadas por IA con resultados esperados concretos. Los líderes de los distintos departamentos comprenden y respaldan la visión.
+
+- *Nivel Advanced:* La visión de IA se integra en la estrategia central y se revisa periódicamente. Evoluciona en función de los resultados obtenidos y de los cambios tecnológicos. La visión influye en las decisiones de presupuestación, asignación de recursos y priorización. Ha pasado a formar parte de la definición del estado futuro de la organización.
+
+**Observaciones prácticas**
+
+El marco incorpora en esta categoría, al igual que en el resto, campos de autoevaluación para registrar el nivel actual, las evidencias, fortalezas, carencias, nivel deseado y acciones necesarias (1, p. 13).
+
+### 3.2. Categoría 1.2: Alineamiento estratégico
+
+**Descripción y relevancia**
+
+Esta categoría examina en qué medida las iniciativas de IA se planifican y ejecutan en apoyo de las estrategias y objetivos centrales, en lugar de concebirse como proyectos técnicos aislados (1, p. 14). La falta de alineamiento puede llevar a que los proyectos de IA tengan éxito técnico, pero no avancen en las prioridades estratégicas ni generen un impacto significativo. El alineamiento asegura que las inversiones en IA creen valor en las áreas más relevantes (1, p. 14).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Las iniciativas de IA son ad hoc, con escasa conexión con los objetivos organizacionales. Los proyectos suelen estar impulsados por la tecnología más que por las necesidades, y pueden surgir por intereses individuales (1, p. 14).
+
+- *Nivel Ready:* Los proyectos de IA se evalúan con relación al alineamiento con los objetivos estratégicos, pero de manera inconsistente. Existe algún esfuerzo por conectar las iniciativas con las necesidades, aunque el proceso puede ser informal o variar entre departamentos (1, p. 14).
+
+- *Nivel Dynamic:* Un proceso formal garantiza que todas las iniciativas significativas de IA apoyen directamente las prioridades estratégicas definidas. Los casos de negocio incluyen vínculos explícitos con los objetivos estratégicos. El alineamiento se monitoriza y se reporta. Las iniciativas no alineadas se despriorizan o se rediseñan (1, p. 14).
+
+- *Nivel Advanced:* Las capacidades de IA dan forma de manera proactiva y habilitan nuevos objetivos estratégicos. La organización evalúa regularmente cómo las tecnologías de IA emergentes podrían crear nuevas oportunidades estratégicas. El alineamiento se optimiza de forma continua, con asignación dinámica de recursos para maximizar el impacto estratégico (1, p. 14).
+
+### 3.3. Categoría 1.3: Hoja de ruta y planificación
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la existencia y calidad de los planes concretos que detallan los pasos, recursos y plazos para la adopción de IA en el conjunto de la organización (1, p. 15). Una hoja de ruta bien estructurada traduce la visión en planes ejecutables, secuencia inversiones, anticipa dependencias y gestiona expectativas. Además, proporciona un marco para medir el progreso y ajustar el rumbo (1, p. 15).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No existe hoja de ruta; la planificación es a corto plazo y específica de cada proyecto. Las iniciativas se abordan de manera aislada. Los plazos y las necesidades de recursos están pobremente definidos (1, p. 15).
+
+- *Nivel Ready:* Existe una hoja de ruta inicial con hitos clave documentados, pero puede carecer de detalle o de recursos asignados. La organización ha identificado una secuencia de iniciativas, pero puede no haber definido completamente los habilitadores, las dependencias o los requisitos específicos de recursos (1, p. 15).
+
+- *Nivel Dynamic:* Existe una hoja de ruta detallada, con recursos asignados, que se gestiona activamente y está integrada en los ciclos de planificación organizacional. Incluye desarrollo de capacidades, preparación de datos e inversiones tecnológicas fundacionales. Las dependencias se identifican y gestionan. Se realiza un seguimiento del progreso y se actualiza regularmente (1, p. 15).
+
+- *Nivel Advanced:* La hoja de ruta es dinámica, se actualiza de manera continua en función de los datos de rendimiento, los cambios de prioridades y los análisis prospectivos. Incluye planes de contingencia para diferentes escenarios. Equilibra los logros a corto plazo con el desarrollo de capacidades a largo plazo y se utiliza para identificar y abordar de manera proactiva posibles obstáculos (1, p. 15).
+
+### 3.4. Categoría 1.4: Identificación y medición del valor
+
+**Descripción y relevancia**
+
+Esta categoría evalúa los procesos para identificar casos de uso de alto impacto y para rastrear de manera sistemática los beneficios y el retorno de la inversión de las iniciativas (1, p. 16). La medición rigurosa del valor permite seleccionar las inversiones más impactantes y demostrar sus resultados, generando confianza y respaldo para la continuidad. También proporciona retroalimentación para perfeccionar iniciativas futuras (1, p. 16).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los casos de uso se seleccionan de manera oportunista; el valor se asume o se basa en anécdotas. La evaluación de beneficios potenciales es limitada y no existe priorización. Las métricas de éxito son vagas o no están definidas (1, p. 16).
+
+- *Nivel Ready:* Existe un proceso para identificar casos de uso potenciales; se definen métricas básicas de valor (por ejemplo, ahorro de costes), pero se rastrean de manera inconsistente. La organización intenta estimar los beneficios, pero puede no disponer de formas sistemáticas de medirlos o validarlos tras la implementación (1, p. 16).
+
+- *Nivel Dynamic:* Se aplica una metodología estandarizada para evaluar el potencial de los casos de uso (viabilidad e impacto); la realización del valor se mide sistemáticamente en relación con KPI predefinidos. Los casos de negocio incluyen métricas cuantificables. Se realizan revisiones periódicas para evaluar la entrega de valor en comparación con las proyecciones e identificar oportunidades de optimización (1, p. 16).
+
+- *Nivel Advanced:* La medición del valor es sofisticada, incluye beneficios estratégicos e intangibles, está integrada en los casos de negocio y se utiliza para optimizar de manera continua el portafolio de IA. Técnicas avanzadas como las pruebas A/B validan los impactos. El seguimiento del valor influye en la asignación de recursos y en las decisiones de inversión futura. La organización puede cuantificar la contribución de la IA a los objetivos estratégicos (1, p. 16).
+
+### 3.5. Categoría 1.5: Innovación y experimentación
+
+**Descripción y relevancia**
+
+Esta categoría examina los mecanismos y el apoyo cultural para explorar aplicaciones novedosas de IA, entre ellas los proyectos piloto y las pruebas de concepto (1, p. 17). La innovación y la experimentación permiten aprender sobre las capacidades de la IA, probar hipótesis a bajo coste e identificar oportunidades prometedoras antes de comprometer recursos significativos. Además, fomentan el aprendizaje organizacional y reducen el riesgo de inversiones de mayor envergadura (1, p. 17).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Hay poca o ninguna experimentación con IA. La organización puede mostrarse reacia a invertir en conceptos no probados. El aprendizaje sobre IA se limita a lecturas o conferencias, sin pruebas prácticas (1, p. 17).
+
+- *Nivel Ready:* Se realizan proyectos piloto de manera ad hoc; las lecciones aprendidas son informales. Algunos equipos pueden experimentar con tecnologías de IA, pero sin procesos sistemáticos para compartir hallazgos o escalar los pilotos exitosos (1, p. 17).
+
+- *Nivel Dynamic:* Existe un proceso estructurado para la experimentación con IA (por ejemplo, entornos aislados o *sandbox*, fondos para pilotos); los resultados se documentan y sirven de base para las decisiones sobre la hoja de ruta. Los experimentos exitosos tienen vías claras para su escalado. La organización asigna recursos específicos para la innovación (1, p. 17).
+
+- *Nivel Advanced:* Se realiza una exploración proactiva de innovaciones; existen recursos y procesos dedicados para la experimentación rápida y el escalado; la cultura fomenta la asunción calculada de riesgos. Las actividades de innovación están vinculadas a prioridades estratégicas. La organización colabora con entidades externas (academia, *startups*) para acceder a ideas emergentes. Los experimentos fallidos se valoran como fuente de aprendizaje (1, p. 17).
+
+### 3.6. Observaciones sobre la hoja resumen del Pilar 1
+
+El marco incluye al final de cada pilar una hoja de síntesis para agregar los resultados de las cinco categorías y determinar la madurez global del pilar (1, p. 18). Esta hoja incorpora: identificación de categorías críticas, determinación del nivel de madurez global con justificación breve, síntesis de fortalezas y carencias principales, y priorización de acciones para mejorar la madurez.
+
+El documento no identifica ninguna categoría como crítica por defecto en este pilar. Cada organización determina si alguna de las cinco categorías actúa como cuello de botella para su progreso (1, p. 18).
+
+---
+
+## Sección 4: Análisis detallado del Pilar 2 - Personas y Cultura
+
+### 4.1. Categoría 2.1: Talento y capacidades
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la capacidad de la organización para definir los roles necesarios en IA, atraer personal cualificado y desarrollar las competencias en IA de toda la plantilla (1, p. 20). El éxito en IA depende de disponer de las capacidades adecuadas. Las organizaciones necesitan tanto talento técnico especializado como una alfabetización generalizada en IA para implementar eficazmente las iniciativas (1, p. 20).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Las capacidades en IA son escasas, los roles no están definidos; se recurre a consultores externos o a entusiastas aislados. La organización no ha identificado sistemáticamente las competencias requeridas ni ha establecido vías de desarrollo. La experiencia en IA se encuentra aislada (1, p. 20).
+
+- *Nivel Ready:* Los roles clave en IA están definidos; se están realizando esfuerzos iniciales para contratar o formar en competencias específicas. La organización reconoce las brechas de capacidad y ha comenzado a abordarlas, aunque los enfoques pueden ser reactivos o inconsistentes (1, p. 20).
+
+- *Nivel Dynamic:* Existe una planificación estratégica de la fuerza laboral para roles de IA; se han establecido programas de formación formal y trayectorias profesionales; las brechas de competencia se gestionan activamente. Se mantienen inventarios de capacidades que se actualizan regularmente. Los programas de desarrollo abordan tanto competencias técnicas como no técnicas (1, p. 20).
+
+- *Nivel Advanced:* El desarrollo continuo de capacidades en IA está integrado en los procesos de recursos humanos; se fomentan la movilidad interna y el desarrollo transversal de competencias; la organización es reconocida internamente por su talento en IA. Se ha convertido en un empleador de referencia para profesionales de la IA. El aprendizaje está integrado en los procesos de trabajo. El desarrollo de capacidades anticipa necesidades futuras (1, p. 20).
+
+### 4.2. Categoría 2.2: Estructura organizativa
+
+**Descripción y relevancia**
+
+Esta categoría examina cómo la entidad organiza sus esfuerzos en IA: define roles, responsabilidades y configuraciones de equipo, como los centros de excelencia o los equipos integrados en las unidades de negocio (1, p. 21). Las estructuras organizativas eficaces proporcionan una asignación clara de responsabilidades, garantizan que la experiencia adecuada esté disponible donde se necesita y facilitan el intercambio de conocimiento y la coherencia en toda la organización (1, p. 21).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No existe una estructura específica para la IA; los esfuerzos se encuentran aislados dentro de los departamentos existentes. Las responsabilidades en IA no están claramente asignadas, lo que genera vacíos y solapamientos. El intercambio de conocimiento es limitado o inexistente (1, p. 21).
+
+- *Nivel Ready:* Existen grupos de trabajo informales sobre IA o una persona de referencia designada. La organización ha comenzado a crear estructuras de coordinación, aunque puede carecer de mandatos formales o recursos. La colaboración en torno a la IA está surgiendo, pero es inconsistente (1, p. 21).
+
+- *Nivel Dynamic:* Se han establecido equipos formales de IA o un Centro de Excelencia con mandatos claros y líneas jerárquicas definidas. Los roles y responsabilidades están bien definidos. Las estructuras permiten tanto la especialización como la integración con el negocio. Los órganos de gobierno supervisan las iniciativas transversales (1, p. 21).
+
+- *Nivel Advanced:* Se implementan y optimizan modelos organizativos flexibles y adaptativos (por ejemplo, federados, *hub-and-spoke*) en función de las necesidades; existe una colaboración multifuncional sólida. Las estructuras evolucionan según la madurez y los requisitos cambiantes. La interacción entre la experiencia centralizada y la implementación distribuida es fluida (1, p. 21).
+
+### 4.3. Categoría 2.3: Liderazgo y patrocinio
+
+**Descripción y relevancia**
+
+Esta categoría evalúa el nivel de apoyo activo, compromiso y defensa por parte de la alta dirección para las iniciativas de IA (1, p. 22). El compromiso del liderazgo es crucial para asegurar recursos, eliminar obstáculos, impulsar el cambio y señalar las prioridades organizacionales. Sin un apoyo firme, las iniciativas de IA suelen tener dificultades para ganar tracción y mantener el impulso (1, p. 22).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* El conocimiento de la IA por parte del liderazgo es bajo; no existe un patrocinio claro. Los directivos pueden ver la IA como una cuestión principalmente técnica, más que estratégica. El apoyo es pasivo o ausente (1, p. 22).
+
+- *Nivel Ready:* Algunos líderes muestran interés o patrocinan proyectos específicos de manera reactiva. Puede haber impulsores aislados, pero no un apoyo generalizado. Los líderes aprueban recursos, pero pueden no promover activamente la adopción (1, p. 22).
+
+- *Nivel Dynamic:* Existe un patrocinio ejecutivo visible para la estrategia general; los líderes comunican activamente la importancia de la IA. La dirección revisa periódicamente el progreso y exige responsabilidades. Los líderes modelan la toma de decisiones basada en datos (1, p. 22).
+
+- *Nivel Advanced:* El liderazgo impulsa la transformación, asigna recursos estratégicos, elimina barreras y responsabiliza a la organización por los objetivos de IA. Los líderes poseen una comprensión sofisticada del potencial y las limitaciones. Anticipan resistencias y abordan de manera proactiva los desafíos culturales. El liderazgo en IA se extiende más allá de la alta dirección a todos los niveles directivos (1, p. 22).
+
+### 4.4. Categoría 2.4: Gestión del cambio y adopción
+
+**Descripción y relevancia**
+
+Esta categoría examina las estrategias y procesos para gestionar los cambios humanos y organizativos derivados de la implementación de la IA y garantizar la adopción por parte de los usuarios (1, p. 23). La IA representa un cambio significativo en los procesos, roles y toma de decisiones. Una gestión del cambio eficaz aumenta la aceptación, acelera la adopción y maximiza los beneficios (1, p. 23).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* La IA se implementa con una consideración mínima del cambio organizativo o del impacto en los usuarios. Los aspectos técnicos tienen prioridad sobre los factores humanos. Los usuarios pueden resistirse o buscar alternativas (1, p. 23).
+
+- *Nivel Ready:* Se acompañan los despliegues con comunicaciones y formaciones básicas. La organización reconoce la necesidad de la gestión del cambio, pero los enfoques pueden ser reactivos o centrarse principalmente en la formación, sin abordar factores de adopción más amplios (1, p. 23).
+
+- *Nivel Dynamic:* Se aplica una metodología formal de gestión del cambio a las iniciativas de IA, que incluye análisis de grupos de interés, planes de comunicación y apoyo a los usuarios. Las implicaciones del cambio se analizan al principio del ciclo de vida. Se realiza un seguimiento de las métricas de adopción. Existen mecanismos de retroalimentación (1, p. 23).
+
+- *Nivel Advanced:* La gestión del cambio es proactiva y continua; se recaban las opiniones de los usuarios de forma activa para mejorar los sistemas y las estrategias de adopción; se mide la integración cultural. La gestión del cambio se adapta a los diferentes grupos de interés. La adopción se vincula a la gestión del rendimiento. La organización aprende de iniciativas de cambio anteriores (1, p. 23).
+
+### 4.5. Categoría 2.5: Alfabetización en IA y concienciación
+
+**Descripción y relevancia**
+
+Esta categoría evalúa los esfuerzos para desarrollar una comprensión general de los conceptos, capacidades, limitaciones y consideraciones éticas de la IA en toda la fuerza laboral (1, p. 24). Una alfabetización generalizada permite una mejor identificación de oportunidades, expectativas más realistas, colaboración efectiva con especialistas y uso más responsable de las capacidades de IA (1, p. 24).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* La fuerza laboral tiene escasa comprensión de la IA. Pueden ser comunes las concepciones erróneas. La IA se percibe como misteriosa o amenazante. El personal no técnico no reconoce las aplicaciones potenciales en su trabajo (1, p. 24).
+
+- *Nivel Ready:* Se ofrece o está disponible de forma esporádica una formación básica de sensibilización. Existen algunos materiales educativos. Los principales grupos de interés reciben una introducción a los conceptos, aunque el nivel de comprensión varía ampliamente (1, p. 24).
+
+- *Nivel Dynamic:* Se implementan programas estructurados de alfabetización adaptados a los diferentes roles. La formación aborda tanto los conceptos técnicos como las implicaciones para los procesos de trabajo. Los materiales se actualizan periódicamente. Existen múltiples formatos de aprendizaje (1, p. 24).
+
+- *Nivel Advanced:* Existen oportunidades de aprendizaje continuo; los conceptos de IA están integrados en las discusiones de negocio relevantes; la conciencia ética está generalizada. El aprendizaje es contextual y aplicado. El personal de todos los niveles puede mantener conversaciones informadas sobre el papel de la IA en su trabajo. La organización fomenta una cultura de curiosidad y experimentación (1, p. 24).
+
+### 4.6. Observaciones sobre la hoja resumen del Pilar 2
+
+El marco incluye una hoja de síntesis al final de este pilar (1, p. 25). Permite agregar los resultados de las cinco categorías para determinar la madurez global. Los elementos son los mismos que en el Pilar 1: identificación de categorías críticas, nivel de madurez global con justificación, síntesis de fortalezas y carencias, y priorización de acciones.
+
+El documento no identifica por defecto ninguna categoría como crítica en este pilar. Cada organización determina si alguna de las cinco (talento, estructura, liderazgo, gestión del cambio o alfabetización) actúa como condicionante (1, p. 25).
+
+---
+
+## Sección 5: Análisis detallado del Pilar 3 - Tecnología e Infraestructura
+
+El Pilar 3 se centra en los habilitadores tecnológicos que sustentan el desarrollo, entrenamiento y despliegue de sistemas de IA. El marco organiza este pilar en cuatro categorías (1, p. 26).
+
+### 5.1. Categoría 3.1: Plataformas y herramientas de desarrollo de IA
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la disponibilidad, idoneidad y uso efectivo de los programas y herramientas para el ciclo de vida completo de la IA (1, p. 27). Las plataformas adecuadas permiten a los profesionales trabajar con eficiencia, colaborar y crear soluciones de alta calidad y mantenibles. Proporcionan estructura y consistencia a las actividades (1, p. 27).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Dependencia de herramientas de desarrollo individuales o de software de análisis básico; no existe una plataforma estandarizada. Las herramientas se eligen ad hoc. Las capacidades de colaboración son limitadas. La automatización es mínima (1, p. 27).
+
+- *Nivel Ready:* Se utilizan algunas bibliotecas o marcos de trabajo comunes; comienza la exploración de servicios en la nube o plataformas específicas. La organización está identificando herramientas preferentes y comenzando a estandarizar. Puede existir un control de versiones básico, pero la gestión del ciclo de vida completo es limitada (1, p. 27).
+
+- *Nivel Dynamic:* Se adoptan y respaldan plataformas estandarizadas que proporcionan funcionalidades básicas (preparación de datos, modelado, versionado). Las herramientas admiten la colaboración y el intercambio de conocimiento. Se abordan los requisitos de gobernanza. Existen recursos de formación y soporte (1, p. 27).
+
+- *Nivel Advanced:* Existe una plataforma integrada de grado empresarial que da soporte a todo el ciclo de vida; las herramientas están optimizadas para la productividad, colaboración y gobernanza; se exploran herramientas de vanguardia. Las plataformas se integran con el ecosistema informático más amplio. Existen capacidades de autoservicio cuando procede. La plataforma evoluciona según la retroalimentación y las necesidades emergentes (1, p. 27).
+
+### 5.2. Categoría 3.2: Infraestructura en la nube y computacional
+
+**Descripción y relevancia**
+
+Esta categoría evalúa el acceso a potencia de cálculo adecuada y escalable (CPU, GPU), almacenamiento y recursos de red, a menudo mediante servicios en la nube, para soportar las cargas de trabajo de IA (1, p. 28). Los modelos de IA requieren recursos computacionales significativos. Una infraestructura apropiada permite la experimentación, el entrenamiento eficiente y el despliegue escalable (1, p. 28).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Las limitaciones de infraestructura dificultan la experimentación; dependencia de máquinas locales. Los recursos son insuficientes para un desarrollo serio. Los servicios en la nube pueden no estar disponibles (1, p. 28).
+
+- *Nivel Ready:* Se utilizan servicios básicos de nube (almacenamiento, algo de cómputo) para proyectos; la escalabilidad es limitada o manual. Pueden estar disponibles algunos recursos GPU, pero el acceso es restringido o inconsistente (1, p. 28).
+
+- *Nivel Dynamic:* Existe una infraestructura en la nube escalable configurada específicamente para cargas de trabajo de IA (GPU y TPU incluidas) y está gestionada. Los procesos de asignación están definidos. Existe monitorización de costes. Se abordan los requisitos de seguridad (1, p. 28).
+
+- *Nivel Advanced:* Se implementa una estrategia de nube híbrida/multinube optimizada; el aprovisionamiento es automatizado y elástico; el coste y el rendimiento se gestionan activamente. Las decisiones equilibran rendimiento, coste y sostenibilidad. Hay aceleradores de hardware especializados cuando son beneficiosos. La infraestructura se adapta a los patrones cambiantes (1, p. 28).
+
+### 5.3. Categoría 3.3: Arquitecturas específicas para IA
+
+**Descripción y relevancia**
+
+Esta categoría examina el diseño de los sistemas informáticos (por ejemplo, mediante APIs o microservicios) para facilitar la integración de componentes de IA (1, p. 29). Las arquitecturas favorables permiten una integración más rápida, mayor flexibilidad para evolucionar los componentes y flujos de datos más eficientes hacia y desde los modelos (1, p. 29).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los sistemas monolíticos dificultan la integración. Los sistemas son rígidos y cerrados. El acceso a los datos requiere extracciones personalizadas. El despliegue en producción es engorroso (1, p. 29).
+
+- *Nivel Ready:* Algunos sistemas exponen datos a través de APIs; se considera inicialmente la IA en los diseños de nuevos sistemas. La organización comienza a adoptar enfoques modulares, aunque las limitaciones de los sistemas heredados siguen siendo significativas (1, p. 29).
+
+- *Nivel Dynamic:* Se adoptan patrones arquitectónicos (microservicios, dirigidos por eventos) que facilitan la integración; existen interfaces estándar para los servicios de IA. Las arquitecturas de referencia guían los nuevos desarrollos. Los componentes pueden desplegarse y actualizarse de forma independiente (1, p. 29).
+
+- *Nivel Advanced:* La arquitectura empresarial está diseñada explícitamente para la integración; se construyen y aprovechan componentes y servicios reutilizables; las arquitecturas de transmisión de datos en tiempo real soportan la IA. Los sistemas se diseñan para la flexibilidad y la experimentación. La arquitectura permite el aprendizaje continuo y la adaptación (1, p. 29).
+
+### 5.4. Categoría 3.4: Entorno de ciencia de datos
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la provisión de entornos bien equipados, seguros y colaborativos donde los científicos de datos y los equipos de IA puedan trabajar eficazmente (1, p. 30). Un entorno productivo acelera el desarrollo, facilita la colaboración, permite la reproducibilidad y ayuda a atraer y retener talento. Reduce el tiempo dedicado a la configuración (1, p. 30).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los científicos de datos utilizan herramientas de escritorio aisladas; la colaboración o el acceso a recursos son limitados. Compartir código o resultados es difícil (1, p. 30).
+
+- *Nivel Ready:* Se utilizan sistemas de archivos compartidos o herramientas colaborativas básicas; se proporciona acceso a algunas fuentes de datos. Los equipos tienen mecanismos para compartir, aunque los flujos de trabajo pueden ser mayoritariamente manuales (1, p. 30).
+
+- *Nivel Dynamic:* Existe un entorno de trabajo estandarizado, seguro y colaborativo (en la nube o local) con acceso a las herramientas, datos y cómputo necesarios. Los entornos admiten control de versiones, seguimiento de experimentos y colaboración. Se abordan los requisitos de seguridad (1, p. 30).
+
+- *Nivel Advanced:* Existe una plataforma altamente optimizada e integrada que promueve la colaboración, la reproducibilidad y la eficiencia; integración fluida con fuentes de datos y tuberías de MLOps. Las capacidades de autoservicio permiten una incorporación rápida. Los entornos soportan necesidades especializadas (aprendizaje profundo, PLN). Los análisis de uso impulsan la mejora continua (1, p. 30).
+
+### 5.5. Observaciones sobre la hoja resumen del Pilar 3
+
+La hoja de síntesis sigue la misma estructura que la de los pilares anteriores (1, p. 31). Permite agregar los resultados de las cuatro categorías para determinar la madurez global. El documento no identifica por defecto ninguna categoría como crítica (1, p. 31).
+
+---
+
+## Sección 6: Análisis detallado del Pilar 4 - Operaciones de IA y Ecosistema
+
+El Pilar 4 aborda las prácticas operativas para gestionar los sistemas de IA una vez desarrollados, así como la integración en el ecosistema más amplio. El marco organiza este pilar en cinco categorías (1, p. 32).
+
+### 6.1. Categoría 4.1: Despliegue y gestión de modelos (MLOps)
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la existencia de prácticas maduras para desplegar, monitorizar, versionar y reentrenar modelos de IA en entornos de producción de manera fiable y repetible (1, p. 33). Las prácticas MLOps incorporan la disciplina de la ingeniería de software al desarrollo y garantizan que los modelos se desplieguen de forma fiable, se monitoricen con eficacia y puedan evolucionar para mantener su rendimiento. Son esenciales para escalar la IA más allá de los pilotos (1, p. 33).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* El despliegue es manual, poco frecuente y ad hoc; no existe versionado ni monitorización. La transición del desarrollo a la producción es de alta fricción. Los procesos no están definidos y son propensos a errores (1, p. 33).
+
+- *Nivel Ready:* Existen scripts básicos o procesos manuales; se practica cierto versionado. La organización reconoce la necesidad de enfoques sistemáticos, pero su implementación es incompleta (1, p. 33).
+
+- *Nivel Dynamic:* Se han implementado tuberías automatizadas de CI/CD; existen procesos estandarizados para despliegue, monitorización y reversión. Los modelos se versionan y rastrean. Los marcos de pruebas validan el comportamiento antes del despliegue (1, p. 33).
+
+- *Nivel Advanced:* Las prácticas maduras de MLOps están totalmente integradas; el reentrenamiento automatizado, las pruebas A/B, la monitorización integral y la gobernanza son estándar; el foco está en la eficiencia y la fiabilidad. Todo el ciclo de vida está gestionado. Las estrategias de despliegue minimizan las interrupciones y permiten una experimentación segura (1, p. 33).
+
+### 6.2. Categoría 4.2: Monitorización del rendimiento y optimización
+
+**Descripción y relevancia**
+
+Esta categoría evalúa el seguimiento continuo del rendimiento operativo, la precisión y la equidad de los sistemas desplegados, y los ajustes necesarios (1, p. 34). Los modelos pueden degradarse con el tiempo. Una monitorización eficaz garantiza que sigan siendo precisos, justos y eficientes, permitiendo una intervención oportuna (1, p. 34).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No existe monitorización. Los problemas se detectan solo por quejas de usuarios o fallos evidentes. No hay mecanismos para medir la precisión continua o detectar la desviación (*drift*) (1, p. 34).
+
+- *Nivel Ready:* Existe una monitorización técnica básica (disponibilidad, errores); el rendimiento se verifica manual y esporádicamente. Hay conciencia de la necesidad de verificar la precisión, pero los procesos son ad hoc (1, p. 34).
+
+- *Nivel Dynamic:* Existe monitorización automatizada de métricas clave (precisión, desviación, equidad, latencia) con alertas. Se definen umbrales para la intervención. Se dispone de informes periódicos para los grupos de interés (1, p. 34).
+
+- *Nivel Advanced:* Existe una monitorización continua y holística del rendimiento y del impacto en el negocio; existen bucles de retroalimentación automatizados para el reentrenamiento y la optimización; detección proactiva de problemas. Los enfoques sofisticados detectan cambios sutiles en distribuciones o comportamiento. Los conocimientos sobre el rendimiento impulsan la mejora continua (1, p. 34).
+
+### 6.3. Categoría 4.3: Integración e interoperabilidad
+
+**Descripción y relevancia**
+
+Esta categoría examina cómo se garantiza que los sistemas de IA puedan intercambiar datos eficazmente y funcionar dentro del ecosistema informático y de procesos existente (1, p. 35). Una integración eficaz asegura que los sistemas puedan acceder a los datos, entregar los resultados y operar como componentes fluidos (1, p. 35).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los modelos operan de forma aislada o requieren transferencia manual de datos. La integración es mínima o altamente personalizada. Los resultados pueden ser interpretados manualmente e introducidos en los sistemas (1, p. 35).
+
+- *Nivel Ready:* Se construyen integraciones punto a punto para aplicaciones específicas. Existe cierta automatización, pero puede ser frágil. La organización reconoce la necesidad de enfoques estandarizados (1, p. 35).
+
+- *Nivel Dynamic:* Se utilizan APIs estandarizadas y patrones de integración. La integración forma parte del proceso de diseño. Los estándares técnicos guían la implementación (1, p. 35).
+
+- *Nivel Advanced:* Existe una integración fluida a través de un bus de servicios, flujos de eventos o una pasarela API; los servicios son fácilmente detectables y consumibles. La integración es automatizada y monitorizada. Los procesos están diseñados para aprovechar las capacidades de IA de forma nativa. Los flujos de datos en tiempo real permiten que la IA esté presente en todas las operaciones (1, p. 35).
+
+### 6.4. Categoría 4.4: Colaboración externa y alianzas
+
+**Descripción y relevancia**
+
+Esta categoría evalúa el aprovechamiento de conocimientos, recursos y talento externos (academia, instituciones de investigación, otros organismos, industria) (1, p. 36). La colaboración externa acelera el aprendizaje, proporciona acceso a experiencia especializada, amplía las capacidades y aporta perspectivas nuevas. Es especialmente valiosa para el sector público con capacidades internas limitadas (1, p. 36).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No existen colaboraciones externas. La organización opera de forma aislada (1, p. 36).
+
+- *Nivel Ready:* Existen contactos informales o participación en eventos; colaboraciones ad hoc ocasionales. No hay un enfoque estratégico ni relaciones sostenidas (1, p. 36).
+
+- *Nivel Dynamic:* Existen alianzas estratégicas con academia, instituciones de investigación u otros organismos para proyectos específicos o intercambio de conocimiento. Las alianzas tienen objetivos y gobernanza definidos. Los beneficios fluyen en ambas direcciones (1, p. 36).
+
+- *Nivel Advanced:* Existe participación activa y liderazgo en ecosistemas de IA; proceso sistemático para identificar, gestionar y aprovechar alianzas; iniciativas de co-innovación. La organización tiene reputación como socio valioso. Las alianzas avanzan en los objetivos estratégicos y crean valor mutuo. Contribución a comités técnicos de normalización y/o participación en debates regulatorios (1, p. 36).
+
+### 6.5. Categoría 4.5: Reutilización y componentes compartidos
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la identificación y promoción del uso de plataformas, herramientas, conjuntos de datos o componentes de modelo comunes en diferentes proyectos (1, p. 37). Los componentes reutilizables aceleran el desarrollo, reducen la duplicación, promueven la consistencia y permiten que proyectos más pequeños se beneficien de capacidades que serían antieconómicas de desarrollar de forma independiente (1, p. 37).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Cada proyecto comienza desde cero. No hay conciencia o mecanismo de reutilización. El conocimiento y los componentes permanecen aislados dentro de los equipos (1, p. 37).
+
+- *Nivel Ready:* Existe conciencia del potencial; algunos códigos o componentes se comparten informalmente. La organización reconoce las oportunidades, pero carece de enfoques sistemáticos (1, p. 37).
+
+- *Nivel Dynamic:* Existen procesos y plataformas para compartir y reutilizar modelos, tuberías, características o herramientas entre equipos. Los componentes reutilizables están documentados y son detectables. Los procesos de gobernanza abordan la propiedad y el mantenimiento (1, p. 37).
+
+- *Nivel Advanced:* Existe una estrategia a nivel empresarial para construir y aprovechar activos reutilizables; curación activa y promoción; medición del impacto. Las decisiones arquitectónicas consideran la reutilización. Los incentivos fomentan tanto la contribución como el uso (1, p. 37).
+
+### 6.6. Observaciones sobre la hoja resumen del Pilar 4
+
+La hoja de síntesis sigue la misma estructura (1, p. 38). El documento no identifica por defecto ninguna categoría como crítica en este pilar. Sin embargo, en el cuadro de mando global (p. 54) se menciona la posibilidad de que el Pilar 4 tenga categorías críticas, dejando abierta la opción a que cada organización realice esa determinación (1, p. 54).
+
+---
+
+## Sección 7: Análisis detallado del Pilar 5 - Gobernanza, Ética y Riesgo en IA
+
+El Pilar 5 aborda los mecanismos de gobierno, los principios éticos y la gestión de riesgos. El marco organiza este pilar en cinco categorías (1, p. 39).
+
+### 7.1. Categoría 5.1: Marco de gobernanza de IA
+
+**Descripción y relevancia**
+
+Esta categoría examina el establecimiento de reglas claras, políticas, procesos de toma de decisiones, roles y estructuras de rendición de cuentas específicamente para las iniciativas de IA (1, p. 40). Una gobernanza sólida garantiza que las iniciativas se desarrollen de manera responsable, se alineen con los valores y requisitos de cumplimiento, y equilibren la innovación con la gestión de riesgos (1, p. 40).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No existe una gobernanza específica; se recurre a la gobernanza general de TI. Las iniciativas avanzan sin supervisión especializada, lo que puede generar riesgos no gestionados (1, p. 40).
+
+- *Nivel Ready:* Se redactan políticas o directrices iniciales; los roles y responsabilidades se asignan informalmente para proyectos específicos. La organización reconoce la necesidad, pero su implementación es parcial (1, p. 40).
+
+- *Nivel Dynamic:* Se ha establecido un marco formal con políticas, procesos, roles (por ejemplo, un comité de revisión) y estructuras de rendición de cuentas. Los derechos de decisión están claros. Los procesos están integrados en el ciclo de vida (1, p. 40).
+
+- *Nivel Advanced:* La gobernanza está integrada en todo el ciclo de vida, se revisa y actualiza periódicamente; seguimiento proactivo del cumplimiento; contribución a estándares externos. La gobernanza se adapta a los riesgos y oportunidades emergentes. La organización demuestra un enfoque maduro y basado en el riesgo (1, p. 40).
+
+### 7.2. Categoría 5.2: Principios y directrices éticas
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la definición, adopción y operativización de estándares éticos (equidad, no discriminación, transparencia, supervisión humana) (1, p. 41). Las directrices éticas, inspiradas en marcos internacionales, garantizan que los sistemas de IA se alineen con los valores sociales. Proporcionan orientación para abordar dilemas éticos y protegen a ciudadanos y usuarios. La aplicación de principios éticos genera confianza (1, p. 41).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Escasa conciencia sobre la ética de la IA. El desarrollo no parte de una visión centrada en la ciudadanía. Las consideraciones éticas no se abordan explícitamente. El foco está en la funcionalidad técnica, no en el impacto social (1, p. 41).
+
+- *Nivel Ready:* Se reconocen principios éticos generales; existe cierta discusión para proyectos de alto riesgo. La organización ha comenzado a reconocer las dimensiones éticas, pero carece de procesos estructurados (1, p. 41).
+
+- *Nivel Dynamic:* La organización ha establecido un marco claro de principios éticos. Las consideraciones éticas forman parte de los procesos de revisión estándar: pruebas de sesgo, verificaciones de explicabilidad y evaluaciones de impacto ético. La responsabilidad está formalmente asignada, se realizan seguimientos de métricas y las decisiones están respaldadas por una participación estructurada de los grupos de interés (1, p. 41).
+
+- *Nivel Advanced:* Los principios éticos están plenamente integrados en la cultura, la estrategia y todo el ciclo de vida. La organización refina sus directrices basándose en conocimientos cuantitativos, normativas cambiantes y expectativas sociales. Existe monitorización interna mediante bucles de retroalimentación y se involucra a los grupos de interés externos. La organización demuestra liderazgo en prácticas responsables y considera la confianza como un diferenciador estratégico (1, p. 41).
+
+### 7.3. Categoría 5.3: Evaluación y mitigación de riesgos
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la identificación, análisis y gestión sistemática de los riesgos potenciales (sesgos, vulnerabilidades de seguridad, violaciones de privacidad, impactos sociales) (1, p. 42). Una gestión proactiva previene resultados perjudiciales, protege a usuarios y organización, y permite la innovación al crear marcos para explorar de manera responsable nuevas capacidades (1, p. 42).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los riesgos no se consideran formalmente. La conciencia es baja. La organización puede asumir que la gestión de riesgos general es suficiente (1, p. 42).
+
+- *Nivel Ready:* Se produce una identificación básica de riesgos para algunos proyectos, a menudo de manera reactiva. Existe cierta conciencia, pero la evaluación puede ser superficial o inconsistente (1, p. 42).
+
+- *Nivel Dynamic:* Existe un proceso estandarizado de evaluación de riesgos (sesgo, equidad y seguridad, entre otros) alineado con marcos de referencia (por ejemplo, el Marco de Evaluación de Riesgos de UNESCO); se desarrollan planes de mitigación. La evaluación está integrada en el ciclo de vida. Se reconocen diferentes categorías de riesgo (1, p. 42).
+
+- *Nivel Advanced:* Existe una gestión de riesgos proactiva y continua integrada con la gestión de riesgos empresarial; análisis cuantitativo cuando es posible; monitorización automatizada de indicadores de riesgo. El apetito por el riesgo está definido para las diferentes aplicaciones. Se anticipan los riesgos emergentes. La gestión evoluciona según la experiencia y los acontecimientos externos (1, p. 42).
+
+### 7.4. Categoría 5.4: Cumplimiento normativo y legal
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la garantía de que los sistemas de IA y su uso cumplan con todas las leyes y regulaciones aplicables (RGPD, AI Act, normas sectoriales) (1, p. 43). El cumplimiento evita sanciones y daños reputacionales, y proporciona una base para el desarrollo responsable que protege los derechos de las personas y los intereses organizacionales (1, p. 43).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Se asume el cumplimiento basado en normativas generales. La conciencia sobre los requisitos legales específicos es limitada. La verificación es reactiva o está ausente (1, p. 43).
+
+- *Nivel Ready:* Existe conciencia de los requisitos específicos (RGPD, AI Act); el cumplimiento se verifica manualmente para proyectos clave. La organización ha identificado las normativas relevantes, pero carece de procesos sistemáticos (1, p. 43).
+
+- *Nivel Dynamic:* Se han establecido procesos para garantizar y documentar el cumplimiento, y existen procesos para integrar diferentes conjuntos de experiencia en las verificaciones. Se consulta a expertos legales durante el desarrollo y el despliegue. Los requisitos de cumplimiento están integrados en las metodologías de desarrollo. Las prácticas de documentación respaldan la verificación (1, p. 43).
+
+- *Nivel Advanced:* Existe seguimiento proactivo del panorama regulatorio; verificaciones de cumplimiento automatizadas integradas en MLOps; auditorías periódicas; participación activa con los reguladores y conocimiento de la legislación emergente. El cumplimiento se considera un habilitador y una vía para establecer confianza (1, p. 43).
+
+### 7.5. Categoría 5.5: Transparencia y explicabilidad
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la implementación de técnicas y procesos para hacer que los procesos de toma de decisiones de la IA sean comprensibles para desarrolladores, usuarios, auditores y ciudadanos (1, p. 44). La explicabilidad genera confianza, permite supervisión, facilita la depuración y respalda los requisitos de transparencia. Permite que los humanos confíen adecuadamente en los sistemas (1, p. 44).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los modelos se tratan como cajas negras. Hay poco esfuerzo por explicar las decisiones. La documentación es mínima. Se espera que los usuarios confíen sin explicación (1, p. 44).
+
+- *Nivel Ready:* Existe documentación básica del modelo; cierta conciencia sobre las necesidades de explicabilidad. La organización reconoce la importancia, pero carece de enfoques técnicos (1, p. 44).
+
+- *Nivel Dynamic:* Se aplican técnicas de explicabilidad (por ejemplo, SHAP, LIME) cuando procede; los estándares de documentación incluyen explicaciones para los grupos de interés relevantes. Se definen niveles de transparencia adecuados para diferentes casos de uso y audiencias (1, p. 44).
+
+- *Nivel Advanced:* La transparencia contextualmente apropiada es práctica estándar; las explicaciones se adaptan a diferentes audiencias; se investiga para mejorar la explicabilidad. La organización equilibra la transparencia con otras consideraciones (rendimiento, seguridad). La retroalimentación de los usuarios refina los enfoques (1, p. 44).
+
+### 7.6. Observaciones sobre la hoja resumen del Pilar 5
+
+La hoja de síntesis sigue la misma estructura (1, p. 45). El documento no identifica por defecto ninguna categoría como crítica.
+
+---
+
+## Sección 8: Análisis detallado del Pilar 6 - Datos (enfoque específico para IA)
+
+El Pilar 6 aborda las capacidades específicas relacionadas con los datos necesarias para el desarrollo y despliegue exitoso de sistemas de IA. El marco organiza este pilar en cinco categorías (1, p. 46).
+
+### 8.1. Categoría 6.1: Identificación de datos para casos de uso de IA
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la capacidad de la organización para identificar y adquirir los conjuntos de datos específicos necesarios para un proyecto o aplicación de IA (1, p. 47). El éxito en IA depende de disponer de los datos correctos. Unos procesos de identificación eficaces reducen retrasos y mejoran los resultados (1, p. 47).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Dificultad para identificar o acceder a los datos. El descubrimiento es manual y lento. Las fuentes pueden ser desconocidas o inaccesibles. Los proyectos avanzan con los datos más convenientes, no con los óptimos (1, p. 47).
+
+- *Nivel Ready:* Las necesidades de datos se identifican, pero su obtención es ad hoc y difícil. La organización tiene algunos procesos, aunque inconsistentes o incompletos (1, p. 47).
+
+- *Nivel Dynamic:* Existe un proceso sistemático para identificar, evaluar y obtener datos internos o externos, aprovechando catálogos. Los requisitos se definen en las fases iniciales. Se consideran fuentes alternativas (1, p. 47).
+
+- *Nivel Advanced:* Existe identificación proactiva de activos de datos estratégicos; se han establecido alianzas de adquisición o intercambio. La organización anticipa las necesidades y se posiciona para satisfacerlas. Las fuentes externas se evalúan continuamente. La adquisición está alineada con las prioridades estratégicas (1, p. 47).
+
+### 8.2. Categoría 6.2: Preparación de datos para IA
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la evaluación y preparación de los datos para cumplir con los requisitos de los modelos de IA (controles de calidad, limpieza, transformación, ingeniería de características, etiquetado) (1, p. 48). La preparación impacta directamente en el rendimiento del modelo. Datos de alta calidad permiten modelos más precisos, justos y fiables; datos deficientes conducen a errores, independientemente de la sofisticación algorítmica (1, p. 48).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los datos se utilizan tal cual; la preparación es mínima. Los problemas se abordan de manera reactiva. La preparación es manual y no está documentada (1, p. 48).
+
+- *Nivel Ready:* Se realiza limpieza y transformación básica; los problemas se descubren tarde. Se siguen algunos pasos estándar, pero los enfoques varían (1, p. 48).
+
+- *Nivel Dynamic:* Existen tuberías de preparación estandarizadas, que incluyen controles de calidad, ingeniería de características y etiquetado; la idoneidad se evalúa temprano. Los procesos abordan valores faltantes, atípicos y formato. La preparación es documentada y reproducible (1, p. 48).
+
+- *Nivel Advanced:* Existen tuberías automatizadas y reutilizables; ingeniería de características sofisticada; aprendizaje activo para el etiquetado; la calidad se monitoriza continuamente. La organización mejora las técnicas según la retroalimentación. Se utilizan enfoques avanzados como el aumento de datos (1, p. 48).
+
+### 8.3. Categoría 6.3: Acceso a datos para equipos de IA
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la garantía de que los equipos de IA y los sistemas operativos tengan acceso seguro, eficiente y conforme a la normativa a los datos requeridos (1, p. 49). Un acceso eficiente permite desarrollar y desplegar sin retrasos. Unos controles adecuados garantizan el cumplimiento de los requisitos de seguridad y privacidad, al tiempo que permiten un uso legítimo (1, p. 49).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* El acceso es lento, manual y burocrático. Las solicitudes requieren múltiples aprobaciones o extracciones personalizadas. Los equipos recurren a soluciones alternativas o usan fuentes subóptimas (1, p. 49).
+
+- *Nivel Ready:* Existen procedimientos para solicitar acceso, pero pueden ser ineficientes; el acceso se concede a copias o extractos. Hay controles básicos, aunque los procesos pueden ser engorrosos o inconsistentes (1, p. 49).
+
+- *Nivel Dynamic:* Existen procesos simplificados y conformes para que los equipos accedan a los datos; se utilizan plataformas o acceso virtualizado. El acceso es apropiado a los niveles de sensibilidad. Los procesos de solicitud son claros y documentados (1, p. 49).
+
+- *Nivel Advanced:* Existen mecanismos seguros y de autoservicio (dentro de las políticas); control de acceso granular; aprovisionamiento automatizado según las necesidades del proyecto. Los patrones de acceso se monitorizan y analizan para mejorar. Los controles equilibran seguridad y eficiencia (1, p. 49).
+
+### 8.4. Categoría 6.4: Generación y uso de datos sintéticos
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la capacidad de crear datos artificiales para entrenar o probar modelos, especialmente cuando los datos reales son escasos o sensibles (1, p. 50). Los datos sintéticos pueden superar limitaciones de privacidad, desequilibrios o escasez de casos extremos. Permiten pruebas en escenarios simulados y pueden acelerar el desarrollo (1, p. 50).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* No se utilizan datos sintéticos. La organización depende exclusivamente de datos reales, lo que puede limitar las capacidades (1, p. 50).
+
+- *Nivel Ready:* Existe conciencia o experimentación inicial con herramientas de generación para problemas específicos (por ejemplo, equilibrio de conjuntos). La organización reconoce los beneficios, pero carece de enfoques sistemáticos (1, p. 50).
+
+- *Nivel Dynamic:* Existe capacidad para generar y validar datos sintéticos para casos de uso específicos (preservación de privacidad, aumento de datos). Las técnicas se seleccionan según las características. Se evalúa la calidad y utilidad (1, p. 50).
+
+- *Nivel Advanced:* El uso de datos sintéticos se integra estratégicamente en la estrategia de datos; existen procesos de validación robustos; se exploran técnicas avanzadas (por ejemplo, GAN). La organización aprovecha los datos sintéticos para múltiples desafíos y mejora continuamente las técnicas (1, p. 50).
+
+### 8.5. Categoría 6.5: Comprensión de datos específicos del dominio
+
+**Descripción y relevancia**
+
+Esta categoría evalúa la posesión de la experiencia en la materia sustantiva necesaria para interpretar correctamente los datos y garantizar su uso apropiado en el contexto de la aplicación de IA (1, p. 51). La comprensión del dominio garantiza una interpretación correcta, el desarrollo de características apropiadas y que los resultados tengan sentido. Ayuda a evitar el uso indebido o la mala interpretación que podría llevar a modelos defectuosos (1, p. 51).
+
+**Niveles de madurez**
+
+- *Nivel Basic:* Los equipos de IA carecen de comprensión del contexto empresarial. El personal técnico trabaja aislado de los expertos en la materia. Las suposiciones pueden ser incorrectas (1, p. 51).
+
+- *Nivel Ready:* Se consulta a expertos en la materia de manera esporádica. Se realiza algún esfuerzo por comprender el contexto, aunque la colaboración es ad hoc y la transferencia de conocimiento es limitada (1, p. 51).
+
+- *Nivel Dynamic:* Existe una estrecha colaboración entre los equipos de IA y los expertos a lo largo de todo el ciclo de vida; la documentación incluye el contexto empresarial. La transferencia de conocimiento es sistemática. Los expertos participan activamente en el diseño y la evaluación (1, p. 51).
+
+- *Nivel Advanced:* Los equipos de IA poseen un sólido conocimiento del dominio o cuentan con expertos integrados; la comprensión se captura y aprovecha sistemáticamente (por ejemplo, almacenes de características con definiciones empresariales). El contexto del dominio da forma a todo el proceso de desarrollo. Técnicas como los grafos de conocimiento pueden formalizar la comprensión (1, p. 51).
+
+### 8.6. Observaciones sobre la hoja resumen del Pilar 6
+
+La hoja de síntesis sigue la misma estructura (1, p. 52). El documento no identifica por defecto ninguna categoría como crítica.
+
+---
+
+## Sección 9: Metodología práctica de autoevaluación
+
+### 9.1. Proceso paso a paso
+
+El marco propone un proceso de autoevaluación en cinco pasos, para equipos individuales o talleres transversales (1, p. 9). La evaluación debe basarse en evidencias observables (procesos, documentación, ejemplos) y reflejar la práctica típica, no casos excepcionales (1, p. 9).
+
+**Paso 1: Comprender el marco y los niveles.** Los participantes revisan los seis pilares, las categorías y las definiciones de los niveles. Esta fase garantiza una interpretación homogénea (1, p. 9).
+
+**Paso 2: Realizar las evaluaciones por categoría.** Para cada categoría, los evaluadores revisan las descripciones y determinan qué nivel refleja mejor la práctica actual. La evaluación debe sustentarse en evidencias observables. Las categorías incluyen campos de autoevaluación estandarizados (1, p. 9).
+
+**Paso 3: Identificar brechas y prioridades.** Una vez completadas las evaluaciones, la organización revisa los resultados para identificar fortalezas, lagunas, nivel deseado y acciones necesarias (1, p. 9).
+
+**Paso 4: Sintetizar para determinar la madurez por pilar.** Mediante las hojas resumen, la organización agrega los resultados de las categorías para obtener una calificación global para cada pilar. Incluye la identificación de categorías críticas que pueden condicionar la madurez global (1, p. 9).
+
+**Paso 5: Finalizar la evaluación y definir puntos de acción.** Una vez completadas todas las evaluaciones, la organización consolida los resultados en el cuadro de mando global. Esta visión holística constituye la base para priorizar acciones (1, p. 9-10).
+
+El documento enfatiza que la evaluación más eficaz incorpora perspectivas diversas: estratégica, operativa, técnica, jurídica y de dominio (1, p. 9). El marco se acompaña de un cuaderno de trabajo (*workbook*) para descarga, que facilita el llenado digital (1, p. 11).
+
+### 9.2. Campos de autoevaluación por categoría
+
+El marco aplica una estructura uniforme a todas las categorías. Cada categoría incluye los siguientes campos (1, p. 9-10):
+
+**1. Nivel de madurez actual.** El evaluador selecciona uno de los cuatro niveles (Basic, Ready, Dynamic o Advanced) que mejor refleje la práctica actual (1, p. 9).
+
+**2. Evidencias que sustentan la evaluación.** El evaluador registra documentos, procesos o ejemplos que justifiquen la calificación (1, p. 9).
+
+**3. Fortalezas en esta categoría.** Se identifican los aspectos en los que la organización ya cuenta con capacidades sólidas (1, p. 9).
+
+**4. Carencias o desafíos identificados.** Se señalan las limitaciones que impiden alcanzar un nivel superior (1, p. 9).
+
+**5. Nivel de madurez futuro deseado.** El evaluador selecciona el nivel al que la organización aspira. El marco no impone que sea siempre Advanced (1, p. 9).
+
+**6. Acciones necesarias para progresar.** Se enumeran las iniciativas concretas, plazos y recursos para cerrar la brecha (1, p. 9).
+
+### 9.3. Hojas resumen por pilar
+
+Al final de cada pilar, el marco incluye una hoja de síntesis para agregar los resultados de las categorías y determinar la madurez global (1, p. 18, 25, 31, 38, 45, 52). Contiene:
+
+**Identificación de categorías críticas.** El evaluador determina si alguna categoría actúa como cuello de botella. El marco no identifica ninguna por defecto (1, p. 18).
+
+**Determinación del nivel de madurez global.** A partir de los niveles de las categorías y las críticas, se asigna un nivel global con justificación (1, p. 18).
+
+**Síntesis de fortalezas y carencias principales.** Se resumen los patrones transversales (1, p. 18).
+
+**Acciones prioritarias para mejorar.** Se consolidan y priorizan las acciones (1, p. 18).
+
+### 9.4. Cuadro de mando global de madurez de la organización
+
+El último paso es consolidar los resultados de los seis pilares en un cuadro de mando global (1, p. 53-54). Incluye una tabla con el nivel de madurez y observaciones para cada pilar (1, p. 54). Además, incluye:
+
+**Determinación de la madurez global.** La organización puede ofrecer un promedio numérico o una valoración narrativa (1, p. 54).
+
+**Fortalezas principales.** Se destacan los pilares o categorías con niveles altos (1, p. 54).
+
+**Riesgos o brechas prioritarias.** Se identifican los puntos débiles que requieren atención urgente (1, p. 54).
+
+**Áreas para acción inmediata (0-12 meses).** Se detallan iniciativas concretas a corto plazo (1, p. 54).
+
+**Prioridades a largo plazo.** Se esbozan líneas estratégicas que requieren un horizonte más amplio (1, p. 54).
+
+El cuadro de mando global asegura que el diagnóstico se convierta en una herramienta estratégica (1, p. 10). El documento señala que existe un cuaderno de trabajo (*workbook*) para descarga digital (1, p. 11).
+
+---
+
+## Sección 10: Consideraciones finales y aplicación práctica
+
+### 10.1. Utilidad estratégica del marco
+
+El AI Maturity Framework es un instrumento de autodiagnóstico y planificación estratégica, no un mecanismo de certificación. No emite juicios de valor, sino que proporciona un referente común para que cada organización determine su posición y trace su camino (1, p. 7).
+
+El marco ofrece varias ventajas:
+
+Proporciona un lenguaje compartido para que gestores, técnicos, juristas y especialistas en datos dialoguen sin ambigüedades (1, p. 7). Esto es valioso en administraciones públicas con perfiles diversos y fragmentación departamental.
+
+Permite una evaluación granular. Al desglosar la capacidad en seis pilares y veintinueve categorías, la organización identifica con precisión fortalezas y carencias (1, p. 7-8). Este detalle es fundamental para diseñar planes de acción realistas.
+
+No impone un destino único. Cada organización tiene un punto de partida, recursos y misión distintos. Una pequeña administración local no necesita el mismo nivel de sofisticación que una agencia reguladora (1, p. 7). El marco permite definir una aspiración legítima.
+
+Fomenta una aproximación basada en evidencias. Exige que cada evaluación se sustente en documentos, procesos o ejemplos concretos, no en percepciones subjetivas (1, p. 9).
+
+### 10.2. Limitaciones y alcance
+
+El documento reconoce implícitamente algunas limitaciones.
+
+Primera: el carácter autoevaluativo. Los resultados dependen de la percepción y el conocimiento de los evaluadores, y pueden verse afectados por sesgos. El documento recomienda equipos multidisciplinares y evidencias observables, pero no elimina la subjetividad (1, p. 9).
+
+Segunda: el origen contextual. El marco se desarrolló para apoyar al AI Expertise Centre de Digital Flanders en el contexto de la administración flamenca (1, p. 7). Aunque aspira a ser general, algunas categorías pueden reflejar supuestos o prioridades de ese contexto. Las organizaciones de otros países deberán adaptarlo, algo que el propio documento contempla (1, p. 9).
+
+Tercera: el marco no aborda en profundidad los aspectos presupuestarios y de financiación. Aunque varias categorías hacen referencia a la asignación de recursos, no proporciona una metodología para estimar costes ni para priorizar entre opciones de gasto. La planificación derivada del diagnóstico deberá complementarse con análisis económico-financieros propios.
+
+Cuarta: el marco es una fotografía en un momento dado. La madurez en IA es dinámica; las capacidades avanzadas pueden quedar obsoletas en pocos años. El documento aborda parcialmente esto al incluir en el nivel Advanced la capacidad de revisión continua, pero no ofrece una guía específica para mantener actualizada la evaluación (1, p. 8).
+
+### 10.3. Recomendaciones para la implementación
+
+A partir del análisis del documento, y sin exceder su contenido, pueden formularse algunas recomendaciones prácticas, derivadas de las instrucciones del informe:
+
+**1. Involucrar a múltiples perfiles.** El documento recomienda explícitamente que la evaluación incorpore perspectivas diversas: estratégica, operativa, técnica, jurídica y de dominio. Una autoevaluación realizada solo por técnicos puede pasar por alto aspectos de gobernanza; una solo por la dirección puede ignorar limitaciones técnicas reales (1, p. 9).
+
+**2. Comenzar con un piloto.** Aunque el marco está diseñado para aplicarse de forma integral, empezar con una implementación gradual facilita la adopción y permite ajustes metodológicos. El propio documento, al ofrecer un cuaderno de trabajo descargable, parece contemplar que cada organización adapte el ritmo (1, p. 11).
+
+**3. Documentar las evidencias de manera sistemática.** La exigencia de basar la evaluación en evidencias observables debe tomarse en serio. Sin documentación, la evaluación corre el riesgo de ser un ejercicio de opinión. Las organizaciones pueden crear un repositorio de evidencias (políticas aprobadas, manuales, registros, informes) al que los evaluadores puedan recurrir (1, p. 9).
+
+**4. No buscar el nivel Advanced en todas las categorías.** El marco no prescribe un destino único. Algunas categorías pueden no requerir el nivel más alto para cumplir con la misión. La clave está en identificar qué categorías son críticas para los objetivos estratégicos y concentrar los esfuerzos en ellas (1, p. 7).
+
+**5. Utilizar los resultados para la planificación, no para la comparación.** El marco no está diseñado para comparar organizaciones ni para establecer rankings. Su utilidad radica en el uso interno como herramienta de autoconocimiento y planificación. Las comparaciones externas pueden generar distorsiones (1, p. 7).
+
+### 10.4. Reflexión final
+
+El AI Maturity Framework de UNESCO representa un intento riguroso y sistemático de dotar a las administraciones públicas de una herramienta para abordar el desafío de la IA de manera estructurada y responsable. Su fortaleza principal reside en su carácter integral: cubre desde la estrategia hasta los datos, pasando por las personas, la tecnología, las operaciones y la gobernanza. También reside en su flexibilidad, porque no impone metas ni recetas, sino que ofrece un lenguaje y un método para que cada organización diseñe su propio camino (1, p. 7).
+
+El marco también refleja un enfoque orientado a la práctica. La inclusión de campos de autoevaluación, hojas resumen y un cuadro de mando global lo convierten en una herramienta operativa, no en un mero tratado conceptual (1, p. 9-10). La conexión con el proyecto concreto de la administración flamenca, financiado por la Comisión Europea y ejecutado por la UNESCO, añade un aval institucional significativo (1, p. 7).
+
+Su eficacia final dependerá de cómo las organizaciones lo utilicen. El marco no sustituye el liderazgo, el compromiso ni la asignación de recursos; los presupone y los canaliza. Una autoevaluación que no vaya seguida de acciones concretas, o que se realice sin la participación de los actores adecuados, será un ejercicio estéril. Por el contrario, una aplicación rigurosa y participativa puede convertirse en un catalizador para la transformación digital, ayudando a las administraciones públicas a navegar el complejo proceso de adopción de la IA con una visión clara, fundamentada y responsable (1, p. 10).
+
+---
+
+## Bibliografía
+
+(1) UNESCO. (2025). *AI Maturity Framework: A self-positioning guide for public administrations*. SHS/REI/AI/FLMAT Rev. 3. París: UNESCO. Disponible en acceso abierto bajo licencia CC-BY-SA 3.0 IGO.
+```
