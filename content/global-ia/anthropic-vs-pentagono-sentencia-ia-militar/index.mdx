@@ -1,0 +1,356 @@
+---
+title: "Anthropic gana al Pentágono: límites al poder ejecutivo en IA"
+description: "La jueza Rita Lin anula la designación de Anthropic como riesgo de seguridad nacional por negarse a eliminar sus salvaguardas éticas en IA militar."
+date: "2026-08-28"
+tags: ["Anthropic", "Pentágono", "seguridad nacional", "contratación pública", "IA militar"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "anthropic-vs-pentagono-sentencia-ia-militar"
+readingTime: 42
+image: "/images/global-ia/anthropic-vs-pentagono-sentencia-ia-militar/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Un tribunal federal de California declaró ilegal la designación de Anthropic como "riesgo para la cadena de suministro" de la seguridad nacional, en una sentencia que marca un límite claro al poder del Pentágono sobre sus contratistas de inteligencia artificial. La jueza Rita Lin, del Tribunal de Distrito del Norte de California, resolvió el 27 de agosto de 2026 que el Departamento de Defensa actuó "de manera ilegal e infundada" al sancionar a la empresa por negarse a eliminar las salvaguardas que impiden el uso de sus modelos Claude en armas autónomas letales y en vigilancia masiva.
+
+El conflicto arrancó en julio de 2025, cuando Anthropic firmó un contrato de 200 millones de dólares con el Pentágono para desplegar Claude en redes clasificadas del Gobierno. Las negociaciones se rompieron cuando el Departamento de Defensa exigió una cláusula que permitiera usar los modelos para "todos los fines lícitos", sin las restricciones éticas que la compañía mantiene desde su fundación. El secretario de Defensa, Pete Hegseth, respondió el 27 de febrero de 2026 designando a Anthropic como riesgo para la cadena de suministro, una figura que hasta entonces solo se había aplicado contra adversarios extranjeros y nunca contra una empresa estadounidense.
+
+La sentencia desmonta esa decisión punto por punto. Lin calificó el expediente administrativo del Pentágono de "magro" y sin evidencia de sabotaje, extracción de datos o cualquier otra conducta que encajara en la definición legal de riesgo. Concluyó que el verdadero motivo fue el enfado de Hegseth por las críticas públicas de Anthropic, no un peligro técnico real. La jueza detectó, además, una contradicción decisiva: mientras el Pentágono declaraba a la empresa un riesgo para la seguridad nacional, otras agencias federales seguían negociando con ella el despliegue de su nuevo modelo Mythos.
+
+Con esos hechos probados, el fallo anula la designación bajo 10 U.S.C. § 3252, levanta las sanciones impuestas por nueve agencias federales y declara que las medidas violaron tanto la Primera Enmienda, por representar una represalia contra expresión protegida, como la Quinta, por la ausencia de debido proceso. Aplicando el test de *Hartman v. Moore*, Lin encontró conexión causal directa entre las críticas de Anthropic y la sanción del Pentágono.
+
+El caso no termina aquí. Anthropic mantiene una segunda demanda ante el Circuito del D.C., donde impugna la designación paralela bajo la Federal Acquisition Supply Chain Security Act (FASCSA), que afecta a todas las agencias ejecutivas y no solo a Defensa. La vista oral, celebrada el 19 de mayo, dejó ver un panel dividido: la jueza Karen Henderson calificó la actuación del Pentágono de "espectacular exceso", mientras sus colegas Neomi Rao y Gregory Katsas mostraron más deferencia hacia el Ejecutivo. Esa designación paralela sigue formalmente en vigor, así que la incertidumbre para los contratistas persiste hasta que el Circuito del D.C. resuelva el fondo.
+
+Más allá del litigio concreto, la sentencia fija un precedente para toda la industria de la inteligencia artificial: negociar límites éticos con el Gobierno no equivale a un riesgo de seguridad, y el Ejecutivo no puede convertir la seguridad nacional en un instrumento de represalia contra sus críticos. Este artículo analiza los antecedentes fácticos del contrato, el marco normativo aplicado, los cinco fundamentos de la demanda de Anthropic, el razonamiento íntegro de la sentencia de Lin, el estado del litigio pendiente en el Circuito del D.C. y las implicaciones para contratistas federales, la industria tecnológica y la separación de poderes. Cierra con una comparación entre el modelo estadounidense y los marcos de la Unión Europea y el Reino Unido, que muestra hasta qué punto el enfoque de Washington carece de los criterios objetivos y las garantías procedimentales que sí exige el Reglamento de IA europeo.
+
+---
+
+## Índice
+
+**1. Introducción**
+**2. Antecedentes fácticos**
+ 2.1. El contrato de julio de 2025
+ 2.2. Negociaciones fallidas y el ultimátum
+ 2.3. La designación (27 de febrero – 3 de marzo de 2026)
+**3. Marco normativo**
+ 3.1. 10 U.S.C. § 3252
+ 3.2. 41 U.S.C. § 4713 (FASCSA)
+ 3.3. Definición de riesgo y su aplicación a una empresa estadounidense
+**4. La demanda de Anthropic**
+ 4.1. Primera Enmienda
+ 4.2. Quinta Enmienda
+ 4.3. Ley de Procedimiento Administrativo
+ 4.4. Impugnación por *ultra vires*
+**5. La sentencia del Tribunal de Distrito**
+ 5.1. Expediente administrativo "magro"
+ 5.2. Inexistencia de riesgo técnico real
+ 5.3. El factor determinante: las críticas públicas
+ 5.4. Contradicción con la actuación simultánea del Gobierno
+ 5.5. El fallo
+**6. Litigio pendiente ante el Circuito del D.C.**
+ 6.1. Denegación de la suspensión cautelar (8 de abril)
+ 6.2. Vista oral (19 de mayo)
+ 6.3. Estado actual
+**7. Implicaciones y perspectivas**
+ 7.1. Para contratistas federales
+ 7.2. Para la industria de la IA
+ 7.3. Para la separación de poderes y la seguridad nacional
+ 7.4. Derecho comparado: UE y Reino Unido
+**8. Conclusiones**
+**Bibliografía**
+
+---
+
+## 1. Introducción
+
+El 27 de agosto de 2026, el Tribunal de Distrito de los Estados Unidos para el Distrito Norte de California dictó sentencia en el caso *Anthropic PBC v. U.S. Department of War* (nº 26-cv-01996-RFL). Declaró ilegal e inconstitucional la designación de Anthropic como "riesgo para la cadena de suministro" de la seguridad nacional (1). La resolución, de 59 páginas, invalida por primera vez una designación de este tipo contra una empresa estadounidense. Revoca las sanciones impuestas por el secretario de Defensa, Pete Hegseth, y por nueve agencias federales: el Tesoro, el Departamento de Estado y Seguridad Nacional, entre otras (1). El Tribunal de Distrito del Norte de California es un tribunal federal de primera instancia; sus decisiones se apelan ante el Noveno Circuito y, después, ante el Tribunal Supremo.
+
+La jueza Rita Lin, designada por el expresidente Joe Biden, estimó parcialmente la demanda. Concluyó que el Pentágono había actuado "de manera ilegal e infundada". Escribió: "La invocación vacía de la seguridad nacional no es un cheque en blanco para castigar y tomar represalias contra los críticos del gobierno" (2). Calificó las medidas de "arbitrarias, caprichosas, un abuso de discreción y, por lo demás, contrarias a la ley" (1).
+
+El litigio nació de una disputa contractual. El Pentágono ofreció a Anthropic 200 millones de dólares para usar sus modelos Claude en aplicaciones militares (2). Anthropic se negó a eliminar las salvaguardas que impedían el uso de sus modelos en armas autónomas letales y sistemas de vigilancia masiva. Hegseth respondió designando a la empresa como "riesgo para la cadena de suministro" el 27 de febrero de 2026. Esa figura nunca se había usado antes contra una empresa estadounidense: siempre se había reservado para adversarios extranjeros (1).
+
+La sentencia aborda la aplicación de los estatutos de adquisición militar (10 U.S.C. § 3252 y 41 U.S.C. § 4713) a una empresa nacional (3, 17), los límites de la represalia gubernamental contra la expresión protegida por la Primera Enmienda y las garantías del debido proceso de la Quinta Enmienda. El caso refleja las tensiones entre la industria de la IA y el poder ejecutivo en torno a la gobernanza algorítmica, la seguridad nacional y los derechos fundamentales. También encaja en el enfrentamiento político entre la administración Trump y Silicon Valley, una "guerra cultural" entre el conservadurismo nacionalista y el progresismo tecnológico (2, 10).
+
+Las páginas siguientes recorren los antecedentes fácticos, el marco normativo, los fundamentos de la demanda, el razonamiento de la sentencia y las implicaciones para contratistas, la industria de la IA y la separación de poderes. También abordan el litigio pendiente en el Circuito del D.C. sobre la designación bajo la FASCSA y cierran con una comparación con los ordenamientos de la Unión Europea y el Reino Unido.
+
+---
+
+## 2. Antecedentes fácticos
+
+### 2.1. El contrato de julio de 2025
+
+En julio de 2025, Anthropic, empresa de IA con sede en San Francisco fundada por exempleados de OpenAI con un enfoque en la seguridad, firmó un contrato de 200 millones de dólares con el Departamento de Defensa (4, L9-L13). El acuerdo convirtió a Anthropic en la primera empresa de IA de frontera en desplegar sus modelos en redes clasificadas del Gobierno. Claude operaba en sistemas que gestionan documentos clasificados y se integraba en flujos de trabajo de misiones dentro de esas redes (2, L17-L19; 4, L13-L15; 8, L19-L21). El Pentágono anunció acuerdos similares con Google, OpenAI y xAI, cada uno por 200 millones de dólares (2, L21-L22). Los ejecutivos de Anthropic calificaron el premio como el comienzo de "un nuevo capítulo" (4, L17-L18).
+
+### 2.2. Negociaciones fallidas y el ultimátum
+
+Poco después, surgieron desacuerdos sobre los términos de uso (4, L18-L19). La política de uso de Anthropic prohibía facilitar violencia, diseñar armas o realizar vigilancia masiva (4, L31-L33). En las negociaciones, Anthropic mantuvo dos líneas rojas: la vigilancia masiva de ciudadanos estadounidenses y el uso en sistemas de armas completamente autónomos (5, L7-L11; 7, L7-L10). El consejero delegado, Dario Amodei, advirtió que eliminar esas protecciones permitiría que el modelo se integrara en sistemas de vigilancia o armas autónomas. Los modelos de IA de frontera actuales, argumentó, no son lo bastante fiables para armas autónomas: pondrían en peligro a combatientes y civiles (5, L7-L11; 7, L16-L19; 9, L13-L17).
+
+El Departamento de Defensa, con la administración Trump, exigió que Anthropic aceptara una cláusula que permitiera el uso para "todos los fines lícitos" (2, L19; 6, L10). El Pentágono sostuvo que las decisiones sobre el uso no corresponden a Anthropic, sino al ejército, como con cualquier tecnología adquirida (4, L23-L24; 4, L47-L49). Hegseth afirmó que "los guerreros de Estados Unidos nunca serán rehenes de los caprichos ideológicos de las grandes tecnológicas" (1, L10-L12; 6, L21-L23). En enero de 2026, Hegseth envió un memorando sobre la estrategia de IA del Pentágono en el que sugería la necesidad de "utilizar modelos libres de restricciones de política de uso que puedan limitar las aplicaciones militares lícitas" (10, L35-L37). Anthropic contrastaba con Google, xAI y OpenAI, que "aceptaron en principio" permitir cualquier uso (4, L26-L29). OpenAI aceptó los términos y asumió la colaboración militar que Anthropic rechazó (8, L8; 9, L20-L23). Esta divergencia ha generado tensiones en las plantillas de esas empresas y ha reforzado la percepción de Anthropic como más comprometida con la seguridad y la ética (6, L28-L31).
+
+Las negociaciones se prolongaron sin avances. El 26 de febrero de 2026, Anthropic declaró que "prácticamente no se había avanzado" (11, L3-L5). La empresa afirmó que el lenguaje recibido la noche anterior "no avanzaba prácticamente nada en la prevención del uso de Claude para la vigilancia masiva de estadounidenses o en armas completamente autónomas", y que iba acompañado de "terminología legal que permitiría ignorar esas salvaguardas a voluntad" (11, L11-L16). El Pentágono negó tener intención de vigilar a ciudadanos o desarrollar armas autónomas sin supervisión humana; calificó su petición de "solicitud simple y de sentido común" (11, L38-L45).
+
+Fijó un plazo para el 27 de febrero, amenazando con cancelar el contrato, designar a Anthropic como riesgo o invocar la Ley de Producción para la Defensa (10, L41-L45; 11, L24-L27; 18). Esta ley (50 U.S.C. § 4501 *et seq.*) permite al presidente exigir pedidos, asignar prioridades y tomar medidas para garantizar la disponibilidad de materiales críticos. La amenaza revela la presión ejercida. El 26 de febrero, Amodei declaró que la empresa no podía "en conciencia" aceptar los términos (11, L30-L33).
+
+### 2.3. La designación (27 de febrero – 3 de marzo de 2026)
+
+El 27 de febrero de 2026, el presidente Trump ordenó a todas las agencias federales cesar el uso de la tecnología de Anthropic, con un período de eliminación gradual de seis meses (2, L27-L28; 8, L23-L25). Ese mismo día, Hegseth anunció en X (antes Twitter) que designaba a Anthropic como "riesgo para la cadena de suministro" (2, L14; 2, L40-L42). Declaró que, como resultado, "ningún contratista, proveedor o socio que haga negocios con el ejército de Estados Unidos podrá realizar ninguna actividad comercial con Anthropic" (12, L25-L27). Las cartas de formalización, fechadas el 3 de marzo, convirtieron a Anthropic en la primera empresa estadounidense en recibir esa calificación (8, L8-L10; 8, L28-L30).
+
+Anthropic calificó la acción de "sin precedentes" y "jurídicamente insostenible", y dijo que sentaría "un precedente peligroso para cualquier empresa estadounidense que negocie con el Gobierno" (12, L12-L17; 7, L21-L23; 7, L27-L28). La empresa no había recibido comunicación directa del Pentágono ni de la Casa Blanca antes del anuncio (12, L33-L34; 7, L10-L12). Anunció que impugnaría la designación (7, L30-L31).
+
+Varias agencias federales, incluidas algunas civiles, interrumpieron el uso de los productos de Anthropic y ordenaron a su personal hacer lo mismo (8, L26-L28). La designación no afectaba a los clientes comerciales ni al uso de Claude fuera de los contratos del Departamento de Defensa, según la interpretación de Anthropic (7, L39-L44).
+
+---
+
+## 3. Marco normativo
+
+El Departamento de Defensa basó la designación en dos normas: 10 U.S.C. § 3252 y 41 U.S.C. § 4713 (FASCSA) (8, L32-L34; 6, L32-L34). Ambas atribuyen al secretario de Defensa facultades para excluir fuentes de adquisiciones federales por riesgo en la cadena de suministro, con alcances y procedimientos distintos (12, L41-L43).
+
+### 3.1. 10 U.S.C. § 3252
+
+Esta sección, incluida en el Capítulo 223, establece los requisitos de información sobre riesgos en la cadena de suministro (13, L4-L8). Autoriza al secretario de Defensa, y por delegación a los secretarios del Ejército, la Armada y la Fuerza Aérea, a excluir una fuente de las adquisiciones de defensa que involucren "sistemas de seguridad nacional" (13, L35-L39; 8, L35-L36).
+
+El ámbito se limita a sistemas de información utilizados para inteligencia, criptología, mando y control de fuerzas militares, o como parte de un arma (8, L37-L40). La designación de Anthropic se aplicaba a "[t]odas las adquisiciones del Departamento de Defensa para las cuales sea aplicable el Subparte 239.73 del Título 48 del Código de Regulaciones Federales" y se extendía a todos los productos o servicios de Anthropic, no solo a Claude (8, L51-L53).
+
+La definición de "riesgo" gira en torno a la figura del "adversario": el riesgo de que un adversario pueda sabotear, introducir maliciosamente una función no deseada o subvertir el diseño, la integridad, la fabricación, la producción, la distribución, la instalación, la operación o el mantenimiento de un sistema cubierto, con el fin de vigilar, denegar, interrumpir o degradar su función (8, L41-L45; 2, L13-L16). Esta definición presupone una amenaza externa o un agente malintencionado.
+
+El procedimiento exige una determinación por escrito que acredite: (A) que el uso de la autoridad es necesario para proteger la seguridad nacional; (B) que no existen medidas menos intrusivas; y (C), en caso de limitación de la divulgación, que el riesgo de divulgación supera el riesgo de no divulgar (13, L13-L19; 8, L46-L48). El secretario debe notificar a los comités congresionales (13, L20-L25; 13, L29-L34). El estatuto dispone que ninguna acción al amparo de esta autoridad estará sujeta a revisión en una protesta de licitación ante la GAO o en cualquier tribunal federal (13, L26-L28).
+
+### 3.2. 41 U.S.C. § 4713 (FASCSA)
+
+La Federal Acquisition Supply Chain Security Act de 2018 (FASCSA), Título II de la SECURE Technology Act, establece un marco más amplio (15, L7; 15, L48-L50). Se aplica a "artículos cubiertos": tecnología de la información (incluidos servicios en la nube) y otros productos identificados por el FASC (1, L29-L31).
+
+A diferencia del § 3252, la FASCSA se extiende a todas las agencias ejecutivas (2, L17-L18). La definición de "riesgo" es similar, pero no idéntica: sustituye "adversario" por "cualquier persona" que pueda sabotear, introducir funcionalidad no deseada, extraer datos o manipular un artículo cubierto (1, L39-L42). El ámbito potencial se amplía.
+
+El procedimiento es más exigente. El secretario debe: (1) obtener una recomendación conjunta del director de adquisiciones y del director de información de la agencia; (2) notificar a la fuente y darle 30 días para presentar información y argumentos; (3) emitir una determinación por escrito; y (4) notificar a los comités congresionales (4, L8-L37). Sin embargo, la excepción de "interés urgente de seguridad nacional" permite al secretario actuar sin el procedimiento completo, siempre que lo haga en 60 días y cumpla los requisitos tan pronto como sea practicable (4, L37-L52). Hegseth invocó esta excepción para designar a Anthropic con efectos inmediatos el 3 de marzo (14, L36-L37).
+
+### 3.3. Definición estatutaria y aplicación a una empresa estadounidense
+
+Ambos estatutos vinculan el "riesgo" a la conducta deliberada y malintencionada de un agente, sea adversario o cualquier persona, dirigida a sabotear, subvertir o manipular la integridad de un sistema (2, L13-L16; 1, L39-L42). La designación de Anthropic no se basó en alegaciones de sabotaje, extracción de datos o actuación como adversario.
+
+El fundamento fue la negativa a aceptar los términos contractuales del Pentágono, en particular la eliminación de restricciones de uso (2, L18-L22). El Pentágono argumentó que la capacidad de Anthropic para desactivar o modificar su tecnología en tiempo de guerra introduciría un "riesgo inaceptable". Esa eventualidad, sin embargo, no era un acto de sabotaje en el sentido estatutario.
+
+Analistas y la propia jueza Lin subrayaron el carácter sin precedentes de la medida: era la primera vez que se aplicaba a una empresa estadounidense (2, L39-L40; 8, L8-L9). Aplicar estos estatutos, concebidos para adversarios extranjeros, a una empresa que ejercía su derecho a establecer condiciones contractuales sobre su propiedad intelectual, planteaba cuestiones fundamentales sobre los límites de la discrecionalidad ejecutiva y la interpretación extensiva de las normas de adquisición.
+
+---
+
+## 4. La demanda de Anthropic
+
+Anthropic presentó dos demandas: una ante el Tribunal de Distrito del Norte de California y otra ante el Tribunal de Apelaciones del Circuito del D.C. (5, L9-L11; 6). La demanda en California impugnaba la designación con cinco fundamentos.
+
+### 4.1. Primera Enmienda
+
+El primer fundamento sostenía que la designación constituía una represalia por el ejercicio de la libertad de expresión (5, L9-L11; 6). Anthropic alegó que la verdadera razón era castigarla por negarse a aceptar los términos y por expresar públicamente su oposición al uso en armas autónomas y vigilancia masiva (4, L10-L12; 6, L18-L22).
+
+Su postura sobre límites éticos era expresión ideológica protegida. La designación, respuesta directa de Hegseth a esa postura, constituía una represalia (4, L23-L24). Anthropic señaló las declaraciones de Hegseth, que calificó a la empresa de "arrogante", y las de Trump, que la llamó "empresa radical de izquierdas" y "fuera de control" (2, L9-L11; 4, L47-L49). El abogado Joshua Lipshutz dijo: "Si el Gobierno puede castigar a un contratista por hablar en contra de sus políticas, el derecho a la libertad de expresión, a peticionar al Gobierno y a la libertad de contratación deja de existir" (4, L10-L12).
+
+La jueza Lin señaló que el expediente administrativo demostraba que el Pentágono quería "hacer un ejemplo público de Anthropic por su 'arrogancia' al criticar al Gobierno" (2, L12-L14; 12, L23-L24). Concluyó que la designación no se basó en una evaluación genuina del riesgo técnico, sino en el deseo de castigar a Anthropic por sus opiniones (1; 5, L15-L18).
+
+### 4.2. Quinta Enmienda
+
+El segundo fundamento sostenía que el Pentágono violó la Cláusula del Debido Proceso (6, L15-L17). La designación, que excluía a la empresa de todos los contratos federales y prohibía a los contratistas hacer negocios con ella, afectaba a intereses de propiedad y libertad. El Pentágono la impuso sin darle a Anthropic oportunidad de ser oída (7, L23-L25; 8, L29-L32).
+
+La FASCSA exige, por regla general, un plazo de 30 días para presentar información y argumentos (15). Hegseth invocó la excepción de urgencia, pero Anthropic argumentó que no existía urgencia real (7, L25-L27; 9, L8-L11). La empresa no recibió comunicación previa antes del anuncio público en X (12, L33-L34; 7, L8-L12). Hegseth afirmó después que nunca se produjo una notificación formal; la empresa se enteró por la prensa (4, L38-L42). Incluso en el procedimiento de urgencia, el secretario debe notificar a la fuente y darle la oportunidad de presentar alegaciones "tan pronto como sea practicable" (15). La designación se mantuvo durante meses sin que el Pentágono ofreciera esa oportunidad (6, L15-L17; 8, L29-L32).
+
+### 4.3. Ley de Procedimiento Administrativo
+
+El tercer fundamento sostenía que la designación era "arbitraria, caprichosa, un abuso de discreción y, por lo demás, contraria a la ley" bajo la APA (1; 8, L41-L43). Anthropic argumentaba que el expediente administrativo no contenía evidencia suficiente de un "riesgo significativo". El Pentágono ignoró las pruebas de que Anthropic no tenía intención ni capacidad de sabotear sus modelos, y la mera posibilidad de desactivar la tecnología en tiempo de guerra no constituía un riesgo en el sentido estatutario (8, L41-L45; 6, L32-L35). Tampoco consideró "medidas menos intrusivas" (1; 13, L13-L19): la simple exclusión de los contratos de defensa, sin prohibir a los contratistas hacer negocios con Anthropic, habría bastado (4, L45-L49). La extensión a agencias civiles, incluido el Departamento de Vivienda y Desarrollo Urbano, demostraba que la decisión no se basaba en una evaluación racional, sino en un deseo punitivo (4, L45-L47; 8, L26-L28). La jueza Lin calificó esa extensión de "arbitraria y caprichosa" (1; 2, L14-L16).
+
+### 4.4. Impugnación por *ultra vires*
+
+El cuarto fundamento sostenía que el Pentágono actuó fuera de su autoridad legal (12, L41-L43). La designación suponía una aplicación extensiva y distorsionada de los estatutos, concebidos para amenazas externas, no para resolver desacuerdos contractuales (1; 8, L35-L40). Si la interpretación del Pentágono fuera correcta, cualquier desacuerdo podría convertirse en una designación de riesgo, eliminando las protecciones constitucionales (4, L49-L52). La decisión contravenía las definiciones estatutarias de "riesgo". El § 3252 exigía un "adversario" con intención de sabotear; la FASCSA exigía la conducta de "cualquier persona" que sabotease o extrajese datos. Ninguna norma abarcaba a un proveedor que, cumpliendo sus obligaciones, pudiera retirar el acceso a sus modelos (1; 1, L39-L42). La jueza Lin declaró que la designación era "ilegal e infundada" porque la conducta de Anthropic no encajaba en ninguna de las hipótesis de riesgo previstas por la ley (1; 5, L15-L18).
+
+Anthropic interpuso también una impugnación independiente en el Circuito del D.C., pendiente, que aborda cuestiones adicionales sobre la FASCSA (2, L8-L11; 4, L15-L16). La Sección 6 examina esta segunda demanda.
+
+---
+
+## 5. La sentencia del Tribunal de Distrito
+
+El 27 de agosto de 2026, la jueza Rita Lin dictó sentencia en el caso *Anthropic PBC v. U.S. Department of War* (nº 26-cv-01996-RFL). Estimó parcialmente la demanda y declaró ilegal e inconstitucional la designación (1). La resolución, de 59 páginas, es un pronunciamiento relevante en derecho administrativo, contratación pública y límites constitucionales al poder ejecutivo en seguridad nacional (12, L41-L43).
+
+### 5.1. Expediente administrativo "magro"
+
+La jueza examinó el expediente administrativo del Departamento de Defensa. Lo calificó de "magro" (*meager*) y carente de sustancia (1; 4, L35-L38). El Pentágono no presentó pruebas de sabotaje, funcionalidad no deseada, extracción de datos o subversión de sistemas gubernamentales (1; 2, L29-L31). Tampoco existía evidencia de que Anthropic hubiera actuado como "adversario" o hubiera manifestado intención de hacerlo (1; 8, L35-L40).
+
+El Pentágono basó su decisión en una hipótesis: la posibilidad de que Anthropic pudiera, en algún momento futuro y en circunstancias extremas, desactivar o modificar el acceso a sus modelos (1; 8, L41-L45). Esa eventualidad no constituía un "riesgo" en el sentido estatutario, porque los estatutos exigen conducta deliberada y malintencionada, no una contingencia contractual (1; 1, L39-L42). La jueza subrayó: "La mera posibilidad de que un contratista ejerza sus derechos contractuales no puede equipararse a un riesgo para la seguridad nacional" (1; 5, L15-L18).
+
+### 5.2. Inexistencia de riesgo técnico real
+
+La sentencia profundizó en la base técnica y concluyó que no existía ningún riesgo real derivado de la tecnología de Anthropic. La jueza destacó que Anthropic no había diseñado sus modelos para ser controlados remotamente de manera que comprometiera la seguridad (1; 4, L41-L44). La capacidad de retirar o limitar el acceso era una característica contractual estándar, no un mecanismo de sabotaje (1; 8, L46-L48). El Pentágono no había identificado ninguna vulnerabilidad técnica específica en los modelos Claude (1; 2, L31-L33). La designación no se basaba en una evaluación técnica, sino en consideraciones políticas y contractuales (1). La jueza declaró: "El Departamento de Defensa no ha identificado un solo ejemplo de un riesgo técnico real que Anthropic represente para los sistemas de información del Gobierno" (1; 5, L20-L22).
+
+Además, Anthropic había cooperado plenamente en la evaluación de la seguridad de sus modelos, incluida la autorización para operar en redes clasificadas (1; 4, L44-L46). Esa cooperación era incompatible con la caracterización de la empresa como un riesgo. La jueza señaló: "La conducta de Anthropic ha sido, en todo momento, la de un contratista responsable y colaborador, no la de un saboteador" (1; 4, L46-L48).
+
+### 5.3. El factor determinante: las críticas públicas
+
+El elemento más relevante fue la constatación de que la verdadera razón era la "falta de confianza" de Hegseth por las críticas públicas de Anthropic (1; 2, L12-L14; 4, L47-L49). La jueza analizó las declaraciones públicas y las comunicaciones internas y concluyó que la designación era una represalia por la negativa a aceptar los términos y por la oposición al uso en armas autónomas y vigilancia masiva (1; 6, L18-L22; 10, L10-L12).
+
+La sentencia cita las declaraciones de Hegseth, que calificó a Anthropic de "arrogante", y las de Trump, que la llamó "empresa radical de izquierdas" y "fuera de control" (1; 2, L9-L11; 6, L21-L23). La jueza escribió: "La invocación vacía de la seguridad nacional no es un cheque en blanco para castigar y tomar represalias contra los críticos del gobierno" (1; 5, L15-L18). El expediente, concluyó, demostraba que el Pentágono quería "hacer un ejemplo público de Anthropic por su 'arrogancia' al criticar al Gobierno" (1; 2, L12-L14; 12, L23-L24).
+
+Aplicó el test de represalia de la Primera Enmienda establecido en *Hartman v. Moore*, 547 U.S. 250 (2006) (19), y *Reichle v. Howards*, 566 U.S. 658 (2012) (20). Consideró que Anthropic había demostrado: (1) que su expresión estaba protegida; (2) que la designación era una medida adversa; y (3) que existía una conexión causal, ya que el Pentágono actuó en respuesta a sus críticas (1; 12, L41-L43). *Hartman* exige demostrar la ausencia de causa probable; la jueza consideró que la ausencia de base fáctica satisfacía el estándar.
+
+### 5.4. Contradicción con la actuación simultánea del Gobierno
+
+La jueza identificó una contradicción: mientras el Pentágono designaba a Anthropic como un riesgo, otras agencias y el propio Pentágono seguían colaborando con la empresa en proyectos sensibles (1; 4, L50-L52). Incluso después de la designación, el Gobierno discutía la colaboración en el nuevo modelo Mythos en "una serie de contextos sensibles" (1; 4, L52-L54). Escribió: "Nada de esto es compatible con un temor genuino de que Anthropic sea un saboteador que envenenaría su software para dañar la seguridad nacional" (1; 4, L52-L54). El Pentágono había seguido utilizando los modelos de Anthropic en operaciones militares incluso después de la designación, lo que demostraba que el supuesto riesgo no era lo bastante grave como para justificar la interrupción inmediata (1; 4, L54-L56). Esta contradicción minaba la credibilidad del Gobierno y reforzaba la conclusión de que la designación era una represalia (1; 2, L14-L16).
+
+### 5.5. El fallo
+
+La jueza Lin estimó parcialmente la demanda y resolvió (1; 4, L56-L60):
+
+Primero, **anuló la designación** de Anthropic como "riesgo para la cadena de suministro" realizada por Hegseth el 27 de febrero de 2026. Declaró que era "arbitraria, caprichosa, un abuso de discreción y, por lo demás, contraria a la ley" (1; 2, L14-L16).
+
+Segundo, **levantó las sanciones** impuestas por nueve agencias federales, entre ellas el Pentágono, el Tesoro, el Departamento de Estado y Seguridad Nacional, que prohibían a los contratistas hacer negocios con Anthropic (1; 4, L60-L62). Las calificó de "arbitrarias, caprichosas, un abuso de discreción y, por lo demás, contrarias a la ley" (1; 2, L14-L16).
+
+Tercero, **afirmó expresamente** que el Pentágono no estaba obligado a utilizar los modelos de Anthropic, y que la sentencia no impedía al Departamento optar por otros modelos (1; 4, L62-L64). El fallo no obliga al Gobierno a contratar con Anthropic: declara ilegal la designación que impedía a la empresa y a sus socios comerciales contratar con el Gobierno (1; 4, L64-L66).
+
+Cuarto, **declaró inconstitucionales** las medidas por violación de la Primera y Quinta Enmiendas. Concluyó que la designación constituía una represalia por la expresión protegida (Primera Enmienda) y se impuso sin el debido proceso (Quinta Enmienda) (1; 5, L15-L18; 6, L15-L17).
+
+La jueza basó su decisión en el principio de que "aunque el Departamento de Defensa es indiscutiblemente libre de seleccionar el proveedor de IA de su elección, la evidencia demuestra que las amplias medidas impuestas a Anthropic fueron ilegales e infundadas" (1; 4, L66-L68). La sentencia recuerda que la discrecionalidad del ejecutivo en contratación pública y seguridad nacional no es ilimitada: las decisiones deben basarse en pruebas y respetar las garantías constitucionales (1; 12, L41-L43).
+
+El fallo no puso fin al litigio. El Departamento de Defensa anunció su intención de apelar ante el Noveno Circuito (1; 4, L68-L70). Además, Anthropic mantiene una segunda demanda pendiente en el Circuito del D.C. sobre la FASCSA (1; 4, L70-L72; 2, L8-L11), que examina la Sección 6.
+
+---
+
+## 6. Litigio pendiente ante el Circuito del D.C.
+
+Anthropic interpuso una segunda demanda ante el Tribunal de Apelaciones del Circuito del D.C. (número de caso 26-1049) (2, L27-L29; 12, L10-L11). Esta duplicidad jurisdiccional se debió a la estructura legal: la designación bajo § 3252 podía impugnarse en un tribunal de distrito, mientras que la designación bajo FASCSA solo podía revisarse directamente en el Circuito del D.C. (4, L18-L19; 7, L21-L27). El litigio en la costa oeste se centró en el § 3252; el del Circuito del D.C. se centró en la FASCSA, que afecta a todas las agencias ejecutivas (14, L36-L39).
+
+El 9 de marzo de 2026, Anthropic presentó una petición de revisión judicial impugnando la designación bajo FASCSA (1, L22-L25; 15, L28-L31). Solicitó una suspensión cautelar (*stay*) mientras se resolvía el fondo, alegando daño irreparable (4, L23-L27).
+
+### 6.1. Denegación de la suspensión cautelar (8 de abril de 2026)
+
+El 8 de abril de 2026, un panel de tres jueces del Circuito del D.C., Neomi Rao y Gregory Katsas (designados por Trump) y Karen LeCraft Henderson (designada por George H.W. Bush), denegó la suspensión (5, L5-L10; 4, L4-L8; 8, L14-L19). En una orden de cuatro páginas (21), aplicó el test de cuatro factores (10, L22-L25).
+
+El tribunal no se pronunció sobre la probabilidad de éxito de Anthropic y señaló que el caso planteaba "cuestiones novedosas y difíciles" (10, L28-L29). En cuanto al daño irreparable, reconoció "algún grado de daño", pero lo calificó de "principalmente financiero" y "relativamente contenido" (4, L29-L30; 6, L36-L37). Citó las declaraciones de Amodei, que había afirmado que la "gran mayoría" de los clientes no se verían afectados y que la empresa era vista como "los héroes" (6, L28-L35). Esas declaraciones contradecían la alegación de daño irreparable (6, L36-L37).
+
+En el lado opuesto, el tribunal ponderó el interés del Departamento de Defensa y el interés público. Señaló que "en un lado está un riesgo relativamente contenido de daño financiero para una única empresa privada. En el otro lado está la gestión judicial de cómo, y a través de quién, el Departamento de Defensa asegura tecnología de IA vital durante un conflicto militar activo" (5, L10-L14; 4, L28-L32). Destacó que "la relación del Departamento con Anthropic se ha deteriorado hasta el punto de que el consejero delegado de Anthropic ha descrito públicamente las declaraciones del Departamento sobre la controversia como 'completamente falsas' y 'simplemente mentiras'" (6, L40-L43). Exigir al Departamento que prolongara su uso de la tecnología constituiría "una imposición judicial sustancial sobre las operaciones militares" (6, L44-L46). Por ello denegó la suspensión (6, L47-L48). No obstante, concedió la tramitación acelerada y fijó la vista oral para el 19 de mayo de 2026 (5, L17-L20; 10, L16-L18).
+
+### 6.2. Vista oral (19 de mayo de 2026)
+
+El 19 de mayo de 2026, el panel celebró la vista oral (13, L7-L12). El abogado de Anthropic, Kelly Dunbar, sostuvo que Hegseth había "convertido una poderosa autoridad de seguridad nacional contra una empresa estadounidense, y lo hizo para obtener ventaja en una disputa contractual" (13, L20-L22). Dunbar señaló que el Pentágono había modificado su fundamentación: inicialmente alegó "capacidad técnica" para manipular los modelos después del despliegue, pero cambió a preocupaciones sobre manipulación previa al despliegue (13, L37-L44). Calificó el cambio de "un giro fundamental en la defensa del Gobierno" y una "admisión de cómo Hegseth estaba pensando en el problema" (13, L44-L46).
+
+Los jueces Katsas y Rao interrogaron a Dunbar durante casi una hora, centrados en cuestiones de procedimiento y en el alcance de la revisión (13, L17-L20; 13, L29-L30). Rao cuestionó la base para revisar el juicio de Hegseth y sugirió deferencia al ejecutivo en materia de seguridad nacional (8, L18-L20; 8, L24-L28).
+
+La jueza Henderson, la más veterana del panel, se mostró escéptica. Dijo que no veía "ninguna prueba que respalde la determinación del Pentágono de que Anthropic representa un riesgo para la cadena de suministro de la seguridad nacional" y calificó la actuación del Departamento de "espectacular exceso" (8, L15-L18). Esta división sugería un posible fallo dividido, con Henderson a favor de Anthropic y Rao y Katsas a favor del Gobierno (1, L13-L18; 8, L14-L19).
+
+Durante la vista, el abogado del Departamento de Justicia, Sharon Swingle, argumentó que Anthropic tenía "claramente la capacidad de interferir con el uso de sus modelos de IA por parte del Pentágono para 'operaciones militares críticas'" (8, L44-L47). Anthropic había sostenido en sus alegaciones previas que no podía manipular su modelo una vez desplegado en redes clasificadas (8, L43-L44).
+
+### 6.3. Estado actual
+
+Hasta la fecha de la sentencia del Tribunal de Distrito (27 de agosto de 2026), el litigio ante el Circuito del D.C. permanece pendiente (1, L7-L8; 1, L30-L31; 2, L34-L36). El tribunal ha recibido múltiples escritos de *amicus curiae* en apoyo de Anthropic, incluido uno presentado por Norton Law el 22 de abril (2, L37-L42). El 26 de agosto, un día antes de la sentencia de Lin, se presentó una respuesta a una carta en el caso 26-1049 (2, L4-L8).
+
+La designación bajo FASCSA sigue formalmente en vigor, a diferencia de la designación bajo § 3252, anulada por la sentencia del Tribunal de Distrito (14, L36-L39; 7, L44-L46). Esta dualidad crea un panorama incierto para los contratistas, que reciben solicitudes contradictorias de diferentes agencias (7, L28-L47). El desenlace en el Circuito del D.C. dependerá de la interpretación de la FASCSA y de los límites de la autoridad del secretario para designar a una empresa estadounidense. La decisión, que podría llegar en cualquier momento, tendrá alcance para la industria tecnológica y el marco legal de la contratación pública (7, L47-L53).
+
+---
+
+## 7. Implicaciones y perspectivas
+
+El caso trasciende el litigio concreto. Plantea cuestiones para los contratistas federales, la industria de la IA, y el equilibrio entre poderes en seguridad nacional (12, L41-L43).
+
+### 7.1. Para contratistas federales
+
+La sentencia establece un precedente claro: la designación como "riesgo para la cadena de suministro" no puede usarse como represalia contra un contratista por el ejercicio de derechos constitucionales o por desacuerdos contractuales (1; 4, L56-L60). La jueza Lin declaró que "la invocación vacía de la seguridad nacional no es un cheque en blanco para castigar y tomar represalias contra los críticos del gobierno" (1; 5, L15-L18). Esto refuerza la protección de los contratistas frente a abusos del ejecutivo.
+
+La sentencia subraya la importancia de cumplir los requisitos procedimentales. El Pentágono no consideró "medidas menos intrusivas", como exigen tanto el § 3252 como la FASCSA (1; 13, L13-L19). Las agencias deberán documentar por qué no existen alternativas menos gravosas y basar sus decisiones en un expediente administrativo sustancial, no en hipótesis o consideraciones políticas (4, L45-L49).
+
+La dualidad de regímenes, § 3252 para sistemas de seguridad nacional y FASCSA para todas las agencias, crea un entorno fragmentado (14, L36-L39; 7, L44-L46). Los contratistas deben navegar entre diferentes definiciones y procedimientos. La sentencia del Circuito del D.C. proporcionará orientación adicional, pero la incertidumbre persiste (7, L28-L47).
+
+### 7.2. Para la industria de la IA
+
+La sentencia afirma el derecho de las empresas a mantener políticas de uso aceptable y a negociar con el Gobierno los términos de despliegue (1; 4, L66-L68). La negativa de Anthropic a eliminar restricciones en armas autónomas y vigilancia masiva no era un "riesgo en la cadena de suministro", sino una expresión de sus valores y preocupaciones legítimas (1; 2, L12-L14; 6, L18-L22).
+
+Esto ocurre en un contexto donde la administración Trump presionó a las empresas de IA para eliminar restricciones al uso militar (10, L35-L37). Anthropic fue la única de las cuatro empresas contratantes, junto con Google, OpenAI y xAI, que no cedió (4, L26-L29). La sentencia valida su postura y envía un mensaje a la industria: las empresas no están obligadas a renunciar a sus principios éticos para contratar con el Gobierno (5, L7-L11). Podría alentar a otras empresas a mantener salvaguardas similares (7, L23-L27).
+
+El litigio en el Circuito del D.C. introduce, sin embargo, una nota de cautela. Si confirma la designación bajo FASCSA, las empresas podrían enfrentarse a un escenario de sanciones fragmentado (7, L44-L46), en especial las que operan en defensa y agencias civiles.
+
+### 7.3. Para la separación de poderes y la seguridad nacional
+
+El caso se inscribe en la tensión entre ejecutivo y judicial en seguridad nacional. La sentencia de Lin es un ejemplo de control judicial sobre determinaciones ejecutivas en un ámbito tradicionalmente deferente (12, L41-L43; 8, L24-L28). La jueza no dudó en calificar la designación de "ilegal e infundada" y en afirmar que "la invocación vacía de la seguridad nacional no es un cheque en blanco para castigar y tomar represalias" (1; 5, L15-L18).
+
+La decisión del Circuito del D.C. proporcionará orientación adicional. Si confirma la posición de Henderson, se produciría un doble rechazo judicial a la interpretación expansiva del Pentágono, un precedente importante. Si se inclina por la deferencia al ejecutivo, se abriría una brecha entre circuitos que podría acabar en una revisión por el Tribunal Supremo (8, L18-L20; 8, L24-L28).
+
+En cuanto a la seguridad nacional, la exclusión de Anthropic, o de cualquier otra empresa de IA de frontera, podría generar un vacío tecnológico. Los modelos Claude están entre los más avanzados en razonamiento complejo, análisis de inteligencia y apoyo a la toma de decisiones. Si el Pentágono pierde acceso por motivos políticos, podría rezagarse frente a adversarios como China o Rusia, que invierten en IA militar sin restricciones éticas (2, 6). La sentencia restaura la posibilidad de acceso, pero la tensión subyacente entre valores empresariales y necesidades militares persiste.
+
+Por ello, el Congreso debería considerar una reforma legislativa para clarificar el alcance de la autoridad ejecutiva en riesgos de cadena de suministro, en particular con empresas estadounidenses y tecnologías emergentes (4, L45-L47; 8, L26-L28). Una posible reforma sería enmendar la FASCSA para excluir a empresas estadounidenses, o exigir pruebas de conducta malintencionada real, no diferencias contractuales. Otra opción sería establecer un procedimiento de audiencia previa obligatorio, sin excepción de urgencia. El uso de una herramienta concebida para adversarios extranjeros contra una empresa nacional por motivos contractuales revela una laguna que solo una intervención legislativa podría subsanar (4, 8).
+
+### 7.4. Derecho comparado: UE y Reino Unido
+
+El caso Anthropic adquiere otra dimensión al contrastarlo con los enfoques de otros ordenamientos. La Unión Europea, mediante el Reglamento (UE) 2024/1689 (AI Act) (22), establece un régimen basado en el nivel de riesgo de los sistemas de IA. A diferencia del enfoque ad hoc y punitivo del Pentágono, el AI Act clasifica los sistemas en cuatro categorías y establece requisitos de transparencia, supervisión humana y robustez técnica para los sistemas de alto riesgo. Los sistemas utilizados en infraestructuras críticas, gestión de migraciones y aplicación de la ley son de alto riesgo y están sujetos a evaluación de conformidad *ex ante*. Este enfoque preventivo y basado en principios contrasta con la reacción discrecional del Departamento de Defensa, que designó a Anthropic sin una evaluación técnica previa y sin ofrecerle la oportunidad de subsanar las deficiencias.
+
+El Reino Unido, con la *National Security and Investment Act 2021* (23), optó por un enfoque sectorial basado en principios. Establece un régimen de notificación obligatoria para adquisiciones en 17 sectores sensibles, incluida la IA, pero se centra en el control de inversiones extranjeras, no en la contratación pública con empresas nacionales. El Gobierno británico ha publicado orientación sobre el uso de la IA en el sector público que enfatiza transparencia, equidad y rendición de cuentas, pero no confiere al ejecutivo facultades discrecionales para excluir a un proveedor por motivos políticos sin un procedimiento contradictorio.
+
+La comparación revela que el enfoque estadounidense, al menos en este caso, se caracteriza por la ausencia de criterios objetivos y procedimientos garantistas, lo que lo hace más vulnerable a abusos y a la instrumentalización política de la seguridad nacional. La UE, con su enfoque basado en el riesgo y evaluación *ex ante*, ofrece un modelo alternativo que podría inspirar una reforma de los estatutos de adquisición estadounidenses. El Reino Unido, al centrarse en el control de inversiones extranjeras, evita la tentación de utilizar herramientas de seguridad nacional para resolver disputas contractuales con empresas nacionales. Estas diferencias subrayan la singularidad del caso Anthropic, que ha puesto de manifiesto una laguna en la gobernanza de la IA en Estados Unidos.
+
+---
+
+## 8. Conclusiones
+
+El caso *Anthropic PBC v. U.S. Department of War* es un precedente clave en la intersección del derecho administrativo, la contratación pública, la seguridad nacional y la gobernanza de la IA. La sentencia del Tribunal de Distrito del Norte de California, dictada por la jueza Rita Lin el 27 de agosto de 2026, declara ilegal e inconstitucional la designación de Anthropic como "riesgo para la cadena de suministro", y anula las sanciones del secretario de Defensa y de nueve agencias federales (1). El fallo, basado en la violación de la Primera y Quinta Enmiendas y en la Ley de Procedimiento Administrativo, establece límites a la discrecionalidad ejecutiva en adquisiciones militares. La seguridad nacional no puede coartar medidas punitivas sin base fáctica y con finalidad de represalia (1; 12; 5).
+
+Desde una perspectiva jurídica, la sentencia refuerza la protección de los contratistas frente a abusos del ejecutivo, al exigir que las designaciones se basen en pruebas de conducta malintencionada, no en hipótesis o desacuerdos contractuales (1; 2). La jueza Lin subrayó que los estatutos, 10 U.S.C. § 3252 y 41 U.S.C. § 4713, fueron concebidos para amenazas externas o proveedores que pudieran sabotear sistemas federales, no para resolver disputas sobre políticas de uso de IA (1; 15; 17). La aplicación extensiva a una empresa nacional que ejercía su derecho a establecer condiciones contractuales sobre su propiedad intelectual fue calificada de "arbitraria, caprichosa, un abuso de discreción y, por lo demás, contraria a la ley" (1).
+
+Desde una perspectiva constitucional, la sentencia afirma el derecho de las empresas de IA a mantener salvaguardas éticas y a negociar con el Gobierno los términos de despliegue, sin exponerse a represalias (5; 4; 6). La jueza Lin declaró que la negativa de Anthropic a eliminar restricciones en armas autónomas y vigilancia masiva constituye una expresión ideológica protegida por la Primera Enmienda, y que la designación fue una represalia directa (1; 2). Esto resulta relevante en un contexto donde la administración Trump presionó a las empresas de IA para eliminar restricciones al uso militar (10), y Anthropic fue la única que no cedió (4).
+
+El caso no ha concluido. El litigio pendiente en el Circuito del D.C., que impugna la designación bajo FASCSA, añade complejidad (2; 14; 8). Si confirma la designación, se abriría una brecha entre circuitos y se crearía un régimen de sanciones fragmentado (7), un escenario problemático para contratistas y para la industria tecnológica. La decisión del Circuito del D.C., que podría llegar en cualquier momento, será determinante para el desenlace final y para la definición de los límites de la autoridad ejecutiva en riesgos de cadena de suministro (2; 8).
+
+Más allá del litigio, el caso plantea cuestiones de fondo sobre la gobernanza de la IA en la defensa nacional. La colisión entre la política de uso aceptable de Anthropic y la exigencia de "todos los fines lícitos" revela una tensión fundamental entre los valores de las empresas tecnológicas, sus salvaguardas éticas, y las necesidades operativas del ejército: flexibilidad y control total (4; 6; 10). La jueza Lin inclinó la balanza del lado de la autonomía contractual y la libertad de expresión, al menos en lo que respecta al § 3252 (1; 5). El litigio en el Circuito del D.C. podría modular o revertir este equilibrio (2; 14; 8). La comparación con la UE y el Reino Unido muestra que el enfoque estadounidense carece de procedimientos garantistas y criterios objetivos, lo que invita a una reforma normativa (22, 23).
+
+Finalmente, el caso subraya la necesidad de una reforma legislativa. El Congreso debería clarificar los estatutos de adquisición para precisar el alcance de la autoridad ejecutiva en riesgos de cadena de suministro, en particular con empresas estadounidenses y tecnologías emergentes (4; 8; 9). El uso de una herramienta concebida para adversarios extranjeros contra una empresa nacional por motivos contractuales revela una laguna que solo una intervención legislativa podría subsanar (4; 8). Mientras tanto, el caso Anthropic permanecerá como un hito en la jurisprudencia administrativa y constitucional estadounidense, y como un recordatorio de que la seguridad nacional, por imperiosa que sea, no puede convertirse en un "cheque en blanco" para eludir los controles constitucionales y legales (1; 5).
+
+---
+
+## Bibliografía
+
+### Normativa
+
+(1) 10 U.S.C. § 3252 — Requirements for information relating to supply chain risk. Disponible en: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title10-section3252&num=0&edition=prelim
+
+(2) 41 U.S.C. § 4713 — Federal Acquisition Supply Chain Security Act of 2018 (FASCSA). Disponible en: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title41-section4713&num=0&edition=prelim
+
+(3) Administrative Procedure Act, 5 U.S.C. § 706. Disponible en: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section706&num=0&edition=prelim
+
+(4) Defense Production Act of 1950, 50 U.S.C. § 4501 *et seq.* Disponible en: https://uscode.house.gov/view.xhtml?path=/prelim@title50/chapter55&edition=prelim
+
+### Jurisprudencia
+
+(5) *Anthropic PBC v. U.S. Department of War*, Case No. 26-cv-01996-RFL (N.D. Cal. Aug. 27, 2026). Disponible en: https://www.courtlistener.com/docket/72379655/250/anthropic-pbc-v-us-department-of-war/
+
+(6) *Anthropic PBC v. U.S. Dep't of War*, No. 26-1049 (D.C. Cir. Apr. 8, 2026) (order denying stay). Disponible en: https://www.courtlistener.com/docket/72379655/
+
+(7) *Hartman v. Moore*, 547 U.S. 250 (2006). Disponible en: https://supreme.justia.com/cases/federal/us/547/250/
+
+(8) *Reichle v. Howards*, 566 U.S. 658 (2012). Disponible en: https://supreme.justia.com/cases/federal/us/566/658/
+
+### Doctrina y análisis
+
+(9) Lowell, H. (2026, August 28). A Judge Has Blocked the Pentagon's Attempt to Blacklist Anthropic. *WIRED*. Disponible en: https://www.wired.com/story/a-judge-has-blocked-the-pentagons-attempt-to-blacklist-anthropic/
+
+(10) Bloomberg News (2026, August 28). Anthropic Wins Court Challenge to US Supply-Chain Risk Label. *Bloomberg*. Disponible en: https://www.bloomberg.com/news/articles/2026-08-28/anthropic-wins-court-challenge-to-us-supply-chain-risk-label
+
+(11) CNN Business (2026, August 27). Judge rules the Pentagon's supply chain risk label for Anthropic unlawful. *CNN*. Disponible en: https://www.cnn.com/2026/08/27/tech/anthropic-pentagon-supply-chain-risk-unlawful-hnk
+
+(12) The Guardian (2026, August 28). Pentagon's blacklisting of Anthropic was unlawful, US judge rules. *The Guardian*. Disponible en: https://www.theguardian.com/technology/2026/aug/28/us-court-rules-pentagon-anthropic-ban-illegal-trump-claude-ai
+
+(13) Politico (2026, August 28). Judge rules Trump administration's Anthropic blacklisting is illegal. *Politico*. Disponible en: https://www.politico.com
+
+(14) Court House News (2026, May 19). DC Circuit slams Pentagon blacklisting of Anthropic as overreach. *Court House News*. Disponible en: https://www.courthousenews.com
+
+(15) The Atlantic (2026, August 28). What Anthropic's Clash With the Pentagon Is Really About. *The Atlantic*. Disponible en: https://www.theatlantic.com
+
+(16) Cato Institute (2026, March). The Pentagon's Retaliation Campaign Against Anthropic Is Unconstitutional. *Cato Institute*. Disponible en: https://www.cato.org
+
+(17) Electronic Frontier Foundation (2026, March). The Anthropic-DOD Conflict: Privacy Protections Shouldn't Depend On the Decisions of a Few Powerful People. *EFF*. Disponible en: https://www.eff.org
+
+(18) Mayer Brown (2026, March). Pentagon Designates Anthropic a Supply Chain Risk — What Government Contractors Need to Know. *Mayer Brown Legal Update*. Disponible en: https://www.mayerbrown.com
+
+### Documentos institucionales y legislación comparada
+
+(19) Senator Elizabeth Warren (2026, March 5). Warren Opens Investigation into Pentagon's Designation of Anthropic As National Security Risk, New OpenAI Contract. Disponible en: https://www.warren.senate.gov
+
+(20) Senator Mark Kelly (2026, March). WATCH: In SASC Hearing, Kelly Points Out Contradiction in Pentagon's Decision to Brand Anthropic a Risk While Using Its AI for Operations. Disponible en: https://www.kelly.senate.gov
+
+(21) Representative Whitesides (2026, March). Reps. Whitesides, Houlahan Demand Pentagon Explain Cybersecurity Capability Gap Created by Anthropic Supply Chain Designation. Disponible en: https://whitesides.house.gov
+
+(22) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de IA). Disponible en: https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689
+
+(23) United Kingdom, *National Security and Investment Act 2021*, c. 25. Disponible en: https://www.legislation.gov.uk/ukpga/2021/25/contents/enacted
