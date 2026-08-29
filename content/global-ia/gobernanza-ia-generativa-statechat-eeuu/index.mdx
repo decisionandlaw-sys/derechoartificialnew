@@ -1,0 +1,451 @@
+---
+title: "Gobernanza de IA generativa: el caso StateChat en EE.UU."
+description: "El Departamento de Estado de EE.UU. logró la primera ATO FISMA High para IA generativa federal. Cinco fases y las lecciones de gobernanza de StateChat."
+date: "2026-08-29"
+tags: ["IA generativa", "gobernanza algorítmica", "sector público", "Departamento de Estado EE.UU.", "FISMA"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "gobernanza-ia-generativa-statechat-eeuu"
+readingTime: 47
+image: "/images/global-ia/gobernanza-ia-generativa-statechat-eeuu/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+En julio de 2026, el Departamento de Estado de Estados Unidos publicó el *Generative AI Playbook*, el primer relato documentado de cómo una agencia federal construyó, autorizó y escaló una plataforma empresarial de inteligencia artificial generativa. El protagonista es StateChat, un asistente conversacional que hoy usan más de 62.000 diplomáticos y funcionarios en el 98% de los puestos del Departamento en todo el mundo. El dato que distingue el caso es este: StateChat obtuvo la primera Autorización para Operar en nivel FISMA *High* que Washington concede a una carga de trabajo de IA generativa. Ningún sistema conversacional del gobierno federal había alcanzado antes ese nivel de habilitación para manejar información sensible pero no clasificada.
+
+El *Playbook* narra un recorrido de cinco fases: Alpha, Beta, Lanzamiento, Escalamiento y Profundización. Empezó como un prototipo deliberadamente limitado, un solo hilo de conversación que desaparecía a las 24 horas, y terminó convertido en una plataforma con conexión a cables diplomáticos, SharePoint e informes internos. El equipo escaló de 150 a 8.000 usuarios en cinco meses durante Beta, y de ahí pasó al despliegue empresarial completo. La ATO *High* tardó cerca de un año en obtenerse y exigió coordinar desde el primer día a los equipos de ciberseguridad, privacidad y gestión de registros, tres disciplinas que rara vez trabajan juntas desde el diseño de un producto.
+
+La encuesta de impacto de 2025, respondida por 2.706 empleados, aporta los números que sostienen el caso: el 90% de los usuarios regulares declara ahorrar tiempo con StateChat, el 96% lo recomendaría a un colega, y el ahorro medio ronda 1,6 horas semanales por tarea. Extrapolado a los más de 19.000 usuarios activos semanales, el Departamento calcula más de 10.000 horas ahorradas cada semana solo en tareas de redacción. Los usos más frecuentes son la redacción de comunicaciones y la revisión de estilo, pero los mayores ahorros aparecen en usos minoritarios, como la creación de materiales de formación, donde uno de cada tres usuarios ahorra tres horas semanales o más.
+
+Para un lector jurídico, el aporte central del *Playbook* no está en la tecnología, sino en la gobernanza. El Departamento no creó marcos regulatorios nuevos para la IA generativa: adaptó los instrumentos existentes. La Ley Federal de Gestión de Seguridad de la Información, la Ley de Registros Federales y la Ley de Gobierno Electrónico, combinadas con el marco de gestión de riesgos del NIST y la Orden Ejecutiva 13960, resultaron suficientes cuando se aplicaron con colaboración interdisciplinar. El caso confirma una hipótesis que también circula en el debate europeo sobre el Reglamento de IA: los marcos existentes pueden absorber la IA generativa con interpretación y voluntad organizativa, sin esperar una regulación específica que llegue después de que la tecnología ya esté en producción.
+
+El propio *Playbook* reconoce los límites del caso. La encuesta de impacto fue voluntaria, sin grupo de control y sin validación objetiva del ahorro declarado, lo que impide extraer conclusiones estadísticamente representativas. StateChat, además, dependió de una inversión competitiva del Fondo de Modernización Tecnológica de la GSA que otras agencias no tienen garantizada. Y el documento deja sin responder la pregunta que empieza a dominar el debate: cuando StateChat evolucione hacia agentes autónomos que operan en segundo plano, ¿quién audita sus decisiones y quién responde por ellas? Esa pregunta, todavía sin marco normativo claro ni en Estados Unidos ni en la Unión Europea, es el verdadero horizonte que abre este caso.
+
+# Gobernanza de IA Generativa en el Sector Público: Lecciones del Despliegue Empresarial de StateChat en el Departamento de Estado de EE.UU.
+
+## De la experimentación interna a la adopción institucional: un modelo de cinco fases para la implementación segura y escalable de sistemas de IA generativa en la Administración federal
+
+---
+
+## Índice
+
+**1. Introducción: el punto de inflexión de la IA generativa en la Administración pública**
+1.1. Contexto tecnológico y organizativo
+1.2. Objeto de estudio y preguntas de investigación
+
+**2. Marco normativo e institucional de referencia**
+2.1. Estrategias de datos e inteligencia artificial del Departamento de Estado (2021–2025)
+2.2. Directrices federales: Executive Order 13960 y memorandos OMB
+2.3. El estándar NIST AI RMF como referente técnico
+2.4. La autorización FISMA High como habilitador crítico
+2.5. El papel de la financiación externa: el Technology Modernization Fund
+
+**3. Modelo de implementación: las cinco fases del "Generative AI Playbook"**
+3.1. Fase Alpha: prueba de concepto y autorización FISMA High
+3.2. Fase Beta: validación de utilidad y escalado controlado
+3.3. Lanzamiento: estrategia de despliegue y comunicación
+3.4. Escalamiento: los cinco pilares de la adopción institucional
+3.5. Profundización: hacia sistemas agénticos y herramientas especializadas
+
+**4. Gobernanza y seguridad en entornos de IA generativa**
+4.1. Autorización para operar (ATO) en nivel FISMA High
+4.2. Evaluación de impacto sobre la privacidad (PIA)
+4.3. Gestión de registros y contenido generado por IA
+4.4. Implicaciones para la gobernanza algorítmica en el sector público
+
+**5. Medición del impacto y análisis de resultados**
+5.1. Diseño metodológico de la encuesta de impacto (2025)
+5.2. Resultados cuantitativos y cualitativos
+5.3. Casos de uso transformadores: ejemplos documentados
+5.4. Barreras de adopción y factores críticos
+5.5. Limitaciones metodológicas del estudio
+5.6. Recomendaciones para futuras implementaciones
+
+**6. Lecciones aprendidas y recomendaciones para otras agencias**
+6.1. Factores de éxito transversales
+6.2. Limitaciones del modelo y advertencias
+6.3. Implicaciones para la gobernanza algorítmica en el sector público
+
+**7. Conclusiones: hacia una administración pública aumentada por IA**
+
+**Bibliografía**
+
+---
+
+## 1. Introducción: el punto de inflexión de la IA generativa en la Administración pública
+
+### 1.1. Contexto tecnológico y organizativo
+
+ChatGPT apareció en noviembre de 2022 y transformó la percepción social de la inteligencia artificial. También actuó como catalizador de una transformación silenciosa en las administraciones públicas. En el Departamento de Estado de Estados Unidos, el personal comenzó a usar herramientas generativas disponibles públicamente para agilizar tareas no clasificadas: redactar discursos, mejorar procesos administrativos internos (1). Esta experimentación de base, impulsada por personal no técnico y por equipos de desarrollo, reveló una demanda que las estructuras tradicionales de TI no podían canalizar de forma segura.
+
+El Departamento respondió con un proceso de institucionalización que culminó en julio de 2026 con la publicación del *Generative AI Playbook* (1). No es un manual técnico, sino el relato de un viaje organizativo de varios años: desde los primeros pilotos hasta el despliegue empresarial de *StateChat*, un chatbot de IA generativa autorizado para manejar información sensible pero no clasificada (*Sensitive But Unclassified*, SBU). Esta experiencia es la primera documentada en una agencia federal estadounidense que obtiene una autorización para operar (*Authority to Operate*, ATO) en nivel FISMA *High* para una carga de trabajo de IA generativa. Superó obstáculos normativos, de seguridad y de gobernanza que carecían de precedentes (1).
+
+El contexto normativo refuerza esta iniciativa. La Estrategia de Datos Empresariales de 2021, la Estrategia de IA de 2023 y la Estrategia combinada de Datos e IA de 2025 trazaron una hoja de ruta (1). A nivel federal, la Orden Ejecutiva 13960 de diciembre de 2020 estableció principios para el uso de IA en el gobierno federal, con énfasis en la protección de derechos civiles, libertades civiles y privacidad (4). Al mismo tiempo, el Marco de Gestión de Riesgos de IA del Instituto Nacional de Estándares y Tecnología (NIST AI RMF) ofreció un referente técnico para evaluar sistemas de IA según siete características: segura, protegida y resiliente; explicable e interpretable; con privacidad reforzada; justa y con precisión contextual mantenida; responsable y transparente; y válida y fiable (5). Pero estos instrumentos no estaban diseñados para sistemas generativos de la magnitud de StateChat. Cada fase del desarrollo exigió interpretaciones novedosas y colaboraciones interdisciplinares sin precedentes (1).
+
+### 1.2. Objeto de estudio y preguntas de investigación
+
+Este artículo analiza el desarrollo, despliegue y escalamiento de StateChat a partir del *Generative AI Playbook* (1). El caso es relevante porque documenta un ciclo completo de implementación de IA generativa en un entorno de alta seguridad, desde la concepción hasta la adopción por más de 62.000 usuarios en el 98% de los puestos diplomáticos (1). También explicita un modelo de cinco fases (Alpha, Beta, Lanzamiento, Escalamiento y Profundización) que otras agencias federales pueden adaptar (1). Incorpora además una evaluación de impacto basada en encuestas y grupos focales, que mide tanto el uso como los beneficios reales y las barreras persistentes (1).
+
+Las preguntas que guían este análisis:
+
+1. ¿Qué condiciones organizativas, normativas y técnicas permitieron obtener una autorización FISMA High para un sistema de IA generativa, y cómo se gestionaron los riesgos?
+2. ¿Qué mecanismos de gobernanza y adopción permitieron escalar desde un prototipo inicial hasta una herramienta empresarial con decenas de miles de usuarios?
+3. ¿Qué lecciones se extraen sobre la medición del impacto de la IA generativa en el sector público, y qué limitaciones tienen los métodos empleados?
+4. ¿Qué implicaciones tiene la transición hacia sistemas de IA "agéntica" para la gobernanza algorítmica en la administración pública?
+
+El estudio es un caso único, basado en análisis documental de fuentes primarias y secundarias (1). No pretende ofrecer generalizaciones estadísticas, sino proposiciones analíticas que puedan contrastarse en futuras investigaciones.
+
+---
+
+## 2. Marco normativo e institucional de referencia
+
+### 2.1. Estrategias de datos e inteligencia artificial del Departamento de Estado (2021–2025)
+
+El Departamento de Estado no institucionalizó la inteligencia artificial de forma espontánea. Fue una progresión estratégica planificada. El *Playbook* muestra cómo la agencia estableció una secuencia de instrumentos que sentaron las bases conceptuales y organizativas para StateChat (1). Esta secuencia refleja una maduración: desde la infraestructura de datos hasta una visión integrada de datos e inteligencia artificial como ejes de la modernización diplomática (1) (2).
+
+El primer hito fue la **Estrategia de Datos Empresariales** (*Enterprise Data Strategy*) de 2021. Consideraba los datos un activo estratégico para la diplomacia y establecía mecanismos para acelerar decisiones mediante analítica, proporcionar herramientas modernas y pilotar aplicaciones de IA y aprendizaje automático (1) (2). Esta estrategia permitió la creación del *Center for Analytics* (CfA) en 2019, una unidad dedicada a integrar datos y analítica en la toma de decisiones, y el desarrollo del "modelo campaña", que combinaba equipos multidisciplinarios para el desarrollo ágil (1).
+
+En 2023, el Departamento publicó una **Estrategia de IA** específica que abordaba los desafíos y oportunidades de la IA generativa (1). Reconocía la necesidad de principios claros, fomentar la innovación y garantizar un uso responsable y seguro (1).
+
+En 2025, ambas estrategias se consolidaron en una **Estrategia combinada de Datos e IA** (*Enterprise Data and AI Strategy*) (1) (2). Establecía un plan trienal para aprovechar el poder de los datos y la IA en la política exterior estadounidense, cumpliendo los requisitos de la Oficina de Gestión y Presupuesto (OMB) y otros mandatos federales (3). Sus objetivos: usar una infraestructura de IA segura; fomentar una cultura que abrace la IA; garantizar un uso responsable; e innovar continuamente en desarrollo y despliegue (2).
+
+El *Playbook* subraya que estas estrategias no eran meros documentos aspiracionales. Cumplían funciones críticas (1):
+
+- Alineaban prioridades en un entorno donde los enfoques estandarizados no funcionan.
+- Informaban sobre lo logrado y hacia dónde se dirigía la organización.
+- Creaban espacio para que las oficinas y misiones implementaran soluciones adaptadas.
+- Articulaban públicamente la visión del Departamento sobre una IA responsable y fiable (1).
+
+### 2.2. Directrices federales: Executive Order 13960 y memorandos OMB
+
+El marco normativo federal fue igualmente determinante. La **Orden Ejecutiva 13960**, *"Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government"*, firmada el 3 de diciembre de 2020 por el presidente Trump (4), estableció nueve principios para el diseño, desarrollo, adquisición y uso de IA en el gobierno federal: legal, eficaz, ética, segura, protegida, resiliente, transparente, explicable, responsable y justa (4). La orden exigía a las agencias un inventario de sus casos de uso de IA, actuales y planificados, y compartirlos con otras agencias y con el público (4). La Sección 5 declaraba: "[e]s la política de los Estados Unidos [...] promover el uso de IA fiable en el gobierno federal" (4).
+
+Posteriormente, la **Orden Ejecutiva 14110** de octubre de 2023 y otras disposiciones profundizaron estos mandatos, exigiendo informes y mecanismos de gobernanza más rigurosos. Pero el *Playbook* se refiere explícitamente a la EO 13960 como referente principal durante el desarrollo de StateChat (1).
+
+En este contexto, la OMB emitió varios memorandos. El **M-24-10** de marzo de 2024 introdujo requisitos vinculantes para fortalecer gobernanza, innovación y gestión de riesgos. El **M-24-18** de septiembre de 2024 abordó la adquisición responsable de IA. En abril de 2025, la OMB publicó **M-25-21** (*"Accelerating Federal Use of AI through Innovation, Governance, and Public Trust"*) y **M-25-22** (*"Driving Efficient Acquisition of Artificial Intelligence in Government"*) (6) (7). El M-25-21 describía un enfoque de gestión de riesgos, promovía la reutilización e intercambio de código y modelos, y abogaba por publicar código de IA como software de código abierto (6). El M-25-22 establecía requisitos de contratación para una adquisición eficiente y responsable (7).
+
+El *Playbook* señala que el equipo de pruebas, evaluación, verificación y validación (*Independent Testing, Evaluation, Verification, and Validation*, ITEVV) se basó en la EO 13960 y en el marco NIST para evaluar StateChat (1). La orden y los memorandos de la OMB fueron el parámetro normativo para garantizar que el sistema cumpliera con los estándares de confianza, seguridad y protección de derechos civiles (1).
+
+### 2.3. El estándar NIST AI RMF como referente técnico
+
+El **Marco de Gestión de Riesgos de IA del NIST** (AI RMF 1.0), publicado el 26 de enero de 2023, fue el referente técnico para la evaluación de StateChat (5). Es un documento voluntario que ofrece enfoques para minimizar impactos negativos previstos e identificar oportunidades para maximizar los positivos (5). Se estructura en cuatro funciones: Gobernar, Mapear, Medir y Gestionar (5).
+
+El equipo ITEVV utilizó el AI RMF para evaluar StateChat según siete características (1) (5):
+
+1. Segura, protegida y resiliente
+2. Explicable e interpretable
+3. Con privacidad reforzada
+4. Justa y con precisión contextual mantenida
+5. Responsable y transparente
+6. Válida y fiable
+
+Además, ITEVV probó StateChat en diez categorías de riesgo adaptadas a los sistemas de IA diplomáticos, lo que aseguró una revisión exhaustiva de la postura de riesgo (1). Este enfoque alineó el desarrollo con los estándares del AI RMF y los mandatos gubernamentales (1).
+
+### 2.4. La autorización FISMA High como habilitador crítico
+
+Uno de los logros más significativos fue la **Autorización para Operar** (*Authority to Operate*, ATO) en nivel **FISMA High** para StateChat (1). La Ley Federal de Gestión de Seguridad de la Información (FISMA) exige que todos los sistemas de información operados por o en nombre del gobierno federal cumplan estándares de seguridad y obtengan una ATO firmada por un funcionario autorizante (*Authorizing Official*) (8). El nivel "High" autoriza el manejo de información de alto impacto, incluyendo datos SBU (1).
+
+El proceso duró aproximadamente un año y requirió colaboración profunda con los equipos de ciberseguridad y gobernanza desde el primer día (1). El Departamento nunca antes había establecido una plataforma de IA generativa empresarial de esta magnitud, y muchos procesos de revisión, autorización y políticas nunca se habían aplicado a un sistema de IA generativa (1). Los desafíos incluyeron:
+
+- Autorizar un sistema FISMA High para cargas de trabajo sensibles de IA.
+- Realizar una evaluación de impacto sobre la privacidad (*Privacy Impact Assessment*, PIA) para una plataforma generativa.
+- Establecer prácticas de gestión de registros para el contenido generado por IA (1).
+
+La ATO High desbloqueó el valor de StateChat al permitir (1):
+
+- La integración de fuentes de datos sensibles (cables diplomáticos, SharePoint, informes internos).
+- El acceso a múltiples categorías de datos SBU.
+- La utilidad real para usuarios que trabajan con información auténtica del Departamento.
+- La operación en un entorno seguro y cerrado.
+- Expectativas claras y comprensibles para los usuarios (1).
+
+Sin esta ATO, StateChat habría quedado limitado a datos no clasificados y no sensibles, lo que habría reducido drásticamente su adopción y socavado su propuesta de valor central (1). El *Playbook* recomienda a otras agencias obtener una ATO FISMA High, o el nivel más alto para su agencia, al inicio del proceso, presupuestando aproximadamente un año para este trámite, ya que determina qué datos puede acceder la herramienta (1).
+
+### 2.5. El papel de la financiación externa: el Technology Modernization Fund
+
+StateChat no habría sido posible sin el apoyo del **Fondo de Modernización Tecnológica** (*Technology Modernization Fund*, TMF) de la Administración de Servicios Generales (GSA) (1). La inversión del TMF, iniciada en mayo de 2024, permitió construir y desplegar la infraestructura necesaria para soportar futuras aplicaciones y herramientas de IA seguras: API seguras para sistemas generativos y entornos de desarrollo controlados (1). Esta financiación externa fue crítica para pasar de los pilotos iniciales al despliegue empresarial, proporcionando recursos para contratación estratégica, inversión en infraestructura y escalado (1).
+
+---
+
+## 3. Modelo de implementación: las cinco fases del "Generative AI Playbook"
+
+El *Playbook* no solo narra una experiencia; propone un modelo estructurado que sus autores denominan "un marco repetible" (1). Se articula en cinco fases (Alpha, Beta, Lanzamiento, Escalamiento y Profundización) que corresponden a hitos críticos en el ciclo de vida de una solución de IA generativa empresarial (1). Cada fase tiene objetivos específicos, criterios de progreso y actividades diferenciadas, aunque el proceso no es lineal, sino iterativo y adaptativo (1). Desglosamos cada fase a partir del relato documentado.
+
+### 3.1. Fase Alpha: prueba de concepto y autorización FISMA High
+
+La fase Alpha, desarrollada entre finales de 2023 y principios de 2024, tenía un objetivo acotado: demostrar que el Departamento podía ofrecer un chatbot seguro que evitara riesgos inaceptables, funcionara globalmente y mejorara con el tiempo (1). El equipo partió de las campañas de IA previas, como la de modernización de informes (AIRMOD), y de la inversión del TMF de la GSA, iniciada en mayo de 2024 (1).
+
+Alpha se caracterizó por el **prototipado rápido e iterativo** (1). La primera versión de StateChat era intencionadamente espartana: un único hilo de conversación por usuario que desaparecía a las 24 horas; la subida de documentos tardaba horas; y carecía de conexiones con sistemas internos (1). Esta limitación no fue un defecto, sino una decisión deliberada. "Lanzar pronto fue la decisión correcta": los experimentos con usuarios reales revelaron de inmediato qué funcionalidades eran prioritarias, subir documentos de trabajo y conectar con datos internos, y eso permitió al equipo centrarse en características que los usuarios necesitaban, no en las que el equipo suponía (1).
+
+Para cada lanzamiento de prototipo en Alpha, se aplicó un **enfoque de pruebas en tres capas** (1):
+
+1. **Pruebas funcionales internas**: validación de infraestructura, pruebas de estrés, controles de seguridad, accesibilidad (Sección 508) y regresión.
+2. **Pruebas de rendimiento de IA**: evaluación de funcionalidad, precisión contextual, desinformación, ciberseguridad, experiencia de usuario (UI/UX) y rendimiento fiable, alineadas con el NIST AI RMF y mandatos gubernamentales.
+3. **Pruebas de aceptación de usuarios** (*User Acceptance Testing*, UAT): un subconjunto de usuarios probaba iteraciones iniciales para garantizar que la solución satisfacía necesidades reales y ofrecía información crítica sobre usabilidad (1).
+
+El equipo de pruebas, evaluación, verificación y validación independiente (ITEVV) fue central. ITEVV evaluó StateChat según las siete características del NIST AI RMF y en diez categorías de riesgo específicas para sistemas diplomáticos de IA (1). Esta disciplina dio resultados tangibles: los equipos de ciberseguridad obtuvieron una **Autorización Condicional para Operar** (*Conditional Authority to Operate*, C-ATO), que permitió continuar el desarrollo (1).
+
+El hito más relevante de Alpha fue la **ATO en nivel FISMA High**, un proceso de aproximadamente un año que requirió colaboración profunda con ciberseguridad y gobernanza desde el primer día (1). La ATO High permitió integrar fuentes de datos sensibles (cables, SharePoint, informes) y operar en un entorno cerrado y seguro. Sin ella, la herramienta habría quedado limitada a datos no clasificados, comprometiendo su utilidad (1). El *Playbook* subraya: "el objetivo no era la perfección, era iterar y aprender rápido" (1).
+
+### 3.2. Fase Beta: validación de utilidad y escalado controlado
+
+Superada la prueba de concepto, Beta se preguntó: ¿los usuarios adoptarían la herramienta y encontrarían valor en ella? (1). Para responder, el Departamento escaló StateChat de 150 a 8.000 usuarios en cinco meses, con una estrategia de **expansión gradual por fases** que permitió establecer procesos de desarrollo y prueba repetibles y evitar el agotamiento del equipo o de los usuarios (1).
+
+La gestión de expectativas fue crítica. El equipo fue transparente sobre las limitaciones ("StateChat está en Beta, y se nota" fue un lema recurrente), lo que ayudó a gestionar las expectativas de usuarios y líderes (1). Los usuarios que solicitaban acceso voluntario a través de un formulario automatizado y se autenticaban con sus credenciales obtenían acceso inmediato. Las métricas de uso, las tasas de éxito de los *prompts* y la satisfacción, complementadas con comentarios cualitativos, ofrecieron una imagen completa del rendimiento antes del lanzamiento empresarial (1).
+
+Para apoyar a los usuarios, el Departamento implementó un **sistema de soporte multicanal** (1):
+
+- **Oficinas de atención** (*Office Hours*): seis sesiones mensuales en tres husos horarios, que permitían al personal mundial participar durante sus horas de trabajo. Entre marzo de 2024 y mayo de 2026, se celebraron 94 sesiones con aproximadamente 17.000 asistentes. Cada sesión incluía demostraciones en directo de casos de uso reales y debates abiertos.
+- **Centro de recursos centralizado**: un sitio SharePoint (*AI.State*) que albergaba casos de uso de usuarios globales, ejemplos de *prompts*, vídeos de demostración, un módulo de aprendizaje autodirigido y un panel de control con datos de uso anonimizados por puesto y región. El equipo subestimó inicialmente la importancia de este centro, pero se convirtió en un recurso esencial.
+- **Comunicación multicanal**: actualizaciones semanales por correo electrónico, anuncios en la intranet y presentaciones en reuniones de liderazgo.
+
+La **retroalimentación de los usuarios** se gestionó mediante un proceso estructurado denominado *Thunderdome* (1). Constaba de cinco pasos: (1) recopilación de *input* desde múltiples canales (formularios integrados, encuestas de satisfacción, preguntas en *Office Hours*, observaciones); (2) síntesis y preparación de temas comunes; (3) sesión de priorización colaborativa evaluando viabilidad técnica y alineación con prioridades organizativas; (4) votación de los usuarios sobre la lista reducida de mejoras; (5) elaboración de una hoja de ruta transparente, generalmente en incrementos de seis meses (1). El primer *Thunderdome* analizó y priorizó comentarios de seis canales, 800 encuestados y 22 entrevistas con usuarios avanzados, y produjo una hoja de ruta con las diez funcionalidades más solicitadas (1).
+
+### 3.3. Lanzamiento: estrategia de despliegue y comunicación
+
+El lanzamiento empresarial de StateChat no fue un evento único, sino **un proceso de tres semanas** que permitió probar sistemas, perfeccionar procesos y generar confianza de forma incremental (1). Antes del lanzamiento general, el equipo realizó ensayos generales (*dress rehearsals*) activando el acceso para todos los empleados y pilotó la formación con un único buró de gran tamaño para someter la plataforma a pruebas de estrés (1).
+
+El **plan de lanzamiento** incluía materiales para usuarios, infraestructura técnica, campañas de comunicación, programas de formación y divulgación específica para involucrar a partes interesadas (1). Se integraron en una lista de verificación central que sincronizaba a desarrolladores, equipos de comunicación, formadores y seguridad a través de reuniones diarias y semanales (1).
+
+La comunicación durante el lanzamiento fue amplia y estratégica: correos electrónicos, memorandos, anuncios en la intranet y respaldos de líderes (1). Un enfoque clave fue abordar de manera proactiva las preocupaciones sobre seguridad, ética y privacidad, demostrando que StateChat era una herramienta segura y aprobada (1). El día del lanzamiento contó con un **evento de alto perfil** con el Director de Información (CIO), el Director de Datos e IA (CDAO) y el Decano de la Escuela de Tecnología de la Información Aplicada del Centro de Entrenamiento de Asuntos Exteriores, en un seminario web con demostraciones en directo de usuarios de todo el mundo (1).
+
+El *Playbook* destaca la importancia de combinar el acceso con la formación inmediata (1). Una semana antes del lanzamiento, el equipo realizó seis sesiones de formación para un único buró, con más de 700 participantes. En las semanas siguientes, se observó un **aumento del 58% de usuarios de StateChat en ese buró**, lo que llevó a la conclusión: "no esperes para formar a los usuarios. Pon el acceso en relación con oportunidades inmediatas de aprendizaje y luego mide el impacto" (1).
+
+### 3.4. Escalamiento: los cinco pilares de la adopción institucional
+
+Superado el lanzamiento, el desafío fue la adopción sostenida. El *Playbook* distingue *conceder acceso* de *impulsar la adopción* (1). Para lograrlo, el equipo estructuró su estrategia en **cinco pilares interconectados**, desarrollados durante las fases piloto y ajustados a la demanda creciente (1).
+
+**Primer pilar: comunicaciones estratégicas**. El equipo usó una herramienta de gestión de relaciones con los clientes (CRM) para realizar pruebas A/B de líneas de asunto y contenidos de correos electrónicos, adaptando los mensajes según lo que generaba mayor apertura (1). El enfoque más efectivo fue traducir capacidades técnicas en aplicaciones prácticas. Por ejemplo, en lugar de anunciar "análisis de documentos con IA", se explicaba cómo los oficiales de política podían usar la función para sintetizar docenas de documentos y detectar tendencias en minutos (1).
+
+**Segundo pilar: incorporación (*onboarding*) dirigida por burós, regiones o funciones**. Programas de una semana, interactivos y prácticos, reunían a empleados de la misma organización para que la formación fuera relevante para sus flujos de trabajo y accesible en los husos horarios adecuados (1). El respaldo de los líderes fue crítico: los altos funcionarios enviaron invitaciones directas a sus equipos. Tras un *onboarding* personalizado para el Buró de Asuntos de Asia Meridional y Central (SCA), el crecimiento de usuarios aumentó un **31% en usuarios totales y un 367% en usuarios activos semanales** (1).
+
+**Tercer pilar: formación en vivo**. Dos tipos de sesiones: *StateChat 101* (cursos abiertos de inscripción, cuatro a seis veces al mes, en distintos husos horarios) y *Office Hours* (sesiones de apoyo en tiempo real con demostraciones y resolución de dudas). En total, más de 50.000 asistentes (1).
+
+**Cuarto pilar: recursos asincrónicos**. El centro de recursos evolucionó hacia un ecosistema de autoaprendizaje con biblioteca de casos de uso, *ProTips* con orientación basada en escenarios, guías de solución de problemas, módulos de autoaprendizaje, una guía de *prompts* con más de 100 plantillas y paneles de análisis con datos de uso anonimizados filtrables por puesto y buró (1). StateChat integró su propia guía de usuario: si un usuario tiene problemas al subir un documento, puede preguntar directamente a StateChat y recibir instrucciones paso a paso basadas en recursos oficiales (1).
+
+**Quinto pilar: alianzas multiplicadoras**. El equipo central no podía absorber toda la demanda de formación. El Departamento adoptó un enfoque de **"formar a los formadores"** (*train-the-trainer*) (1). Los socios principales: el Centro Nacional de Entrenamiento de Asuntos Exteriores (NFATC), que institucionalizó las formaciones en sus currículos de actualización en IA; el **Programa Piloto de Campeones de IA**, que en marzo de 2026 identificó y formó a más de 50 entusiastas adoptadores tempranos para impartir formación localizada; y los Directores de Datos e IA de cada buró, que promovieron la adopción dentro de sus organizaciones (1). Este enfoque permitió llegar a más de 48.000 asistentes en más de 430 sesiones sin añadir personal (1).
+
+### 3.5. Profundización: hacia sistemas agénticos y herramientas especializadas
+
+Con la adopción masiva, la fase de "Profundización" (*Pivot to Depth*) evolucionó StateChat desde un chatbot independiente hacia un **ecosistema de herramientas interconectadas** y, en última instancia, hacia **sistemas de IA agéntica** (1). Esta transición implicó tres movimientos.
+
+Primero, el Departamento amplió la definición de "flujo de trabajo" más allá de tareas administrativas para incluir **análisis de políticas sofisticados**. Construyó herramientas especializadas, como una herramienta de análisis *pre-mortem* que ayuda a someter a prueba de estrés propuestas de política (1). También desarrolló **FAMsearch**, una funcionalidad que simplifica el acceso y uso de las 30.000 páginas del Manual de Asuntos Exteriores y el Manual de Asuntos Exteriores (FAM/FAH). Los usuarios pueden formular preguntas políticas específicas y recibir respuestas sintetizadas con citas directas del FAM/FAH (1).
+
+Segundo, el Departamento apostó por las **soluciones creadas por los propios usuarios** mediante la funcionalidad *customGPTs*, que permite a los empleados crear asistentes de IA especializados (1). Esta democratización transforma StateChat de una herramienta gestionada centralmente a una plataforma de innovación descentralizada. El cambio más importante no es técnico, sino mental: pasar de "¿qué puede construir el equipo de IA para mí?" a "¿qué puedo construir yo para resolver mi problema?" (1). Este cambio de consumidor a creador desmitifica la IA y permite satisfacer necesidades que nunca llegarían a ser desarrollos formales de TI.
+
+Tercero, el Departamento se prepara para la **orquestación de agentes autónomos** (1). FAMsearch ilustra esta evolución: originalmente una herramienta independiente, con el tiempo el equipo pasó de exigir una pestaña separada a permitir que StateChat consultara el FAM/FAH en segundo plano. Cuando un usuario formula una pregunta política, un agente recupera la respuesta de FAMsearch sin que el usuario cambie de aplicación; la orquestación ocurre de manera invisible. El *Playbook* imagina un escenario: un oficial de política exterior redacta un cable diplomático que menciona política de visados; un agente señala automáticamente la orientación pertinente del FAM/FAH, otro revisa los cables recientes sobre el mismo tema y un tercero sugiere el formato estándar, todo sin que el oficial solicite cada acción por separado (1). Estos sistemas agénticos representan la profundidad: una IA que no solo asiste pasivamente, sino que acelera y aumenta activamente a los empleados, liberándolos para tareas de alto impacto como análisis de políticas, negociación y construcción de relaciones (1).
+
+---
+
+## 4. Gobernanza y seguridad en entornos de IA generativa
+
+El desarrollo de StateChat planteó desafíos de gobernanza que trascendían la implementación técnica. El *Playbook* reconoce que el Departamento nunca antes había establecido una plataforma empresarial de IA generativa de esta magnitud, y muchos procesos de revisión, autorización y políticas nunca se habían aplicado a un sistema así (1). Los desafíos incluyeron: autorizar un sistema FISMA *High* para cargas de trabajo sensibles de IA, realizar una evaluación de impacto sobre la privacidad (*Privacy Impact Assessment*, PIA) para una plataforma generativa y establecer prácticas de gestión de registros para el contenido generado por IA (1). El éxito se sustentó en las disciplinas y procesos ya existentes en cada oficina, que, aplicados colectivamente, resultaron suficientes (1).
+
+### 4.1. Autorización para operar (ATO) en nivel FISMA High
+
+La **Ley Federal de Gestión de Seguridad de la Información** (FISMA), 44 U.S.C. § 3541 y siguientes, exige que los sistemas de información operados por o en nombre del gobierno federal cumplan estándares de seguridad y obtengan una **Autorización para Operar** (*Authority to Operate*, ATO) otorgada por un funcionario autorizante (*Authorizing Official*) (1) (8). El nivel de impacto (*Low*, *Moderate* o *High*) determina los controles de seguridad según la guía NIST SP 800-53 (1).
+
+StateChat obtuvo una ATO en nivel **FISMA High**, un hito sin precedentes para una plataforma de IA generativa en el Departamento (1). El proceso duró aproximadamente un año y requirió colaboración profunda con ciberseguridad y gobernanza desde el primer día (1). Esta colaboración fue posible gracias a las alianzas internas forjadas durante Alpha con la Oficina de Ciberoperaciones de Tecnología Diplomática (DT Cyber Operations), la Oficina de Infraestructura Empresarial de DT (DT Enterprise Infrastructure), la Oficina de Seguridad de la Información de DT (DT Enterprise Chief Information Security Office) y el Equipo Azul de la Oficina de Seguridad Diplomática (*Blue Team*) (1).
+
+La ATO High no fue un mero trámite, sino un **habilitador crítico** del valor de StateChat (1). Permitió (1):
+
+- Integrar fuentes de datos sensibles (cables, SharePoint, informes).
+- Acceder a múltiples categorías de datos SBU.
+- Que los usuarios trabajaran con información auténtica del Departamento.
+- Operar en un entorno seguro y cerrado.
+- Establecer expectativas claras para los usuarios.
+
+Sin la ATO FISMA High, StateChat habría quedado limitado a datos no clasificados y no sensibles, lo que habría reducido drásticamente su adopción y socavado su propuesta de valor (1). El *Playbook* recomienda obtener una ATO en el nivel más alto posible al inicio del proceso, presupuestando aproximadamente un año, ya que determina qué datos puede acceder la herramienta (1).
+
+Para obtener la ATO, los equipos de ciberseguridad realizaron pruebas de acceso, identidad, autenticación y resistencia a ciberamenazas, que permitieron ajustes clave (1). Estos esfuerzos culminaron primero en una **Autorización Condicional para Operar** (*Conditional Authority to Operate*, C-ATO), que permitió continuar el desarrollo mientras se completaban los controles restantes (1).
+
+### 4.2. Evaluación de impacto sobre la privacidad (PIA)
+
+La **Evaluación de Impacto sobre la Privacidad** para una plataforma generativa fue otro desafío (1). La PIA es un requisito de la Sección 208 de la Ley de Gobierno Electrónico de 2002 (*E-Government Act of 2002*, Pub. L. No. 107-347), que exige evaluar los sistemas que recopilan, mantienen o difunden información de identificación personal (*PII*) para analizar riesgos de privacidad y medidas de mitigación (9).
+
+En StateChat, la PIA presentaba complejidades por la naturaleza generativa. El *Playbook* no detalla exhaustivamente el contenido, pero indica que el equipo trabajó con la Oficina de Privacidad del Departamento (1). La PIA debía abordar: el tratamiento de los datos introducidos por los usuarios (*prompts*), la retención de las interacciones, el potencial de exposición de información sensible en las respuestas generadas y la agregación de datos de uso sin comprometer la privacidad individual (1).
+
+Para equilibrar la necesidad de datos analíticos con la protección de la privacidad, el equipo desarrolló un **proceso de análisis de *prompts* que protege la privacidad**, inspirándose en la metodología CLIO (*Contextual Language Input Optimization*) de un proveedor comercial de IA (1). Este enfoque permite obtener información sobre patrones de uso y desafíos comunes sin exponer información sensible o de identificación personal (1). El *Playbook* enfatiza: "al priorizar la privacidad junto con la mejora basada en datos, el equipo mantuvo la confianza de los usuarios al tiempo que defendía los estándares éticos del Departamento" (1).
+
+### 4.3. Gestión de registros y contenido generado por IA
+
+El tercer desafío fue establecer **prácticas de gestión de registros** para el contenido generado por IA (1). La **Ley de Registros Federales** (*Federal Records Act*, 44 U.S.C. Capítulo 31, 33) define los registros federales como todos los libros, papeles, mapas, fotografías, máquinas u otros materiales documentales, creados u obtenidos en el curso de actividades comerciales y conservados como evidencia de organización, funciones, políticas, decisiones, procedimientos u operaciones (10). En el contexto de interacciones con IA generativa, surgen preguntas complejas: ¿las conversaciones con StateChat constituyen registros federales? ¿Qué parte debe conservarse? ¿Durante cuánto tiempo?
+
+El *Playbook* señala que esto representó un "territorio inédito" para la Oficina de Registros, y el éxito se logró gracias a los procesos disciplinarios ya existentes, aplicados de manera colaborativa (1). Aunque no especifica la política resultante, indica que se trabajó con la Oficina de Registros para establecer prácticas adecuadas (1). Las políticas tradicionales no estaban diseñadas para contenido generado por IA, por lo que fue necesario interpretar y adaptar los marcos existentes a la plataforma generativa (1).
+
+La gestión de registros en entornos de IA generativa tiene implicaciones significativas. La retención puede ser necesaria para cumplir con obligaciones legales, supervisión y transparencia, pero también puede generar riesgos de privacidad y seguridad. La política adoptada tuvo que equilibrar estos intereses, estableciendo criterios para determinar qué interacciones constituían registros federales y qué plazos de conservación resultaban apropiados (1).
+
+### 4.4. Implicaciones para la gobernanza algorítmica en el sector público
+
+La experiencia de StateChat ofrece lecciones de alcance general para otras agencias federales y para la gobernanza algorítmica en el sector público (1). Primero, es posible autorizar sistemas de IA generativa en los niveles más altos de seguridad, siempre que se involucre a ciberseguridad desde el inicio y se presupueste tiempo suficiente (1). Segundo, la adaptación de los instrumentos tradicionales de gobernanza (PIA y gestión de registros) a la IA generativa requiere colaboración interdisciplinar y flexibilidad interpretativa, pero no necesariamente marcos completamente nuevos (1). Tercero, el principio de "privacidad por diseño" debe aplicarse con especial rigor en sistemas generativos, dado el volumen y la naturaleza sensible de los datos que procesan (1). Finalmente, la gobernanza de la IA generativa no puede reducirse a controles técnicos; debe incorporar dimensiones organizativas, normativas y de gestión del cambio, como demuestra la necesidad de coordinar múltiples oficinas con competencias tradicionales en seguridad, privacidad y registros (1).
+
+---
+
+## 5. Medición del impacto y análisis de resultados
+
+### 5.1. Diseño metodológico de la encuesta de impacto (2025)
+
+Un año después del despliegue empresarial, el Departamento llevó a cabo una **evaluación de impacto basada en encuestas** para medir los efectos de la herramienta sobre el personal y los resultados de la misión (1). El estudio, del 26 de agosto al 26 de septiembre de 2025, fue diseñado con expertos del Buró de Inteligencia e Investigación y del Buró de Recursos Humanos (1). Se estructuró en torno a **cuatro preguntas** (1):
+
+1. ¿Quién utiliza StateChat?
+2. ¿Cómo se utiliza?
+3. ¿Cuál es su impacto?
+4. ¿Qué facilita o impide su adopción?
+
+La encuesta se administró mediante un **modelo de participación voluntaria** (*opt-in*), no por muestreo aleatorio, por lo que el *Playbook* advierte que no es apropiado realizar inferencia estadística (1). Sin embargo, el volumen de respuestas (3.700 empleados comenzaron, 2.706 proporcionaron respuestas sustanciales) ofrece una visión significativa (1). De los 2.706 encuestados, 2.113 eran **"usuarios regulares"** (usan StateChat al menos mensualmente) y 593 eran **"no usuarios"** (lo usan con menor frecuencia o no lo usan) (1). Incluían personal del Servicio Civil, del Servicio Exterior y contratado localmente, en ubicaciones domésticas y en el extranjero; el 66% de los usuarios encuestados estaba en el extranjero (1). El diseño usó **lógica de ramificación** para adaptar preguntas a usuarios y no usuarios, permitiendo obtener información específica sobre patrones de uso y barreras (1). Además, se realizaron **grupos focales** con no usuarios para profundizar en sus flujos de trabajo y razones de no adopción (1).
+
+### 5.2. Resultados cuantitativos y cualitativos
+
+Los resultados revelaron un **impacto sustancial en la eficiencia**. Una mayoría significativa de los usuarios regulares (el **90%**) declaró ahorrar tiempo gracias a StateChat, y el **96%** recomendaría la herramienta a sus colegas (1). El ahorro medio declarado fue de **1,6 horas semanales por tarea**, tiempo que los usuarios dedicaban a mejorar la calidad de su trabajo, atender más solicitudes y dedicarse a tareas de mayor impacto (1). El *Playbook* extrapola que, con más de 19.000 usuarios activos semanales, los usuarios podrían ahorrar **más de 10.000 horas semanales** solo en redacción (1).
+
+Los usos más frecuentes (1):
+
+1. **Redacción de comunicaciones**: 51% de los encuestados, con ahorro medio de 1,6 horas semanales.
+2. **Corrección de estilo y revisión**.
+3. **Investigación y síntesis de documentos**.
+
+La encuesta identificó **usos menos frecuentes pero con mayor ahorro**, denominados "joyas ocultas" (1):
+
+- **Creación de materiales de formación**: solo 7% de los encuestados, pero el mayor ahorro medio: 1,82 horas semanales; el 36% de estos usuarios ahorra 3 o más horas semanales (1).
+- **Síntesis de documentos**: un caso de uso citado con ahorro superior a la media (1).
+
+### 5.3. Casos de uso transformadores: ejemplos documentados
+
+El *Playbook* recoge ejemplos concretos de transformación de flujos de trabajo (1):
+
+- **Automatización de la incorporación de personal de RR.HH.**: un coordinador informó que StateChat redujo el proceso de 2 a 3 horas por nuevo empleado (con frecuentes errores) a un proceso ágil. El tiempo ahorrado permitió lanzar un programa de tutoría y mejorar recursos de formación interna, tareas de mayor valor que impactan en la experiencia y retención de los empleados (1).
+
+- **Aceleración de la redacción de cables**: un usuario responsable de redactar un cable con aportaciones de múltiples puestos usó StateChat para sintetizar información, reduciendo horas de revisión. El tiempo ahorrado le permitió comenzar un nuevo proyecto sobre divulgación en tecnología espacial que, de otro modo, podría haberse retrasado (1).
+
+### 5.4. Barreras de adopción y factores críticos
+
+La evaluación identificó **barreras clave** que impiden que algunos usuarios obtengan ahorros (1). Entre los usuarios regulares que declararon que StateChat *no* les ahorraba tiempo, los principales obstáculos (1):
+
+1. **Calidad insuficiente de las respuestas**: los resultados generados no eran suficientemente precisos o relevantes.
+2. **Tiempo de verificación excesivo**: dedicaban más tiempo a verificar los resultados que a completar manualmente las tareas.
+3. **Integración deficiente con sistemas existentes**: la herramienta no se integraba bien con los flujos de trabajo y sistemas que ya usaban.
+
+Los **grupos focales con usuarios que habían abandonado la herramienta** revelaron un desgaste acumulativo: los primeros entusiastas a veces se desconectaban debido a **pequeñas barreras acumuladas** (1): funciones prometidas que no se materializaban, oficinas de atención reprogramadas, formación desajustada y dificultades de interfaz frente a alternativas comerciales (1). Esto subraya la importancia de abordar rápidamente los problemas menores antes de que se acumulen y provoquen desconexión (1).
+
+Entre los **no usuarios**, las barreras eran: falta de formación, preocupaciones sobre seguridad y privacidad, y desconocimiento de las capacidades (1).
+
+### 5.5. Limitaciones metodológicas del estudio
+
+El *Playbook* reconoce varias **limitaciones metodológicas** (1):
+
+- **Naturaleza voluntaria de la encuesta (*opt-in*)**: al no ser aleatoria, los resultados no son estadísticamente representativos. Los usuarios más entusiastas pueden estar sobrerrepresentados, lo que sesga al alza las valoraciones.
+- **Autodeclaración de ahorro**: los datos son percepciones subjetivas, no mediciones objetivas. El *Playbook* no indica si se realizaron estudios de tiempo controlados para validar estos autoinformes.
+- **Falta de grupo de control**: al no existir un grupo sin acceso a StateChat, no es posible aislar el efecto causal.
+- **Posible sesgo de selección**: los que completaron la encuesta pueden diferir sistemáticamente de los que no, afectando la generalización.
+
+### 5.6. Recomendaciones para futuras implementaciones
+
+A partir de los hallazgos, el *Playbook* formula **recomendaciones** para futuras implementaciones (1):
+
+1. **Diversificar los casos de uso**: desarrollar y promover usos para funciones no relacionadas con la política, asegurando que sirvan a toda la fuerza laboral (1).
+2. **Formación basada en roles**: adaptar la formación a diferentes roles y niveles de habilidad (1).
+3. **Campeones locales**: continuar fomentando grupos de trabajo de IA a nivel de puesto con campeones designados (1).
+4. **Mejora continua**: abordar rápidamente las pequeñas barreras antes de que se acumulen y provoquen desconexión (1).
+5. **Medición del impacto**: mejorar continuamente la forma de medir el impacto, refinando métricas cuantitativas y métodos cualitativos para evaluar mejor los resultados y orientar el desarrollo (1).
+
+El *Playbook* concluye que el viaje de StateChat (desde su concepto hasta su adopción empresarial) demuestra el potencial transformador de la IA responsable en el gobierno. Con más de 60.000 usuarios en el 92% de los puestos mundiales en junio de 2026, StateChat ha evolucionado de una herramienta experimental a una plataforma esencial que ahorra decenas de miles de horas semanales, permitiendo a los diplomáticos centrarse en promover los intereses de Estados Unidos a través de la conexión humana y el juicio experto (1).
+
+---
+
+## 6. Lecciones aprendidas y recomendaciones para otras agencias
+
+La experiencia del Departamento de Estado con StateChat ofrece enseñanzas que trascienden el caso particular y pueden orientar a otras agencias federales y organizaciones del sector público. El *Playbook* explicita las lecciones aprendidas, tanto las que reforzaron el proceso como las que surgieron de errores o subestimaciones (1). Esta sección organiza estas lecciones en tres bloques: factores de éxito transversales, limitaciones y advertencias, e implicaciones para la gobernanza algorítmica.
+
+### 6.1. Factores de éxito transversales
+
+El *Playbook* permite identificar factores recurrentes que aparecen como condiciones habilitantes del éxito en todas las fases. No son técnicos, sino organizativos, culturales y estratégicos.
+
+**La inversión en fundamentos estratégicos y organizativos previos**. El Departamento no comenzó desde cero. La Estrategia de Datos de 2021, la creación del *Center for Analytics* (CfA) en 2019 y el modelo "campaña" (que integraba usuarios, desarrolladores y responsables de políticas en equipos multidisciplinarios) proporcionaron una base de capacidades, procesos y cultura organizativa esencial (1). Los pilotos iniciales, como AIRMOD, demostraron el valor de la IA, generaron impulso y establecieron prácticas que luego se escalaron (1). Esta progresión gradual permitió construir competencias internas y legitimidad organizativa antes del desafío de la IA generativa a gran escala.
+
+**La colaboración interdisciplinar desde el primer día**. El mensaje más reiterado es la necesidad de involucrar a todas las partes interesadas (ciberseguridad, privacidad, gestión de registros, accesibilidad, equipos de pruebas independientes) desde las fases iniciales (1). La ATO FISMA High no habría sido posible sin esta colaboración temprana (1). El *Playbook* señala: "sin estas alianzas, StateChat no habría llegado al despliegue empresarial" (1). Esto se extiende a las alianzas externas: el apoyo del TMF de la GSA, colaboraciones con laboratorios de IA, universidades y programas de becas federales proporcionaron experiencia y capacidades que el Departamento no poseía internamente (1).
+
+**El principio de "empezar antes de estar listo"**. Alpha se lanzó con un producto mínimo viable extremadamente limitado: un solo hilo de chat por usuario que desaparecía en 24 horas, tiempos de procesamiento de documentos de horas y ninguna conexión con sistemas internos (1). Esta decisión permitió a los usuarios reales identificar las funcionalidades prioritarias (subida de documentos y conexión con datos internos) y orientar el desarrollo hacia necesidades reales (1). El *Playbook* extrae una lección explícita: "No te quedes atascado en la fase de planificación" (1). La iteración rápida y el aprendizaje mediante experimentación con usuarios reales resultaron más valiosos que un desarrollo prolongado en aislamiento.
+
+**La centralidad de los usuarios en el diseño y la adopción**. A lo largo del proceso, los usuarios estuvieron en el centro (1). El sistema *Thunderdome* para priorizar retroalimentación, las oficinas de atención en múltiples husos horarios, las formaciones personalizadas por burós y regiones, y los recursos asincrónicos reflejan un enfoque centrado en el usuario (1). El *Playbook* subraya: "conceder acceso no es lo mismo que impulsar la adopción", y la adopción sostenida requiere un ecosistema de apoyo que aborde necesidades, miedos y expectativas (1). La combinación de respaldo de líderes y formación inmediata fue particularmente efectiva, como demuestra el aumento del 58% de usuarios en un buró tras la formación específica (1).
+
+**La medición continua y la adaptación basada en datos**. Desde las primeras fases, el equipo monitorizó métricas de uso y satisfacción, y la evaluación de impacto de 2025 proporcionó una base empírica para comprender beneficios y barreras (1). El enfoque de "privacidad por diseño" en el análisis de datos, inspirado en CLIO, permitió obtener información sobre patrones de uso sin comprometer información sensible (1). Esta cultura permitió identificar problemas temprano, ajustar estrategias de formación y comunicación, y priorizar funcionalidades demandadas (1).
+
+### 6.2. Limitaciones del modelo y advertencias
+
+El *Playbook* también documenta limitaciones y advertencias que otras agencias deben considerar.
+
+**La dependencia de financiación externa y recursos excepcionales**. StateChat se benefició de una inversión del TMF de la GSA, un programa competitivo no disponible para todas las agencias (1). Además, contó con apoyo de becas federales, colaboraciones universitarias y consultorías tecnológicas (1). No todas las agencias dispondrán de estos recursos, y el modelo de cinco fases presupone un nivel de inversión y acceso a talento externo que puede no ser generalizable.
+
+**El carácter voluntario de la encuesta de impacto y sus limitaciones metodológicas**. Como se señaló, la encuesta de 2025 se basó en *opt-in*, lo que impide inferencias estadísticas sólidas (1). Los resultados pueden estar sesgados hacia los usuarios más entusiastas, y las percepciones de ahorro no se validaron objetivamente. El *Playbook* reconoce esta limitación, pero no ofrece una alternativa metodológica (1). Las agencias deberían considerar métodos más rigurosos, como estudios controlados aleatorizados o mediciones objetivas de productividad.
+
+**Los desafíos de la gestión del cambio a gran escala**. Aunque StateChat alcanzó el 98% de los puestos, el *Playbook* documenta que algunos usuarios abandonaron la herramienta por barreras acumuladas: funciones prometidas no materializadas, formación desajustada y dificultades de interfaz (1). Este "desgaste" entre primeros adoptantes sugiere que la adopción sostenida requiere atención continua y capacidad de respuesta rápida a problemas menores, algo difícil de mantener a medida que crece la base de usuarios (1).
+
+**La tensión entre personalización y estandarización**. La funcionalidad *customGPTs* democratiza la innovación pero introduce riesgos de gobernanza: ¿quién supervisa los *customGPTs*? ¿Qué controles de seguridad y privacidad se aplican? El *Playbook* no aborda explícitamente estos desafíos, más allá de señalar que los usuarios deben seguir "todas las reglas de conducta" (1).
+
+### 6.3. Implicaciones para la gobernanza algorítmica en el sector público
+
+StateChat ofrece implicaciones más amplias para la gobernanza de la IA en el sector público.
+
+Primero, **los marcos normativos existentes (FISMA, la Ley de Registros Federales, la Ley de Gobierno Electrónico) pueden aplicarse a la IA generativa, aunque requieran interpretación y adaptación** (1). El *Playbook* señala: "ningún marco establecido existía para guiar estos esfuerzos", pero "las disciplinas y procesos ya existentes en cada oficina, aplicados colectivamente, resultaron suficientes" (1). Esto sugiere que, en lugar de crear marcos regulatorios completamente nuevos, las agencias pueden comenzar por aplicar e interpretar los instrumentos existentes, siempre con colaboración interdisciplinar y flexibilidad interpretativa.
+
+Segundo, el caso subraya la importancia de **las estrategias y estructuras organizativas previas** como condición para la adopción exitosa de IA. Sin la Estrategia de Datos de 2021, sin el *Center for Analytics* y sin el modelo "campaña", el Departamento no habría estado preparado (1). La gobernanza de la IA no se reduce a la adopción de herramientas técnicas; requiere inversión en capacidades organizativas, cultura de datos y estructuras de innovación.
+
+Tercero, el caso plantea **interrogantes sobre el futuro de la gobernanza en entornos de IA "agéntica"** . El *Playbook* describe un escenario en el que agentes autónomos trabajan en segundo plano (1). Esta transición plantea preguntas: ¿cómo se audita la toma de decisiones de los agentes? ¿Quién es responsable de sus acciones? ¿Cómo se garantiza la transparencia y explicabilidad cuando múltiples agentes interactúan? El *Playbook* no aborda estas preguntas, pero su mención indica que la próxima frontera implicará repensar los marcos de responsabilidad, supervisión y transparencia para sistemas autónomos (1).
+
+Finalmente, StateChat ofrece un **modelo de gobernanza participativa y centrada en el usuario** que puede servir de referencia. La creación de canales de retroalimentación, la priorización transparente, el enfoque de "formar a los formadores" y la medición continua reflejan una gobernanza que no es solo *top-down*, sino que incorpora perspectivas de los usuarios finales (1). Este enfoque mejora la adopción y la utilidad, y también genera confianza y legitimidad (1).
+
+El caso admite además una lectura comparada con el marco europeo. El Reglamento (UE) 2024/1689 (Reglamento de IA) no exige una autorización previa equivalente a la ATO estadounidense para un asistente de uso general como StateChat, pero sí clasifica como de alto riesgo los sistemas de IA destinados a su uso por autoridades públicas en los ámbitos enumerados en su Anexo III, y los somete a evaluación de conformidad, registro y supervisión humana obligatoria (15). Donde el modelo estadounidense autoriza la infraestructura técnica y el acceso a datos sensibles a través de la ATO, el europeo clasifica el sistema según su caso de uso y exige conformidad previa a su despliegue. Ninguno de los dos resuelve todavía la supervisión de agentes autónomos, la pregunta que ambas jurisdicciones empiezan a enfrentar por separado.
+
+---
+
+## 7. Conclusiones: hacia una administración pública aumentada por IA
+
+El viaje del Departamento de Estado desde la experimentación interna hasta el despliegue empresarial de StateChat constituye un caso de referencia para la gobernanza de la IA generativa en el sector público. El *Playbook* (1) ofrece un modelo de cinco fases (Alpha, Beta, Lanzamiento, Escalamiento y Profundización) que, aunque no exento de limitaciones, proporciona un marco operativo para otras agencias. Las conclusiones se articulan en torno a cuatro ejes.
+
+**Primero, la viabilidad de la IA generativa en entornos de alta seguridad**. La ATO en nivel FISMA *High* para StateChat demuestra que los sistemas de IA generativa pueden operar en los niveles más exigentes de seguridad, siempre que se involucre a ciberseguridad y gobernanza desde las fases iniciales (1). El proceso, de aproximadamente un año, requirió adaptar los marcos existentes (FISMA, PIA, gestión de registros) a las características específicas de la IA generativa (1). Esta adaptación fue posible gracias a la colaboración interdisciplinar entre oficinas con competencias tradicionales en seguridad, privacidad y registros. La lección fundamental: los marcos normativos existentes, aunque requieran interpretación, no necesitan ser reemplazados por completo.
+
+**Segundo, la centralidad de la adopción y la gestión del cambio**. El éxito de StateChat no se explica solo por sus capacidades técnicas, sino por una estrategia deliberada y sostenida de adopción: respaldo de líderes, formación por roles y regiones, recursos asincrónicos, y un sistema estructurado para priorizar retroalimentación de usuarios (1). El *Playbook* distingue "conceder acceso" de "impulsar la adopción", y la mayor parte del contenido se dedica a esta segunda dimensión (1). Los datos de la encuesta de impacto (90% de usuarios que ahorran tiempo, 96% que recomendarían, más de 10.000 horas semanales ahorradas solo en redacción) sugieren que esta estrategia ha sido efectiva (1). Sin embargo, el "desgaste" entre algunos primeros adoptantes, debido a barreras acumuladas, subraya que la adopción sostenida requiere atención continua y respuesta rápida a problemas menores (1). La gestión del cambio no termina con el lanzamiento; es un proceso continuo.
+
+**Tercero, las limitaciones metodológicas en la medición del impacto**. La encuesta de 2025, aunque valiosa por su amplitud, tiene limitaciones: modelo *opt-in*, ausencia de grupo de control, percepciones subjetivas no validadas objetivamente (1). El *Playbook* reconoce estas limitaciones y recomienda mejorar los métodos (1). Futuras implementaciones deberían incorporar diseños más rigurosos (estudios controlados aleatorizados, mediciones objetivas de productividad) para aislar el efecto causal de la IA.
+
+**Cuarto, la emergencia de nuevos desafíos de gobernanza**. La transición hacia sistemas de IA "agéntica" (agentes autónomos que trabajan en segundo plano) plantea preguntas no resueltas: ¿cómo auditar decisiones autónomas? ¿Quién responde de sus acciones? ¿Cómo garantizar transparencia y explicabilidad? (1). El *Playbook* describe este horizonte pero no ofrece respuestas, lo que refleja que la gobernanza de la IA generativa y agéntica es un campo en evolución. Asimismo, la funcionalidad *customGPTs* introduce una tensión entre innovación descentralizada y control de gobernanza: ¿quién supervisa los asistentes creados por los usuarios? ¿Qué controles se aplican? El *Playbook* no aborda estos desafíos, lo que sugiere que serán áreas prioritarias.
+
+**Implicaciones para la investigación futura**. StateChat abre múltiples líneas. Primero, estudios comparados con otras agencias, como el *Generative AI Public Sector Playbook* del DHS (14), para identificar factores contextuales. Segundo, desarrollar metodologías de evaluación de impacto más robustas que midan objetivamente los efectos en productividad, calidad del trabajo y resultados de misión. Tercero, la transición hacia sistemas agénticos exige nuevos marcos de gobernanza para responsabilidad, supervisión y transparencia. Finalmente, el caso subraya la importancia de las estrategias organizativas y culturales (no solo técnicas) como condiciones habilitantes, lo que sugiere prestar mayor atención a las dimensiones organizativas y de gestión del cambio.
+
+El viaje de StateChat (desde un prototipo espartano hasta una plataforma empresarial con más de 62.000 usuarios) demuestra que la IA generativa puede ser implementada de forma segura, escalable y útil en entornos gubernamentales exigentes (1). También revela que la gobernanza de esta tecnología no se agota en la implementación técnica: exige inversión sostenida en estrategias organizativas, colaboración interdisciplinar, gestión del cambio, medición de impacto y adaptación continua (1). La lección más profunda: el futuro de la IA en el gobierno no es fundamentalmente una cuestión de algoritmos, sino de personas, procesos e instituciones. La administración pública lleva siglos enfrentando ese desafío, aunque ahora lo haga en un contexto tecnológico sin precedentes.
+
+---
+
+## Bibliografía
+
+(1) U.S. Department of State. (2026, July). *The Department of State Generative AI Playbook*. Bureau of Diplomatic Technology, Center for Analytics. https://www.state.gov/wp-content/uploads/2026/07/DOS-Generative-AI-Playbook_July-2026.pdf
+
+(2) U.S. Department of State. (2025, September 30). *Enterprise Data and Artificial Intelligence Strategy*. https://www.state.gov/artificial-intelligence-ai/
+
+(3) U.S. Department of State. (2025, September). *Compliance Plan for OMB Memorandum M-25-21*. https://www.state.gov/wp-content/uploads/2025/09/DOS-Compliance-Plan-for-OMB-M-25-21.pdf
+
+(4) Executive Order 13960 of December 3, 2020, *Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government*. 85 FR 78939. https://www.federalregister.gov/documents/2020/12/08/2020-27065/promoting-the-use-of-trustworthy-artificial-intelligence-in-the-federal-government
+
+(5) National Institute of Standards and Technology. (2023, January 26). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1
+
+(6) Office of Management and Budget. (2025, April). *Memorandum M-25-21: Accelerating Federal Use of AI through Innovation, Governance, and Public Trust*. https://www.whitehouse.gov/omb/management/office-of-information-and-regulatory-affairs/
+
+(7) Office of Management and Budget. (2025, April). *Memorandum M-25-22: Driving Efficient Acquisition of Artificial Intelligence in Government*. https://www.whitehouse.gov/omb/management/office-of-information-and-regulatory-affairs/
+
+(8) Federal Information Security Management Act of 2002 (FISMA), 44 U.S.C. § 3541 *et seq.* (as amended by the Federal Information Security Modernization Act of 2014). https://www.congress.gov/bill/107th-congress/house-bill/3844
+
+(9) E-Government Act of 2002, Pub. L. No. 107-347, § 208, 116 Stat. 2899 (2002) (Privacy Impact Assessments). https://www.congress.gov/107/plaws/publ347/PLAW-107publ347.pdf
+
+(10) Federal Records Act, 44 U.S.C. Chapters 21, 29, 31, 33. https://www.archives.gov/about/laws/federal-records-act.html
+
+(11) CDO Magazine. (2026, August 4). *State Department Shares GenAI Playbook to Guide Federal AI Adoption*. https://www.cdomagazine.tech/us-federal-news-bureau/state-department-shares-genai-playbook-to-guide-federal-ai-adoption
+
+(12) MeriTalk. (2026, July 27). *State Dept. Releases GenAI Playbook*. https://www.meritalk.com/articles/state-dept-releases-genai-playbook/
+
+(13) Robles, C. (2026, July). *State department releases playbook for generative AI*. Nextgov/FCW. https://www.nextgov.com/artificial-intelligence/2026/07/state-department-releases-playbook-generative-ai/415006/
+
+(14) U.S. Department of Homeland Security. (2025, January 7). *Generative AI Public Sector Playbook*. https://www.dhs.gov/publication/generative-ai-public-sector-playbook
+
+(15) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial [Reglamento de IA]. DO L, 12 de julio de 2024.
