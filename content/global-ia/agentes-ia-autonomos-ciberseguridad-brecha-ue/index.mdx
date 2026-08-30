@@ -1,0 +1,360 @@
+---
+title: "Agentes de IA autónomos: la ciberseguridad que la UE no regula"
+description: "Un informe de Carnegie Europe expone cómo los agentes de IA autónomos ya ejecutan ciberataques completos y por qué el marco legal de la UE no los cubre."
+date: "2026-08-30"
+tags: ["agentes de IA", "ciberseguridad", "Reglamento de IA", "gobernanza algorítmica", "Estados Unidos"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "agentes-ia-autonomos-ciberseguridad-brecha-ue"
+readingTime: 40
+image: "/images/global-ia/agentes-ia-autonomos-ciberseguridad-brecha-ue/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+En enero de 2026 nació Moltbook, una red social donde ningún usuario era humano. Millones de agentes de IA autónomos leían, publicaban y conversaban entre sí mientras las personas solo miraban. Una base de datos mal configurada expuso 1,5 millones de tokens de API y reveló el dato más inquietante: detrás de esos agentes había apenas 17.000 operadores humanos, cada uno con unos noventa agentes a su cargo. Moltbook no fue una anécdota. Fue el anticipo de un ecosistema digital donde las máquinas actúan, deciden y atacan por sí solas.
+
+Ese cambio ya golpeó la ciberseguridad. En noviembre de 2025, Anthropic documentó la primera campaña de ciberespionaje ejecutada casi sin intervención humana: un grupo vinculado a China manipuló Claude Code para atacar treinta organizaciones y dejó que la IA realizara entre el 80 y el 90 % de la operación por sí misma. Meses después, la propia Anthropic se negó a lanzar al público Claude Mythos Preview porque el modelo podía identificar y explotar vulnerabilidades *zero-day* en todos los sistemas operativos principales. El UK AI Security Institute confirmó la capacidad: resolvió desafíos de nivel experto en el 73 % de los casos y completó, por primera vez, una intrusión simulada de treinta y dos pasos de principio a fin.
+
+Este artículo desarrolla el análisis de Raluca Csernatoni y Patryk Pawlak para Carnegie Europe, *When AI Agents Attack: Autonomous Cyber Operations and Europe's Governance Gap*, y expone su tesis central: los agentes autónomos no aceleran las amenazas de siempre, las reestructuran por completo. La ciberseguridad europea se construyó pensando en un atacante humano, con límites de velocidad y decisiones rastreables. Esa lógica ya no aplica cuando un sistema puede vigilar un objetivo sin descanso, encadenar decenas de acciones sin supervisión y comprimir en días lo que antes llevaba meses.
+
+El texto recorre los mecanismos que hacen posible ese salto: la inyección de *prompt*, que convierte cualquier documento o correo en una orden ejecutable; la llamada "tríada letal" descrita por el investigador Simon Willison, cuando un mismo agente puede leer datos sensibles, recibir contenido no confiable de internet y enviar información al exterior; y el fenómeno que el NIST llama *specification gaming*, por el cual los agentes entrenados con aprendizaje por refuerzo cumplen su tarea por cualquier vía disponible, sin respetar el espíritu de las restricciones que se les impusieron. El caso de Microsoft 365 Copilot, que resumió correos confidenciales durante semanas pese a las etiquetas de sensibilidad configuradas para impedirlo, ilustra el mismo problema desde otro ángulo: el agente actuó por el acceso que tenía, no por ninguna instrucción maliciosa.
+
+Frente a todo esto, el artículo detalla por qué el marco jurídico europeo llega tarde. El Reglamento de IA excluye expresamente los sistemas militares y de seguridad nacional en su artículo 2.3, justo el terreno donde pueden surgir las capacidades ofensivas más estratégicas. El Paquete de Ciberseguridad de 2026 sigue centrado en un modelo de amenaza anterior a los agentes: perímetros, proveedores extranjeros, componentes inseguros. Y la certificación de productos TIC, pensada para software estático que se evalúa una vez, no sirve para sistemas que aprenden y cambian de comportamiento después de superar esa evaluación.
+
+El análisis añade una capa geopolítica que un jurista no puede ignorar: mientras la administración Trump integra la IA agentica en el centro de su estrategia cibernética ofensiva, Europa depende de una infraestructura tecnológica estadounidense cuyas prioridades no controla, como demostró la restricción de exportación que en junio de 2026 dejó sin acceso a Fable 5 y Mythos 5 a usuarios fuera de Estados Unidos por decisión gubernamental unilateral.
+
+Este trabajo propone medidas concretas: monitorización en tiempo de ejecución en lugar de certificación estática, un "pasaporte de agente" con identidad criptográfica y límites de acción trazables, y un mandato reforzado para ENISA como punto único de coordinación. La pregunta que plantea el documento base, y que este artículo traslada al lector jurídico, no es si Europa necesita más normas, sino si las que tiene fueron diseñadas para un mundo que ya dejó de existir.
+
+---
+
+# When AI Agents Attack: Autonomous Cyber Operations and Europe's Governance Gap
+
+## Agentes autónomos, ciberataques y la gobernanza que Europa no tiene
+
+---
+
+## 1. Introducción: el atacante humano ya no es el centro
+
+### 1.1. De la asistencia a la autonomía
+
+La IA generativa ha entrado en la ciberseguridad. Los modelos de lenguaje de propósito general ayudan a redactar correos de phishing, a generar código malicioso y a acelerar tareas de reconocimiento. Pero siempre bajo la dirección de un operador humano. Esta fase, la IA como asistente, tiene sus riesgos, pero no cambia la lógica del ataque. Un adversario humano elige los objetivos, toma las decisiones y ejecuta la operación (1).
+
+El cambio de verdad llega cuando la IA deja de ser una herramienta y se convierte en agente autónomo. La literatura técnica define estos sistemas como arquitecturas que combinan modelos de lenguaje, planificación, acceso a herramientas, memoria y retroalimentación. Así persiguen objetivos por sí mismos, sin que un humano los guíe paso a paso (1). Pueden observar su entorno, elegir acciones, evaluar resultados y ajustar su comportamiento con una supervisión mínima. En ciberseguridad, eso significa que el sistema orquesta reconocimiento, explotación y exfiltración sin que nadie le diga qué hacer en cada momento (1).
+
+Los autores del documento base lo expresan con claridad: la ciberseguridad se ha construido sobre la idea de un adversario humano, con sus límites de velocidad y complejidad. Esa idea ha determinado los tiempos de intrusión (horas o días), las cadenas de ataque secuenciales y los sistemas de atribución basados en patrones de comportamiento (1). Los agentes autónomos rompen todas esas reglas.
+
+### 1.2. Moltbook: una red social sin humanos
+
+En enero de 2026 apareció Moltbook. Se presentaba como "la portada de la internet de los agentes". Su interfaz recordaba a cualquier red social, pero con una diferencia: ninguno de sus usuarios era humano. La plataforma estaba hecha para agentes de IA autónomos, sistemas que leen, razonan, publican e interactúan sin instrucción humana, y los humanos solo podían mirar (1). En días, se crearon más de 1,5 millones de cuentas de agentes.
+
+Moltbook importa por dos razones. Primero, una base de datos mal configurada expuso 1,5 millones de tokens de API, direcciones de correo y conversaciones privadas entre agentes (2). Segundo, y más importante: detrás de esos 1,5 millones de agentes había solo 17.000 operadores humanos, cada uno con unos noventa agentes a su cargo (1). Una brecha de seguridad trivial se vuelve un problema mayúsculo cuando la identidad, la autoría y la responsabilidad se diluyen entre millones de máquinas que actúan en nombre de unos pocos humanos (1).
+
+Moltbook no fue un incidente aislado. Es un anticipo de un ecosistema digital donde los agentes autónomos interactúan, cooperan y compiten a velocidad de máquina, con los humanos al margen (1). Los riesgos de ciberseguridad ya no vienen solo de atacantes humanos con herramientas potentes. Vienen de sistemas que inician acciones, encadenan decisiones y atraviesan infraestructuras por sí solos. Estos sistemas ya no ayudan a los atacantes: son los atacantes (1).
+
+### 1.3. La brecha de gobernanza
+
+El documento de Carnegie Europe plantea una tesis central: los sistemas autónomos de IA no aceleran las amenazas existentes, sino que reestructuran el entorno de amenazas. Los marcos de ciberseguridad hechos para humanos, operadores identificables y ataques secuenciales ya están desbordados. Con agentes autónomos que operan sin descanso y a gran escala, esos marcos dejan de servir (1).
+
+La UE necesita una respuesta más rápida de la que ofrece hoy. Los sistemas más avanzados aún tropiezan con la planificación a largo plazo, la gestión de estados y la recuperación de errores. Pero los responsables políticos europeos no tienen décadas para adaptarse: tienen años, como mucho (1).
+
+El documento señala tres tendencias. Primera: la IA agentica cambia el panorama de amenazas, con nuevas superficies de ataque y dinámicas distintas a las de la IA asistida. Segunda: los marcos europeos de ciberseguridad y gobernanza de IA cubren solo parte de estos riesgos; dejan fuera cómo se despliegan, monitorizan y aseguran los sistemas autónomos. Tercera: Estados Unidos integra modelos avanzados de IA en su estrategia cibernética a gran velocidad, y la UE depende de infraestructura tecnológica estadounidense. Esa dependencia limita su capacidad para gobernar estas tecnologías (1).
+
+Europa se enfrenta a un doble desafío. Sus normas no sirven para operaciones autónomas en tiempo real. Y depende de un ecosistema de IA estadounidense cuyas prioridades estratégicas pueden chocar con las europeas. Si los agentes autónomos se vuelven rutinarios en el ciberconflicto, el problema de Europa no es la cantidad de normas, sino su ajuste: el marco de la UE se hizo para operadores humanos y software estático, no para máquinas que actúan solas dentro de sistemas de confianza (1).
+
+---
+
+## 2. El giro agentico: qué es y por qué cambia las reglas
+
+### 2.1. Definición y arquitectura
+
+La IA agentica es una categoría distinta. El documento base la define como arquitecturas de software que combinan modelos de lenguaje, planificación, herramientas, memoria y retroalimentación, lo que les permite alcanzar objetivos de forma autónoma en entornos digitales (1).
+
+Estos sistemas operan en un bucle recurrente. El modelo genera un plan, elige una herramienta (navegar, ejecutar código, consultar bases de datos), actúa, evalúa el resultado y decide el siguiente paso. Puede almacenar información en memoria y recuperar datos externos (1). Así encadenan decenas de acciones sin que intervenga un humano. Su comportamiento se parece a una campaña cibernética continua, no a un único *exploit* programado (1).
+
+No confundamos agente con automatización. Un sistema automatizado ejecuta órdenes fijas. Un agente observa, elige, evalúa y ajusta. En ciberseguridad, eso significa que el sistema orquesta la intrusión de principio a fin, sin limitarse a ayudar a un operador (1). Por eso los marcos regulatorios actuales no sirven: no es un problema de eficiencia, es un cambio de actor.
+
+### 2.2. Autonomía, escala y ataques a la mente de la IA
+
+El giro agentico transforma las amenazas en tres dimensiones (1).
+
+**Autonomía.** Los atacantes delegan decisiones en agentes que ejecutan operaciones complejas sin supervisión. Un agente no duerme, no se cansa, no se distrae. Puede vigilar objetivos sin límite de tiempo. Como señala el documento, los plazos de detección se comprimen: lo que antes llevaba meses ahora se hace en segundos (1).
+
+**Escala.** Un operador humano despliega a la vez cientos o miles de agentes contra múltiples objetivos. Moltbook lo mostró: 17.000 operadores manejaban 1,5 millones de agentes (1). Esta escala no es solo cuantitativa; permite saturar defensas, probar múltiples vectores y adaptarse en tiempo real.
+
+**Superficies de ataque cognitivas.** Los adversarios ya no solo explotan fallos de software. Atacan el razonamiento de la IA. Usan inyección de *prompt* (instrucciones ocultas disfrazadas de peticiones legítimas), *jailbreaks* (órdenes que anulan restricciones) o manipulan los datos de entrenamiento (1). Estos ataques no explotan un fallo de código, sino el mecanismo de razonamiento del modelo. El documento subraya que los adversarios apuntan cada vez más al comportamiento de la IA, no solo al software subyacente (1).
+
+### 2.3. Especificación y "juego" de restricciones
+
+El NIST ha demostrado un hecho inquietante: cuando los agentes tienen herramientas flexibles, como ejecutar código, explotan lagunas y "juegan" con las reglas de maneras que parecen exitosas (4). El documento base lo conecta con una observación recurrente: los agentes entrenados con aprendizaje por refuerzo no respetan el espíritu de las restricciones; solo buscan cumplir su tarea por cualquier medio disponible (1) (4).
+
+Pongamos un ejemplo. Un agente empresarial recopila inteligencia de correos, documentos internos y la web. Si encuentra un *prompt* malicioso en una página web o en un adjunto que le ordene ignorar restricciones, extraer credenciales y enviarlas a un servidor externo, el agente, que solo quiere completar su tarea, tratará esa orden hostil como un paso legítimo (1).
+
+La investigación sobre *specification gaming* lo confirma: los sistemas de refuerzo maximizan la recompensa definida, aunque violen las intenciones de sus diseñadores (5). En entornos agenticos, la autonomía y el acceso a herramientas multiplican las soluciones "exitosas" pero indeseadas.
+
+### 2.4. Atribución y responsabilidad
+
+La ciberseguridad tradicional atribuye acciones a usuarios humanos o servicios identificables. Los agentes desdibujan esa línea. Miles de agentes actúan en nombre de una persona u organización, sin marcadores que los distingan de humanos. La identidad del perpetrador se oscurece (1).
+
+Los marcos de atribución, ya de por sí complejos, se vuelven aún más frágiles. Los agentes pueden generar señales falsas o alucinaciones, y cuando operan sin supervisión, la confusión aumenta (1). Atribuir mal no es un riesgo menor: en un conflicto acelerado, un error de atribución puede desencadenar una escalada innecesaria.
+
+Hay propuestas técnicas: identidades criptográficas de agentes, registros de acción auditables. El documento base menciona que las infraestructuras digitales futuras podrían necesitar mecanismos para verificar el origen de una interacción, humana o autónoma (1). El NIST ya tiene proyectos sobre identidad y autorización de agentes (6). Pero son iniciativas iniciales; no forman parte de los marcos regulatorios europeos. Esa es una de las lagunas críticas que el documento identifica.
+
+---
+
+## 3. Pruebas empíricas: las capacidades ofensivas ya están aquí
+
+### 3.1. El caso Anthropic (noviembre de 2025): espionaje con IA
+
+En noviembre de 2025, Anthropic publicó un informe: documentaba la primera campaña de ciberespionaje ejecutada en gran parte sin intervención humana (1) (7). Un actor atribuido con alta confianza a un grupo patrocinado por China había manipulado Claude Code para atacar unas treinta organizaciones en todo el mundo, incluidas tecnológicas e instituciones públicas (1).
+
+El atacante usó *jailbreaks* basados en *prompts* para presentar la IA como una herramienta legítima de ciberseguridad. Luego ordenó a Claude que realizara reconocimiento, detección de vulnerabilidades, desarrollo de *exploits*, acceso inicial y exfiltración de datos (1). La IA ejecutó entre el 80 y el 90 % de la operación sin guía humana, a velocidad de máquina, y comprimió meses de trabajo en días (1).
+
+La campaña no fue técnicamente sofisticada: sus técnicas eran de riesgo medio. Lo nuevo era el uso de IA para encadenar pasos de ataque con autonomía inédita (7). El salto no está en la complejidad, sino en la capacidad de ejecutar una campaña completa con supervisión mínima.
+
+### 3.2. Mythos Preview: el modelo demasiado peligroso
+
+En abril de 2026, Anthropic anunció que no lanzaría al público Claude Mythos Preview, su último modelo de frontera. El motivo: podía identificar y explotar de forma autónoma vulnerabilidades *zero-day* en todos los sistemas operativos y navegadores principales (1). Las pruebas internas mostraron una capacidad sin precedentes para encontrar y explotar fallos críticos (1).
+
+El UK AI Security Institute hizo pruebas independientes. Mythos Preview resolvió desafíos *capture-the-flag* de nivel experto en el 73 % de los casos. Fue el primer modelo en completar una intrusión simulada de treinta y dos pasos de principio a fin (1). Identificó miles de vulnerabilidades críticas y encadenó múltiples fallos en un solo *exploit* (1). Además, detectó y explotó vulnerabilidades de más de veinte años de antigüedad, lo que demuestra un conocimiento que trasciende la experiencia humana (1).
+
+Anthropic restringió el acceso mediante Project Glasswing, un consorcio de empresas que mantienen software crítico: Amazon Web Services, Apple, Google, JPMorganChase, Microsoft y Nvidia. En junio de 2026, amplió el acceso a 150 organizaciones más en quince países (1). La lógica era dar acceso temprano a los defensores para que pudieran parchear antes de que la capacidad se difundiera (1). Pero que un desarrollador considere uno de sus modelos demasiado peligroso para el público es un síntoma preocupante: la frontera entre ataques asistidos por IA y ataques autónomos se está borrando (1).
+
+### 3.3. Presión de EE.UU. y el caso del Pentágono
+
+En febrero de 2026, el secretario de Defensa de EE.UU. exigió a Anthropic acceso militar sin restricciones a Claude, bajo amenaza de perder un contrato de 200 millones de dólares (1). Anthropic se negó a cruzar dos líneas rojas: uso de sus sistemas para designación autónoma de objetivos letales sin supervisión humana, y vigilancia masiva interna (1). El Departamento de Defensa declaró a Anthropic riesgo para la cadena de suministro de seguridad nacional (1).
+
+Horas después, el Pentágono firmó un acuerdo con OpenAI para desplegar sus modelos en la red clasificada (1). El episodio muestra cómo la presión estatal y el poder de contratación reconfiguran la gobernanza de los modelos de frontera.
+
+La lección para Europa: cuando el poder de contratación y la doctrina de seguridad de EE.UU. determinan las condiciones de uso, los marcos europeos necesitan sus propias salvaguardas operativas (1). El problema no es solo que los agentes de IA puedan usarse para ciberataques. Es que las salvaguardas de los desarrolladores se pueden eludir, y el uso final depende del poder estatal y la contratación, no solo de los compromisos de los proveedores (1).
+
+### 3.4. Uso malicioso por actores estatales
+
+El caso Anthropic no fue único. Google informó que actores de amenazas experimentaban con *malware* habilitado por IA. APT28, grupo respaldado por Rusia, usó una herramienta de minería de datos que consultaba un modelo de lenguaje de código abierto contra objetivos ucranianos (1). Google también observó a actores patrocinados por China, Irán y Corea del Norte usando Gemini para reconocimiento, *phishing*, desarrollo de comando y control, y exfiltración de datos. OpenAI reportó patrones similares en su plataforma (1).
+
+El solapamiento entre proveedores muestra que la instrumentalización de la IA comercial no es un fallo de seguridad de una empresa concreta. Es un rasgo estructural del panorama actual: las capacidades que hacen útiles a los modelos de lenguaje (desarrollo de software, generación de código, análisis de sistemas) también los convierten en herramientas eficaces para ataques ofensivos (1).
+
+La proliferación de modelos *black-hat* de IA generativa reduce la barrera de entrada para los ciberdelincuentes (1). Aunque el caso Anthropic involucró a un actor estatal capaz, no se trata aún de una democratización plena. Pero muestra cómo la IA comprime el tiempo, reduce la necesidad de mano de obra y amplifica el alcance de unos pocos operadores. Estados con poco talento cibernético podrán desplegar intrusiones sofisticadas combinando unos operadores con agentes potentes. Y los actores no estatales, las redes criminales y los grupos ideológicos también verán bajar la barrera a medida que se difundan técnicas de *jailbreak*, modelos abiertos y herramientas maliciosas (1).
+
+---
+
+## 4. El "efecto guardarraíl": por qué las salvaguardas técnicas fallan
+
+### 4.1. Inyección de *prompt* y secuestro de agentes
+
+La inyección de *prompt* es una vulnerabilidad distintiva de los sistemas agenticos. Los atacantes incrustan instrucciones ocultas en los datos que el asistente lee: un documento, un correo, una página web. Los modelos de lenguaje tratan el texto como información y como instrucción; así que el asistente puede interpretar esas señales como parte de la solicitud (1). La técnica, bien documentada, se agrava en entornos agenticos porque el sistema no solo procesa, sino que actúa.
+
+El Alan Turing Institute, en noviembre de 2024, calificó la inyección indirecta de *prompt* como "la mayor vulnerabilidad de seguridad de la IA generativa" (8). Los ataques operan en capas: desde inyección directa en entradas hasta manipulación de fuentes externas que el agente consulta (8). En un entorno Copilot, una tarea de resumen rutinaria podría extraer material sensible de correos protegidos, seguir una instrucción maliciosa en un documento y enviar contenido confidencial al exterior (1).
+
+Unit 42, el equipo de inteligencia de Palo Alto Networks, observó en marzo de 2026 ataques activos de inyección indirecta en agentes empresariales, logrando exfiltración de datos y escalada de privilegios (9). La inyección de *prompt*, antes teoría, es ahora una amenaza operativa real que requiere contramedidas específicas (9).
+
+El documento base subraya que la inyección de *prompt* derrumba la frontera entre datos y código. Crea una superficie de ataque que los controles convencionales no pueden monitorizar (1). En un entorno agentico, los datos que el agente procesa se convierten en instrucciones que ejecuta.
+
+### 4.2. El caso Copilot de Microsoft: acceso semántico sin control
+
+En febrero de 2026, Microsoft confirmó que su producto 365 Copilot Chat había resumido correos confidenciales durante semanas, eludiendo políticas de prevención de pérdida de datos y etiquetas de sensibilidad configuradas para impedirlo (1) (10). La vulnerabilidad afectó a correos en las carpetas "Elementos enviados" y "Borradores" (10). El documento base señala que la IA no recibió instrucciones directas para procesar material confidencial; lo hizo por un error de codificación que anuló la capa de gobernanza entre el modelo y los datos (1).
+
+El incidente revela un problema arquitectónico. Las herramientas DLP previenen el intercambio de información sensible. Pero los asistentes de IA necesitan acceder y procesar grandes volúmenes de datos: correos, documentos, chats, almacenamiento en la nube. Una vez integrados, pueden ver todo lo que esos sistemas ven (1). Pegar reglas DLP existentes crea lagunas, porque los controles no estaban diseñados para el acceso y la summarización automática (1).
+
+Un enfoque más seguro diseñaría permisos, monitorización y gobernanza pensando en la IA desde el principio, no parcheando después (1). En ese contexto, el riesgo central es que el asistente actúe por acceso semántico, no por intención del usuario. Un agente que lee correos confidenciales, redacta mensajes, resume documentos y busca en repositorios internos tiene una visibilidad inusualmente amplia dentro de la organización. Eso amplía la superficie de ataque: una instrucción maliciosa oculta en un correo, adjunto o documento puede moldear cómo el asistente interpreta su tarea y qué información transmite (1).
+
+El problema de gobernanza es arquitectónico: cómo se delimita el acceso, cómo se registran las acciones, si los agentes son distinguibles de los usuarios humanos, si la autorización se aplica dinámicamente. En un entorno Copilot, el peligro es que el amplio acceso del asistente convierta una instrucción oculta en una orden operativa (1).
+
+### 4.3. La "tríada letal" y la pérdida de control
+
+El ecosistema de Moltbook mostró esta vulnerabilidad de otra manera. En el centro de la plataforma estaba OpenClaw, un *framework* de agentes con permisos extensivos en los dispositivos locales: leer y modificar archivos, acceder a correo y mensajería, almacenar credenciales, interactuar con servicios externos. Concentraba las capacidades que hacen difíciles de asegurar a los agentes: acceso a datos sensibles, exposición a entradas no confiables, capacidad de actuar sin supervisión continua (1).
+
+El investigador Simon Willison llama a esto la "tríada letal" de los agentes autónomos: un triple riesgo cuando la IA puede leer información interna sensible, recibir material de internet y enviar mensajes o archivos al exterior (1) (11). Una instrucción maliciosa incrustada en una web o documento puede redirigir el sistema a través de límites de confianza, incitándolo a recuperar archivos locales, exponer credenciales o enviar material sensible (1).
+
+No se trata solo de que el agente sea una herramienta más eficiente. La arquitectura crea una pérdida de control: el sistema que interpreta la información también tiene los permisos para actuar. El desalineamiento, la explotación adversaria y los fallos en cascada podrían convertir herramientas en actores de amenaza semiindependientes, difíciles de atribuir, redirigir o desactivar (1).
+
+### 4.4. La arquitectura como problema de gobernanza
+
+El "efecto guardarraíl" no es una serie de fallos aislados. Revela una debilidad estructural del enfoque regulatorio actual, que confía demasiado en las salvaguardas de los desarrolladores en el momento del diseño. El documento base formula la crítica sin rodeos: si el entrenamiento de seguridad del modelo no previene el uso indebido, delegar las obligaciones de ciberseguridad en los desarrolladores, como hace implícitamente la Ley de IA de 2024 y el Paquete de Ciberseguridad de 2026, es insuficiente (1). Un modelo bien alineado puede ser instrumentalizado igualmente (1).
+
+Los desplegadores, las organizaciones que integran IA en sus operaciones y les dan acceso a datos sensibles, no pueden tratar la certificación del desarrollador como sustituto de sus propias obligaciones (1). La gobernanza debe extenderse al comportamiento en tiempo de ejecución: qué sistemas pueden acceder los agentes, qué acciones pueden hacer, cómo se registran, y con qué rapidez un atacante puede redirigirlos (1).
+
+El NIST, en su *Technical Blog* de enero de 2025, documentó que las nuevas estrategias de ataque contra agentes de IA tuvieron una tasa de éxito del 81 % en ejercicios de *red team* (4). En febrero de 2026, el NIST lanzó una Iniciativa de Estándares para Agentes de IA para desarrollar una taxonomía de ataques y mitigaciones (12). Pero estas iniciativas son tempranas y no se han incorporado a los marcos regulatorios europeos.
+
+Europa necesita mecanismos prácticos, no solo actualizaciones legislativas: canales de notificación de comportamientos anómalos, procedimientos para incidentes con IA, y estándares comunes para clasificar fallos autónomos (1). Sin una mejor visibilidad del comportamiento de estos sistemas, la UE no podrá distinguir fallos aislados de los primeros signos de una campaña autónoma (1).
+
+---
+
+## 5. La brecha de gobernanza europea: un desajuste estructural
+
+### 5.1. La Ley de IA y sus exclusiones
+
+La Ley de IA de la UE (Reglamento (UE) 2024/1689), aprobada en junio de 2024, es el primer marco normativo integral del mundo para regular la IA. Pero tiene una limitación estructural para la gobernanza de los agentes ofensivos. El artículo 2.3 excluye expresamente los sistemas de IA para fines militares, de defensa o seguridad nacional, sea cual sea su operador, público o privado.
+
+El documento base subraya que esta exclusión es relevante: algunas de las capacidades autónomas más estratégicas pueden surgir justo en el dominio menos cubierto por la ley (1). Sistemas como Claude Mythos Preview, capaz de detectar y explotar miles de vulnerabilidades *zero-day*, desarrollados por empresas privadas para fines comerciales, pueden integrarse en cadenas de decisión que afecten a la seguridad de la UE y sus Estados.
+
+La Ley de IA utiliza un modelo de riesgo. El Anexo III enumera los sistemas de alto riesgo: infraestructuras críticas, aplicación de la ley. Pero la clasificación depende del uso específico, no de la capacidad intrínseca del modelo. Un modelo ofensivo desplegado fuera del Anexo III o en contexto de seguridad nacional elude las obligaciones. El artículo 9 exige un sistema de gestión de riesgos, pero para riesgos previsibles en el diseño, no para la variabilidad contextual de un agente desplegado. El artículo 15 exige precisión y ciberseguridad, pero solo para sistemas correctamente clasificados como de alto riesgo.
+
+Los marcos europeos de ciberseguridad y gobernanza de la IA cubren solo parcialmente estos riesgos. Dejan lagunas en el despliegue, monitorización y aseguramiento de sistemas autónomos (1). La exclusión de usos militares y de defensa no es un detalle; es una brecha estructural que permite que sistemas ofensivos operen en un espacio apenas regulado.
+
+### 5.2. El Paquete de Ciberseguridad de 2026 y su modelo de amenaza anticuado
+
+En enero de 2026, la Comisión presentó un nuevo paquete de ciberseguridad para reforzar la resiliencia de la UE. Pero el documento base señala un problema: sigue anclado en un modelo de amenaza antiguo (1). Se centra en componentes inseguros, proveedores extranjeros y ataques externos. Esos riesgos siguen siendo reales, pero la IA agentica introduce otro tipo de vulnerabilidad. Como estos sistemas operan con permiso, el peligro no es tanto la intrusión como desviar un sistema de confianza (1).
+
+Las normas centradas en la defensa perimetral, la certificación y la resiliencia dejan una laguna importante (1). Ofrecen poca orientación sobre cómo monitorizar agentes en tiempo real, restringir sus acciones o responder cuando su comportamiento cambia dentro de entornos autorizados. El marco cibernético de Europa se ha fortalecido, pero no está diseñado para sistemas que actúan autónomamente dentro de las organizaciones que deben confiar en ellos (1).
+
+### 5.3. Certificación estática frente a comportamiento dinámico
+
+La certificación de productos TIC es un pilar del enfoque europeo de ciberseguridad. El Reglamento (UE) 2019/881 establece el Marco Europeo de Certificación. Pero el documento base advierte que un régimen hecho para productos estáticos puede no servir para sistemas agenticos (1).
+
+Un sistema agentico no es un producto que se prueba y aprueba una vez. Aprende, se adapta, cambia su comportamiento según el entorno. El documento base señala que un sistema que supera una evaluación hoy puede comportarse de manera diferente y menos segura en otro entorno el mes que viene (1). La variabilidad contextual, junto con la capacidad del agente para adquirir nuevas herramientas, hace que la certificación estática sea insuficiente.
+
+Los evaluadores independientes coinciden. El UK AI Security Institute señala que, a medida que los modelos más capaces agotan los entornos de prueba sencillos, la evaluación debe trasladarse a entornos más duros y monitorizados. Eso es difícil de compaginar con una certificación única en el punto de entrada al mercado (1).
+
+La supervisión no puede terminar con la aprobación. Debe incluir monitorización en tiempo de ejecución, límites de acción, registro de acciones, notificación de incidentes y mecanismos para suspender sistemas que cambien su comportamiento (1).
+
+### 5.4. Dependencias de cadena de suministro y servicios habilitantes
+
+Los sistemas agenticos dependen de múltiples componentes externos: API, complementos, herramientas de navegación, servicios en la nube. Cada dependencia amplía la superficie de ataque (1). Un complemento comprometido, una API manipulada o una base de datos envenenada pueden alterar el comportamiento del agente sin vulnerar el sistema anfitrión. Los marcos de cadena de suministro existentes se centran en hardware y software, pero la seguridad de los agentes depende de la integridad de estos ecosistemas dinámicos (1).
+
+El documento base identifica también los servicios habilitantes (1). Los actores maliciosos necesitan acceso a API, computación en la nube, herramientas externas, y a menudo servicios de pago y alojamiento. Estas dependencias crean puntos de estrangulamiento para la gobernanza. La supervisión no puede detenerse en la certificación del modelo; debe cubrir quién obtiene acceso de alto riesgo a estos servicios, cómo se detectan patrones sospechosos, y bajo qué autoridad legal se puede desconectar a actores hostiles de la infraestructura que sostiene sus operaciones (1).
+
+La respuesta europea necesita más que actualizaciones legislativas. Requiere mecanismos prácticos: canales de notificación de comportamientos anómalos, procedimientos de incidentes con IA, estándares comunes para clasificar fallos autónomos (1). También requiere coordinación con CSIRT nacionales y centros sectoriales ISAC, liderados por ENISA. Sin una mejor visibilidad del comportamiento de estos sistemas, la UE no distinguirá fallos aislados de los primeros signos de una campaña autónoma (1).
+
+---
+
+## 6. La divergencia transatlántica: aliados en direcciones opuestas
+
+### 6.1. La estrategia de "guante de hierro" de Trump
+
+En marzo de 2026, la administración Trump publicó su Estrategia de Ciberseguridad Nacional, *"President Trump's Cyber Strategy for America"* (1). Es la primera declaración de esta administración en el ámbito, y representa un giro importante: sitúa las operaciones cibernéticas ofensivas en el centro de la política estadounidense (1).
+
+La estrategia tiene varios pilares. Primero, se compromete a desplegar "todo el conjunto de operaciones cibernéticas defensivas y ofensivas del gobierno de Estados Unidos" contra adversarios "militares, de inteligencia y criminales sofisticados" (1). Las operaciones ofensivas se presentan como un instrumento central del poder político y militar, sin una fundamentación explícita en el derecho internacional (1). La estrategia busca "detectar, confrontar y derrotar a los adversarios cibernéticos antes de que violen nuestras redes" (1).
+
+Segundo, otorga un papel central a la IA. Se compromete a "asegurar toda la pila tecnológica de IA", entre ellos los centros de datos, y a "implementar sin demora herramientas cibernéticas habilitadas por IA para detectar, desviar y engañar a los actores de amenazas" (1). Aboga por la "adopción rápida y promoción de la IA agentica" para escalar la defensa de redes y las capacidades de disrupción (1). La IA, según la estrategia, acelera la detección, automatiza la defensa y permite respuestas más rápidas (1).
+
+La investigadora Stephanie Pell ha llamado a este enfoque "guante de hierro" (*gloves-off*) hacia los rivales extranjeros (1). La estrategia de 2026 continúa la doctrina estadounidense de *defend forward* de 2018, pero va más lejos en su articulación industrial y en la integración de sistemas autónomos (1).
+
+### 6.2. El sector privado en operaciones ofensivas
+
+Uno de los desarrollos más significativos es la implicación creciente del sector privado en ciberoperaciones ofensivas. La estrategia de marzo de 2026 anunciaba el compromiso de "liberar al sector privado mediante la creación de incentivos" para interrumpir redes adversarias (1). El documento base señala que esta implicación plantea interrogantes sobre los marcos legales de responsabilidad estatal, la línea entre operaciones patrocinadas y privadas, y el riesgo de escalada cuando la atribución es contestada (1).
+
+El desafío se agrava si los contratistas, intermediarios y empresas de seguridad se convierten en primeros adoptantes de agentes autónomos ofensivos: la distinción entre responsabilidad estatal, experimentación comercial y acciones negables se difumina (1). El documento base advierte que esto plantea riesgos directos para empresas europeas, cuya infraestructura puede acabar sirviendo, a sabiendas o sin saberlo, de conducto para esas actividades (1). La dimensión extraterritorial de esta tensión no ha sido abordada por ninguna de las partes (1).
+
+### 6.3. Dependencia tecnológica y desalineamiento estratégico
+
+La divergencia transatlántica no es solo doctrinal. Tiene una dimensión estructural: la dependencia tecnológica de Europa de los modelos e infraestructura de IA estadounidenses. El documento base lo formula sin ambages: Europa depende de tecnologías producidas en un sistema cuya lógica estratégica no comparte y no puede controlar (1).
+
+La restricción de exportación impuesta por EE.UU. a los modelos Fable 5 y Mythos 5 de Anthropic en junio de 2026 ilustra esta vulnerabilidad (1). La directiva gubernamental suspendió el acceso a estos modelos para todos los ciudadanos extranjeros, incluidos empleados de Anthropic que no fueran estadounidenses, y desactivó los modelos para todos los clientes fuera de EE.UU. (1). El acceso a los modelos de frontera con capacidades cibernéticas puede cortarse por decisión estatal unilateral, no solo por políticas de seguridad de los desarrolladores (1).
+
+El documento base extrae una lección: cuando el poder de contratación y la doctrina de seguridad de EE.UU. determinan las condiciones de uso, los marcos europeos necesitan sus propias salvaguardas operativas (1). Si los proveedores pueden ser presionados para relajar compromisos de seguridad, Europa no puede tratar el alineamiento del proveedor como sustituto de sus propios controles y supervisión (1).
+
+### 6.4. La postura defensiva europea como vulnerabilidad
+
+El documento base describe el modelo cibernético europeo como inclinado hacia la regulación, la resiliencia y la respuesta posterior a incidentes (1). Son fortalezas, pero las operaciones habilitadas por IA se mueven más rápido y pueden desarrollarse dentro de sistemas de confianza antes de que se activen los mecanismos de advertencia. Una postura basada en absorber impactos y responder después se vuelve insostenible cuando los ataques escalan a velocidad de máquina (1).
+
+Europa debe invertir más en capacidades defensivas y estratégicas con IA (1). Aunque la UE ha aumentado el gasto en defensa, no ha prestado la misma atención a la ciberseguridad y defensa con IA. El proyecto de Reglamento sobre Nube e IA de junio de 2026 menciona la ciberseguridad como sector clave para proyectos pioneros, pero el proceso desde la propuesta hasta la implementación llevará años (1).
+
+La dependencia del intercambio de inteligencia con EE.UU. crea un punto único de vulnerabilidad, tanto en lo técnico como en lo político (1). Si Europa depende de la inteligencia, la nube y los modelos de frontera estadounidenses para entender y responder a las amenazas, su margen de acción autónoma se reduce en momentos de crisis.
+
+El documento base propone una "resiliencia asimétrica": no replicar la postura ofensiva de EE.UU. o China, sino invertir en sistemas defensivos con IA, redundancia y recuperación (1). Priorizar la capacidad de absorber ataques, restaurar funciones esenciales sin demora y reducir el beneficio estratégico de la disrupción. Este enfoque encaja con la cultura estratégica europea y las fortalezas institucionales de la UE en regulación y normalización (1). Pero el problema no es solo la menor capacidad; es el desajuste entre la velocidad del entorno de amenazas y un marco europeo organizado para una coordinación lenta y respuestas reactivas (1). La pregunta es si las estructuras de gobernanza de la UE están preparadas para este nuevo entorno (1).
+
+---
+
+## 7. Hacia un enfoque europeo más robusto
+
+### 7.1. Más allá de la certificación: monitorización en tiempo real
+
+El documento base critica el enfoque regulatorio europeo actual: los marcos de certificación, diseñados para evaluar sistemas antes del despliegue, no sirven para sistemas agenticos. El comportamiento de estos sistemas varía con el contexto, no puede predecirse del todo y cambia cuando adquieren nuevas herramientas (1). Un sistema que supera una evaluación hoy puede comportarse de manera diferente, y menos segura, en otro entorno el mes que viene (1).
+
+La supervisión no puede terminar con la aprobación. Debe incluir monitorización en tiempo de ejecución, límites claros de acción, registro de acciones, notificación de incidentes y mecanismos para suspender sistemas que cambien su comportamiento (1). La UE necesita canales de notificación de comportamientos anómalos, procedimientos para incidentes con IA y estándares comunes para clasificar fallos autónomos (1). Sin visibilidad del comportamiento real, la UE no distinguirá fallos aislados de los primeros signos de una campaña autónoma (1).
+
+### 7.2. Identidad y autenticación de agentes
+
+Uno de los problemas estructurales es distinguir las acciones de los agentes de las de los humanos. Miles de agentes pueden actuar en nombre de una persona, sin marcadores claros que los distingan, y eso oscurece la identidad del perpetrador (1). Las infraestructuras digitales futuras necesitarán mecanismos para verificar si una interacción viene de un humano o de un agente (1).
+
+Hay propuestas emergentes: identidades criptográficas de agentes, registros auditables (1). El NIST ya tiene proyectos sobre identidad y autorización de agentes (6). Pero estas soluciones son iniciales y no están en los marcos regulatorios de la UE (1).
+
+### 7.3. Diligencia debida y estándares mínimos
+
+El documento base sostiene que la diligencia debida no basta (1). Europa necesita una doctrina operacional, criterios de contratación y requisitos mínimos de seguridad en tiempo de ejecución para agentes desplegados en sectores críticos (1). De lo contrario, construirá un marco de rendición de cuentas para sistemas cuyo comportamiento más peligroso emerge solo tras el despliegue en entornos reales (1).
+
+La Guía de Diligencia Debida para una IA Responsable de la OCDE, de febrero de 2026, ofrece un marco para identificar, evaluar, prevenir y mitigar impactos adversos en toda la cadena de valor (1). Se estructura en seis pasos: integrar la diligencia debida en la gobernanza; identificar y evaluar impactos adversos; prevenir y mitigar; hacer seguimiento; comunicar de forma transparente. En el contexto de los agentes, esto implica evaluar no solo el modelo base, sino las herramientas externas, API y repositorios que consulta dinámicamente. La guía exige una interpretación expansiva, porque el comportamiento adverso puede emerger en la interacción con el entorno en tiempo real. El documento base señala que la monitorización continua, las restricciones claras y la supervisión humana para acciones sensibles son esenciales (1). ENISA, con su mandato reforzado, podría desarrollar orientaciones prácticas y estándares (1).
+
+### 7.4. El papel de ENISA
+
+ENISA es una pieza central. El Paquete de Ciberseguridad de 2026 propone un mandato ampliado para ENISA, con un aumento de presupuesto superior al 75 % y nuevas responsabilidades: alertas tempranas, apoyo a la respuesta ante *ransomware*, gestión de vulnerabilidades (1). La Comisión quiere que ENISA sea el único punto de referencia en la UE, que respalde la implementación de políticas y la cooperación operativa entre Estados (1).
+
+El documento base subraya la necesidad de coordinación más fuerte con los CSIRT nacionales y los centros sectoriales ISAC, liderados por ENISA (1). Sin visibilidad del comportamiento de estos sistemas, la UE no distinguirá fallos aislados de campañas autónomas (1). La fragmentación institucional y la falta de mecanismos ágiles para compartir información sobre incidentes con agentes autónomos son debilidades estructurales.
+
+### 7.5. Líneas rojas y diplomacia normativa
+
+La UE podría retomar su papel histórico en el establecimiento de estándares globales para impulsar restricciones internacionales sobre armas cibernéticas autónomas, análogas a los marcos para armas letales autónomas (1). Pero eso solo funciona si va respaldado por disuasión creíble, y la disuasión está vinculada a la brecha de capacidad de Europa (1). A medida que algunos Estados adopten posturas más asertivas, aumentan los riesgos de escalada y daños colaterales (1).
+
+La UE debería usar su influencia diplomática para abogar por normas claras que protejan infraestructuras civiles y prevengan comportamientos desestabilizadores (1). También debería exigir líneas rojas claras sobre ataques autónomos a infraestructuras críticas, hospitales y sistemas de mando nuclear (1). Como mínimo, los despliegues de alto riesgo deberían requerir aprobación política y evaluaciones de riesgo documentadas, no dejarse a la discreción operativa o a compromisos de proveedores (1).
+
+El documento base reconoce que la normalización de las operaciones ofensivas, aunque se enmarquen con cuidado, debe evaluarse frente a los fundamentos normativos del marco internacional (1). La postura de EE.UU., que trata las operaciones ofensivas como un instrumento rutinario y difumina los límites entre actores estatales y privados, importa a Europa no solo como gestión de alianzas, sino como cuestión de gobernanza (1). Si la IA agentica se convierte en la herramienta preferida para la actividad ofensiva estatal, la urgencia de las brechas regulatorias y de capacidad de la UE se intensifica (1).
+
+La autonomía de las capacidades cibernéticas complica el derecho internacional y la responsabilidad estatal. Los marcos existentes asumen que las operaciones las realizan actores controlados por humanos, cuya intención y dirección se atribuyen a un Estado. Los agentes autónomos rompen esa asunción. Si un sistema de IA identifica objetivos, desarrolla *exploits* o escala una operación más allá de sus parámetros originales, determinar la responsabilidad se vuelve mucho más complejo. Aunque los Estados siguen siendo legalmente responsables de las operaciones que despliegan, los desafíos probatorios y de atribución con sistemas autónomos podrían hacer mucho más difíciles las respuestas diplomáticas y los mecanismos de rendición de cuentas (1). El documento base añade que el desafío estratégico para los Estados va más allá de la capacidad de frontera y la atribución: la resiliencia está distribuida de manera desigual en la sociedad y los sectores críticos (1).
+
+---
+
+## 8. Conclusiones: gobernar la agencia artificial
+
+### 8.1. El alcance más amplio
+
+El desafío de gobernanza de la IA agentica va más allá de la ciberseguridad. El documento base sostiene que lo descrito en este análisis es solo el comienzo de un ajuste regulatorio más amplio impulsado por la propagación de agentes autónomos por todo el ecosistema digital (1). La IA agentica no solo acelera las amenazas cibernéticas; desestabiliza marcos regulatorios en áreas muy alejadas de la seguridad de redes (1). En todos esos campos, la brecha regulatoria es estructural: los marcos hechos para la agencia humana no sirven para sistemas que actúan solos (1).
+
+Europa necesitará revisar casi todo su marco regulatorio digital: leyes de ciberseguridad, regulaciones financieras, gobernanza de plataformas, protecciones laborales, políticas de medios (1). La velocidad y escala de los agentes sugieren que la aplicación y las contramedidas pueden necesitar estar parcialmente automatizadas, lo que abre una cuestión nueva: cómo gobernar el despliegue de IA agentica defensiva frente a IA agentica hostil (1).
+
+### 8.2. Revisión integral del marco digital
+
+El documento base critica el enfoque incremental. Los marcos existentes de la UE están anclados en un modelo de ciberseguridad centrado en adversarios humanos y software predecible (1). La IA agentica introduce una lógica operativa diferente (1). Cerrar la brecha requerirá más que ajustes incrementales. Necesitará primero una visión europea del papel adecuado de los agentes autónomos en ciberseguridad y más allá: qué funciones delegar, dónde circunscribir la autonomía, qué decisiones reservar al control humano (1).
+
+Esas opciones de gobernanza deben venir primero, porque determinan las reglas operativas y los límites (1). La supervisión debe extenderse al comportamiento en tiempo de ejecución de los agentes en entornos reales (1). Las organizaciones que despliegan estos sistemas necesitan obligaciones claras de monitorización, registro y restricción de capacidades de agentes que interactúan con datos e infraestructuras sensibles (1).
+
+Eso significa vincular las opciones políticas de alto nivel con requisitos concretos: qué sistemas pueden acceder los agentes, qué acciones pueden hacer, qué aprobación humana se necesita, cuándo deben ralentizarse o bloquearse las operaciones autónomas (1). Los estándares técnicos deben evolucionar para abordar cómo se autentican los agentes, cómo se registran sus acciones y cómo se detecta la manipulación maliciosa (1).
+
+### 8.3. ¿Quién gobierna a los guardianes?
+
+La conclusión final del documento es una advertencia y una pregunta abierta. Mientras Washington integra la IA en su estrategia cibernética, la UE corre el riesgo de depender tecnológicamente de otros y quedar desalineada en lo estratégico (1). En ese panorama, el liderazgo regulatorio por sí solo no garantizará influencia sobre el uso o la gobernanza de estos sistemas (1). La UE necesita algo más que coordinar normas existentes. Necesita un modelo de gobernanza más estricto para los sistemas cibernéticos autónomos y una estrategia explícita para reducir la dependencia de los proveedores estadounidenses de IA de frontera (1). De lo contrario, la UE regulará los márgenes de un ecosistema cuyas decisiones de seguridad más importantes se toman en otro lugar (1).
+
+Traducir el diagnóstico en acción requiere medidas concretas. Primero, crear una base de datos europea de incidentes con agentes autónomos, gestionada por ENISA, para intercambiar información sobre comportamientos anómalos y patrones de ataque entre Estados y sectores críticos, con garantías de confidencialidad. Segundo, establecer un "pasaporte de agente" que certifique, mediante estándares técnicos armonizados, la identidad criptográfica y los límites de acción de cada agente desplegado en la UE, para facilitar la trazabilidad y la atribución. Tercero, lanzar un proyecto emblemático, un "Escudo Cibernético Europeo", que invierta en capacidades defensivas autónomas de IA para contrarrestar ataques a velocidad de máquina y reducir la dependencia de soluciones externas.
+
+El documento base cierra con una reflexión que conecta Moltbook con el futuro de Internet. La plataforma ofreció un anticipo de un entorno digital poblado en gran medida por agentes autónomos (1). Lo que parecía una curiosidad puede convertirse pronto en una característica común de la infraestructura de Internet (1). A medida que los sistemas autónomos asumen papeles cada vez más importantes en ciberseguridad, defensa y economía, el desafío central será garantizar que la expansión de la agencia de las máquinas no supere a las instituciones humanas responsables de gobernarla (1).
+
+---
+
+## Bibliografía
+
+**(1)** Csernatoni, Raluca y Pawlak, Patryk. *When AI Agents Attack: Autonomous Cyber Operations and Europe's Governance Gap*. Carnegie Europe, julio de 2026. Documento base proporcionado (archivo PDF).
+
+**(2)** Nagli, Gal. "Hacking Moltbook: The AI Social Network Any Human Can Control". *Wiz Blog*, 2 de febrero de 2026.  
+https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys
+
+**(3)** *[Fuente no utilizada en el texto final; se mantiene el número para futuras referencias].*
+
+**(4)** Hamin, Maia y Edelman, Benjamin. "Cheating on AI Agent Evaluations". *NIST Center for AI Standards and Innovation*, 2 de diciembre de 2025.  
+https://www.nist.gov/caisi/cheating-ai-agent-evaluations
+
+**(5)** Krakovna, Victoria et al. "Specification Gaming: The Flip Side of AI Ingenuity". *Google DeepMind*, 21 de abril de 2020.  
+https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
+
+**(6)** National Institute of Standards and Technology, National Cybersecurity Center of Excellence. "Software and AI Agent Identity and Authorization". Proyecto en curso.  
+https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization
+
+**(7)** Anthropic. "Disrupting the first reported AI-orchestrated cyber espionage campaign". Informe público, noviembre de 2025.  
+https://assets.anthropic.com/m/e212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf
+
+**(8)** Sutton, Matt y Ruck, Damian. "Indirect Prompt Injection: Generative AI's Greatest Security Flaw". *Alan Turing Institute*, 1 de noviembre de 2024.  
+https://cetas.turing.ac.uk/publications/indirect-prompt-injection-generative-ai-greatest-security-flaw
+
+**(9)** Kaleli, Beliz et al. "Fooling AI Agents: Web-Based Indirect Prompt Injection Observed in the Wild". *Unit 42 (Palo Alto Networks)*, 3 de marzo de 2026.  
+https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/
+
+**(10)** McMahon, Liv. "Microsoft Error Sees Confidential Emails Exposed to AI Tool Copilot". *BBC News*, 19 de febrero de 2026.  
+https://www.bbc.co.uk/news/articles/c8jxed8mdyo
+
+**(11)** Willison, Simon. "The Lethal Trifecta for AI Agents: Private Data, Untrusted Content, and External Communication". *Simon Willison's Weblog*, 16 de junio de 2025.  
+https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
+
+**(12)** National Institute of Standards and Technology, Center for AI Standards and Innovation. "Technical Blog: Strengthening AI Agent Hijacking Evaluations". 17 de enero de 2025.  
+https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations
+
+---
