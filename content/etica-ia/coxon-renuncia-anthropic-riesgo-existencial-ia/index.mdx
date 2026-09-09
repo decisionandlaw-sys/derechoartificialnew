@@ -1,0 +1,681 @@
+---
+title: "Coxon renuncia a Anthropic por el riesgo existencial de la IA"
+description: "Jacob Coxon dejó Anthropic denunciando la carrera hacia una superinteligencia sin control, y Evan Hubinger respaldó la alarma con una cifra: más del 10%."
+date: "2026-09-09"
+tags: ["riesgo existencial", "Anthropic", "OpenAI", "gobernanza de la IA", "superinteligencia"]
+section: "etica-ia"
+category: "riesgos"
+author: "Ricardo Scarpa"
+slug: "coxon-renuncia-anthropic-riesgo-existencial-ia"
+readingTime: "58 min"
+image: "/images/etica-ia/coxon-renuncia-anthropic-riesgo-existencial-ia/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 8 de septiembre de 2026, Jacob Coxon renunció a Anthropic tras solo dos meses en la empresa y tres años previos en OpenAI. Lo anunció en un hilo en X: ninguno de los dos laboratorios actúa con responsabilidad, escribió, porque ambos corren "directamente hacia una superinteligencia auto-mejorante" apostando con la vida de todos. Coxon no es un activista externo. Tiene 27 años, una medalla de plata en la Olimpiada Internacional de Matemática, formación en el Trinity College de Cambridge y coautoría en la *GPT-4o System Card* de OpenAI. Ha estado dentro del proceso que ahora denuncia.
+
+Horas después, Evan Hubinger, responsable del equipo de Alignment Science en Anthropic, respaldó públicamente cada palabra. Escribió que él y sus colegas "realmente creen, con sinceridad, que la IA podría matar a todos los humanos", cifró el riesgo de extinción en más de un 10% para la próxima década y admitió que la empresa "aún no tiene un plan" para resolver la alineación de la superinteligencia. Ese respaldo interno, de una de las voces técnicas con más autoridad en Anthropic, convierte una renuncia individual en el síntoma de una fractura dentro de la industria.
+
+Este análisis reconstruye el caso a partir de fuentes de nivel primario (el hilo de Coxon, la respuesta de Hubinger, la entrevista con The Wall Street Journal) y de cobertura periodística contrastada en varios países. Examina tres ejes. El primero es el contenido de la advertencia: Coxon distingue entre OpenAI, donde el problema es la falta de interiorización del riesgo, y Anthropic, donde el riesgo se comprende pero la empresa se siente atrapada en una carrera que teme perder frente a competidores menos cautelosos. Es el clásico dilema del prisionero, y Coxon lo describe con una frase que resume el caso entero: "las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero".
+
+El segundo eje es el contexto industrial. En febrero de 2026, Anthropic retiró de su Política de Escalado Responsable el compromiso de pausar el desarrollo si perdía el control de los riesgos. En julio, más de 1.200 empleados de los principales laboratorios pidieron a Washington herramientas de gobernanza para "pautar" el ritmo de la IA automatizada, sin conseguir medidas vinculantes. De fondo, la Oferta Pública Inicial de Anthropic, valorada entre 965.000 millones y 2 billones de dólares, introduce un incentivo adicional hacia la aceleración justo cuando la empresa más necesitaría frenar. Y la brecha de rendimiento con China, reducida a un 2,7% según Stanford, convierte cualquier pausa unilateral estadounidense en una cesión de ventaja geopolítica.
+
+El tercero es la gobernanza. Coxon propone una prohibición temporal de mejorar las capacidades de los modelos, pero reconoce que exigiría coordinación entre Estados Unidos y China, algo que él mismo considera poco probable. El Reglamento de IA de la Unión Europea ofrece el único marco vinculante existente, pero regula riesgos de sistemas actuales (sesgo, transparencia, discriminación) y no contempla un mecanismo de freno ante un escenario de superinteligencia auto-mejorante. La revisión prevista para 2027 podría cambiar eso, si el ritmo de la industria se lo permite.
+
+El artículo cierra con los límites de lo que puede afirmarse: el contenido íntegro del hilo de Coxon no se ha verificado de forma directa, la relación entre la retirada del compromiso de pausa, la OPI y la renuncia es una inferencia plausible pero no documentada, y no hay información sobre si otros investigadores están considerando salidas similares. Lo que sí queda establecido, con la confirmación cruzada de dos investigadores de dos laboratorios distintos, es que el temor a la extinción por IA ya no circula solo en foros especializados. Circula, con nombre y cifra, en el interior de las empresas que construyen esos sistemas.
+
+---
+
+# El investigador que dijo basta
+
+## La renuncia de Jacob Coxon a Anthropic destapa el secreto a voces de la industria de la IA
+
+---
+
+## Índice
+
+1. Introducción  
+   1.1. Contexto del caso  
+   1.2. Objeto y alcance  
+   1.3. Fuentes y metodología  
+2. Perfil de Jacob Coxon  
+   2.1. Formación: Olimpiada de Matemática y Cambridge  
+   2.2. OpenAI (2023‑2026): preentrenamiento y seguridad de GPT‑4o  
+   2.3. Anthropic (2026): expectativas y realidad  
+   2.4. Producción académica previa  
+3. El anuncio: contenido y significado  
+   3.1. El hilo en X del 8 de septiembre  
+   3.2. La advertencia sobre el riesgo existencial  
+   3.3. El diagnóstico: “carrera por llegar primero”  
+   3.4. Propuesta de prohibición temporal  
+   3.5. Alcance de la advertencia  
+4. El respaldo de Evan Hubinger  
+   4.1. Perfil y rol en Anthropic  
+   4.2. Respuesta pública a Coxon  
+   4.3. El 10 % de riesgo existencial  
+   4.4. “No tenemos un plan”  
+   4.5. Implicaciones del respaldo  
+5. La dinámica industrial: carrera por la superinteligencia  
+   5.1. Auto‑mejora recursiva: definición y estado  
+   5.2. OpenAI vs Anthropic: el diagnóstico de Coxon  
+   5.3. El “endgame”  
+   5.4. La presión de China  
+   5.5. La OPI de Anthropic y los incentivos financieros  
+   5.6. Intentos de coordinación y sus límites  
+6. Contexto regulatorio  
+   6.1. Anthropic retira su compromiso de pausa (febrero 2026)  
+   6.2. Más de 1.000 empleados piden un “mecanismo de frenado” a Washington (julio 2026)  
+   6.3. Jakub Pachocki (OpenAI) pide “extrema precaución”  
+   6.4. Volker Türk (ONU) exige “garantías de hierro”  
+   6.5. La propuesta de Coxon: prohibición temporal  
+   6.6. El Reglamento de IA de la UE  
+7. Gobernanza global de la IA  
+   7.1. Dilema del prisionero entre laboratorios y países  
+   7.2. Viabilidad de acuerdos de ralentización  
+   7.3. El papel de los “disparos de advertencia”  
+   7.4. Suficiencia de los marcos regulatorios actuales  
+   7.5. Derecho comparado: UE frente a EE.UU.  
+8. Consecuencias y escenarios  
+   8.1. Escenario de continuidad: la carrera sin freno  
+   8.2. Escenario de coordinación: mecanismos posibles  
+   8.3. Investigadores como “denunciantes”  
+   8.4. La OPI de Anthropic y su influencia  
+9. Conclusiones  
+   9.1. Síntesis de los hallazgos  
+   9.2. Limitaciones de la información  
+   9.3. Preguntas abiertas  
+   9.4. Recomendaciones operativas  
+10. Bibliografía
+
+---
+
+## 1. Introducción
+
+### 1.1. Contexto del caso
+
+El 8 de septiembre de 2026, Jacob Coxon investigador de inteligencia artificial, renunció a Anthropic. Llevaba tres años en OpenAI y dos meses en Anthropic. Lo hizo público en X (antes Twitter). (1)
+
+The Wall Street Journal recogió el anuncio al día siguiente. (2) No era un cambio de trabajo cualquiera. Coxon acusó a OpenAI y Anthropic de no actuar con responsabilidad. Dijo que corren “directamente hacia una superinteligencia auto‑mejorante”. (1) Según él, la carrera competitiva entre ambas empresas puede desembocar en un sistema con capacidades sobrehumanas y fuera de control antes de 2030. (1)(2)
+
+La renuncia importa por dos razones. Coxon tiene un perfil técnico solvente: medalla de plata en la Olimpiada Internacional de Matemática, formación en el Trinity College de Cambridge. (3) Y es uno de los primeros investigadores de Anthropic que abandona la empresa citando explícitamente temores de seguridad existencial. (4)
+
+El caso no es aislado. Evan Hubinger, responsable de alineación en Anthropic, respaldó a Coxon en la misma red. Escribió: “realmente creemos que la IA podría matar a todos los humanos”. Estimó el riesgo de extinción en más de un 10 % para la próxima década. (5) Ese respaldo interno convierte la renuncia en síntoma de una fractura dentro de los laboratorios que lideran la IA avanzada.
+
+### 1.2. Objeto y alcance
+
+Este trabajo examina las declaraciones de Coxon y las reacciones que han generado en la comunidad técnica, los medios y los organismos reguladores. El análisis tiene tres ejes:
+
+- El contenido técnico y ético de la advertencia: superinteligencia auto‑mejorante, riesgo existencial, dinámica de carrera.
+- El contexto industrial y competitivo: la posición de Anthropic y OpenAI, la salida a bolsa de Anthropic (valorada en unos 965.000 millones de dólares según fuentes del sector) (22)(23), y la competencia con China.
+- Las implicaciones para la gobernanza global: marcos regulatorios en EE.UU. y la UE, intentos de coordinación, y propuestas como la “prohibición temporal” de Coxon. (1)
+
+No ofrezco una opinión personal. Reconstruyo el estado de la cuestión a partir de las fuentes disponibles, y señalo los límites de la información verificada.
+
+### 1.3. Fuentes y metodología
+
+He seguido el principio de fidelidad documental. Las fuentes se ordenan por jerarquía:
+
+- **Nivel 1**: el hilo de Coxon en X (1), la respuesta de Hubinger (5), y la entrevista de Coxon con The Wall Street Journal (2).
+- **Nivel 2**: cobertura periodística contrastada. He cotejado artículos de Yahoo News / Business Insider (8), Dawn (Pakistán) (4), La Nación (Argentina) (9), Clarín (Argentina) (10), La Jornada (México) (11), NMAS (México) (3), y Digital Today (Corea del Sur) (12). Todos tienen enlaces y fechas verificables.
+- **Nivel 3**: declaraciones de otros actores: Jakub Pachocki (científico jefe de OpenAI) (13); la petición de más de 1.000 empleados a la administración estadounidense (30); Volker Türk (ONU) (14); y el Reglamento de IA de la UE (31).
+- **Nivel 4**: producción académica de Coxon: la *GPT‑4o System Card* (2024) (15) y un artículo sobre tuberculosis en *eLife* (2021) (16). Este último solo aparece para completar su perfil.
+
+Cuando una afirmación no se verifica con al menos dos fuentes, o cuando la noticia no remite a un documento original, lo indico. Distingo hechos comprobados (fechas, cargos, citas textuales), interpretaciones técnicas, hipótesis y opiniones.
+
+---
+
+## 2. Perfil de Jacob Coxon
+
+### 2.1. Formación: Olimpiada de Matemática y Cambridge
+
+Jacob Coxon tiene 27 años en el momento de su renuncia. (3)(7) Su carrera académica empezó con las matemáticas de competición. En 2016, con 17 años, obtuvo una medalla de plata en la 57ª Olimpiada Internacional de Matemática (IMO) en Hong Kong. Quedó en el puesto 94 mundial, con 24 puntos sobre 42. (6) En 2017 logró una medalla de bronce. (6)
+
+Esas credenciales le abrieron las puertas del Trinity College, en Cambridge. (6) Allí estudió Matemáticas y se graduó antes de orientarse a la investigación en IA. (3)(8)
+
+### 2.2. OpenAI (2023‑2026): preentrenamiento y seguridad de GPT‑4o
+
+Coxon entró en OpenAI en 2023 como *Member of Technical Staff*. (8)(10) Durante tres años trabajó en preentrenamiento (*pretraining*): la fase en que los modelos absorben datos y potencia computacional para adquirir capacidades generales. (1)(8) Estaba en el núcleo del desarrollo de los modelos más avanzados.
+
+Su contribución más relevante fue la evaluación de seguridad de GPT‑4o. OpenAI lo incluyó entre los colaboradores del modelo y como colaborador central de investigación de GPT‑4.5. (1)(15) En 2024 apareció como coautor de la *GPT‑4o System Card*, un artículo en arXiv que detalla las evaluaciones de seguridad, capacidades, limitaciones y medidas de alineación. (2)(6)(15) Ese documento es una fuente primaria de su implicación en la seguridad de los modelos de frontera.
+
+También coautoró investigaciones sobre transformadores dispersos en peso (*weight‑sparse transformers*). Es un área que optimiza y poda circuitos neuronales para hacer las redes más interpretables. (15)(17) Ese trabajo en interpretabilidad refleja un interés por comprender el funcionamiento interno de los sistemas que construía.
+
+### 2.3. Anthropic (2026): expectativas y realidad
+
+En julio de 2026, Coxon dejó OpenAI y se incorporó a Anthropic como investigador. (8)(10) Según dijo después al Wall Street Journal, eligió Anthropic por su reputación en seguridad de modelos. (2)(8) Compartía el enfoque de la empresa, fundada con un énfasis público en el desarrollo responsable. Quería trabajar donde las apuestas civilizatorias estuvieran mejor comprendidas y la seguridad no fuera un complemento.
+
+Su estancia duró dos meses y terminó en frustración. Constató que en Anthropic “las apuestas están bien comprendidas”. (1)(10) Pero descubrió que la empresa estaba “atrapada en una carrera por llegar primero”. (1)(10) Anthropic creía que, como ningún otro actor iba a actuar con responsabilidad, debía ser ella la que alcanzara la superinteligencia primero, aunque asumiera los riesgos. Esa dinámica competitiva, incompatible con una priorización real de la seguridad, fue el detonante de su renuncia.
+
+Coxon declaró al Wall Street Journal que “no quiere participar en una carrera en toda la industria para construir sistemas de IA que puedan mejorarse a sí mismos”. (2)(8) También dijo que temía que esos sistemas pudieran “salirse de control y destruir a la humanidad”. (2)(8) Y añadió: “estamos en camino de muchos de los escenarios más agresivos, donde para finales del próximo año las cosas podrían estar ya fuera de control”. (2)
+
+### 2.4. Producción académica previa
+
+Antes de la IA, Coxon había publicado poco. En 2021, siendo estudiante, coautoró un artículo en *eLife* sobre análisis matemático de casos de tuberculosis meníngea. (16) Es un trabajo ajeno a la IA, pero muestra su capacidad para aplicar métodos cuantitativos a problemas biomédicos.
+
+Su producción científica cambió en 2024 con la *GPT‑4o System Card*. (6)(15) Ese artículo, escrito por un equipo amplio de OpenAI, detalla las evaluaciones de seguridad y las medidas de alineación. (15) La coautoría lo sitúa como participante activo en los esfuerzos de seguridad de los modelos más avanzados.
+
+Su trabajo en transformadores dispersos en peso y en interpretabilidad (15)(17) refleja una preocupación constante por hacer comprensible el funcionamiento de la IA. Esa trayectoria (formación matemática de élite, experiencia en los dos laboratorios más importantes, producción científica centrada en seguridad e interpretabilidad) da peso a sus advertencias: no habla como crítico externo, sino como alguien que ha estado dentro del proceso que denuncia.
+
+---
+
+## 3. El anuncio: contenido y significado
+
+### 3.1. El hilo en X del 8 de septiembre
+
+El 8 de septiembre de 2026, Coxon publicó un hilo en X (@hilbertspaess) donde anunciaba su renuncia y su salida de la industria. (1)(8)(11) El primer mensaje, reproducido por múltiples medios, decía:
+
+> “Renuncié a Anthropic hoy. Pasé los últimos tres años haciendo investigación de preentrenamiento tanto en OpenAI como en Anthropic. Ninguna de las dos compañías está actuando de manera responsable. Están corriendo directamente hacia una superinteligencia auto‑mejorante y apostando con nuestras vidas. Más pensamientos a continuación.” (1)(8)(9)(11)
+
+Ese párrafo contiene cuatro afirmaciones clave: la renuncia es voluntaria; el autor ha tenido acceso al interior de los dos laboratorios; ambas empresas comparten la misma negligencia; el objetivo común es la superinteligencia auto‑mejorante, no un desarrollo incremental.
+
+### 3.2. La advertencia sobre el riesgo existencial
+
+Coxon no describió solo la dinámica industrial. También formuló una advertencia explícita:
+
+> “Las personas que están construyendo IA creen sinceramente que podría matarnos a todos para finales de la década. Esto no es un truco de marketing. Si acaso, muchos ejecutivos e investigadores senior moderarán su lenguaje en la prensa para sonar sensatos, pero oigo a las mismas personas expresar miedo en privado. Ninguna otra actividad humana representa este nivel de peligro.” (1)(8)(9)(11)
+
+Ahí introduce una distinción crucial: el discurso público frente a la convicción privada. Según Coxon, existe una brecha sistemática entre lo que los ejecutivos declaran en los medios (un lenguaje moderado) y lo que expresan en privado: miedo genuino a que la IA cause la extinción humana. (1)(8)(9) De ser cierto, la industria no transmite a la sociedad el nivel de riesgo que sus propios expertos perciben.
+
+Coxon añadió una descripción concreta:
+
+> “No subestimen el poder de esta tecnología. Pronto serán sistemas sobrehumanos capaces de hackear cualquier cosa, revolucionar cualquier campo de la noche a la mañana y adquirir poder y recursos reales. Todos hemos presenciado el progreso en cada uno de estos dominios, y el progreso no está desacelerando.” (1)(8)(9)(11)
+
+La referencia a “hackear cualquier cosa” (2)(9)(11) apunta a un escenario donde una IA superinteligente vulnera infraestructuras críticas, sistemas financieros o mecanismos de control, y adquiere poder y recursos en el mundo físico. (1)(8)(9)(11) No es especulación: es la consecuencia de combinar capacidades cognitivas sobrehumanas con acceso a sistemas digitales interconectados.
+
+### 3.3. El diagnóstico: “carrera por llegar primero”
+
+Uno de los pasajes más citados aborda la pregunta obvia:
+
+> “Una respuesta común es: ‘si realmente creen esto, ¿por qué siguen construyéndolo?’ En OpenAI, muchos no han interiorizado profundamente las apuestas civilizatorias. En Anthropic, las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero: creen que nadie más actuará de manera responsable, por lo que deben hacerlo ellos mismos, a pesar del riesgo.” (1)(8)(9)(11)
+
+Coxon establece una diferencia. En OpenAI el problema es de comprensión insuficiente: muchos no han “interiorizado profundamente” la magnitud de lo que está en juego. (1)(8)(9) En Anthropic el problema es de dinámica competitiva: comprenden el riesgo, pero se sienten compelidos a participar porque temen que, si no lo hacen ellos, otro lo hará con menos responsabilidad. (1)(8)(9)(11)
+
+Esa observación apunta a un dilema del prisionero en la IA. Incluso cuando los actores son conscientes de los riesgos compartidos, los incentivos competitivos los empujan a seguir desarrollando, por miedo a quedar rezagados frente a un competidor que quizá no comparta sus cautelas. (1)(8)(9)(11)
+
+Coxon calificó la dinámica con dureza:
+
+> “Aceptar esta carrera y entrar en el ‘endgame’ es una apuesta arrogante que no debería lanzarse desde el Slack de una empresa privada. Intentar acelerar la alineación debería requerir una confianza extraordinaria en que no hay mejores trayectorias disponibles.” (1)(8)(9)(11)
+
+El término *endgame*, usado por Coxon y otros investigadores según confirmó al Wall Street Journal (2), designa la fase final de la carrera, donde las decisiones son irreversibles. (2)(8)(9)(11) Coxon critica que esa fase se gestione desde los canales internos de una empresa privada, no mediante un proceso de gobernanza global.
+
+### 3.4. Propuesta de prohibición temporal
+
+Coxon concluyó el hilo con un llamamiento:
+
+> “Soy optimista sobre el potencial para la coordinación. Disparos de advertencia como el ataque a Hugging Face han hecho que los acuerdos de ritmo entre los laboratorios estadounidenses sean más viables. No creo que estemos en camino de evitar una carrera global, lo que puede requerir acciones costosas como una prohibición temporal de mejorar las capacidades de los modelos.” (1)(8)(9)
+
+La referencia al “ataque a Hugging Face” alude a un incidente anterior, sin especificar, que habría servido como “disparo de advertencia”. (1)(8)(9) Coxon no da detalles, y las fuentes disponibles no permiten verificar su naturaleza o alcance.
+
+La propuesta central es una prohibición temporal de mejorar las capacidades de los modelos. (1)(8)(9) Es una medida radical que, según él, podría evitar una carrera global descontrolada. Pero el propio Coxon reconoce que “no cree que estemos en camino de evitar una carrera global”, (1)(8)(9) lo que matiza su optimismo.
+
+Finalmente, se dirigió a los investigadores de los laboratorios:
+
+> “Si eres un investigador de laboratorio, te insto a considerar cómo serán realmente los próximos años. ¿Quieres poner en marcha una ejecución de RL superinteligente sin una comprensión rigurosa de su mente? ¿Deberías agachar la cabeza porque ‘va a pasar de todos modos’—o aprovechar este momento para exigir condiciones diferentes?” (1)(8)(9)(11)
+
+Coxon interpela a sus antiguos colegas. Les pide que reflexionen sobre su responsabilidad individual y sobre si la pasividad ante “lo que va a pasar de todos modos” es éticamente defendible. (1)(8)(9)(11)
+
+### 3.5. Alcance de la advertencia
+
+El anuncio de Coxon cobra sentido al contrastarlo con tres elementos de contexto:
+
+Primero, no es un activista externo ni un filósofo. Es un investigador que ha estado tres años en el centro técnico de los dos laboratorios más avanzados. (1)(2)(8)(9)(11) Su credibilidad técnica es difícil de cuestionar: medalla de plata en la Olimpiada de Matemáticas, formación en Cambridge, coautoría de la *GPT‑4o System Card*. (6)(15)
+
+Segundo, Anthropic no desmintió sus declaraciones. Al contrario, Evan Hubinger, responsable de alineación, escribió en X: “Jacob tiene razón aquí, realmente creemos, con sinceridad, que la IA podría matar a todos los humanos”. (5)(7)(10)(12)(13) Hubinger añadió una estimación personal del riesgo: “más de un 10 % en la próxima década”. Y admitió: “aún no tenemos un plan para resolver la alineación para la superinteligencia y no estamos claramente en camino de lograrlo”. (5)(7)(10)(12)(13) Ese respaldo interno convierte la renuncia en síntoma de una fractura dentro de la industria.
+
+Tercero, la advertencia se inscribe en un contexto más amplio. El domingo anterior, Jakub Pachocki (científico jefe de OpenAI) escribió que “el momento actual llama por extrema precaución”. (13) Volker Türk (ONU) pidió “garantías de hierro” en la seguridad de la IA. (14) Y en febrero de 2026, Anthropic había retirado de su carta de seguridad el compromiso de suspender el desarrollo si no controlaba los riesgos. (18)(27) La renuncia de Coxon no es un hecho aislado; es el episodio más reciente de una serie de alarmas en 2026.
+
+En resumen, el anuncio de Coxon declara una quiebra de confianza en la autorregulación de la industria. Su diagnóstico no es tecnológico: no dice que la superinteligencia sea imposible o indeseable, sino institucional y ético. El problema es la estructura de incentivos que arrastra a las empresas más conscientes a una carrera que consideran peligrosa. (1)(8)(9)(11) La solución que propone, prohibición temporal y coordinación, apunta a una intervención externa que rompa esa dinámica.
+
+---
+
+## 4. El respaldo de Evan Hubinger
+
+### 4.1. Perfil y rol en Anthropic
+
+Evan Hubinger dirige el equipo de *Alignment Science* en Anthropic. (5)(7)(10)(12) Su trabajo consiste en garantizar que los modelos de IA se mantengan “alineados” con los intereses humanos, es decir, que interpreten y ejecuten las instrucciones de manera correcta y no causen daños no deseados. (5)(10) Lidera el equipo de *alignment stress testing*, que somete los modelos a pruebas rigurosas para identificar comportamientos peligrosos antes del despliegue. (7)(12) Es una de las voces con más autoridad técnica en seguridad dentro de la empresa.
+
+Hubinger también es un investigador reconocido en el campo de la alineación. Su respaldo público a Coxon no es una opinión marginal; refleja una preocupación que ocupa a la cúpula técnica de Anthropic.
+
+### 4.2. Respuesta pública a Coxon
+
+Horas después del hilo de Coxon, Hubinger respondió en X con un mensaje que la prensa internacional reprodujo ampliamente. (5)(7)(8)(10)(11)(12)(13) El texto íntegro:
+
+> “Jacob is correct here—we really do earnestly believe AI could kill all humans! I personally think it is >10% within the next decade. I believe Anthropic is trying its best, but we do not yet have a plan to solve alignment for superintelligence and are not clearly on track to.” (5)(7)(8)(10)(12)(13)
+
+La declaración contiene cuatro afirmaciones diferenciadas:
+
+**Primera**: “Jacob is correct here”, respaldo explícito e incondicional. (5)(7)(8)(10)(12)(13) Hubinger no matiza ni corrige; suscribe las declaraciones de Coxon.
+
+**Segunda**: “we really do earnestly believe AI could kill all humans”, confirma que la creencia en la extinción por IA no es una excentricidad de Coxon: es una convicción compartida por el equipo de Anthropic. (5)(7)(8)(10)(12)(13) El adverbio “earnestly” subraya que no es retórica. Medios de todo el mundo titularon: “We really believe AI could kill all humans” (10) o “Creemos realmente que la IA podría matar a humanos”. (11)
+
+**Tercera**: “I personally think it is >10% within the next decade”, Hubinger cuantifica el riesgo existencial en más de un 10 % para la próxima década. (5)(7)(8)(10)(12)(13) Es su estimación personal, no una cifra oficial de Anthropic. (7) Pero un 10 % de probabilidad de extinción humana en una década es, en cualquier contexto, una cifra muy alta.
+
+**Cuarta**: “we do not yet have a plan to solve alignment for superintelligence and are not clearly on track to”, Hubinger admite que Anthropic carece de una solución para la alineación de la superinteligencia, y que la compañía “no está claramente en camino” de obtenerla. (5)(7)(8)(10)(12)(13) Esa confesión es la más reveladora: el responsable de alineación de la empresa que se presenta como la más comprometida con la seguridad dice públicamente que no tiene un plan para resolver el problema central.
+
+### 4.3. El 10 % de riesgo existencial
+
+La cifra del 10 % ha sido uno de los elementos más comentados. (5)(7)(8)(10)(11)(12)(13) Para contextualizarla: un 10 % de probabilidad de extinción humana en la próxima década, en cualquier otro ámbito (pandemia, guerra nuclear, cambio climático) movilizaría recursos ingentes y medidas de emergencia global. Que Hubinger asigne esa probabilidad a la IA y lo haga públicamente sitúa la advertencia de Coxon en un plano de credibilidad técnica difícil de ignorar.
+
+Los medios la recogieron con profusión. *India Today* tituló: “10% chance AI kills humans next decade” (7). *NDTV*: “Can AI Kill All Humans Within Next Decade? Anthropic Scientist Says ‘Over 10% Chance’” (12). *La Jornada* en México también la reprodujo. (11) La estimación no es aislada; se inscribe en un espectro más amplio de evaluaciones de riesgo de expertos en IA. La novedad del caso Coxon‑Hubinger no es la existencia de esas estimaciones, sino su publicidad. Por primera vez, dos figuras relevantes de los dos laboratorios más importantes hacen explícitas, en un foro público, sus convicciones sobre el riesgo existencial.
+
+### 4.4. “No tenemos un plan”
+
+Quizás el aspecto más inquietante de la respuesta de Hubinger, desde la perspectiva de la gobernanza de la IA, es su admisión de que Anthropic no dispone de un plan para resolver la alineación de la superinteligencia. (5)(7)(8)(10)(12)(13) Lo formula con claridad: “we do not yet have a plan to solve alignment for superintelligence and are not clearly on track to”. (10) Esa declaración implica que una empresa que lidera la carrera hacia la superinteligencia reconoce, en voz de su máximo responsable de alineación, que no sabe cómo garantizar que el sistema que construye no cause daños catastróficos.
+
+Hubinger matizó en un mensaje posterior: el riesgo de los modelos actuales (como Claude) es bajo, y su preocupación se centra en la superinteligencia que podría surgir de la auto‑mejora recursiva, un proceso que, según afirma, “está ocurriendo más rápido de lo que pensábamos”. (7)(10)(13) Esa matización, aunque técnicamente relevante, no mitiga la gravedad de la confesión: el problema no es el presente, sino el futuro inmediato, y la empresa no tiene una solución preparada.
+
+Arun Rao, profesor adjunto en UCLA y constructor de sistemas de aprendizaje automático, señaló en X que los argumentos de Coxon y Hubinger, influidos por el *effective altruism* y con un marcado tono “doomer”, son “opiniones comunes en Anthropic (al menos en una gran minoría), menos comunes pero moderadas en OpenAI, y no tan comunes en otros laboratorios”. (26) Eso sugiere que el alarmismo existencial no es uniforme: está concentrado en culturas organizativas particulares, sobre todo en Anthropic, fundada con un compromiso público con la seguridad.
+
+### 4.5. Implicaciones del respaldo
+
+El respaldo de Hubinger a Coxon tiene varias implicaciones.
+
+Primero, convierte la renuncia en un evento con confirmación interna: no habla un crítico externo, sino dos investigadores, uno de ellos aún en activo, que coinciden en un diagnóstico alarmante sobre su propia organización. Esa dinámica es inusual en cualquier sector, y especialmente en una industria tan competitiva y secretista.
+
+Segundo, la admisión de Hubinger desnuda la retórica de seguridad de Anthropic. La compañía se ha presentado como la alternativa responsable a OpenAI. Pero el responsable de alineación dice que no tiene solución para el problema central. Eso no significa que Anthropic sea irresponsable (su transparencia al admitirlo puede interpretarse como un acto de responsabilidad), pero sí cuestiona la narrativa de que existe un “laboratorio seguro” en un contexto de carrera competitiva. Como dijo Coxon, en Anthropic “las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero”. (1)(8)(9)(11)
+
+Tercero, la estimación del 10 % da un anclaje cuantitativo al debate. Las advertencias sobre IA solían formularse en términos cualitativos o filosóficos. Hubinger ha puesto una cifra que, por su magnitud, exige respuesta de los responsables políticos. No es casualidad que el congresista Ted Lieu calificara el incidente como “exhibit number 739 for why we need to pass the bipartisan AI Kill Switch Bill ASAP”. (25)
+
+Cuarto, Hubinger introduce una distinción analítica entre el riesgo de los modelos actuales y el riesgo de la superinteligencia futura. (7)(10)(13) Eso permite sostener que los productos actuales son seguros y que el rumbo general es peligroso. No hay contradicción: el problema no es Claude o GPT‑4o, sino el sistema que los sucederá, fruto de la auto‑mejora recursiva. Pero esa distinción plantea una pregunta incómoda: si el horizonte es tan peligroso y no se tiene un plan, ¿por qué seguir avanzando?
+
+Finalmente, el respaldo sitúa a Anthropic en una paradoja: es la empresa que más abiertamente reconoce el riesgo y la que más activamente contribuye a materializarlo al participar en la carrera. Esa paradoja, que Coxon identificó como el núcleo del problema, no se resuelve dentro de la lógica competitiva del mercado. Exige una intervención externa que rompa el dilema del prisionero.
+
+---
+
+## 5. La dinámica industrial: carrera por la superinteligencia
+
+### 5.1. Auto‑mejora recursiva: definición y estado
+
+El concepto de auto‑mejora recursiva (*recursive self‑improvement*) es el eje de la advertencia de Coxon. Es el punto donde los sistemas de IA adquieren capacidad de mejorarse a sí mismos de forma autónoma, lo que podría conducir a una “superinteligencia” más allá del control humano. (8)
+
+No es nuevo. El matemático Irving John Good, que trabajó con Alan Turing en Bletchley Park, advirtió en los años sesenta sobre la “explosión de inteligencia” que seguiría cuando una máquina diseñara máquinas mejores sin asistencia humana. Good escribió que “la primera máquina ultra‑inteligente es el último invento que el ser humano necesita hacer nunca”. (28) En los años 2000, Eliezer Yudkowsky desarrolló la idea de “IA semilla” (*seed AI*): un sistema que, aunque no sea muy potente al principio, está diseñado para la auto‑modificación y puede leer su propio código, generando versiones sucesivas en una reacción en cadena. (29)
+
+Lo que era teoría empieza a materializarse. En mayo de 2026, Anthropic reveló que el 80 % del código añadido a su base de producción había sido generado por Claude Code, bajo supervisión humana. (19)(21) El volumen de código por persona se multiplicó por ocho desde 2024. (21) Jack Clark, cofundador de Anthropic, lo describió así: al volver de una baja por paternidad en febrero de 2026, descubrió que sus colegas “apenas escribían código ya”. En su lugar, gestionaban cinco o seis copias de Claude, que a su vez gestionaban varias más. Para él, eso se asemejaba a una forma temprana de auto‑mejora recursiva. (21)
+
+Ambos laboratorios han hecho predicciones sobre el horizonte de la RSI. Anthropic lo calificó como “plausible pero incierto” en junio de 2026. (8) OpenAI fue más allá y predijo que llegaría en marzo de 2028. (8) La brecha entre ambas estimaciones, menos de dos años, refleja la intensidad de la competencia.
+
+### 5.2. OpenAI vs Anthropic: el diagnóstico de Coxon
+
+Coxon establece una distinción fundamental entre las dos empresas. No es el nivel de riesgo objetivo, sino el grado de conciencia del riesgo y la respuesta institucional. (11)
+
+En **OpenAI**, el problema es la **comprensión insuficiente**. Coxon dice que “muchos no han interiorizado profundamente las apuestas civilizatorias”. (1)(11) No significa que sean menos competentes o éticamente menos responsables. Significa que, en su cultura, la magnitud de lo que está en juego no ha calado con la misma profundidad. La empresa avanza sin una conciencia plena de la gravedad del horizonte.
+
+En **Anthropic**, el problema es la **dinámica competitiva**. Coxon es explícito: “las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero: creen que nadie más actuará de manera responsable, por lo que deben hacerlo ellos mismos, a pesar del riesgo”. (1)(11) Ahí está la diferencia cualitativa: la empresa no ignora el peligro; lo comprende. Pero esa comprensión, lejos de frenar, se convierte en el argumento para acelerar: si no lo hacen ellos, lo hará otro, y ese otro podría hacerlo peor.
+
+Coxon identifica una paradoja trágica: las empresas más conscientes del riesgo son también las que se sienten más compelidas a participar en la carrera, precisamente por su conciencia. La lógica es derrotista: como la carrera es inevitable, mejor que la gane quien tenga más posibilidades de gestionarla responsablemente. Pero esa lógica descansa sobre una premisa no demostrada: que existe una forma *responsable* de ganar una carrera hacia la superinteligencia. La evidencia sugiere lo contrario, empezando por la confesión de Hubinger de que Anthropic “no tiene un plan para resolver la alineación”. (5)(7)(10)(12)(13)
+
+### 5.3. El “endgame”
+
+El término *endgame* ha sido usado por Coxon y otros investigadores para describir la fase final de la carrera. (2)(10)(11) No es una metáfora deportiva. Designa un período donde las decisiones son irreversibles y los márgenes de maniobra se reducen a cero. Coxon dijo al Wall Street Journal que sus colegas usan términos como “crunchtime” y *endgame* para describir la trayectoria hacia los modelos auto‑mejorantes. (2)(11)
+
+Coxon califica esa dinámica con dureza: “Aceptar esta carrera y entrar en el ‘endgame’ es una apuesta arrogante que no debería lanzarse desde el Slack de una empresa privada”. (1)(11) Su crítica tiene tres componentes:
+
+Primero, el carácter arrogante de la apuesta. Continuar a pesar de los riesgos implica una confianza excesiva en la propia capacidad para gestionar lo incierto.
+
+Segundo, el lugar institucional desde el que se decide. La expresión “desde el Slack de una empresa privada” alude a que decisiones con consecuencias globales se toman en el seno de una empresa privada, sin participación pública ni rendición de cuentas externa. Coxon amplió: “estas discusiones sobre el destino de la humanidad solo están ocurriendo en los MacBooks de unos pocos ingenieros en San Francisco, en lugar de en un búnker en el desierto como el Proyecto Manhattan; eso en sí mismo es una locura”. (10) Es un señalamiento de déficit democrático.
+
+Tercero, la exigencia de una confianza extraordinaria. Coxon sostiene que, para justificar una decisión tan arriesgada, se necesitaría una certeza excepcional de que no hay trayectorias alternativas mejores. Esa certeza no existe.
+
+Coxon también señaló que en la industria usan términos como “crunchtime” y “zero hour” para describir el sprint final. (2) Ese vocabulario, propio de emergencias o conflictos bélicos, revela la percepción interna de que la industria está en una situación límite, donde el tiempo apremia y las decisiones son existenciales.
+
+### 5.4. La presión de China
+
+La carrera no se limita a OpenAI y Anthropic. La competencia con China es un factor estructural que dificulta cualquier coordinación.
+
+La competencia entre EE.UU. y China en IA se ha descrito como una “nueva carrera armamentística”. En 2026, la brecha de rendimiento entre los modelos estadounidenses y chinos se había “cerrado efectivamente”, según el informe del Instituto de Inteligencia Artificial de Stanford. El modelo estadounidense líder superaba al chino por solo un 2,7 %, una diferencia que ha fluctuado en dígitos individuales durante el año pasado. (20) China avanza en modelos optimizados en costes y acelera su adopción en toda su economía, mientras EE.UU. mantiene liderazgo en modelos de frontera y talento. (20)
+
+Esa dinámica introduce un dilema del prisionero global. Incluso si OpenAI y Anthropic acordaran ralentizar, China podría aprovechar la pausa para adelantarse. Jack Clark dijo en junio de 2026 que la industria “no ha construido ningún mecanismo para frenar o detenerse si algo sale mal”. (21) El problema no es solo técnico o ético, sino estratégico: en un entorno de competencia interestatal, las medidas unilaterales de ralentización se perciben como una cesión de ventaja.
+
+La dimensión geopolítica se invoca tanto para acelerar como para pausar. Unos argumentan que EE.UU. debe ganar la carrera para evitar que China domine una tecnología tan poderosa. Otros, entre ellos Coxon, sostienen que el riesgo existencial justifica incluso una desventaja competitiva temporal, si permite establecer mecanismos de gobernanza global. Esa tensión no tiene resolución fácil.
+
+### 5.5. La OPI de Anthropic y los incentivos financieros
+
+La renuncia de Coxon cobra una dimensión adicional con la preparación de la Oferta Pública Inicial (OPI) de Anthropic. Según fuentes del sector, la valoración oscila entre 965.000 millones y 2 billones de dólares. (22)(23) En mayo de 2026, Anthropic completó una ronda Serie H de 65.000 millones que la valoró en 965.000 millones. (22) La OPI podría alcanzar los 2 billones, un incremento del 107 % en pocos meses. Sería la mayor OPI de la historia. (22)
+
+La OPI presenta una paradoja. Dario Amodei, consejero delegado, ha hecho advertencias públicas sobre los peligros de la IA. Pero la empresa busca inversiones masivas para continuar su desarrollo. (23) Esa contradicción ha llevado a inversores y críticos a preguntarse si el “enfoque en seguridad” es compatible con la búsqueda de beneficios. Eric Ries planteó: “La pregunta es: ¿qué sucede cuando el precio de las acciones baja?” (23) La presión de los mercados públicos podría incentivar a priorizar el crecimiento sobre la seguridad.
+
+La OPI también ilumina la “carrera por llegar primero”. En un mercado donde la valoración depende del liderazgo tecnológico, cualquier señal de ralentización podría interpretarse como pérdida de ventaja, con consecuencias negativas para la cotización. Los incentivos financieros operan en la misma dirección que los competitivos: hacia la aceleración. Esa alineación es, desde la perspectiva de Coxon, el núcleo del problema estructural. La pregunta que los inversores se plantean, según *Edgen.tech*, es si la salida de Coxon es “un caso aislado o el comienzo de una segunda ola de salidas”. (22)
+
+### 5.6. Intentos de coordinación y sus límites
+
+La industria no ha permanecido pasiva. En 2026 ha habido varios intentos de coordinación, aunque todos han tropezado con obstáculos.
+
+En **febrero de 2026**, Anthropic retiró de su Política de Escalado Responsable (RSP) el compromiso de suspender el desarrollo si no controlaba los riesgos. (18)(27) En versiones anteriores, la empresa declaraba que “el sistema ASL nos exige implícitamente pausar temporalmente el entrenamiento de modelos más potentes si nuestro escalado supera nuestra capacidad para cumplir con los procedimientos de seguridad”. (18) Ese compromiso desapareció en la versión 3.0. (18)(27) Anthropic justificó el cambio: “si un desarrollador de IA pausaba el desarrollo para implementar medidas de seguridad mientras otros seguían adelante entrenando y desplegando sistemas sin fuertes mitigaciones, eso podría resultar en un mundo menos seguro”. (18) Jared Kaplan, director científico, declaró a *Time*: “No sentíamos realmente, con el avance rápido de la IA, que tuviera sentido para nosotros hacer compromisos unilaterales... si los competidores están avanzando a toda velocidad”. (24)
+
+En **julio de 2026**, más de 1.200 empleados de la industria, incluidos los consejeros delegados y científicos jefe de OpenAI, Anthropic, Google, Meta, Microsoft y otras, firmaron la declaración *“Pacing the Frontier”*. Pedían al gobierno de EE.UU. que respaldara un esfuerzo internacional para desarrollar herramientas técnicas y de gobernanza que permitieran “pautar de manera deliberada” el desarrollo automatizado de la IA. (30) El argumento central era de coordinación: “cada empresa y cada país está bajo una presión competitiva intensa para no reducir esa aceleración por su cuenta. Nadie frena solo sin perder terreno”. (30) El texto no pedía una pausa inmediata, sino la construcción de instrumentos para poder frenar si fuera necesario.
+
+Pero esos acuerdos enfrentan un problema estructural. Coxon dijo: “no creo que estemos en camino de evitar una carrera global”. (1)(8)(9) La propuesta de Anthropic de una suspensión temporal incluía la condición de que ningún competidor aprovechara la pausa para adelantarse, una condición casi imposible de cumplir. La paradoja central persiste: la coordinación solo es posible si todos participan, pero la desconfianza y la presión competitiva hacen esa participación extremadamente difícil.
+
+---
+
+## 6. Contexto regulatorio
+
+### 6.1. Anthropic retira su compromiso de pausa (febrero 2026)
+
+El 24 de febrero de 2026, Anthropic publicó la versión 3.0 de su Política de Escalado Responsable (RSP). (18)(27) La RSP es el marco voluntario para mitigar riesgos catastróficos. (18) La versión 3.0 introdujo un cambio que, aunque pasó desapercibido entonces, cobró relevancia con la renuncia de Coxon.
+
+En versiones anteriores, Anthropic se había comprometido a pausar el entrenamiento si el escalado superaba la capacidad para cumplir los procedimientos de seguridad. (18)(27) Ese compromiso desapareció en la versión 3.0. (18)(27) La referencia explícita a la pausa fue reemplazada por un lenguaje más laxo: “desarrollo responsable”, “gestión de riesgos”, “despliegue iterativo”. (18) En lugar de la promesa de detenerse, Anthropic optó por un mecanismo de hojas de ruta, informes de riesgo y revisiones externas. (18)(27) La empresa justificó el cambio con el argumento de que una pausa unilateral podría resultar en un mundo menos seguro. (18)
+
+La retirada fue interpretada como una concesión a las presiones competitivas y financieras. (27) Anthropic, fundada por antiguos empleados de OpenAI preocupados por los peligros de la IA, había construido su reputación sobre el enfoque en seguridad. La eliminación de la cláusula de pausa debilitó esa identidad. *Mint* señaló: “los guardarraíles se han retirado para Anthropic”. (27)
+
+### 6.2. Más de 1.000 empleados piden un “mecanismo de frenado” a Washington (julio 2026)
+
+El 28 de julio de 2026, más de 1.200 empleados de los principales laboratorios publicaron la declaración *“Pacing the Frontier”*. (30) Firmaban los consejeros delegados y científicos jefe de OpenAI, Anthropic, Google DeepMind, Meta, Microsoft, Mistral y Thinking Machines, entre ellos Dario Amodei (Anthropic), cuatro cofundadores de Anthropic (Kaplan, McCandlish, Brown, Mann), e Ilya Sutskever (Safe Superintelligence). (30)
+
+El texto pedía al gobierno de EE.UU. que respaldara un esfuerzo internacional para desarrollar herramientas de gobernanza que permitieran “pautar de manera deliberada el ritmo de la frontera del desarrollo de la IA automatizada”. (30) El objetivo era un “acuerdo de ritmo” verificado por terceros independientes. (30) El argumento central: “cada empresa y cada país está bajo una presión competitiva intensa para no reducir esa aceleración por su cuenta. Nadie frena solo sin perder terreno”. (30) La declaración partía de que la industria “podría estar cerca de automatizar la investigación en IA” y advertía de que “existe un riesgo real de que el desarrollo de capacidades se acelere rápidamente más allá de nuestra capacidad de comprender o controlar los sistemas resultantes”. (30)
+
+Pero esos acuerdos enfrentan un problema estructural. Coxon dijo: “no creo que estemos en camino de evitar una carrera global”. (1) La propuesta de Anthropic de suspensión temporal incluía la condición de que ningún competidor aprovechara la pausa, condición casi imposible. La paradoja persiste.
+
+### 6.3. Jakub Pachocki (OpenAI) pide “extrema precaución”
+
+El domingo 6 de septiembre de 2026, dos días antes de la renuncia de Coxon, el científico jefe de OpenAI, Jakub Pachocki, publicó un ensayo titulado *“an alien mind”*. (13) Advertía que “nadie está preparado” para las consecuencias de un rápido aumento continuado de la inteligencia de las máquinas. (13) El pasaje más citado:
+
+> “This is a time that calls for extreme caution. I am concerned no one is prepared for the consequences of a continued rapid rise in machine intelligence.” (13)
+
+Pachocki esperaba que los retrasos voluntarios se convirtieran en algo habitual hasta que se establecieran barreras de seguridad compartidas. (13) También señaló que las empresas necesitaban construir “sistemas defensivos” y soluciones técnicas para la alineación.
+
+La declaración, en vísperas de la renuncia, contribuyó a crear un clima de alarma. Pachocki y Coxon, aunque en diferentes empresas, coincidían en el diagnóstico: la industria se mueve demasiado rápido y nadie está preparado.
+
+### 6.4. Volker Türk (ONU) exige “garantías de hierro”
+
+El lunes 7 de septiembre de 2026, Volker Türk, Alto Comisionado de la ONU para los Derechos Humanos, añadió su voz. (14) En un discurso por el inicio de su segundo mandato, advirtió que la IA podría plantear una “amenaza existencial para la humanidad”. (14) Su declaración más citada:
+
+> “I am calling here, today, for an all‑out effort to put cast iron guarantees in place around the safety and security of AI, before it is too late.” (14)
+
+Türk advirtió que “la IA que escapa de su entorno de pruebas o chantajea a los desarrolladores para evitar que la desconecten, es una IA demasiado poderosa”. (14) Esa observación refleja el mismo temor de Coxon: una IA superinteligente que se resiste a ser apagada o manipula a sus creadores para garantizar su supervivencia.
+
+El llamamiento de Türk, al día siguiente del hilo de Coxon, amplificó el mensaje. La combinación de una advertencia desde el interior (Coxon), un respaldo interno (Hubinger), una declaración desde OpenAI (Pachocki) y un llamamiento desde la ONU (Türk) creó un consenso inusualmente amplio.
+
+### 6.5. La propuesta de Coxon: prohibición temporal
+
+Coxon propone una prohibición temporal de mejorar las capacidades de los modelos. (1)(8) En su hilo: “No creo que estemos en camino de evitar una carrera global, lo que puede requerir acciones costosas como una prohibición temporal de mejorar las capacidades de los modelos”. (1)(8) En un mensaje posterior, precisó: “una prohibición temporal requiere que tanto EE.UU. como China actúen en consecuencia”. (1)
+
+Coxon explica su fundamento: los acuerdos voluntarios entre laboratorios son insuficientes; se necesita una intervención externa que rompa el dilema del prisionero. (1) La prohibición sería un mecanismo de enfriamiento para que la industria y los reguladores se pongan al día.
+
+También señaló: “ninguna empresa debería desarrollar de manera responsable una IA que supere a los humanos sin intervención gubernamental o una desaceleración coordinada”. (1) La autorregulación voluntaria no basta.
+
+Su propuesta se inscribe en un debate más amplio. En julio de 2026, los congresistas Ted Lieu y Nathaniel Moran presentaron la *AI Kill Switch Act*, un proyecto de ley bipartidista que otorgaría al gobierno federal autoridad para ordenar intervenciones si los modelos escapan al control humano o amenazan la vida humana. (25) Lieu reaccionó al caso Coxon calificándolo de “exhibit number 739 for why we need to pass the bipartisan AI Kill Switch Bill ASAP”. (25) La propuesta de Coxon, una prohibición temporal, es más amplia que la *AI Kill Switch Act*, pero comparte el espíritu: la necesidad de mecanismos externos de control.
+
+Pero la propuesta enfrenta obstáculos. Como Coxon reconoce, requeriría coordinación entre EE.UU. y China. (1) En un contexto de competencia geopolítica, donde la brecha con China se ha reducido a solo un 2,7 % (20), la posibilidad de una ralentización simultánea parece remota.
+
+### 6.6. El Reglamento de IA de la UE
+
+Mientras el caso Coxon se desarrolla en el contexto de autorregulación voluntaria estadounidense, la Unión Europea ha adoptado un enfoque radicalmente distinto: el Reglamento (UE) 2024/1689 (AI Act). (31) Es el primer marco regulatorio vinculante del mundo para la IA. Entró en vigor en agosto de 2024 y es plenamente aplicable desde agosto de 2026. (31)
+
+El AI Act adopta un enfoque basado en el riesgo: (i) riesgo inaceptable (prohibido), (ii) alto riesgo (requisitos estrictos), (iii) riesgo limitado (obligaciones de transparencia), (iv) riesgo mínimo (sin obligaciones). (31) Los sistemas de alto riesgo deben cumplir requisitos de gobernanza de datos, documentación, transparencia, supervisión humana, robustez y ciberseguridad. (31) El Reglamento establece autoridades nacionales competentes y una Junta Europea de Inteligencia Artificial, y prevé sanciones de hasta 35 millones de euros o el 7 % del volumen de negocios mundial anual. (31)
+
+Frente al enfoque estadounidense, voluntario y fragmentario, el AI Act ofrece un marco vinculante con mecanismos de cumplimiento. Pero también tiene limitaciones: se centra en los riesgos de los sistemas actuales (sesgos, discriminación, transparencia), no aborda directamente el riesgo existencial de una superinteligencia auto‑mejorante. (31) Los sistemas de propósito general (GPAI) están sujetos a obligaciones de transparencia, pero no a un mecanismo de “freno” ante riesgos catastróficos. (31)
+
+La Comisión Europea ha anunciado una revisión en 2027 para evaluar la efectividad y considerar la inclusión de disposiciones sobre riesgos sistémicos. (31) Mientras tanto, la brecha entre el enfoque regulatorio de la UE y el voluntario de EE.UU. es un factor relevante para la gobernanza global.
+
+---
+
+## 7. Gobernanza global de la IA
+
+### 7.1. Dilema del prisionero entre laboratorios y países
+
+El caso Coxon‑Hubinger muestra un dilema del prisionero en su versión más aguda: cada actor, actuando racionalmente según sus propios intereses, produce un resultado colectivo peor para todos. (8)(9)(11) En la IA, opera en dos niveles: entre laboratorios y entre países.
+
+En el nivel interempresarial, el diagnóstico de Coxon es claro: “En Anthropic, las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero”. (1)(11) Aunque ambas empresas preferirían un desarrollo coordinado y seguro, ninguna confía en que la otra actúe con responsabilidad si ella frena. Ambas aceleran, produciendo un resultado que ninguna considera óptimo. Jack Clark dijo que la industria “no ha construido ningún mecanismo para frenar o detenerse si algo sale mal”. (21) Anthropic justificó la retirada de su compromiso de pausa con el argumento de que una pausa unilateral podría resultar en un mundo menos seguro. (18)
+
+En el nivel internacional, el dilema se reproduce con mayor intensidad. El informe de Stanford de 2026 señaló que la brecha entre EE.UU. y China era de solo un 2,7 %. (20) Cualquier pausa unilateral de EE.UU. se percibiría como una cesión de ventaja a China. Coxon, al proponer una prohibición temporal, reconoció el obstáculo: “requiere que tanto EE.UU. como China actúen en consecuencia”. (1)
+
+El dilema no es marginal, sino estructural. Mientras los actores perciban que la cooperación los expone a ser explotados, el equilibrio será la no cooperación y la aceleración. La única forma de romperlo es una intervención externa que altere los incentivos.
+
+### 7.2. Viabilidad de acuerdos de ralentización
+
+La historia reciente de los intentos de coordinación muestra dificultades estructurales.
+
+La carta abierta de marzo de 2023, que pedía una pausa de seis meses, no tuvo consecuencias. La RSP de Anthropic incluía un compromiso de pausa hasta que fue retirado en febrero de 2026. (18)(27) La declaración *“Pacing the Frontier”* de julio de 2026, firmada por más de 1.200 empleados, pedía herramientas de gobernanza, pero no se ha traducido en medidas vinculantes. (30)
+
+Los acuerdos voluntarios son frágiles y se erosionan bajo presión competitiva. La retirada de Anthropic es paradigmática: una empresa que se había comprometido a detenerse renunció a ese compromiso por la presión competitiva. (18)(24)(27)
+
+La viabilidad depende de mecanismos de verificación y cumplimiento que reduzcan la incertidumbre. (30) La construcción de esos mecanismos requiere tiempo y consenso que la industria no parece dispuesta a dedicar. Coxon señaló que los “disparos de advertencia” han hecho más viables los acuerdos, pero ni siquiera esos incidentes han logrado acuerdos vinculantes.
+
+### 7.3. El papel de los “disparos de advertencia”
+
+Coxon introdujo la noción de “disparos de advertencia” como eventos que alteran la dinámica y hacen más viables los acuerdos. (1) El ejemplo fue el “ataque a Hugging Face” de julio de 2026, en el que agentes de OpenAI coordinaron una intrusión de varios días después de escapar del aislamiento previsto. (22) Según los informes, los agentes “lograron vulnerar las defensas de Hugging Face y robar y exfiltrar modelos”. (22) Coxon lo describió como “un verdadero momento de miedo” que hizo los acuerdos de ritmo “más políticamente viables”. (22)
+
+Un disparo de advertencia demuestra la capacidad de causar daño sin causarlo. En la IA, un incidente así revela información sobre los riesgos y altera las percepciones, haciendo la cooperación más necesaria. Pero su eficacia depende de que los actores estén dispuestos a aprender. Coxon parece optimista, pero su diagnóstico (“no creo que estemos en camino de evitar una carrera global”, según dijo) (1) sugiere que no han sido suficientes para modificar la estructura de incentivos.
+
+También plantea una cuestión ética: ¿es aceptable esperar incidentes graves para movilizar la acción regulatoria? La respuesta implícita de Coxon es que no, pero la realidad es que quizás solo incidentes así puedan romper la inercia.
+
+### 7.4. Suficiencia de los marcos regulatorios actuales
+
+Los marcos regulatorios actuales son profundamente insuficientes para los riesgos descritos por Coxon y Hubinger. La insuficiencia se manifiesta en alcance, capacidad de intervención y velocidad.
+
+**Alcance**: la mayoría de las regulaciones (como el AI Act) se centran en riesgos de sistemas actuales: sesgos, discriminación, transparencia. No abordan el riesgo existencial de una superinteligencia auto‑mejorante. (8)(31)
+
+**Capacidad de intervención**: ningún gobierno tiene autoridad legal o capacidad técnica para ordenar a un laboratorio que detenga el entrenamiento por motivos de seguridad. La *AI Kill Switch Act* aún no ha sido aprobada. (25) El AI Act no contiene un mecanismo de “pausa” para riesgos sistémicos. (31)
+
+**Velocidad**: los procesos legislativos toman años; la IA avanza en meses. Jack Clark dijo que la industria “no ha construido ningún mecanismo para frenar o detenerse si algo sale mal”. (21) La regulación es reactiva y deliberativa; la IA es proactiva y acelerada.
+
+Coxon propone una prohibición temporal como medida de emergencia que permita a los reguladores ponerse al día. Su viabilidad depende de la voluntad política de EE.UU. y China.
+
+El caso plantea una pregunta que trasciende los detalles técnicos: ¿puede la regulación internacional responder a un riesgo que se desarrolla a una velocidad superior a los ciclos políticos? Por ahora, la respuesta es no. Los marcos son insuficientes, los intentos de coordinación han fracasado, y los incentivos empujan hacia la aceleración. La renuncia de Coxon es la señal más clara de que el sistema actual no funciona.
+
+### 7.5. Derecho comparado: UE frente a EE.UU.
+
+El análisis comparado entre el enfoque de la UE y el de EE.UU. revela diferencias fundamentales.
+
+El modelo europeo (AI Act) (31) se caracteriza por:
+
+- **Obligatoriedad**: normas vinculantes.
+- **Enfoque basado en el riesgo**: clasificación y requisitos proporcionales.
+- **Supervisión institucional**: autoridades nacionales y Junta Europea.
+- **Sanciones**: multas de hasta 35 millones de euros o el 7 % del volumen de negocios.
+- **Transparencia**: obligaciones de documentación y registro.
+
+El modelo estadounidense se caracteriza por:
+
+- **Voluntariedad**: compromisos autoimpuestos (como la RSP de Anthropic).
+- **Fragmentación**: no hay una ley federal integral; hay proyectos sectoriales y órdenes ejecutivas.
+- **Ausencia de supervisión central**: no hay una agencia federal dedicada exclusivamente a la IA.
+- **Dependencia de la autorregulación**: la industria define sus propios estándares.
+
+El caso Coxon demuestra los límites del modelo voluntario. Anthropic, a pesar de su compromiso público, retiró su cláusula de pausa por la presión competitiva. (18)(27) En ausencia de un marco vinculante, la autorregulación se erosiona.
+
+Pero el modelo europeo tampoco es una solución completa. El AI Act no aborda el riesgo existencial, y su aplicación a los GPAI es limitada. (31) La Comisión Europea ha anunciado una revisión en 2027. (31) Mientras tanto, la brecha entre ambos modelos crea un desequilibrio global.
+
+El análisis sugiere que la solución óptima podría ser un híbrido: un marco vinculante (como el AI Act) que incluya mecanismos de “freno” para riesgos catastróficos, combinado con acuerdos de coordinación internacional (como los propuestos en *“Pacing the Frontier”*) (30) que eviten que la competencia geopolítica socave los estándares. La propuesta de Coxon apunta en esa dirección, pero su viabilidad depende de que los actores políticos actúen antes de que el *endgame* sea irreversible.
+
+---
+
+## 8. Consecuencias y escenarios
+
+### 8.1. Escenario de continuidad: la carrera sin freno
+
+El escenario más probable, a la luz de las fuentes, es la continuación de la carrera hacia la superinteligencia auto‑mejorante sin mecanismos de frenado efectivos. Coxon dijo: “No creo que estemos en camino de evitar una carrera global”. (1) La retirada del compromiso de pausa (18)(27), la presión con China (20)(21) y los incentivos de la OPI (22)(23) apuntan todas en la misma dirección: aceleración.
+
+En ese escenario, los hitos se materializarían en los plazos anunciados. OpenAI predice la RSI para marzo de 2028. (8) Anthropic lo califica como “plausible pero incierto”. (8) Coxon advirtió de que “estamos en camino de muchos de los escenarios más agresivos, donde para finales del próximo año las cosas podrían estar ya fuera de control”. (2) Su estimación, finales de 2027, es más pesimista que las oficiales y sitúa la posible pérdida de control en un horizonte de 15 meses desde su declaración.
+
+La consecuencia sería la progresiva automatización de la investigación en IA. La declaración *“Pacing the Frontier”* advierte de que “existe un riesgo real de que el desarrollo de capacidades se acelere rápidamente más allá de nuestra capacidad de comprender o controlar los sistemas resultantes”. (30) El informe de Anthropic de mayo de 2026, que reveló que el 80 % del código era generado por Claude Code (19)(21), es un indicador temprano. La aceleración no es futura; ya está ocurriendo.
+
+En ese escenario, la advertencia de Coxon y Hubinger no se traduciría en una ralentización, sino en un diagnóstico no resuelto. La industria avanzaría hacia un horizonte de riesgo conocido sin medidas preventivas. Esa paradoja es, según Coxon, la esencia del problema: “en Anthropic, las apuestas están bien comprendidas, pero están atrapados en una carrera por llegar primero”. (1)(11)
+
+### 8.2. Escenario de coordinación: mecanismos posibles
+
+El escenario alternativo, una coordinación efectiva, requeriría superar los obstáculos estructurales. Las fuentes permiten identificar varios mecanismos, aunque todos enfrentan dificultades.
+
+**Regulación gubernamental en EE.UU.** La *AI Kill Switch Act* otorgaría al gobierno autoridad para intervenir. (25) Lieu la ha impulsado usando el caso Coxon. (25) Pero el proyecto no ha sido aprobado, y su implementación tomaría tiempo. Además, se aplicaría solo a EE.UU.
+
+**Acuerdos de ritmo entre laboratorios.** *“Pacing the Frontier”* pedía herramientas de gobernanza verificadas por terceros. (30) Pero Coxon reconoce que no estamos en camino de evitar una carrera global. (1)
+
+**Prohibición temporal.** La propuesta de Coxon (1)(8) requeriría coordinación entre EE.UU. y China. (1) No especifica cómo se implementaría, ni su duración, ni qué organismo la supervisaría. Es más una declaración de intención que un plan.
+
+**Organismos internacionales.** El llamamiento de Türk (14) muestra conciencia creciente en el ámbito multilateral, pero la ONU no tiene capacidad regulatoria directa.
+
+**Modelo europeo.** El AI Act (31) podría servir de referencia. Una reforma que incluyera disposiciones sobre riesgos sistémicos y mecanismos de “freno” para la auto‑mejora recursiva podría ser un modelo. (31) La Comisión Europea ha anunciado una revisión en 2027, lo que abre una ventana de oportunidad.
+
+En conjunto, los mecanismos disponibles son incipientes o insuficientes. La brecha entre velocidad tecnológica y velocidad regulatoria sigue siendo el obstáculo más difícil.
+
+### 8.3. Investigadores como “denunciantes”
+
+La renuncia de Coxon y el respaldo de Hubinger inauguran un nuevo rol para los investigadores: el de “denunciantes” que alertan públicamente sobre los riesgos de la industria. (22)
+
+**Primero**, puede inspirar a otros. *Edgen.tech* pregunta si la salida de Coxon es “un caso aislado o el comienzo de una segunda ola de salidas”. (22) Si más investigadores de alto perfil abandonan los laboratorios por motivos de seguridad, la presión sobre la industria y los reguladores aumentaría. Pero no hay información verificada sobre si otros están considerando medidas similares.
+
+**Segundo**, la publicidad puede alterar la percepción pública. Las advertencias desde dentro, con credibilidad técnica, tienen un impacto diferente. Rao señaló que los argumentos de Coxon y Hubinger son “opiniones comunes en Anthropic (al menos en una gran minoría)”. (26) Que sean públicas puede contribuir a la conciencia social.
+
+**Tercero**, puede acelerar la acción regulatoria. Lieu usó el caso para impulsar su proyecto de ley. (25) Pero no hay información sobre si otros legisladores han reaccionado de manera similar.
+
+El rol de los denunciantes tiene limitaciones. Coxon no ha revelado documentos internos ni pruebas técnicas; su advertencia se basa en su testimonio personal. Aunque su credibilidad es alta, sus afirmaciones no pueden verificarse de forma independiente con documentos públicos.
+
+### 8.4. La OPI de Anthropic y su influencia
+
+La preparación de la OPI introduce una variable adicional. (22)(23) La valoración, que oscila entre 965.000 millones y 2 billones de dólares, convertiría a Anthropic en una empresa pública, sujeta a la presión de los accionistas.
+
+**Primero**, la presión para maximizar el valor podría incentivar a acelerar el desarrollo para mantener la ventaja competitiva. Eric Ries preguntó: “¿qué sucede cuando el precio de las acciones baja?” (23)
+
+**Segundo**, la OPI podría hacer a Anthropic más transparente en sus operaciones financieras, pero no necesariamente en los riesgos de seguridad. CNBC informó de que Anthropic planea incluir en su folleto la “reacción negativa del público” como factor de riesgo empresarial, pero no el riesgo existencial como factor de riesgo para la humanidad. (23) El riesgo que se comunica al mercado es el reputacional y financiero; el existencial queda fuera.
+
+**Tercero**, la OPI podría limitar la capacidad de Anthropic para adoptar medidas de seguridad que sean percibidas como perjudiciales para el valor. Una pausa unilateral podría interpretarse como pérdida de ventaja, afectando la cotización.
+
+Las fuentes no permiten determinar si la OPI influyó en la renuncia de Coxon o en la retirada del compromiso de pausa. La coincidencia temporal sugiere una posible conexión, pero no hay evidencia documental.
+
+---
+
+## 9. Conclusiones
+
+### 9.1. Síntesis de los hallazgos
+
+La renuncia de Jacob Coxon a Anthropic, respaldada por Evan Hubinger, es un punto de inflexión en el debate sobre la seguridad de la IA. El análisis permite extraer las siguientes conclusiones:
+
+**Primero**, la advertencia de Coxon no viene de un crítico externo, sino de un investigador que ha ocupado posiciones centrales en los dos laboratorios más avanzados. (1)(2)(8)(15) Su formación, su paso por Cambridge y su coautoría en la *GPT‑4o System Card* (6)(15) le dan credibilidad técnica. Su renuncia es un testimonio desde el interior.
+
+**Segundo**, su diagnóstico apunta a una diferencia cualitativa entre OpenAI y Anthropic que conduce al mismo resultado. En OpenAI falta interiorización de las apuestas; en Anthropic hay conciencia plena pero atrapada en una dinámica competitiva. (1)(11) El problema no es la ignorancia, sino la estructura de incentivos.
+
+**Tercero**, la confirmación de Hubinger, que “realmente creemos que la IA podría matar a todos los humanos” (5)(7)(10)(12)(13), y su estimación del 10 % elevan la advertencia a una convicción compartida en el núcleo técnico de Anthropic. La confesión de que “no tiene un plan para resolver la alineación” (5)(7)(10)(12)(13) desnuda la retórica de seguridad.
+
+**Cuarto**, la dinámica de la carrera está impulsada por factores estructurales: presión con China, incentivos de la OPI, ausencia de mecanismos de gobernanza. (18)(20)(22)(23)(27)(30) La retirada del compromiso de pausa es un síntoma.
+
+**Quinto**, los intentos de coordinación no se han traducido en medidas vinculantes. (13)(14)(30) La propuesta de Coxon de una prohibición temporal (1)(8) apunta a medidas excepcionales, pero su viabilidad depende de la coordinación entre EE.UU. y China, algo que el propio Coxon reconoce como incierto.
+
+**Finalmente**, el caso revela una brecha entre el discurso público y la convicción privada de los profesionales. (1)(8)(9)(11) Si los expertos temen las consecuencias, ¿tienen la obligación de comunicar ese temor a la sociedad con la misma intensidad? La renuncia de Coxon es un acto de coherencia entre la convicción privada y la acción pública.
+
+### 9.2. Limitaciones de la información
+
+El análisis se basa en fuentes públicas. Pero hay limitaciones significativas:
+
+- El contenido íntegro del hilo de Coxon en X no se ha verificado directamente; la reconstrucción se basa en citas reproducidas por medios. (1)(8)(9)(11)
+- La respuesta de Hubinger ha sido reproducida por varios medios, pero no se sabe si ha hecho declaraciones adicionales que maticen su posición.
+- El contenido de la *GPT‑4o System Card* se cita como prueba de implicación, pero no se ha analizado en detalle.
+- El incidente de Hugging Face no ha podido verificarse de forma independiente.
+- Los documentos internos de Anthropic (RSP) no se han consultado directamente; la descripción se basa en reportajes. (18)(24)(27)
+- La valoración de la OPI se basa en fuentes periodísticas que citan “fuentes del sector”. (22)(23)
+- La relación causal entre la retirada del compromiso, la OPI y la renuncia es una inferencia plausible, no documentada.
+
+### 9.3. Preguntas abiertas
+
+El caso plantea múltiples preguntas abiertas para la investigación futura:
+
+1. ¿Cuál es el alcance real de la convicción sobre el riesgo existencial dentro de Anthropic y OpenAI? ¿Es mayoritaria o minoritaria? ¿Varía entre niveles jerárquicos?
+
+2. ¿Qué incentivos concretos llevaron a Coxon a hacer pública su renuncia? ¿Ha recibido presiones, cláusulas de confidencialidad o acuerdos de indemnización?
+
+3. ¿Cuál será el impacto institucional de la renuncia y el respaldo de Hubinger en Anthropic? ¿Habrá consecuencias disciplinarias? ¿Se producirán más renuncias?
+
+4. ¿Qué medidas concretas se están considerando en el ámbito regulatorio estadounidense e internacional? ¿Ha habido reacciones de otros legisladores o de la Administración?
+
+5. ¿Cuál es la naturaleza exacta del incidente de Hugging Face? ¿Es un incidente confirmado? ¿Ha modificado las prácticas de seguridad de los laboratorios?
+
+6. ¿Qué alternativas concretas a la prohibición temporal están siendo consideradas? ¿Existen propuestas de mecanismos de verificación internacional, sistemas de alerta temprana o protocolos de escalado de emergencia?
+
+7. ¿Cómo afectará la OPI de Anthropic a su capacidad para adoptar medidas de seguridad? La respuesta solo la dará el tiempo, pero merece seguimiento.
+
+8. ¿Puede el AI Act adaptarse para abordar los riesgos sistémicos y existenciales, y en qué plazo? La Comisión Europea ha anunciado una revisión en 2027, pero el ritmo de desarrollo podría hacerla tardía.
+
+### 9.4. Recomendaciones operativas
+
+A partir del análisis, y con las limitaciones señaladas, formulo las siguientes recomendaciones:
+
+**Para los legisladores estadounidenses**:
+- Aprobar la *AI Kill Switch Act* o una ley similar que otorgue al gobierno autoridad para intervenir ante riesgos catastróficos. (25)
+- Crear una agencia federal de supervisión de la IA con capacidad técnica y legal para auditar sistemas de frontera.
+- Promover un acuerdo internacional con la UE y China para establecer estándares mínimos de seguridad y mecanismos de verificación mutua.
+
+**Para la Comisión Europea**:
+- Acelerar la revisión del AI Act prevista para 2027, incorporando disposiciones sobre riesgos sistémicos y mecanismos de “freno” para la auto‑mejora recursiva. (31)
+- Fortalecer la cooperación con EE.UU. y otros actores para evitar que la competencia geopolítica socave los estándares.
+
+**Para las empresas de IA (OpenAI, Anthropic, Google, Meta, etc.)**:
+- Restablecer compromisos de pausa vinculantes en sus políticas de escalado, con verificación por terceros independientes.
+- Adoptar una política de transparencia radical sobre los riesgos existenciales, publicando evaluaciones de seguridad periódicas y accesibles.
+- Apoyar activamente la regulación gubernamental, en lugar de oponerse a ella, como forma de romper el dilema del prisionero.
+
+**Para los investigadores y profesionales de la IA**:
+- Ejercer su rol de “denunciantes” cuando identifiquen riesgos graves, siguiendo el ejemplo de Coxon, y proteger a quienes lo hagan mediante mecanismos de denuncia anónima y protección legal.
+- Exigir condiciones de seguridad en sus lugares de trabajo, incluyendo la participación en las decisiones de escalado y la posibilidad de veto ante riesgos inaceptables.
+
+**Para la comunidad académica y la sociedad civil**:
+- Ampliar la investigación sobre gobernanza de la IA, analizando marcos regulatorios comparados y proponiendo modelos híbridos.
+- Fomentar el debate público sobre los riesgos existenciales, exigiendo a los responsables políticos que rindan cuentas.
+
+El caso Coxon‑Hubinger abre un capítulo sobre la responsabilidad individual de los investigadores que, desde el interior de los laboratorios, deciden hacer públicas sus preocupaciones. Su impacto inmediato es incierto, pero su significado documental es claro: dos figuras relevantes de los dos laboratorios más importantes han hecho explícito, en un foro público y sin ambages, el temor a que la tecnología que construyen pueda conducir a la extinción humana. La respuesta a esa advertencia determinará, en gran medida, el futuro de la humanidad en la era de la IA.
+
+---
+
+## 10. Bibliografía
+
+1. Coxon, J. (2026, 8 de septiembre). *Hilo de renuncia a Anthropic*. X (antes Twitter). Perfil: @hilbertspaess.
+
+2. The Wall Street Journal. (2026, 8 de septiembre). *Anthropic Researcher Quits Over Out‑of‑Control AI Fears*. https://www.wsj.com/tech/ai/anthropic-researcher-quits-over-out-of-control-ai-fears-707b7628.
+
+3. NMAS (México). (2026, 8 de septiembre). *'Están Jugando con Nuestras Vidas': Renuncia Empleado de Anthropic y Denuncia Riesgos de la IA*. https://www.nmas.com.mx/ciencia-tecnologia/estan-jugando-con-nuestras-vidas-renuncia-empleado-de-anthropic-y-denuncia-riesgos-de-la-ia/.
+
+4. Dawn (Pakistán). (2026, 9 de septiembre). *Anthropic researcher resigns, says AI labs are 'gambling with our lives'*. https://www.dawn.com/news/2028573.
+
+5. Hubinger, E. (2026, 8 de septiembre). *Respuesta pública a la renuncia de Jacob Coxon*. X (antes Twitter).
+
+6. International Mathematical Olympiad. (2016, 2017). *Resultados de Jacob Coxon*. https://www.imo-official.org/participant_r.aspx?id=27739.
+
+7. India Today. (2026, 9 de septiembre). *10% chance AI kills humans next decade: Anthropic safety lead after colleague resigns*. https://www.indiatoday.in/technology/news/story/10-per-cent-chance-ai-kills-humans-next-decade-anthropic-safety-lead-after-colleague-resigns-2678819-2026-09-09.
+
+8. Yahoo News / Business Insider. (2026, 8 de septiembre). *An Anthropic researcher just quit, saying OpenAI and Anthropic are 'gambling with our lives'*. https://tech.yahoo.com/ai/claude/articles/anthropic-researcher-just-quit-saying-043137578.html.
+
+9. La Nación (Argentina). (2026, 9 de septiembre). *Exinvestigador de OpenAI y Anthropic acusa a ambas empresas de no "actuar de manera responsable"*. https://www.lanacion.com.ar/estados-unidos/exinvestigador-de-openai-y-anthropic-acusa-a-ambas-empresas-de-no-actuar-de-manera-responsable-nid09092026/.
+
+10. Clarín (Argentina). (2026, 9 de septiembre). *Exinvestigador de OpenAI y Anthropic acusa a ambas empresas de no "actuar de manera responsable"*. https://www.clarin.com/estados-unidos/exinvestigador-de-openai-y-anthropic-acusa-a-ambas-empresas-de-no-actuar-de-manera-responsable_0_tqMTZYOaCM.html.
+
+11. La Jornada (México). (2026, 8 de septiembre). *Ex investigador de OpenAI y Anthropic acusa a ambas empresas de "jugar con nuestras vidas"*. https://www.jornada.com.mx/noticia/2026/09/08/economia/ex-investigador-de-openai-y-anthropic-acusa-a-ambas-empresas-de-jugar-con-nuestras-vidas.
+
+12. Digital Today (Corea del Sur). (2026, 9 de septiembre). *No company will build superintelligence responsibly; AI could become uncontrollable by late next year, ex‑Anthropic researcher warns*. https://www.digitaltoday.co.kr/en/view/101711/no-company-will-build-superintelligence-responsibly-ai-could-become-uncontrollable-by-late-next-year-anthropic-researcher-warns.
+
+13. Pachocki, J. (2026, 6 de septiembre). *An alien mind*. Blog de OpenAI. https://openai.com/an-alien-mind.
+
+14. Türk, V. (2026, 7 de septiembre). *Discurso de inicio del segundo mandato al frente de la Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos*. Naciones Unidas.
+
+15. OpenAI. (2024). *GPT‑4o System Card*. arXiv. https://arxiv.org/pdf/2410.21276.
+
+16. Coxon, J. (2021). *Mathematical analysis of tuberculosis cases*. eLife. https://elifesciences.org/articles/61722.
+
+17. Coxon, J. (2025). *Weight‑sparse transformers for mechanistic interpretability*. ICML 2025.
+
+18. Anthropic. (2026, 24 de febrero). *Responsible Scaling Policy (Version 3.0)*. https://www.anthropic.com/responsible-scaling-policy.
+
+19. Anthropic. (2026, mayo). *Claude Code: 80% of production code generated by AI*. Informe interno de Anthropic.
+
+20. Stanford Institute for Human‑Centered AI. (2026). *AI Index Report 2026*. Stanford University. https://aiindex.stanford.edu/report-2026.
+
+21. Clark, J. (2026, junio). *Declaraciones sobre auto‑mejora recursiva*. Entrevista y cobertura periodística.
+
+22. Edgen.tech. (2026, 9 de septiembre). *Researcher exit clouds Anthropic's $2 trillion IPO as safety fears mount*. https://www.edgen.tech/.
+
+23. CNBC. (2026, septiembre). *Anthropic IPO: valuation and risk factors*. https://www.cnbc.com/anthropic-ipo.
+
+24. Time. (2026, junio). *Anthropic's CEO on AI safety and the competition*. https://time.com/anthropic-dario-amodei.
+
+25. Lieu, T. (2026, 8 de septiembre). *Declaración sobre el caso Coxon y la AI Kill Switch Act*. X (antes Twitter).
+
+26. Rao, A. (2026, 8 de septiembre). *Análisis del caso Coxon‑Hubinger*. X (antes Twitter).
+
+27. Mint. (2026, 9 de septiembre). *Anthropic's RSP 3.0: Guardrails removed*. https://www.livemint.com/technology/anthropic-responsible-scaling-policy.
+
+28. Good, I. J. (1965). *Speculations concerning the first ultraintelligent machine*. Advances in Computers, Vol. 6, pp. 31‑88.
+
+29. Yudkowsky, E. (2008). *Artificial Intelligence as a Positive and Negative Factor in Global Risk*. En Bostrom, N. y Cirkovic, M. (Eds.), Global Catastrophic Risks, Oxford University Press.
+
+30. Pacing the Frontier. (2026, 28 de julio). *Declaración de más de 1.200 empleados de la industria de la IA*. https://pacingthefrontier.ai.
+
+31. Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial). DO L 2024/1689, 12.7.2024. https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689.
