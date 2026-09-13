@@ -1,0 +1,163 @@
+---
+title: "La automejora recursiva ya alarma a los laboratorios de IA"
+description: "Renuncias, alarmas internas y datos de Anthropic muestran cómo se reduce el margen de supervisión humana ante la automejora recursiva de la IA."
+date: "2026-09-14"
+tags: ["automejora recursiva", "gobernanza IA", "Anthropic", "alineamiento IA", "IA de frontera"]
+section: "etica-ia"
+category: "etica-ia"
+author: "Ricardo Scarpa"
+slug: "automejora-recursiva-alarma-laboratorios-ia"
+readingTime: 23
+image: "/images/etica-ia/automejora-recursiva-alarma-laboratorios-ia/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Durante dos décadas, el desarrollo de la inteligencia artificial siguió un guion conocido: personas que diseñaban arquitecturas, elegían datos y evaluaban resultados. Desde 2025 ese guion cambia. Los propios modelos ya generan código de producción, ejecutan experimentos y, en algunos laboratorios, proponen mejoras sobre el proceso que los entrena. Ese desplazamiento tiene un nombre técnico, automejora recursiva, y este análisis se propone separar lo que ya es hecho comprobado de lo que sigue siendo proyección o alarma subjetiva de quienes trabajan dentro de los laboratorios.
+
+El primer dato duro que aporta el artículo es interno de Anthropic: más del 80% del código que hoy se integra en sus sistemas lo escribe la propia IA, frente a porcentajes muy bajos antes del lanzamiento de Claude Code. Otros laboratorios reportan fenómenos parecidos, aunque con menos detalle público. El experimento más citado en la comunidad técnica, el sistema AIDE² de Weco AI, demuestra que un agente puede mejorar de forma autónoma su propio entorno de búsqueda de algoritmos y hiperparámetros hasta superar configuraciones diseñadas a mano durante dos años. El propio equipo de Weco es explícito en su cautela: ese resultado alcanza el primer peldaño de una escala de cuatro niveles, no el segundo, el que llamarían "ignición", donde un sistema mejorado se convierte además en mejor mejorador que su predecesor.
+
+Ese matiz importa porque marca el centro de gravedad del artículo: la distancia entre automatizar tareas de ingeniería, que ya ocurre, y cerrar un bucle de automejora que se sostenga y acelere solo, que no ha ocurrido todavía. Un estudio multiinstitucional liderado desde Princeton, con metodología de "evaluación en la sombra" sobre preguntas de investigación inéditas, confirma esa distancia: los agentes actuales manejan bien la parte de ingeniería del trabajo científico, pero fallan sistemáticamente en el juicio y la creatividad que exige la investigación abierta, la que decide qué pregunta merece hacerse y cuándo abandonar una hipótesis.
+
+Frente a esa evidencia técnica, contenida y llena de matices, el artículo coloca las declaraciones de quienes están dentro. Una encuesta a 25 investigadores de laboratorios de frontera y de la academia encontró que 20 de ellos señalan la automatización de la investigación en IA como uno de los riesgos más urgentes del campo, aunque el propio estudio advierte que su muestra no es representativa del conjunto de la profesión. La renuncia pública de un investigador de Anthropic en septiembre de 2026, alegando que los laboratorios "apuestan con nuestras vidas", y la salida de un investigador de Google DeepMind meses antes para fundar una organización dedicada a la supervisión escalable, añaden al debate técnico una capa de alarma que ya no viene de fuera de la industria, sino de dentro de ella.
+
+El análisis concluye con una distinción que conviene retener: la aceleración de la automatización de tareas de ingeniería es un hecho observado; el cierre del bucle de automejora recursiva sigue siendo objeto de estimación, no de observación directa. Esa distinción no resta urgencia al debate de gobernanza que el artículo plantea, sobre qué mecanismos de supervisión, transparencia y coordinación entre laboratorios deberían existir antes de que la distancia entre ambos escenarios se reduzca del todo.
+
+---
+
+# La automejora recursiva como umbral de pérdida de control: alarmas internas, renuncias y el dilema de gobernanza en los laboratorios de inteligencia artificial de frontera (2025-2026)
+
+**Subtítulo** 
+Análisis técnico de las declaraciones de investigadores, datos internos de Anthropic, escenarios de proyección y las limitaciones actuales de la alineación ante el cierre progresivo del bucle de desarrollo autónomo
+
+## 1. Introducción: el desplazamiento del control humano en el ciclo de desarrollo de modelos de frontera
+
+Durante dos décadas los investigadores humanos diseñaron arquitecturas, seleccionaron datos, fijaron objetivos de entrenamiento y evaluaron resultados. A partir de 2025 ese reparto cambió. Los modelos intervienen ya en la generación de código de producción, en la ejecución de experimentos y, en algunos casos, en la propuesta de mejoras sobre el propio proceso de desarrollo (1)(2).
+
+Este cambio no cierra todavía un bucle de automejora plena. Dentro de los laboratorios crece la percepción de que el margen de supervisión humana se reduce. Investigadores que entrenan y alinean modelos de frontera afirman que la automatización del ciclo de investigación avanza más rápido que las capacidades de control y alineación (3)(4). El problema no se limita a una hipotética explosión de inteligencia. El problema es la pérdida de visibilidad y de capacidad de intervención sobre las decisiones que definen la siguiente generación de sistemas.
+
+En 2026 coincidieron varios hechos: avances en capacidades matemáticas y de programación, incidentes en los que agentes superaron contenciones, datos internos que miden la automatización del código de producción y renuncias motivadas por riesgos existenciales (5). Lo que antes se trataba como escenario lejano pasó a ser discusión operativa dentro de los equipos técnicos.
+
+Este análisis examina el concepto de automejora recursiva, la evidencia empírica disponible hasta septiembre de 2026, las declaraciones de investigadores de primera línea y las implicaciones técnicas y de gobernanza. Distingue hechos documentados, interpretaciones técnicas y proyecciones sujetas a incertidumbre.
+
+## 2. Concepto técnico de automejora recursiva (RSI): definición, gradientes y umbrales
+
+La automejora recursiva (*recursive self-improvement*, RSI) describe un proceso en el que un sistema modifica su propio diseño, arquitectura, algoritmos de entrenamiento o procedimientos de evaluación y genera un sucesor con capacidades superiores. Ese sucesor puede repetir el proceso. La diferencia con la simple automatización de tareas radica en el bucle de realimentación: las mejoras se aplican al mecanismo que genera las mejoras (1).
+
+La literatura técnica distingue gradientes. En el nivel más bajo aparece el refinamiento acotado (*bounded self-refinement*): el sistema optimiza hiperparámetros, *prompts* o subrutinas bajo supervisión humana estrecha y con objetivos fijados desde fuera. En un nivel intermedio operan bucles de investigación semi-autónoma. Enjambres de agentes generan hipótesis, ejecutan experimentos y seleccionan candidatos, pero los humanos mantienen la dirección estratégica y la validación final. El umbral superior sería un sistema capaz de diseñar, entrenar y desplegar de forma autónoma un sucesor más capaz, sin intervención humana significativa en las decisiones críticas (6).
+
+Anthropic describió esta progresión en junio de 2026. La empresa ya delega una proporción creciente del ciclo de desarrollo a sus modelos, pero todavía no ha alcanzado un sistema que construya de forma autónoma a su sucesor (2). El documento separa dos fenómenos: la aceleración del trabajo de ingeniería (medida en líneas de código fusionadas) y la capacidad de ejercer juicio de investigación abierta (decidir qué problemas merecen investigarse). La ejecución de tareas de ingeniería avanza con rapidez. La fijación de la dirección de investigación sigue siendo un cuello de botella humano (2)(7).
+
+Desde el punto de vista de la seguridad, la RSI amplifica cualquier desviación de alineación. Un sistema que mejora sus propias capacidades puede mejorar también su capacidad para eludir controles, optimizar objetivos mal especificados o desarrollar estrategias de engaño. La literatura de alineación indica que, una vez cruzado cierto umbral de auto-modificación, los métodos de supervisión que funcionan en regímenes de menor capacidad se degradan de forma no lineal.
+
+Ningún laboratorio ha presentado evidencia pública de un bucle de RSI completamente cerrado. Los sistemas actuales automatizan porciones crecientes del ciclo, pero la decisión de desplegar un nuevo modelo, la definición de los objetivos de entrenamiento y la evaluación de seguridad siguen dependiendo de equipos humanos. La pregunta abierta es cuánto margen temporal existe entre el estado actual y un posible cierre del bucle, y si los mecanismos de gobernanza y alineación escalarán al mismo ritmo.
+
+## 3. Evidencia empírica reciente: datos internos de Anthropic y avances experimentales
+
+Los datos más concretos sobre automatización del ciclo de desarrollo proceden del documento que Anthropic publicó en junio de 2026. Claude escribe más del 80 % del código que se fusiona en la base de código de producción. Antes del lanzamiento de Claude Code a principios de 2025 esa cifra se situaba en porcentajes de un solo dígito. Los ingenieros de Anthropic fusionan aproximadamente ocho veces más código por trimestre que en el periodo 2021-2025 (2). Estos indicadores no demuestran un bucle de automejora cerrada. Sí cuantifican una transferencia significativa de trabajo de ingeniería desde los equipos humanos hacia los modelos.
+
+Otros laboratorios reportan fenómenos parecidos, aunque con menos detalle público. OpenAI ha indicado que modelos recientes contribuyeron al post-entrenamiento de sistemas más pequeños y redujeron semanas de trabajo humano (7). Experimentos independientes, como el sistema AIDE² de Weco AI, muestran que un agente puede mejorar de forma autónoma el entorno de búsqueda de hiperparámetros y algoritmos de optimización y alcanzar configuraciones superiores a las diseñadas manualmente (8). Estos resultados permanecen en el régimen de refinamiento acotado: el sistema opera dentro de un espacio de búsqueda definido por humanos y no redefine sus objetivos de alto nivel.
+
+Un estudio multiinstitucional liderado por investigadores de Princeton y publicado en agosto de 2026 ofrece un contrapeso. Los investigadores evaluaron la capacidad de agentes de IA para realizar investigación abierta en aprendizaje automático: formular preguntas originales, diseñar experimentos y producir resultados publicables. Los agentes resolvieron con competencia las tareas de ingeniería (revisión de literatura, ejecución de cientos de experimentos, compilación de resultados). Fallaron de forma clara en el juicio científico y en la creatividad necesarios para generar contribuciones originales de nivel de conferencia de primer nivel (7). La ejecución de componentes del ciclo se automatiza con rapidez. La fijación de la dirección de investigación y la evaluación de la calidad científica siguen siendo cuellos de botella humanos.
+
+La evidencia empírica disponible hasta septiembre de 2026 muestra una aceleración real de la automatización de tareas de ingeniería y experimentación. No muestra el cierre del bucle de automejora recursiva. La distancia entre el estado actual y un sistema capaz de diseñar y validar de forma autónoma a su propio sucesor sigue siendo objeto de estimación, no de observación directa. Los datos de Anthropic y los experimentos como AIDE² indican que el margen de intervención humana exclusiva se redujo de forma apreciable en un intervalo temporal corto (2)(8).
+
+## 4. Renuncias y declaraciones públicas de investigadores de frontera (septiembre 2026)
+
+En septiembre de 2026 varias declaraciones y salidas hicieron públicas preocupaciones que hasta entonces circulaban de forma restringida dentro de los laboratorios. Jacob Coxon, investigador que había trabajado en preentrenamiento en OpenAI y en Anthropic, anunció su renuncia. Afirmó que ninguna de las dos empresas actuaba de forma responsable y que ambas “corren directamente hacia una superinteligencia que se mejora a sí misma y juegan con nuestras vidas” (3)(5). Según Coxon, dentro de los equipos se usaban con frecuencia expresiones como “crunch time” y “endgame” (5).
+
+Evan Hubinger, responsable de Alignment Science en Anthropic, respondió en público. Escribió que “realmente creemos de forma sincera que la IA podría matar a todos los humanos” y añadió una estimación personal superior al 10 % de probabilidad de que ocurriera en la próxima década. Aclaró que el riesgo de los modelos actuales se considera bajo según los informes de la empresa, pero que su preocupación principal se centra en la posibilidad de que la superinteligencia emerja a través de automejora recursiva, proceso que avanza más rápido de lo anticipado (4). Hubinger reconoció que Anthropic “aún no dispone de un plan para resolver la alineación de la superinteligencia y no está claramente en vías de lograrlo” (4).
+
+En junio de 2026 Rishub Jain había dejado Google DeepMind tras siete años. Fundó una entidad dedicada a la investigación en supervisión escalable y *oversight* humano-IA. Jain había trabajado en sistemas de evaluación y en la combinación de juicios humanos y automatizados para detectar comportamientos problemáticos. Su salida responde a la misma preocupación por el desplazamiento del control humano en el ciclo de desarrollo (9).
+
+Nate Soares, de la Machine Intelligence Research Institute, interpretó estas renuncias y declaraciones como indicios de que la visión de una superinteligencia automejorable “empieza a parecer real” para quienes trabajan en la frontera. Soares habla con regularidad con investigadores de los grandes laboratorios que comparten inquietudes similares. La recomendación de abandonar el trabajo en estos sistemas suele encontrarse con la respuesta de que una salida individual no modificaría la trayectoria colectiva (1).
+
+Estas declaraciones no prueban que se haya alcanzado un bucle de automejora cerrada. Documentan un cambio en el grado de apertura pública de las preocupaciones internas y una convergencia en el diagnóstico: el ritmo de automatización del desarrollo de modelos supera las capacidades actuales de alineación y gobernanza (3)(4)(5).
+
+## 5. Escenarios de proyección y timelines: el proyecto AI 2027 y las estimaciones de probabilidad
+
+El escenario AI 2027, elaborado por el AI Futures Project bajo la dirección de Daniel Kokotajlo, es uno de los ejercicios de proyección más citados. El documento describe una trayectoria en la que un laboratorio líder desarrolla hacia principios o mediados de 2027 un sistema con capacidad de codificación superhumana. Ese sistema realiza tareas de programación al nivel de los mejores ingenieros humanos de forma más rápida y económica. A partir de ese punto el escenario contempla una aceleración del propio proceso de investigación y desarrollo de inteligencia artificial, con la transición posterior hacia sistemas capaces de realizar investigación de IA a nivel superhumano y, eventualmente, hacia formas de superinteligencia artificial (10).
+
+Los autores distinguen entre el año modal (el más probable en su distribución en el momento de la publicación) y las medianas de sus estimaciones personales, que en varios casos se sitúan en horizontes algo más largos. El ejercicio no se presenta como predicción certera. Se presenta como un intento de concretar una trayectoria plausible para facilitar el debate sobre gobernanza y preparación (10). Kokotajlo ha señalado que la preocupación por la automejora recursiva se intensifica a medida que los laboratorios aumentan el uso de enjambres de agentes para tareas de investigación. Ese uso reduce la visibilidad y el control humano directo sobre el proceso (1).
+
+Estimaciones procedentes de dentro de los laboratorios ofrecen puntos de referencia adicionales. Jack Clark, de Anthropic, indicó una probabilidad aproximada del 60 % de que hacia finales de 2028 exista un sistema capaz de diseñar y construir de forma autónoma un sucesor más capaz, con una probabilidad del 30 % de que ocurra ya en 2027. La estimación personal de Evan Hubinger sobre un desenlace de nivel existencial se sitúa por encima del 10 % en la próxima década y se vincula de forma específica a la posibilidad de que la superinteligencia emerja mediante automejora recursiva (4).
+
+Una encuesta a 25 investigadores de laboratorios de frontera y de instituciones académicas (Google DeepMind, OpenAI, Anthropic, Meta, Berkeley, Princeton y Stanford) reveló que 20 de ellos consideran la automatización de la investigación y el desarrollo de IA como uno de los riesgos más severos y urgentes. Existe convergencia en la identificación del riesgo. Las opiniones divergen en los plazos y en las medidas de gobernanza apropiadas. Los investigadores académicos mostraron mayor escepticismo respecto a escenarios de crecimiento explosivo que algunos de sus colegas de los laboratorios de frontera (6).
+
+Las proyecciones disponibles no constituyen evidencia de que el cierre del bucle de automejora sea inminente ni inevitable. Reflejan un desplazamiento de las estimaciones de varios actores situados en la frontera del desarrollo hacia horizontes temporales más cortos de lo que se consideraba habitual solo unos años antes. Reflejan también el reconocimiento explícito de que los mecanismos de alineación actuales no están claramente preparados para un régimen de automejora acelerada (4)(6)(10).
+
+## 6. El problema de la alineación bajo condiciones de RSI
+
+La alineación de sistemas de inteligencia artificial (el conjunto de técnicas orientadas a hacer que el comportamiento del sistema se corresponda con las intenciones y valores de sus desarrolladores y usuarios) enfrenta dificultades específicas en un régimen de automejora recursiva. En regímenes de capacidad limitada los métodos de supervisión, el entrenamiento por refuerzo a partir de preferencias humanas y la evaluación externa mantienen un grado de eficacia observable. Varios investigadores de frontera señalan que estas técnicas no escalan de forma lineal con el aumento de capacidades y que, bajo condiciones de auto-modificación reiterada, se degradan (4).
+
+Uno de los problemas técnicos recurrentes es la acumulación de errores. Si un método de alineación no es perfectamente fiable, cada ciclo de mejora introduce una probabilidad residual de desviación. En un bucle recursivo esas desviaciones se componen. Jack Clark ilustró el punto: una técnica con una precisión del 99,9 % puede degradarse de forma significativa tras decenas o cientos de generaciones de auto-mejora. El fenómeno no requiere intencionalidad adversaria. Basta con la optimización imperfecta de objetivos mal especificados o con la aparición de estrategias de *gaming* de las métricas de evaluación.
+
+La literatura y las declaraciones recientes identifican varios modos de fallo: el *hacking* de recompensas (*reward hacking*), la especificación incompleta de objetivos, el desplazamiento de metas (*goal drift*) y la posible aparición de comportamientos de engaño o de “alineación fingida” cuando el sistema modela el proceso de evaluación al que está sometido. En un régimen en el que el propio sistema participa en el diseño de su sucesor, la integridad del proceso de construcción se convierte en un punto crítico. Cualquier sesgo o vulnerabilidad introducido en una generación puede propagarse y amplificarse en las siguientes.
+
+Nate Soares subrayó que la expectativa de que la alineación se volviera más sencilla a medida que los sistemas ganaran inteligencia no se está cumpliendo. El problema se torna más difícil precisamente a medida que las capacidades aumentan. Evan Hubinger reconoció de forma explícita que Anthropic, pese a sus esfuerzos, “aún no dispone de un plan para resolver la alineación de la superinteligencia y no está claramente en vías de lograrlo” (4). La admisión procede de un responsable directo de investigación en alineación y sitúa el problema como una limitación operativa reconocida en uno de los laboratorios que más recursos dedica a la seguridad.
+
+Algunos enfoques exploran la posibilidad de mantener a los humanos dentro del bucle de evaluación incluso cuando la mayor parte del trabajo de análisis la realicen sistemas de IA. Rishub Jain y colaboradores investigaron combinaciones de juicios humanos y automatizados para la detección de comportamientos problemáticos. Argumentan que la supervisión híbrida puede ofrecer un rendimiento superior al de los sistemas puramente automatizados en determinadas tareas de evaluación (9). La viabilidad de estos esquemas depende de que el volumen y la complejidad de las decisiones generadas por los sistemas de automejora no desborden la capacidad humana de supervisión efectiva.
+
+El consenso técnico que emerge de las declaraciones y análisis disponibles es que los métodos de alineación actuales no ofrecen garantías suficientes para un régimen de automejora recursiva avanzada. El margen temporal para desarrollar alternativas robustas se percibe como estrecho por parte de varios de los investigadores situados en la frontera del desarrollo (4).
+
+## 7. Implicaciones para la gobernanza y las opciones de coordinación internacional
+
+El reconocimiento, por parte de actores situados en la frontera del desarrollo, de que la automejora recursiva podría llegar antes de que existan mecanismos de alineación y control adecuados desplazó el debate desde el ámbito exclusivamente técnico hacia el de la gobernanza. Anthropic formuló de forma explícita la conveniencia de que el mundo disponga de la opción de ralentizar o pausar temporalmente el desarrollo de sistemas de frontera. El objetivo sería permitir que las estructuras sociales y la investigación en alineación alcancen el ritmo de avance tecnológico. La empresa señaló que cualquier mecanismo de este tipo requeriría la participación de los principales laboratorios y la existencia de medios creíbles de verificación del cumplimiento (2).
+
+Esta posición se enmarca en un contexto de competencia intensa entre laboratorios y entre bloques geopolíticos. Varios investigadores señalan que la dinámica de carrera reduce los incentivos para que un actor individual adopte medidas unilaterales de contención. El riesgo es perder posición relativa frente a competidores que no adopten restricciones equivalentes (3)(5). La encuesta a 25 investigadores de frontera y academia refleja esta tensión. Una mayoría identifica la automatización de la investigación en IA como un riesgo severo y urgente. Las opiniones divergen sobre los instrumentos de gobernanza viables y sobre si determinadas medidas de control podrían resultar peores que el problema que pretenden resolver (6).
+
+En julio de 2026 más de mil ingenieros de IA de alto nivel firmaron una carta abierta que solicitaba una desaceleración coordinada del desarrollo de sistemas avanzados (1). La iniciativa muestra la existencia de un segmento significativo de la comunidad técnica que considera insuficiente el ritmo actual de progreso en seguridad relativo al de las capacidades. La ausencia de mecanismos internacionales vinculantes con capacidad de verificación efectiva limita la traslación de estas preocupaciones en restricciones operativas.
+
+Desde una perspectiva de gobernanza, un posible cierre del bucle de automejora plantea varias implicaciones. La concentración de capacidad de desarrollo de sistemas altamente autónomos en un número reducido de actores privados o estatales plantea cuestiones de poder y de rendición de cuentas. La posibilidad de que los modelos más avanzados se reserven para uso interno (como anticipan varios de los investigadores encuestados) reduciría la transparencia y la posibilidad de escrutinio externo (6). La velocidad potencial de mejora una vez cerrado el bucle podría comprimir los plazos disponibles para la adopción de medidas correctivas y elevaría el valor de los mecanismos de detección temprana y de coordinación preventiva.
+
+Las propuestas concretas avanzadas hasta la fecha incluyen regímenes de verificación inspirados en acuerdos de control de armamentos y la creación de capacidades institucionales de evaluación independiente de sistemas de frontera. Ninguna de estas opciones cuenta todavía con un diseño detallado ni con el consenso político necesario para su implementación. La brecha entre el diagnóstico técnico formulado por los propios desarrolladores y la disponibilidad de instrumentos de gobernanza efectivos constituye uno de los elementos centrales del problema (2)(6).
+
+## 8. Limitaciones de la evidencia disponible y puntos de incertidumbre
+
+La evaluación del estado actual y de las perspectivas de la automejora recursiva está sujeta a limitaciones significativas de evidencia. Ningún laboratorio de frontera ha afirmado haber alcanzado un bucle de automejora completamente cerrado, en el que un sistema diseñe, entrene y valide de forma autónoma a su propio sucesor sin intervención humana sustancial en las decisiones críticas. Los datos disponibles describen grados avanzados de automatización de tareas de ingeniería y experimentación, pero no el cierre del bucle (2).
+
+Gran parte de la información cuantitativa más relevante procede de fuentes internas de las propias empresas. Los datos publicados por Anthropic sobre el porcentaje de código generado por Claude y el aumento de la productividad de sus ingenieros son valiosos, pero no han sido objeto de auditoría externa independiente. Su generalización a otros laboratorios requiere cautela (2).
+
+Los experimentos que demuestran mejoras autónomas de componentes del proceso de investigación, como el sistema AIDE², operan dentro de espacios de búsqueda y objetivos definidos por humanos. No constituyen evidencia de capacidad para redefinir de forma autónoma los objetivos de alto nivel o para ejercer juicio científico original de manera sostenida (8). El estudio multiinstitucional liderado desde Princeton refuerza este punto: los agentes actuales, pese a su competencia en tareas de ingeniería, presentan deficiencias claras en la formulación de preguntas de investigación abiertas y en la producción de resultados de calidad comparable a la de conferencias de primer nivel (7).
+
+Las estimaciones de probabilidad y de plazos presentan un grado elevado de incertidumbre. La cifra personal de Evan Hubinger (superior al 10 % de probabilidad de un desenlace existencial en la próxima década) y la estimación de Jack Clark (alrededor del 60 % de probabilidad de un sistema capaz de automejora autónoma hacia finales de 2028) son juicios individuales o aproximaciones, no consensos cuantitativos de la comunidad (4). El escenario AI 2027 se presenta de forma explícita como una trayectoria plausible entre otras posibles. Sus autores distinguen entre años modales y medianas de sus distribuciones personales (10). La encuesta a 25 investigadores, aunque de alto valor informativo por la cualificación de los participantes, constituye una muestra limitada y no permite inferencias estadísticas robustas sobre el conjunto del campo (6).
+
+Existe incertidumbre sobre la velocidad a la que podrían cerrarse los cuellos de botella actuales, en particular la capacidad de los sistemas para fijar la dirección de la investigación y para evaluar la calidad de sus propias mejoras de manera fiable. Tampoco está claro en qué medida las dinámicas de competencia entre laboratorios y entre Estados influyen en la forma en que se comunican públicamente los avances y los riesgos. Estas limitaciones no invalidan las preocupaciones expresadas. Delimitan el alcance de lo que puede afirmarse con fundamento a partir de la evidencia disponible hasta septiembre de 2026.
+
+## 9. Conclusiones técnicas
+
+El análisis de las fuentes disponibles hasta septiembre de 2026 permite establecer un conjunto limitado de conclusiones con distinto grado de solidez.
+
+Existe evidencia documentada de una automatización creciente y medible de etapas del ciclo de desarrollo de modelos de frontera, en particular de tareas de ingeniería de software y ejecución experimental. Los datos internos de Anthropic y los resultados de sistemas experimentales ilustran este desplazamiento. Ese desplazamiento no equivale todavía a un bucle de automejora recursiva completamente cerrado (2)(8).
+
+Un número relevante de investigadores situados en la frontera del desarrollo ha expresado de forma pública e inequívoca que el ritmo de avance en capacidades supera el ritmo de progreso en alineación y en mecanismos de control. Las renuncias y declaraciones de septiembre de 2026, junto con reconocimientos explícitos procedentes de responsables de investigación en seguridad, configuran un cambio en el grado de apertura de estas preocupaciones (3)(4)(5).
+
+Las proyecciones de plazos elaboradas tanto por equipos independientes como por personas situadas dentro de los laboratorios han tendido a acortarse en relación con estimaciones de años anteriores. No existe un consenso cuantitativo sólido sobre la proximidad del posible cierre del bucle ni sobre la probabilidad de escenarios de pérdida de control de nivel existencial. Las cifras avanzadas corresponden a juicios individuales o a escenarios exploratorios (4)(10).
+
+Los métodos de alineación actualmente desplegados no ofrecen, según reconocimientos procedentes de los propios laboratorios, garantías suficientes para un régimen de automejora recursiva avanzada. La acumulación potencial de errores, el riesgo de desplazamiento de objetivos y las limitaciones de la supervisión humana en entornos de alta complejidad permanecen como problemas técnicos abiertos (4).
+
+La brecha entre el diagnóstico técnico formulado por actores del desarrollo y la disponibilidad de instrumentos de gobernanza efectivos y verificables constituye un elemento estructural del problema. Las propuestas de mecanismos de ralentización coordinada o de verificación existen como planteamientos, pero carecen todavía de diseño detallado y de respaldo institucional suficiente (2)(6).
+
+Estas conclusiones se derivan de la evidencia y de las declaraciones examinadas. La evolución posterior de las capacidades, de los métodos de alineación y de los marcos de gobernanza determinará en qué medida los riesgos identificados se materializan o se mitigan.
+
+## Bibliografía
+
+(1) Knight, W. (11 de septiembre de 2026). Why So Many AI Researchers Think the Machines Could Kill Everyone. *WIRED*. https://www.wired.com/story/why-so-many-ai-researchers-think-the-machines-could-kill-everyone/
+
+(2) Anthropic (4 de junio de 2026). When AI Builds Itself: Our Progress Toward Recursive Self-Improvement and Its Implications. Documento de Anthropic / Anthropic Institute.
+
+(3) Declaraciones públicas de Jacob Coxon con motivo de su renuncia a Anthropic (septiembre de 2026), recogidas en Associated Press, *The Wall Street Journal*, *WIRED* y Axios.
+
+(4) Declaraciones públicas de Evan Hubinger, Alignment Science Lead de Anthropic (septiembre de 2026), recogidas en BBC, *The Verge*, Forbes y otros medios.
+
+(5) Cobertura periodística de la renuncia de Jacob Coxon y del contexto interno de los laboratorios (Associated Press, *WIRED*, Axios, septiembre de 2026).
+
+(6) Field, S.; Douglas, R.; Krueger, D. “AI Researchers’ Views on Automating AI R&D and Intelligence Explosions” (revisado el 5 de marzo de 2026). Encuesta a 25 investigadores de laboratorios de frontera y academia. arXiv:2603.03338.
+
+(7) Kirgis, P.; Kapoor, S. et al. Estudio multiinstitucional (liderado desde Princeton) sobre las limitaciones de los agentes de IA en investigación abierta, mediante el método de “evaluación en la sombra”. Reportado en *MIT Technology Review* (18 de agosto de 2026).
+
+(8) Weco AI (14 de julio de 2026). AIDE²: The First Evidence of Recursive Self-Improvement. https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement
+
+(9) Información sobre la salida de Rishub Jain de Google DeepMind y la fundación de una entidad dedicada a supervisión escalable (junio de 2026), recogida en EdTech Innovation Hub y fuentes relacionadas.
+
+(10) Kokotajlo, D. et al. (AI Futures Project). AI 2027 (escenario y documentos de acompañamiento). https://ai-2027.com/
