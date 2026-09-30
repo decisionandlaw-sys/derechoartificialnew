@@ -1,0 +1,237 @@
+---
+title: "Thomson Reuters v. ROSS: el Third Circuit rechaza el fair use"
+description: "El Third Circuit confirma que ROSS no puede invocar fair use por entrenar su IA con headnotes de Westlaw. Análisis de la primera apelación federal."
+date: "2026-09-30"
+tags: ["Thomson Reuters v. ROSS", "fair use", "entrenamiento de IA", "Third Circuit", "derechos de autor"]
+section: "jurisprudencia"
+category: "juzgado"
+author: "Ricardo Scarpa"
+slug: "thomson-reuters-v-ross-third-circuit-fair-use-ia"
+readingTime: 26
+image: "/images/jurisprudencia/thomson-reuters-v-ross-third-circuit-fair-use-ia/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 29 de septiembre de 2026 el Tribunal de Apelaciones del Tercer Circuito de Estados Unidos confirmó la sentencia que rechazó la defensa de *fair use* de ROSS Intelligence frente a Thomson Reuters. Ninguna corte federal de apelaciones se había pronunciado antes sobre si entrenar un sistema de inteligencia artificial con material protegido por derechos de autor puede ampararse en esa defensa. El texto público de la resolución ocupa una página y contiene una sola palabra: “AFFIRMED”. El razonamiento del panel permanece bajo sello.
+
+El caso arranca en 2020. Thomson Reuters, propietaria de la plataforma jurídica Westlaw, demandó a ROSS, una startup que construyó un buscador de jurisprudencia con inteligencia artificial. Westlaw incluye *headnotes*, resúmenes editoriales que abogados-editores redactan sobre los puntos de derecho de cada sentencia. ROSS pidió una licencia para usarlos y Thomson Reuters se la negó porque ROSS era competidora. ROSS compró entonces a un tercero, LegalEase Solutions, unos 25.000 memorandos de preguntas y respuestas elaborados a partir de esos *headnotes* y entrenó su sistema con ellos. ROSS cerró su plataforma en 2021 y alegó los costes del litigio.
+
+En febrero de 2025 el juez Stephanos Bibas, magistrado del propio Third Circuit que presidía el caso en el tribunal federal de Delaware por designación, dictó una sentencia sumaria (*summary judgment*) favorable a Thomson Reuters. Declaró que los *headnotes* son originales, que ROSS infringió 2.243 de ellos y que su uso no constituía *fair use*. Bibas dio más peso a dos de los cuatro factores de la ley. Sobre el propósito del uso concluyó que era comercial y no transformativo, porque ROSS quería construir un competidor de Westlaw. Sobre el efecto en el mercado apreció sustitución directa y daño a un mercado potencial de licencias de datos de entrenamiento. Concedió a ROSS los otros dos factores, pero no bastaron.
+
+Bibas certificó el caso para apelación inmediata. El Third Circuit la admitió y celebró la vista el 11 de junio de 2026 ante los jueces Restrepo, Montgomery-Reeves y Bove. Las preguntas del panel giraron en torno a la transformatividad y al perjuicio de mercado. Bove preguntó por qué el uso de ROSS era transformativo y no “just a different type of legal search engine”. El abogado de ROSS sostuvo que había enseñado a una máquina a “pensar como un abogado” y que copió solo el 0,08 % de los 28 millones de *headnotes* de Westlaw. Thomson Reuters replicó que se trataba de “a classic case of substitution”.
+
+Hasta que se publique la opinión, el resultado es lo único cierto. El tribunal ordenó a las partes proponer redacciones en diez días, plazo que vence el 9 de octubre de 2026, y decidirá después qué partes salen a la luz. No se sabe si el panel adoptó el razonamiento de Bibas o siguió una vía más estrecha. Tampoco se sabe si aceptó que un mercado solo potencial de licencias de datos de entrenamiento basta para inclinar el factor de mercado.
+
+El alcance del fallo es limitado. ROSS no usaba IA generativa: su herramienta devolvía pasajes de sentencias ya existentes y no generaba texto nuevo. Bibas advirtió que su decisión se refería solo a IA no generativa, y el abogado de ROSS lo confirmó ante el panel. Los litigios contra desarrolladores de modelos generativos, como *Bartz v. Anthropic* o *Kadrey v. Meta*, plantean otros hechos: corpus masivos de obras completas, salidas creativas y perjuicios en los mercados de las obras mismas. Cada tribunal deberá analizar los cuatro factores con las características de su sistema y de su mercado.
+
+Para la industria de *legal tech* el mensaje práctico es claro. Usar sin licencia material editorial de una plataforma comercial para construir un producto rival eleva el riesgo jurídico, aunque un intermediario haya reformulado ese material. Las empresas que entrenan modelos con contenido jurídico deberán negociar licencias, documentar el origen de sus datos o recurrir a fuentes de dominio público. Los titulares de grandes bases de datos jurídicas ganan posición negociadora.
+
+En Europa el marco es otro. La excepción de minería de textos y datos de la Directiva (UE) 2019/790 admite la reserva de derechos por parte del titular, y el Reglamento (UE) 2024/1689 exige a los proveedores de modelos de uso general una política de respeto al derecho de autor. El razonamiento de *ROSS* no se traslada de forma automática a ese sistema.
+
+# La primera apelación federal sobre *fair use* e IA: el Third Circuit confirma la sentencia contra ROSS Intelligence
+
+*Análisis de la resolución del 29 de septiembre de 2026 que rechaza el fair use en el uso de headnotes de Westlaw para entrenar una herramienta de investigación jurídica no generativa*
+
+---
+
+## 1. Introducción y delimitación del objeto de estudio
+
+El 29 de septiembre de 2026 el United States Court of Appeals for the Third Circuit confirmó la sentencia que el juez Stephanos Bibas dictó en febrero de 2025 en el asunto *Thomson Reuters Enterprise Centre GmbH y West Publishing Corp. v. ROSS Intelligence Inc.* Bibas es juez del propio Third Circuit y presidió el caso en el District Court for the District of Delaware *sitting by designation* (8)(14). Esta resolución es la primera de una corte federal de apelaciones estadounidense sobre la aplicación del *fair use* al entrenamiento de un sistema de inteligencia artificial con material protegido por derechos de autor (13)(14).
+
+ROSS Intelligence usó *headnotes* de Westlaw para entrenar un motor de búsqueda jurídica basado en inteligencia artificial no generativa. Thomson Reuters demandó por infracción de derechos de autor. ROSS invocó la defensa de *fair use* del artículo 107 del Copyright Act de 1976 (1). El tribunal de instancia la rechazó y el Third Circuit confirmó el resultado (8)(10).
+
+Este informe examina el caso en cinco puntos:
+
+- La originalidad y la protección de los *headnotes* de Westlaw según el estándar de *Feist Publications, Inc. v. Rural Telephone Service Co.* (5)(8).
+- La calificación del uso de ROSS como no transformativo a la luz de *Andy Warhol Foundation for the Visual Arts, Inc. v. Goldsmith* (6)(8).
+- La aplicación de los cuatro factores del *fair use*, con atención a los factores primero y cuarto (1)(8).
+- El alcance limitado del precedente, porque el sistema de ROSS no era inteligencia artificial generativa (8)(13).
+- Las consecuencias para el mercado de datos de entrenamiento y para los litigios pendientes (14)(17).
+
+Las fuentes son las resoluciones del tribunal de instancia de septiembre de 2023, febrero de 2025 y mayo de 2025 (7)(8)(9), la transcripción y las crónicas de la vista oral del 11 de junio de 2026 (16)(17)(18), el *judgment* del 29 de septiembre de 2026 (10) y los análisis doctrinales y periodísticos posteriores (13)(14)(15). La opinión completa del Third Circuit permanece sellada, de modo que su razonamiento no puede examinarse todavía (10)(15).
+
+---
+
+## 2. Antecedentes fácticos y procesales del litigio
+
+Thomson Reuters Enterprise Centre GmbH y West Publishing Corp. son titulares de Westlaw. La plataforma incluye los *headnotes*, resúmenes editoriales que abogados-editores redactan sobre los puntos de derecho de las resoluciones judiciales, y el Key Number System, un sistema de clasificación (8)(19).
+
+ROSS construyó un motor de búsqueda jurídica con inteligencia artificial no generativa. El usuario formulaba preguntas en lenguaje natural y el sistema devolvía pasajes de resoluciones judiciales existentes (8)(19). ROSS pidió a Thomson Reuters una licencia sobre el contenido de Westlaw. Thomson Reuters la denegó porque ROSS era competidora (8)(19).
+
+ROSS acudió entonces a LegalEase Solutions y compró unos 25.000 *Bulk Memos*: preguntas y respuestas que abogados elaboraron a partir de los *headnotes* de Westlaw. ROSS entrenó su sistema con esos memorandos (8).
+
+En mayo de 2020 Thomson Reuters presentó su demanda ante el District Court for the District of Delaware (8). En septiembre de 2023 Bibas denegó en gran parte las mociones de *summary judgment* y envió a jurado las cuestiones de originalidad y de *fair use* (7). Revisó después ese criterio y el 11 de febrero de 2025 declaró la infracción directa de 2.243 *headnotes* y rechazó la defensa de *fair use* como cuestión de derecho (8).
+
+El 4 de abril de 2025 Bibas concedió la moción de ROSS para una apelación interlocutoria al amparo del 28 U.S.C. § 1292(b) y suspendió el procedimiento. El 23 de mayo de 2025 explicó sus razones en una *Memorandum Opinion* (2)(9). El Third Circuit admitió la apelación en junio de 2025 (19). La vista oral se celebró el 11 de junio de 2026 ante los jueces L. Felipe Restrepo, Tamika R. Montgomery-Reeves y Emil J. Bove (16)(17).
+
+ROSS cerró su plataforma en 2021 y alegó los costes del litigio (13).
+
+El 29 de septiembre de 2026 el Third Circuit confirmó la resolución de instancia y depositó la opinión completa bajo sello, a la espera de las propuestas de redacción de las partes (10)(15).
+
+---
+
+## 3. La sentencia de instancia de febrero de 2025: originalidad, infracción directa y rechazo del fair use
+
+El 11 de febrero de 2025 Bibas dictó un *summary judgment* parcial. Revisó de forma sustancial el criterio que había adoptado en septiembre de 2023 (7)(8). La resolución trata tres bloques: originalidad de los *headnotes*, infracción directa y *fair use*.
+
+**Originalidad.** Bibas aplicó el umbral mínimo de creatividad de *Feist Publications, Inc. v. Rural Telephone Service Co.*, 499 U.S. 340 (1991) (5). Concluyó que los *headnotes*, incluso los que reproducen fragmentos literales de resoluciones, incorporan selección y expresión editorial suficientes para superarlo. Usó la imagen del escultor que talla un bloque de mármol: la intervención del editor confiere protección aunque el material de partida carezca de ella (8)(14). Declaró originales los 2.243 *headnotes* que consideró infringidos y reconoció también la originalidad del Key Number System, aunque dejó abiertas cuestiones fácticas sobre el uso que ROSS hizo de él (8).
+
+**Infracción directa.** Bibas comparó los *Bulk Memos* con los *headnotes* de Westlaw. Halló copia efectiva y similitud sustancial en 2.243 de los 2.830 *headnotes* examinados y concluyó que un jurado razonable no podía decidir otra cosa (8). Los 587 restantes quedaron fuera del hallazgo de infracción (8).
+
+**Fair use.** Es el núcleo de la resolución. Bibas aplicó los cuatro factores del § 107 (1). Consideró que el uso de ROSS era comercial y no transformativo según *Andy Warhol Foundation for the Visual Arts, Inc. v. Goldsmith*, 598 U.S. 508 (2023) (6): ROSS tomó los *headnotes* “to make it easier to develop a competing legal research tool” (8)(13). Otorgó mayor peso a los factores primero y cuarto, concedió a ROSS los factores segundo y tercero, y concluyó que el uso no constituía *fair use*. Concedió así *summary judgment* a Thomson Reuters sobre esa defensa y sobre la infracción de los 2.243 *headnotes* (8). La sección 6 analiza cada factor.
+
+---
+
+## 4. La certificación de la apelación interlocutoria y el oral argument ante el Third Circuit
+
+El 4 de abril de 2025 Bibas concedió la moción de ROSS para certificar una apelación interlocutoria al amparo del 28 U.S.C. § 1292(b) y suspendió el procedimiento. El 23 de mayo de 2025 explicó su decisión en una *Memorandum Opinion* (2)(9). Identificó dos cuestiones controladoras de derecho, con “substantial grounds for difference of opinion”, cuya resolución anticipada permitiría avanzar hacia la terminación del litigio:
+
+1. Si los *headnotes* de Westlaw y el Key Number System son originales como cuestión de derecho.
+2. Si el uso de los *headnotes* por ROSS constituyó *fair use*.
+
+Bibas reiteró que seguía confiando en su resolución de febrero de 2025, reconoció que las cuestiones eran difíciles en el contexto de herramientas de IA no generativa y afirmó que una respuesta rápida del Third Circuit aceleraría la resolución del caso y beneficiaría al público (9).
+
+La vista oral se celebró el 11 de junio de 2026 en Filadelfia ante los jueces Restrepo, Montgomery-Reeves y Bove. Mark S. Davies (White & Case) representó a ROSS y Dale M. Cendali (Kirkland & Ellis) a Thomson Reuters (16)(17). El panel centró sus preguntas en los factores primero y cuarto, transformatividad y perjuicio al mercado. Dedicó menos tiempo a la originalidad, aunque Montgomery-Reeves y Bove sondearon si la selección y la condensación de pasajes de las opiniones reflejaban juicio editorial (17).
+
+**La posición de ROSS.** Davies abrió invocando la decisión reciente del propio Third Circuit en *ASTM v. UpCodes* y pidió la revocación sumaria por *fair use* (17). Sostuvo que ROSS enseñó a un sistema de *machine learning* a “think like a lawyer”, que copió solo el 0,08 % de los 28 millones de *headnotes* de Westlaw y que el uso era “spectacularly transformational” (16). Añadió que no existe mercado para un *headnote* aislado ni para los *headnotes* como datos de entrenamiento, y que reconocerlo sería circular, porque cualquier titular podría alegar que habría licenciado el uso que ahora se discute (17).
+
+**Las preguntas del panel.** Bove preguntó por qué el uso debía considerarse transformativo y no “just a different type of legal search engine” (16). Describió dos relatos enfrentados: un atajo (*cheat sheet*) hacia opiniones judiciales públicas, o una tecnología sustancialmente distinta de la búsqueda por palabras clave (18). Sobre el mercado observó que las partes estaban “worlds apart” (17)(18) y recordó a ROSS que le correspondía la carga de la prueba del *fair use*, incluido el factor cuarto (17).
+
+**La posición de Thomson Reuters.** Cendali planteó un caso de sustitución: “a classic case of substitution” (17). Identificó tres formas de perjuicio: la sustitución directa de Westlaw, el daño a su exclusividad para entrenar sus propias herramientas y el daño a un mercado potencial de licencias de *headnotes* como datos de entrenamiento por terceros (16)(17)(18). Citó materiales de marketing de ROSS que invitaban a elegir entre ROSS y Westlaw (17).
+
+La transcripción de la vista se hizo pública a finales de junio de 2026 (17).
+
+---
+
+## 5. La resolución del 29 de septiembre de 2026: affirmance y carácter sellado de la opinión
+
+El 29 de septiembre de 2026 el Third Circuit resolvió *Thomson Reuters Enterprise Centre GmbH et al. v. ROSS Intelligence Inc.* (No. 25-2153). El panel (Restrepo, Montgomery-Reeves y Bove) confirmó la sentencia de instancia de febrero de 2025 (10)(13).
+
+La jueza Montgomery-Reeves figura como autora de la opinión. El tribunal la depositó de forma temporal bajo sello y ordenó a las partes presentar en diez días propuestas de redacción con la razón de cada una. Después decidirá qué partes, en su caso, permanecen ocultas y publicará la opinión (10)(15). Ese plazo vence el 9 de octubre de 2026.
+
+Hasta ahora solo se conoce un *judgment* de una página cuyo fallo se resume en la palabra “AFFIRMED” (14). ROSS no respondió de inmediato a las peticiones de comentario de la prensa (13).
+
+Como la opinión permanece sellada, este informe solo puede afirmar el resultado: el Third Circuit confirmó la concesión del *summary judgment* a Thomson Reuters y el rechazo de la defensa de *fair use* (10)(14). No cabe saber todavía si el panel adoptó el razonamiento de Bibas, si siguió una vía más estrecha o si se pronunció sobre cada una de las dos cuestiones certificadas.
+
+Copyright Lately señala tres puntos que conviene examinar cuando se publique la opinión (14):
+
+- Si el panel acoge la analogía del escultor o toma la vía más estrecha que sugirió Montgomery-Reeves en la vista, al observar que el fallo se centraba en *headnotes* que no eran citas literales.
+- Si acepta que un mercado potencial de datos de entrenamiento basta para inclinar el factor cuarto, tesis que ROSS calificó de circular.
+- Si limita la doctrina de la copia intermedia al código informático.
+
+---
+
+## 6. Análisis técnico de los cuatro factores del fair use aplicados al caso
+
+El § 107 del Copyright Act de 1976 establece que el uso de una obra protegida no constituye infracción cuando, tras ponderar cuatro factores no exhaustivos, el uso resulta legítimo (1). Bibas aplicó esos factores en febrero de 2025 (8). El Third Circuit confirmó el resultado (10).
+
+**Factor primero: propósito y carácter del uso.** Bibas examinó si el uso de ROSS era comercial y si resultaba transformativo. Lo consideró comercial, porque ROSS desarrollaba un producto de investigación jurídica para el mercado profesional. Sobre la transformatividad aplicó el estándar de *Andy Warhol Foundation*: el uso debe tener un “further purpose or different character” y no limitarse a sustituir el original (6)(8).
+
+Bibas concluyó que ROSS tomó los *headnotes* para facilitar el desarrollo de una herramienta competidora de Westlaw y que no existía un propósito ulterior distinto del de Westlaw. Que el sistema no mostrara los *headnotes* a los usuarios y que empleara técnicas de *machine learning* no cambió esa conclusión, porque el producto final competía en el mismo mercado de investigación jurídica (8). Este factor favoreció a Thomson Reuters.
+
+**Factor segundo: naturaleza de la obra protegida.** Los *headnotes* tienen un carácter sobre todo factual, porque sintetizan puntos de derecho de resoluciones de dominio público. Este factor favoreció a ROSS. Bibas señaló que en la jurisprudencia estadounidense suele tener un peso menor (8).
+
+**Factor tercero: cantidad y sustancialidad de la porción utilizada.** Este factor también favoreció a ROSS. Su producto nunca mostró un *headnote* al público, de modo que ninguno quedó accesible a un público al que pudiera servir como sustituto competidor (8). ROSS añadió en apelación un argumento cuantitativo: copió el 0,08 % de los 28 millones de *headnotes* de Westlaw (16).
+
+**Factor cuarto: efecto sobre el mercado potencial.** Bibas lo calificó como el factor de mayor peso. Identificó dos mercados: el de las plataformas de investigación jurídica y un mercado potencial de licencias de datos para entrenar inteligencia artificial (8).
+
+El producto de ROSS sustituía a Westlaw. Thomson Reuters había denegado una licencia a ROSS porque era competidora, y existía un mercado emergente de datos de entrenamiento. El uso no autorizado de ROSS afectaba a la capacidad de Thomson Reuters de controlar y monetizar ese mercado (8). Este factor favoreció de forma clara a Thomson Reuters.
+
+**Ponderación final.** Bibas otorgó mayor peso a los factores primero y cuarto y concluyó que el uso de ROSS no constituía *fair use* como cuestión de derecho (8). El Third Circuit confirmó ese resultado. Sin la opinión pública no puede saberse si mantuvo la misma ponderación (10).
+
+---
+
+## 7. Alcance y límites del precedente: IA no generativa versus IA generativa
+
+Bibas advirtió en su resolución de febrero de 2025 que “only non-generative AI is before me today” y lo reiteró al certificar la apelación (8)(9). Reuters subraya la misma diferencia en su crónica del fallo del Third Circuit (13). En la vista oral el letrado de ROSS confirmó que la herramienta no empleaba IA generativa (16). ROSS devolvía pasajes de resoluciones judiciales ya existentes y no generaba texto nuevo a partir del material de entrenamiento (13).
+
+Esa delimitación condiciona el alcance del precedente. Las conclusiones sobre *fair use* se refieren a una herramienta de búsqueda no generativa y no se aplican de forma automática a sistemas que crean contenido nuevo (8)(9). La distinción importa por tres razones.
+
+Primero, el análisis de transformatividad bajo *Andy Warhol Foundation* se centra en si el uso tiene un propósito o carácter ulterior distinto del original. En ROSS el propósito final, ofrecer un servicio de investigación jurídica competidor, coincidía con el de Westlaw (6)(8). En los litigios sobre modelos generativos los demandados alegan que el entrenamiento produce un sistema capaz de generar expresiones nuevas. El juez Alsup aceptó ese argumento en *Bartz v. Anthropic* y calificó el entrenamiento de “exceedingly transformative” (11). *ROSS* no resuelve esa alegación.
+
+Segundo, el factor cuarto presenta matices distintos. En ROSS el perjuicio se identificó con la sustitución de una plataforma de investigación jurídica y con la afectación a un mercado potencial de licencias de datos de entrenamiento (8). En los casos de IA generativa los titulares invocan además el perjuicio a los mercados de las obras mismas (libros, periodismo, música) por la generación de contenidos sustitutivos. En *Kadrey v. Meta* el juez Chhabria dio la razón a Meta por falta de prueba, pero describió la dilución del mercado como una vía prometedora para los demandantes (12).
+
+Tercero, el volumen y la forma de utilización del material difieren. ROSS usó un conjunto limitado de *headnotes*, transformados en *Bulk Memos* por un tercero (8). Los litigios sobre modelos generativos suelen implicar el uso masivo de corpus amplios de obras completas. El tribunal de instancia no se pronunció sobre esos supuestos.
+
+La *affirmance* confirma, en cuanto al resultado, que el *fair use* no procede cuando una herramienta de búsqueda jurídica no generativa usa *headnotes* protegidos para construir un producto que compite de forma directa con el titular (10)(14). No es una resolución general sobre la licitud del entrenamiento de modelos generativos con material protegido. Cualquier extensión a esos escenarios exige un análisis autónomo de los cuatro factores del § 107 según las características de cada sistema y de cada mercado.
+
+---
+
+## 8. Consecuencias prácticas para el mercado de datos de entrenamiento y la industria de legal tech
+
+La confirmación del Third Circuit afecta a dos mercados: el de las plataformas de investigación jurídica y el de los datos de entrenamiento de sistemas de inteligencia artificial aplicados al derecho.
+
+En el primero, el resultado refuerza la posición de los titulares de contenidos editoriales, como los *headnotes* de Westlaw, frente a competidores que usan esos materiales para construir productos sustitutivos. Bibas apreció que el sistema de ROSS competía con Westlaw y que el uso no autorizado de los *headnotes* facilitaba esa competencia (8). Los titulares de bases de datos jurídicas protegidas cuentan ahora con una confirmación apelativa para oponerse, mediante acciones de infracción, a la utilización no autorizada de su material editorial en herramientas rivales de búsqueda legal (10)(14).
+
+En el mercado de datos de entrenamiento, la sentencia de instancia otorgó relevancia jurídica a un mercado potencial de licencias. Bibas consideró que Thomson Reuters podía controlar y monetizar el uso de sus *headnotes* como datos de entrenamiento. La denegación de licencia a un competidor no eliminaba la existencia de ese mercado (8). Si el Third Circuit respalda esa tesis en la opinión que se publique, los desarrolladores de sistemas de inteligencia jurídica deberán negociar licencias o buscar fuentes alternativas cuando su material de entrenamiento incorpore contenidos editoriales protegidos de terceros (14).
+
+Para la industria de *legal tech* las consecuencias se concretan en tres direcciones:
+
+1. Aumenta el riesgo jurídico de usar sin autorización materiales derivados de plataformas comerciales de investigación jurídica, incluso cuando un intermediario los haya reformulado, como ocurrió con los *Bulk Memos* de LegalEase (8).
+2. Crece el incentivo para buscar datos de entrenamiento de dominio público o generados de forma independiente.
+3. Se refuerza la posición negociadora de los titulares de grandes bases de datos jurídicas a la hora de fijar las condiciones de acceso para entrenar modelos de inteligencia artificial.
+
+La resolución se refiere a un uso concreto: el entrenamiento de un motor de búsqueda no generativo con *headnotes* protegidos para construir un producto competidor. No establece una regla general de inaplicabilidad del *fair use* a cualquier entrenamiento de sistemas de inteligencia artificial en el ámbito jurídico. Los desarrolladores que empleen técnicas distintas, finalidades no competitivas o materiales de otra naturaleza podrán invocar la defensa del § 107 y afrontarán un análisis caso por caso a la luz de los cuatro factores (1)(8).
+
+---
+
+## 9. Relación con el resto de litigios sobre entrenamiento de IA y perspectiva comparada europea
+
+*Thomson Reuters v. ROSS Intelligence* se inserta en un conjunto más amplio de litigios ante los tribunales federales estadounidenses, en los que titulares de derechos de autor impugnan el uso no autorizado de sus obras para entrenar sistemas de inteligencia artificial (13). A diferencia de la mayoría de ellos, este caso no involucra modelos generativos ni el uso masivo de corpus de obras literarias, periodísticas o musicales (8).
+
+En los litigios sobre IA generativa los demandados suelen invocar el *fair use*. Alegan que el entrenamiento transforma las obras en un sistema capaz de generar expresiones nuevas y que no existe un mercado sustitutivo directo de las obras originales. Los tribunales de instancia han llegado a resultados que no coinciden del todo. En *Bartz v. Anthropic* el juez Alsup consideró transformativo el entrenamiento con libros adquiridos de forma lícita (11). En *Kadrey v. Meta* el juez Chhabria resolvió a favor de Meta por la insuficiencia de la prueba del perjuicio, pero rechazó que el carácter transformativo del uso bastara por sí solo y destacó la dilución del mercado (12). Todavía no existe una resolución de una corte federal de apelaciones sobre esos casos que unifique el criterio (13).
+
+La *affirmance* del Third Circuit en *ROSS* aporta un primer punto de referencia de nivel apelativo, pero de alcance circunscrito. Confirma, en cuanto al resultado, que cuando el material protegido sirve para construir un producto que compite en el mismo mercado que el titular, y el uso no presenta un propósito ulterior distinto, los factores primero y cuarto pueden inclinarse contra el demandado (10)(14). Esa lógica puede trasladarse a supuestos de IA generativa en los que se acredite un efecto sustitutivo sobre el mercado de las obras originales o sobre un mercado de licencias de datos de entrenamiento. Las diferencias fácticas impiden una aplicación automática. En *ROSS* el volumen de material era limitado, el sistema no generaba contenido nuevo y el perjuicio se identificó con la sustitución de una plataforma de investigación jurídica (8). En los litigios sobre modelos generativos el volumen suele ser masivo, el resultado es creativo y el perjuicio se proyecta sobre los mercados de las obras mismas.
+
+**Contraste con el derecho de la Unión Europea.** El marco europeo funciona con otra lógica. El artículo 4 de la Directiva (UE) 2019/790 permite la reproducción y extracción de obras accesibles de forma lícita para minería de textos y datos, salvo que el titular haya reservado sus derechos de manera expresa (3). El artículo 53.1.c) del Reglamento (UE) 2024/1689 obliga a los proveedores de modelos de IA de uso general a contar con una política de cumplimiento del derecho de autor que respete esas reservas (4). El *fair use* estadounidense es una defensa abierta que un juez pondera con cuatro factores. La excepción europea es una regla tasada con mecanismo de exclusión (*opt-out*). Esa diferencia estructural impide trasladar el razonamiento de *ROSS* al derecho europeo sin un análisis propio, aunque la protección de los mercados de licencias de datos aparece en ambos sistemas como un interés central de los titulares.
+
+---
+
+## 10. Conclusiones y perspectivas abiertas
+
+El 29 de septiembre de 2026 el Third Circuit confirmó que el uso de *headnotes* protegidos de Westlaw para entrenar un sistema de inteligencia artificial no generativo, orientado a competir en el mercado de investigación jurídica, no constituye *fair use* (10)(13). Es la primera decisión de una corte federal de apelaciones estadounidense en la materia.
+
+El razonamiento del tribunal de instancia, que el resultado confirma, descansa en tres elementos: la originalidad suficiente de los *headnotes* bajo el estándar de *Feist*, la inexistencia de un propósito transformativo en el sentido de *Andy Warhol Foundation v. Goldsmith* y el perjuicio al mercado existente de plataformas de investigación jurídica y a un mercado potencial de licencias de datos de entrenamiento (5)(6)(8). Los factores primero y cuarto del § 107 pesaron más que los factores segundo y tercero (8). Si el Third Circuit adoptó ese razonamiento, solo lo dirá la opinión cuando se publique (14).
+
+El alcance del precedente es limitado. Tanto el tribunal de instancia como el Third Circuit operaron sobre un supuesto de inteligencia artificial no generativa. La resolución no decide la licitud del entrenamiento de modelos generativos con corpus masivos de obras protegidas (8)(13).
+
+De ahí se derivan tres recomendaciones operativas para los equipos jurídicos de empresas de *legal tech* y de proveedores de IA:
+
+1. **Auditar la procedencia de los datos de entrenamiento.** Conviene revisar si el material deriva de plataformas comerciales de investigación jurídica, incluso a través de intermediarios que lo hayan reformulado.
+2. **Documentar los intentos de licencia.** La denegación de una licencia a un competidor pesó en el análisis del factor cuarto (8). Los desarrolladores deben conservar la trazabilidad de sus negociaciones y de las fuentes alternativas que evaluaron.
+3. **Seguir la publicación de la opinión.** El plazo de propuestas de redacción vence el 9 de octubre de 2026 (10). La opinión permitirá saber si el Third Circuit respalda la analogía del escultor, el mercado potencial de datos de entrenamiento y la limitación de la copia intermedia al código informático (14).
+
+En términos de derecho vigente (*lex lata*), la decisión refuerza la posición de los titulares de contenidos editoriales jurídicos frente a quienes pretendan usarlos sin autorización para construir productos competidores. Deja abierta la vía del *fair use* para usos que acrediten un propósito ulterior distinto y la ausencia de un perjuicio significativo a mercados reales o potenciales. Los demás procedimientos sobre entrenamiento de inteligencia artificial generativa continúan su curso ante los tribunales federales de Estados Unidos.
+
+---
+
+## Bibliografía
+
+### Normativa
+
+(1) Copyright Act of 1976, 17 U.S.C. § 107.  
+(2) 28 U.S.C. § 1292(b).  
+(3) Directiva (UE) 2019/790 del Parlamento Europeo y del Consejo, de 17 de abril de 2019, sobre los derechos de autor y derechos afines en el mercado único digital, art. 4.  
+(4) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial, art. 53.1.c).
+
+### Jurisprudencia
+
+(5) *Feist Publications, Inc. v. Rural Telephone Service Co.*, 499 U.S. 340 (1991).  
+(6) *Andy Warhol Foundation for the Visual Arts, Inc. v. Goldsmith*, 598 U.S. 508 (2023).  
+(7) *Thomson Reuters Enterprise Centre GmbH v. ROSS Intelligence Inc.*, No. 1:20-cv-613 (D. Del. 25 de septiembre de 2023) (Bibas, J.), resolución sobre las mociones de *summary judgment*.  
+(8) *Thomson Reuters Enterprise Centre GmbH v. ROSS Intelligence Inc.*, No. 1:20-cv-613-SB, 2025 WL 458520 (D. Del. 11 de febrero de 2025) (Bibas, J.), *Memorandum Opinion*.  
+(9) *Thomson Reuters Enterprise Centre GmbH v. ROSS Intelligence Inc.*, No. 1:20-cv-613 (D. Del. 23 de mayo de 2025) (Bibas, J.), *Memorandum Opinion* que concede la moción de ROSS conforme al 28 U.S.C. § 1292(b).  
+(10) *Thomson Reuters Enterprise Centre GmbH et al. v. ROSS Intelligence Inc.*, No. 25-2153 (3d Cir. 29 de septiembre de 2026), *judgment* y orden de depósito de la opinión bajo sello.  
+(11) *Bartz v. Anthropic PBC*, No. C 24-05417 WHA (N.D. Cal. 23 de junio de 2025).  
+(12) *Kadrey v. Meta Platforms, Inc.*, No. 23-cv-03417-VC (N.D. Cal. 25 de junio de 2025).
+
+### Doctrina y prensa especializada
+
+(13) Blake Brittain, “US appeals court upholds Thomson Reuters’ landmark win in AI training lawsuit”, Reuters, 29 de septiembre de 2026.  
+(14) Aaron Moss, “Signed, Sealed, Affirmed: Third Circuit Backs Thomson Reuters over ROSS”, Copyright Lately, 29 de septiembre de 2026.  
+(15) Bob Ambrogi, “3rd Circuit Issues Opinion in Thomson Reuters v. ROSS Case, But For Now It Is Sealed”, LawSites (LawNext), 29 de septiembre de 2026.  
+(16) Courthouse News Service, “AI company argues its use of scraped Westlaw legal data was transformative”, 11 de junio de 2026.  
+(17) Bob Ambrogi, “At 3rd Circuit, Judges Press ROSS and Thomson Reuters on Fair Use, AI Training and Market Harm”, LawSites, 26 de junio de 2026.  
+(18) “Third Circuit Hears Oral Argument In Ross v. Reuters AI Training Copyright Case”, Mondaq, 1 de julio de 2026.  
+(19) Dennis Crouch, “Headnote Wars in the AI Space: Thomson Reuters (Westlaw) v. ROSS AI”, Patently-O, septiembre de 2025.
