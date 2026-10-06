@@ -167,9 +167,13 @@
     color: hsl(var(--accent)) !important;
   }
 
+  .prose-editorial h1,
   .prose-editorial h2,
   .prose-editorial h3,
-  .prose-editorial h4 {
+  .prose-editorial h4,
+  .prose-editorial h5,
+  .prose-editorial h6,
+  .prose-editorial th {
     color: hsl(var(--foreground));
   }
 
