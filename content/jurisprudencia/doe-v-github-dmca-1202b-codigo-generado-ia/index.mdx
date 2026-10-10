@@ -1,0 +1,227 @@
+---
+title: "Doe v. GitHub: la DMCA no alcanza al código generado por IA"
+description: "El Noveno Circuito confirma que generar código con IA sin atribución no elimina información de gestión de derechos según la DMCA 1202(b)."
+date: "2026-10-10"
+tags: ["Doe v. GitHub", "DMCA", "GitHub Copilot", "derechos de autor", "Noveno Circuito"]
+section: "jurisprudencia"
+category: "juzgado"
+author: "Ricardo Scarpa"
+slug: "doe-v-github-dmca-1202b-codigo-generado-ia"
+readingTime: 25
+image: "/images/jurisprudencia/doe-v-github-dmca-1202b-codigo-generado-ia/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 16 de septiembre de 2026, el Tribunal de Apelaciones del Noveno Circuito de Estados Unidos dictó sentencia en *Doe v. GitHub, Inc.* (No. 24-7700), una decisión que los comentaristas presentan como la primera de un tribunal federal de apelación sobre la sección 1202(b) de la Digital Millennium Copyright Act (DMCA) aplicada a código generado por inteligencia artificial. El panel confirmó la desestimación de la pretensión de la DMCA que un grupo de programadores anónimos había presentado contra GitHub, Microsoft y varias entidades de OpenAI por las herramientas GitHub Copilot y Codex.
+
+Los demandantes habían publicado código abierto en repositorios públicos de GitHub bajo licencias que exigen atribución. Sostenían que Copilot, entrenado con miles de millones de líneas de código público, devolvía a veces fragmentos casi idénticos a los suyos sin el nombre del autor, el aviso de copyright ni los términos de la licencia. Esa información se denomina información de gestión de derechos de autor (CMI, por sus siglas en inglés), y la DMCA prohíbe eliminarla o alterarla con intención. La sanción pesa: entre 2.500 y 25.000 dólares por violación, frente a un tope ordinario de 30.000 dólares por obra en la infracción de derechos de autor. Con la DMCA, cada resultado de la herramienta puede contar como una violación distinta, y la cuantía reclamada superaba los 9.000 millones de dólares.
+
+El juez Eric D. Miller, ponente de una opinión unánime, razonó que «eliminar» y «alterar» describen actos sobre una CMI que ya acompaña a una copia existente. Quien crea una obra nueva y no incluye la CMI no ha eliminado ni alterado nada. Según la descripción que los propios demandantes hicieron de Copilot, la herramienta no localiza ni reproduce archivos almacenados. Predice la continuación más probable de un código a partir de patrones estadísticos y genera una obra nueva, que nunca contuvo esa información.
+
+El tribunal corrigió además el vocabulario del juez Jon S. Tigar, que había exigido copias «idénticas». El Noveno Circuito considera que la «identicality» es un término algo inexacto: la DMCA no pide identidad literal, y los cambios cosméticos menores no protegen por sí solos a quien reproduce de forma sustancial una obra y suprime su CMI. Lo decisivo es si alguien quitó o cambió información de una copia de una obra existente, y los demandantes no lo alegaron.
+
+La sentencia deja abiertas varias puertas. El panel no examinó la teoría del *input*, según la cual la CMI se eliminó durante el entrenamiento de los modelos, porque los demandantes no la preservaron ante el tribunal de distrito: su abogado llegó a responder «quizá no» cuando el juez preguntó si copiar datos de entrenamiento violaba la exigencia de atribución. Tampoco decidió si los resultados de Copilot infringen los derechos de autor por similitud sustancial. Las dos pretensiones contractuales por incumplimiento de licencias de código abierto siguen pendientes ante el tribunal de distrito.
+
+El razonamiento descansa en una distinción de arquitectura. Copilot, tal como lo describe la demanda, genera obras nuevas, mientras que un buscador tradicional recupera y muestra copias existentes. El tribunal añade, en una observación incidental, que si Copilot funcionara como un buscador y devolviera resultados idénticos al código de los demandantes sin su CMI, estos podrían tener una pretensión más sólida. Como el fallo se dicta en la fase de desestimación, la descripción técnica de Copilot es la de los demandantes, y otra demanda con otros hechos podría terminar de otra manera.
+
+Para los proveedores de herramientas de IA, el fallo reduce en el Noveno Circuito el riesgo de reclamaciones cuantiosas fundadas solo en la DMCA. No les concede inmunidad, porque la infracción ordinaria y el incumplimiento contractual siguen disponibles. Para los titulares de derechos, la sentencia exige formular desde la demanda cada teoría que quieran conservar y apoyar la pretensión de la DMCA en hechos de eliminación de CMI sobre copias identificables. El Noveno Circuito cita en sentido concordante una opinión del Quinto Circuito de 21 de agosto de 2026, y la sentencia no vincula a los tribunales europeos, aunque el artículo 7.1.a) de la Directiva 2001/29/CE emplea los mismos verbos y ofrece un punto de comparación.
+
+Este análisis recorre el contexto procesal, el marco de la sección 1202(b), las cuatro cuestiones que resolvió el tribunal (legitimación, identidad, teoría del *output* y teoría del *input*), la distinción entre sistemas generativos y de recuperación, las consecuencias prácticas y los límites del fallo.
+
+# Cuando la inteligencia artificial genera código: el Noveno Circuito cierra la vía de la DMCA por omisión de información de gestión de derechos
+
+## Análisis de la sentencia *Doe v. GitHub, Inc.* (9th Cir., 16 de septiembre de 2026)
+
+### Índice
+
+1. Introducción y contexto procesal
+2. Los hechos relevantes y las pretensiones de las partes
+3. El marco normativo: la sección 1202(b) de la Digital Millennium Copyright Act
+4. El razonamiento del Noveno Circuito
+   - 4.1. Legitimación activa (*standing*)
+   - 4.2. El rechazo de la «identicality»
+   - 4.3. La teoría del *output*
+   - 4.4. La teoría del *input*
+5. Distinción entre sistemas generativos y sistemas de recuperación
+6. Consecuencias prácticas
+7. Limitaciones del fallo
+8. Conclusiones
+
+---
+
+### 1. Introducción y contexto procesal
+
+El 16 de septiembre de 2026, el Tribunal de Apelaciones del Noveno Circuito dictó sentencia en *Doe v. GitHub, Inc.* (No. 24-7700). Los comentaristas la presentan como la primera decisión publicada de un tribunal federal de apelación que aplica la sección 1202(b) de la Digital Millennium Copyright Act (DMCA) a los resultados de un sistema de inteligencia artificial que genera código (13)(14).
+
+El caso llegó al panel por la vía del recurso interlocutorio del 28 U.S.C. § 1292(b). Los demandantes son programadores anónimos que publicaron código abierto en GitHub. Demandaron a GitHub, a Microsoft y a varias entidades de OpenAI (4)(15). La demanda colectiva se presentó en 2022 ante el Tribunal de Distrito para el Distrito Norte de California (caso 4:22-cv-06823-JST), con el juez Jon S. Tigar al frente (4)(15). Los demandantes alegaron que GitHub Copilot y OpenAI Codex generan a veces fragmentos de su código sin la información de gestión de derechos de autor (CMI, por sus siglas en inglés, *copyright management information*) que acompañaba a los originales (4).
+
+Invocaron los apartados (b)(1) y (b)(3) de la sección 1202 (1)(4). Tras dos rondas de desestimaciones y reformas de la demanda, el pleito quedó reducido a una pretensión de la DMCA y dos pretensiones contractuales (4)(11). El juez Tigar desestimó la pretensión de la DMCA con carácter definitivo (*with prejudice*), porque entendió que la sección 1202(b) exige copias idénticas. Mantuvo vivas las reclamaciones contractuales por incumplimiento de licencias de código abierto (4)(11). Después certificó la cuestión para revisión interlocutoria (4).
+
+El panel lo formaron los jueces de circuito Sidney R. Thomas y Eric D. Miller y el juez de distrito Stanley Blumenfeld Jr., del Distrito Central de California, que actuó en comisión de servicios. Escuchó los argumentos el 11 de febrero de 2026 y dictó la opinión el 16 de septiembre, con Miller como ponente. La opinión fue unánime (4)(14). El tribunal confirmó la desestimación de la pretensión de la DMCA, y las dos pretensiones contractuales siguen pendientes ante el tribunal de distrito (4)(14).
+
+La resolución se limita a la sección 1202(b). El tribunal declaró de forma expresa que no se pronunciaba sobre si los resultados de Copilot pueden infringir derechos de autor por similitud sustancial (4). Tampoco decidió si la eliminación de CMI en la fase de entrenamiento viola la DMCA (4).
+
+### 2. Los hechos relevantes y las pretensiones de las partes
+
+Los demandantes publicaron código protegido por derechos de autor en repositorios públicos de GitHub, bajo distintas licencias de código abierto. Una de las condiciones más habituales de esas licencias es la atribución: toda copia o derivado debe incluir la licencia, con el nombre del autor y el aviso de copyright (4).
+
+Microsoft es propietaria de GitHub e inversora importante de OpenAI. Codex es la herramienta de OpenAI que redacta código a partir de las indicaciones de un programador. Copilot es un servicio de suscripción que GitHub y OpenAI desarrollaron juntos y que emplea una versión modificada de Codex. Para el caso, el tribunal los trató como equivalentes y habló solo de Copilot (4).
+
+Según la demanda, Copilot es un modelo de lenguaje que identifica patrones estadísticos en la estructura del código y elige la continuación con mayor probabilidad a partir de los ejemplos que revisó en el entrenamiento. Se entrenó con miles de millones de líneas de código público, incluido el de «todos los repositorios públicos de GitHub disponibles» (traducción propia) (4).
+
+Los demandantes sostuvieron que Copilot produce a veces «copias idénticas del código con el que se entrenó» y que esa posibilidad crece con la escala del modelo. Aportaron ejemplos en los que, según alegan, Copilot reprodujo casi al pie de la letra código escrito por los representantes propuestos de la clase. Cuando reproduce su material de entrenamiento, alegan, Copilot no incluye la atribución, los avisos de copyright ni los términos de licencia que acompañaban al código al publicarse en GitHub (4). Consideran que esa omisión viola la sección 1202(b) (4).
+
+Pretendían daños estatutarios de hasta 25.000 dólares por violación, con arreglo a la sección 1203(c)(3) (2)(14). Courthouse News informa de que la cuantía reclamada superaba los 9.000 millones de dólares (14). Las dos pretensiones contractuales no formaron parte del recurso interlocutorio y siguen pendientes (4).
+
+El juez Tigar desestimó la pretensión de la DMCA porque los ejemplos de la demanda mostraban resultados en «formato modificado», «variaciones» o «equivalentes funcionales» del código con licencia, y no copias idénticas (4).
+
+### 3. El marco normativo: la sección 1202(b) de la Digital Millennium Copyright Act
+
+La sección 1202 de la DMCA, aprobada en 1998, protege la CMI (1)(4). Con arreglo a la sección 1202(b), nadie puede, sin autorización del titular del derecho o de la ley:
+
+- apartado (b)(1): eliminar o alterar con intención cualquier CMI;
+- apartado (b)(2): distribuir o importar para su distribución CMI a sabiendas de que alguien la eliminó o alteró sin autorización;
+- apartado (b)(3): distribuir, importar para su distribución o ejecutar en público obras, copias de obras o fonogramas a sabiendas de que alguien eliminó o alteró su CMI sin autorización (1)(4).
+
+La sección 1202(c) define la CMI como la información transmitida en conexión con copias de una obra: el título y demás datos que identifican la obra, incluida la información del aviso de copyright, el nombre del autor y del titular, y los términos y condiciones de uso (1)(4). La DMCA no obliga a incluir CMI en las obras ni fija los tipos de CMI que deben utilizarse. Si la obra la contiene, la sección 1202(b) la protege contra la eliminación o la alteración deliberadas (4).
+
+La sección 1203(c)(3) permite reclamar entre 2.500 y 25.000 dólares por cada violación de la sección 1202. La sección 504(c)(1) fija, para la infracción ordinaria de derechos de autor, un tope de 30.000 dólares por obra, y la sección 504(c)(2) lo eleva hasta 150.000 dólares si la infracción es dolosa (2)(4). La diferencia de fondo está en la unidad de cuenta: la DMCA cuenta violaciones y el régimen ordinario cuenta obras. Una herramienta que responde a millones de consultas multiplica la exposición cuando cada resultado cuenta como una violación (2).
+
+Los tribunales leen «eliminar» y «alterar» como actos sobre una CMI que ya acompaña a una obra existente. El Noveno Circuito cita en ese sentido *Falkner v. General Motors LLC*, que niega que la mera falta de CMI constituya eliminación o alteración (6), y *Murphy v. Millennium Radio Group*, cuyo ejemplo es reimprimir una imagen recortando el crédito del fotógrafo (7).
+
+El tribunal de distrito resumió esa exigencia en un requisito de identidad: sin copias idénticas no hay pretensión. El Noveno Circuito rechazó la etiqueta, como se expone en el apartado 4.2 (4).
+
+### 4. El razonamiento del Noveno Circuito
+
+El juez Eric D. Miller redactó la opinión del panel (4). El análisis cubre cuatro cuestiones, que este texto ordena de forma distinta a la opinión para seguir el hilo del argumento: la legitimación, el requisito de identidad, la teoría del *output* y la teoría del *input*.
+
+#### 4.1. Legitimación activa (*standing*)
+
+Los demandados sostenían que los demandantes carecían de legitimación, porque no habían alegado de forma adecuada que Copilot copiaría su código (y no el de otro contribuyente de GitHub) sin reproducir la CMI. El tribunal de distrito no resolvió esa cuestión y la pregunta certificada tampoco la mencionaba. El panel la examinó de todos modos: la jurisdicción del artículo 1292(b) alcanza a la orden certificada y a cualquier cuestión incluida en ella, sin quedar atada a la pregunta que formuló el juez de distrito (4).
+
+El tribunal confirmó la legitimación. La demanda alega un riesgo sustancial de daño futuro, porque afirma que Copilot reproduce sin atribución el código de los demandantes designados y que es probable, si no cierto, que ya haya emitido copias textuales, casi textuales o modificadas del código de cada uno (4). El panel apoyó la plausibilidad de esa alegación en tres elementos de la demanda: la investigación académica según la cual los modelos de lenguaje a veces reproducen de forma textual los datos de entrenamiento que memorizaron; la función de detección de duplicados que GitHub implementó para bloquear sugerencias que coinciden con código público (fragmentos textuales de 150 caracteres o más), que el tribunal toma como indicio de que Copilot puede emitir copias idénticas; y los ejemplos concretos en los que Copilot reprodujo partes del código de los demandantes designados (4)(11).
+
+El panel precisó el alcance de esa conclusión. Si el caso llegara a un juicio sumario (*summary judgment*), los demandantes tendrían que presentar pruebas que generen una controversia real sobre el riesgo de daño, y el tribunal no resolvió si las que cita la demanda bastarían. Para sobrevivir a una moción de desestimación, basta la plausibilidad (4).
+
+#### 4.2. El rechazo de la «identicality»
+
+El tribunal de distrito exigía copias idénticas. El Noveno Circuito califica la «identicality» de término algo inexacto (*something of a misnomer*), porque la DMCA no exige identidad literal entre la obra del demandante y la obra que se acusa de infringir. El concepto se entiende mejor como una glosa de los términos legales «eliminar», «alterar» y «copias» que como un elemento autónomo, y sin apoyo en el texto, de la pretensión de la sección 1202(b) (4)(10).
+
+La identidad conserva un uso probatorio. Comparar la supuesta copia con el original es una forma de determinar si alguien eliminó CMI de una obra protegida. Si las dos obras coinciden en todo lo demás (la misma composición, el mismo encuadre u otros rasgos distintivos) y solo falta la CMI, el juzgador puede inferir con razón que el demandado la eliminó de la obra copiada. El propio Noveno Circuito aplicó ese razonamiento en *Friedman v. Live Nation Merchandise, Inc.*: las fotografías infractoras eran «copias exactas» y la única diferencia material era la ausencia de CMI, de modo que la CMI había salido por fuerza de la versión copiada (4)(5).
+
+El panel recoge además una concesión de los demandados: las dos obras no tienen que ser idénticas al pie de la letra para sostener esa inferencia, y los cambios cosméticos menores no protegen por sí solos a quien reproduce de forma sustancial o total la obra protegida y suprime su CMI (4)(9). Los demandantes habían advertido que una regla de identidad literal permitiría eludir la DMCA con solo cambiar una palabra de una página (4). Cuando existen diferencias materiales entre las obras, en cambio, pueden indicar que el demandado creó una obra derivada nueva a la que nunca se adjuntó la CMI del demandante, de modo que no pudo eliminar ni alterar nada (4).
+
+Esa concesión no ayudó a los demandantes. Ellos no alegaron que los demandados hubieran eliminado CMI de una copia de su obra, ni siquiera de una copia con alteraciones menores (4).
+
+#### 4.3. La teoría del *output*
+
+La teoría del *output* sostiene que Copilot devuelve a veces datos de entrenamiento memorizados sin la CMI del código fuente y que, al hacerlo, «elimina» o «altera» la CMI de copias de la obra protegida, en violación de los apartados (b)(1) y (b)(3) (4).
+
+El tribunal parte del texto de la ley. «Eliminar» significa deshacerse de algo, y «alterar», hacer que algo cambie en alguna característica particular. En su contexto, los dos verbos implican un acto afirmativo sobre una CMI vinculada a una obra que ya existe. Los ejemplos que cita el tribunal son desfigurar la portada de un libro o borrar la información electrónica que acompaña a un archivo informático (4). La frase central de la opinión dice así: «One who creates a new work and fails to include CMI cannot be said to have “removed” or “altered” anything» (4). En traducción propia: quien crea una obra nueva y no incluye CMI no ha «eliminado» ni «alterado» nada.
+
+La definición legal de CMI refuerza esa lectura. La CMI es información transmitida en conexión con copias de una obra, y no con extractos ni con obras derivadas. Una copia es un objeto material en el que se fija la obra, y la CMI existe en conexión con esos objetos (1)(4). Violar la sección 1202(b) exige quitar o cambiar la CMI de esos objetos. Para estar en la sección 1202, los demandantes deben alegar que los demandados eliminaron o alteraron CMI de copias de obras existentes. Alegar que una obra similar o derivada carece de la CMI, sin hechos que muestren su eliminación o alteración, no basta (4)(6)(7).
+
+Aplicado a Copilot, el tribunal se atiene a la descripción que hace la propia demanda. Copilot se basa en un «proceso probabilístico complejo» para predecir «la solución más probable a una indicación dada», a partir de «la solución que ha encontrado en más proyectos» que responden a preguntas similares (traducción propia). A veces el resultado coincide con fragmentos del código de entrenamiento. Pero el relato del funcionamiento interno del algoritmo, que infiere patrones estadísticos sobre la estructura del código y elige la continuación más probable, no describe un acto sobre una CMI adjunta a una obra existente. Describe un proceso por el que Copilot genera obras nuevas (4).
+
+El tribunal reconoce que esos resultados pueden parecerse mucho, en algunos casos, a código existente, y declara que no emite juicio sobre si esa similitud permitiría una reclamación por infracción de derechos de autor (4). Añade una razón de política jurídica. Muchos casos de derechos de autor tratan de una obra muy parecida a la del demandante y sin atribución. Si eso bastara para violar la sección 1202(b), la DMCA suplantaría la protección tradicional del derecho de autor y expondría a los demandados a una una responsabilidad que podría resultar ruinosa por los daños estatutarios reforzados (4)(2). La opinión termina con esta frase: «We decline plaintiffs’ invitation to transform run-of-the-mill copyright-infringement claims into DMCA claims», que en traducción propia dice que el tribunal rechaza la invitación de los demandantes a convertir reclamaciones corrientes de infracción de derechos de autor en reclamaciones de la DMCA (4)(14).
+
+#### 4.4. La teoría del *input*
+
+La teoría del *input* sostiene que los demandados violaron la sección 1202(b)(1) en la fase de entrenamiento, al eliminar la CMI del código de los miembros de la clase antes de introducir ese código, ya despojado, como datos de entrenamiento (4). El panel no la examinó porque los demandantes la perdieron por falta de preservación (*forfeiture*) (4)(10).
+
+El historial procesal explica esa decisión. En la audiencia sobre la primera moción de desestimación, el tribunal de distrito preguntó si copiar los datos de entrenamiento en Copilot violaba la exigencia de atribución de las licencias, y el abogado de los demandantes respondió «Perhaps it doesn’t» («quizá no»). El juez observó que la demanda no trataba del entrenamiento, y su orden posterior afirmó que los demandantes no alegaban haber sufrido un daño por el uso del código con licencia como datos de entrenamiento (4). Los demandantes no corrigieron ese entendimiento ni de palabra ni por escrito, y el panel concluyó que les correspondía hacerlo (4).
+
+El fallo no se pronuncia, por tanto, sobre si la eliminación de CMI en los datos de entrenamiento puede violar la sección 1202(b) (4)(10).
+
+### 5. Distinción entre sistemas generativos y sistemas de recuperación
+
+El razonamiento del Noveno Circuito descansa en una distinción de arquitectura. El tribunal describe a Copilot, tal como la demanda lo presenta, como un sistema que aprende de obras existentes y crea obras nuevas a partir de ese aprendizaje, y no como un sistema que hace copias de obras existentes. Lo contrapone al buscador tradicional que, ante una consulta, recupera y muestra información almacenada, es decir, copias de materiales que ya existen (4).
+
+Esa contraposición incluye una observación sobre el supuesto contrario: «If Copilot functioned like a search engine and produced outputs that were identical to plaintiffs’ code but did not contain CMI, then plaintiffs might have a stronger claim that Copilot had removed their CMI. But that is not what plaintiffs have alleged» (4). En traducción propia, si Copilot funcionara como un buscador y devolviera resultados idénticos al código de los demandantes pero sin CMI, estos podrían tener una pretensión más sólida de eliminación de CMI, pero eso no es lo que alegaron. La observación es un *obiter dictum* y no integra la *ratio decidendi*, que consiste en que las alegaciones describen una herramienta que crea obra nueva (4)(12).
+
+De ahí se sigue una consecuencia de método. Cuando un sistema recupera una copia preexistente y la distribuye sin su CMI, la sección 1202(b)(3) puede entrar en juego. Cuando genera una obra nueva que nunca contuvo CMI, no hay nada eliminado ni alterado (4)(12). Ropes & Gray subraya que el tribunal limitó esa caracterización al análisis de eliminación y alteración de la sección 1202(b), sin resolver si los resultados que reproducen material protegido pueden constituir infracción ordinaria (12).
+
+La premisa fáctica de la distinción merece atención. El tribunal decide en la fase de desestimación, acepta como ciertas las alegaciones de la demanda y toma de ella la descripción técnica de Copilot. La distinción entre generación y recuperación pesa en este fallo porque los propios demandantes describieron un proceso probabilístico, y no porque el tribunal haya examinado el sistema (4).
+
+El panel tampoco concedió inmunidad general a los sistemas generativos. Señaló que los resultados de Copilot pueden parecerse mucho, en algunos casos, a código existente y dejó abierta la cuestión de la infracción ordinaria (4)(10).
+
+### 6. Consecuencias prácticas
+
+En el Noveno Circuito, la vía de los daños estatutarios de la sección 1202(b) por la mera ausencia de CMI en resultados generados queda cerrada para quien describa el sistema como los demandantes describieron Copilot (4)(10). Los proveedores de herramientas de IA reducen así el riesgo de pretensiones cuantiosas apoyadas solo en la DMCA (10)(15).
+
+Las reclamaciones por infracción ordinaria de derechos de autor siguen abiertas, y las pretensiones contractuales por incumplimiento de licencias continúan vivas ante el tribunal de distrito (4)(14). Los titulares de derechos pierden la vía preferente de la sección 1202(b) frente a sistemas generativos y deben orientarse hacia la infracción de copyright por similitud sustancial y hacia el cumplimiento contractual de las licencias (10).
+
+La sentencia no está sola. El Noveno Circuito cita en sentido concordante la opinión del juez Willett en *Kipp Flores Architects, LLC v. AMH Creekside Development, LLC*, del Quinto Circuito, de 21 de agosto de 2026, para sostener que la mera falta de inclusión de CMI no equivale a eliminarla o alterarla (4)(8).
+
+El caso enseña también una lección de técnica procesal. La pérdida de la teoría del *input* por falta de preservación muestra que los demandantes deben formular cada teoría de forma expresa y mantenerla ante el tribunal de primera instancia (4)(10).
+
+Los tribunales que conozcan casos similares tendrán que examinar cómo describe la demanda el funcionamiento del sistema: si recupera copias existentes o si genera obras nuevas (4)(12). Para los litigantes, eso se traduce en alegar hechos concretos de eliminación de CMI sobre copias identificables y en aportar la prueba de que el sistema devuelve resultados idénticos o casi idénticos a obras protegidas.
+
+La sentencia no vincula a los tribunales europeos. Como referencia comparada, el artículo 7.1.a) de la Directiva 2001/29/CE obliga a los Estados miembros a proteger frente a la supresión o alteración no autorizadas de información electrónica sobre la gestión de derechos, y utiliza los mismos verbos que la sección 1202(b) (3). La lectura que los tribunales europeos darán a ese precepto frente a obras generadas por IA queda abierta. Cabe sostener que el razonamiento del Noveno Circuito tiene valor persuasivo como argumento de texto, pero sin fuerza normativa en la Unión (3).
+
+### 7. Limitaciones del fallo
+
+El fallo se limita a la sección 1202(b) y a la teoría del *output*. No examina el entrenamiento de los modelos ni la eliminación de CMI durante la preparación de los datos (4)(10).
+
+El tribunal no se pronuncia sobre si los resultados generados pueden constituir infracción ordinaria de derechos de autor por similitud sustancial (4).
+
+Las pretensiones contractuales siguen pendientes. El alcance de la responsabilidad de GitHub, Microsoft y OpenAI por generar código sin la atribución que exigen las licencias no se ha resuelto (4)(14).
+
+El criterio de distinción entre generación y recuperación nace de las alegaciones de este litigio. La decisión se adopta en la fase de desestimación, sobre la descripción que los demandantes hicieron de Copilot, y no fija una regla abstracta para cualquier arquitectura de inteligencia artificial (4)(12). Una demanda que describiera el sistema como un mecanismo de recuperación, o que alegara hechos de eliminación de CMI sobre copias concretas, podría llegar a otro resultado (4).
+
+La decisión es vinculante en el Noveno Circuito, por tratarse de una opinión publicada, sobre la interpretación de la sección 1202(b) frente a resultados generados por modelos de lenguaje aplicados al código. No cierra el debate más amplio sobre inteligencia artificial y derecho de autor. Este análisis refleja la situación procesal conocida a 10 de octubre de 2026 y no recoge actuaciones posteriores, como una eventual revisión por el pleno del tribunal o un recurso de *certiorari* ante el Tribunal Supremo.
+
+### 8. Conclusiones
+
+El Noveno Circuito estableció que generar código mediante un modelo de lenguaje no equivale por sí solo a eliminar o alterar información de gestión de derechos de autor cuando, según la descripción de la demanda, el sistema produce obras nuevas que nunca contuvieron esa información (4).
+
+Rechazó el requisito de identidad literal como elemento autónomo y se negó a convertir reclamaciones ordinarias de infracción de derechos de autor en reclamaciones de la DMCA (4)(2).
+
+Apoyó su decisión en una distinción entre generación probabilística y recuperación de copias preexistentes. Esa distinción limita el uso de la sección 1202(b) frente a sistemas generativos de código, y el tribunal sugiere, en una observación incidental, que un sistema que funcionara como un buscador podría recibir otro trato (4)(12).
+
+Las pretensiones contractuales continúan pendientes. La cuestión de la eliminación de CMI durante el entrenamiento permanece abierta, y las acciones de infracción ordinaria por similitud sustancial siguen disponibles (4)(10).
+
+De la sentencia se desprenden recomendaciones prácticas para cada lado. Los titulares de derechos que litiguen contra proveedores de IA generativa deben formular desde la demanda cada teoría que quieran conservar, incluida la del *input*, apoyar la pretensión de la DMCA en hechos de eliminación de CMI sobre copias identificables y combinarla con las acciones de infracción y de incumplimiento de licencia. Los proveedores deben leer el fallo como una delimitación de la sección 1202(b) y no como una inmunidad, porque las vías de infracción ordinaria y de incumplimiento contractual siguen abiertas, y porque la propia opinión admite que un sistema que devuelva copias idénticas sin CMI plantea otra discusión (4)(12).
+
+La decisión fija con precisión los límites de una disposición concreta de la DMCA y orienta a operadores y tribunales que deban resolver controversias análogas.
+
+---
+
+### Bibliografía
+
+#### Normativa
+
+(1) 17 U.S.C. § 1202 (Digital Millennium Copyright Act, Pub. L. No. 105-304, § 103, 112 Stat. 2860 (1998)).
+
+(2) 17 U.S.C. §§ 1203(c)(3), 504(c)(1) y 504(c)(2).
+
+(3) Directiva 2001/29/CE del Parlamento Europeo y del Consejo, de 22 de mayo de 2001, relativa a la armonización de determinados aspectos de los derechos de autor y derechos afines a los derechos de autor en la sociedad de la información, DO L 167, de 22 de junio de 2001, art. 7.
+
+#### Jurisprudencia
+
+(4) United States Court of Appeals for the Ninth Circuit, *Doe v. GitHub, Inc.*, No. 24-7700 (9th Cir. Sept. 16, 2026) (opinión del juez Miller). Disponible en: https://cdn.ca9.uscourts.gov/datastore/opinions/2026/09/16/24-7700.pdf y https://law.justia.com/cases/federal/appellate-courts/ca9/24-7700/24-7700-2026-09-16.html [consulta: 10/10/2026].
+
+(5) *Friedman v. Live Nation Merchandise, Inc.*, 833 F.3d 1180 (9th Cir. 2016). Citada en (4).
+
+(6) *Falkner v. General Motors LLC*, 393 F. Supp. 3d 927 (C.D. Cal. 2018). Citada en (4).
+
+(7) *Murphy v. Millennium Radio Group LLC*, 650 F.3d 295 (3d Cir. 2011). Citada en (4).
+
+(8) *Kipp Flores Architects, LLC v. AMH Creekside Development, LLC*, No. 23-50750, 2026 WL 2453096 (5th Cir. Aug. 21, 2026). Citada en (4).
+
+(9) *New York Times Co. v. Microsoft Corp.*, 777 F. Supp. 3d 283 (S.D.N.Y. 2025). Citada en (4).
+
+#### Doctrina, alertas profesionales y prensa especializada
+
+(10) Gibson Dunn, «Ninth Circuit Clarifies Limits of DMCA Liability for AI-Generated Code», *Client Alert*, 18 de septiembre de 2026. Disponible en: https://www.gibsondunn.com/ninth-circuit-clarifies-limits-of-dmca-liability-for-ai-generated-code/ [consulta: 10/10/2026].
+
+(11) Haynes Boone, «AI Legal News-Ninth Circuit Rejects DMCA Copilot Theory», 18 de septiembre de 2026. Disponible en: https://haynesboone.com/news/alerts/ai-legal-news-ninth-circuit-rejects-dmca-section-1202(b)-theory [consulta: 10/10/2026].
+
+(12) Ropes & Gray, «Ninth Circuit Rules Generative AI Outputs Are Not “Stripped Copies” Under the DMCA», septiembre de 2026. Disponible en: https://www.ropesgray.com/en/insights/alerts/2026/09/ninth-circuit-rules-generative-ai-outputs-are-not-stripped-copies-under-the-dmca [consulta: 10/10/2026].
+
+(13) Sigma Law Group, «Ninth Circuit: AI Output That Omits Attribution Is Not a DMCA Violation», 17 de septiembre de 2026. Disponible en: https://sigmalawgroup.com/blog/2026-09-17-doe-github-ninth-circuit-dmca-1202b-ai-outputs [consulta: 10/10/2026].
+
+(14) Courthouse News Service, «Coders lose appeal in copyright fight against AI tools», 16 de septiembre de 2026. Disponible en: https://courthousenews.com/coders-lose-appeal-in-copyright-fight-against-ai-tools [consulta: 10/10/2026].
+
+(15) Reuters, «OpenAI, Microsoft fend off part of software developer lawsuit over AI training», 16 de septiembre de 2026. Disponible en: https://www.reuters.com/legal/government/openai-microsoft-fend-off-part-software-developer-lawsuit-over-ai-training-2026-09-16/ [consulta: 10/10/2026].
