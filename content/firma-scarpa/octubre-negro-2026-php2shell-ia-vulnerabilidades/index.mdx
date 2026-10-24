@@ -1,0 +1,225 @@
+---
+title: "PHP2Shell y Octubre Negro 2026: la IA destapa fallos en PHP"
+description: "Análisis de PHP2Shell (CVE-2026-109618 y CVE-2026-109619), el papel de la IA en su hallazgo y la oleada de avisos críticos de octubre de 2026."
+date: "2026-10-24"
+tags: ["PHP2Shell", "Octubre Negro", "ciberseguridad", "vulnerabilidades", "inteligencia artificial"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "octubre-negro-2026-php2shell-ia-vulnerabilidades"
+readingTime: 29
+image: "/images/firma-scarpa/octubre-negro-2026-php2shell-ia-vulnerabilidades/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 21 de octubre de 2026 el proyecto PHP publicó parches de emergencia para dos vulnerabilidades críticas del propio motor del lenguaje, identificadas como CVE-2026-109618 y CVE-2026-109619 y conocidas como PHP2Shell. PHP mueve en torno al 70 % de los sitios web activos del planeta. Un atacante sin cuenta ni credenciales puede ejecutar código en el servidor con una petición HTTP manipulada. En los despliegues con Apache y `mod_php`, el ataque se dispara antes de que corra una sola línea del código de la aplicación. Da igual que el sitio use WordPress, Drupal, Joomla o un desarrollo a medida: el fallo vive en el runtime.
+
+Las dos fallas son errores de memoria. La primera nace de cómo PHP gestiona una falta de memoria y deja la petición a medio inicializar. La segunda es un uso después de liberación: el worker conserva estado de una petición anterior que apunta a memoria ya liberada, y la siguiente petición lo reutiliza. El proyecto PHP les asignó una puntuación de 9,2 sobre 10 en CVSS v4.0. Cada versión desde la 5.4, publicada en 2012, queda afectada por al menos una de las dos. Las versiones corregidas son 8.5.12, 8.4.27, 8.3.36 y 8.2.35. Las ramas 8.1 y anteriores, sin soporte, solo recibieron backports de código fuente limitados.
+
+La inteligencia artificial figura en el origen del hallazgo. Wiz Research, con su plataforma interna y modelos de frontera, y el investigador Ryan Austin, de Calif, dentro del programa «Patch the Planet» de OpenAI, llegaron por separado a los mismos defectos entre agosto y septiembre. Los informes de los propios equipos describen un proceso híbrido: los modelos ayudaron a analizar código y a generar hipótesis, y las personas validaron los experimentos y construyeron las pruebas de concepto. Ninguna fuente documenta que un modelo produjera el exploit completo por su cuenta. Las fuentes sí recogen que una cadena de explotación situada en el límite de lo que alcanzaban los investigadores humanos pasó a ser viable. Ese mismo mecanismo acorta el plazo entre el descubrimiento de un fallo antiguo y su explotación.
+
+La divulgación coordinada duró unos dos meses y medio, hasta que el 20 de octubre se filtraron los identificadores CVE y los detalles técnicos. PHP adelantó la publicación al 21 de octubre. Amazon Threat Intelligence ya había detectado actividad en honeypots el 17 de octubre. Tras el anuncio, Cloudflare contó millones de intentos de explotación. CISA, el NCSC británico y otros equipos nacionales de respuesta pidieron parchear de inmediato o, si no era posible, desconectar los sistemas expuestos. Portales de gobiernos, hospitales y plataformas de transporte en Europa y Japón se apagaron de forma preventiva.
+
+El nombre Octubre Negro nació en una publicación en X el 22 de octubre y agrupa mucho más que PHP2Shell. En la misma semana se conocieron el compromiso de claves de certificados intermedios de la autoridad india eMudhra, la filtración de 321.810 cuentas en la plataforma Zeabur, una versión de la librería LiteLLM con un robo de credenciales incrustado y avisos críticos de GitLab, Node.js y Fortinet. Los análisis técnicos recuerdan que varios de esos accesos llevaban semanas o meses activos y solo salieron a la luz entonces. Se trata de una ola de divulgaciones, sin campaña coordinada de ataques ni actor único.
+
+Las cifras piden prudencia. Palo Alto Networks estimó más de 22,6 millones de instancias expuestas y Censys habló de decenas de millones de servicios, pero esos recuentos dependen de la metodología de escaneo de cada proveedor y no equivalen a sistemas explotables. El volumen de intentos tampoco prueba compromisos exitosos: hasta el 23 de octubre, varios proveedores indicaban que la evidencia de explotación masiva y sostenida seguía siendo limitada. Los datos de Zeabur, Railway y eMudhra proceden en buena parte de comunicados de las propias empresas.
+
+Para las organizaciones, la conclusión práctica tiene tres pasos: inventariar todas las instalaciones de PHP, incluidas las embebidas en productos de terceros, contenedores y appliances; actualizar a una versión corregida; y reiniciar todos los workers, porque los procesos en marcha siguen ejecutando el código vulnerable. Quien dependa de PHP 8.1 o anterior debe elegir entre aplicar parches no oficiales, migrar o desconectar el sistema de Internet.
+
+# Octubre Negro 2026: cuando la inteligencia artificial destapó fallos estructurales en el motor de la web
+
+**Subtítulo**  
+Análisis técnico de la oleada de vulnerabilidades críticas centrada en PHP2Shell (CVE-2026-109618 y CVE-2026-109619), su descubrimiento asistido por modelos de frontera, el impacto sistémico y las implicaciones para la gestión de riesgo en infraestructuras digitales
+
+## Índice
+
+1. Contexto y denominación del fenómeno  
+2. Descripción técnica de PHP2Shell  
+3. Proceso de descubrimiento y papel de la inteligencia artificial  
+4. Cronología de la divulgación y respuesta coordinada  
+5. Alcance de la exposición y intentos de explotación  
+6. Otros incidentes concurrentes en el periodo  
+7. Respuesta de agencias y medidas de mitigación  
+8. Consecuencias prácticas y riesgos residuales  
+9. Limitaciones de la información disponible  
+
+---
+
+## 1. Contexto y denominación del fenómeno
+
+La tercera semana de octubre de 2026 concentró una oleada de divulgaciones de vulnerabilidades críticas e incidentes de seguridad. Afectaron a componentes básicos de la infraestructura web, plataformas de desarrollo, autoridades de certificación y cadenas de suministro de software. Los círculos de ciberseguridad y los medios especializados bautizaron el conjunto como “Black October” o Octubre Negro (1)(2).
+
+El término no salió de ninguna agencia oficial. Nació en una publicación de la red X el 22 de octubre de 2026 a las 03:42 UTC. El autor calificó las 48 horas anteriores como las peores de la historia de la ciberseguridad e introdujo la etiqueta “Black October” (1). Analistas, medios y equipos de respuesta a incidentes adoptaron la expresión en pocas horas. Quedó como referencia coloquial para los avisos publicados entre el 19 y el 22 de octubre de 2026 (1)(2).
+
+Conviene separar dos hechos. Existió una oleada real de divulgaciones públicas de fallos graves, muchos con puntuación crítica en CVSS. Al mismo tiempo, una parte relevante de los accesos indebidos, las exposiciones de credenciales y las debilidades de fondo llevaban semanas o meses activos. Solo salieron a la luz en ese intervalo (1). Varios análisis técnicos hablan de una “ola de divulgaciones”, no de una campaña de ataques lanzada de forma simultánea (1).
+
+El núcleo del problema fue el par de vulnerabilidades en el motor de PHP conocido como PHP2Shell (CVE-2026-109618 y CVE-2026-109619). PHP sostiene cerca del 70 % de los sitios web activos del planeta (3)(2). La ejecución remota de código sin autenticación en el propio runtime explica la intensidad de la respuesta institucional y la decisión de numerosos organismos de apagar servicios públicos mientras aplicaban los parches (4).
+
+En el mismo periodo salieron a la luz otros incidentes: el compromiso de claves privadas de certificados intermedios de la autoridad de certificación eMudhra, exposiciones masivas de credenciales en plataformas de despliegue como Zeabur, problemas de cadena de suministro en librerías de inteligencia artificial (LiteLLM), vulnerabilidades críticas en GitLab y avisos sobre Node.js, Fortinet y otros componentes (1). La coincidencia temporal generó una sensación de crisis acumulativa de confianza en la infraestructura digital básica.
+
+El fenómeno interesa a la ciberinteligencia por tres factores que se suman a la severidad de cada fallo: la amplitud de la superficie de ataque (sobre todo el runtime de PHP), el uso de modelos de inteligencia artificial de frontera para descubrir fallos de larga data, y la velocidad con que los intentos de explotación escalaron tras la divulgación pública (3)(2). Estos elementos convierten a Octubre Negro en un caso de estudio sobre los cambios que la automatización introduce en el ciclo de vida de las vulnerabilidades.
+
+La denominación funciona como etiqueta descriptiva de un intervalo de alta densidad de avisos críticos. No designa una campaña de ataque unificada ni un actor único. Su utilidad analítica consiste en agrupar por fecha eventos de origen diverso que generaron presión simultánea sobre los equipos de seguridad de organizaciones públicas y privadas.
+
+## 2. Descripción técnica de PHP2Shell
+
+PHP2Shell agrupa dos vulnerabilidades críticas del núcleo de PHP: CVE-2026-109618 y CVE-2026-109619. El propio proyecto PHP les asignó una puntuación de 9,2 en la escala CVSS v4.0 (3)(5)(15). Se trata de defectos de corrupción de memoria en el runtime, no en las aplicaciones o frameworks que se ejecutan encima. Cualquier instalación de PHP que procese peticiones web queda dentro del perímetro de riesgo (3)(5)(6).
+
+La primera vulnerabilidad, CVE-2026-109618, afecta al manejo de condiciones de falta de memoria (out-of-memory, OOM). PHP usa `longjmp()` para salir del contexto actual cuando se produce un error de OOM y abortar el procesamiento de la petición. En ciertos contextos la memoria asociada a la petición permanece accesible antes de estar inicializada del todo. Si una asignación falla en ese punto, el motor deja la memoria de la petición en un estado inválido. Un atacante remoto sin autenticación puede forzar esta condición con una petición diseñada a propósito, por ejemplo durante el análisis de un cuerpo multipart, sin superar los límites configurados. En entornos con Apache y `mod_php` la explotación puede ocurrir antes de que se ejecute cualquier código de la aplicación (5)(6).
+
+La segunda vulnerabilidad, CVE-2026-109619, es un uso después de liberación (use-after-free) ligado al estado global de los workers de PHP. Elementos de estado interno de una petición sobreviven después de que el sistema libera la memoria que los respaldaba. Cuando el mismo worker procesa una petición posterior, reutiliza ese estado obsoleto antes de la inicialización normal. Un atacante remoto sin autenticación, con una secuencia controlada de peticiones, puede corromper la memoria y lograr ejecución de código arbitrario (5)(6).
+
+Cada versión de PHP desde la 5.4 hasta las anteriores a las correcciones del 21 de octubre de 2026 queda afectada por al menos una de las dos vulnerabilidades. Las versiones corregidas son 8.5.12, 8.4.27, 8.3.36 y 8.2.35. Las ramas 8.1 y anteriores, ya fuera de soporte, no recibieron versiones oficiales completas. El proyecto PHP publicó backports de código fuente limitados para las ramas 7.4, 8.0 y 8.1 (5)(6)(4).
+
+El riesgo alcanza su máximo en configuraciones con `mod_php`. Una petición no autenticada puede desencadenar la corrupción de memoria antes de que intervenga el código de la aplicación. Los avisos confirman que también resultan afectadas otras interfaces de servidor de aplicaciones: PHP-FPM, php-cgi, FrankenPHP y LiteSpeed (4)(5). Investigadores demostraron ejecución remota de código sin autenticación en despliegues actualizados de WordPress, Drupal y Joomla con las imágenes de contenedor oficiales del momento (3).
+
+Las vulnerabilidades también permiten, en ciertas condiciones, la divulgación de memoria del proceso PHP. El patrón se parece al de incidentes históricos de tipo Heartbleed (3)(6). Esta capacidad puede exponer información sensible presente en el espacio de direcciones del worker: credenciales, claves o datos de sesión.
+
+La única mitigación completa consiste en actualizar el runtime de PHP. Las medidas temporales que recomienda el proyecto (deshabilitar `session.upload_progress`, forzar reinicio de workers, ajustar `memory_limit` o desactivar backtraces en PHP 8.5) son parciales y no eliminan el riesgo (6).
+
+## 3. Proceso de descubrimiento y papel de la inteligencia artificial
+
+Distintos equipos de investigación identificaron de forma independiente las vulnerabilidades de PHP2Shell. Emplearon modelos de inteligencia artificial de frontera como herramienta de apoyo al análisis de código. El proceso se desarrolló entre agosto y septiembre de 2026 bajo un esquema de divulgación coordinada con el equipo de seguridad de PHP (3)(7).
+
+Wiz Research produjo su primer hallazgo el 19 de agosto de 2026. Los investigadores usaron la plataforma interna Wiz Atlas junto con los modelos Gemini 4 Argon y GPT-5.6 Sol. Al día siguiente confirmaron ejecución remota de código sin autenticación frente a un despliegue de Drupal. El 21 de agosto lo confirmaron también en WordPress. El 24 de agosto remitieron el informe completo al equipo de seguridad de PHP (3).
+
+En paralelo, el investigador Ryan Austin, de la firma Calif, identificó la primera vulnerabilidad dentro del programa “Patch the Planet” de OpenAI. Las fuentes sitúan el hallazgo inicial hacia el 1 de agosto de 2026. Austin reportó el primer fallo a PHP el 11 de agosto y aportó después un proof-of-concept funcional de ejecución remota de código. Comunicó un segundo vector el 21 de agosto. OpenAI, a través de su equipo Codex Security, aportó vectores adicionales en septiembre de 2026 (7)(3).
+
+El proyecto PHP reconoció los informes y comenzó a desarrollar la corrección. La divulgación pública estaba prevista para el 22 de octubre de 2026. Una filtración de los identificadores CVE y de detalles técnicos el 20 de octubre obligó a adelantar el calendario (5)(6).
+
+Los defectos llevaban más de una década en el código. Estaban presentes desde la versión 5.4, publicada en 2012. Wiz Research señala que la demostración de su explotabilidad exigía una cadena de pasos excepcional, situada en el límite de lo que los investigadores humanos podían alcanzar con los medios habituales. Los modelos de inteligencia artificial de frontera redujeron esa barrera. Permitieron identificar el problema de memoria y construir una cadena de explotación viable (3).
+
+El intervalo entre el primer hallazgo documentado (principios de agosto) y la publicación de los parches (21 de octubre) rondó los dos meses y medio. Durante ese tiempo se mantuvo el embargo de divulgación.
+
+Las fuentes técnicas no aportan evidencia de que los modelos generaran el exploit completo de forma autónoma. Los informes describen un proceso híbrido: los investigadores usaron los modelos como asistentes de análisis y generación de hipótesis, y mantuvieron el control sobre la validación experimental y la construcción final de las pruebas de concepto (3)(7).
+
+El episodio muestra un cambio en la dinámica de descubrimiento de vulnerabilidades de alto impacto en componentes de base. La reducción de la barrera de complejidad técnica aumenta la probabilidad de que fallos de larga data, antes considerados de difícil o imposible explotación práctica, pasen a ser explotables en plazos más cortos. Ese factor lleva a varios analistas a considerar los eventos de octubre de 2026 como indicador de transformaciones estructurales en el ciclo de vida de las vulnerabilidades (2)(3).
+
+## 4. Cronología de la divulgación y respuesta coordinada
+
+El proceso de divulgación de PHP2Shell siguió un esquema de divulgación coordinada entre los equipos de investigación y el proyecto PHP. Transcurrieron cerca de dos meses y medio entre los primeros reportes y la publicación de los parches (3)(5).
+
+Los hallazgos iniciales se situaron en agosto de 2026. El investigador de Calif comunicó el primer fallo al equipo de seguridad de PHP el 11 de agosto y aportó después un proof-of-concept de ejecución remota de código. Wiz Research remitió su informe completo el 24 de agosto. El proyecto PHP confirmó la recepción de los reportes y, según el relato de Wiz, reconoció las vulnerabilidades el 21 de septiembre de 2026. A partir de esa fecha comenzó el desarrollo de las correcciones (3)(7).
+
+La divulgación pública estaba programada para el 22 de octubre de 2026. El 20 de octubre se filtraron los identificadores CVE y detalles técnicos. Ese mismo día el proyecto PHP emitió un aviso anticipado y anunció una versión de seguridad de emergencia para el 21 de octubre a las 14:00 UTC (5)(6).
+
+El 21 de octubre de 2026, a la hora prevista, el proyecto PHP publicó las versiones 8.5.12, 8.4.27, 8.3.36 y 8.2.35, junto con los avisos de seguridad de CVE-2026-109618 y CVE-2026-109619. Agencias nacionales de ciberseguridad emitieron alertas el mismo día. CISA instó a las organizaciones a aplicar los parches de inmediato o, si no era posible, a desconectar los sistemas basados en PHP expuestos a Internet hasta que pudieran actualizarlos (4). El National Cyber Security Centre del Reino Unido (NCSC-UK) y otros CSIRT nacionales difundieron avisos en la misma jornada o en las horas siguientes (8).
+
+Ya se habían registrado intentos de explotación antes de la divulgación pública. Amazon Threat Intelligence detectó actividad en honeypots el 17 de octubre de 2026, cuatro días antes de la publicación de los parches (9). Tras el anuncio del 21 de octubre el volumen de intentos se disparó. Cloudflare documentó miles de intentos en las diez horas anteriores a la divulgación, decenas de miles en los primeros 45 minutos, cientos de miles en las dos horas siguientes y millones de intentos en las horas posteriores (2)(9).
+
+Numerosas organizaciones desconectaron de forma preventiva sitios web y servicios públicos mientras aplicaban los parches. Fuentes periodísticas y técnicas documentaron la retirada temporal de portales gubernamentales, sitios de hospitales, plataformas de transporte y otros servicios en varios países de Europa, Japón y otras regiones (2)(9). El 22 de octubre de 2026 se consolidó en redes y medios especializados la denominación “Black October” para el conjunto de eventos de las 48-72 horas precedentes (1).
+
+El esquema de divulgación coordinada consiguió un intervalo de varias semanas entre el conocimiento privado de las vulnerabilidades y su publicación. Ese margen permitió al proyecto PHP desarrollar y distribuir los parches a distribuidores y proveedores de sistemas operativos con antelación. La filtración del 20 de octubre y los intentos de explotación previos a la divulgación pública redujeron el margen de seguridad previsto y aceleraron el paso a la fase de explotación activa (5)(6)(9).
+
+## 5. Alcance de la exposición y intentos de explotación
+
+El impacto potencial de PHP2Shell se explica por la prevalencia de PHP como motor de ejecución en la web pública. Informes técnicos sitúan en torno al 70 % de los sitios web activos a escala global (3)(2). Las vulnerabilidades residen en el runtime. Cualquier instalación de PHP que procese peticiones web queda dentro del perímetro de riesgo, con independencia del sistema de gestión de contenidos o del framework utilizado (3)(5).
+
+Las estimaciones de exposición pública varían según la metodología de escaneo. Palo Alto Networks identificó más de 22,6 millones de instancias expuestas que podían ser vulnerables (10). Censys reportó decenas de millones de servicios y propiedades web que anunciaban versiones de PHP afectadas. Las cifras se afinaron en los días posteriores a la divulgación a medida que mejoraba la detección (11). Estas cifras no equivalen a sistemas explotables de forma inmediata. Dependen de la configuración concreta del SAPI, de la presencia de mitigaciones parciales y del estado de parcheo. Sirven, eso sí, para dimensionar la superficie de ataque.
+
+El riesgo alcanza su máximo en entornos con Apache y `mod_php`. Una petición no autenticada puede desencadenar la corrupción de memoria antes de que se ejecute código de la aplicación (4)(5). Otras interfaces (PHP-FPM, php-cgi, FrankenPHP, LiteSpeed) también resultan afectadas, aunque el vector de ataque puede exigir condiciones adicionales (5).
+
+Las fuentes documentan intentos de explotación previos a la divulgación pública. Amazon Threat Intelligence detectó actividad dirigida a las vulnerabilidades en honeypots el 17 de octubre de 2026 (9). Cloudflare aportó datos cuantitativos: miles de intentos en las diez horas anteriores al anuncio público, decenas de miles en los primeros 45 minutos, cientos de miles en las dos horas siguientes y millones de intentos en las horas posteriores (2)(9). Cisco Talos y Arctic Wolf también observaron intentos de explotación en las horas siguientes a la divulgación, con distintos grados de confirmación sobre el éxito de las descargas de cargas útiles adicionales (9).
+
+Numerosas organizaciones desconectaron de forma preventiva servicios expuestos. Fuentes documentaron la retirada temporal de portales gubernamentales, sitios de hospitales, plataformas de transporte y otros servicios en varios países europeos, Japón y otras regiones (2)(9). La medida se alineó con las recomendaciones de CISA y de varios CSIRT nacionales, que priorizaron la actualización inmediata o la desconexión de los sistemas basados en PHP expuestos a Internet cuando el parcheo no era viable de forma inmediata (4).
+
+Hasta el 23 de octubre de 2026 las fuentes documentaron intentos de explotación a gran escala. La confirmación de compromisos exitosos masivos y sostenidos presentaba aún un grado de incertidumbre. Algunos proveedores de seguridad indicaron que, pese al volumen de intentos, la evidencia de explotación fiable a gran escala seguía siendo limitada en las primeras 48-72 horas (9). Esa distinción entre volumen de intentos y tasa de éxito confirmada resulta relevante para evaluar el riesgo residual en los días posteriores a la divulgación.
+
+## 6. Otros incidentes concurrentes en el periodo
+
+PHP2Shell concentró la mayor parte de la atención mediática y operativa. Entre el 19 y el 22 de octubre de 2026 salieron a la luz o se confirmaron varios incidentes adicionales de distinta naturaleza. Estos eventos no tenían por qué responder a un mismo actor o campaña. Coincidieron en el tiempo y reforzaron la percepción de una oleada acumulativa de fallos y exposiciones (1).
+
+Uno de los incidentes más destacados fuera del ámbito de los runtimes fue el compromiso de claves privadas de certificados intermedios de la autoridad de certificación india eMudhra. Ocho claves privadas de certificados intermedios resultaron recuperables por un error en el proceso de generación de claves. En al menos un caso la clave privada se redujo a un valor numérico muy débil: el número 4 precedido de ceros. Navegadores y sistemas operativos desconfiaron de los certificados afectados en un plazo de horas o días (12). eMudhra indicó que la mayoría de los intermediarios afectados no se habían desplegado en producción y que ninguno había emitido certificados de entidad final, según sus análisis internos y los registros de Certificate Transparency (12).
+
+En el ámbito de las plataformas de desarrollo y despliegue, Zeabur sufrió una filtración que afectó a 321.810 cuentas y a unos 3,2 millones de registros de variables de entorno. El incidente se relacionó con el uso de credenciales internas almacenadas en texto plano y con tokens que no expiraban (1). Railway, otra plataforma de despliegue, comunicó un posible incidente de exposición de secretos de clientes y recomendó a los usuarios la rotación inmediata de credenciales (1).
+
+En la cadena de suministro de software relacionado con inteligencia artificial, la versión 1.107.0 de la librería LiteLLM publicada en PyPI contenía un stealer de credenciales y un cargador de código externo. El compromiso del sistema de publicación del proyecto permitió la distribución de esta versión modificada (1).
+
+Otros avisos concurrentes incluyeron vulnerabilidades críticas en GitLab (al menos una de severidad máxima, presente desde años atrás), actualizaciones de seguridad en productos Fortinet, problemas en componentes de Node.js y exposiciones relacionadas con plugins de WordPress, como UpdraftPlus, que según estimaciones afectaba a cientos de miles de sitios (1). En varios de estos casos los análisis posteriores indicaron que los accesos indebidos o las debilidades de fondo no se originaron en las 48-72 horas de máxima atención mediática. Llevaban semanas o meses activos y solo se hicieron públicos en ese intervalo (1).
+
+La coincidencia temporal de estos incidentes no implica coordinación entre actores. Generó, sin embargo, una presión simultánea sobre los equipos de seguridad: inventariar y parchear runtimes de PHP, rotar secretos en plataformas de desarrollo, verificar la confianza en cadenas de certificados y revisar dependencias de librerías de inteligencia artificial. Esa acumulación de tareas en un periodo muy breve explica la intensidad de la respuesta institucional y la adopción generalizada de la denominación “Black October” (1)(2).
+
+## 7. Respuesta de agencias y medidas de mitigación
+
+La respuesta institucional a PHP2Shell y a los incidentes concurrentes se caracterizó por la emisión rápida de alertas de agencias nacionales de ciberseguridad. Priorizaron dos líneas de acción: aplicar de inmediato los parches oficiales y, cuando no resultaba viable a corto plazo, desconectar de forma preventiva los sistemas expuestos (4)(8).
+
+CISA publicó el 21 de octubre de 2026 una alerta específica sobre CVE-2026-109618 y CVE-2026-109619. Instó a las organizaciones a identificar todos los sistemas que ejecutaran cualquier versión de PHP, con prioridad para los expuestos a Internet, y a aplicar los parches de forma inmediata. Cuando la actualización no era posible de inmediato, o cuando se utilizaban versiones ya fuera de soporte (PHP 8.1 o anteriores), CISA recomendó retirar los sistemas basados en PHP de la exposición pública hasta que pudieran ser corregidos o actualizados. En una actualización del 23 de octubre la agencia incorporó una regla de detección SIGMA y reforzó las orientaciones de mitigación (4).
+
+El National Cyber Security Centre del Reino Unido (NCSC-UK) emitió avisos el mismo día. Animó a las organizaciones a prepararse para la actualización inmediata de los sistemas que utilizaran PHP y a considerar la desconexión temporal cuando la remediación no fuera factible de forma inmediata (8). Otros CSIRT nacionales, entre ellos el neerlandés (NCSC-NL), publicaron repositorios operativos con listas de productos que incorporan dependencias de PHP y orientaciones de actuación (13). CERT/CC registró las vulnerabilidades bajo el identificador VU#763488 y confirmó el riesgo de ejecución de código arbitrario mediante peticiones HTTP manipuladas a propósito (14).
+
+El proyecto PHP estableció que la única mitigación completa consiste en actualizar a las versiones 8.5.12, 8.4.27, 8.3.36 o 8.2.35 y reiniciar todos los workers para eliminar de memoria el código vulnerable. Como medidas temporales parciales recomendó deshabilitar `session.upload_progress.enabled`, forzar el reinicio periódico de workers (`pm.max_requests=1` en PHP-FPM), ajustar `memory_limit` y, en PHP 8.5, desactivar `fatal_error_backtraces`. Presentó estas medidas como incompletas y no equivalentes al parche (5)(6).
+
+En el caso del compromiso de las claves intermedias de eMudhra, la respuesta se centró en la revocación de confianza por parte de los principales navegadores y sistemas operativos. Chrome, Firefox, Apple y Microsoft desconfiaron de los certificados afectados en un intervalo de horas o días tras la confirmación del problema (12). Esa actuación limitó la posibilidad de que un atacante en posesión de las claves privadas emitiera certificados fraudulentos aceptados por los clientes actualizados.
+
+La respuesta combinada de agencias, del proyecto PHP y de los proveedores de navegadores configuró un marco orientado a reducir de forma prioritaria la superficie de ataque expuesta a Internet. La eficacia de estas medidas depende de la capacidad real de las organizaciones para inventariar de forma exhaustiva las instalaciones de PHP, incluidas las embebidas en productos de terceros, contenedores y appliances, y de la velocidad de despliegue de los parches en entornos de producción complejos (4)(5).
+
+## 8. Consecuencias prácticas y riesgos residuales
+
+Las consecuencias prácticas de PHP2Shell y de los incidentes concurrentes de octubre de 2026 se manifiestan en varios planos operativos y de gestión de riesgo.
+
+En el plano inmediato, las organizaciones tuvieron que realizar un inventario exhaustivo de todas las instalaciones de PHP presentes en su infraestructura. El inventario debía incluir no solo servidores web explícitos, sino también productos de terceros, contenedores, appliances y entornos embebidos que pudieran incorporar el runtime. Identificar estas instancias no siempre resulta trivial. PHP puede estar presente de forma no evidente en soluciones empaquetadas (4)(5). Una vez identificadas, la única remediación completa consistió en actualizar a las versiones corregidas y reiniciar los workers. Cuando la actualización no pudo ejecutarse de forma inmediata, las agencias recomendaron la desconexión preventiva de los servicios expuestos a Internet. Esa medida generó interrupciones temporales en portales gubernamentales, servicios sanitarios, plataformas de transporte y otros sistemas de interés público (2)(4)(9).
+
+Un riesgo residual significativo se concentra en las instalaciones que ejecutan versiones de PHP ya fuera de soporte (8.1 y anteriores). Estas ramas no recibieron versiones oficiales completas de corrección, sino solo backports de código fuente limitados. Las organizaciones que dependen de estas versiones enfrentan la disyuntiva de aplicar parches no oficiales, migrar a una rama soportada o mantener los sistemas desconectados de Internet (5)(6). Incluso después de aplicar el parche, el riesgo residual puede persistir si los workers no se reinician. Los procesos en ejecución continúan utilizando el código vulnerable cargado en memoria (6).
+
+En el plano de la cadena de suministro y de las plataformas de desarrollo, los incidentes concurrentes (Zeabur, Railway, LiteLLM, eMudhra) generaron la necesidad de rotar secretos, verificar la integridad de dependencias y revisar la confianza en cadenas de certificados. Estas tareas se superpusieron en el tiempo a las labores de parcheo de PHP e incrementaron la carga operativa de los equipos de seguridad en un intervalo muy breve (1).
+
+Desde una perspectiva estructural, el episodio muestra un cambio en la dinámica de descubrimiento de vulnerabilidades profundas. La capacidad de los modelos de inteligencia artificial de frontera para reducir la barrera de complejidad en la identificación y demostración de fallos de memoria de larga data aumenta la probabilidad de que defectos presentes durante años o décadas pasen a ser explotables en plazos más cortos (3)(2). Ese factor introduce un elemento de incertidumbre adicional en la planificación de la gestión de vulnerabilidades: el tiempo disponible entre el descubrimiento privado y la explotación activa puede comprimirse y reducir el margen para el desarrollo y el despliegue ordenado de correcciones.
+
+Las fuentes documentan un volumen elevado de intentos de explotación en las horas y días posteriores a la divulgación, con grados variables de confirmación sobre la tasa de éxito de los compromisos (9). Este escenario deja abierto un riesgo residual de que sistemas sin parchear o sin inventario completo hayan sido comprometidos antes de la aplicación de las medidas de contención. La evaluación de este riesgo requiere, en cada organización, el análisis de logs, la búsqueda de indicadores de compromiso y la verificación del estado real de parcheo de todos los workers de PHP expuestos (4)(9).
+
+En términos operativos, el análisis anterior lleva a cinco acciones. Primera, localizar cada instalación de PHP, incluidas las que llegan empaquetadas en productos de terceros. Segunda, comprobar la versión del servicio que atiende las peticiones: actualizar el paquete de línea de comandos no actualiza el servicio PHP-FPM ni el módulo de Apache (17). Tercera, actualizar a 8.5.12, 8.4.27, 8.3.36 u 8.2.35 y reiniciar todos los workers (5)(6). Cuarta, rotar los secretos de los sistemas que estuvieron expuestos sin parche, porque las vulnerabilidades permiten divulgar memoria del proceso (3)(6). Quinta, planificar la salida de las ramas sin soporte. PHP 8.2 llega al fin de su vida útil el 31 de diciembre de 2026 y esa será su última corrección de seguridad (16).
+
+## 9. Limitaciones de la información disponible
+
+El análisis de los eventos agrupados bajo la denominación “Black October” se enfrenta a varias limitaciones derivadas del carácter reciente de los hechos y de la naturaleza de las fuentes disponibles en el momento de la redacción.
+
+La situación permanecía en evolución a fecha de las últimas fuentes consultadas (23-24 de octubre de 2026). Los datos sobre el volumen de intentos de explotación, la tasa de éxito de los compromisos y el grado real de parcheo a escala global se encontraban aún en fase de consolidación. Varios proveedores de inteligencia de amenazas documentaron millones de intentos. La confirmación de explotaciones masivas y sostenidas presentaba matices y, en algunos casos, evidencias aún limitadas (9). Esta distinción entre volumen de intentos y confirmación de compromisos exitosos introduce un margen de incertidumbre que debe tenerse en cuenta al evaluar el impacto final.
+
+La información sobre varios de los incidentes concurrentes (Zeabur, Railway, LiteLLM, eMudhra) procede en buena medida de comunicados de las propias organizaciones afectadas y de reportes periodísticos o técnicos de terceros. No en todos los casos se dispone de informes forenses públicos completos que permitan reconstruir con precisión el vector de acceso inicial, el alcance exacto de los datos expuestos o la duración real de los accesos indebidos (1)(12). Algunas cifras (número de cuentas afectadas, volumen de variables de entorno filtradas, alcance de certificados comprometidos) deben tratarse como estimaciones reportadas y no como datos auditados de forma independiente.
+
+El papel de los modelos de inteligencia artificial en el descubrimiento de PHP2Shell se describe en los informes de los propios investigadores. Aunque estos informes detallan el uso de modelos concretos y el carácter híbrido del proceso (supervisión humana más asistencia de modelos de frontera), no se dispone de una reconstrucción externa e independiente de cada paso del proceso de descubrimiento. Las afirmaciones sobre la reducción de la barrera de complejidad se basan en las declaraciones de los equipos que realizaron los hallazgos (3)(7).
+
+Las estimaciones de exposición global (decenas de millones de instancias o servicios) dependen de las metodologías de escaneo de cada proveedor y de su capacidad para identificar las versiones de PHP en entornos diversos (contenedores, appliances, configuraciones no estándar). Estas cifras resultan útiles para dimensionar la superficie de ataque, pero no equivalen a un censo exhaustivo ni a una medición precisa del número de sistemas explotables en un momento dado (10)(11).
+
+La denominación “Black October” es una construcción informal surgida en redes y medios especializados. No existe una definición oficial ni un perímetro cerrado de incidentes que deban incluirse o excluirse bajo esa etiqueta. Su utilidad es descriptiva y temporal, no taxonómica (1)(2).
+
+Estas limitaciones no invalidan el análisis de los hechos documentados. Sí condicionan el grado de certeza con el que pueden formularse conclusiones sobre el alcance final de los compromisos, la eficacia real de las medidas de contención a escala global y la magnitud exacta del cambio introducido por la inteligencia artificial en el ciclo de descubrimiento de vulnerabilidades profundas. Cualquier evaluación posterior deberá incorporar los datos forenses y de telemetría que se consoliden en las semanas siguientes.
+
+---
+
+## Bibliografía
+
+(1) Chizhik, A. (22 de octubre de 2026). *Black October: Many attacks had been running for months*. SecurityToday. https://www.securitytoday.de/en/2026/10/22/black-october-many-attacks-had-been-running-for-months/
+
+(2) The Guardian (23 de octubre de 2026). *‘Black October’: cybersecurity experts sound the alarm over new era of AI-enabled hacking*. https://www.theguardian.com/technology/2026/oct/23/cybersecurity-ai-hacking-php-vulnerability
+
+(3) Wiz Research (21 de octubre de 2026). *PHP2Shell: AI uncovers critical RCE vulnerabilities affecting 70% of the Internet*. https://www.wiz.io/blog/php2shell-php-rce
+
+(4) Cybersecurity and Infrastructure Security Agency (CISA) (21 de octubre de 2026, actualizado 23 de octubre de 2026). *Critical Vulnerabilities in PHP Require Immediate Patching*. https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching
+
+(5) PHP Project (21 de octubre de 2026). *PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 released (security release)*. https://www.php.net/archive/2026.php#2026-10-21-5
+
+(6) JFrog Security Research (21 de octubre de 2026). *PHP2Shell: All You Need to Know About CVE-2026-109618 and CVE-2026-109619*. https://research.jfrog.com/post/php2shell-all-you-need-to-know-about-cve-2026-109618-and-cve-2026-109619
+
+(7) Capital & Compute (23 de octubre de 2026). *Who Found PHP2Shell? Calif, Wiz and OpenAI Timeline*. https://capitalandcompute.net/blog/who-found-php2shell/
+
+(8) National Cyber Security Centre (NCSC-UK) (21 de octubre de 2026). *Critical security issue affecting PHP*. https://www.ncsc.gov.uk/sites/default/files/2026-10/Critical-security-issue-affecting-PHP.pdf
+
+(9) Cloudflare, Amazon Threat Intelligence, Cisco Talos, Arctic Wolf y Reuters (17-23 de octubre de 2026). Datos sobre intentos de explotación anteriores y posteriores a la divulgación, recogidos de forma secundaria en The Guardian (2) y SecurityToday (1).
+
+(10) Palo Alto Networks (21 de octubre de 2026). Estimación de más de 22,6 millones de instancias expuestas, citada en análisis técnicos contemporáneos.
+
+(11) Censys (21-23 de octubre de 2026). *Oct 21 Advisory: php2shell - PHP Unauthenticated Remote Code Execution [CVE-2026-109618, CVE-2026-109619]*. https://censys.com/advisory/cve-2026-109618-cve-2026-109619/
+
+(12) The Hindu (21 de octubre de 2026). *Eight web security keys of eMudhra firm used by Govt. and PSUs leaked*. https://www.thehindu.com/sci-tech/technology/eight-web-security-keys-of-firm-used-by-govt-and-psus-leaked/article71606342.ece
+
+(13) NCSC-NL (octubre de 2026). *php2shell – Operational information*. https://github.com/NCSC-NL/php2shell/blob/main/README.md
+
+(14) CERT Coordination Center (CERT/CC) (22 de octubre de 2026). *VU#763488 – Memory corruption vulnerabilities in PHP*. https://kb.cert.org/vuls/id/763488
+
+(15) PHP Project (21 de octubre de 2026). *Security Advisories GHSA-w8hw-w9fx-j79w (CVE-2026-109618) y GHSA-6wmf-4rv5-p3rp (CVE-2026-109619)*. GitHub, php/php-src. https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w y https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp
+
+(16) The Hacker News (21 de octubre de 2026). *PHP Issues Emergency Patches for Two Critical PHP2Shell RCE Flaws as Exploit Attempts Emerge*. https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html
+
+(17) Cybersecurity News (21 de octubre de 2026). *PHP Releases Emergency Patches for PHP2Shell Flaws Threatening Millions of Web Servers*. https://cybersecuritynews.com/php-releases-emergency-patches/amp
