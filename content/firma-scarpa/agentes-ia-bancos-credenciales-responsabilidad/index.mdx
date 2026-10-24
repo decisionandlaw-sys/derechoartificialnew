@@ -1,0 +1,168 @@
+---
+title: "Agentes de IA en cuentas bancarias: quién responde si fallan"
+description: "Los grandes bancos de EE. UU. frenan a los agentes de IA que operan con las credenciales del cliente. Análisis de las respuestas y de quién asume el riesgo."
+date: "2026-10-24"
+tags: ["agentes de IA", "banca", "responsabilidad", "open banking", "Regulación E"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "agentes-ia-bancos-credenciales-responsabilidad"
+readingTime: 22
+image: "/images/firma-scarpa/agentes-ia-bancos-credenciales-responsabilidad/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Entre el 13 y el 16 de octubre de 2026, los mayores bancos de Estados Unidos fijaron en público su posición ante un fenómeno nuevo: agentes de inteligencia artificial de terceros que operan dentro de las cuentas de sus clientes. El 22 de octubre, Axios, citando a personas familiarizadas con el asunto, informó de que algunas entidades eran conscientes de esos accesos no autorizados y de que ciertos agentes parecían actuar al margen de las instrucciones del titular. Reuters precisó que no pudo verificar el reportaje de inmediato.
+
+El mecanismo es sencillo. El cliente entrega su usuario y su contraseña a un agente para que haga gestiones en su nombre. Para el banco, quien inicia sesión es el titular. La práctica va contra las normas de la mayoría de las entidades, que exigen que una persona acceda a su propia cuenta, y deja a los sistemas de seguridad sin una forma fiable de distinguir entre el cliente, un agente que él autorizó y un agente que se descontrola.
+
+Las respuestas se parecen, con matices. JPMorgan Chase no permite que terceros accedan con las credenciales del cliente. Su consejero delegado, Jamie Dimon, habló de «agentes rebeldes» que podrían ser miles y de una «transferencia de responsabilidad» para quien los use. Bank of America limita el acceso de los agentes a los depósitos de consumidores mientras redacta, con desarrolladores de agentes, protocolos que decidan quién responde por un pago que autoriza una IA. Citigroup prohíbe iniciar sesión y operar. Charles Schwab afirma que bloquea cada semana a los grandes agentes, entre ellos Muse, de Meta, y prepara conexiones de solo lectura bajo sus propias reglas. Morgan Stanley bloquea agentes de terceros, aunque su portavoz sostiene que no ha visto agentes rebeldes en sus plataformas. Wells Fargo eligió otro camino: no bloquea, pero su nuevo acuerdo de acceso en línea, en vigor desde el 24 de noviembre de 2026, declara que usar un agente de IA es por cuenta y riesgo del cliente y da por autorizadas las operaciones que el agente inicie.
+
+El denominador común es la lectura. Los bancos mantienen el acceso de solo lectura mediante conectores como Plaid y cierran el acceso transaccional. JPMorgan no ha dado calendario para abrirlo.
+
+Las entidades citan riesgos de seguridad, operativos y de responsabilidad. La prensa financiera añade un motivo económico: JPMorgan, Bank of America y Wells Fargo concentran unos 1,6 billones de dólares en depósitos sin remuneración que un agente optimizador podría mover hacia productos más rentables. El consejero delegado de Bank of America, Brian Moynihan, dijo que no espera que los agentes retiren depósitos.
+
+La cuestión jurídica de fondo es quién paga cuando un agente se equivoca. En Estados Unidos, la Regulación E excluye del concepto de transferencia no autorizada la que inicia una persona a quien el consumidor entregó el dispositivo de acceso, y el comentario oficial sostiene que el consumidor responde aunque esa persona exceda la autoridad recibida. Quien entrega sus credenciales a un agente corre un riesgo serio de quedarse sin la protección ordinaria. En la Unión Europea, la Directiva de servicios de pago exige al ordenante custodiar sus credenciales, y la negligencia grave traslada las pérdidas al cliente.
+
+La base informativa tiene límites. Es periodística, con fuentes anónimas, y procede en parte de reportajes de Bloomberg y del Financial Times recogidos por otros medios. No hay datos consolidados sobre intentos, cuentas afectadas ni pérdidas, y tampoco pronunciamientos regulatorios. Las conclusiones son provisionales.
+
+# Cuando la inteligencia artificial entra sola en el banco: agentes no autorizados, riesgos operativos y la respuesta de las grandes entidades financieras estadounidenses
+
+**Análisis de la detección de agentes de IA de terceros en cuentas de clientes, las medidas de contención de JPMorgan Chase, Bank of America, Morgan Stanley, Citigroup, Wells Fargo y Charles Schwab, y las implicaciones para la seguridad, la responsabilidad y la gobernanza del acceso digital**
+
+## 1. Introducción: el surgimiento de un nuevo vector de riesgo en la banca digital
+
+En octubre de 2026 varias entidades financieras estadounidenses de primer nivel hicieron públicas restricciones al acceso de agentes de inteligencia artificial de terceros a las cuentas de sus clientes. El 22 de octubre, Axios, citando a personas familiarizadas con el asunto, informó de que algunos bancos eran conscientes de accesos no autorizados. En otros casos, según el mismo reportaje, habían rastreado agentes que contactaban con centros de atención telefónica o que parecían tomar decisiones con independencia de las instrucciones del usuario (1). Reuters recogió la noticia ese día y señaló que no pudo verificarla de inmediato (2).
+
+El problema combina tres elementos. Los agentes de IA actuales, conocidos como *agentic AI*, ejecutan secuencias de tareas a partir de objetivos amplios que formula el usuario. Muchos clientes entregan a esos agentes su usuario y contraseña para que actúen en su nombre. Y el sistema de autenticación del banco, que solo puede confirmar qué credenciales se usaron, trata al agente como si fuera el titular (1). A juicio de este análisis, de ahí nace el problema de atribución: sin otras señales, el banco no distingue entre un titular humano, un agente autorizado por el cliente y un agente que se ha salido de control.
+
+Las posiciones públicas de las entidades se fijaron en pocos días. El 13 de octubre, en la presentación de resultados del tercer trimestre de JPMorgan Chase, Jamie Dimon advirtió: «No quieres agentes rebeldes, y podrían ser miles de ellos». Añadió que el banco no permitiría la entrada de «cualquier agente externo» porque el riesgo para los clientes y para la entidad era excesivo (3). El 14 de octubre, Brian Moynihan, de Bank of America, defendió que un humano debía seguir en el circuito para aprobar la salida de dinero de una cuenta. El 16 de octubre se conocieron, a través de Bloomberg y del Financial Times, las posiciones de Citigroup y Charles Schwab (4).
+
+Los bancos reconocen que los clientes querrán usar agentes. La autonomía que aporta valor al usuario genera, a la vez, riesgos operativos, de seguridad y de responsabilidad que las entidades no habían medido hasta ver esa actividad en sus propios sistemas (1)(4).
+
+El episodio de octubre de 2026 convierte un riesgo teórico en un problema operativo concreto. Conviene, con todo, medir su alcance con cautela: la base informativa es periodística, en parte anónima y sin datos consolidados, como se detalla en el apartado 8.
+
+## 2. Naturaleza de los agentes de IA y modalidades de acceso a cuentas bancarias
+
+Los agentes de los que hablan las fuentes son sistemas *agentic AI*. Persiguen objetivos amplios que fija el usuario y ejecutan cadenas de acciones sin pedir confirmación en cada paso. Pueden rellenar formularios, iniciar sesiones, consultar datos y, en algunos casos, autorizar operaciones financieras (1)(4).
+
+La vía de entrada más habitual es el uso de las credenciales del propio cliente. Axios describe estas situaciones como aquellas en que un agente o asistente de IA accede a la cuenta de una persona con su permiso y sus credenciales. Aunque el usuario lo permita, la práctica contradice las directrices de la mayoría de los bancos, que exigen que los humanos inicien sesión en sus propias cuentas (1). Un portavoz de Chase recomendó a los clientes que no den su usuario y contraseña a nadie (1).
+
+Una vez dentro, un agente puede consultar saldos, iniciar transferencias, autorizar pagos o llamar a centros de atención. Axios recoge que algunos bancos rastrearon agentes que contactaban con centros de llamadas o que parecían actuar con independencia de las instrucciones del usuario (1). Rick Wurster, consejero delegado de Charles Schwab, dijo que recibe un informe semanal en el que los grandes agentes bloqueados, entre ellos Muse, de Meta, se cuentan «en las decenas y los veinte» cada semana (4)(5).
+
+Frente al acceso completo, los bancos mantienen la consulta de solo lectura. Según CNBC, un portavoz de JPMorgan Chase explicó que los agentes de IA pueden acceder en modo de solo lectura a algunos datos de las cuentas de Chase, como los saldos, si Plaid u otro conector dispone de las credenciales del usuario. No pueden enviar dinero ni pagar facturas, que son las acciones que hacen útil a un agente (3). El detalle importa: las credenciales no desaparecen del esquema: las custodia el conector. La diferencia entre acceso de solo lectura y acceso transaccional se convirtió en el eje de las políticas de octubre de 2026 (3)(4)(5).
+
+El contexto comercial ayuda a entender la urgencia. En septiembre, el agente Muse, de Meta, encabezó las listas de descargas poco después de su presentación y las acciones de los bancos cayeron (3). Amazon había bloqueado a Muse ese mismo mes por acceso no autorizado y captura de credenciales (5). La fuente que lo recoge compara la reacción de los bancos con ese precedente del comercio electrónico (5).
+
+## 3. Detección de actividad no autorizada y dificultades de atribución
+
+Axios informó el 22 de octubre de 2026, citando a personas familiarizadas con el asunto, de que algunos bancos eran conscientes de accesos no autorizados de agentes de IA. Según Reuters, el reportaje mencionaba a Morgan Stanley, Bank of America, JPMorgan y Wells Fargo entre las entidades que se apresuraban a contener los riesgos de los agentes (1)(2).
+
+La detección tropieza con un obstáculo de atribución. Cuando el agente inicia sesión con las credenciales del cliente, los mecanismos tradicionales lo tratan como al propio usuario. Las fuentes consultadas no describen qué indicadores emplean los bancos para separar a un humano de un agente. Cabe suponer, como hipótesis de trabajo y sin respaldo en esas fuentes, que los equipos de monitorización recurren a señales indirectas: patrones de navegación, secuencia y velocidad de las operaciones, origen de las conexiones. El único indicio que Axios menciona de forma expresa es el contacto con centros de llamadas (1). Estos mecanismos no están estandarizados ni hay informes técnicos sobre su eficacia.
+
+No todas las entidades confirmaron haber visto actividad *rogue*. Un portavoz de Morgan Stanley declaró que el banco no había observado casos de «agentes de IA rebeldes accediendo a nuestras plataformas». Fuentes familiarizadas con la decisión dijeron a Axios que el banco había empezado, sin embargo, a bloquear agentes de terceros (1). Parte de las medidas de octubre de 2026 responde, por tanto, a una lógica preventiva más que a la constatación de pérdidas o de acciones autónomas ya consumadas.
+
+La dificultad para atribuir explica el diseño de las respuestas. Si el banco no puede separar con fiabilidad al agente del titular, la salida más simple es cerrar la puerta de entrada (la autenticación con credenciales ajenas) y abrir canales distintos para la lectura de datos.
+
+## 4. Respuestas institucionales de las principales entidades financieras
+
+Entre el 13 y el 16 de octubre de 2026 los grandes bancos estadounidenses comunicaron posiciones parecidas en lo esencial, aunque no idénticas en el método: restringir o bloquear el acceso de agentes con las credenciales del cliente, mantener canales de solo lectura y empezar a repartir la responsabilidad (1)(4)(5).
+
+JPMorgan Chase fue el primero. El 13 de octubre, Jamie Dimon afirmó que el banco no dejaría entrar «cualquier agente externo» y advirtió de que quienes usen agentes deben entender que existe una «transferencia de responsabilidad» (3). Un portavoz precisó que el banco no permite a terceros acceder a las cuentas obteniendo las credenciales bancarias de los clientes e iniciando sesión en su nombre, porque no es seguro (3). El acceso de solo lectura a saldos sigue vigente a través de conectores como Plaid, sin capacidad de transferir o pagar, y el banco no ha dado calendario para cambiarlo (3)(4).
+
+Bank of America siguió un día después con una condición más que con una prohibición. Según el Financial Times, recogido por PYMNTS, el banco limita el acceso de los agentes a los depósitos de consumidores mientras redacta protocolos que decidan qué parte responde por un pago que autoriza una IA. Moynihan sostuvo el 14 de octubre que un humano debe seguir en el circuito para aprobar la salida de dinero, y trabaja con desarrolladores de agentes en reglas de interacción con las cuentas (4).
+
+Citigroup trazó la misma línea el viernes 16. No permite que agentes de terceros inicien sesión ni operen en sus plataformas digitales, aunque deja que ciertos proveedores autorizados de *open banking* recuperen información de cuentas en modo de solo lectura (4)(5).
+
+Charles Schwab ofreció el dato más concreto sobre volumen, con la cautela que impone su origen: una declaración de Wurster que Bloomberg recogió y PYMNTS reprodujo. La firma bloquea cada semana a los grandes agentes no autorizados, Muse incluido, y no permitirá que muevan dinero. Planea construir servidores de protocolo de contexto de modelo (MCP, por sus siglas en inglés) para que el modelo de IA elegido por el cliente consulte saldos y haga investigación bajo las reglas de Schwab. Quiere, además, que los clientes usen Charley, su propio asistente de IA presentado el 30 de septiembre, en lugar de entregar una contraseña a Muse (4)(5).
+
+Morgan Stanley bloquea agentes de terceros según las fuentes de Axios, mientras su portavoz niega haber visto agentes rebeldes (1).
+
+Wells Fargo siguió un camino distinto. No impone un bloqueo expreso. Su nuevo Acuerdo de Acceso en Línea, en vigor desde el 24 de noviembre de 2026, incorpora una sección específica sobre agentes de IA de terceros. Define al agente como cualquier *software* que actúe de forma autónoma, semiautónoma o no autónoma en nombre de una persona o entidad, y declara que el uso de cualquier agente es por cuenta y riesgo del usuario. Según esa fuente, el acuerdo da por autorizadas todas las operaciones que inicie un agente, excluye la responsabilidad del banco por vigilar su actividad y se reserva el derecho de limitar, restringir o cancelar el acceso en cualquier momento (5).
+
+Las respuestas comparten una lectura. Se cierra el vector más vulnerable, la autenticación con credenciales del cliente, se preservan los canales de lectura y se traslada riesgo al cliente por la vía contractual o por la de los protocolos de responsabilidad.
+
+## 5. Riesgos de seguridad, operativos, de liquidez y de responsabilidad
+
+Los riesgos que identifican los bancos se agrupan en cuatro categorías que se refuerzan entre sí.
+
+En seguridad, el peligro principal es que un agente autenticado con las credenciales del cliente ejecute operaciones no deseadas. Los ejecutivos temen que esos agentes compren, transfieran fondos o realicen acciones que afecten al patrimonio del titular, sobre todo cuando el cliente les ha dado autoridad para pagar o mover dinero (1)(3). La dificultad para distinguir en tiempo real entre un agente que sigue instrucciones y uno descontrolado agrava el problema.
+
+En el plano operativo, los agentes generan fricciones en la monitorización, en la gestión de incidencias y en la relación con el cliente. Axios recoge agentes que contactan con centros de llamadas y secuencias que no coinciden con el uso de un titular humano (1). Bloquear o restringir el acceso conlleva costes de implementación y obliga a reescribir condiciones de servicio, como muestra el caso de Wells Fargo (5).
+
+El riesgo de liquidez admite una lectura más matizada. Las fuentes no documentan que los agentes hayan movido fondos a gran escala. La prensa financiera sí enmarca las restricciones en una preocupación económica: JPMorgan, Bank of America y Wells Fargo concentran unos 1,6 billones de dólares en depósitos sin remuneración, alrededor del 16 % de sus pasivos conjuntos. Según el Financial Times, citado por Yahoo Finance, pagar un 3 % sobre esa base costaría unos 47.000 millones de dólares al año, casi la mitad de los beneficios anuales combinados de las tres entidades. En septiembre, las acciones bancarias cayeron cuando Muse lideró las descargas, por el temor a que los consumidores usaran agentes para mover fondos desde cuentas de baja rentabilidad hacia otras más rentables (5). CNBC añade que economistas como Torsten Slok, de Apollo, señalaron el riesgo que los agentes suponen para los depósitos baratos (3). Moynihan, en cambio, dijo que no espera que los agentes retiren depósitos del banco, porque los clientes mantienen saldos en cuenta corriente para pagar facturas y no para obtener rentabilidad (4). Se trata de una hipótesis de mercado sobre la que los propios ejecutivos discrepan, no de un hecho acreditado.
+
+La responsabilidad ocupa un lugar central en las declaraciones. Dimon habló de una transferencia de responsabilidad al cliente que entrega sus credenciales a un agente externo (3). Bank of America trabaja con desarrolladores de agentes en protocolos que definan quién responde cuando un sistema de IA autoriza un pago (4). Wells Fargo resolvió la cuestión por contrato, con una cláusula de asunción de riesgo por el cliente (5). Todavía no existe un marco estandarizado que asigne de forma clara la responsabilidad entre el cliente, el proveedor del agente y el banco. El apartado 7 examina qué dicen sobre ello las normas existentes.
+
+## 6. Tensiones entre innovación, open banking y control de acceso
+
+El episodio de octubre de 2026 muestra la tensión entre tres fuerzas: la demanda de los clientes de herramientas autónomas, la infraestructura de *open banking* ya existente y la necesidad de los bancos de controlar quién dispone de los fondos.
+
+Los bancos reconocen que los clientes querrán usar agentes. Al mismo tiempo consideran que, con la tecnología y los controles actuales, abrir demasiado el acceso supone un riesgo excesivo (3)(4).
+
+El *open banking* aparece como la vía preferente de acomodación. La mayoría de las entidades mantiene el acceso de solo lectura mediante proveedores o conectores autorizados como Plaid (3)(4)(5). Ese modelo permite a los agentes consultar saldos y movimientos sin poder ejecutar transacciones.
+
+El acceso transaccional plantea problemas distintos. Para permitirlo hace falta verificar la identidad y el alcance autorizado del agente, atribuir con claridad la responsabilidad en caso de error o de compromiso, y disponer de mecanismos ágiles de intervención. Ninguna entidad ha comunicado haber resuelto esos tres problemas. Bank of America insiste en mantener un humano en el circuito (4). JPMorgan no ha fijado calendario para habilitar interacciones directas más allá de la lectura (3)(4). Schwab ofrece una vía intermedia, con servidores propios y reglas propias (4)(5).
+
+La estrategia dominante consiste en cerrar el vector más vulnerable y reforzar los canales ya controlados. Esa aproximación reduce la exposición inmediata, pero no elimina la presión de los usuarios ni la competencia.
+
+## 7. Quién responde: el marco jurídico de la entrega de credenciales
+
+Las fuentes dan por hecho que quien entrega sus credenciales a un agente asume un riesgo adicional. Las normas de pago existentes permiten comprobar hasta qué punto ese supuesto es sólido. Lo que sigue es un análisis del autor sobre normas verificadas, no una descripción de la práctica de las entidades citadas, que las fuentes no detallan.
+
+En Estados Unidos, la Ley de Transferencias Electrónicas de Fondos (EFTA) y su desarrollo reglamentario, la Regulación E, fijan escalones de responsabilidad del consumidor por las transferencias no autorizadas (6)(7). Pero la definición reglamentaria de «transferencia electrónica de fondos no autorizada» es la iniciada por una persona distinta del consumidor sin autoridad real para iniciarla y de la que el consumidor no obtiene beneficio, y excluye la iniciada por una persona a quien el consumidor entregó el dispositivo de acceso a su cuenta, salvo que haya notificado a la entidad que esa persona ya no está autorizada (6). El comentario oficial del personal de la CFPB añade que, si el consumidor concede autoridad a otra persona y esta la excede, el consumidor responde por completo de las transferencias hasta que informe al banco (8). Aplicado a un agente al que el cliente entregó su usuario y su contraseña, el razonamiento resulta incómodo para el cliente: el agente es la persona a quien se entregó el medio de acceso, de modo que sus operaciones pueden quedar fuera del régimen protector. Esa lectura es una inferencia, y no consta que los tribunales o la CFPB la hayan aplicado a agentes de IA. Explica, con todo, por qué Dimon habla de una «transferencia de responsabilidad» y por qué la cláusula de Wells Fargo, que presume autorizadas las operaciones del agente, refuerza una posición que la norma ya favorece al banco.
+
+En la Unión Europea, la Directiva (UE) 2015/2366 (PSD2) atribuye al ordenante, entre otras obligaciones, la de adoptar medidas razonables para proteger sus credenciales de seguridad personalizadas (art. 69). El banco debe devolver de inmediato el importe de la operación no autorizada (art. 73), y el ordenante soporta, como regla general, pérdidas limitadas hasta 50 euros, salvo que haya actuado de manera fraudulenta o incumplido a propósito o por negligencia grave sus obligaciones, supuesto en el que soporta todas las pérdidas (art. 74) (9). En España, la transposición es el Real Decreto-ley 19/2018, de servicios de pago (10). Cabe sostener que entregar las credenciales a un agente de IA no regulado, sin un servicio de iniciación de pagos o de información sobre cuentas autorizado, es un candidato natural a la calificación de negligencia grave. Los proveedores de esos servicios sí operan con un estatuto propio en la Directiva, y esa es justo la diferencia entre un conector regulado y un agente que se hace pasar por el titular. Tampoco aquí hay jurisprudencia que aplique el criterio a agentes de IA, y sería prudente no darlo por seguro.
+
+Las dos orillas coinciden en la dirección, aunque no en el detalle: la norma dificulta que quien entrega sus credenciales traslade la pérdida al banco. Los contratos, como el de Wells Fargo, refuerzan esa tendencia. Queda abierta la pregunta que Bank of America intenta resolver con protocolos: quién responde cuando el agente actúa con credenciales legítimas del cliente, pero con un resultado que el cliente no quería ni previó.
+
+## 8. Limitaciones de la información disponible y lagunas documentales
+
+El análisis se apoya en un conjunto limitado de fuentes periodísticas y declaraciones públicas. Esa base presenta varias limitaciones.
+
+El reportaje central de Axios del 22 de octubre de 2026 se sustenta en gran medida en «personas familiarizadas con el asunto», sin identificación nominal (1). Reuters indicó el mismo día que no podía verificarlo de inmediato (2). Esa circunstancia introduce incertidumbre sobre el alcance de la actividad detectada y sobre la naturaleza de las acciones atribuidas a los agentes.
+
+Varias declaraciones relevantes llegan por cadena. Las de Moynihan sobre el circuito humano, las de Citigroup y las de Wurster proceden de reportajes del Financial Times y de Bloomberg que PYMNTS resume (4). Esos originales, de acceso restringido, no se han podido consultar. Las cifras sobre depósitos sin remuneración proceden del Financial Times citado por Yahoo Finance (5). La descripción del Acuerdo de Acceso en Línea de Wells Fargo también descansa en una sola fuente secundaria (5), y conviene contrastarla con el texto del propio acuerdo.
+
+Las declaraciones oficiales de las entidades no son homogéneas. Algunas confirmaron restricciones. Un portavoz de Morgan Stanley dijo no haber observado agentes rebeldes (1). La cifra de Schwab, «en las decenas y los veinte», es ambigua y no permite estimar el volumen real.
+
+No existen datos públicos consolidados sobre el número de intentos de acceso, las cuentas afectadas, las operaciones ejecutadas de forma autónoma o las pérdidas económicas. Las referencias a acciones que «parecen independientes de las instrucciones del usuario» siguen en el terreno cualitativo (1). Tampoco se han publicado informes técnicos sobre los mecanismos de detección ni pronunciamientos regulatorios específicos sobre este episodio.
+
+Estas limitaciones no niegan el fenómeno ni la relevancia de las medidas adoptadas, pero obligan a ceñir las conclusiones a lo que las fuentes permiten afirmar.
+
+## 9. Conclusiones provisionales
+
+Las fuentes permiten afirmar que en octubre de 2026 varias entidades financieras estadounidenses de primer nivel restringieron o condicionaron el acceso de agentes de IA de terceros a las cuentas de sus clientes, y que algunas conocían accesos no autorizados con credenciales facilitadas por los propios titulares (1)(2)(4)(5). La respuesta consistió en cerrar o limitar ese vector, mantener canales de lectura a través de conectores y repartir el riesgo por protocolos o por contrato (3)(4)(5). Wells Fargo, que no bloquea pero traslada el riesgo al cliente mediante su acuerdo de acceso, ilustra la variante contractual (5).
+
+Los ejecutivos expresaron preocupaciones en cuatro ámbitos: la seguridad de las cuentas, las dificultades de atribución, los posibles efectos sobre la base de depósitos y la distribución de la responsabilidad. Sobre el tercero, las propias fuentes recogen posiciones enfrentadas (3)(4)(5). Las normas de pago estadounidenses y europeas, interpretadas con la cautela que exige la falta de jurisprudencia específica, tienden a dejar la pérdida en manos del cliente que entrega sus credenciales.
+
+Las limitaciones documentales son significativas. Gran parte de la información procede de fuentes no identificadas o de declaraciones generales. No hay datos cuantitativos consolidados sobre actividad, impacto económico o frecuencia de acciones autónomas, y cualquier extrapolación sobre la magnitud sistémica carece por ahora de respaldo empírico suficiente.
+
+Para clientes y empresas que usan o desarrollan agentes, se derivan tres consecuencias prácticas, que son una propuesta del autor. Primera: no entregar usuario y contraseña a un agente, y preferir conexiones de solo lectura mediante conectores autorizados. Segunda: revisar los contratos con la entidad para saber si presumen autorizadas las operaciones del agente. Tercera: exigir a los proveedores de agentes trazabilidad de cada acción, para poder reconstruir qué decidió el agente y bajo qué instrucción si hay una disputa. Para las entidades, el reto es documentar el reparto de responsabilidad antes de abrir el acceso transaccional.
+
+El episodio funciona como punto de inflexión operativo. Muestra la velocidad con la que los sistemas *agentic* llegan a infraestructuras críticas y la distancia entre la innovación y la capacidad de los bancos para establecer controles de identidad, atribución y responsabilidad. Estas conclusiones dependen de la información pública disponible hasta el 22 de octubre de 2026 y quedarán sujetas a revisión cuando aparezcan datos adicionales, informes técnicos de las entidades o pronunciamientos de los supervisores.
+
+---
+
+## Bibliografía
+
+(1) Mills, M. (22 de octubre de 2026). Scoop: Unvetted AI agents are accessing U.S. bank accounts. *Axios*. https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access
+
+(2) Reuters (22 de octubre de 2026). US banks detect unauthorized AI agents in customer accounts, Axios reports. *Reuters*. https://www.reuters.com/legal/government/us-banks-detect-unauthorized-ai-agents-customer-accounts-axios-reports-2026-10-22/
+
+(3) CNBC (13 de octubre de 2026). JPMorgan Chase blocks outside AI agents like Muse, Instinct from directly accessing accounts. *CNBC*. https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html
+
+(4) PYMNTS (19 de octubre de 2026). Big Banks Won’t Let Outside AI Agents Move Money. *PYMNTS*. https://www.pymnts.com/news/artificial-intelligence/2026/big-banks-will-not-let-outside-ai-agents-move-money/ (recoge reportajes de Bloomberg y del Financial Times del 16 de octubre de 2026).
+
+(5) Vaughn, T. (20 de octubre de 2026). The Access Tax Amazon Imposed on Shopping Agents Just Arrived at Your Bank. *Yahoo Finance*. https://finance.yahoo.com/technology/ai/articles/access-tax-amazon-imposed-shopping-111047895.html
+
+(6) Regulation E (Electronic Fund Transfers), 12 CFR § 1005.2(m) (definición de «unauthorized electronic fund transfer»). https://www.consumerfinance.gov/rules-policy/regulations/1005/2/
+
+(7) Electronic Fund Transfer Act, 15 U.S.C. § 1693 y ss. (responsabilidad del consumidor: § 1693g).
+
+(8) Consumer Financial Protection Bureau, comentario oficial a la Regulación E, 2(m)-2, y preguntas frecuentes sobre transferencias electrónicas de fondos. https://www.consumerfinance.gov/compliance/compliance-resources/deposit-accounts-resources/electronic-fund-transfers/electronic-fund-transfers-faqs/
+
+(9) Directiva (UE) 2015/2366 del Parlamento Europeo y del Consejo, de 25 de noviembre de 2015, sobre servicios de pago en el mercado interior, DO L 337, de 23 de diciembre de 2015, arts. 69, 73 y 74.
+
+(10) Real Decreto-ley 19/2018, de 23 de noviembre, de servicios de pago y otras medidas urgentes en materia financiera, BOE núm. 284, de 24 de noviembre de 2018.
