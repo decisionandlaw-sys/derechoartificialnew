@@ -1,0 +1,213 @@
+---
+title: "Voto por Internet en Estonia: veinte años de IVXV y sus límites"
+description: "Veinte años de i-voting en Estonia: cifrado ElGamal, revoto, auditoría y las vulnerabilidades documentadas de IVXV entre 2014 y 2026."
+date: "2026-10-25"
+tags: ["voto por Internet", "Estonia", "IVXV", "verificabilidad", "resistencia a la coerción"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "estonia-voto-internet-ivxv"
+readingTime: 20
+image: "/images/firma-scarpa/estonia-voto-internet-ivxv/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Estonia abrió en octubre de 2005 las primeras urnas electrónicas con efectos vinculantes y no las ha cerrado desde entonces. En las parlamentarias de 2023, el 51,1 % de quienes votaron lo hizo por Internet. Veinte años de uso nacional convierten al país en la referencia de cualquier debate sobre voto remoto.
+
+El sistema no existiría sin la identidad electrónica que el Estado empezó a emitir en 2002. La ID-card, obligatoria por ley, guarda un certificado para identificarse y otro para firmar, y esa firma vale como la manuscrita. El elector entra con la tarjeta, con Mobile-ID o, desde 2025, con Smart-ID. Vota siempre desde un ordenador. El teléfono sirve para identificarse y para comprobar después el voto.
+
+La versión actual, IVXV, funciona desde las elecciones locales de 2017. Cifra cada papeleta con ElGamal y la encierra en un sobre que el elector firma con su certificado. La clave que abre las papeletas se parte en fragmentos que reparten miembros de la Oficina Electoral y del Comité Nacional Electoral, y nadie la conserva entera. Al cierre se mezclan las papeletas cifradas y el sistema genera una prueba de conocimiento cero de que la mezcla y el descifrado se hicieron bien. Un auditor independiente revisa cada elección y las autoridades publican el código.
+
+Contra la coerción, el diseño ofrece dos defensas. El elector puede votar las veces que quiera y solo cuenta el último envío. Desde 2021 puede además anular el voto electrónico el domingo con una papeleta en papel, que prevalece. Para comprobar que su voto llegó bien, escanea con el móvil un código QR durante un plazo corto: treinta minutos en 2023 y quince según las comunicaciones oficiales de 2025. Pocos lo hacen. Verificaron su voto el 5,5 % de los electores en 2023 y el 9,9 % en 2024.
+
+Los investigadores han encontrado grietas desde el principio. En 2014, Springall y su equipo describieron huecos arquitectónicos y de procedimiento y recomendaron dejar de usar el sistema. Los trabajos de 2024 a 2026 señalan otros puntos. Treier y Düüna mostraron que un infiltrado podía sustituir papeletas en la urna sin que las herramientas de auditoría lo detectaran, y la corrección ya figura en las herramientas de las elecciones europeas de 2024. Arafat advirtió de que la aplicación de votación no se autentica, de modo que cualquier programa con las credenciales del elector puede emitir un voto firmado. Yu y Haines reconstruyeron la especificación completa y localizaron vulnerabilidades nuevas en la privacidad de la papeleta y en las dos formas de verificabilidad, algunas con pruebas de concepto sobre el código real. La Comisión de Ciberseguridad de la Academia de Ciencias contó 31 riesgos en 2024: seis medios, 25 bajos y ninguno alto.
+
+El hallazgo que más pesa sobre la resistencia a la coerción llegó en 2025. Treier explicó que cada firma con la ID-card, el Mobile-ID o el Smart-ID queda registrada de forma permanente por el prestador de identidad y que el titular puede consultarla. Esos registros revelan cuántas veces y en qué momento votó una persona, y con ello vacían de contenido la defensa del revoto. Treier comunicó la vulnerabilidad a las autoridades estonias. El análisis de riesgos de la Academia de Ciencias de 2024 no la había recogido.
+
+Las lecciones para otros países tienen un límite claro. El modelo estonio exige una identidad electrónica estatal de uso masivo, que pocos Estados tienen. La verificabilidad, además, depende de que el elector la ejerza y entienda sus pruebas. El Tribunal Constitucional Federal alemán exigió en 2009 que el ciudadano pueda comprobar los pasos esenciales de la votación sin conocimientos técnicos especializados. Ese criterio pone a prueba a IVXV, cuyas garantías descansan en pruebas criptográficas que casi nadie sabe leer.
+
+Veinte años de uso permiten una conclusión prudente. Un país puede sostener el voto por Internet a escala nacional si combina una identidad electrónica sólida, una auditoría constante y la disposición a corregir lo que los investigadores encuentran. Las fuentes no permiten afirmar que el sistema esté libre de riesgos residuales.
+
+# Veinte años de voto por Internet en Estonia: arquitectura técnica, garantías de verificabilidad y límites de la resistencia a la coerción en el sistema IVXV
+
+## Análisis del marco criptográfico, los mecanismos de auditoría y las vulnerabilidades documentadas del sistema de i-voting estonio (2005-2026)
+
+### 1. Introducción y contextualización histórica del i-voting estonio
+
+Estonia autorizó el voto por Internet con efectos vinculantes en 2005. Las primeras urnas electrónicas abrieron en las elecciones locales de octubre de ese año (1)(2). El canal siguió abierto en todas las elecciones parlamentarias, locales y europeas posteriores (1)(3).
+
+El sistema descansa en la identidad electrónica que el país construyó desde 2002. Ese año Estonia empezó a emitir la ID-card, un documento de identidad de tenencia obligatoria por ley. La tarjeta guarda dos certificados con sus claves: uno para autenticarse y otro para firmar. La firma electrónica cualificada equivale a la manuscrita (4)(18). El i-voting admite ese certificado, el Mobile-ID y, desde 2025, el Smart-ID personalizado con la ID-card (2)(5)(14).
+
+La versión actual, IVXV, entró en producción en las elecciones locales de 2017. Sustituyó al diseño anterior, cambió el cifrado de las papeletas de RSA-OAEP a ElGamal y fijó los requisitos técnicos, los actores y los procedimientos de verificación (6)(7)(19). La Oficina Electoral del Estado dirige el proceso. La Autoridad de Sistemas de Información (RIA) aporta la tecnología y la ciberseguridad (3)(8).
+
+El periodo de voto electrónico corre del lunes a las 9:00 al sábado a las 20:00. El elector puede votar varias veces y solo cuenta el último envío. Desde 2021 puede anular el i-voto el domingo con una papeleta en papel, que prevalece (2)(5).
+
+Las cifras oficiales muestran el crecimiento. En las parlamentarias de 2023 el i-voting concentró el 51,1 % de los votos de quienes participaron. En las europeas de 2024 llegó al 41,7 % (9). Veinte años de uso nacional convierten a Estonia en la referencia obligada de cualquier debate sobre voto remoto (1)(9)(11).
+
+El modelo parte de la premisa de que la identidad electrónica estatal autentica con solidez suficiente al elector remoto. Investigadores y autoridades han puesto a prueba esa premisa con cuatro criterios: verificabilidad individual, verificabilidad universal, secreto del voto y resistencia a la coerción (10)(11)(12).
+
+### 2. Fundamentos técnicos del sistema IVXV: cifrado, firma digital e identidad electrónica
+
+IVXV se apoya en tres piezas: la identidad electrónica nacional, el cifrado asimétrico y la firma digital cualificada (1)(6)(11).
+
+El elector se identifica con ID-card, Mobile-ID o Smart-ID. El Smart-ID solo vale si su cuenta se personalizó con la ID-card (2)(5)(14). La firma que genera la tarjeta tiene valor jurídico pleno (4)(18). El voto sale siempre desde un ordenador con Windows, macOS o Linux. El teléfono interviene como medio de identificación, con Mobile-ID o Smart-ID, y después como herramienta de verificación. No emite votos (5)(20).
+
+El diseño sigue el esquema de “doble sobre”. La aplicación cifra la opción del elector con ElGamal, con un módulo primo de 3072 bits (grupo 15 de la RFC 3526), y con la clave pública de la elección (19). El elector firma el paquete cifrado con su certificado. El sobre interior es el voto cifrado y el exterior, la firma (11)(12)(6).
+
+Antes de abrir el periodo de voto, los organizadores generan la clave privada y la parten en fragmentos. Reparten esos fragmentos entre miembros del Comité Nacional Electoral y representantes de la Oficina Electoral. Nadie conserva la clave completa. Solo la reconstruyen juntos el día del escrutinio, bajo auditoría (6)(7)(8).
+
+IVXV genera pruebas de conocimiento cero que acreditan que la mezcla de los votos cifrados y el descifrado posterior se ejecutaron bien. Con esas pruebas se comprueba el resultado sin abrir los votos individuales (11)(12). La mezcla recifra las papeletas, de modo que ninguna de las que salen se puede vincular con la que entró (19).
+
+La Oficina Electoral publica la aplicación de votación en valimised.ee justo antes de abrir el canal. El elector la descarga, se identifica, elige, cifra y firma. El paquete viaja al servidor de recolección (*collector*) (2)(5).
+
+### 3. Procedimiento de emisión, revoto y verificación individual del voto
+
+El elector descarga la aplicación oficial desde valimised.ee. Solo funciona en ordenadores de escritorio. No existe versión móvil para emitir el voto (2)(5)(20).
+
+Después de identificarse, ve la lista de candidatos de su circunscripción. Elige, confirma y la aplicación cifra la opción con la clave pública de la elección. El elector firma el paquete y la aplicación lo envía al servidor de recolección (2)(6)(11).
+
+Puede volver a votar cuantas veces quiera entre el lunes y el sábado. Cada nuevo envío anula los anteriores y solo cuenta el último. Ese revoto es la principal defensa del sistema frente a la coerción y la compra de votos (2)(6).
+
+Desde 2021 el elector puede anular el i-voto el domingo con una papeleta en papel. La papeleta cancela cualquier voto electrónico previo (2)(5).
+
+Para comprobar que el voto llegó bien, el elector instala antes en el móvil la aplicación “EH kontrollrakendus” y escanea el código QR que muestra la aplicación de voto. El plazo para hacerlo fue de treinta minutos en las parlamentarias de 2023, y las comunicaciones oficiales de 2025 lo fijan en quince. El elector dispone de hasta tres comprobaciones (14)(20)(21). La verificación confirma dos cosas: que el servidor central recibió el voto y que el contenido cifrado coincide con la opción elegida (2)(5). El límite de tiempo protege el secreto. Sin él, quien fotografiara el código podría ver la decisión del elector (22).
+
+### 4. Verificabilidad universal, auditoría y observación del proceso
+
+IVXV ofrece verificabilidad universal mediante pruebas de conocimiento cero y una auditoría formal independiente (6)(7)(11).
+
+Al cerrar el canal electrónico, la Oficina Electoral comprueba que los votos del servidor de recolección coinciden con los del registro, que las firmas son válidas y que los electores figuran en el censo. Después mezcla los votos cifrados y genera la prueba de conocimiento cero de la mezcla. Más tarde reconstruye la clave privada, descifra y genera otra prueba. Los votos abiertos pasan al sistema de información electoral (VIS) y se suman a los resultados de las urnas físicas (3)(6)(8).
+
+Cada elección exige una auditoría. El auditor revisa el plan de pruebas, la integridad del sistema y el cumplimiento de la normativa y de la documentación técnica. Presencia la generación, el uso y la destrucción de las claves, y el escrutinio. La Oficina Electoral publica el código de la herramienta de auditoría junto con el del software de voto, la aplicación de verificación y la de mezcla, y sube los informes a valimised.ee (7)(13).
+
+Cualquiera puede observar. La Oficina Electoral forma a los observadores antes de cada proceso. La OIDDH/OSCE envió misiones en 2007, 2011, 2015 y 2019. En 2021 KPMG realizó una auditoría de proceso por encargo del Ministerio de Asuntos Económicos y Comunicaciones (13)(14).
+
+### 5. Análisis de seguridad: vulnerabilidades identificadas y mitigaciones (2014-2026)
+
+Springall y su equipo publicaron en 2014 un análisis basado en observación, revisión de código y pruebas de ataque. Encontraron límites arquitectónicos y huecos procedimentales. Bajo un modelo de amenaza que incluye infiltrados y actores estatales, esos huecos permiten alterar resultados o erosionar la confianza. Lo demostraron en un entorno de prueba y recomendaron dejar de usar el sistema (10)(15). Willemson replicó, según recoge Treier, que muchas debilidades del voto por Internet tienen un equivalente en los sistemas de papel (15).
+
+IVXV llegó en 2017 con pruebas de conocimiento cero y más código abierto (6)(7)(19).
+
+Yu y Haines reconstruyeron en 2026 la especificación completa de IVXV a partir del código público, la documentación y ejemplos de configuración. Analizaron verificabilidad individual, verificabilidad universal, privacidad, resistencia a la coerción y elegibilidad. Localizaron vulnerabilidades nuevas en la privacidad de la papeleta y en ambas formas de verificabilidad. Varias nacen de validaciones inconsistentes, diferencias de codificación y parámetros criptográficos sin comprobar. Validaron parte de los hallazgos con pruebas de concepto sobre el código real (11).
+
+Arafat sistematizó en 2025 el estado del sistema. Subrayó que la aplicación de votación no se autentica: cualquier programa que posea las credenciales del elector puede emitir un voto firmado. Describió escenarios de ataque a gran escala y advirtió sobre la amenaza cuántica de tipo “Harvest Now, Decrypt Later”, que consiste en copiar hoy las papeletas cifradas para descifrarlas cuando exista un ordenador cuántico capaz (12).
+
+Treier y Düüna identificaron en 2024 una vulnerabilidad frente a infiltrados. Durante el procesamiento de la urna, un empleado deshonesto podía sustituir papeletas por otras con formato correcto sin que las herramientas de auditoría lo detectaran. Propusieron una aplicación de auditoría que comprueba que nadie añadió, quitó ni cambió papeletas. El código de las elecciones europeas de 2024, publicado el 30 de mayo de ese año, incluye una aplicación de auditoría mejorada basada en su guion (15).
+
+Kraavi y Willemson señalaron en 2025 otra carencia. IVXV ofrece pruebas de descifrado correcto y de mezcla correcta, pero no demuestra que el texto plano bajo cada papeleta cifrada corresponda a un candidato válido. Propusieron añadir esa prueba con *Bulletproofs* y la evaluaron en términos de rendimiento (19).
+
+La Comisión de Ciberseguridad de la Academia de Ciencias de Estonia elaboró en 2024 un análisis de riesgos que publicó en octubre. Contó 31 riesgos: seis de nivel medio, 25 de nivel bajo y ninguno alto ni crítico. Entre los medios figuran mejorar la auditabilidad y la transparencia del protocolo y afinar los procesos de auditoría y observación (8)(16).
+
+### 6. Resistencia a la coerción y el problema de los registros de transacciones del eID
+
+El revoto y la prevalencia de la papeleta física son las dos defensas principales frente a la coerción. El coaccionador no puede saber si el elector cambió el voto después (2)(6).
+
+Esa protección exige que nadie conozca cuántas veces ni cuándo votó el elector. La ley estonia lo recoge: el sistema no debe permitir que un votante pruebe a nadie cuál de sus votos electrónicos se contó (17). Sin embargo, cada firma digital con ID-card, Mobile-ID o Smart-ID queda registrada de forma permanente por el prestador del servicio de identidad. El propio titular puede consultar el historial (17).
+
+Treier mostró en 2025 que esos registros revelan el número y el momento de las firmas y rompen así el secreto sobre la frecuencia de voto. Quien coacciona puede detectar que el elector volvió a votar. El análisis de riesgos de 2024 de la Academia de Ciencias, con sus 31 riesgos, no contempló este vector (17)(16). Treier comunicó la vulnerabilidad a las autoridades estonias y examinó alternativas: filtrar de forma persistente los registros, crear credenciales específicas para votar o firmar sin conexión. Sopesó de cada una su coste en seguridad, usabilidad, cumplimiento normativo y complejidad (17).
+
+Las fuentes oficiales consultadas no describen ningún mecanismo que oculte las transacciones de firma del i-voting ni un perfil de firma específico para el voto electrónico (17).
+
+### 7. Estadísticas de adopción y evolución del uso del i-voting
+
+Estonia estrenó el i-voting en las locales de 2005. Los datos oficiales de la Oficina Electoral muestran la evolución:
+
+- Locales 2021: 275.587 i-votantes (273.620 computados), 46,9 % de los participantes y 25,7 % del censo.
+- Parlamentarias 2023: 313.514 i-votantes (312.182 computados), 51,1 % de los participantes y 32,5 % del censo.
+- Europeas 2024: 153.848 i-votantes (153.269 computados), 41,7 % de los participantes y 15,7 % del censo (9).
+
+Los i-votos representaron el 64,6 % de los votos anticipados en 2021, el 68,9 % en 2023 y el 60,1 % en 2024. La proporción de i-votos emitidos desde el extranjero, según la dirección IP, fue del 4,1 % en 2021, del 7,8 % en 2023 y del 5,5 % en 2024 (9).
+
+El Mobile-ID generó el 14,0 % de los i-votos en 2021, el 4,5 % en 2023 y el 31,4 % en 2024. Verificaron su voto con la aplicación móvil el 6,7 % de los electores en 2021, el 5,5 % en 2023 y el 9,9 % en 2024 (9).
+
+En las locales de octubre de 2025, las primeras con Smart-ID, el canal electrónico recibió 272.206 votos, algo menos que los 273.620 computados en 2021, según el recuento que publicó la radiotelevisión pública estonia con datos de la Oficina Electoral (23). Esa cifra corresponde al cierre del periodo anticipado. La Oficina depura después los duplicados y los votos anulados con papeleta.
+
+### 8. Comparación con otros sistemas de voto remoto y lecciones transferibles
+
+Estonia opera uno de los sistemas nacionales de voto por Internet con efectos vinculantes más antiguos y de mayor uso (1)(9)(11).
+
+Yu y Haines compararon IVXV con Belenios y el sistema de Swiss Post en verificabilidad individual, verificabilidad universal, privacidad, resistencia a la coerción y elegibilidad (11).
+
+La diferencia central es la identidad electrónica estatal. Estonia emitió la ID-card en 2002 y la hizo obligatoria. Muchos países no cuentan con una infraestructura equivalente (2)(8)(14).
+
+Los elementos que más se discuten como posibles lecciones son el doble sobre, el código abierto, las pruebas de conocimiento cero, el revoto, la anulación con papeleta y el régimen de auditoría. Todos dependen de presupuestos institucionales y técnicos que no viajan solos (11)(12)(17).
+
+El marco jurídico internacional fija el listón en otro lugar. La Recomendación CM/Rec(2017)5 del Comité de Ministros del Consejo de Europa, adoptada el 14 de junio de 2017, era entonces el único estándar internacional específico sobre voto electrónico. Distingue la verificación individual, por la que el elector comprueba que su voto se registró sin alteración (estándar 15), de la verificación general, que aporta pruebas de que solo votaron electores con derecho (estándar 18) (25).
+
+El Tribunal Constitucional Federal alemán fijó en su sentencia de 3 de marzo de 2009 (2 BvC 3/07 y 2 BvC 4/07) un criterio que cualquier sistema electrónico debe afrontar. Declaró inconstitucional el uso de las máquinas de votación Nedap en las elecciones al Bundestag de 2005. El principio de publicidad electoral (artículo 38 en relación con el artículo 20, apartados 1 y 2, de la Ley Fundamental) exige que el ciudadano pueda comprobar los pasos esenciales de la votación y del escrutinio de forma fiable y sin conocimientos técnicos especializados (24). El tribunal resolvió sobre máquinas instaladas en colegios electorales y no sobre voto remoto, pero su razonamiento plantea una pregunta incómoda a IVXV. Las pruebas de conocimiento cero y la auditoría formal permiten verificar el resultado, aunque casi ningún elector sabe leerlas. Los datos de la sección 7 apuntan en la misma dirección: solo el 5,5 % de los electores en 2023 y el 9,9 % en 2024 comprobaron su propio voto (9). La verificabilidad que el diseño ofrece sobre el papel solo protege cuando alguien la ejerce.
+
+### 9. Conclusiones y límites del modelo estonio
+
+Estonia lleva dos décadas operando voto por Internet con efectos jurídicos plenos. En algunas elecciones el canal electrónico ya concentra más de la mitad de los votos de quienes participan. Esa trayectoria se apoya en la identidad electrónica que el Estado desplegó desde 2002 (1)(9)(4).
+
+El diseño actual combina cifrado ElGamal sobre un módulo de 3072 bits, firma digital del elector, revoto, prevalencia de la papeleta física, verificación individual, pruebas de conocimiento cero, código publicado y auditoría formal (6)(11)(7)(19).
+
+La literatura técnica señala límites desde 2014. Los trabajos de 2024 a 2026 documentan problemas de validación, falta de autenticación de la aplicación de votación, riesgos para la integridad de la urna, ausencia de pruebas de corrección de la papeleta y exposición a través de los registros de transacciones del eID (10)(11)(12)(15)(17)(19).
+
+Exportar el modelo exige una identidad electrónica estatal de uso masivo. Pocos países la tienen (2)(8)(14).
+
+Las autoridades estonias prueban, auditan y publican información en cada elección. Incorporan correcciones cuando detectan fallos, como la del procesamiento de la urna en 2024. Las fuentes no permiten afirmar que el sistema esté libre de riesgos residuales (8)(13)(15)(16).
+
+De esos hallazgos se desprenden cuatro propuestas de *lege ferenda* que las fuentes respaldan:
+
+- Dotar a la aplicación de votación de un mecanismo que acredite su autenticidad y su integridad (11)(12).
+- Sacar el revoto del alcance de los registros del eID con credenciales específicas de voto, filtrado persistente de los registros o firma sin conexión (17).
+- Añadir una prueba de que cada papeleta cifrada contiene un candidato válido (19).
+- Sostener un protocolo de auditoría del procesamiento de la urna que verifique también los escenarios que se salen del camino previsto (15).
+
+El caso demuestra que un país puede mantener voto por Internet a escala nacional durante veinte años si cuenta con identidad electrónica sólida y supervisión institucional constante. También muestra que la verificabilidad, el secreto y la resistencia a la coerción siguen generando tensiones técnicas y organizativas que obligan a revisar el sistema de forma permanente (11)(12)(17).
+
+### Bibliografía
+
+(1) State Electoral Office of Estonia. *Introduction to i-voting*. https://www.valimised.ee/en/internet-voting/more-about-i-voting/introduction-i-voting
+
+(2) State Electoral Office of Estonia. *Internet voting in Estonia*. https://www.valimised.ee/en/internet-voting-estonia
+
+(3) Information System Authority (RIA). *Election information system and i-voting*. https://www.ria.ee/en/state-information-system/development-election-information-systems
+
+(4) Information System Authority (RIA). *Electronic identity (eID)*. https://ria.ee/en/state-information-system/electronic-identity-eid-and-trust-services/electronic-identity-eid
+
+(5) State Electoral Office of Estonia. *Requirements to the voter and their computer*. https://www.valimised.ee/en/internet-voting/guidelines/requirements-voter-and-their-computer
+
+(6) State Electoral Office of Estonia. *General Framework for Electronic Voting*. https://www.valimised.ee/en/internet-voting/more-about-i-voting/general-framework-electronic-voting
+
+(7) State Electoral Office of Estonia. *Documents about Internet Voting*. https://www.valimised.ee/en/internet-voting/documents-about-internet-voting
+
+(8) Information System Authority (RIA). *I-voting: 20 years of progress*. https://www.ria.ee/en/i-voting-20-years-progress
+
+(9) State Electoral Office of Estonia. *Statistics about Internet voting in Estonia*. https://www.valimised.ee/en/archive/statistics-about-internet-voting-estonia
+
+(10) Springall, D., Finkenauer, T., Durumeric, Z., Kitcat, J., Hursti, H., MacAlpine, M. y Halderman, J. A. (2014). Security Analysis of the Estonian Internet Voting System. *Proceedings of the 21st ACM Conference on Computer and Communications Security (CCS ’14)*. https://estoniaevoting.org/findings/paper/
+
+(11) Yu, T. y Haines, T. (2026). Reverse Engineering IVXV: A Specification and Security Analysis of Estonia’s Internet Voting System. *IACR Cryptology ePrint Archive*, 2026/2576. https://eprint.iacr.org/2026/2576
+
+(12) Arafat, S. M. (2025). On the Estonian Internet Voting System, IVXV, SoK and Suggestions. *IACR Cryptology ePrint Archive*, 2025/506. https://eprint.iacr.org/2025/506
+
+(13) State Electoral Office of Estonia. *Observing, auditing, testing*. https://www.valimised.ee/en/internet-voting/observing-auditing-testing
+
+(14) State Electoral Office of Estonia. *Questions about the reliability of i-voting* e *I-voting fact check: myth and reality*.  
+https://www.valimised.ee/en/internet-voting/frequently-asked-questions/questions-about-reliability-i-voting  
+https://www.valimised.ee/en/internet-voting/i-voting-fact-check-myth-and-reality
+
+(15) Treier, T. y Düüna, K. (2024). Identifying and solving a vulnerability in the Estonian internet voting process: subverting ballot integrity without detection. *IEEE Access*, 12, 197766-197782. https://doi.org/10.1109/ACCESS.2024.3521337
+
+(16) Cybersecurity Committee of the Estonian Academy of Sciences (2024). Análisis de riesgos del voto por Internet (resultados publicados en octubre de 2024), según se describe en RIA, *I-voting: 20 years of progress* (8), y en Treier (17).
+
+(17) Treier, T. (2025). Re-voting Under Surveillance: National eID Transaction Logs as a Threat to Coercion Resistance in Estonian Internet Voting. *Electronic Voting (E-Vote-ID 2025)*, Springer LNCS. https://link.springer.com/chapter/10.1007/978-3-032-05036-6_12
+
+(18) Reglamento (UE) n.º 910/2014 del Parlamento Europeo y del Consejo, de 23 de julio de 2014, relativo a la identificación electrónica y los servicios de confianza para las transacciones electrónicas en el mercado interior (eIDAS), art. 25.2. DO L 257, de 28.8.2014, p. 73.
+
+(19) Kraavi, T. y Willemson, J. (2025). Proving vote correctness in the IVXV internet voting system. *Scientific Reports*, 15, art. 31793. https://doi.org/10.1038/s41598-025-16764-1
+
+(20) State Electoral Office of Estonia (2025). *Advance voting and i-voting start on Monday*. https://valimised.ee/en/advance-voting-and-i-voting-start-monday
+
+(21) Information System Authority (RIA) (2023). *Riigikogu election week begins*. https://ria.ee/en/news/riigikogu-election-week-begins
+
+(22) State Electoral Office of Estonia. *Questions about i-voting*. https://valimised.ee/en/internet-voting/frequently-asked-questions/questions-about-i-voting
+
+(23) ERR News (19 de octubre de 2025). *Turnout up in Estonia's local elections compared with 2021 despite e-vote dip*. https://news.err.ee/1609833651/turnout-up-in-estonia-s-local-elections-compared-with-2021-despite-e-vote-dip
+
+(24) Bundesverfassungsgericht (Tribunal Constitucional Federal alemán). Sentencia del Segundo Senado de 3 de marzo de 2009, 2 BvC 3/07 y 2 BvC 4/07 (BVerfGE 123, 39). https://bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2009/03/cs20090303_2bvc000307en.html
+
+(25) Consejo de Europa, Comité de Ministros. *Recommendation CM/Rec(2017)5 on standards for e-voting*, adoptada el 14 de junio de 2017. https://rm.coe.int/0900001680726f6f
