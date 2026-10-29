@@ -1,0 +1,192 @@
+---
+title: "Granjas de portátiles norcoreanas: Operación Lonestar Roundup"
+description: "El FBI registró más de 40 residencias en Texas y Ohio acusó a 14 personas. Análisis del esquema de trabajadores de TI de Corea del Norte."
+date: "2026-10-29"
+tags: ["Corea del Norte", "Trabajadores de TI", "Laptop farms", "Amenaza insider", "Seguridad nacional"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "granjas-portatiles-norcoreanas-operacion-lonestar-roundup"
+readingTime: 24
+image: "/images/global-ia/granjas-portatiles-norcoreanas-operacion-lonestar-roundup/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 13 de octubre de 2026 el Departamento de Justicia de los Estados Unidos y el FBI presentaron una ofensiva coordinada contra el esquema con el que Corea del Norte coloca a trabajadores de tecnologías de la información en empresas occidentales para financiar sus programas de armas. La ofensiva tuvo tres piezas. La primera, la Operación Lonestar Roundup: entre el 21 y el 25 de septiembre, agentes del FBI registraron más de cuarenta residencias en Texas e incautaron 187 portátiles y dispositivos KVM. La segunda, una acusación de 58 páginas del Distrito Norte de Ohio contra catorce personas, con dos ciudadanos estadounidenses detenidos. La tercera, una alerta pública del FBI dirigida a las empresas.
+
+El eje del esquema es la granja de portátiles. Una empresa estadounidense contrata a un candidato remoto con una identidad robada o fabricada y le envía un portátil corporativo. Ese portátil llega al domicilio de un facilitador en Estados Unidos, que lo mantiene encendido, instala software de acceso remoto y deja que un trabajador norcoreano lo controle desde el extranjero. La firma de ciberseguridad CrowdStrike explica que la granja resuelve tres problemas que el adversario no puede superar desde fuera del país: el físico, el financiero y el legal.
+
+La acusación de Ohio ofrece las cifras más concretas. Un gran jurado la dictó el 1 de octubre tras una investigación de un año y la fiscalía la hizo pública el 13 de octubre. Imputa a doce personas con nombre y a dos más bajo secreto. Ocho de las identificadas tienen su domicilio declarado en China. Los dos detenidos son Michael James Bostelle, de Filadelfia, y Juan Cecilio Pena Carrillo, de San Juan (Texas). El Departamento de Justicia sitúa el esquema entre 2019 y alrededor de julio de 2025, con más de setenta empresas afectadas en Ohio, en otros dieciséis estados y en el Distrito de Columbia, y unos tres millones de dólares de ingresos para los trabajadores. La fiscalía considera que ese dinero llegó a entidades sancionadas que controla el régimen. Son imputaciones: el Departamento recuerda que una acusación no equivale a una condena.
+
+El dinero explica la motivación. La alerta del FBI calcula que el régimen recibe entre el 85 y el 90 por ciento de lo que generan estos trabajadores. El acceso explica el riesgo que preocupa a las autoridades. Con credenciales válidas, los operativos entran en repositorios de código, bases de datos y entornos de desarrollo. El FBI los califica de amenaza para la seguridad nacional y para la propiedad intelectual desde dentro de la organización. CrowdStrike indica que las granjas desarticuladas daban acceso a decenas de organizaciones de sectores como el aeroespacial, la energía, los servicios financieros, la sanidad y la ingeniería de defensa. Las fuentes oficiales no cuantifican qué información se exfiltró en esta operación ni si afectó a datos clasificados.
+
+El modelo evoluciona. Los facilitadores ya no se limitan a guardar equipos: según el FBI, aparecen en entrevistas y reuniones por videoconferencia, verifican identidades fraudulentas, ceden sus cuentas profesionales y se someten a pruebas de drogas o toman huellas en nombre de los operativos. Los equipos norcoreanos subcontratan además trabajos completos a freelancers de Asia meridional y África occidental, y mantienen más granjas con menos portátiles en cada una. CrowdStrike documenta desde mayo de 2026 la manipulación de los identificadores de dispositivo, por ejemplo para que una tarjeta de captura de vídeo parezca una cámara web, y describe denuncias falsas de robo para provocar envíos de reemplazo a la dirección de la granja.
+
+La respuesta judicial se acumula. En junio de 2025 el Departamento anunció registros en 29 granjas de 16 estados. En abril de 2026 llegaron las condenas de Kejia Wang, a 108 meses de prisión, y de Zhenxing Wang, a 92, por un esquema que afectó a más de cien empresas. Lonestar Roundup supera esas acciones en número de registros dentro de un mismo territorio. CrowdStrike prevé un efecto limitado y local. El comunicado de la fiscalía de Texas deja la investigación abierta y no anuncia cargos adicionales.
+
+Para las empresas, el FBI propone un enfoque de «identidad en profundidad». No existe un indicador único que identifique a estos trabajadores, porque su comportamiento se solapa con el de empleados remotos legítimos. La alerta recomienda combinar señales débiles, como el uso de escritorio remoto o de dispositivos KVM sobre IP, la rotación de cuentas y direcciones o las aplicaciones ajenas al puesto, y reforzar la verificación de identidad con medidas como la comprobación en directo. Advierte a la vez de que los controles agresivos y las listas de nombres vetados generan falsos positivos que perjudican a candidatos cualificados y a víctimas de robo de identidad.
+
+# Las granjas de portátiles norcoreanas: el modelo de infiltración laboral remota como vector de financiación de programas de armas de destrucción masiva
+
+**Análisis de la Operación Lonestar Roundup (septiembre-octubre de 2026) y de la evolución del esquema de trabajadores de TI estatales de la RPDC en empresas estadounidenses**
+
+---
+
+## 1. Introducción y planteamiento del problema
+
+La República Popular Democrática de Corea (RPDC) coloca a miles de trabajadores de tecnologías de la información bajo control estatal en empresas occidentales (4). Los ingresos que generan financian programas de armas de destrucción masiva, misiles balísticos y capacidades de inteligencia (1)(2). El método prescinde del malware y de las vulnerabilidades técnicas. Inserta personal que parece legítimo: usa identidades robadas o fabricadas, trabaja en remoto y cuenta con facilitadores locales que aportan infraestructura física y cobertura operativa (1)(3)(4).
+
+El 13 de octubre de 2026 el Departamento de Justicia de los Estados Unidos y el FBI anunciaron un conjunto de acciones coordinadas (2). Entre el 21 y el 25 de septiembre, agentes del FBI habían registrado más de cuarenta residencias en Texas y habían incautado 187 portátiles y dispositivos KVM, la operación que el Departamento bautizó como Lonestar Roundup (1)(2). Un gran jurado federal del Distrito Norte de Ohio dictó el 1 de octubre una acusación de 58 páginas contra catorce personas, que la fiscalía hizo pública el 13 de octubre junto con la detención de dos ciudadanos estadounidenses (3). El FBI publicó el mismo día una alerta para el sector privado (4).
+
+El riesgo opera en dos planos. El esquema de la acusación de Ohio generó unos tres millones de dólares para los trabajadores de TI, y la fiscalía considera que ese dinero llegó a entidades sancionadas que controla la RPDC (3). El FBI calcula que el régimen recibe entre el 85 y el 90 por ciento de los ingresos que producen estos trabajadores (4). El segundo plano es el acceso. Una vez contratados, los operativos entran en sistemas internos, código fuente y datos de clientes, y en casos anteriores llegaron a información sujeta a controles de exportación (4)(6). La amenaza es de tipo *insider*, y los controles de perímetro y las firmas de malware detectan poco contra ella.
+
+El modelo cambió con rapidez. Según el FBI, decenas de equipos norcoreanos contratan hoy a estadounidenses y a terceros para tareas cada vez más variadas, y han pasado a mantener más granjas con menos portátiles en cada una para evitar puntos únicos de fallo (4). CrowdStrike documenta desde mayo de 2026 la manipulación de los identificadores de dispositivo (7). La empresa agrupa esta actividad bajo el nombre «Famous Chollima», que según la fiscalía de Texas muchas víctimas usan ya para describir toda la red (1).
+
+Este informe examina la operación de octubre de 2026 dentro de la estrategia de financiación ilícita de la RPDC. Describe la arquitectura del esquema, las implicaciones para la seguridad nacional y la propiedad intelectual, y las medidas de mitigación que recomienda el FBI. Se apoya en comunicados del Departamento de Justicia, en la alerta del FBI y en el análisis técnico de CrowdStrike. Cuando las fuentes no cuantifican un dato, el texto lo indica. Las acusaciones citadas son imputaciones: el propio Departamento recuerda que una acusación formal no es prueba de culpabilidad (3).
+
+---
+
+## 2. Marco conceptual: trabajadores de TI estatales de la RPDC y el modelo de «laptop farms»
+
+Los trabajadores de TI bajo control estatal forman parte de la estrategia de generación de divisas del régimen. Esa estrategia busca eludir las sanciones internacionales y sostener sus programas de armas y de inteligencia (1)(2)(4). Frente a un grupo APT clásico, que penetra por vulnerabilidades, estos operativos son profesionales cualificados que ingresan en empresas occidentales como trabajadores remotos. El FBI cifra en miles el número de operativos que trabajan hoy en compañías occidentales (4).
+
+El núcleo del esquema es la *laptop farm* o granja de portátiles. Facilitadores locales reciben en sus domicilios los equipos que envían las empresas contratantes, los mantienen conectados a internet e instalan software de acceso remoto. Los trabajadores norcoreanos, que suelen operar desde fuera de Estados Unidos, manejan esos equipos como si estuvieran en territorio estadounidense (1)(2)(3). CrowdStrike resume el valor de las granjas así: resuelven tres problemas que el adversario no puede superar desde el extranjero, el físico, el financiero y el legal. La granja ofrece una dirección en Estados Unidos, una identidad jurídica y un modo de cumplir los requisitos de conocimiento del cliente (*know your customer*) (7).
+
+El proceso sigue una secuencia reconocible. Los operativos o sus intermediarios obtienen identidades estadounidenses robadas o fabricadas y documentos de verificación falsificados (4). Con ellas se postulan a puestos remotos, sobre todo de desarrollo de software. Cuando la empresa los contrata, envía el portátil a la dirección del facilitador. El facilitador instala el software de acceso remoto, mantiene el equipo operativo y traslada los salarios a cuentas que controla la RPDC (1)(3).
+
+La escala de los casos documentados varía. En la acusación de Ohio, el esquema afectó a más de setenta empresas y generó unos tres millones de dólares (2)(3). En el caso de Kejia y Zhenxing Wang, condenados en abril de 2026 a 108 y 92 meses de prisión, los hechos alcanzaron a más de cien empresas, usaron las identidades robadas de al menos ochenta personas y produjeron más de cinco millones de dólares (5). Una facilitadora de Arizona, condenada en julio de 2025, participó en un esquema que afectó a más de trescientas empresas y generó más de diecisiete millones de dólares (5).
+
+El riesgo tiene dos caras. La económica: el régimen obtiene divisas difíciles de rastrear. La de seguridad: dentro de la empresa, los trabajadores acceden a repositorios de código, bases de datos y, en casos previos, a datos sujetos a controles de exportación (4)(6).
+
+---
+
+## 3. La Operación Lonestar Roundup: hechos, alcance y resultados
+
+La Operación Lonestar Roundup es la mayor acción pública documentada contra granjas de portátiles de la RPDC en territorio estadounidense. La acción de junio de 2025 alcanzó 29 granjas conocidas o sospechosas repartidas en 16 estados (6). La de Texas registró más de cuarenta residencias en un solo estado, entre el 21 y el 25 de septiembre de 2026 (1)(2). Los agentes incautaron 187 portátiles y dispositivos KVM, unos cien de ellos en el norte de Texas (1).
+
+El comunicado de la fiscalía de Texas afirma que todos esos dispositivos habían funcionado como granjas de portátiles para trabajadores de la RPDC (1). El Special Agent in Charge de la oficina del FBI en Dallas, R. Joseph Rothrock, declaró que cada portátil incautado puede representar a una empresa que contrató a un trabajador norcoreano (1). El fiscal federal Ryan Raybould añadió que cada granja que se desmantela cierra una fuente de ingresos de la que depende el gobierno norcoreano para financiar programas de armas (1).
+
+Las acciones del 13 de octubre incluyeron además la acusación de Ohio. Un gran jurado la dictó el 1 de octubre tras una investigación de un año, y la fiscalía la hizo pública el 13 de octubre (3). Imputa a catorce personas: doce figuran con nombre y dos permanecen bajo secreto (3). Ocho de los doce identificados tienen su domicilio declarado en China (Dandong, Liaoning y Shenzhen). De otros dos se desconoce el paradero. Los dos restantes son ciudadanos estadounidenses, Michael James Bostelle, de 31 años y vecino de Filadelfia (Pensilvania), y Juan Cecilio Pena Carrillo, de 37 años y vecino de San Juan (Texas), detenidos poco antes de la publicación y citados a comparecer en Ohio (3). Los cargos son conspiración para cometer fraude electrónico, conspiración para el blanqueo de capitales, conspiración para el robo de identidad y robo de identidad agravado (3). El resto de los imputados sigue en libertad (3).
+
+Según el Departamento de Justicia, el esquema se extendió desde 2019 hasta julio de 2025, con cierto margen de imprecisión en la fecha final (2). Afectó a más de setenta empresas de Ohio, de otros dieciséis estados y del Distrito de Columbia, en los sectores sanitario, de comunicaciones, de soporte cibernético, de comercio minorista y de manufactura. Generó unos tres millones de dólares, y la fiscalía cree que ese dinero se envió a entidades sancionadas que controla la RPDC (3).
+
+Los comunicados no vinculan las dos detenciones con los registros de Texas. El comunicado texano indica que la investigación continúa y que se publicarán más detalles cuando proceda (1). No anuncia cargos adicionales.
+
+CrowdStrike, que identificó al conjunto de actores como Famous Chollima, informa de que colaboró con el FBI a finales de septiembre de 2026 para desarticular varias granjas de portátiles (7). La empresa no espera que el efecto dure. Según su análisis, la desarticulación frenará a Famous Chollima solo en las zonas donde cerraron las granjas, y el adversario seguirá evolucionando sus métodos para evadir la detección (7). CrowdStrike califica la operación de comienzo de un esfuerzo más amplio de las autoridades estadounidenses para desmantelar la infraestructura de apoyo del grupo en el país (7).
+
+---
+
+## 4. Arquitectura del esquema: identidades falsificadas, facilitadores y transferencia de ingresos
+
+El esquema se apoya en tres elementos: identidades estadounidenses robadas o fabricadas, facilitadores locales que aportan infraestructura física y cobertura operativa, y mecanismos de transferencia de ingresos hacia entidades que controla el régimen (1)(3)(4).
+
+**Identidades.** Los operativos usan identidades de ciudadanos estadounidenses y documentos de verificación falsificados para superar los controles de contratación (4). La fiscalía texana añade el uso de redes privadas virtuales e infraestructura de proxy para aparentar que los trabajadores operan desde Estados Unidos, y publicó una lista de cuentas de Google fraudulentas vinculadas al esquema (1). Las fuentes oficiales examinadas no cifran cuántas identidades se comprometieron en la acusación de Ohio. El Departamento habla de «incontables víctimas» de robo de identidad (2).
+
+**Logística.** CrowdStrike describe cómo los operativos desvían el hardware corporativo hacia las granjas durante la incorporación. Presentan denuncias policiales falsas por robo de un portátil para que la empresa envíe un reemplazo a la dirección de la granja. Rotan entre domicilios para ocultar el destino final. Alegan mudanzas de última hora para redirigir envíos en tránsito. En algunos casos entran por empresas de selección de personal, lo que permite redirigir los equipos del cliente final sin que la empresa intermediaria lo sepa (7). El facilitador recibe el equipo, lo mantiene conectado e instala software de acceso remoto. Usa en ocasiones dispositivos KVM que permiten controlar varios equipos desde un mismo lugar (1)(2)(3).
+
+**Facilitadores.** Su papel ya excede el alojamiento. La alerta del FBI de 13 de octubre de 2026 describe pagos a estadounidenses por una gama creciente de servicios: aparecer ante la cámara, participar en entrevistas o reuniones, verificar identidades fraudulentas, ceder el acceso a sus cuentas personales de redes sociales o profesionales, enviar paquetes, someterse a pruebas de detección de drogas o entregar huellas dactilares, y mantener conectados los dispositivos laborales desde sus casas (4). Los operativos pagan por usar las cuentas de los facilitadores, que acumulan años de actividad legítima. Buscan a estadounidenses con dificultades económicas, que aceptan los encargos sin hacer preguntas si cobran (4). El FBI observa también extorsión a víctimas y amenazas de violencia física para exigir pagos (4).
+
+**Dinero.** Las empresas pagan a cuentas que controlan los facilitadores o que se abren con las identidades comprometidas. Después los fondos viajan hacia cuentas vinculadas a la RPDC (1)(3). La acusación de Ohio incluye cargos de conspiración de blanqueo (3).
+
+El reparto de funciones es claro. Los trabajadores de la RPDC aportan la capacidad técnica y ejecutan las tareas contratadas. Los facilitadores estadounidenses aportan la cobertura territorial. Los intermediarios, entre ellos los nacionales chinos que figuran en la acusación de Ohio, coordinan y mueven los fondos (3). Esa estructura distribuida dificulta la detección temprana y la atribución completa de la cadena de responsabilidad.
+
+---
+
+## 5. Implicaciones de seguridad nacional e intelectual: acceso a redes corporativas y riesgo de espionaje
+
+El objetivo principal que documentan las fuentes es generar ingresos para los programas de armas del régimen. El FBI identifica además un segundo riesgo estructural y califica la actividad de amenaza significativa para la seguridad nacional y de robo de propiedad intelectual desde dentro de la organización (4).
+
+Con credenciales válidas, los operativos llegan a sistemas internos, repositorios de código, bases de datos de clientes y entornos de desarrollo. El acceso entra por el proceso ordinario de contratación y no por la explotación de una vulnerabilidad, de modo que los controles de perímetro pierden eficacia. El FBI advierte de que estos trabajadores casi siempre exfiltran datos, porque la mayoría debe grabar su pantalla para acreditar su actividad diaria, y esas grabaciones se producen en un dispositivo que puede estar a varias conexiones de distancia del equipo corporativo (4).
+
+Los precedentes judiciales muestran el alcance posible. En junio de 2025 el Departamento de Justicia acusó a cuatro norcoreanos de robar y blanquear criptomonedas por valor de más de 900.000 dólares a empresas que los habían contratado como desarrolladores. En otro de los esquemas anunciados ese mes, un colaborador en el extranjero accedió sin autorización a archivos de un contratista de defensa de California que desarrolla equipos con inteligencia artificial, y los datos sustraídos incluían información marcada como sujeta a la normativa ITAR (6).
+
+La granja agrava el problema. Los equipos corporativos permanecen en domicilios que controlan los facilitadores y admiten acceso remoto desde fuera, lo que crea un canal estable y difícil de detectar hacia las redes internas. El FBI lista las herramientas habituales: software de escritorio remoto como AnyDesk, TeamViewer, RustDesk, Chrome Remote Desktop o Splashtop, dispositivos KVM sobre IP como TinyPilot, PiKVM o GL.iNet, y aplicaciones ajenas al puesto como OBS Studio con el complemento VDO.Ninja (4).
+
+CrowdStrike precisa que los clústeres desarticulados en esta operación afectaban a decenas de organizaciones de sectores críticos, entre ellos la industria aeroespacial, la energía, los servicios financieros, la sanidad, la ciberseguridad, la ingeniería de defensa y la tecnología para administraciones públicas (7). Un Estado designado patrocinador del terrorismo y sujeto a amplias sanciones internacionales opera así dentro de empresas que sostienen infraestructuras sensibles.
+
+Las fuentes oficiales no cuantifican el volumen de información sensible que se exfiltró en el marco de Lonestar Roundup ni evalúan si se comprometió información clasificada o de defensa en esta operación concreta. Las declaraciones institucionales hablan de riesgo potencial y de la necesidad de medidas de mitigación en el sector privado (1)(4). Este análisis se limita a ese alcance.
+
+---
+
+## 6. Evolución táctica del grupo Famous Chollima y respuesta de las autoridades estadounidenses
+
+El grupo adaptó su forma de operar frente a las mejoras de detección del sector privado y a las acciones judiciales. La alerta del FBI sostiene que los trabajadores recurren cada vez más a facilitadores para contrarrestar ambas presiones (4).
+
+El cambio más relevante es la ampliación del papel de los facilitadores, que antes alojaban equipos y ahora figuran en entrevistas, verifican identidades y ceden sus cuentas (4). Esa externalización reduce la exposición directa de los operativos y dificulta la atribución. Al mismo tiempo, los equipos norcoreanos subcontratan trabajos completos o partes de ellos a freelancers de Pakistán, India, Nigeria o países vecinos, a quienes pagan una fracción del salario, y también los emplean para postularse a empleos y para realizar entrevistas en su nombre (4). Así mantienen más empleos simultáneos y diluyen su rastro. La alerta añade un cambio de arquitectura: más granjas, con menos portátiles en cada una, para evitar puntos únicos de fallo (4).
+
+En el plano técnico, CrowdStrike documenta desde mayo de 2026 la manipulación de los *hashes* de dispositivos, por ejemplo para que una tarjeta de captura de vídeo se presente como una cámara web. En fechas recientes observó el mismo dispositivo disfrazado en varias organizaciones víctimas distintas, lo que sugiere una reutilización deliberada de identificadores para evadir la detección. La empresa lee ese patrón como prueba de que los operativos conocen los indicadores que vigilan los defensores (7).
+
+La respuesta de las autoridades estadounidenses se acumula desde hace tiempo. En junio de 2025 el Departamento de Justicia anunció dos acusaciones, un acuerdo de culpabilidad, una detención, registros en 29 granjas de 16 estados y la incautación de 29 cuentas financieras y 21 sitios web (6). En abril de 2026 llegaron las condenas de Kejia Wang, a 108 meses de prisión, y de Zhenxing Wang, a 92, con una confiscación conjunta de 600.000 dólares (5). El Departamento había anunciado otras condenas a facilitadores en julio y diciembre de 2025 y en febrero y marzo de 2026 (5). Lonestar Roundup supera a esas acciones en número de registros dentro de un mismo territorio (1)(2)(6).
+
+El impacto de las acciones puntuales es limitado. CrowdStrike lo dice con claridad: el adversario seguirá evolucionando sus métodos para escapar de la detección y la disrupción (7). El FBI, por su parte, plantea la defensa como un proceso continuo de detección y mejora (4). La amenaza se mueve en un ciclo de adaptación y respuesta.
+
+---
+
+## 7. Consecuencias para el sector privado y medidas de mitigación
+
+El esquema produce consecuencias en tres planos: económico, de seguridad de la información y de cumplimiento.
+
+En el plano económico, las empresas pagan salarios a trabajadores fraudulentos y asumen costes de remediación de redes y honorarios legales. En el caso de los hermanos Wang, los daños para las empresas víctimas superaron los tres millones de dólares en honorarios legales, costes de remediación y otros perjuicios (5). En la acusación de Ohio, el esquema afectó a más de setenta empleadores (3).
+
+En el plano de la seguridad de la información, el acceso legítimo y prolongado de personal que controla un Estado sancionado crea un riesgo difícil de mitigar con controles técnicos convencionales. El FBI subraya el potencial de robo de propiedad intelectual, de extorsión y de exfiltración de datos sensibles (4). Aunque las fuentes oficiales no detallan el alcance de las exfiltraciones en Lonestar Roundup, consideran el riesgo estructural (1)(4).
+
+En el plano del cumplimiento, este análisis identifica tres frentes que las fuentes oficiales no desarrollan: la contratación involuntaria de personal vinculado a un régimen sancionado puede exponer a la empresa a la normativa de sanciones, el uso de identidades robadas de ciudadanos estadounidenses abre una dimensión de responsabilidad por protección de datos y fraude de identidad, y la empresa afectada puede afrontar obligaciones de notificación y auditorías internas. Cada uno exige un estudio jurídico propio que excede el alcance de este informe.
+
+El FBI y la fiscalía texana pidieron a empresas y particulares que reporten información sobre el esquema a través del Internet Crime Complaint Center (IC3) (1)(4). La alerta del 13 de octubre ofrece el marco más completo de mitigación y se articula en torno a una idea central, la «identidad en profundidad» (*identity in depth*). El FBI sostiene que no existe un indicador único que identifique a estos trabajadores, porque su actividad se solapa en gran medida con la de empleados remotos legítimos. La detección exige combinar señales que por separado resultan inocuas pero que juntas apuntan a una actividad maliciosa, con controles de acceso y verificación de identidad en capas durante todo el ciclo del empleo (4).
+
+Entre los comportamientos que el FBI recomienda vigilar figuran el uso de software de escritorio remoto y de dispositivos KVM sobre IP, la descarga de aplicaciones ajenas al puesto, la rotación frecuente de cuentas bancarias, direcciones y cuentas de redes sociales, y la exfiltración de grabaciones de pantalla (4). Para endurecer la contratación, el FBI menciona E-Verify, la exigencia de pasaporte estadounidense, varias formas de identificación y la verificación en directo, medidas que aumentan la fricción para los operativos. Desaconseja confiar solo en listas de nombres vetados, porque son poco fiables, pueden bloquear a candidatos cualificados y pueden perjudicar a las víctimas de robo de identidad (4). La alerta pide la colaboración entre tecnologías de la información, recursos humanos, seguridad y dirección (4).
+
+El FBI introduce una cautela de gran interés para el asesoramiento jurídico: los controles agresivos contra estos trabajadores generan un riesgo alto de falsos positivos que perjudiquen a empleados legítimos y excluyan a candidatos cualificados, de modo que la detección exige calibrar los umbrales y revisar los resultados de forma continua (4).
+
+---
+
+## 8. Conclusiones y perspectivas
+
+La Operación Lonestar Roundup muestra la escala y la madurez del modelo de trabajadores de TI estatales de la RPDC como instrumento de financiación ilícita y, de forma secundaria, como vía de acceso a redes corporativas estadounidenses. El registro de más de cuarenta residencias en Texas y la incautación de 187 dispositivos superan en número de registros a la acción anterior de mayor alcance, la de junio de 2025 (1)(2)(6). La operación confirma que el esquema depende de una red de facilitadores locales que aportan la cobertura territorial necesaria para sostener la ficción de residencia y empleo legítimo (3)(4).
+
+Las fuentes oficiales permiten extraer tres conclusiones estructurales. Primero, el objetivo prioritario sigue siendo generar ingresos para los programas de armas del régimen, que según el FBI recibe entre el 85 y el 90 por ciento de lo que producen estos trabajadores (4). Segundo, el acceso legítimo y prolongado a entornos corporativos crea un riesgo *insider* que supera lo económico y alcanza la seguridad nacional y la propiedad intelectual (4)(6). Tercero, la evolución táctica (más facilitadores, subcontratación a terceros países, más granjas con menos equipos y manipulación de identificadores de dispositivo) demuestra que el modelo se adapta a la presión de las autoridades y del sector privado (4)(7).
+
+Las perspectivas a corto y medio plazo apuntan a la continuidad del ciclo de adaptación y respuesta. CrowdStrike califica la operación de comienzo de un esfuerzo más amplio, pero prevé un efecto limitado y local (7). El comunicado de Texas deja abierta la investigación y anuncia nuevos detalles (1).
+
+De las fuentes se derivan medidas operativas concretas para las empresas:
+
+1. Verificar la identidad del candidato en directo y con varias fuentes de identificación, sin depender de listas de nombres vetados (4).
+2. Vigilar los envíos de hardware. Una denuncia de robo seguida de un reemplazo, un cambio de dirección en tránsito o la intervención de una empresa de selección de personal justifican una verificación adicional (7).
+3. Detectar en los equipos corporativos el software de escritorio remoto, los dispositivos KVM sobre IP y las aplicaciones ajenas al puesto (4).
+4. Combinar señales débiles en un análisis de conjunto que reúna a tecnología, recursos humanos, seguridad y dirección (4).
+5. Calibrar los umbrales para limitar los falsos positivos que afectarían a empleados y candidatos legítimos (4).
+6. Reportar la actividad sospechosa al IC3 (1)(4).
+
+La amenaza llega como una inserción laboral fraudulenta que opera dentro de los cauces ordinarios de la empresa y no como una intrusión técnica clásica. Exige una respuesta transversal de recursos humanos, seguridad de la información y cumplimiento normativo. Lonestar Roundup interrumpe una parte de esta infraestructura y deja intacta la lógica del modelo. La contención dependerá de que autoridades y sector privado mantengan una presión sostenida sobre las redes de facilitación y sobre los controles de acceso laboral remoto.
+
+---
+
+## Bibliografía
+
+**Documentos institucionales**
+
+(1) United States Attorney's Office, Northern District of Texas. *Operation Lonestar Roundup dismantles North Korean IT worker network used to penetrate U.S. companies in Texas*. Comunicado de prensa, actualizado el 15 de octubre de 2026.  
+https://www.justice.gov/usao-ndtx/pr/operation-lonestar-roundup-dismantles-north-korean-it-worker-network-used-penetrate-us
+
+(2) U.S. Department of Justice, Office of Public Affairs. *Justice Department Announces Coordinated Actions to Combat North Korean Remote IT Worker Schemes Affecting More than 70 U.S. Companies*. 13 de octubre de 2026.  
+https://www.justice.gov/opa/pr/justice-department-announces-coordinated-actions-combat-north-korean-remote-it-worker
+
+(3) United States Attorney's Office, Northern District of Ohio. *14 Indicted in North Korean Remote IT Worker Conspiracy Affecting More than 70 U.S. Companies*. 13 de octubre de 2026 (acusación dictada el 1 de octubre de 2026).  
+https://www.justice.gov/usao-ndoh/pr/14-indicted-north-korean-remote-it-worker-conspiracy-affecting-more-70-us-companies
+
+(4) Federal Bureau of Investigation, Internet Crime Complaint Center (IC3). Public Service Announcement PSA261013, 13 de octubre de 2026.  
+https://www.ic3.gov/PSA/2026/PSA261013
+
+(5) U.S. Department of Justice, Office of Public Affairs. *Two U.S. Nationals Sentenced for Facilitating Fraudulent Remote Information Technology Worker Scheme that Generated $5M in Revenue for the Democratic People's Republic of Korea*. 15 de abril de 2026.  
+https://www.justice.gov/opa/pr/two-us-nationals-sentenced-facilitating-fraudulent-remote-information-technology-worker  
+Sobre la condena de la facilitadora de Arizona (julio de 2025): U.S. Department of Justice, Office of Public Affairs, *Arizona Woman Sentenced for $17M Information Technology Worker Fraud Scheme That Generated Revenue for North Korea*.  
+https://www.justice.gov/opa/pr/arizona-woman-sentenced-17m-information-technology-worker-fraud-scheme-generated-revenue
+
+(6) U.S. Department of Justice, Office of Public Affairs. *Justice Department Announces Coordinated, Nationwide Actions to Combat North Korean Remote Information Technology Workers' Illicit Revenue Generation Schemes*. 30 de junio de 2025.  
+https://www.justice.gov/opa/pr/justice-department-announces-coordinated-nationwide-actions-combat-north-korean-remote
+
+**Análisis técnico del sector privado**
+
+(7) CrowdStrike. *U.S. Government Disrupts FAMOUS CHOLLIMA Operation with CrowdStrike Assistance*. 13 de octubre de 2026.  
+https://crowdstrike.com/en-us/blog/fbi-disrupts-famous-chollima-operation-with-crowdstrike-assistance
