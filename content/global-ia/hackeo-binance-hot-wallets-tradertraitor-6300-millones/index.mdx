@@ -1,0 +1,344 @@
+---
+title: "Hackeo de Binance: 6.300 millones de dólares en 20 minutos"
+description: "Cronología, vector técnico y atribución a TraderTraitor del mayor robo cripto registrado, con lecciones para la custodia centralizada de activos digitales."
+date: "2026-10-31"
+tags: ["Binance", "hot wallets", "TraderTraitor", "Corea del Norte", "EIP-7702", "ciberseguridad", "criptoactivos"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "hackeo-binance-hot-wallets-tradertraitor-6300-millones"
+readingTime: 32
+image: "/images/global-ia/hackeo-binance-hot-wallets-tradertraitor-6300-millones/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 29 de octubre de 2026, a las 20:05 UTC, empezaron a salir fondos de las carteras calientes de Binance, el mayor exchange de criptomonedas del mundo. En unos veinte minutos desaparecieron entre 6.300 y 6.430 millones de dólares, según quién haga la cuenta, repartidos en entre nueve y once cadenas de bloques. Es el mayor robo de activos digitales registrado. Multiplica por más de cuatro el de Bybit, de febrero de 2025, que rondó los 1.500 millones (1)(2)(3).
+
+Binance atribuye la entrada inicial al portátil de un ingeniero de DevOps. Desde ese equipo, dice la empresa, el atacante llegó a un contenedor de servicios y envió retiradas no autorizadas. Binance afirma que no ha encontrado pruebas de filtración de claves privadas y reconoce que su investigación ha descubierto más puntos de brecha (6)(7). Los analistas de TRM Labs leen el patrón de otra manera. Todas las transferencias llevaban firmas válidas, en cadenas con esquemas de firma distintos, y lo más probable es que el atacante lograra que el propio sistema de firma de Binance firmara lo que él eligiera (1).
+
+En Ethereum añadió una pieza más. Con EIP-7702, la mejora de 2025 que permite a una cuenta ordinaria ejecutar el código de un contrato, presentó cincuenta autorizaciones firmadas con la clave de la cartera conocida como “Binance 14”. Tres minutos y veinticuatro segundos después, una sola transacción sacó 167.464 ETH y 63 tokens, entre ellos unos 1.615 millones de USDT. El protocolo funcionó como estaba diseñado. Falló el control sobre quién obtenía esas firmas (5)(9).
+
+TRM Labs atribuye el ataque a TraderTraitor, la unidad de élite de Corea del Norte a la que el FBI señaló por el robo a Bybit, con alta confianza. Chainalysis llega a la misma conclusión después de ver cómo fondos de Binance se mezclaban en tiempo real con los del ataque a Bitget de septiembre. Elliptic considera probable la autoría norcoreana y advierte de que el solapamiento entre ambos robos es pequeño. Ningún gobierno ha confirmado la atribución. El FBI dice que está al tanto del incidente y que trabaja con socios públicos y privados para evaluar su alcance (1)(2)(3)(8)(11).
+
+Los emisores de stablecoins reaccionaron en menos de una hora. Tether, Circle, Ripple, World Liberty Financial y el Security Council de Arbitrum inmovilizaron entre 2.700 y 3.000 millones de dólares. Bitcoin, Ether, XRP y Solana no tienen un emisor que pueda bloquearlos. Según el recuento, el atacante conserva entre 2.400 y 3.330 millones de dólares en esos activos (1)(2)(4).
+
+Binance paralizó las retiradas más de dos horas después de que empezaran las salidas, suspendió también los depósitos y los reabrió el 30 de octubre. Prometió cubrir todas las pérdidas con el fondo SAFU y con recursos de la compañía. Reservó más de 6.340 millones de dólares, de los cuales 5.000 millones ya estaban en los mismos tokens afectados, y compra el resto en el mercado y fuera de él. Prevé reanudar las retiradas en unas 45 horas y publicar una nueva prueba de reservas (6)(7)(12).
+
+Para cualquier plataforma de custodia con carteras calientes de alto volumen, el episodio deja una conclusión operativa. El sistema de firma es el activo que hay que proteger. Cuando el vaciado dura veinte minutos, las defensas que reaccionan después del primer movimiento llegan tarde. Hacen falta controles preventivos: políticas de firma que traten las delegaciones EIP-7702 como operaciones de alto riesgo, vigilancia del código de las direcciones críticas en cada bloque, separación de firmantes por cadena y entornos de DevOps aislados de los servicios de retirada.
+
+Quedan preguntas abiertas. Binance no ha publicado el informe forense ni ha detallado los puntos adicionales de brecha. La atribución a Corea del Norte descansa en análisis de firmas privadas y no en una declaración oficial de ningún Estado. Y el atacante controla todavía miles de millones de dólares en activos que ningún emisor puede congelar. Este texto recoge los hechos verificables a 31 de octubre de 2026 y señala qué parte de ellos sigue sin confirmar.
+
+# Veinte minutos que vaciaron 6.300 millones: el compromiso de las hot wallets de Binance y el nuevo umbral de la amenaza estatal en el ecosistema cripto
+
+**Subtítulo**  
+Análisis técnico-operativo del mayor robo de activos digitales registrado, sus vectores de ataque, la atribución a actores vinculados a Corea del Norte y las implicaciones para la seguridad de la infraestructura de custodia centralizada
+
+---
+
+## Índice
+
+1. Introducción y contextualización del incidente  
+2. Cronología operativa del ataque (29-30 de octubre de 2026)  
+3. Vector de compromiso y arquitectura técnica explotada  
+4. Atribución a actores y patrones de inteligencia  
+5. Respuesta institucional de Binance y mecanismos de contención  
+6. Impacto cuantitativo, congelación de activos y recuperación  
+7. Implicaciones sistémicas para la seguridad de exchanges y hot wallets  
+8. Lecciones técnicas y riesgos residuales  
+9. Conclusiones  
+10. Bibliografía  
+
+---
+
+## 1. Introducción y contextualización del incidente
+
+El 29 de octubre de 2026, a partir de las 20:05 UTC, alguien empezó a vaciar las carteras calientes de Binance. El exchange de mayor volumen del mundo perdió activos en entre nueve y once cadenas de bloques, según el recuento de cada firma. Binance cifra el golpe en unos 6.300 millones de dólares. TRM Labs lo sitúa en 6.360 millones al precio de cada transferencia (1). Elliptic cuenta 6.430 millones (2). Chainalysis habla de unos 6.400 millones (3). El robo multiplica por más de cuatro el récord anterior, el ataque a Bybit de febrero de 2025, que rondó los 1.460 a 1.500 millones (1)(2)(3).
+
+La mayor parte del dinero salió en unos veinte minutos. Una segunda oleada, más pequeña, llegó hacia las 23:05 UTC a Avalanche y Polygon (1)(2). Ethereum concentró entre 3.700 y 3.800 millones de dólares, con unos 200.000 ETH y cantidades masivas de USDT y USDC. Bitcoin aportó 18.270 BTC, unos 1.470 millones. Tron, XRP Ledger, Solana y varias redes de capa 2 completaron el resto (1)(2)(5).
+
+Binance paralizó las retiradas hacia las 22:30 UTC y suspendió de forma temporal los depósitos, que volvieron a funcionar el 30 de octubre (4)(12). Ese día anunció que cubriría todas las pérdidas de los usuarios con el fondo SAFU y con dinero de la empresa. Reservó más de 6.340 millones de dólares con ese fin (6)(7).
+
+Las carteras calientes están conectadas a internet para procesar retiradas con rapidez, y eso las convierte en el punto más expuesto de un exchange. Ninguna de las reconstrucciones públicas menciona carteras frías entre las afectadas (1)(2)(5). Binance señaló como entrada inicial el portátil de un ingeniero de DevOps. Desde allí, según la empresa, el atacante alcanzó un contenedor de servicios y envió retiradas no autorizadas. Binance dice que no ha encontrado pruebas de filtración de claves privadas (6)(7). Más tarde reconoció que su investigación había descubierto puntos adicionales de brecha (7).
+
+TRM Labs y Chainalysis atribuyen el ataque a TraderTraitor, una unidad vinculada a Corea del Norte y al ecosistema Lazarus Group / APT38. TRM declara alta confianza en esa atribución. Elliptic considera probable la autoría norcoreana. El FBI ya había señalado a TraderTraitor en el robo a Bybit de 2025. La atribución actual se apoya en patrones operativos, en el solapamiento de fondos con el ataque a Bitget de septiembre de 2026 y en inteligencia on-chain y off-chain (1)(3)(8). Binance no ha nombrado a nadie y dice que colabora con las fuerzas del orden (6).
+
+En Ethereum el atacante usó EIP-7702, la mejora activada en mayo de 2025 que permite a una cuenta externa delegar su comportamiento en un contrato inteligente. Presentó una sola transacción con cincuenta autorizaciones firmadas con la clave de la cartera conocida como “Binance 14”. Eso le dio el control de esa cartera y, a través de ella, el de otra vinculada (5)(9). EIP-7702 funcionó como estaba diseñado. La clave de “Binance 14” firmó las cincuenta autorizaciones, y esas firmas válidas salieron del sistema de Binance (5)(9)(10).
+
+Tether, Circle y otros actores, entre ellos el Security Council de Arbitrum, inmovilizaron entre 2.700 y 3.000 millones de dólares en las primeras horas (1)(2)(6). El resto, sobre todo ETH, BTC y activos sin emisor capaz de bloquearlos, seguía en direcciones del atacante a 31 de octubre.
+
+El ataque reúne tres elementos: la exposición estructural de las carteras calientes en un exchange de gran tamaño, la capacidad operativa de actores estatales o patrocinados por Estados, y la posibilidad de convertir firmas válidas en un vaciado multichain en minutos.
+
+---
+
+## 2. Cronología operativa del ataque (29-30 de octubre de 2026)
+
+La reconstrucción combina el análisis on-chain de varias firmas de inteligencia y los comunicados de Binance. Todos los horarios están en UTC. Los valores en dólares corresponden al precio de cada activo en el momento de la transferencia, salvo indicación contraria.
+
+**Fase preparatoria (28-29 de octubre)**  
+La dirección operativa del atacante recibió tres retiros de 0,1 ETH desde Tornado Cash, el primero a las 07:39 del 28 de octubre. Esa cantidad bastaba para pagar el gas (1)(5). El 29 desplegó un primer contrato de prueba y ensayó la delegación EIP-7702 sobre dos carteras propias desde las 13:51. A las 15:59 desplegó el contrato *sweeper* definitivo, que solo acepta órdenes de su propia dirección. Hacia las 16:20 ejecutó la secuencia completa sobre una tercera cartera, unas cuatro horas antes de repetirla contra Binance (1)(5). TRM Labs sitúa el inicio de la preparación al menos 36 horas antes del robo (1).
+
+**Inicio del drenaje (20:04-20:20 UTC del 29 de octubre)**  
+Hacia las 20:04-20:05, cinco carteras de Binance en XRP Ledger enviaron 233 millones de XRP a una única dirección del atacante. Solana siguió desde las 20:10. A las 20:20 salieron 18.270 BTC en un solo bloque de Bitcoin (1)(2)(4)(9). A las 20:20:59 el atacante envió a Ethereum una transacción con cincuenta autorizaciones EIP-7702 firmadas con la clave de “Binance 14”. Todas apuntaban al contrato *sweeper* y cubrían nonces distintos, de modo que al menos una coincidiera con el contador de la cuenta en el momento de ejecutarse (2)(5).
+
+**Vaciado principal (20:24 UTC)**  
+Tres minutos y veinticuatro segundos después de la delegación, a las 20:24:23, una sola transacción barrió “Binance 14”. Sacó 167.464 ETH y 63 tokens, entre ellos unos 1.615 millones de USDT. El valor superó los 2.500 millones de dólares (1)(5)(9). Veinticuatro segundos más tarde, “Binance 16” envió por transferencias ordinarias unos 55,7 millones de USDT y 25,9 millones de RLUSD (9). “Binance 14” tenía además permiso para operar una cuenta inteligente de Binance. El atacante lo usó para sacar 823 millones de USDC en dos transferencias, a las 20:41 y a las 20:59 (5)(9).
+
+**Expansión multichain (20:05-20:35 UTC)**  
+En las cadenas distintas de Ethereum, las carteras de Binance enviaron los fondos con transferencias ordinarias firmadas. En unos veinte a treinta minutos el atacante vació carteras en Bitcoin, Tron, XRP Ledger, Solana, NEAR, Arbitrum, Optimism, Base, Avalanche y otras redes (1)(2)(4). TRM Labs calcula que la mayor parte de los 6.360 millones salió en ese intervalo de unos veinte minutos (1). Todas las transferencias llevaban firmas válidas del sistema de Binance (1)(2).
+
+**Persistencia y segunda oleada**  
+La delegación EIP-7702 sobre “Binance 14” siguió activa casi cuatro horas. El atacante ejecutó barridos adicionales a lo largo de la noche, el último a las 23:56, y recogió los depósitos que seguían llegando a la cartera (1)(5). Hacia las 23:05 apareció una segunda oleada en Avalanche y Polygon (1)(2). Binance revocó la delegación a las 00:10:35 del 30 de octubre, tres horas y cincuenta minutos después de la toma de control. La propia cartera firmó la revocación (4)(5)(9).
+
+**Contención inicial**  
+A las 20:57 World Liberty Financial congeló sus tokens en la cartera receptora principal. Tether inmovilizó 971 millones de USDT a las 21:01. Circle bloqueó 823 millones de USDC tres minutos después (1)(4). Ripple, Paxos, First Digital y el Security Council de Arbitrum sumaron más bloqueos (4). Binance pausó las retiradas a las 22:33 (4). A las 00:30 del 30 de octubre, TRM contaba unos 2.700 millones de dólares inmovilizados (1). Mientras tanto, el atacante vendía USDT a creadores de mercado y pedía prestado ETH en Aave con USDT como garantía para ganar la carrera a los bloqueos (1).
+
+**Comunicaciones de Binance**  
+A las 02:23 del 30 de octubre Binance publicó su primera actualización. Señaló el portátil de un ingeniero de DevOps como posible vector inicial y afirmó no haber encontrado pruebas de filtración de claves privadas (6)(7). Horas más tarde reconoció puntos adicionales de brecha y confirmó la reserva de más de 6.340 millones de dólares para cubrir las pérdidas (7).
+
+La secuencia muestra preparación previa, firmas válidas a escala multichain y un uso selectivo de EIP-7702 en Ethereum. La ventana de drenaje de la mayor parte del valor fue muy corta.
+
+---
+
+## 3. Vector de compromiso y arquitectura técnica explotada
+
+Binance repite que no hay pruebas de filtración de las claves privadas de las carteras (6)(7). Las transferencias llevaron firmas válidas generadas con la infraestructura de Binance. Eso inclina el análisis hacia un compromiso del sistema de firma. TRM Labs lo considera la explicación más probable (1).
+
+**Punto de entrada según Binance**  
+La investigación preliminar apunta al portátil de un ingeniero de DevOps. Desde ese equipo el atacante alcanzó un contenedor de servicios y envió órdenes de retirada no autorizadas (6)(7). Binance admitió después que la investigación había descubierto puntos adicionales de brecha y no detalló su naturaleza (7). Con la información pública no se puede reconstruir la cadena completa de movimiento lateral ni saber qué controles fallaron.
+
+**Control sobre el sistema de firma**  
+El elemento decisivo fue que el sistema de firma de Binance generó firmas válidas para transacciones que eligió el atacante. La capacidad apareció a la vez en Ethereum, Bitcoin, Tron, XRP Ledger, Solana y varias redes de capa 2, con tipos de clave y esquemas de firma distintos. TRM Labs lee el patrón como control operativo sobre el servicio que autoriza las salidas de las carteras calientes (1)(2). El sistema firmó como si procesara órdenes legítimas. Elliptic añade un indicio: una segunda cartera caliente de Ethereum firmó nueve transferencias por 174 millones de dólares a favor del atacante, lo que sugiere que este pudo dar instrucciones a la infraestructura de firma (2).
+
+**Uso de EIP-7702 en Ethereum**  
+EIP-7702 entró en vigor en mayo de 2025 con la actualización Pectra. Permite a una cuenta externa delegar su ejecución en un contrato mediante una autorización firmada con su propia clave. La delegación no entrega la clave. Convierte la cuenta en un contenedor que ejecuta el código del contrato mientras la autorización siga vigente (2)(5)(9). Cualquiera puede presentar en la cadena una autorización firmada, y solo una nueva autorización de la misma cuenta la sustituye (9).
+
+A las 20:20:59 el atacante envió una transacción con cincuenta autorizaciones EIP-7702. Ondology Labs recuperó el firmante de cada una: las cincuenta llevan la clave de “Binance 14” (5). Todas apuntaban al contrato *sweeper* y cubrían nonces distintos para que al menos una coincidiera con el contador de la cuenta al ejecutarse (2)(5). Tres minutos y veinticuatro segundos después, el contrato barrió 167.464 ETH y 63 tokens, incluidos unos 1.615 millones de USDT (1)(5)(9). La delegación fue visible en el código de la cartera durante diecisiete bloques antes del barrido (10).
+
+Los analistas discrepan sobre el papel exacto de EIP-7702. El investigador 0xQuit sostiene que el vaciado de esa cartera habría ocurrido de todos modos, con más transacciones, y que la mejora convirtió un acceso de firma temporal en control permanente (9).
+
+EIP-7702 no contiene un fallo de protocolo. La delegación solo se establece con una firma válida de la cuenta que se quiere controlar. El problema fue que esa firma salió del sistema de firma de Binance (5)(9)(10).
+
+**Implicaciones arquitectónicas**  
+Las carteras calientes de un exchange de gran volumen firman miles de retiradas al día de forma automática y con baja latencia. Sus sistemas de firma (módulos hardware, esquemas MPC o flujos de aprobación) pueden producir firmas válidas a escala multichain en minutos si alguien compromete la capa de orquestación. El acceso privilegiado a los servicios de retirada, sumado a la posibilidad de inyectar autorizaciones EIP-7702 en Ethereum, amplificó el daño. Una autorización EIP-7702 no es una transacción. Las políticas de retirada que solo inspeccionan transacciones pueden no verla (5).
+
+A 31 de octubre de 2026 la información pública no detalla el alcance exacto de los puntos adicionales de brecha ni la configuración de los controles de firma que el atacante eludió. Este análisis se limita a los hechos on-chain y a las declaraciones de Binance.
+
+---
+
+## 4. Atribución a actores y patrones de inteligencia
+
+A 31 de octubre de 2026 la atribución descansa en evaluaciones de firmas privadas de inteligencia blockchain. Ningún organismo gubernamental ha emitido una atribución oficial. El FBI declaró estar al tanto del incidente y colaborar con socios públicos y privados para evaluar el alcance de la actividad (11). Binance dice que colabora con las fuerzas del orden y no nombra a ningún actor (6)(7).
+
+**Evaluaciones de las firmas**  
+TRM Labs atribuye el ataque a TraderTraitor con alta confianza, sobre la base de inteligencia on-chain y off-chain. Describe a TraderTraitor como la unidad de élite de ciberataques de Corea del Norte y recuerda que el FBI le atribuyó el robo de unos 1.500 millones a Bybit en febrero de 2025. Señala tres rasgos comunes con ese incidente y con el ataque a KelpDAO de abril de 2026: pequeños retiros de Tornado Cash para financiar una cartera operativa, una preparación que empieza mucho antes del robo y firmas obtenidas de antemano y ejecutadas en una sola ráfaga (1)(11).
+
+Chainalysis llega a la misma conclusión. La prueba más sólida, según la firma, apareció cuando sus investigadores vieron en tiempo real cómo fondos robados a Binance se mezclaban con los del ataque a Bitget de septiembre de 2026, que la propia firma atribuye a actores norcoreanos. Chainalysis cifra el total en torno a 6.400 millones (3)(8). Su director ejecutivo, Jonathan Levin, formuló la evaluación como probable, y un portavoz de la firma habló de alta confianza ante CNN (8).
+
+Elliptic considera probable que actores vinculados a Corea del Norte cometieran el robo y confirmó que parte de los fondos llegó a la misma dirección que el producto del ataque a Bitget. La firma matiza su evaluación. El solapamiento es pequeño, las redes de blanqueo sirven a varios clientes y el vínculo no prueba que un mismo atacante cometiera los dos robos. Añade que el atacante tardó en convertir las stablecoins, lo que permitió inmovilizar más de 2.600 millones, y que los grupos norcoreanos suelen mover los fondos con más rapidez. Si la autoría se confirma, este robo casi duplicaría el total de criptoactivos sustraídos por el régimen (2)(8). El investigador independiente ZachXBT detectó la misma mezcla de fondos a través de THORChain (9).
+
+**Caracterización de TraderTraitor**  
+La literatura de amenazas describe a TraderTraitor como una unidad especializada dentro del ecosistema Lazarus Group o APT38, vinculado a Corea del Norte. El FBI ha documentado su actividad contra exchanges y empresas del sector y le atribuyó el robo a Bybit (8)(11). La atribución privada del presente incidente se apoya en la continuidad de patrones de infraestructura, carteras operativas y técnicas de movimiento de fondos.
+
+**Patrones observados**  
+Varios elementos refuerzan la evaluación:
+
+- Financiación de la dirección operativa con pequeños retiros de Tornado Cash y ensayo previo del mecanismo EIP-7702 sobre carteras propias (1)(5).
+- Obtención de firmas válidas a escala multichain en unos treinta minutos (1)(2).
+- Uso de EIP-7702 en Ethereum combinado con transferencias ordinarias firmadas en las demás cadenas (1)(2).
+- Mezcla posterior de parte de los fondos con los del ataque a Bitget de septiembre de 2026 (3)(9).
+
+Estos patrones coinciden con los de los ataques anteriores que TRM Labs atribuye a TraderTraitor (1).
+
+**Límites de la atribución**  
+Conviene distinguir entre la evaluación de firmas privadas y la atribución oficial de un Estado. En el caso de Bybit, el FBI atribuyó el robo a Corea del Norte en cinco días. A 31 de octubre de 2026 no consta una declaración equivalente del FBI ni de otra agencia (2)(11). La conclusión de que TraderTraitor es el autor más probable descansa en los análisis de TRM Labs, Chainalysis, Elliptic e investigadores independientes. Elliptic señala además dos elementos que matizan la hipótesis: el solapamiento pequeño de fondos con Bitget y un ritmo de conversión más lento del habitual en los grupos norcoreanos (2).
+
+---
+
+## 5. Respuesta institucional de Binance y mecanismos de contención
+
+Binance reaccionó en tres frentes: contención operativa, comunicación pública y cobertura de las pérdidas de los usuarios.
+
+**Contención operativa**  
+Binance suspendió las retiradas a las 22:33 UTC del 29 de octubre, más de dos horas después de que empezaran las salidas, y suspendió también los depósitos (4)(12). Según la empresa, las salidas cesaron al pausar las retiradas (12). Los depósitos funcionaban con normalidad a primera hora del 30 de octubre (12). Binance anunció que rehacía el servicio de retiradas y las direcciones asociadas. Prevé reanudar las retiradas en unas 45 horas desde su actualización del 30 de octubre, es decir, antes de la noche del 1 de noviembre (7)(12). Ese mismo día revocó la delegación EIP-7702 sobre “Binance 14” (5)(9).
+
+**Investigación y comunicaciones**  
+A las 02:23 UTC del 30 de octubre Binance publicó su primera actualización. Señaló el portátil de un ingeniero de DevOps como posible vector inicial y afirmó no haber encontrado pruebas de filtración de claves privadas (6)(7). Horas más tarde reconoció puntos adicionales de brecha, dijo que trabajaba con las fuerzas del orden y prometió un informe posterior al incidente cuando termine la investigación (7)(12). Changpeng Zhao escribió que la actividad parecía un hackeo y que esperaba que todos los fondos de los usuarios quedaran cubiertos. La cofundadora y codirectora ejecutiva Yi He repitió que los fondos de los usuarios estaban seguros y que Binance cubriría las pérdidas (12). Reuters informó de que el FBI y el Servicio Secreto de Estados Unidos colaboran con la empresa (11).
+
+**Cobertura financiera**  
+Binance se comprometió a cubrir todas las pérdidas con el fondo SAFU y con recursos propios. Reservó más de 6.340 millones de dólares de fondos de la compañía. Unos 5.000 millones ya estaban en los mismos tokens afectados. Binance compra el resto en el mercado y mediante operaciones OTC para igualar los tokens robados, un proceso que puede tardar por la baja liquidez de algunos activos (7)(12). La cifra excluye los activos congelados o protegidos, que siguen sujetos a verificación y recuperación (7). La reserva supera la estimación de impacto y Binance la presentó como garantía de que ningún usuario sufrirá una pérdida neta.
+
+**Colaboración para la inmovilización**  
+Binance coordinó con emisores de stablecoins y otros actores el bloqueo de una parte significativa de los fondos. Tether, Circle, Ripple, Paxos, World Liberty Financial, First Digital y el Security Council de Arbitrum inmovilizaron entre 2.700 y 3.000 millones de dólares en las primeras horas (1)(2)(4)(6). Esa colaboración redujo el valor bajo control del atacante.
+
+**Prueba de reservas**  
+Binance prometió una actualización de su prueba de reservas cuando termine la remediación (6). El codirector ejecutivo Richard Teng dijo que la empresa aspiraba a publicar el informe completo el lunes siguiente (12).
+
+La respuesta combinó contención, un compromiso financiero total respaldado por reservas cuantificadas y colaboración con emisores y autoridades.
+
+---
+
+## 6. Impacto cuantitativo, congelación de activos y recuperación
+
+El impacto se sitúa entre 6.300 y 6.430 millones de dólares. Binance lo estima en unos 6.300 millones (6). TRM Labs lo cuantifica en 6.360 millones al precio de cada transferencia (1). Elliptic habla de 6.430 millones (2) y Chainalysis de unos 6.400 millones (3). Un recuento independiente llega a 6.280 millones en ocho cadenas (5). Las diferencias vienen del momento de fijación de precios y del alcance de las carteras que cada firma incluye. Elliptic, por ejemplo, cuenta once cadenas e incluye NEAR (10).
+
+**Distribución por cadenas**  
+Ethereum concentró entre 3.700 y 3.800 millones de dólares. Esa cifra incluye los 167.464 ETH del barrido principal de “Binance 14”, cerca de 1.900 millones de USDT y unos 823 millones de USDC, además de decenas de otros tokens (1)(2)(5). La tabla recoge el reparto del recuento de TRM Labs (1).
+
+<table>
+<thead>
+<tr><th>Cadena</th><th>Importe aproximado (millones de USD)</th><th>Activos principales</th></tr>
+</thead>
+<tbody>
+<tr><td>Ethereum</td><td>3.790</td><td>ETH, USDT, USDC, RLUSD y 185 tokens más</td></tr>
+<tr><td>Bitcoin</td><td>1.470</td><td>18.270 BTC</td></tr>
+<tr><td>Tron</td><td>628</td><td>612,7 millones de USDT y 46,4 millones de TRX</td></tr>
+<tr><td>XRP Ledger</td><td>296</td><td>233,46 millones de XRP</td></tr>
+<tr><td>Solana</td><td>96</td><td>970.500 SOL</td></tr>
+<tr><td>Arbitrum, Optimism y Base</td><td>39</td><td>Incluye 74,6 millones de ARB</td></tr>
+<tr><td>Avalanche</td><td>28</td><td>Varios activos</td></tr>
+<tr><td>Polygon</td><td>10</td><td>Varios activos</td></tr>
+</tbody>
+</table>
+
+Otras firmas ofrecen cifras algo distintas por la fecha y el criterio de valoración de cada recuento.
+
+**Inmovilización**  
+Según TRM Labs, Tether inmovilizó unos 1.770 millones de USDT y Circle unos 825 millones de USDC. Ripple bloqueó 40,5 millones de RLUSD, World Liberty Financial 27,8 millones de USD1 y el Security Council de Arbitrum 8.426 ETH y 74,6 millones de ARB, unos 30 millones de dólares (1). El total ronda los 2.700 millones de dólares en el recuento de TRM, los 2.840 millones verificados por Elliptic y los 3.000 millones que cita Binance (1)(2)(6). La cifra de Tether varía según la fuente y la hora del recuento. Elliptic habla de 1.180 millones en la cartera principal (2) y Bitquery recoge que el director ejecutivo de Tether mencionó más de 1.567 millones (4).
+
+El atacante intercambió parte de las stablecoins antes de que los bloqueos surtieran efecto. Bitquery cuenta unos 729 millones convertidos (4). TRM añade que vendió USDT a creadores de mercado y pidió prestado ETH en Aave con USDT como garantía (1).
+
+Los activos que ningún emisor puede bloquear (ETH, BTC, SOL, XRP y otros) quedaron en manos del atacante. Los recuentos varían. TRM estima más de 420.000 ETH y 18.270 BTC, unos 2.400 millones de dólares (1). Bitquery habla de unos 3.100 millones (4). Elliptic cuenta unos 3.330 millones repartidos en 43 direcciones, con 511.861 ETH, 18.270 BTC, 233 millones de XRP y 670 millones de TRX (2). Son fotografías de fondos en movimiento.
+
+**Postura de recuperación**  
+Binance reservó más de 6.340 millones de dólares de fondos corporativos y, con el fondo SAFU, ofrece cobertura total a los usuarios (6)(7). La recuperación de los fondos inmovilizados dependerá de los procedimientos de reemisión o devolución que acuerden los emisores. En los activos que nadie puede bloquear, dependerá de que las autoridades y las firmas de inteligencia sigan las carteras del atacante. A 31 de octubre de 2026 la mayor parte de esos activos seguía en direcciones bajo su control.
+
+---
+
+## 7. Implicaciones sistémicas para la seguridad de exchanges y hot wallets
+
+El ataque pone de relieve varias tensiones estructurales del modelo de custodia centralizada y, en particular, de las carteras calientes.
+
+**Exposición de las carteras calientes**  
+Las carteras calientes existen para pagar retiradas con rapidez. Deben permanecer conectadas a internet y su sistema de firma tiene que autorizar un volumen alto de transacciones de forma automática. Este ataque muestra que, si alguien compromete la capa de orquestación o el servicio que alimenta al firmante, obtiene firmas válidas a escala multichain en minutos (1)(2)(5). La diferencia entre filtrar una clave privada y comprometer el sistema que firma con ella pierde peso, porque ambas producen el mismo resultado on-chain.
+
+**Riesgos de EIP-7702**  
+EIP-7702 añade una superficie de ataque que no existía con la misma intensidad antes de 2025. Una autorización firmada y válida entrega el control de una cuenta de alto valor a código arbitrario hasta que la cuenta firme otra distinta. Esa autorización no es una transacción. Las políticas de firma diseñadas para validar campos de transferencia (destino, importe, datos de la llamada) pueden no evaluarla (5)(9). Range recuerda que pausar las retiradas en los sistemas del exchange no borra la delegación, porque solo una nueva autorización firmada por la propia cuenta la sustituye (9). De ahí que los motores de política deban rechazar o restringir con rigor las autorizaciones EIP-7702 y las firmas sobre hash en bruto en las carteras de tesorería (5)(10).
+
+**Puntos de fallo internos**  
+La declaración de Binance sobre el portátil de DevOps y el acceso al contenedor de servicios señala la criticidad de los entornos de desarrollo y operaciones que interactúan con la infraestructura de retirada (6)(7). Un acceso privilegiado en esa capa puede equivaler a la capacidad de dar órdenes de firma a escala global. La identificación posterior de puntos adicionales de brecha indica que el ataque no siguió un único vector lineal (7).
+
+**Límites de las inmovilizaciones**  
+Las inmovilizaciones frenaron entre 2.700 y 3.000 millones de dólares (1)(2)(6). La cifra pesa, pero deja fuera Bitcoin, Ether nativo y la mayoría de los tokens cuyo emisor no puede bloquearlos. En un ataque de esta magnitud, una fracción material del valor queda fuera del alcance de las congelaciones administrativas. Una congelación tampoco equivale a una recuperación: los fondos siguen pendientes de reemisión o devolución.
+
+**Escala y actores estatales**  
+La atribución de alta confianza que TRM Labs hace a TraderTraitor sitúa el incidente entre las amenazas persistentes avanzadas de origen estatal o patrocinadas por un Estado (1)(3)(8). Estos actores cuentan con recursos y con una capacidad de reconocimiento prolongado que superan los de la ciberdelincuencia convencional. Que el mayor exchange del sector sufriera un ataque con esta precisión y velocidad eleva el umbral de lo que cualquier plataforma de custodia relevante debe considerar un escenario realista. Esa lectura depende de que la atribución se confirme (2).
+
+**Dependencia de la cobertura interna**  
+Binance se comprometió a cubrir todas las pérdidas con el fondo SAFU y con reservas corporativas superiores a 6.340 millones (6)(7). La compañía ya tenía unos 5.000 millones en los mismos tokens y necesita comprar el resto en el mercado (7)(12). No todos los exchanges disponen de una tesorería de esa magnitud. Superados ciertos umbrales de valor en carteras calientes, la solvencia del exchange pasa a ser la última línea de defensa cuando fallan los controles técnicos y las congelaciones de terceros.
+
+---
+
+## 8. Lecciones técnicas y riesgos residuales
+
+El incidente deja lecciones técnicas concretas y varios riesgos residuales cuya resolución depende de información que a 31 de octubre de 2026 aún no era pública.
+
+**Lecciones técnicas**
+
+Comprometer la infraestructura de firma, o la capa de orquestación que la alimenta, equivale en la práctica a poseer las claves privadas. Todas las transferencias llevaron firmas válidas. La distinción entre filtrar una clave y abusar del sistema de firma no cambia el resultado on-chain ni la velocidad del vaciado (1)(2)(5)(7).
+
+EIP-7702 no contiene un fallo de protocolo y abre una superficie nueva. Una autorización válida puede entregar una cuenta de alto valor a código arbitrario durante horas. El atacante preparó cincuenta autorizaciones para distintos nonces y aseguró así que una fuera válida en el momento de ejecución (2)(5).
+
+La mayor parte del valor salió en unos veinte minutos. Ese margen resta eficacia a las defensas reactivas y desplaza el peso a los controles preventivos. Hacken propone seis, que el caso Binance ilustra (10):
+
+- Vigilar el código de las direcciones calientes y de tesorería en cada bloque, y alertar ante cualquier delegación o transacción de tipo 4 que las nombre. En Binance la delegación fue visible durante diecisiete bloques antes del barrido.
+- Rechazar en la política de firma las autorizaciones EIP-7702 inesperadas y las de chain ID 0, y tratar un lote de autorizaciones sobre un rango de nonces como señal de compromiso.
+- Separar firmantes y rutas de aprobación por cadena y por nivel de cartera. En Binance, las carteras de casi todas las cadenas firmaron hacia el atacante en unos treinta minutos.
+- Preparar una revocación probada que no dependa del sistema sospechoso. En Binance la delegación duró tres horas y 46 minutos después del barrido.
+- Limitar valor y ritmo por cartera en el firmante y retener los destinos nuevos hasta una segunda aprobación.
+- Probar de antemano los contactos con emisores y fuerzas del orden, y pedir a los emisores que congelen también dentro de la cartera de origen.
+
+A estas seis medidas se suma el aislamiento de los entornos de DevOps que tocan el servicio de retiradas, que el vector declarado por Binance pone en primer plano.
+
+Las inmovilizaciones frenaron entre 2.700 y 3.000 millones de dólares y dejaron fuera los activos sin emisor capaz de bloquearlos (1)(2)(6).
+
+**Riesgos residuales**
+
+Binance comunicó puntos adicionales de brecha más allá del portátil de DevOps inicial (7). Mientras no se conozcan su alcance y el estado de su erradicación, no puede descartarse la existencia de accesos residuales.
+
+El atacante conserva entre 2.400 y 3.330 millones de dólares en activos que nadie puede bloquear, según el recuento (1)(2)(4). Esos fondos pueden moverse en cualquier momento. Hacken cifra en unos 445 millones los activos en XRP, SOL y NEAR que ni siquiera se habían movido (10).
+
+Si la atribución a TraderTraitor es correcta, el mismo actor u otros de perfil similar conservan la capacidad y la motivación para repetir técnicas análogas contra plataformas con arquitecturas parecidas de carteras calientes y firma automatizada (1)(3)(8).
+
+La dependencia de reservas corporativas y de fondos de seguro internos crea un riesgo de concentración. No todos los exchanges podrían absorber un impacto de esta magnitud sin dañar su solvencia ni la confianza del mercado.
+
+La información pública a 31 de octubre de 2026 no incluye el informe forense detallado que Binance ha prometido ni la reconstrucción completa del movimiento lateral. Toda evaluación de la eficacia de los controles o de las medidas correctoras tiene carácter provisional hasta que esa información se publique y se verifique (12).
+
+---
+
+## 9. Conclusiones
+
+El ataque del 29 de octubre de 2026 es el mayor robo de activos digitales registrado. El impacto se sitúa entre 6.300 y 6.430 millones de dólares, más de cuatro veces el máximo anterior (Bybit, febrero de 2025). La mayor parte del valor salió en unos veinte minutos a través de múltiples cadenas de bloques (1)(2)(3)(6).
+
+El vector determinante fue el compromiso de la infraestructura de firma o de la capa de servicios que la alimenta, más que una filtración demostrada de claves privadas. Todas las transferencias llevaron firmas válidas generadas con los sistemas de Binance (1)(5)(7). En Ethereum, ese acceso se combinó con EIP-7702 para sostener una delegación sobre la cartera de mayor valor durante casi cuatro horas (5)(9).
+
+TRM Labs y Chainalysis atribuyen el ataque a TraderTraitor, unidad vinculada a Corea del Norte y al ecosistema Lazarus. Elliptic lo considera probable y advierte de que el solapamiento con el ataque a Bitget es pequeño. La atribución se apoya en patrones operativos, en la mezcla de fondos con los de Bitget y en inteligencia on-chain y off-chain. Binance no ha formulado una atribución pública, y ninguna agencia gubernamental la había confirmado a 31 de octubre de 2026 (1)(2)(3)(8)(11).
+
+Binance suspendió retiradas y depósitos, reabrió los depósitos, se comprometió a cubrir todas las pérdidas con el fondo SAFU y con reservas superiores a 6.340 millones, y coordinó con los emisores de stablecoins la inmovilización de entre 2.700 y 3.000 millones. Una porción residual de entre 2.400 y 3.330 millones, concentrada en activos que nadie puede bloquear, seguía bajo control del atacante (1)(2)(6)(7).
+
+El incidente muestra los límites del modelo de carteras calientes de alto volumen frente a un adversario capaz de comprometer la cadena de firma y de explotar mecanismos de delegación de cuentas. De él se derivan cinco recomendaciones operativas para las plataformas de custodia:
+
+1. Adoptar motores de política de firma que traten las autorizaciones EIP-7702 como operaciones de alto riesgo y las rechacen por defecto en las carteras de tesorería.
+2. Vigilar en cada bloque el código de las direcciones críticas y ensayar una revocación que no dependa de los sistemas sospechosos.
+3. Aislar los entornos de DevOps que interactúan con los servicios de retirada y separar los firmantes por cadena y por nivel de cartera.
+4. Fijar límites de valor y de ritmo en el firmante, con una aprobación adicional para los destinos nuevos.
+5. Preparar planes de respuesta con contactos probados con emisores y fuerzas del orden, y evaluar sin optimismo el riesgo de los activos que ningún emisor puede congelar.
+
+El caso sugiere además que actores estatales o patrocinados por Estados pueden ejecutar operaciones de esta escala y velocidad contra las mayores plataformas del sector. Esa lectura depende de que la atribución se confirme.
+
+Estas conclusiones se apoyan en la información verificable a 31 de octubre de 2026. Quedan lagunas: el alcance de los puntos adicionales de brecha que menciona Binance, la reconstrucción forense completa de la cadena de acceso y el destino final de los fondos no inmovilizados. Cualquier evaluación definitiva deberá incorporar el informe forense que publique la plataforma y las atribuciones oficiales de las autoridades competentes.
+
+---
+
+## 10. Bibliografía
+
+(1) TRM Labs. “North Korea Steals USD 6.36 Billion From Binance in the Largest Hack in History”. Estimación de 6.360 millones de dólares y atribución de alta confianza a TraderTraitor. 29-30 de octubre de 2026.  
+https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history
+
+(2) Elliptic. “The largest theft in history: North Korea likely behind the $6.4 billion Binance hack”. 30 de octubre de 2026.  
+https://www.elliptic.co/insights/binance-largest-hack-in-history/
+
+(3) Chainalysis. “Binance Exploit: Latest Findings and Response”. Estimación de 6.400 millones de dólares y vinculación con el exploit de Bitget. 30 de octubre de 2026.  
+https://www.chainalysis.com/blog/binance-exploit-latest-findings-and-response/
+
+(4) Bitquery. “Binance Hack: $6.3B Drained on 9 Chains, $2.7B Frozen”. Investigación on-chain, 30 de octubre de 2026.  
+https://bitquery.io/investigations/binance-hack
+
+(5) Ondology Labs. “Binance Hack ($6.3B): The EIP-7702 Takeover Traced”. Reconstrucción de la delegación EIP-7702 sobre “Binance 14” y de los barridos asociados. 29-30 de octubre de 2026.  
+https://ondologylabs.com/blog/binance-hot-wallet-hack-eip-7702
+
+(6) Binance. “Security Incident Update (2026-10-30)”. Estimación de impacto de unos 6.300 millones de dólares, cobertura de pérdidas con el fondo SAFU y prueba de reservas. Publicado a las 02:23 UTC y actualizado a las 11:36 UTC del 30 de octubre de 2026.  
+https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7
+
+(7) Binance. Actualizaciones en su cuenta oficial de X. Identificación de puntos adicionales de brecha, reserva de más de 6.340 millones de dólares y plazo previsto para reanudar las retiradas. 30 de octubre de 2026.  
+https://x.com/binance/status/2115993361517891592  
+https://x.com/binance/status/2116089661408108712  
+https://x.com/binance/status/2116121748555153621
+
+(8) Decrypt; WIRED; SecurityWeek; CBS News. Informes que recogen las evaluaciones de TRM Labs, Chainalysis y Elliptic sobre la autoría de TraderTraitor. 30 de octubre de 2026.  
+https://decrypt.co/382224/trm-and-chainalysis-tie-6-4b-binance-hack-to-north-koreas-tradertraitor  
+https://www.wired.com/story/the-dollar63-billion-binance-hack-was-pulled-off-in-just-20-minutes/  
+https://securityweek.com/6-billion-binance-hack-bears-hallmarks-of-north-koreas-tradertraitor/  
+https://cbsnews.com/news/binance-hack-north-korea
+
+(9) Range. “Binance hack: how the hot wallet theft worked”. Reconstrucción de la transacción EIP-7702 de las 20:20:59 UTC, de las cincuenta autorizaciones y del barrido de las 20:24 UTC, con las tesis del investigador 0xQuit. 30 de octubre de 2026.  
+https://range.org/blog/binance-hot-wallet-hack
+
+(10) Hacken. “Binance $6.3B hack analysis: stolen key, hijacked signer or EIP-7702 delegation?”. Evaluación técnica del vector y controles recomendados para carteras calientes. 30 de octubre de 2026.  
+https://hacken.io/insights/binance-hack
+
+(11) Cybersecurity Dive. “North Korea-linked group steals $6.3B from Binance in largest-ever cryptocurrency hack”. Declaración del FBI sobre el incidente y colaboración del FBI y del Servicio Secreto, según Reuters. 30 de octubre de 2026.  
+https://cybersecuritydive.com/news/binance-hack-north-korea-cryptocurrency-theft/873304
+
+(12) Cointelegraph. “Binance Losses Estimated at $6.3B amid Major Crypto Hack” (cobertura en directo). Declaraciones de Changpeng Zhao, Yi He y Richard Teng, estado de depósitos y retiradas y plazos de reanudación. 30 de octubre de 2026.  
+https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor
