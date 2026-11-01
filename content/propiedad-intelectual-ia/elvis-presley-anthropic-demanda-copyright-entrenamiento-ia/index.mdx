@@ -1,0 +1,323 @@
+---
+title: "Demanda Elvis Presley contra Anthropic: 274 letras y fair use"
+description: "Los titulares de derechos de Elvis Presley demandan a Anthropic por 274 letras. Análisis de la infracción, la DMCA y el fair use en el entrenamiento de IA."
+date: "2026-11-01"
+tags: ["Anthropic", "Elvis Presley", "copyright", "fair use", "entrenamiento de IA"]
+section: "propiedad-intelectual-ia"
+category: "copyright"
+author: "Ricardo Scarpa"
+slug: "elvis-presley-anthropic-demanda-copyright-entrenamiento-ia"
+readingTime: 25
+image: "/images/propiedad-intelectual-ia/elvis-presley-anthropic-demanda-copyright-entrenamiento-ia/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 23 de octubre de 2026, siete demandantes presentaron ante el Tribunal de Distrito de los Estados Unidos para el Distrito Norte de California una demanda contra Anthropic PBC, la empresa que desarrolla el modelo Claude. Encabeza el grupo ABG EPE IP LLC, sociedad del grupo Authentic Brands Group. Le acompañan las editoriales Raleigh Music Publishing y Abilene Music, Jason Simeon Aberbach y varios fideicomisos ligados a la familia Aberbach y a Luigi Creatore, coautor de «Can’t Help Falling in Love». El procedimiento se tramita con el número 5:26-cv-12473 y lleva por título *ABG EPE IP LLC et al. v. Anthropic PBC* (1)(2)(22).
+
+Los demandantes sostienen que controlan derechos sobre 274 composiciones que Elvis Presley grabó o popularizó. Entre ellas figuran «All Shook Up», «Don’t Be Cruel» y «Return to Sender». Afirman que Anthropic obtuvo las letras mediante rastreo web y a través de colecciones como Common Crawl y The Pile, y que las incorporó al entrenamiento de Claude sin licencia ni pago (4)(6)(7). Añaden que Claude devuelve esas letras, completas o casi completas, cuando un usuario las pide por el título, en el estilo de una canción de Elvis o como supuesta creación original (5)(23).
+
+La demanda articula tres reclamaciones. La primera denuncia la infracción directa de los derechos de reproducción y de obra derivada. Las otras dos se apoyan en la Digital Millennium Copyright Act (DMCA): la elusión de medidas tecnológicas que controlan el acceso a las letras y la eliminación de la información de gestión de derechos de autor, es decir, títulos, créditos de compositores y datos de las editoriales (6)(7)(14).
+
+La cifra que circula en los medios necesita un desglose. Los demandantes piden hasta 150.000 dólares por obra por infracción deliberada, lo que suma 41,1 millones de dólares para las 274 composiciones. A esa partida añaden 685.000 dólares por la elusión de medidas de acceso y 6,85 millones por la supresión de información de gestión de derechos. El total llega a unos 48,6 millones (4)(11). También solicitan el cese de las conductas denunciadas y la destrucción de las copias que, según afirman, Anthropic conserva en sus repositorios y conjuntos de entrenamiento (4)(11).
+
+Anthropic no ha presentado todavía su contestación. Un portavoz ha declarado que la compañía discrepa de las alegaciones y que defenderá el caso (2)(8)(10). La defensa previsible se apoya en el *fair use* del artículo 107 del Título 17 del Código de los Estados Unidos. Los precedentes recientes de ese mismo distrito apuntan en dos direcciones. En *Bartz v. Anthropic*, el juez Alsup consideró que entrenar con libros adquiridos de forma lícita era *fair use*, y que reunir y conservar una biblioteca de obras pirateadas no lo era (15). En *Kadrey v. Meta*, el juez Chhabria falló a favor de Meta sobre el expediente que tenía delante, pero advirtió que la dilución del mercado podía inclinar la balanza en otros casos (16).
+
+Las letras plantean una dificultad añadida frente a los libros. Son textos breves, se reproducen enteros y compiten con un mercado de licencias ya existente. Los demandantes alegan además que cada fase del desarrollo del modelo, desde la adquisición hasta la respuesta al usuario, generó copias no autorizadas (23). Si el tribunal acepta ese enfoque por etapas, el análisis de uso legítimo dejará de tratar el entrenamiento como un acto único.
+
+El caso tiene un peso sistémico. Medios como *Billboard* y *Rolling Stone* lo describen como una de las primeras acciones de gran escala en nombre de un catálogo individual, y no de una discográfica o una asociación sectorial (5)(10). Llega además con Anthropic en plena preparación de una salida a bolsa, y tras el acuerdo de 1.500 millones de dólares que cerró la demanda colectiva de autores de libros (8)(9).
+
+Para los lectores europeos, la lectura comparada importa. El artículo 4 de la Directiva (UE) 2019/790 permite la minería de textos y datos salvo reserva expresa de los titulares, y el artículo 53.1 del Reglamento (UE) 2024/1689 obliga a los proveedores de modelos de uso general a contar con una política de respeto del derecho de autor y a publicar un resumen del contenido de entrenamiento (19)(20). Un tribunal de Múnich ya condenó en 2025 a OpenAI por memorizar letras de canciones (21).
+
+Este análisis se basa en la información pública sobre la demanda y en los extractos que reproducen medios especializados. No anticipa el fallo. Termina con recomendaciones prácticas para desarrolladores de modelos y para titulares de derechos.
+
+# Cuando el Rey del Rock demanda a la inteligencia artificial: la acción de los titulares de derechos de Elvis Presley contra Anthropic y el futuro del copyright en el entrenamiento de modelos generativos
+
+**Subtítulo**  
+Análisis jurídico-técnico de la demanda presentada el 23 de octubre de 2026 ante el Tribunal de Distrito de los Estados Unidos para el Distrito Norte de California por el uso no autorizado de 274 composiciones musicales en el entrenamiento del modelo Claude.
+
+**Índice**
+
+1. Introducción y planteamiento del problema  
+2. Identificación de las partes y del objeto del litigio  
+3. Hechos alegados por los demandantes  
+4. Pretensiones económicas y medidas solicitadas  
+5. Marco jurídico aplicable: derecho de autor estadounidense y Digital Millennium Copyright Act  
+6. Contexto de litigiosidad previa contra Anthropic en materia musical  
+7. Implicaciones técnicas del entrenamiento de modelos de lenguaje con obras protegidas  
+8. Posición de Anthropic y posibles líneas de defensa  
+9. Perspectiva comparada: la Unión Europea  
+10. Relevancia sistémica del caso y posibles precedentes  
+11. Conclusiones provisionales y recomendaciones operativas  
+
+---
+
+**1. Introducción y planteamiento del problema**
+
+Los titulares de derechos del catálogo de Elvis Presley presentaron el 23 de octubre de 2026 una demanda contra Anthropic PBC ante el Tribunal de Distrito de los Estados Unidos para el Distrito Norte de California. Anthropic desarrolla el modelo de lenguaje Claude (1)(2)(3).
+
+Los demandantes afirman que Anthropic reprodujo sin licencia las letras de 274 composiciones asociadas a Presley. Entre ellas aparecen «All Shook Up», «Can’t Help Falling in Love», «Don’t Be Cruel» y «Return to Sender». Según la demanda, la compañía incorporó esas letras a los conjuntos de datos con los que entrenó sus modelos (1)(4)(5). Los actores imputan también a Anthropic la elusión de medidas tecnológicas de protección y la eliminación de información de gestión de derechos de autor (*copyright management information*, CMI). La Digital Millennium Copyright Act regula ambas conductas (6)(7)(14).
+
+Conviene precisar un dato que los titulares de prensa difuminan. Los demandantes no reclaman la obra de un solo autor, porque Presley no escribió la mayoría de las canciones que lo hicieron famoso. Reclaman los derechos sobre las composiciones, que pertenecen a editoriales, fideicomisos y herederos de los compositores (4)(23). El litigio versa sobre letras y partituras, no sobre las grabaciones de Presley.
+
+Anthropic afronta a la vez otras reclamaciones de titulares de derechos musicales y prepara una posible salida a bolsa de elevada valoración (8)(9). Los demandantes describen el modelo de negocio de la compañía como una apuesta por infringir ahora y confiar en una oferta pública después (4)(22). Quienes desarrollan inteligencia artificial se preguntan si el uso de obras protegidas en el entrenamiento cabe en la doctrina del *fair use* o exige licencia previa.
+
+Este análisis examina los hechos alegados, el marco jurídico aplicable y las implicaciones técnicas y sistémicas del caso. Incorpora una comparación con el derecho de la Unión Europea, que interesa al lector español. No anticipa el resultado del fondo, que corresponde al tribunal.
+
+**2. Identificación de las partes y del objeto del litigio**
+
+Los demandantes interpusieron la demanda el 23 de octubre de 2026 ante el Tribunal de Distrito de los Estados Unidos para el Distrito Norte de California. El número de caso es 5:26-cv-12473 (1)(2)(6). El procedimiento tiene por título *ABG EPE IP LLC et al. v. Anthropic PBC*.
+
+**Demandantes**  
+ABG EPE IP LLC encabeza el grupo. Esta entidad pertenece a Authentic Brands Group (ABG), que controla los derechos sobre el nombre y la imagen de Presley y una participación en los derechos editoriales de composiciones que él grabó (4)(5)(10). La acompañan:
+
+- Raleigh Music Publishing  
+- Abilene Music LLC  
+- Jason Simeon Aberbach  
+- Fideicomisos vinculados a la familia Aberbach  
+- Fideicomisos vinculados a Luigi Creatore, coautor de «Can’t Help Falling in Love» (4)(6)(11)
+
+Según la demanda, estos sujetos ostentan, en todo o en parte, derechos exclusivos de reproducción, distribución y creación de obras derivadas sobre 274 composiciones musicales que Presley grabó o popularizó (1)(5). El anexo A de la demanda enumera las obras una por una (22).
+
+**Demandada**  
+Anthropic PBC tiene su sede en San Francisco. Desarrolla modelos de inteligencia artificial y su producto principal es el sistema de lenguaje Claude (2)(8).
+
+**Objeto del litigio**  
+Los demandantes centran su pretensión en la infracción de derechos de autor sobre las 274 obras identificadas. Imputan a Anthropic tres conductas:
+
+1. Reproducir sin autorización las letras e incorporarlas a los conjuntos de datos de entrenamiento de Claude.  
+2. Eludir medidas tecnológicas que protegían el acceso a las obras.  
+3. Eliminar o alterar la información de gestión de derechos de autor asociada a esas obras (6)(7).
+
+Además de las pretensiones indemnizatorias, los actores piden medidas de cesación y la destrucción de las copias que, según sostienen, permanecen en los repositorios internos de Anthropic (4)(11).
+
+El litigio se circunscribe a la titularidad y al alcance de los derechos de autor sobre un catálogo musical concreto, y a la licitud de su uso en el entrenamiento de sistemas de inteligencia artificial generativa.
+
+**3. Hechos alegados por los demandantes**
+
+La demanda sostiene que Anthropic obtuvo las letras de las 274 composiciones mediante técnicas de *web scraping* y a través de grandes colecciones de datos abiertos. Menciona de forma explícita Common Crawl y The Pile. Este último es un conjunto de texto de código abierto que incluía subtítulos extraídos de vídeos de YouTube (6)(7). La demanda añade que esas fuentes contenían letras tomadas de sitios y vídeos con licencia, y que Anthropic las descargó de plataformas de letras y de *streaming* tras sortear los controles de acceso (7)(23).
+
+Los demandantes afirman que Anthropic incorporó las letras a los conjuntos de entrenamiento de los sucesivos modelos Claude desde las primeras fases de desarrollo (1)(4). Añaden que la compañía no pagó licencia alguna ni solicitó autorización a los titulares (1)(5).
+
+Una imputación central se refiere a la eliminación o alteración de la CMI. Según la demanda, Anthropic suprimió títulos de canciones, créditos de compositores y datos de editoriales antes de introducir las letras en los procesos de entrenamiento. Los actores atribuyen a esa limpieza un propósito: ocultar el origen de las obras y dificultar la detección de la infracción (4)(6)(7). La demanda sostiene que los resultados de Claude siguen omitiendo créditos, identificación del editor y avisos de copyright, de modo que el usuario recibe el texto protegido sin saber de dónde procede (23).
+
+Los demandantes alegan también que Claude genera, a petición de los usuarios, reproducciones o versiones muy próximas de las letras protegidas. La demanda afirma que Claude ha producido resultados infractores de material protegido de «prácticamente cada canción de cada catálogo disponible en internet, incluidas las Obras» (5)(10). Según los medios que han leído el escrito, el patrón se repite en tres tipos de petición: la letra solicitada por su título, la canción «al estilo de» un clásico de Elvis y la composición presentada como original que se apoya en los patrones aprendidos durante el entrenamiento (23). En cuanto a las 274 obras, la demanda sostiene «con información y creencia» que Claude ha generado resultados infractores de todas ellas y señala que los registros de peticiones y respuestas de Anthropic contienen más pruebas (23).
+
+Los actores afirman, por último, que Anthropic mantuvo estas prácticas incluso después de conocer reclamaciones similares de otros titulares de derechos musicales (3)(8).
+
+La demanda califica estos hechos como infracción directa de derechos de autor y como vulneración de las disposiciones de la DMCA sobre elusión de medidas tecnológicas e integridad de la información de gestión de derechos.
+
+**4. Pretensiones económicas y medidas solicitadas**
+
+Los demandantes formulan pretensiones indemnizatorias y de cesación.
+
+Solicitan, en primer lugar, daños estatutarios por infracción deliberada (*willful infringement*). La ley estadounidense permite hasta 150.000 dólares por obra infringida (13). Multiplicada por las 274 composiciones, la reclamación principal asciende a 41,1 millones de dólares (1)(4)(5)(6).
+
+La demanda incluye dos pretensiones derivadas de la DMCA:
+
+- 685.000 dólares por la alegada elusión de medidas tecnológicas de protección de acceso a las obras.  
+- 6,85 millones de dólares por la eliminación o alteración de la CMI (6)(7)(11).
+
+El cálculo es sencillo. La DMCA fija una horquilla de 200 a 2.500 dólares por acto de elusión y otra de 2.500 a 25.000 dólares por cada infracción de la norma sobre CMI (14). Los 685.000 dólares equivalen a 2.500 por 274 obras, y los 6,85 millones a 25.000 por 274. Los demandantes reclaman, por tanto, el máximo legal en ambas partidas.
+
+La suma de las tres partidas eleva la reclamación total a unos 48,6 millones de dólares (4)(11). Algunos medios sólo recogen la primera cifra y hablan de 41 millones (11)(12). La diferencia procede de las dos partidas de la DMCA.
+
+Con carácter alternativo, los actores solicitan el resarcimiento de los daños reales y la restitución de los beneficios que Anthropic obtuvo con la infracción (4).
+
+Junto a las pretensiones dinerarias, la demanda pide al tribunal:
+
+- Que declare la existencia de infracción de derechos de autor y de vulneraciones de la DMCA.  
+- Que ordene el cese definitivo de las conductas denunciadas.  
+- Que disponga la destrucción de todas las copias de las obras que, según los demandantes, siguen almacenadas en los sistemas y repositorios de Anthropic, incluidos los conjuntos de entrenamiento (4)(11).  
+- Que condene a la demandada al pago de las costas procesales y de los honorarios de los abogados (3).
+
+Los demandantes formulan estas pretensiones de forma acumulativa. Las presentan como necesarias para restablecer la integridad de los derechos exclusivos sobre el catálogo y para disuadir conductas análogas en el sector de la IA generativa.
+
+**5. Marco jurídico aplicable: derecho de autor estadounidense y Digital Millennium Copyright Act**
+
+El litigio se rige por el derecho federal de autor de los Estados Unidos, recogido en el Título 17 del Código de los Estados Unidos, y por las disposiciones de la Digital Millennium Copyright Act de 1998.
+
+Los demandantes articulan su pretensión principal en torno a la infracción directa de los derechos exclusivos de reproducción y de creación de obras derivadas (13). Según la demanda, incorporar las letras de las 274 composiciones a los conjuntos de entrenamiento de Claude, sin licencia ni autorización, constituye una reproducción no autorizada de obras protegidas (1)(4)(6). Producir resultados que reproducen o se parecen mucho a las letras originales vulnera, a su juicio, esos mismos derechos exclusivos (5)(10).
+
+La demanda plantea además un enfoque por etapas. Sostiene que la infracción atraviesa todo el desarrollo del modelo, desde la adquisición y el almacenamiento de las letras hasta su limpieza, su tokenización, el entrenamiento y la respuesta al usuario, y que cada fase produjo copias adicionales sin autorización (23). Esta tesis importa porque obliga al tribunal a valorar cada uso por separado. Un uso puede ser legítimo y otro no, como ya ocurrió en *Bartz* con el entrenamiento y la biblioteca pirata (15).
+
+La cuantía máxima de 150.000 dólares por obra se funda en el régimen de daños estatutarios para infracciones deliberadas. Este régimen permite al titular elegir entre los daños reales y los beneficios, o una cantidad fija que fija la ley (13). El titular sólo puede acogerse a los daños estatutarios si registró la obra antes de la infracción o en los tres meses siguientes a su publicación. La demanda no detalla, según las fuentes consultadas, el estado de registro de cada una de las 274 composiciones, y de ese dato depende la cuantía final (13).
+
+Además de las pretensiones basadas en el derecho de autor ordinario, la demanda invoca dos preceptos específicos de la DMCA (14):
+
+- La prohibición de eludir medidas tecnológicas que controlan el acceso a las obras (17 U.S.C. § 1201).  
+- La prohibición de suprimir o alterar la información de gestión de derechos de autor, entendida como los datos que identifican la obra, a su autor, a su titular o las condiciones de uso (17 U.S.C. § 1202).
+
+La segunda exige más que la mera supresión. El demandante debe probar que el demandado actuó a sabiendas, o con motivos razonables para saber, que la supresión facilitaría o encubriría una infracción. Los tribunales de distrito no han interpretado esa exigencia de forma uniforme en los casos de IA, y la jurisprudencia sobre el alcance de la sección 1202(b) sigue en evolución (14).
+
+Los demandantes sostienen que Anthropic eludió mecanismos de protección digital y eliminó títulos, créditos de autores y datos de editoriales antes de introducir las letras en los procesos de entrenamiento, con el fin de ocultar el origen de las obras (4)(6).
+
+El marco aplicable abarca más que la reproducción no autorizada. Incluye la protección de las medidas tecnológicas y de la integridad de la información que identifica las obras. La DMCA convierte ambos aspectos en infracciones autónomas, con su propio régimen sancionador.
+
+La doctrina del *fair use* queda para el apartado 8. Anthropic la ha invocado en otros procedimientos similares y las fuentes disponibles la señalan como línea de argumentación previsible en este caso (8)(9).
+
+**6. Contexto de litigiosidad previa contra Anthropic en materia musical**
+
+La demanda de los titulares de derechos vinculados a Elvis Presley no es un hecho aislado. Se suma a una secuencia de acciones que representantes de la industria musical han iniciado contra Anthropic por el uso no autorizado de obras protegidas en el entrenamiento de sus modelos.
+
+En 2023, un grupo de editoriales musicales, entre ellas Concord y Universal Music Publishing Group, presentó ante el mismo distrito de California la demanda *Concord Music Group v. Anthropic*, que reclamaba por el uso de letras de canciones en Claude (18). En enero de 2026, Universal Music Group interpuso una nueva demanda. Alegó que Anthropic había desarrollado Claude con repositorios musicales ilegales, y reclamó una indemnización de 3.000 millones de dólares (1)(8)(9).
+
+En fechas próximas a la demanda de los derechos de Elvis, Reservoir presentó una acción contra Anthropic por el supuesto uso indebido de letras y canciones protegidas. Entre las obras citadas figuraban «Big Yellow Taxi», de Joni Mitchell, y «Papa Don’t Preach», de Madonna, así como composiciones de Kings of Leon y Evanescence (1)(9).
+
+Medios especializados mencionan además una demanda de Round Hill Music contra Anthropic y la empresa Suno por infracción de derechos sobre material musical (12).
+
+Reuters señala que Anthropic afronta también reclamaciones de un grupo de editores musicales, entre los que figura Universal Music Group, que le imputan el uso no autorizado de letras de artistas como Beyoncé, The Rolling Stones y The Beach Boys (8).
+
+Fuera del ámbito musical, Anthropic alcanzó en 2025 un acuerdo de 1.500 millones de dólares para cerrar una demanda colectiva de autores por el uso de sus obras en el entrenamiento de modelos. El juez aprobó el acuerdo de forma definitiva en julio de 2026 (8)(15). La demanda de Elvis cita esa saga: invoca la resolución parcial de *Bartz*, que declaró lícito el entrenamiento con libros adquiridos de forma legal pero ilícita la conservación de una biblioteca de obras pirateadas (15)(23).
+
+Este conjunto de procedimientos muestra que el uso de material protegido en el entrenamiento de IA generativa constituye para Anthropic un frente litigioso recurrente y de elevada cuantía. La demanda sobre el catálogo de Elvis se suma a la serie. Medios especializados la presentan como una de las primeras acciones de gran relevancia en nombre de un catálogo individual (5)(10).
+
+**7. Implicaciones técnicas del entrenamiento de modelos de lenguaje con obras protegidas**
+
+Según los hechos alegados, Anthropic obtuvo las letras mediante *web scraping* y colecciones de datos textuales de acceso abierto. La demanda cita Common Crawl, un archivo masivo de páginas web, y The Pile, que incluía subtítulos extraídos de vídeos de YouTube (6)(7).
+
+Una vez obtenidas, Anthropic habría limpiado las letras y eliminado o alterado sus elementos identificativos: títulos, créditos de los compositores y datos de las editoriales. Los demandantes presentan esa depuración como una conducta deliberada que dificulta la trazabilidad del origen de los textos y oculta la infracción (4)(6)(7).
+
+Los textos así procesados se habrían incorporado a los conjuntos de entrenamiento de los modelos Claude. La demanda sostiene que este uso se prolongó durante las sucesivas fases de desarrollo y que Anthropic conservó copias de las obras en repositorios internos destinados a entrenar versiones futuras (4)(11).
+
+Un modelo de lenguaje a gran escala procesa volúmenes masivos de texto y aprende patrones estadísticos de lenguaje, estructuras sintácticas, estilos y contenidos. Cuando ese material incluye obras protegidas, surgen dos preguntas. La primera es si incorporar una obra al conjunto de entrenamiento constituye una reproducción. La segunda es si los resultados del modelo, que pueden reproducir o parafrasear de cerca las letras originales, configuran obras derivadas no autorizadas (5)(10).
+
+Los demandantes afirman que Claude genera, a petición de los usuarios, versiones de las letras que conservan la misma estructura, los mismos ganchos y conjuntos completos de versos, estribillos y puentes, con retoques menores. Según la demanda, esos resultados se acercan más a la reproducción de la obra protegida que a una inspiración (11). Señalan también que las salvaguardas de Anthropic se pueden sortear si se pide a Claude que recree la canción para un público moderno (24).
+
+La demanda sitúa así el debate técnico en un punto crítico: la frontera entre usar textos como material de aprendizaje estadístico y reproducir o transformar obras protegidas en los resultados del sistema. El litigio no zanja esa frontera, pero la formula con claridad al enlazar el entrenamiento con la generación de contenidos infractores. La cuestión técnica de fondo, sobre la que los peritos tendrán que pronunciarse, es en qué medida un modelo retiene una letra completa y la puede reconstruir de memoria.
+
+**8. Posición de Anthropic y posibles líneas de defensa**
+
+Hasta la fecha de las informaciones disponibles, Anthropic no ha presentado un escrito de contestación. Un portavoz declaró ante los medios que la sociedad «discrepa de las alegaciones y tiene la intención de defender este caso plenamente» (2)(8)(10).
+
+En procedimientos anteriores de naturaleza similar, Anthropic ha sostenido que el uso de material protegido en el entrenamiento de sus modelos está amparado por el *fair use*. Según fuentes periodísticas, en la demanda de Universal Music Group la compañía pidió al tribunal que declarara que su uso de las canciones estaba protegido por esa doctrina (9).
+
+El *fair use* permite, en ciertas circunstancias, usar obras protegidas sin autorización del titular. La ley manda ponderar cuatro factores: el propósito y el carácter del uso, en particular si es transformativo; la naturaleza de la obra; la cantidad y la sustancialidad de la parte utilizada; y el efecto del uso sobre el mercado potencial de la obra original (25). Anthropic ha argumentado en otros litigios que entrenar un modelo de IA es un uso transformativo al servicio del progreso tecnológico y del beneficio social (8)(9).
+
+Tres resoluciones recientes de tribunales federales ayudan a medir la fuerza de esa defensa.
+
+En *Bartz v. Anthropic* (N.D. Cal., 23 de junio de 2025), el juez Alsup calificó de «extraordinariamente transformativo» el entrenamiento con libros adquiridos de forma lícita, y lo amparó en el *fair use*. Rechazó esa calificación para la biblioteca de obras pirateadas que Anthropic reunió y conservó (15). La demanda de Elvis aprovecha esa distinción, porque alega que Anthropic descargó las letras tras sortear controles de acceso (23).
+
+En *Kadrey v. Meta* (N.D. Cal., 25 de junio de 2025), el juez Chhabria falló a favor de Meta porque los demandantes no habían probado el daño al mercado. Advirtió, con todo, que en muchos casos entrenar con obras protegidas sin permiso será ilícito si el modelo diluye el mercado de esas obras (16).
+
+En *Thomson Reuters v. Ross Intelligence* (D. Del., 11 de febrero de 2025), el juez Bibas rechazó el *fair use* para el uso de unas notas jurídicas en un sistema de IA no generativo que competía con el producto del titular (17).
+
+Las letras de canciones añaden argumentos que los libros no tenían. Cada letra es un texto corto que el modelo puede reproducir entero, de modo que el tercer factor pesa más que en una novela. El mercado de licencias de letras existe y funciona, con plataformas y editoriales que cobran por ellas, y eso refuerza el cuarto factor. Si la demanda demuestra que Claude devuelve letras completas a quien las pide, el resultado ocupa el lugar de una licencia. Cabe sostener que estos rasgos hacen más difícil para Anthropic defender el *fair use* que en el caso de los libros, aunque la valoración exige prueba concreta sobre lo que Claude reproduce.
+
+Otras líneas de defensa, deducibles de la posición que la compañía mantiene en procesos análogos, incluyen la impugnación de la prueba de que las obras concretas estaban en los conjuntos de entrenamiento, la negación del carácter deliberado de la infracción y la discusión sobre el alcance de las pretensiones de la DMCA (6)(8). Anthropic puede objetar además la cuantía por falta de registro de algunas obras, requisito de los daños estatutarios (13).
+
+Las fuentes disponibles no detallan los argumentos que Anthropic formulará en este procedimiento. Cualquier predicción sobre su estrategia procesal definitiva excede lo que permite la información pública.
+
+**9. Perspectiva comparada: la Unión Europea**
+
+El lector español encontrará un régimen distinto. La Unión Europea no cuenta con una cláusula abierta como el *fair use*. Resuelve la cuestión con excepciones tasadas, entre ellas la de minería de textos y datos.
+
+El artículo 4 de la Directiva (UE) 2019/790 autoriza reproducir y extraer obras a las que se accede de forma lícita con fines de minería de textos y datos. Los titulares pueden reservarse ese uso de forma expresa, por ejemplo mediante condiciones en el sitio web o instrucciones legibles por máquina. Si lo hacen, la excepción deja de cubrir al desarrollador (19). El Tribunal Regional de Hamburgo aplicó una excepción análoga, la de la investigación científica, en el caso *Kneschke c. LAION* (sentencia de 27 de septiembre de 2024), pero no resolvió el supuesto del entrenamiento comercial de un modelo generativo (26).
+
+El Reglamento (UE) 2024/1689 añade obligaciones de transparencia. El artículo 53.1.c) exige a los proveedores de modelos de uso general una política de cumplimiento del derecho de autor de la Unión, con identificación y respeto de las reservas de derechos. El artículo 53.1.d) les impone publicar un resumen, con el detalle que la norma exige, del contenido usado en el entrenamiento (20). Esas obligaciones darían a los titulares europeos una vía de información que los demandantes estadounidenses obtienen sólo por medio del descubrimiento probatorio.
+
+La resolución más cercana a este caso es la del Tribunal Regional de Múnich I, de 11 de noviembre de 2025, en *GEMA c. OpenAI*. Según la información publicada, el tribunal consideró que la memorización de letras de canciones en el modelo constituía una reproducción, que los resultados que las devolvían infringían los derechos de los autores y que la excepción de minería de textos no amparaba ese uso (21). Si la decisión se confirma, la tesis de los demandantes de Elvis encontraría un apoyo comparado, porque ambos casos giran en torno a la memorización de letras y a su reproducción en las respuestas.
+
+**10. Relevancia sistémica del caso y posibles precedentes**
+
+Según diversas fuentes especializadas, la demanda de los titulares del catálogo de Elvis Presley trasciende el litigio concreto. *Billboard* y *Rolling Stone* destacan que se trata de una de las primeras acciones de gran envergadura iniciadas en nombre de un catálogo individual, frente a las reclamaciones anteriores de discográficas o asociaciones sectoriales (5)(10).
+
+Esa circunstancia confiere al procedimiento un potencial de precedente más amplio. Un pronunciamiento sobre si incorporar letras protegidas a un conjunto de entrenamiento infringe el derecho de autor, y sobre si los resultados del modelo pueden calificarse de obras derivadas, influiría en la interpretación de los límites del derecho de autor frente al entrenamiento de sistemas generativos (5)(10).
+
+El caso se inserta además en una ola de litigios de elevada cuantía que titulares de derechos han promovido contra empresas de IA como Anthropic, OpenAI y Meta Platforms (8). La acumulación de procedimientos refleja la tensión estructural entre un modelo de desarrollo que procesa datos textuales y audiovisuales en masa y un sistema de protección de la propiedad intelectual que se basa en la autorización previa.
+
+Desde la industria musical, la acción busca reafirmar que el uso de catálogos existentes en el entrenamiento exige licencia previa, frente a la tesis de que tales usos caben en doctrinas de uso legítimo. Desde las empresas de IA, el resultado puede afectar a los costes de desarrollo, a las estrategias de obtención de datos y a la valoración de las compañías en un contexto de posibles salidas a bolsa (8)(9). La demanda se presentó el mismo día en que se esperaba el anuncio formal de la oferta pública de Anthropic, y los actores han recurrido a esa coincidencia en su relato (23).
+
+Las fuentes disponibles coinciden en que el procedimiento podría ayudar a delimitar, en la práctica, las reglas aplicables al uso de obras musicales protegidas por sistemas de IA generativa. Con todo, cualquier afirmación sobre el alcance del precedente que sentará el tribunal depende del desarrollo del procedimiento y de su resolución definitiva.
+
+**11. Conclusiones provisionales y recomendaciones operativas**
+
+La demanda que los titulares de derechos sobre 274 composiciones asociadas a Elvis Presley interpusieron el 23 de octubre de 2026 contra Anthropic PBC plantea, de forma directa y con una cuantía elevada, si el entrenamiento de modelos de IA generativa es compatible con el derecho de autor estadounidense.
+
+Los hechos alegados, a saber, la reproducción no autorizada de letras, la supresión de la CMI y la generación de resultados que reproducen o se parecen mucho a las obras protegidas, se articulan en tres ejes: la infracción directa de derechos exclusivos, la elusión de medidas tecnológicas de protección y la vulneración de la integridad de la información de gestión de derechos prevista en la DMCA.
+
+El procedimiento se inserta en un contexto de litigiosidad creciente contra Anthropic y otras empresas del sector, lo que refuerza su relevancia sistémica. Que se trate de una de las primeras acciones de gran envergadura en nombre de un catálogo individual le da, según las fuentes especializadas, un potencial de precedente superior al de reclamaciones anteriores de discográficas o asociaciones sectoriales.
+
+El análisis tiene límites. Se basa en la información pública sobre la demanda, en los extractos que reproducen medios especializados y en las declaraciones de las partes que recogen los medios, no en una lectura íntegra del escrito ni de futuros documentos de contestación o de prueba. Anthropic no ha formulado todavía una defensa formal, de modo que sus argumentos sobre el *fair use* sólo pueden identificarse de forma provisional a partir de su posición en litigios anteriores. Toda valoración sobre el resultado del caso o sobre el alcance del precedente es, en el estado actual del procedimiento, especulativa.
+
+El litigio está en fase inicial. Su desarrollo procesal y la eventual resolución determinarán en qué medida los demandantes acreditan sus alegaciones y qué interpretación da el derecho de autor estadounidense al uso de obras protegidas en el entrenamiento de IA.
+
+Con independencia del resultado, el caso permite extraer recomendaciones prácticas.
+
+Para desarrolladores y proveedores de modelos:
+
+- Documentar el origen de cada conjunto de datos y excluir las fuentes que se obtuvieron sorteando controles de acceso, porque la distinción de *Bartz* entre adquisición lícita y biblioteca pirata pesa en el análisis (15).  
+- Conservar la información de gestión de derechos en los procesos de limpieza de datos, o dejar constancia escrita de por qué se suprime, ya que la sección 1202 de la DMCA convierte esa supresión en una infracción autónoma (14).  
+- Probar los modelos con peticiones de letras completas, «al estilo de» y «originales», y reforzar los filtros de salida donde reproduzcan texto protegido.  
+- Negociar licencias con editoriales y sociedades de gestión, sobre todo para textos breves y de alto valor como las letras, donde el mercado de licencias ya existe.  
+- Para el mercado europeo, mantener una política de derechos de autor conforme al artículo 53.1.c) del Reglamento de IA y respetar las reservas de minería de textos del artículo 4 de la Directiva 2019/790 (19)(20).
+
+Para titulares de derechos y editoriales:
+
+- Registrar las obras en la oficina estadounidense de derecho de autor, porque sin registro oportuno no hay daños estatutarios (13).  
+- Reservar de forma expresa el uso para minería de textos y datos en los canales que exige la normativa europea.  
+- Conservar prueba de los resultados del modelo con fecha y petición, que será el centro del debate sobre la memorización y la reproducción.
+
+---
+
+**Bibliografía**
+
+*Fuentes periodísticas y documentales*
+
+(1) González, F. (26 de octubre de 2026). Los herederos de Elvis Presley demandan a Anthropic por el supuesto uso ilegal de sus canciones. *WIRED en español*. https://es.wired.com/articulos/herederos-de-elvis-presley-demandan-a-anthropic
+
+(2) Matza, M. (26 de octubre de 2026). Owners of Elvis Presley music rights sue Anthropic for copyright violations. *BBC News*. https://www.bbc.co.uk/news/articles/c6rmyl0kxyxjo
+
+(3) Rainey, J. (25 de octubre de 2026). Elvis Presley catalog owners sue Anthropic alleging copyright infringement. *Los Angeles Times*. https://www.latimes.com/california/story/2026-10-25/elvis-rights-holder-sues-anthropic-says-songs-illegally-used-to-train-ai
+
+(4) Music Business Worldwide (26 de octubre de 2026). Rightsholders behind Elvis Presley’s hits sue Anthropic for more than $48.6M, alleging it scraped lyrics to 274 songs and stripped songwriter credits to train Claude. https://www.musicbusinessworldwide.com/rightsholders-behind-elvis-presleys-hits-sue-anthropic-for-more-than-48-6m-alleging-it-scraped-lyrics-to-274-songs-and-stripped-songwriter-credits-to-train-claude/
+
+(5) Rolling Stone (24-25 de octubre de 2026). Elvis Presley Rightsholders Sue Anthropic for Training on 274 Songs Without Permission. https://www.rollingstone.com/music/music-news/elvis-presley-rightsholders-anthropic-lawsuit-infringement-1235647682/
+
+(6) Law360 (26 de octubre de 2026). Anthropic Pilfered Elvis Presley Songs To Train AI, Suit Says. https://www.law360.com/articles/2542344/anthropic-pilfered-elvis-presley-songs-to-train-ai-suit-says
+
+(7) Variety (26 de octubre de 2026). Elvis Presley’s Music Owners Sue Anthropic for Copyright Infringement, Demand Nearly $50 Million in Damages. https://variety.com/2026/music/news/elvis-presley-music-sue-anthropic-copyright-infringement-1236931149/
+
+(8) Reuters (26 de octubre de 2026). Anthropic sued over Elvis songs used to train Claude. https://www.reuters.com/legal/legalindustry/anthropic-sued-over-elvis-songs-used-train-claude-2026-10-26/
+
+(9) The Guardian (25 de octubre de 2026). Anthropic sued for allegedly using 274 Elvis Presley songs to train AI models. https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music
+
+(10) Pitchfork (25 de octubre de 2026). Elvis Presley Catalog Owners Sue AI Company Anthropic for Copyright Infringement. https://pitchfork.com/story/elvis-presley-catalog-owners-sue-ai-company-anthropic-for-copyright-infringement/
+
+(11) Infobae (25 de octubre de 2026). Los dueños de la música de Elvis Presley demandaron a Anthropic por USD 41 millones. https://www.infobae.com/tecno/2026/10/25/los-duenos-de-la-musica-de-elvis-presley-demandaron-a-anthropic-por-usd-41-millones/
+
+(12) Tom’s Guide (26 de octubre de 2026). Anthropic is being sued by Elvis Presley’s estate for $41 million — here’s what we know. https://www.tomsguide.com/ai/anthropic-is-being-sued-by-elvis-presleys-estate-for-usd41-million-and-these-artists-songs-are-also-at-the-center-of-lawsuits
+
+*Normativa*
+
+(13) Copyright Act, 17 U.S.C. §§ 106, 411, 412 y 504(c).
+
+(14) Digital Millennium Copyright Act de 1998: 17 U.S.C. §§ 1201, 1202 y 1203(c)(3).
+
+(19) Directiva (UE) 2019/790 del Parlamento Europeo y del Consejo, de 17 de abril de 2019, sobre los derechos de autor y derechos afines en el mercado único digital, art. 4. DO L 130, de 17 de mayo de 2019.
+
+(20) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial, art. 53.1.c) y d). DO L, 12 de julio de 2024.
+
+(25) Copyright Act, 17 U.S.C. § 107.
+
+*Jurisprudencia*
+
+(15) *Bartz v. Anthropic PBC*, N.D. Cal., orden de 23 de junio de 2025 (Alsup, J.).
+
+(16) *Kadrey v. Meta Platforms, Inc.*, N.D. Cal., orden de 25 de junio de 2025 (Chhabria, J.).
+
+(17) *Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc.*, D. Del., 11 de febrero de 2025 (Bibas, J.).
+
+(18) *Concord Music Group, Inc. v. Anthropic PBC*, N.D. Cal., núm. 5:24-cv-03811.
+
+(21) LG München I, sentencia de 11 de noviembre de 2025, *GEMA c. OpenAI*, núm. 42 O 14139/24.
+
+(26) LG Hamburg, sentencia de 27 de septiembre de 2024, *Kneschke c. LAION*, núm. 310 O 227/23.
+
+*Documentos de los procedimientos*
+
+(22) Demanda, *ABG EPE IP LLC et al. v. Anthropic PBC*, núm. 5:26-cv-12473 (N.D. Cal., presentada el 23 de octubre de 2026).
+
+(23) IP Law Daily (26 de octubre de 2026). Copyright news: On the eve of its IPO announcement, The King enters the ring against Anthropic. *Wolters Kluwer*. https://vitallaw.com/news/copyright-news-on-the-eve-of-its-ipo-announcement-the-king-enters-the-ring-against-anthropic/ipm01b8afda5a3f6e486da47f5c5395cfd964
+
+(24) CBS12 / Scripps News (26 de octubre de 2026). Elvis Presley rights holders sue Anthropic over alleged use of 274 songs to train AI. https://cbs12.com/news/nation-world/elvis-presley-rights-holders-sue-anthropic-over-alleged-use-of-274-songs-to-train-ai-claude-models-superintelligence-cant-help-falling-in-love-all-shook-up-copyright-lyrics-pirated-books-lawsuit
