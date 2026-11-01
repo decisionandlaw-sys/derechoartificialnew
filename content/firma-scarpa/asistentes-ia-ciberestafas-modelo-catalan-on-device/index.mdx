@@ -1,0 +1,210 @@
+---
+title: "Asistentes de IA contra ciberestafas: Cataluña, Meta y Singapur"
+description: "Análisis comparado de los asistentes de IA de Cataluña, Meta, Singapur, India y Australia contra las ciberestafas: arquitectura, privacidad y límites."
+date: "2026-11-01"
+tags: ["ciberestafas", "asistentes de IA", "WhatsApp", "detección on-device", "Generalitat de Catalunya"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "asistentes-ia-ciberestafas-modelo-catalan-on-device"
+readingTime: 20
+image: "/images/firma-scarpa/asistentes-ia-ciberestafas-modelo-catalan-on-device/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Las ciberestafas ya son el segundo delito más denunciado en Cataluña. Los Mossos d’Esquadra registran unos 220 incidentes al día y calculan un perjuicio de 490 millones de euros entre 2024 y agosto de 2026, con más de 200.000 víctimas (1). Ante esa cifra, la Generalitat anunció el 16 de octubre un asistente de inteligencia artificial que los ciudadanos podrán usar por WhatsApp a partir de diciembre para comprobar SMS, correos y páginas web sospechosas (1). El Govern aprobó el 20 de octubre el plan estratégico que lo acompaña, con una inversión inicial de 1,8 millones de euros en el Servei Públic de Ciberseguretat a la Ciutadania (2).
+
+Este análisis sitúa el modelo catalán junto a cuatro iniciativas extranjeras y detecta tres arquitecturas distintas. La primera es consultiva: el ciudadano envía un contenido sospechoso y recibe orientación. La siguen el asistente catalán y el Cyber Bot de la policía de Bhandara, en India, que atendió a más de 8.000 personas en sus primeros trece días (10). La segunda es la detección pasiva en el propio dispositivo. Scam Alert, la función opcional de WhatsApp en fase beta desde agosto, examina los mensajes de contactos no guardados sin que el contenido salga del teléfono (5). Singapur sigue la misma línea con un modelo Gemma ajustado por GovTech y Google DeepMind, que trabaja en dos etapas para ahorrar batería (7). La tercera es la disrupción activa. La empresa australiana Apate.ai despliega bots que entretienen a los estafadores, con un caso registrado de 54 minutos de conversación y cerca de 10.000 llamadas de estafa bloqueadas al día en un despliegue con una operadora (12).
+
+Las tres arquitecturas se complementan. La orientación reduce barreras para quien duda. La detección en el dispositivo protege dentro del canal, mientras el cifrado de extremo a extremo permanece intacto. La disrupción golpea la capacidad operativa de las redes de fraude antes de que lleguen a la víctima.
+
+El análisis jurídico que añade este informe separa dos planos. En el modelo consultivo, el ciudadano entrega mensajes que contienen datos personales propios y de terceros. Eso activa el Reglamento general de protección de datos, con sus exigencias de base jurídica, información y evaluación de impacto (14). El asistente catalán, además, cae bajo el deber de transparencia del artículo 50.1 del Reglamento de IA, aplicable desde el 2 de agosto de 2026 (13). En el modelo on-device, el tratamiento local reduce la exposición, pero deja abierta la cuestión de la confidencialidad de las comunicaciones en el marco de la Directiva 2002/58/CE y del artículo 18.3 de la Constitución (15)(16).
+
+El balance tiene un punto débil común. Ni el asistente catalán, ni Scam Alert, ni el modelo de Singapur, ni el Cyber Bot publican cifras de precisión, tasas de falsos positivos o cobertura real (1)(5)(7)(10). Sin esos datos nadie puede comparar los sistemas ni medir su efecto sobre las estafas. Las fuentes oficiales catalanas tampoco describen la arquitectura del modelo, los criterios de clasificación ni el tratamiento de los datos que remite el ciudadano.
+
+El informe cierra con cinco recomendaciones operativas: publicar métricas de rendimiento, divulgar la evaluación de impacto y la base jurídica del tratamiento, identificar el sistema como IA desde la primera respuesta, medir cuántas consultas terminan en denuncia formal y encargar una evaluación independiente a los seis meses del lanzamiento. La eficacia del conjunto dependerá de esa transparencia y de la capacidad de actualizar los modelos al ritmo de los estafadores.
+
+# Asistentes de inteligencia artificial contra las ciberestafas: del modelo catalán a las arquitecturas on-device y las estrategias públicas de disrupción conversacional
+
+**Análisis técnico y comparado de herramientas de detección, orientación ciudadana y prevención proactiva desplegadas por administraciones y plataformas de mensajería**
+
+## 1. Introducción y planteamiento del problema
+
+Las ciberestafas ocupan el segundo lugar entre los delitos más denunciados en Cataluña. Los Mossos d’Esquadra registran una media de 220 incidentes diarios y cerca de 80.000 al año. Hasta agosto de 2026 contaron 53.577 querellas por fraudes en línea. Entre 2024 y agosto de 2026 el perjuicio económico sumó 490 millones de euros y afectó a más de 200.000 víctimas (1). Las personas mayores de 65 años pierden las mayores cuantías, aunque cualquiera puede resultar objetivo (1).
+
+Dos fenómenos marcan el cambio. Los delincuentes usan inteligencia artificial generativa para pasar de campañas masivas de bajo importe a la selección de objetivos concretos, como directivos y CEOs, con técnicas de hiperrealismo e ingeniería social refinada (1). A la vez, las estafas migran hacia WhatsApp y otras plataformas de mensajería. Allí los atacantes construyen confianza paso a paso, suplantan identidades familiares o institucionales y mantienen la presión durante días.
+
+Las respuestas siguen dos vías. Las plataformas tecnológicas construyen sistemas de detección on-device que respetan el cifrado de extremo a extremo. Las administraciones públicas desarrollan herramientas con las que el ciudadano comprueba mensajes, enlaces o sitios web sospechosos sin pasar de inmediato por la comisaría. En octubre de 2026 la Generalitat de Catalunya anunció un asistente de inteligencia artificial accesible por WhatsApp. El sistema permitirá verificar SMS, correos o páginas web y ofrecerá consejos de configuración segura (1)(2).
+
+Este informe compara el modelo catalán con iniciativas de Meta, Singapur, India y Australia. Examina el diseño técnico, el enfoque de privacidad, el modelo de gobernanza y las limitaciones de cada una. Deja a un lado la eficacia, porque los datos de rendimiento independientes escasean. La sección 8 analiza el encaje de cada modelo en el derecho de la Unión Europea y en el ordenamiento español.
+
+## 2. El caso catalán: el asistente de IA de la Agència de Ciberseguretat de Catalunya vía WhatsApp
+
+El 16 de octubre de 2026 la Generalitat anunció un asistente de inteligencia artificial disponible a partir de diciembre por WhatsApp y por el portal de la Agència de Ciberseguretat de Catalunya (1). La medida forma parte del Plan estratégico para la lucha contra las estafas virtuales 2026-2028, que el Govern aprobó el 20 de octubre y que se elaboró junto con los Mossos d’Esquadra (2)(3).
+
+Laura Caballero, directora general de la Agència, explicó el objetivo: dar a la ciudadanía un instrumento para distinguir lo legítimo de lo fraudulento (3). El usuario envía SMS, correos o direcciones web sospechosas. El sistema evalúa el riesgo de fraude y responde también a consultas generales de ciberseguridad, como la configuración segura de cuentas de correo (1)(3).
+
+La herramienta se integra en el Servei Públic de Ciberseguretat a la Ciutadania, con una inversión inicial de 1,8 millones de euros (2). Desde marzo de 2025 la Agència ya mantenía un canal de WhatsApp para alertas masivas y un buzón en línea para comunicar estafas. El nuevo asistente convierte ese canal en un servicio interactivo de orientación personalizada (4).
+
+El plan crea además una comisaría virtual de los Mossos, en la que el ciudadano presenta denuncias sin desplazarse y adjunta evidencias digitales. Las fuentes discrepan en la fecha: unas la sitúan a finales de 2026 (1)(4) y Europa Press la anuncia a partir de noviembre (2). Miquel Àngel Garcia Alvira, jefe de la Comissaria General de Tecnologies de la Informació i la Comunicació, señaló que el sistema permite analizar metadatos que una captura de pantalla no revela (1).
+
+El plan refuerza la coordinación con bancos, plataformas de compraventa y operadoras de telefonía. Crea una mesa de trabajo permanente e intensifica las campañas de prevención en Navidades, periodos prevacacionales y rebajas (1)(2)(3).
+
+El asistente orienta. La comisaría virtual tramita denuncias. Las fuentes oficiales no describen la arquitectura del modelo de inteligencia artificial, los criterios de clasificación ni los mecanismos de protección de los datos que el ciudadano remite (1)(2)(3).
+
+## 3. Arquitecturas de detección on-device: el modelo Scam Alert de Meta/WhatsApp
+
+En agosto de 2026 Meta lanzó en fase beta Scam Alert, una función opcional de detección de estafas dentro de WhatsApp. Un modelo de aprendizaje automático trabaja en el dispositivo del usuario y el contenido de los mensajes no sale del terminal (5).
+
+El usuario activa la función y descarga el modelo. A partir de ese momento el modelo examina los mensajes entrantes de contactos no guardados y los clasifica según señales lingüísticas y estructura conversacional. Se entrena con conversaciones de estafa que los usuarios reportaron antes (5)(6).
+
+Si el modelo detecta un posible intento de estafa, muestra un aviso solo al receptor. El usuario puede bloquear, reportar, continuar o marcar el chat como de confianza. Si lo marca, el aviso desaparece y el sistema deja de señalar esa conversación. Cuando el aviso fue erróneo, el usuario puede compartir de forma voluntaria los últimos cinco mensajes para mejorar el modelo (5).
+
+Meta establece tres principios: el procesamiento ocurre en el dispositivo, no existe reporte automático y el usuario controla la activación en todo momento (5). El sistema no bloquea comunicaciones. Avisa.
+
+Meta indica que mide la precisión y la tasa de falsos positivos, pero no publica las cifras. Tampoco informa del número de dispositivos incluidos en la beta, del tamaño del modelo ni de los requisitos de hardware. Afirma que el modelo es lo bastante ligero para funcionar en un teléfono sin los costes de rendimiento, batería o tamaño que antes lo hacían impracticable (5)(6).
+
+Scam Alert actúa de forma distinta al asistente catalán. El ciudadano no envía nada. El sistema analiza los mensajes entrantes dentro de la propia aplicación y mantiene el cifrado intacto.
+
+## 4. Modelos gubernamentales de detección conversacional: la colaboración GovTech–Google DeepMind en Singapur
+
+El 14 de octubre de 2026, durante la Singapore International Cyber Week, el Gobierno de Singapur anunció la colaboración entre GovTech y Google DeepMind para crear un modelo on-device de detección en tiempo real de estafas conversacionales (7)(8).
+
+El sistema usa una versión ajustada (*fine-tuned*) de los modelos ligeros Gemma. Se entrenó con conversaciones de estafa locales: suplantaciones de instituciones públicas, bancos y figuras locales, además de esquemas regionales. El modelo distingue el diálogo cotidiano de los patrones de manipulación propios de la ingeniería social (7).
+
+Todo el procesamiento ocurre en el dispositivo. Ningún contenido de las conversaciones llega a la nube, y ni el Gobierno de Singapur ni Google pueden acceder a los mensajes. El usuario debe dar su consentimiento para que el sistema lea las conversaciones (7)(8).
+
+La arquitectura trabaja en dos etapas para reducir el consumo de batería. Un clasificador ligero filtra primero los mensajes. Si detecta indicios sospechosos, el modelo Gemma examina un fragmento más amplio de la conversación. Si confirma manipulación, el dispositivo muestra una alerta que invita al usuario a detenerse antes de compartir credenciales o transferir fondos (7).
+
+La iniciativa se apoya en herramientas ya operativas. SATIS, desarrollado por GovTech con la policía, analiza cada día cientos de miles de URLs y disrumpe unos 20.000 sitios maliciosos al mes. ScamShield permite a los ciudadanos comprobar, bloquear y reportar posibles estafas (8)(9).
+
+Las autoridades de Singapur sitúan las estafas como más de la mitad de los delitos denunciados. Las pérdidas superan los 4.000 millones de dólares singapurenses desde 2019, y hasta el 80 % corresponde a estafas conversacionales de ingeniería social (7).
+
+El despliegue será gradual, pero las fuentes no fijan fecha ni publican métricas de precisión. Tampoco concretan qué aplicaciones de mensajería lo integrarán, más allá de su orientación principal a Android (7)(8).
+
+Singapur combina la detección on-device de patrones conversacionales con la disrupción previa de infraestructuras de estafa. Se diferencia del asistente catalán porque actúa de forma automática sobre las conversaciones en curso. Se diferencia de Meta porque incorpora un ajuste explícito con datos locales de estafas gubernamentales y bancarias.
+
+## 5. Experiencias de asistencia ciudadana vía mensajería: el Cyber Bot policial en India
+
+A comienzos de 2025 la policía del distrito de Bhandara, en Maharashtra, puso en marcha el Cyber Bot, un chatbot de inteligencia artificial accesible por WhatsApp. Funciona como sistema automatizado de primera respuesta para consultas sobre ciberdelitos (10).
+
+El ciudadano escribe al número del bot. El sistema le presenta menús para reportar un ciberdelito, pedir orientación sobre fraudes o consultar buenas prácticas de ciberseguridad. Ofrece respuestas inmediatas y enlaces a portales oficiales, y no obliga a la víctima a acudir a una comisaría. En los casos complejos conecta al usuario con expertos de la unidad de ciberdelitos de la policía (10).
+
+El superintendente de Policía Noorul Hasan explicó el motivo: el aumento de fraudes digitales en zonas con menor alfabetización digital. Muchas víctimas callan por miedo o vergüenza, y WhatsApp ofrece un grado de privacidad que facilita el primer contacto (10).
+
+En los trece días siguientes al lanzamiento el bot asistió a más de 8.000 personas (10). La fuente no describe el modelo de lenguaje, los mecanismos de actualización ni los criterios con los que el sistema decide derivar un caso a una persona.
+
+El Gobierno de la Unión india desarrolló además el Financial Fraud Risk Indicator (FRI). La aplicación perfila el riesgo de fraude de posibles destinatarios de transacciones a partir de datos históricos y denuncias, y alerta al usuario antes de que envíe dinero. En un piloto con el State Bank of India y PhonePe bloqueó unas 200.000 transacciones de alto riesgo en dos semanas, con una predictibilidad declarada del 99 % (11). El FRI no opera por WhatsApp, pero forma parte del mismo entorno de prevención.
+
+El Cyber Bot de Bhandara se parece al asistente catalán: ambos orientan por mensajería. Lo gestiona una fuerza policial local y combina orientación con facilitación del reporte inicial. Las fuentes no permiten comparar la profundidad del análisis de contenidos sospechosos.
+
+## 6. Estrategias de disrupción activa: bots conversacionales contra estafadores (modelo australiano)
+
+Algunas iniciativas actúan sobre el estafador. Apate.ai, empresa derivada de la Universidad de Macquarie, despliega bots de inteligencia artificial conversacional realistas y multilingües (12).
+
+Los bots mantienen a los estafadores ocupados en conversaciones falsas el mayor tiempo posible. La fuente registra un caso de 54 minutos. El profesor Dali Kaafar, fundador y director ejecutivo, explicó que colaboran con agencias gubernamentales, entidades financieras y operadoras. En uno de los despliegues con una operadora el sistema bloquea casi 10.000 llamadas de estafa al día (12).
+
+Australia registró 2.030 millones de dólares australianos en pérdidas por estafas en 2024, con 494.732 incidentes. Las tipologías de mayor impacto fueron las de inversión, romance, redirección de pagos, acceso remoto y phishing. Las pérdidas bajaron un 25,9 % respecto a 2023, y las autoridades atribuyen parte de esa reducción a los esfuerzos de disrupción (12).
+
+Apate.ai opera sobre el canal del estafador y consume su tiempo y sus recursos. Las fuentes no describen la arquitectura de los modelos de lenguaje ni los protocolos para identificar líneas fraudulentas.
+
+Este enfoque complementa las herramientas de asistencia y de detección on-device. El asistente catalán, el Cyber Bot indio y los modelos de Meta y Singapur se sitúan del lado del usuario. Los bots de Apate.ai intervienen antes, sobre la capacidad operativa de las redes de fraude.
+
+## 7. Elementos transversales de diseño técnico, privacidad y gobernanza
+
+Tres arquitecturas se repiten. La primera es el modelo consultivo externo, que usan el asistente catalán y el Cyber Bot de Bhandara: el ciudadano envía un contenido o una consulta y recibe orientación (1)(10). La segunda es la detección pasiva on-device, con Scam Alert de Meta y el modelo Gemma de GovTech–Google DeepMind: el sistema analiza mensajes o conversaciones sin que el contenido salga del dispositivo (5)(7). La tercera es la disrupción activa de Apate.ai, cuyos bots intervienen en el canal del estafador (12).
+
+La privacidad centra el diseño de las soluciones on-device. Meta y la colaboración de Singapur procesan todo en el dispositivo y no transmiten contenido de forma automática. El usuario controla la activación y cualquier compartición voluntaria de datos (5)(7). Singapur exige además el consentimiento explícito para acceder a las conversaciones. Las fuentes del asistente catalán y del Cyber Bot no describen los protocolos de tratamiento de los mensajes o consultas que el ciudadano remite (1)(10).
+
+La gobernanza varía. El asistente catalán forma parte de un servicio público de ciberseguridad ciudadana y se distingue de la comisaría virtual de los Mossos, reservada a las denuncias formales (1)(2). Una fuerza policial local gestiona el Cyber Bot de Bhandara, que combina orientación con facilitación del reporte (10). Las soluciones de Meta y Singapur se sitúan en la plataforma o en la colaboración público-privada tecnológica y no sustituyen los mecanismos policiales. El modelo australiano colabora con operadoras y agencias, pero actúa antes de que el estafador contacte a la víctima (12).
+
+La mayoría de los anuncios omiten métricas públicas de rendimiento: precisión, tasas de falsos positivos, cobertura real de dispositivos o usuarios. Varias iniciativas contemplan la coordinación con bancos, operadoras y plataformas digitales (1)(2)(11)(12).
+
+Cada herramienta ocupa un lugar en un continuo: desde la asistencia reactiva al ciudadano hasta la interdicción proactiva de la actividad delictiva, pasando por la detección automática en el propio canal de comunicación.
+
+## 8. Encaje jurídico en el derecho de la Unión y en el ordenamiento español
+
+Las fuentes revisadas no analizan el marco jurídico de ninguna de las herramientas. Esta sección expone el análisis del autor sobre el derecho vigente (*lex lata*) en la Unión Europea y en España y señala los puntos en que las fuentes no permiten concluir.
+
+**Modelo consultivo.** Cuando el ciudadano remite un SMS, un correo o una dirección web al asistente catalán, entrega datos personales propios y, con frecuencia, de terceros: números de teléfono, nombres, cuentas bancarias. Ese envío constituye un tratamiento con arreglo al Reglamento (UE) 2016/679 (RGPD) (14). Una administración pública como la Agència necesita una base jurídica del artículo 6.1, y cabe sostener que la misión de interés público de la letra e) es la más plausible, aunque las fuentes oficiales no la identifican. El responsable debe informar al usuario conforme al artículo 13, respetar la minimización del artículo 5.1.c) y valorar si el tratamiento, por su naturaleza y alcance, entraña un alto riesgo que exija una evaluación de impacto según el artículo 35.1 (14). Ninguna fuente indica que la Agència haya hecho pública esa evaluación.
+
+**Transparencia de la IA.** El artículo 50.1 del Reglamento (UE) 2024/1689 (RIA) obliga al proveedor de un sistema de IA destinado a interactuar de forma directa con personas físicas a diseñarlo de modo que esas personas sepan que interactúan con una IA, salvo que resulte evidente para una persona informada, atenta y perspicaz (13). Esa obligación se aplica desde el 2 de agosto de 2026, antes del lanzamiento del asistente catalán en diciembre. La respuesta automatizada por WhatsApp debería identificarse como IA desde el primer mensaje. El Cyber Bot indio queda fuera del ámbito del RIA, pero muestra el mismo patrón de diseño.
+
+**Modelo on-device.** El procesamiento local reduce la exposición, porque el contenido no llega a ningún servidor, y encaja con la protección de datos desde el diseño del artículo 25 RGPD (14). Queda abierta la cuestión de la confidencialidad de las comunicaciones. El artículo 5.1 de la Directiva 2002/58/CE prohíbe la escucha, la grabación y otros tipos de intervención de las comunicaciones por personas distintas de los usuarios sin su consentimiento (15), y el artículo 18.3 de la Constitución garantiza el secreto de las comunicaciones (16). El consentimiento previo del usuario, el análisis sin salida de datos y la ausencia de reporte automático sitúan a Scam Alert y al modelo de Singapur en una posición defendible. Ningún tribunal europeo ha resuelto, que yo sepa, si el análisis local de mensajes por una función de la propia aplicación entra en el ámbito de ese precepto, y las fuentes no ofrecen elementos para zanjarlo.
+
+**Disrupción activa.** Los bots de Apate.ai plantean cuestiones de otra naturaleza: el tratamiento de datos de las personas que operan las líneas fraudulentas y la cooperación con operadoras que gestionan datos de tráfico. Las fuentes australianas no describen las salvaguardas, y el análisis exigiría conocer la arquitectura y los acuerdos con las operadoras (12).
+
+## 9. Limitaciones, riesgos y retos de escalabilidad
+
+Las fuentes revelan limitaciones comunes.
+
+La mayoría de los anuncios no aportan métricas de rendimiento verificables. Ni el asistente catalán, ni Scam Alert, ni el modelo de GovTech–Google DeepMind, ni el Cyber Bot publican datos de precisión, tasas de falsos positivos o cobertura real (1)(5)(7)(10). Sin esas cifras resulta imposible evaluar la utilidad práctica o comparar los sistemas.
+
+Las soluciones on-device afrontan límites técnicos. Meta describe su modelo como lo bastante ligero para un teléfono, pero no detalla requisitos de hardware ni el comportamiento en terminales de gama baja o con poca batería (5). Singapur usa un proceso en dos etapas para reducir el consumo energético, lo que confirma que los modelos de lenguaje en el dispositivo siguen sujetos a restricciones de recursos (7). Ambas iniciativas dependen de la cooperación de fabricantes de dispositivos y de las plataformas de mensajería.
+
+Surge una tensión entre privacidad y capacidad de análisis. Los sistemas on-device preservan el cifrado, pero limitan el volumen de datos disponibles para entrenar y actualizar los modelos. Las soluciones consultivas permiten un análisis más flexible de los contenidos que el usuario envía, pero las fuentes no aclaran los protocolos de tratamiento, retención o anonimización (1)(10).
+
+El comportamiento del usuario introduce otra limitación. Una respuesta orientativa suficiente puede reducir la urgencia de denunciar de manera formal. Las fuentes catalanas subrayan la distinción entre asistente y comisaría virtual, pero no aportan datos sobre cuántos casos pasan de una a otra (1)(2). Las funciones opcionales, como Scam Alert, dependen de la tasa de activación, que las fuentes no cuantifican.
+
+Las estafas evolucionan con inteligencia artificial generativa, hiperpersonalización y técnicas de ingeniería social prolongada. Los modelos necesitan actualización continua. Las fuentes de Singapur mencionan la necesidad de entrenamiento continuo, pero no detallan frecuencia ni procedimientos (7). El resto de iniciativas tampoco aporta esa información.
+
+Las herramientas existentes avanzan en accesibilidad y privacidad. Operan, sin embargo, con incertidumbre sobre su rendimiento real, su capacidad de adaptación a largo plazo y su impacto neto en la reducción de las ciberestafas.
+
+## 10. Conclusiones y recomendaciones
+
+El análisis comparado muestra tres orientaciones. La primera es consultiva: el asistente de la Agència de Ciberseguretat de Catalunya y el Cyber Bot de Bhandara. El ciudadano envía contenidos o consultas y recibe orientación personalizada (1)(10). La segunda es la detección pasiva on-device: Scam Alert de Meta y el modelo ajustado de GovTech–Google DeepMind. El sistema analiza mensajes o conversaciones en el dispositivo sin transmitir contenido (5)(7). La tercera es la disrupción activa: los bots de Apate.ai intervienen en el canal del estafador y consumen su tiempo y recursos (12).
+
+Las tres se complementan. Las herramientas de asistencia facilitan la detección temprana y reducen barreras. Los sistemas on-device añaden protección automática dentro del canal de comunicación. Las estrategias de disrupción actúan antes sobre la capacidad operativa de las redes de fraude. El caso catalán muestra la utilidad de separar con claridad el servicio de orientación de la comisaría virtual (1)(2).
+
+Las soluciones on-device ponen el énfasis en la privacidad y en el control del usuario. Meta y Singapur procesan todo en el dispositivo y evitan la salida de datos (5)(7). Ese diseño responde a la tensión entre la necesidad de analizar contenidos y la protección de la confidencialidad de las comunicaciones.
+
+Las limitaciones documentadas persisten. La ausencia de métricas públicas dificulta la evaluación de la eficacia real. La escalabilidad de los modelos on-device depende de los recursos del dispositivo, del consumo energético y de la cooperación de plataformas y fabricantes. La evolución rápida de las tácticas basadas en inteligencia artificial generativa exige mecanismos de actualización continua que la mayoría de las fuentes no detallan (7).
+
+Como propuesta de reforma (*lex ferenda*), el caso catalán admite cinco medidas operativas antes y después del lanzamiento de diciembre:
+
+1. Publicar métricas de rendimiento: precisión, tasa de falsos positivos y volumen de consultas.
+2. Divulgar la base jurídica del tratamiento, el plazo de conservación de los mensajes remitidos y la evaluación de impacto en protección de datos.
+3. Identificar el asistente como sistema de IA desde la primera respuesta, conforme al artículo 50.1 del RIA (13).
+4. Medir y publicar cuántas consultas terminan en una denuncia formal ante la comisaría virtual.
+5. Encargar una evaluación independiente a los seis meses del lanzamiento y publicar sus resultados.
+
+El desarrollo apunta a un modelo híbrido, en el que la detección automatizada, la asistencia ciudadana y la disrupción de infraestructuras delictivas conviven y se refuerzan. La eficacia de ese conjunto dependerá de la transparencia sobre el rendimiento de los sistemas, de la distinción clara entre orientación y denuncia formal, y de la capacidad de adaptación continua a un entorno de amenazas que no se detiene.
+
+## Bibliografía
+
+(1) Mansino Pérez, N. (16 de octubre de 2026). Un asistente de IA para WhatsApp: La nueva herramienta de la Generalitat contra las ciberestafas. *El País*. https://elpais.com/espana/catalunya/2026-10-16/un-asistente-de-ia-para-whatsapp-la-nueva-herramienta-de-la-generalitat-contra-las-ciberestafas.html
+
+(2) Europa Press (20 de octubre de 2026). Aprobado el plan catalán contra las ciberestafas, con un nuevo asistente de IA para la ciudadanía. https://www.europapress.es/catalunya/noticia-aprobado-plan-catalan-contra-ciberestafas-nuevo-asistente-ia-ciudadania-20261020125311.html
+
+(3) El Periódico (16 de octubre de 2026). Un nuevo asistente con IA ayudará a los catalanes a detectar estafas virtuales. https://www.elperiodico.com/es/sociedad/20261016/catalunya-tendra-asistente-ia-permitira-detectar-estafas-135410925
+
+(4) La Vanguardia (16 de octubre de 2026). El Govern abrirá una comisaría virtual para denunciar las estafas online. https://www.lavanguardia.com/vida/20261016/11660686/govern-abrira-comisaria-virtual-denunciar-estafas-online.html  
+La Vanguardia (15 de marzo de 2025). La Generalitat lanza un canal de avisos y alertas de ciberseguridad a través de WhatsApp. https://www.lavanguardia.com/vida/20250315/10483072/generalitat-lanza-canal-avisos-alertas-ciberseguridad-traves-whatsapp.html
+
+(5) Engineering at Meta (12 de agosto de 2026). How We’re Building Scam Alert on WhatsApp With End-to-End Encryption and Verifiability Guarantees. https://engineering.fb.com/2026/08/12/security/how-were-building-scam-alert-whatsapp/
+
+(6) The Verge (13 de agosto de 2026). Meta adds AI screening to detect WhatsApp scams. https://www.theverge.com/tech/979654/meta-whatsapp-scam-message-detection  
+Forbes (14 de agosto de 2026). Meta Confirms New WhatsApp On-Device AI-Powered Scam Alert Beta. https://www.forbes.com/sites/daveywinder/2026/08/14/meta-confirms-new-whatsapp-on-device-ai-powered-scam-alert-beta/
+
+(7) Geewax, J. y de Andrés, M. (14 de octubre de 2026). On-Device AI Against Scams: Google DeepMind & MDDI. Google DeepMind. https://deepmind.google/blog/on-device-ai-scam-detection-mddi/
+
+(8) The Straits Times (14 de octubre de 2026). Google, GovTech making AI scam detection model for Android. https://www.straitstimes.com/tech/google-deepmind-govtech-developing-first-of-its-kind-scam-detection-ai-model-for-android-users  
+Channel News Asia (14 de octubre de 2026). GovTech and Google DeepMind developing real-time detection of scams on devices. https://www.channelnewsasia.com/singapore/govtech-google-deepmind-ai-scam-quantum-sicw-6455621
+
+(9) Government Technology Agency of Singapore (GovTech). Scam prevention. https://www.tech.gov.sg/products-and-services/for-citizens/scam-prevention/  
+GovTech (14 de noviembre de 2024, actualizado). AI in Cybersecurity: Fighting scams with AI and overcoming data poisoning. https://www.tech.gov.sg/technews/ai-in-cybersecurity-fighting-scams-with-ai-and-overcoming-data-poisoning/
+
+(10) Indian Masterminds (22 de febrero de 2025). Lost Money, Stolen Data? This Cyber Bot Knows What to Do Next! https://indianmasterminds.com/feature-stories-on-bureaucrats-changemakers/lost-money-stolen-data-this-cyber-bot-knows-what-to-do-next-107591/
+
+(11) The Hindu (2 de julio de 2025). Union Government comes up with an AI-based app that helps prevent potential financial risks online. https://www.thehindu.com/news/national/andhra-pradesh/union-government-comes-up-with-an-ai-based-app-that-helps-prevent-potential-financial-risks-online/article69758646.ece
+
+(12) Australia’s Economic Accelerator (18 de marzo de 2025). Disrupting scammers with an army of AI bots. https://www.aea.gov.au/news/disrupting-scammers-army-ai-bots
+
+(13) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial [en adelante, RIA], DO L, 12 de julio de 2024. Art. 50.1.
+
+(14) Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos [en adelante, RGPD], DO L 119, de 4 de mayo de 2016. Arts. 5.1.c), 6.1.e), 13, 25 y 35.1.
+
+(15) Directiva 2002/58/CE del Parlamento Europeo y del Consejo, de 12 de julio de 2002, relativa al tratamiento de los datos personales y a la protección de la intimidad en el sector de las comunicaciones electrónicas, DO L 201, de 31 de julio de 2002. Art. 5.1.
+
+(16) Constitución Española, de 27 de diciembre de 1978, BOE núm. 311, de 29 de diciembre de 1978. Art. 18.3.
