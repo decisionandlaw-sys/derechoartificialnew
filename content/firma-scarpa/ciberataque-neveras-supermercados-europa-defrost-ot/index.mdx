@@ -1,0 +1,301 @@
+---
+title: "Ciberataque a neveras de supermercados en Europa: análisis OT"
+description: "Segunda oleada de ciberataques a la refrigeración de supermercados europeos: vector técnico, relación con Francia, vulnerabilidades OT y atribución abierta."
+date: "2026-11-03"
+tags: ["ciberseguridad", "tecnología operativa", "infraestructura crítica", "cadena de frío", "NIS 2"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ciberataque-neveras-supermercados-europa-defrost-ot"
+readingTime: 33
+image: "/images/firma-scarpa/ciberataque-neveras-supermercados-europa-defrost-ot/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+En la madrugada del domingo 1 al lunes 2 de noviembre de 2026, los frigoríficos y congeladores de supermercados de media Europa empezaron a calentarse. Las primeras crónicas situaron el ataque en siete países: Bélgica, Suecia, Luxemburgo, Irlanda, Países Bajos, Estonia y Finlandia. Euronews elevó después la cuenta a nueve, con Italia y Portugal. En varias tiendas la temperatura interior llegó a 50 °C, y algunos gerentes suecos hablaron de 55 °C. Los comercios tuvieron que tirar producto fresco y congelado. El responsable de un Delhaize de Hoeilaart, cerca de Bruselas, calculó en unos 100.000 euros la mercancía perdida en su local.
+
+El mecanismo es sencillo de describir. Alguien accedió a las interfaces de gestión remota de los controladores de refrigeración y activó de forma prolongada el modo de descongelación (*defrost*). El equipo dejó de enfriar y empezó a soplar aire caliente. Stephan Moelans, consejero delegado de la empresa belga Sabcobel, que instala y mantiene los sistemas de Delhaize, confirmó ese mecanismo a la agencia Belga. Su equipo empezó a movilizar técnicos a la una de la madrugada y pasó la noche desconectando instalaciones de la red.
+
+El episodio repite el ataque que el 11 y 12 de octubre de 2026 afectó a supermercados franceses. Según la policía francesa, recogida por The Guardian, aquel ataque alcanzó hasta 700 establecimientos de Intermarché, Coopérative U, Carrefour, Leclerc y Monoprix. El CERT-FR, el centro de respuesta de la agencia francesa ANSSI, publicó el 12 de octubre la alerta CERTFR-2026-ALE-012 sobre controladores Danfoss AK-SM y AK-SC, y después sobre equipos Copeland y Dixell XWEB, todos con la interfaz de gestión accesible desde Internet. Tres semanas más tarde, el mismo efecto se produjo en otro conjunto de países. La primera oleada no cerró la superficie de ataque.
+
+La cifra de tiendas afectadas es todavía imprecisa. Delhaize contó unas 40 tiendas en Bélgica y varias en Luxemburgo. Carrefour Bélgica contó 15 de sus 700 locales, Colruyt cinco tiendas Spar, Coop Suecia seis o siete de unos 800 y SuperValu, en Irlanda, 13. IKEA confirmó el ataque en su tienda de Mons. No existe un censo oficial ni una cifra agregada de pérdidas. Las estimaciones por tienda van de 60.000 a 100.000 euros en los casos que la prensa ha documentado.
+
+Las autoridades respondieron con rapidez. La Fiscalía Federal belga abrió una investigación penal. El Centro Nacional de Ciberseguridad sueco investiga varios incidentes. El comisario europeo de Agricultura, Christophe Hansen, habló de un «intento deliberado de perturbar nuestra cadena de suministro alimentario y socavar la confianza de los consumidores en ella». Nadie ha reivindicado el ataque. Tampoco hay petición de rescate ni robo de datos conocido. El Centro para la Ciberseguridad de Bélgica admitió que quizá nunca se identifique a los autores.
+
+El análisis técnico señala cuatro debilidades estructurales. Las interfaces de gestión quedan expuestas a Internet, de forma directa o a través de conexiones móviles 4G. La autenticación es débil: Danfoss corrigió en 2025 una vulnerabilidad (CVE-2025-41450) que permitía entrar como administrador con un código calculado a partir de la fecha. Parte del parque está en fin de vida y no recibe parches. Y la remediación exige a menudo intervenir sobre el aparato, no solo actualizar su software, como explicó el propio Moelans.
+
+Quedan preguntas abiertas. Ninguna fuente pública precisa el exploit de esta segunda oleada ni un CVE concreto, y nadie ha demostrado que los atacantes de octubre y de noviembre sean los mismos. Rafe Pilling, de la empresa Sophos, declaró a The Guardian que los dos escenarios de atribución más verosímiles son una demostración de capacidad de un Estado o la acción de un atacante individual con motivos propios.
+
+Las medidas inmediatas coinciden con las que el CERT-FR recomendó en octubre. Hay que retirar los controladores de Internet y dar acceso solo por VPN o red protegida, actualizar el firmware, cambiar las contraseñas por defecto y revisar la programación de los ciclos de descongelación. Los operadores deben además inventariar sus equipos conectados y comprobar en su póliza de seguro las condiciones para cortar la telemetría del instalador. El informe que sigue examina el vector técnico, la relación con Francia, el impacto, la respuesta institucional y las implicaciones para la seguridad de la cadena alimentaria y para el marco europeo de ciberseguridad.
+
+# Cuando el frío se convierte en arma: el ciberataque que elevó a 50 °C los frigoríficos de supermercados en Europa
+
+**Análisis técnico-operativo de la segunda oleada de intrusiones en sistemas de control de refrigeración (OT) de los días 1 y 2 de noviembre de 2026, su relación con el incidente francés de octubre y las vulnerabilidades estructurales de la cadena de frío comercial**
+
+## Índice
+
+1. Introducción y alcance del incidente  
+2. Descripción factual de los hechos (1-2 de noviembre de 2026)  
+3. Vector técnico y *modus operandi*  
+4. Relación con el ciberataque francés de octubre de 2026  
+5. Actores afectados y magnitud del impacto  
+6. Respuesta de operadores, autoridades y organismos de ciberseguridad  
+7. Vulnerabilidades estructurales de los sistemas de refrigeración conectados  
+8. Implicaciones para la seguridad de la cadena alimentaria y la infraestructura crítica  
+9. Limitaciones de la información disponible y lagunas de atribución  
+10. Conclusiones técnicas y recomendaciones operativas  
+
+---
+
+## 1. Introducción y alcance del incidente
+
+En la madrugada del 1 al 2 de noviembre de 2026, una oleada de incidentes golpeó a la vez los sistemas de refrigeración y congelación de supermercados de al menos siete países europeos: Bélgica, Suecia, Luxemburgo, Irlanda, Países Bajos, Estonia y Finlandia (1)(2)(3). Euronews amplió después la lista a nueve países, con Italia y Portugal (20). Los equipos registraron un aumento brusco y no autorizado de temperatura que, en varios casos documentados, llegó a 50 °C y, según algunos reportes, a 55 °C (1)(4). Los comercios tuvieron que desechar cantidades considerables de productos frescos y congelados por razones de seguridad alimentaria.
+
+El patrón técnico consiste en la activación remota del modo de descongelación (*defrost*) de los evaporadores. Si ese modo se mantiene de forma prolongada, el equipo deja de refrigerar y empieza a generar calor, con lo que invierte su función habitual (5)(6). Un fallo aleatorio de hardware no produce ese comportamiento. Lo produce la manipulación deliberada de los parámetros de control a través de interfaces de gestión remota.
+
+La segunda oleada llegó a menos de tres semanas de la primera. Esta se desarrolló la noche del 11 al 12 de octubre de 2026 y afectó sobre todo a Francia, donde la policía habló de hasta 700 supermercados de cadenas como Intermarché, Coopérative U, Carrefour, Leclerc y Monoprix (2)(7)(8). Los dos episodios repiten el mismo *modus operandi*, la manipulación remota de controladores de refrigeración expuestos a Internet, y conviene tratarlos como manifestaciones de un mismo fenómeno de abuso de sistemas de tecnología operativa (OT, por sus siglas en inglés) en el comercio minorista de alimentación.
+
+El caso interesa a la ciberseguridad por tres razones. Primera: los sistemas afectados controlan un proceso físico crítico, la cadena de frío, y su alteración causa daños materiales inmediatos y medibles en forma de mercancía perdida. Segunda: los dispositivos se despliegan en entornos comerciales muy dispersos, lo que multiplica la superficie de ataque. Tercera: nadie ha reivindicado los hechos, no consta petición de rescate y no se ha detectado exfiltración de datos, de modo que el patrón se aleja del ransomware clásico y se acerca al sabotaje (9).
+
+El alcance geográfico confirmado en el momento de redactar este informe abarca, como mínimo, los siete países citados. Las fuentes mencionan con más frecuencia a Ahold Delhaize (Delhaize), Carrefour, Colruyt/Spar, ICA, Coop, SuperValu (Musgrave) e Intermarché (1)(2)(3)(10). Las cifras de tiendas afectadas varían según la fuente y falta un censo oficial. Las estimaciones periodísticas oscilan entre varias decenas y algo más de un centenar de puntos de venta en el conjunto de los países (1)(3)(11).
+
+Este informe analiza el incidente desde la ciberseguridad de los sistemas de control industrial y desde la resiliencia de la cadena de suministro alimentaria. Se basa solo en las fuentes públicas disponibles hasta el 3 de noviembre de 2026.
+
+---
+
+## 2. Descripción factual de los hechos (1-2 de noviembre de 2026)
+
+Los primeros indicios surgieron en la madrugada del domingo 1 al lunes 2 de noviembre de 2026. En Bélgica, varios responsables de tiendas recibieron alertas en sus teléfonos móviles entre la 01:00 y las 03:30 (hora local). Stephan Moelans, consejero delegado de la instaladora Sabcobel, que gestiona cientos de sistemas de refrigeración para Delhaize y otros operadores, declaró que su equipo empezó a movilizar técnicos a la 01:00 después de detectar un acceso no autorizado a los controladores (5)(6).
+
+En Suecia, los gerentes de tiendas ICA y Coop detectaron el problema entre las 02:00 y las 05:30. Una tienda ICA de Sjöbo, en el sur del país, comunicó en público que sus frigoríficos y congeladores habían sido «hackeados» durante la noche y que la temperatura se había fijado en 50 °C (1)(4). En el ICA Baronen de Estocolmo, el personal encontró un aviso interno que atribuía la avería de todos los congeladores a un ciberataque ocurrido a las 02:00, y la dirección de ventas de la tienda explicó que nadie lo notó hasta las 05:30 (1)(21).
+
+El patrón técnico se repitió en todos los países. Los atacantes accedieron a las interfaces de gestión remota de los controladores y activaron de forma prolongada el modo *defrost* de los evaporadores. Los equipos dejaron de refrigerar y soplaron aire caliente. La temperatura interior de las cámaras subió hasta valores que, según distintos reportes, alcanzaron 50 °C y, en algunos casos documentados, 55 °C (1)(4)(12).
+
+Las cadenas afectadas y el número aproximado de establecimientos, según las declaraciones públicas disponibles, son los siguientes:
+
+- **Bélgica y Luxemburgo**: Ahold Delhaize, con unos 40 establecimientos Delhaize y al menos cuatro en Luxemburgo; Carrefour Bélgica, con 15 de sus unos 700 locales; Colruyt Group / Spar, con cinco; Intermarché, con unos 15; y al menos una tienda de IKEA, la de Mons (1)(2)(3)(10)(11)(20).  
+- **Suecia**: ICA, con un número limitado de tiendas, sobre todo las conectadas fuera de la red central de la compañía; y Coop, con seis o siete de sus unos 800 establecimientos (1)(2)(13).  
+- **Irlanda**: SuperValu (Musgrave) comunicó 13 establecimientos afectados (3)(10).  
+- **Otros países**: se confirmaron incidentes en Países Bajos, Estonia y Finlandia (Kesko), con menos detalle cuantitativo en las fuentes abiertas, y Euronews añadió casos en Italia y Portugal (2)(3)(20).  
+
+En varios casos los operarios no pudieron restablecer las temperaturas desde las interfaces locales. Tuvieron que desconectar los equipos de la red o intervenir a mano sobre los controladores (5)(6). Las consecuencias inmediatas fueron la pérdida de productos refrigerados y congelados y estimaciones parciales de daño económico: unos 100.000 euros en un establecimiento Delhaize de Hoeilaart (Bélgica) y al menos 60.000 euros en un Proxy Delhaize (11)(14). Ninguna fuente oficial ha publicado una cifra agregada de pérdidas.
+
+Las autoridades reaccionaron con rapidez. El Centro para la Ciberseguridad de Bélgica (Centre for Cybersecurity Belgium) informó de que seguía el incidente y de que desconocía a los atacantes (3). La Fiscalía Federal belga abrió una investigación penal (15). El Centro Nacional de Ciberseguridad de Suecia confirmó que investigaba varios incidentes relacionados con los sistemas de refrigeración de supermercados (13). La Comisión Europea, por boca del comisario de Agricultura y Alimentación, Christophe Hansen, calificó los hechos de «intento deliberado de perturbar nuestra cadena de suministro alimentario y socavar la confianza de los consumidores en ella» (2).
+
+Hasta el 3 de noviembre de 2026, fecha de cierre de la información de este informe, ninguna organización ha reivindicado el ataque, nadie ha hecho pública una petición de rescate y no consta exfiltración de datos.
+
+---
+
+## 3. Vector técnico y *modus operandi*
+
+Las fuentes disponibles coinciden en el vector: acceso remoto no autorizado a las interfaces de gestión de los controladores de refrigeración y manipulación posterior de sus parámetros operativos. En concreto, los atacantes activaron de forma prolongada o forzada el ciclo de descongelación de los evaporadores (5)(6). Ese modo está pensado para eliminar de forma periódica la escarcha de los intercambiadores de calor e implica interrumpir la refrigeración durante un tiempo y, en algunos diseños, activar resistencias eléctricas o invertir el ciclo. Si se mantiene sin pausa, el equipo calienta el interior de la cámara hasta valores incompatibles con la conservación de alimentos (1)(4).
+
+Los sistemas afectados pertenecen a la categoría de tecnología operativa (OT) y de sistemas de control industrial (ICS, por sus siglas en inglés). Son controladores dedicados que vigilan y regulan la temperatura de vitrinas, cámaras frigoríficas y congeladores. Suelen incluir una interfaz web o un protocolo de gestión remota con el que los técnicos de mantenimiento supervisan los equipos y ajustan consignas sin desplazarse a la tienda. Cuando esas interfaces quedan expuestas a Internet, de forma directa o a través de conexiones móviles 4G, y carecen de autenticación robusta, segmentación de red o parches al día, ofrecen un punto de entrada viable (9)(16).
+
+Varias fuentes coinciden en que los atacantes cambiaron de forma remota la configuración de los evaporadores a modo *defrost* en noviembre de 2026. Moelans, de Sabcobel, confirmó ese mecanismo de forma expresa (5)(6). En Suecia, Coop indicó que algunos equipos afectados usaban conexiones 4G en lugar de la red 5G actualizada de la compañía, lo que los hacía «más expuestos» (13). ICA señaló que las tiendas afectadas operaban fuera de su red central (1).
+
+El patrón técnico guarda continuidad con el ataque francés del 11 y 12 de octubre de 2026. Allí, el CERT-FR identificó controladores Danfoss de las series AK-SM y AK-SC y, a partir del 13 de octubre, equipos Copeland XWEB y Dixell XWEB, todos con la interfaz de administración accesible desde Internet (16)(19). Danfoss indicó que la mayoría de las unidades afectadas eran modelos antiguos que ya no recibían actualizaciones de seguridad, o modelos actuales con el firmware desactualizado (8). La empresa Censys recordó que Danfoss había corregido en 2025 la vulnerabilidad CVE-2025-41450, que permitía a un actor no autenticado entrar como administrador con un código calculable a partir de la fecha en curso, sin conocer la contraseña. Danfoss no ha confirmado el vector exacto de acceso inicial (8)(17). Para la oleada de noviembre no existe un análisis forense público que confirme el mismo fabricante o la misma vulnerabilidad, pero las descripciones operativas (activación remota del *defrost*, equipos conectados a redes poco protegidas y necesidad de intervención física en muchos casos) son casi idénticas (9)(16).
+
+Tampoco hay rasgos de ransomware: ni cifrado de datos ni petición de pago ni exfiltración. El objetivo aparente fue alterar el funcionamiento físico de los sistemas de frío para deteriorar la mercancía. Que la manipulación se ejecutara casi a la vez en varios países indica que los atacantes ya conocían los sistemas expuestos o que usaron técnicas automatizadas para descubrir interfaces accesibles (9). La empresa Forescout ha medido esa exposición: los sistemas de refrigeración de supermercados conectados a Internet abundan sobre todo en Francia, Italia, Grecia y Bélgica, mientras que Reino Unido no figura entre los diez primeros países (22).
+
+A 3 de noviembre de 2026 no se ha publicado un identificador CVE específico ni un informe técnico detallado de la vulnerabilidad explotada en esta segunda oleada. Las fuentes describen el efecto observable y el vector de acceso, y no precisan el método de autenticación ni el exploit.
+
+---
+
+## 4. Relación con el ciberataque francés de octubre de 2026
+
+El incidente del 1 y 2 de noviembre de 2026 continúa de forma directa, en lo técnico y en lo operativo, el ciberataque que afectó a supermercados franceses la noche del 11 al 12 de octubre. Las fuentes describen ambos episodios como manifestaciones del mismo fenómeno: la manipulación remota de controladores de refrigeración expuestos a Internet mediante la activación forzada y prolongada del modo de descongelación (1)(2)(7)(8).
+
+En Francia, los atacantes accedieron a los sistemas de control de temperatura de varios cientos de establecimientos. Las cifras varían según la fuente. La policía francesa habló de hasta 700 supermercados (2). Les Mousquetaires, propietaria de Intermarché y Netto, comunicó entre 150 y más de 300 tiendas afectadas. Coopérative U reconoció unas 80 y Carrefour otras 80, y Monoprix cifró en torno al 5 % de su red. También hubo impactos en E.Leclerc y otros operadores (7)(8)(17)(18). Las temperaturas interiores llegaron a 50 °C en numerosos casos, y en algunos establecimientos se documentaron daños añadidos, como sobrecalentamiento de equipos e incendios (7)(8).
+
+El CERT-FR publicó el 12 de octubre la alerta CERTFR-2026-ALE-012, titulada «Incident de sécurité ciblant les contrôleurs à distance des installations de réfrigération». La actualizó el 13 de octubre con nuevos equipos afectados (Copeland XWEB y Dixell XWEB) y el 16 con nuevas recomendaciones (19). El texto advertía de que era probable que las campañas de ataque siguieran en curso.
+
+La oleada de noviembre reproduce el efecto observable: temperaturas de 50 a 55 °C tras la activación remota del *defrost*. Los operadores belgas y suecos, y los análisis técnicos publicados, subrayan la similitud del *modus operandi* (1)(5)(6)(9). Varias fuentes recuerdan que el incidente de noviembre llegó «apenas tres semanas después» del francés y que afecta a sistemas de la misma naturaleza (1)(2)(3). En algunas tiendas suecas se mencionó de nuevo a Danfoss como proveedor de los controladores afectados (13).
+
+La repetición del ataque en un intervalo tan corto y con el mismo patrón indica que las vulnerabilidades explotadas en octubre no se habían corregido en la mayor parte del parque europeo. Moelans declaró que Sabcobel inició un proceso de parcheo tras el incidente francés y que el efecto de la oleada de noviembre habría sido mucho peor sin esa labor, pero que muchos equipos exigen modificaciones físicas y no solo actualizaciones de software, lo que frena la mitigación (5)(6)(22). Esa limitación explica en parte la persistencia de la superficie de ataque.
+
+A 3 de noviembre de 2026 no existe una atribución oficial que vincule a los mismos actores con ambos incidentes. Tampoco se ha publicado un informe forense que confirme la reutilización del mismo exploit o de las mismas credenciales. La coincidencia en el objetivo (sistemas de control de refrigeración comercial), en la técnica (activación remota del *defrost*) y en el resultado (deterioro masivo de alimentos) justifica, con todo, tratar ambos episodios como parte de un mismo ciclo de abuso de infraestructuras OT expuestas en el comercio minorista de alimentación europeo.
+
+---
+
+## 5. Actores afectados y magnitud del impacto
+
+Los actores afectados de forma directa son operadores del comercio minorista de alimentación y, en menor medida, fabricantes de sistemas de refrigeración y empresas de mantenimiento. Las fuentes identifican las siguientes cadenas y alcances aproximados.
+
+En **Bélgica y Luxemburgo**, Ahold Delhaize comunicó un «incidente informático» en los sistemas de refrigeración de varias decenas de tiendas. Las estimaciones periodísticas lo sitúan en torno a 40 tiendas en Bélgica y al menos cuatro en Luxemburgo (1)(2)(3)(10). Carrefour Bélgica confirmó la afectación de 15 de sus unos 700 establecimientos y lo calificó de ciberataque (1)(3)(20). Colruyt Group, que opera tiendas Spar en régimen de franquicia, indicó que cinco resultaron afectadas (1). Intermarché reportó unos 15 puntos de venta, e IKEA confirmó el ataque en su tienda de Mons (2)(3)(20). Fuentes locales mencionaron también impactos en algunas carnicerías de Amberes (11).
+
+En **Suecia**, ICA reconoció que un «número limitado» de establecimientos, sobre todo los que operaban fuera de su red central, sufrió la manipulación de sus sistemas de refrigeración y congelación (1)(13). Coop confirmó entre seis y siete de sus unos 800 locales (1)(2)(13). Varios gerentes de ICA describieron la pérdida total del contenido de sus congeladores, con temperaturas internas de 50 °C y, en algunos casos, de 55 °C (1)(4)(12).
+
+En **Irlanda**, Musgrave (propietaria de SuperValu) reportó 13 establecimientos afectados (3)(10). Hubo incidentes también en Países Bajos, Estonia y Finlandia (con menciones a Kesko), con menos detalle cuantitativo (2)(3), y Euronews recogió casos en Italia, entre ellos al menos cuatro supermercados Coop en Sicilia, y en Portugal (20).
+
+El impacto se manifiesta en tres dimensiones:
+
+1. **Pérdida de mercancía.** La temperatura superó los umbrales de seguridad alimentaria y obligó a desechar productos frescos y congelados. Las estimaciones parciales son de unos 100.000 euros en un Delhaize de Hoeilaart y de al menos 60.000 euros en un Proxy Delhaize (11)(14). En Suecia, gerentes de ICA afirmaron que «todo estaba destruido» (1)(4). No existe una cifra oficial agregada para el conjunto de los países.
+
+2. **Disrupción operativa.** La mayoría de los establecimientos siguió abierta tras intervenciones de emergencia (desconexión de los equipos de Internet o intervención física sobre los controladores), pero los equipos técnicos y de seguridad alimentaria cargaron con un trabajo inmediato. En Bélgica, la agencia de seguridad alimentaria (FAVV/AFSCA) recordó a los operadores su obligación de verificar si los productos habían superado las temperaturas máximas permitidas (16).
+
+3. **Alcance geográfico y sectorial.** Que el mismo patrón se repitiera casi a la vez en al menos siete países, y quizá en nueve, muestra la naturaleza transnacional de la superficie de ataque. Los sistemas de refrigeración comercial de cadenas distintas comparten proveedores de controladores y arquitecturas de gestión remota parecidas, y eso facilita la propagación de un mismo vector (9)(16).
+
+Falta un censo oficial consolidado. Las cifras de establecimientos proceden de declaraciones de las propias empresas y de recuentos periodísticos, que no siempre coinciden. Tampoco se ha publicado una evaluación completa de las pérdidas económicas ni del volumen total de alimentos desechados.
+
+---
+
+## 6. Respuesta de operadores, autoridades y organismos de ciberseguridad
+
+Los operadores se centraron primero en contener el daño físico y recuperar el control de los sistemas. En Bélgica, Ahold Delhaize declaró haber identificado un «incidente informático» en los sistemas de refrigeración de varias decenas de tiendas y afirmó que sus equipos trabajaban para evaluar la situación y mantener los puntos de venta operativos (1)(10). Carrefour Bélgica habló con más claridad: un portavoz lo calificó de ciberataque, limitó el impacto a 15 de sus unos 700 locales y señaló que había adoptado medidas inmediatas para garantizar la continuidad (1)(3)(20).
+
+Sabcobel movilizó técnicos desde la 01:00 del 2 de noviembre. Moelans confirmó que se trataba de un ciberataque en el que los evaporadores habían pasado a modo de descongelación, y explicó que su empresa había iniciado un proceso de parcheo tras el incidente francés. Subrayó que una actualización de software no basta en muchos casos, porque numerosos equipos requieren modificaciones físicas, y que esa necesidad limita la velocidad de la mitigación (5)(6). Varios operadores eligieron la medida más rápida a su alcance: desconectar de Internet los sistemas afectados para impedir nuevas manipulaciones remotas (6).
+
+En Suecia, ICA informó de que apoyaba a las tiendas afectadas, sobre todo a las que operaban fuera de su red central, y de que investigaba el incidente (1)(13). Coop confirmó un incidente cibernético, dio el problema por resuelto y reconoció que algunos equipos usaban conexiones 4G, lo que los hacía más expuestos (13).
+
+En el plano institucional, el Centre for Cybersecurity Belgium declaró que seguía el incidente, que desconocía a los atacantes y que «puede que nunca sea posible identificarlos» (3). La Fiscalía Federal belga abrió una investigación penal (15). El Centro Nacional de Ciberseguridad de Suecia confirmó que trabajaba en varios incidentes de refrigeración en supermercados (13). En el Reino Unido, donde no se han notificado casos, la patronal British Retail Consortium informó de que los minoristas colaboran con el National Cyber Security Centre para blindar sus equipos frente a posibles ataques (22).
+
+A escala europea, el comisario de Agricultura y Alimentación, Christophe Hansen, calificó los hechos de «intento deliberado de perturbar nuestra cadena de suministro alimentario y socavar la confianza de los consumidores en ella» (2). Con esa declaración, el incidente sale del terreno de la ciberseguridad y entra en el de la resiliencia de la cadena alimentaria.
+
+A 3 de noviembre de 2026, ningún organismo nacional ni europeo de ciberseguridad ha publicado un informe técnico detallado sobre el vector exacto de esta segunda oleada. La respuesta se ha limitado, por ahora, a la contención, la investigación policial y la comunicación pública del carácter deliberado del ataque.
+
+---
+
+## 7. Vulnerabilidades estructurales de los sistemas de refrigeración conectados
+
+Los incidentes de noviembre y de octubre revelan un conjunto de vulnerabilidades estructurales y recurrentes en los sistemas de control de refrigeración comercial. Esas debilidades no son puntuales ni exclusivas de un fabricante. Responden a patrones habituales en el despliegue de tecnología operativa en el comercio minorista de alimentación.
+
+La primera es la **exposición directa o indirecta a Internet de las interfaces de gestión remota**. Los controladores incorporan interfaces web o protocolos de administración con los que los técnicos vigilan temperaturas, reciben alarmas y modifican consignas sin ir a la tienda. Cuando esas interfaces se pueden alcanzar desde redes públicas, de forma directa o a través de conexiones móviles 4G, cualquiera puede explotarlas a distancia (9)(16). El propio CERT-FR señaló en su alerta que exponer una interfaz de gestión a Internet es contrario a las buenas prácticas (19). En Suecia, Coop reconoció que algunos equipos afectados usaban conexiones 4G en lugar de la red 5G actualizada de la compañía, lo que los hacía «más expuestos» (13).
+
+La segunda es la **debilidad o ausencia de autenticación robusta**. En octubre, los análisis técnicos documentaron credenciales por defecto o de baja complejidad en controladores Danfoss (17), y Censys recordó que la vulnerabilidad CVE-2025-41450 permitía entrar como administrador con un código derivado de la fecha actual (8). Para noviembre no hay un análisis forense equivalente. Que los atacantes lograran manipular a distancia los parámetros de *defrost* en varios países indica, sin embargo, que las medidas de autenticación vigentes no frenaron el acceso no autorizado (5)(6)(9).
+
+La tercera es la **obsolescencia de una parte importante del parque de equipos**. Varios controladores están en situación de fin de vida (*end-of-life*) o carecen de actualizaciones de seguridad. Danfoss señaló que la mayoría de las unidades afectadas en Francia eran modelos antiguos sin parches o modelos actuales con firmware desactualizado (8). Moelans añadió que, en muchos casos, una actualización de software no basta y hay que modificar el propio equipo (5)(6). Por eso la superficie de ataque seguía abierta tres semanas después del incidente francés, aunque algunas empresas habían empezado a parchear.
+
+A estas debilidades se suman los problemas clásicos de la arquitectura OT: segmentación insuficiente entre los sistemas de control de refrigeración y las redes corporativas o de acceso remoto, falta de monitorización específica de anomalías en los parámetros de temperatura y ausencia de mecanismos de control de integridad que impidan modificar sin autorización las consignas críticas (9)(16).
+
+Con estas vulnerabilidades, los sistemas de refrigeración comercial conectados se convierten en un objetivo atractivo para quien busca un impacto físico, inmediato y visible, el deterioro de alimentos, con un coste técnico bajo. La repetición del ataque en tan poco tiempo prueba que las medidas de remediación tras el incidente de octubre no habían alcanzado cobertura suficiente en el parque europeo.
+
+---
+
+## 8. Implicaciones para la seguridad de la cadena alimentaria y la infraestructura crítica
+
+El incidente del 1 y 2 de noviembre de 2026 rebasa el ámbito técnico de la ciberseguridad OT y alcanza la resiliencia de la cadena de suministro alimentaria europea. La cadena de frío es un eslabón crítico para conservar productos perecederos. Su alteración deliberada causa un daño físico inmediato, el deterioro de la mercancía, que no se revierte restaurando los sistemas informáticos (1)(2).
+
+El comisario Hansen situó el ataque en el marco de la seguridad alimentaria y de la confianza pública, más allá de la disrupción operativa de unos establecimientos concretos (2). Desde el punto de vista de la seguridad alimentaria, una temperatura por encima de los umbrales reglamentarios obliga a desechar los productos afectados. La FAVV/AFSCA recordó a los operadores su obligación de comprobar si los alimentos habían superado las temperaturas máximas permitidas (16). Las pérdidas documentadas en tiendas concretas, de decenas de miles de euros, ilustran el coste directo de esa medida preventiva (11)(14).
+
+Los sistemas de refrigeración comercial forman parte de la cadena de valor que garantiza el suministro continuo de alimentos frescos y congelados. El incidente de noviembre no causó desabastecimiento generalizado. Su carácter transnacional y la repetición del mismo vector, apenas tres semanas después del ataque francés, evidencian una superficie de ataque compartida y mal mitigada en el comercio minorista europeo (1)(2)(9).
+
+El *modus operandi*, un sabotaje sin petición de rescate ni exfiltración aparente, refuerza la dimensión disruptiva del ataque. El ransomware busca un beneficio económico. Aquí el daño se materializa de inmediato en bienes físicos y en la posible erosión de la confianza del consumidor (9). Que el efecto se produzca casi a la vez en varios países demuestra la interdependencia técnica de los sistemas de control de refrigeración que despliegan cadenas y proveedores distintos.
+
+**Marco normativo europeo.** La Directiva (UE) 2022/2555 (NIS 2) incluye en su anexo II, entre los sectores críticos, la producción, transformación y distribución de alimentos. Su aplicación a un minorista concreto depende de que ejerza actividades de distribución al por mayor o de transformación industrial, de modo que cada operador debe comprobar si queda dentro de su ámbito (23). El Reglamento (UE) 2024/2847 (Reglamento de Ciberresiliencia) impone a los fabricantes de productos con elementos digitales obligaciones de seguridad desde el diseño y de notificación de las vulnerabilidades que se explotan de forma activa, con un calendario escalonado que culmina en diciembre de 2027 (24). En términos generales, sus requisitos de diseño seguro no alcanzan de forma retroactiva a los controladores ya instalados, y ese desfase temporal agrava el problema práctico de la remediación del parque que sufrió los ataques.
+
+A 3 de noviembre de 2026 no hay una evaluación oficial consolidada del volumen de alimentos desechados ni del impacto económico agregado. Tampoco existe un análisis público de las repercusiones a medio plazo sobre la percepción ciudadana de la seguridad de la cadena alimentaria. Las implicaciones descritas derivan de los hechos documentados y de las declaraciones institucionales disponibles.
+
+---
+
+## 9. Limitaciones de la información disponible y lagunas de atribución
+
+El análisis del incidente se enfrenta a varias limitaciones, derivadas del carácter preliminar de la información pública a 3 de noviembre de 2026.
+
+En primer lugar, **no existe un censo oficial consolidado** del número de establecimientos afectados ni del volumen de alimentos desechados. Las cifras que circulan (unos 40 establecimientos Delhaize, 15 de Carrefour Bélgica, entre cinco y siete de Coop, 13 de SuperValu y otras) proceden de declaraciones de las empresas y de recuentos periodísticos, que no siempre coinciden (1)(2)(3)(10)(11). Tampoco se ha publicado una estimación agregada de las pérdidas totales. El recuento de países también cambia: de siete en las primeras crónicas a nueve en la cobertura posterior (20).
+
+En segundo lugar, **falta un informe forense técnico detallado** sobre el vector explotado en esta segunda oleada. Las fuentes confirman de forma coherente la activación remota del modo *defrost* y la exposición de interfaces de gestión, pero no aportan información pública sobre el método de autenticación de los atacantes, el posible exploit o un CVE asociado (5)(6)(9)(16). La similitud con el incidente francés es evidente en el efecto observable, y ninguna fuente oficial ha confirmado que se reutilizara el mismo fabricante, el mismo modelo de controlador o la misma vulnerabilidad. En el caso francés, los investigadores tampoco han demostrado que la vulnerabilidad CVE-2025-41450 fuera la vía de entrada (8).
+
+En tercer lugar, **la atribución sigue abierta**. Ningún grupo ha reivindicado el ataque. El Centre for Cybersecurity Belgium indicó que los atacantes eran desconocidos y que «puede que nunca sea posible identificarlos» (3). Nadie ha hecho pública una prueba que vincule el incidente de forma concluyente con un actor estatal, con ciberdelincuencia organizada o con otra entidad concreta. Rafe Pilling, de Sophos, planteó dos escenarios de atribución verosímiles: una señal y demostración de capacidad de un Estado, o un atacante individual con motivos personales (22). Esas son hipótesis de analista, sin respaldo documental en fuentes abiertas.
+
+En cuarto lugar, **la información sobre remediación es parcial**. Varios operadores desconectaron los sistemas de Internet y empresas como Sabcobel habían iniciado el parcheo tras el ataque francés. Faltan datos agregados sobre la cobertura de esas medidas y sobre el porcentaje de equipos que siguen siendo vulnerables (5)(6).
+
+Estas limitaciones no invalidan los hechos documentados: la manipulación remota de sistemas de refrigeración, la subida de temperaturas hasta 50-55 °C y la pérdida de mercancía en varios países. Sí condicionan el alcance de cualquier conclusión que vaya más allá de describir los eventos y las vulnerabilidades estructurales ya identificadas.
+
+---
+
+## 10. Conclusiones técnicas y recomendaciones operativas
+
+El incidente del 1 y 2 de noviembre de 2026 es la segunda oleada documentada de manipulación remota de sistemas de control de refrigeración comercial en Europa en menos de tres semanas. El patrón técnico, con acceso no autorizado a interfaces de gestión y activación prolongada del modo de descongelación, reproduce en lo sustancial el del ciberataque que afectó a cientos de supermercados franceses el 11 y 12 de octubre de 2026 (1)(2)(7)(8).
+
+Los hechos verificables permiten afirmar que un número considerable de controladores de refrigeración de establecimientos de al menos siete países europeos estaba expuesto a Internet o a redes con una protección insuficiente. Esa exposición permitió alterar a distancia sus parámetros operativos. El resultado directo fue una temperatura interior de 50 a 55 °C en frigoríficos y congeladores y la pérdida de productos alimentarios (1)(4)(5)(6).
+
+Las vulnerabilidades estructurales identificadas son la exposición de interfaces de gestión, la autenticación débil o ausente, los equipos en fin de vida y la insuficiencia de los parcheos posteriores a octubre. Ellas explican que la superficie de ataque persista (5)(6)(9)(16)(17). La declaración de Moelans de que muchos equipos requieren modificaciones físicas, y no solo actualizaciones de software, muestra los límites prácticos de la remediación en este tipo de sistemas OT (5)(6).
+
+Para la seguridad de la cadena alimentaria, el incidente demuestra que alterar de forma deliberada la cadena de frío causa un daño físico inmediato y medible, con consecuencias económicas y de confianza del consumidor, como subrayó el comisario europeo de Agricultura (2).
+
+La atribución sigue abierta. Ninguna fuente oficial ha identificado a los responsables, y el Centre for Cybersecurity Belgium indicó que puede que nunca lo haga (3). Tampoco hay un informe forense público que precise el exploit de la oleada de noviembre.
+
+Las conclusiones de este informe se traducen en seis recomendaciones operativas. Las cinco primeras reproducen las medidas de la alerta CERTFR-2026-ALE-012 (19) y la sexta se deduce del marco europeo descrito en la sección 8.
+
+1. **Retirar la exposición a Internet.** Los operadores deben suprimir el acceso directo desde Internet a toda unidad de refrigeración publicada en una dirección IP pública y desconectar de inmediato los equipos que sospechen comprometidos.
+2. **Restablecer el acceso por canales protegidos.** El acceso remoto debe pasar por una VPN o por una red protegida. El filtrado de las direcciones IP de los instaladores en un cortafuegos sirve como medida de urgencia, y no como solución duradera.
+3. **Actualizar y endurecer.** Hay que aplicar las actualizaciones de firmware, activar los niveles de seguridad estricta que ofrezca el fabricante y cambiar todas las contraseñas por defecto.
+4. **Revisar la configuración.** Conviene comprobar la configuración completa de cada controlador, en especial los ciclos de descongelación programados, y restaurar de fábrica los equipos comprometidos antes de volver a ponerlos en servicio.
+5. **Revisar el seguro.** Antes de cortar la telemetría hacia el instalador, el operador debe comprobar las condiciones de su póliza.
+6. **Inventariar y clasificar.** Cada cadena debe contar con un inventario de sus controladores conectados, con su modelo, su versión de firmware y su estado de fin de vida, y determinar si su actividad entra en el ámbito de la Directiva NIS 2 (23).
+
+En síntesis, el episodio de noviembre de 2026 confirma una superficie de ataque real y mal mitigada en los sistemas de refrigeración comercial conectados de Europa. Los hechos documentados muestran que unir tecnología operativa y conectividad remota sin controles de seguridad adecuados crea un riesgo tangible para la integridad de la cadena de frío y, con ella, para la continuidad del suministro alimentario minorista.
+
+---
+
+## Bibliografía
+
+(1) Reuters, “New cyberattack on supermarket fridges sweeps across Europe”, 2 de noviembre de 2026.  
+https://www.reuters.com/business/retail-consumer/temperature-soars-swedish-grocery-store-freezers-one-store-blames-hackers-2026-11-02/
+
+(2) The Guardian, “Supermarket freezers across Europe hit by second suspected cyber-attack”, 2 de noviembre de 2026.  
+https://www.theguardian.com/world/2026/nov/02/supermarket-freezers-across-europe-hit-by-second-suspected-cyber-attack
+
+(3) POLITICO, “Europe’s supermarkets hit by new wave of cyberattacks targeting fridges”, 2 de noviembre de 2026.  
+https://www.politico.eu/article/new-supermarket-hack-in-belgium-sweden-luxembourg/
+
+(4) The Times, “Supermarket freezers soar to 55C across Europe as cyberattacks spread”, 2 de noviembre de 2026.  
+https://www.thetimes.com/world/europe/article/belgium-sweden-cyberattack-supermarket-fridges-3hhldpjn6
+
+(5) Declaraciones de Stephan Moelans (consejero delegado de Sabcobel) a la agencia Belga, reproducidas por CNBC (21) y The Guardian (2), 2 de noviembre de 2026.
+
+(6) The Record (Recorded Future), “Second wave of suspected cyberattacks hits supermarket freezers across Europe”, 2 de noviembre de 2026.  
+https://therecord.media/cyberattack-grocery-freezers-europe
+
+(7) The Guardian, “Hackers force French supermarket fridges to heat up to 50C in ‘unprecedented’ cyber-attack”, 12 de octubre de 2026.  
+https://www.theguardian.com/world/2026/oct/12/cyber-attack-defrosts-refrigerators-france-supermarket-chains-intermarche-cooperative-u
+
+(8) Censys, “Frostbitten in France: A Danfoss StoreView Internet Exposure Report”, 14 de octubre de 2026.  
+https://censys.com/blog/frostbitten-in-france-a-danfoss-storeview-internet-exposure-report
+
+(9) Help Net Security, “Second wave of refrigeration cyberattacks hits European supermarkets”, 2 de noviembre de 2026.  
+https://www.helpnetsecurity.com/2026/11/02/european-supermarkets-refrigeration-units-cyberattacks/
+
+(10) Declaraciones de Ahold Delhaize, Carrefour Bélgica, ICA y Coop recogidas por Reuters (1), The Guardian (2) y BBC News (11), 2 de noviembre de 2026.
+
+(11) BBC News, “Shop freezers in seven European countries hit by cyber-attack”, 2 de noviembre de 2026.  
+https://www.bbc.co.uk/news/articles/cq1kd1nee80eo
+
+(12) Forbes, “New Wave Of Refrigerator Cyberattacks Roils European Supermarkets: ‘Everything Is Destroyed’”, 2 de noviembre de 2026.  
+https://www.forbes.com/sites/conormurray/2026/11/02/new-wave-of-refrigerator-cyberattacks-roils-european-supermarkets-everything-is-destroyed/
+
+(13) Declaraciones de Coop y del Centro Nacional de Ciberseguridad de Suecia recogidas por Reuters, AFP y medios suecos, 2 de noviembre de 2026.
+
+(14) Estimaciones de pérdidas en establecimientos Delhaize reportadas por Het Laatste Nieuws y medios belgas, 2 de noviembre de 2026.
+
+(15) El País, “Un ciberataque causa pérdidas millonarias en decenas de supermercados europeos tras disparar la temperatura de las neveras”, 2 de noviembre de 2026.  
+https://elpais.com/tecnologia/2026-11-02/un-ciberataque-causa-perdidas-millonarias-en-decenas-de-supermercados-en-belgica-y-suecia.html
+
+(16) Rescana, “Europe Supermarket Refrigeration Cyberattacks: What Retailers and Cold-Chain Vendors Should Do Now”, 3 de noviembre de 2026.  
+https://www.rescana.com/post/europe-supermarket-refrigeration-cyberattack-ot-prepare-now
+
+(17) PhishFort, “French Supermarket Fridge Hack: What Happened and How to Prevent It”, 20 de octubre de 2026.  
+https://phishfort.com/french-supermarket-refrigeration-cyberattack-danfoss/
+
+(18) OCCRP, “Hackers Turn French Supermarket Refrigerators Into Furnaces”, 13 de octubre de 2026.  
+https://www.occrp.org/en/news/hackers-turn-french-supermarket-refrigerators-into-furnaces
+
+(19) CERT-FR (ANSSI), “Incident de sécurité ciblant les contrôleurs à distance des installations de réfrigération”, CERTFR-2026-ALE-012, publicada el 12 de octubre de 2026 y actualizada el 13 y el 16 de octubre.  
+https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-012
+
+(20) Euronews, “Which countries in Europe have been hit by supermarket fridge cyber incidents?”, 3 de noviembre de 2026.  
+https://l.euronews.com/NeR3
+
+(21) CNBC, “Cyberattack on fridges hits supermarkets across Europe”, 2 de noviembre de 2026.  
+https://cnbc.com/2026/11/02/cyberattack-on-fridges-hits-supermarkets-across-europe.html
+
+(22) The Guardian, “Who is hacking Europe’s supermarket fridges and freezers, and why?”, 2 de noviembre de 2026 (declaraciones de Rafe Pilling, de Sophos, de Daniel dos Santos, de Forescout, de Sabcobel y de la British Retail Consortium).  
+https://theguardian.com/technology/2026/nov/02/europe-supermarket-fridges-freezers-who-hacking-why
+
+(23) Directiva (UE) 2022/2555 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022, relativa a las medidas destinadas a garantizar un elevado nivel común de ciberseguridad en toda la Unión (Directiva NIS 2), DO L 333, de 27 de diciembre de 2022, anexo II.  
+https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+
+(24) Reglamento (UE) 2024/2847 del Parlamento Europeo y del Consejo, de 23 de octubre de 2024, relativo a los requisitos horizontales de ciberseguridad para los productos con elementos digitales (Reglamento de Ciberresiliencia), DO L, 20 de noviembre de 2024.  
+https://eur-lex.europa.eu/eli/reg/2024/2847/oj
