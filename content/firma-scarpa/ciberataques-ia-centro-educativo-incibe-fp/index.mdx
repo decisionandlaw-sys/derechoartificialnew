@@ -1,0 +1,245 @@
+---
+title: "Ciberataques con IA en un centro de FP: el caso del INCIBE"
+description: "Qué consta y qué no del caso INCIBE: indicios de ciberataques con IA desde un centro público de FP, protocolo recomendado y marco penal."
+date: "2026-11-04"
+tags: ["INCIBE", "ciberseguridad", "inteligencia artificial", "centros educativos", "Código Penal"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "ciberataques-ia-centro-educativo-incibe-fp"
+readingTime: 24
+image: "/images/firma-scarpa/ciberataques-ia-centro-educativo-incibe-fp/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 13 de octubre de 2026, el Instituto Nacional de Ciberseguridad (INCIBE) publicó un caso real que le llegó por la Línea de Ayuda en Ciberseguridad, el teléfono 017. Una profesora de Formación Profesional de un centro público pedía orientación. Sospechaba que un alumno usaba los ordenadores del aula para atacar empresas con instrucciones que le daban herramientas de inteligencia artificial. Dos medios de León, ciudad donde INCIBE tiene su sede, recogieron el caso el 1 y el 2 de noviembre.
+
+Lo que consta cabe en pocas líneas. Según el relato de INCIBE, que se apoya en lo que contó la docente, el alumno usaba un programa para detectar si Veyon, el software de control de aulas, lo estaba monitorizando. Escribía mensajes intimidatorios en el bloc de notas y ya tenía una amonestación por mal uso de los equipos. El centro hizo una copia de seguridad del ordenador y la examinó en una máquina virtual. En ella encontró indicios de ataques a empresas guiados por inteligencia artificial y una consulta sobre cómo fabricar una bomba.
+
+Lo que falta pesa tanto como lo que consta. INCIBE no identifica el centro, no da la fecha de los hechos, no detalla qué herramientas, objetivos o registros aparecieron y no confirma que ningún ataque llegara a ejecutarse con éxito. Ninguna fuente menciona denuncia, detención o investigación policial. Los dos medios que reprodujeron el caso lo dicen de forma expresa.
+
+El protocolo que INCIBE dio a la profesora tiene cinco pasos: informar a la dirección para activar el protocolo interno, comunicar la situación a las familias o tutores según los procedimientos del centro, preservar el disco duro sin modificarlo, poner los hechos en conocimiento de las Fuerzas y Cuerpos de Seguridad del Estado y, por tratarse de un centro público, valorar la notificación al CCN-CERT. INCIBE justifica el aviso policial porque el equipo del centro se estaría usando para actividades que podrían ser delictivas. La consulta sobre explosivos añade un indicio de riesgo físico, pero la fuente no la presenta como motivo de la derivación.
+
+En el plano penal, los indicios podrían encajar en el acceso ilícito a sistemas de información (artículo 197 bis.1 del Código Penal, prisión de seis meses a dos años) y en los daños informáticos (artículo 264, prisión de seis meses a tres años cuando el resultado es grave). Ambos tipos exigen un acceso o un daño efectivo, y ninguna fuente lo acredita. Buscar cómo fabricar una bomba no es delito. Lo son la fabricación, la tenencia y el tráfico de explosivos sin autorización, y tampoco constan. INCIBE no da la edad del alumno, un dato decisivo: si tuviera menos de 18 años, respondería con arreglo a la Ley Orgánica 5/2000, de responsabilidad penal de los menores.
+
+El análisis plantea además una cuestión que la fuente no toca. El centro examinó el contenido del ordenador de un alumno y las fuentes no aclaran con qué garantías. Si el caso llegara a un proceso, la validez de esa prueba dependería de que el examen fuera proporcionado y de que el centro hubiera documentado la cadena de custodia.
+
+España ya tiene un precedente. El 28 de junio de 2024 la Guardia Civil anunció la operación Oceansx y la detención de dos hombres a quienes atribuye más de cien ciberataques, entre ellos los dirigidos contra la Dirección General de Tráfico y varios ayuntamientos. Uno era estudiante de FP, tenía 18 años y usaba ordenadores de su centro. Los arrestos se habían practicado en octubre de 2023 y ambos quedaron en libertad con cargos a la espera de la instrucción. La diferencia con el caso de 2026 es de grado: en 2024 había una investigación con ataques concretos atribuidos, y en 2026 hay indicios sin investigación conocida.
+
+Tres lecciones para los centros educativos. Un alumno con conocimientos puede detectar y esquivar el software de supervisión. Los equipos de aula tienen conectividad y, a veces, privilegios elevados. Y separar el uso indebido de la actividad delictiva exige un análisis forense con garantías, que los docentes no deberían improvisar. El caso vale más como señal de riesgo que como hecho probado, y el artículo termina con seis medidas operativas.
+
+# Cuando el aula se convierte en vector de ataque: indicios de ciberataques asistidos por inteligencia artificial desde equipos de un centro educativo público
+
+**Análisis técnico-jurídico del caso publicado por el Instituto Nacional de Ciberseguridad en octubre de 2026**
+
+## Índice
+
+1. Identificación y delimitación del incidente  
+2. Hechos según la fuente primaria de INCIBE  
+3. Elementos técnicos del caso: monitorización, evasión y uso de inteligencia artificial  
+4. Dimensión de seguridad física y de riesgos duales: la consulta sobre explosivos  
+5. Protocolo de actuación recomendado por INCIBE y marco de respuesta institucional  
+6. Marco jurídico aplicable: posibles tipificaciones penales y obligaciones del centro  
+7. Contexto más amplio: precedentes de uso de equipos educativos para ciberataques en España  
+8. Riesgos sistémicos para el sector educativo y límites de la información disponible  
+9. Conclusiones técnicas y operativas  
+
+---
+
+## 1. Identificación y delimitación del incidente
+
+El Instituto Nacional de Ciberseguridad (INCIBE) publicó el 13 de octubre de 2026 el caso real titulado «Indicios de ciberataques con Inteligencia Artificial en un centro educativo» (1). Una profesora de Formación Profesional de un centro público llamó al 017, la Línea de Ayuda en Ciberseguridad, para pedir orientación (1).
+
+La docente refirió comportamientos extraños de un alumno, indicios de que usaba los ordenadores del centro para atacar empresas con ayuda de inteligencia artificial y una consulta sobre cómo fabricar una bomba (1). INCIBE recoge ese relato en tercera persona («nos indicó») y nada en el texto sugiere que examinara el equipo o las pruebas.
+
+INCIBE no indica la fecha de los hechos ni el nombre del centro. Tampoco aclara si alguien presentó denuncia o si la policía abrió diligencias (1)(2).
+
+El caso encaja en la categoría de amenaza interna (*insider threat*), el riesgo que procede de una persona con acceso legítimo a los sistemas de una organización. La calificación es de este análisis. INCIBE no la usa en su relato.
+
+Las fuentes no confirman que los ataques llegaran a ejecutarse ni que el alumno fabricara o intentara fabricar un explosivo (2)(3). Describen indicios que provocaron una consulta, no un incidente consumado con daños verificados.
+
+El análisis que sigue se limita a los hechos que INCIBE describe y a sus consecuencias técnicas, operativas y jurídicas.
+
+---
+
+## 2. Hechos según la fuente primaria de INCIBE
+
+INCIBE publicó el caso a partir de la información que aportó la profesora (1). La fuente primaria es, por tanto, un relato de segunda mano.
+
+La docente vio que un alumno usaba un programa para detectar si Veyon, el software de control de aulas, monitorizaba su ordenador. El mismo alumno escribía mensajes intimidatorios en el bloc de notas y ya tenía una amonestación previa por uso indebido de los equipos del centro (1).
+
+El centro hizo una copia de seguridad del ordenador, la guardó en un disco duro y la analizó en una máquina virtual (1). El análisis arrojó indicios de que el alumno podría estar atacando a empresas desde el equipo del centro, guiado por instrucciones obtenidas mediante inteligencia artificial. Reveló también una consulta sobre cómo fabricar una bomba (1). INCIBE habla de «indicios» y de que el alumno «podría» estar realizando los ataques. No afirma que los realizara.
+
+INCIBE no detalla qué herramientas, objetivos o *logs* aparecieron. Tampoco confirma que los ataques tuvieran éxito ni aclara por qué canal se hizo la consulta sobre explosivos (1).
+
+Los medios que reprodujeron el caso el 1 y el 2 de noviembre de 2026 coinciden en estos hechos. Añaden que no constaba detención ni investigación formal del alumno, ni denuncia confirmada (2)(3). El centro sigue sin identificar. Solo se sabe que se imparte Formación Profesional.
+
+La fuente primaria refiere cuatro hechos: comportamientos de evasión de la monitorización y mensajes intimidatorios; una amonestación previa; indicios de actividad ofensiva asistida por inteligencia artificial; y una consulta sobre fabricación de una bomba. Lo que vaya más allá de estos puntos carece de respaldo documental.
+
+---
+
+## 3. Elementos técnicos del caso: monitorización, evasión y uso de inteligencia artificial
+
+El relato de INCIBE permite distinguir tres elementos técnicos.
+
+El primero es la evasión de la monitorización. El alumno usaba un programa para detectar si Veyon vigilaba su pantalla (1). Veyon permite al profesor ver las pantallas, bloquear equipos y tomar el control remoto. Detectar esa vigilancia es una técnica de evasión conocida y apunta a que el alumno sabía que el centro lo controlaba y quería saltarse el control.
+
+El segundo es el análisis de la copia. El examen en máquina virtual mostró indicios de ataques contra empresas. INCIBE no especifica si apareció material de reconocimiento, *scripts*, *logs* de conexiones o restos de tráfico. Afirma solo que existían indicios de actividad ofensiva dirigida a terceros (1). La máquina virtual aísla la ejecución del contenido analizado respecto del sistema anfitrión y reduce el riesgo de activar *malware* por accidente. Ese aislamiento no garantiza por sí solo la integridad de la prueba. Para eso la práctica forense exige trabajar sobre una copia verificada mediante *hash* y documentar la cadena de custodia, como recogen la norma ISO/IEC 27037 (4) y la UNE 71506 (5). INCIBE no dice si el centro aplicó esas garantías (1).
+
+El tercero es la inteligencia artificial. Según INCIBE, los indicios estaban ligados a instrucciones obtenidas de herramientas de este tipo (1). La fuente no dice si eran modelos de lenguaje públicos, asistentes especializados u otra solución, ni qué clase de instrucciones se pedían. El dato importa para el derecho de la inteligencia artificial: los proveedores de modelos de uso general suelen incorporar políticas de uso y salvaguardas frente a peticiones de ayuda para intrusiones, y el relato no aclara qué herramienta se empleó ni si esas salvaguardas intervinieron.
+
+La combinación de evasión de la monitorización, indicios de ataques externos y uso de inteligencia artificial encaja con una posible amenaza interna. Las fuentes no permiten afirmar que el alumno pasara de un uso indebido a una actividad ofensiva organizada. Sin datos técnicos no cabe medir el grado de sofisticación ni confirmar o descartar una infraestructura de mando y control.
+
+Tampoco confirman que se vulnerara un sistema de terceros ni permiten cuantificar daño alguno. Lo que consta es una detección temprana y la necesidad de conservar las pruebas (1)(2).
+
+---
+
+## 4. Dimensión de seguridad física y de riesgos duales: la consulta sobre explosivos
+
+Durante el análisis de la copia apareció una consulta sobre cómo fabricar una bomba (1). El hallazgo añade al caso una dimensión de riesgo físico.
+
+INCIBE solo registra la existencia de la consulta. No indica el medio (buscador, modelo de lenguaje u otro), el grado de detalle de lo pedido ni si el alumno obtuvo instrucciones concretas (1). Los medios que cubrieron el caso subrayan que no hay prueba de que fabricara o intentara fabricar un artefacto (2)(3).
+
+Buscar información sobre explosivos no es delito por sí solo. El Código Penal sanciona la tenencia, el tráfico, el depósito y la fabricación de sustancias o aparatos explosivos sin autorización (6), no la consulta de información (3). Dentro de un centro educativo y junto a indicios de ciberataques, la búsqueda funciona como indicador de riesgo que exige valoración.
+
+INCIBE no vincula de forma expresa su recomendación de avisar a las Fuerzas y Cuerpos de Seguridad con esa consulta. Su razonamiento es que el equipo del centro «se estaría utilizando» para actividades que podrían ser delictivas (1). La consulta sobre explosivos agrava la preocupación, pero la fuente no la convierte en el motivo de la derivación. Corresponde a la policía, no al centro, decidir si esa consulta tiene relevancia propia, y la comunicación de los hechos permite esa valoración conjunta.
+
+El concepto de riesgo dual designa conocimientos o actividades con usos legítimos que también pueden servir a fines ilícitos. En un ciclo de Formación Profesional, donde el alumno accede a equipos y a veces a talleres, una consulta de este tipo obliga a valorar juntos el riesgo cibernético y el riesgo físico.
+
+Las fuentes no permiten saber si la consulta respondía a curiosidad, a planificación o a otra motivación. Tampoco indican si el alumno mostró otros comportamientos relacionados con materiales peligrosos.
+
+---
+
+## 5. Protocolo de actuación recomendado por INCIBE y marco de respuesta institucional
+
+Los especialistas de la Línea 017 dieron a la profesora cinco pautas (1).
+
+Primero, informar al equipo directivo para que active el protocolo interno del centro. En un centro público la dirección gestiona los incidentes que afectan a la seguridad del alumnado, del personal o de los recursos (1).
+
+Segundo, comunicar la situación a los padres o tutores legales siguiendo los protocolos y procedimientos del centro (1). INCIBE no precisa si el alumno es menor de edad. Si es mayor, comunicar el asunto a su familia plantea una cuestión de protección de datos distinta, que el protocolo del centro debe resolver.
+
+Tercero, preservar el disco duro con la copia de seguridad sin modificar ni borrar su contenido, como posible evidencia (1). La instrucción sigue los principios básicos de la preservación forense digital (4)(5).
+
+Cuarto, poner los hechos en conocimiento de las Fuerzas y Cuerpos de Seguridad del Estado, porque el equipo del centro se estaría usando para actividades que podrían ser delictivas (1). Si los indicios llegaran a constituir noticia de un delito público, la Ley de Enjuiciamiento Criminal obliga a quienes la tengan por razón de su cargo, profesión u oficio a denunciarlo de inmediato ante el Ministerio Fiscal, el juez de instrucción o la policía (7).
+
+Quinto, informar a los responsables de seguridad correspondientes y valorar la notificación al CCN-CERT, el organismo de referencia para los incidentes de ciberseguridad en el sector público (1). El Esquema Nacional de Seguridad regula la gestión de incidentes y su comunicación al CCN-CERT en las entidades públicas (8). Si este incidente alcanza el umbral que ese régimen fija es una valoración que corresponde al responsable de seguridad del centro.
+
+El protocolo de INCIBE no incluye instrucciones técnicas avanzadas de contención. Se centra en la cadena de comunicación institucional y en la preservación de evidencias, y deja la investigación técnica y la calificación penal a las autoridades competentes. Las fuentes no indican si el centro presentó denuncia ni si el CCN-CERT recibió notificación (1)(2).
+
+Las medidas siguen un orden escalonado: activar los mecanismos internos, informar a las familias y derivar el caso a los organismos con competencias de investigación y respuesta.
+
+---
+
+## 6. Marco jurídico aplicable: posibles tipificaciones penales y obligaciones del centro
+
+Los indicios que describe INCIBE podrían encajar en varias figuras del Código Penal. Hoy ninguna fuente acredita la consumación de un delito ni la apertura de una investigación formal (1)(2). Todo lo que sigue es hipotético y condicional.
+
+El artículo 197 bis.1 castiga con prisión de seis meses a dos años a quien, por cualquier medio y vulnerando las medidas de seguridad establecidas para impedirlo, sin estar autorizado, acceda al conjunto o a una parte de un sistema de información, facilite a otro el acceso o se mantenga en él contra la voluntad de quien tenga derecho a excluirlo (9). Si se confirmaran los ataques contra empresas y se acreditara un acceso no autorizado a sus sistemas, este precepto podría aplicarse. El artículo 197 ter añade una pena de prisión de seis meses a dos años o multa de tres a dieciocho meses para quien, sin autorización, produzca, adquiera, importe o facilite a terceros un programa cuya finalidad principal sea cometer esos delitos, con intención de facilitarlos (9). Importaría solo si las herramientas que el alumno usó contra terceros se hubieran producido o adquirido con esa finalidad, y INCIBE no dice nada al respecto.
+
+El artículo 264 regula los daños informáticos. El tipo básico impone prisión de seis meses a tres años a quien, sin autorización y de manera grave, borre, dañe, deteriore, altere, suprima o haga inaccesibles datos informáticos, programas informáticos o documentos electrónicos ajenos, cuando el resultado producido sea grave (10). Existe un tipo agravado en el mismo artículo y la figura de obstaculización o interrupción del funcionamiento de un sistema ajeno en el artículo 264 bis (10). Estas normas exigen acreditar un resultado de daño o interrupción efectiva. Las fuentes no lo recogen.
+
+La mera búsqueda de información sobre fabricación de una bomba no es delito. Solo la fabricación, la tenencia o el tráfico de explosivos sin autorización genera responsabilidad penal (6)(3), y esos hechos no se han acreditado.
+
+La edad del alumno condiciona el régimen aplicable y INCIBE no la indica. Si tuviera menos de 18 años, el artículo 19 del Código Penal lo excluye de la responsabilidad penal con arreglo a ese Código y remite a la Ley Orgánica 5/2000, de 12 de enero, reguladora de la responsabilidad penal de los menores, que se aplica a las personas mayores de catorce años y menores de dieciocho (11). Con 18 años o más, respondería conforme al Código Penal.
+
+Queda una cuestión que la fuente no aborda: con qué cobertura jurídica examinó el centro el contenido del equipo. Un ordenador de uso educativo no elimina toda expectativa de privacidad sobre lo que escribe el alumno en él. La jurisprudencia constitucional y la del Tribunal Europeo de Derechos Humanos sobre el control de equipos en el ámbito laboral ofrecen un criterio por analogía. El control debe perseguir un fin legítimo y ser proporcionado, y la doctrina de Estrasburgo exige además aviso previo de su posibilidad (12)(13). En un centro educativo todo depende de si las normas de uso de los equipos advertían de la monitorización, como sugiere la presencia de Veyon, y de si el examen del contenido se limitó a lo necesario. Una irregularidad en esa fase podría debilitar la prueba en un proceso, porque no surten efecto las pruebas obtenidas, de forma directa o indirecta, con violación de derechos o libertades fundamentales (14).
+
+El centro público tiene deberes de actuación. INCIBE recomienda informar a la dirección, comunicar la situación a los padres o tutores, preservar las evidencias, avisar a las fuerzas de seguridad y valorar la notificación al CCN-CERT (1). Esas pautas se apoyan en el deber general de los centros públicos de garantizar un uso seguro de sus recursos digitales y de proteger al alumnado y a terceros frente a usos indebidos de sus infraestructuras.
+
+Mientras no se confirme la materialización de los ataques ni la apertura de diligencias, no cabe afirmar responsabilidad penal concreta. La valoración definitiva corresponderá, en su caso, a los jueces tras la investigación y el análisis forense de las pruebas.
+
+---
+
+## 7. Contexto más amplio: precedentes de uso de equipos educativos para ciberataques en España
+
+El caso de 2026 no es un fenómeno aislado. El 28 de junio de 2024 la Guardia Civil anunció la operación Oceansx y la detención de dos hombres a quienes atribuye más de un centenar de ciberataques a organismos públicos y privados (15)(16)(17).
+
+Las detenciones se habían practicado en octubre de 2023. La Guardia Civil tardó meses en reunir los indicios y en ese tiempo mantuvo el sigilo para no perder pruebas alojadas en servidores que otras personas podían borrar (16). Uno de los arrestados, de 18 años recién cumplidos y estudiante de Formación Profesional, usaba ordenadores de su centro para parte de los ataques (15). Según El País, el arresto de uno de ellos se produjo en un aula de FP de grado superior, mientras cerraba la venta de datos de la Dirección General de Tráfico y de la ITV de Asturias por 13.000 dólares (16).
+
+Los objetivos incluían la Dirección General de Tráfico, los ayuntamientos de León y Salamanca, las diputaciones de Málaga y Jaén, el Servicio Cántabro de Salud y, fuera de España, el Ministerio de Salud de Perú y el Poder Judicial del Estado de Tlaxcala, en México. Los detenidos operaban con una quincena de alias y promocionaban sus ataques en un canal de Telegram (15)(16). Ingresaron en prisión provisional y unos meses después quedaron en libertad con cargos, a la espera de que concluya la instrucción (16). Conviene hablar, por tanto, de ataques atribuidos y no de hechos juzgados.
+
+Los dos casos comparten estructura: alumnado de Formación Profesional, equipos del centro usados como vector de ataque y actividad ofensiva dirigida a entidades externas. La diferencia está en el estado de la investigación. En 2024 la Guardia Civil había reunido indicios durante meses y atribuía ataques concretos y la venta de datos. En 2026 hay indicios sin investigación conocida y sin confirmación de que los ataques se materializaran (1)(2).
+
+La repetición de estos escenarios señala una vulnerabilidad concreta de los entornos educativos: equipos con conectividad, a veces con privilegios elevados y con menos supervisión técnica que los sistemas corporativos, y alumnado con conocimientos técnicos en formación. Cuando esos factores coinciden con la capacidad de eludir la monitorización, el centro puede convertirse en punto de origen de actividad maliciosa hacia el exterior.
+
+Estos precedentes respaldan las recomendaciones de INCIBE sobre preservación de evidencias y derivación a las autoridades, y refuerzan la necesidad de protocolos internos que detecten pronto los usos anómalos de los recursos digitales.
+
+---
+
+## 8. Riesgos sistémicos para el sector educativo y límites de la información disponible
+
+El caso pone de relieve tres riesgos que afectan a los centros públicos de Formación Profesional.
+
+El primero es el uso de los recursos del centro como vector de ataque hacia el exterior. Los equipos de las aulas ofrecen conectividad y capacidad de procesamiento, y suelen tener menos supervisión que los sistemas corporativos. Si un alumno con conocimientos técnicos los emplea para actividades ofensivas, el centro se convierte en origen de posibles incidentes que afectan a terceros y plantean la cuestión de la responsabilidad de la institución, que las fuentes no analizan.
+
+El segundo es la evasión de los mecanismos de control. El programa que detectaba Veyon demuestra que las herramientas de supervisión de aulas fallan cuando el usuario sabe identificarlas y esquivarlas. Esa capacidad debilita la detección temprana por parte del profesorado y del personal técnico (1).
+
+El tercero es el riesgo dual de la consulta sobre explosivos. Buscar información no es delito, pero su aparición junto a indicios de ciberataques eleva la preocupación y obliga a una valoración integral de la amenaza (1)(3).
+
+Las fuentes tienen límites claros. INCIBE no identifica el centro, no aporta la edad del alumno, no detalla la naturaleza técnica de los indicios de ataque y no confirma que se materializara un acceso ilícito o un daño a terceros (1). En las publicaciones de noviembre de 2026 no constaba denuncia formal, detención ni investigación policial (2)(3).
+
+Esas lagunas impiden cuantificar el alcance real del incidente. Una conclusión sobre la consumación de delitos, la sofisticación de las técnicas o la existencia de una amenaza persistente carecería de respaldo. El valor del caso está en ilustrar vulnerabilidades estructurales y en mostrar la necesidad de protocolos de respuesta claros.
+
+---
+
+## 9. Conclusiones técnicas y operativas
+
+El caso que INCIBE publicó el 13 de octubre de 2026 muestra la detección temprana de comportamientos anómalos en un centro educativo público. Los hechos que la fuente refiere se limitan a técnicas de evasión de la monitorización, mensajes intimidatorios, indicios de actividad ofensiva asistida por inteligencia artificial y una consulta sobre fabricación de una bomba (1).
+
+Desde el punto de vista técnico, el incidente revela tres vulnerabilidades recurrentes: la posibilidad de eludir las herramientas de supervisión de aulas, la disponibilidad de recursos con conectividad externa que pueden servir de vector de ataque y la dificultad de distinguir entre uso indebido y actividad que podría ser delictiva sin un análisis forense. Hacer una copia de seguridad y examinarla en una máquina virtual protege frente a la ejecución accidental de código malicioso. La utilidad de esa copia como prueba depende de que se verificara su integridad y se documentara su custodia, y la fuente no lo aclara (1)(4)(5).
+
+El protocolo que INCIBE recomendó resulta proporcionado: activar los mecanismos internos del centro, informar a las familias, preservar las pruebas y derivar el caso a las fuerzas de seguridad y, en su caso, al CCN-CERT (1). Esas medidas trasladan la investigación a los organismos con competencias reales y evitan que el centro asuma funciones que no le corresponden.
+
+Los límites de la información impiden afirmar la consumación de delitos o cuantificar el impacto. No consta que se produjeran accesos ilícitos efectivos, daños a sistemas de terceros ni apertura de diligencias (2)(3). El caso funciona como indicador de riesgo y como oportunidad para mejorar los protocolos de detección y respuesta.
+
+El precedente de 2024, en el que un estudiante de Formación Profesional usó equipos de su centro en ciberataques que la Guardia Civil atribuye a gran escala, confirma que estas situaciones no son excepcionales (15)(16).
+
+De la comparación de ambos casos se derivan seis medidas operativas para los centros:
+
+1. Aprobar una política de uso aceptable de los equipos que advierta de forma expresa de la monitorización y de su alcance, y darla a conocer al alumnado. Esa advertencia es la base de la proporcionalidad de cualquier control posterior (12)(13).
+2. Retirar los privilegios de administrador en los equipos de aula, segmentar la red del alumnado y filtrar el tráfico de salida, para reducir la utilidad del centro como origen de ataques.
+3. Centralizar los registros de actividad de los equipos de aula, de modo que la detección no dependa solo de que un profesor observe una pantalla.
+4. Fijar un procedimiento de preservación de evidencias con copia verificada mediante *hash* y registro de custodia, conforme a ISO/IEC 27037 y UNE 71506 (4)(5), y limitar el examen del contenido a lo imprescindible, de modo que el análisis en profundidad quede en manos de la policía judicial.
+5. Designar un canal de escalado que reúna a la dirección, al responsable de seguridad y al responsable de protección de datos, con un criterio escrito para decidir cuándo notificar al CCN-CERT (8).
+6. Formar al profesorado para distinguir el uso indebido de los indicios de actividad delictiva y mantener abierto el contacto con la Línea 017 de INCIBE y con las autoridades competentes (1).
+
+El valor principal del caso es preventivo. Muestra cómo la observación docente, la preservación de evidencias y la derivación institucional pueden interrumpir a tiempo una posible escalada de riesgo, tanto en el ámbito cibernético como en el de la seguridad física.
+
+---
+
+## Bibliografía
+
+(1) Instituto Nacional de Ciberseguridad (INCIBE). *Indicios de ciberataques con Inteligencia Artificial en un centro educativo*. Caso real publicado el 13 de octubre de 2026. Disponible en: https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/indicios-de-ciberataques-con-inteligencia-artificial-en-un-centro-educativo
+
+(2) León 24 Horas. *Un alumno, bajo sospecha de ciberataques a empresas con ayuda de la IA: también buscó cómo fabricar una bomba*. 1 de noviembre de 2026. Disponible en: https://www.leon24horas.net/sucesos/alumno-sospecha-ciberataques-empresas-ayuda-ia-tambien-busco-como-fabricar-bomba/20261101162229213188.html
+
+(3) Digital de León. *Un alumno que buscaba como hacer una bomba pone en alerta al INCIBE en León*. 2 de noviembre de 2026. Disponible en: https://www.digitaldeleon.com/articulo/noticias-leon/alumno-que-buscaba-hacer-bomba-pone-alerta-incibe-leon/20261102193000232825.html
+
+(4) ISO/IEC 27037:2012. *Information technology. Security techniques. Guidelines for identification, collection, acquisition and preservation of digital evidence*.
+
+(5) UNE 71506:2013. *Tecnologías de la Información (TI). Metodología para el análisis forense de las evidencias electrónicas*. AENOR.
+
+(6) Código Penal español (Ley Orgánica 10/1995, de 23 de noviembre), artículo 568. Texto consolidado.
+
+(7) Ley de Enjuiciamiento Criminal (Real Decreto de 14 de septiembre de 1882), artículos 259 y 262. Texto consolidado.
+
+(8) Real Decreto 311/2022, de 3 de mayo, por el que se regula el Esquema Nacional de Seguridad. BOE de 4 de mayo de 2022.
+
+(9) Código Penal español, artículos 197 bis y 197 ter. Texto consolidado.
+
+(10) Código Penal español, artículos 264, 264 bis y 264 ter. Texto consolidado.
+
+(11) Código Penal español, artículo 19, y Ley Orgánica 5/2000, de 12 de enero, reguladora de la responsabilidad penal de los menores.
+
+(12) Tribunal Constitucional. Sentencia 170/2013, de 7 de octubre.
+
+(13) Tribunal Europeo de Derechos Humanos (Gran Sala). *Bărbulescu c. Rumanía*, n.º 61496/08, sentencia de 5 de septiembre de 2017.
+
+(14) Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial, artículo 11.1.
+
+(15) El Mundo. *Detenidos un estudiante de FP y su cómplice por hackear la DGT, ayuntamientos, bancos, universidades y más de 100 administraciones*. 28 de junio de 2024. Disponible en: https://www.elmundo.es/espana/2024/06/28/667d97d8fc6c832a6c8b4576.html
+
+(16) El País. *En clase, y vendiendo un acceso a los datos de la DGT*. 28 de junio de 2024. Disponible en: https://elpais.com/espana/2024-06-28/en-clase-y-vendiendo-un-acceso-a-los-datos-de-la-dgt.html
+
+(17) ABC. *Dos jóvenes autodidactas hackearon unas 200 cuentas de organismos públicos y privados*. 28 de junio de 2024. Disponible en: https://www.abc.es/espana/andalucia/malaga/dos-detenidos-asturias-sevilla-centenar-ciberataques-organismos-20240628105755-nts.html
