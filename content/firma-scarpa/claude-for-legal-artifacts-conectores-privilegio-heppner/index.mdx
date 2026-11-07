@@ -1,0 +1,251 @@
+---
+title: "Claude for Legal: artifacts, conectores y límites del privilegio"
+description: "Anthropic lleva Claude for Legal del chat a los artifacts. Analizamos arquitectura, revisión humana, riesgo de privilegio tras Heppner y adopción real."
+date: "2026-11-07"
+tags: ["Claude for Legal", "Anthropic", "privilegio abogado-cliente", "legaltech", "IA generativa"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "claude-for-legal-artifacts-conectores-privilegio-heppner"
+readingTime: 29
+image: "/images/firma-scarpa/claude-for-legal-artifacts-conectores-privilegio-heppner/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 28 de octubre de 2026 Anthropic presentó una galería de *artifacts* para Claude for Legal. Son tablas, tableros y paneles que el abogado rellena con sus propios documentos y que Claude analiza con un enlace a la fuente en cada resultado. Robert Mahari, responsable del producto, explicó el motivo del cambio: buena parte del trabajo jurídico no cabe en un chat de ida y vuelta. El abogado necesita comparar contratos, seguir plazos y revisar conjuntos de documentos, y para eso una conversación se queda corta.
+
+El catálogo inicial reúne seis herramientas de Anthropic: un *cite check*, una matriz de jurisdicciones, un tablero de asuntos, un tablero de desviaciones del *playbook*, un radar regulatorio y una revisión tabular de contratos. Suma cuatro desarrollos de terceros (Goodwin, Harvey, Foley & Lardner y PwC) y nueve *artifacts* de acceso a la justicia. Más de sesenta conectores, entre ellos iManage, NetDocuments, Ironclad, DocuSign, Everlaw y Relativity, alimentan el sistema desde mayo. Cada *artifact* arranca con un ejemplo, recibe los datos del despacho, produce una primera pasada y deja la decisión al abogado.
+
+Ese diseño cambia la unidad de trabajo. El mensaje de chat cede su lugar a un objeto que se comparte, se reutiliza y se ajusta a los procedimientos de cada firma. También traslada el problema de la fiabilidad a los sistemas de registro. Un gestor documental con versiones obsoletas o con permisos mal configurados produce un análisis trazable y equivocado. Los *artifacts* que dependen de Claude o de aplicaciones conectadas, además, no se distribuyen con enlaces públicos, y un cliente externo no puede usar esas funciones.
+
+El riesgo mayor es procesal. El 10 de febrero de 2026 el juez Jed S. Rakoff, del Distrito Sur de Nueva York, resolvió de viva voz en *United States v. Heppner* que treinta y un documentos que un acusado había generado con Claude no gozaban de privilegio abogado-cliente ni de protección como *work product*. Publicó su opinión escrita el 17 de febrero. El acusado había usado la versión de consumo y había actuado sin dirección de su abogado. El tribunal entendió que la política de privacidad de la plataforma excluía una expectativa razonable de confidencialidad. Los planes Team y Enterprise de Anthropic, con retención configurable y sin entrenamiento por defecto con datos del cliente, reducen parte de la exposición. No eliminan que la infraestructura pertenezca a un tercero, y *Heppner* dejó sin resolver qué ocurre cuando un abogado dirige el uso de la herramienta.
+
+La exactitud sigue en manos del profesional. El *cite check* contrasta un documento con las fuentes que aporta el propio usuario, de modo que comprueba lo que recibe y no lo que debería haberse citado. Un estudio sobre 2.058 consultas de citación según el *Bluebook* midió que los modelos de frontera producen una cita que cumple por completo la norma solo el 42,6 % de las veces, sin ejemplos previos. Claude Opus 5 lideró la prueba con un 51,3 %, una cifra insuficiente para trabajar sin revisión humana. Anthropic no ha publicado tasas de error propias.
+
+Los datos de adopción piden prudencia. Según la encuesta de la International Legal Technology Association que recoge Bloomberg Law, el 44 % de las firmas usa o explora Claude, igual que Thomson Reuters CoCounsel y solo por detrás de Microsoft Copilot. Solo el 7 % ha completado un despliegue pleno entre sus abogados. Timothy Fox, de Ogletree Deakins, calificó el despliegue de Claude en su firma como uno de los más exitosos y advirtió de que el producto no nació para el sector legal ni protege sus datos empresariales con el rigor de una plataforma jurídica.
+
+Para un despacho o un departamento jurídico español, el análisis tiene una lectura propia. El *discovery* estadounidense no tiene equivalente directo, pero el secreto profesional del artículo 542.3 de la Ley Orgánica del Poder Judicial, el Estatuto General de la Abogacía, el RGPD y el Reglamento (UE) 2024/1689 imponen deberes de confidencialidad, de contratación con encargados del tratamiento y de alfabetización en IA que una plataforma de terceros obliga a documentar. En el derecho de la Unión, además, el privilegio de las comunicaciones del abogado interno ya es más estrecho que el del abogado externo. La herramienta prepara el trabajo. El abogado lo verifica, lo firma y responde de él.
+
+# Cuando el abogado deja de preguntar y empieza a operar: Claude for Legal y la transformación de la práctica jurídica mediante artifacts, conectores y agentes
+
+**Análisis del despliegue de Anthropic en el sector legal: arquitectura de los artifacts, límites de la revisión humana, riesgos de privilegio y el paso de la inteligencia artificial conversacional a la operativa**
+
+## 1. Introducción: del chat al artifact como unidad de trabajo jurídico
+
+Los despachos y los departamentos jurídicos internos afrontan asuntos cada vez más complejos y plazos cada vez más cortos. La inteligencia artificial generativa dejó de ser un apoyo experimental y forma parte del trabajo diario. El 28 de octubre de 2026 Anthropic presentó una galería de *artifacts* dentro de Claude for Legal (1).
+
+Hasta entonces el abogado conversaba con el sistema: formulaba una pregunta o cargaba un documento y recibía una respuesta. Ese formato sirve para investigar y para redactar borradores. Falla cuando el trabajo exige tablas comparativas, seguimiento de plazos o revisión de conjuntos de contratos. Robert Mahari, responsable de Claude for Legal, lo expresó sin rodeos: “A lot of legal work doesn’t fit very neatly in a back-and-forth chat. There’s a need for a different kind of interface - and artifacts provide that” (2).
+
+Los *artifacts* ofrecen esa interfaz. Son tablas, tableros y paneles que el abogado adapta con sus propios documentos, *playbooks* y sistemas a través de conectores. Cada *artifact* abre con un ejemplo. El profesional carga sus datos, Claude produce el primer análisis y enlaza cada resultado con su fuente. El abogado revisa y decide (1).
+
+El centro de gravedad se desplaza. El mensaje de chat deja de ser la unidad básica y el *artifact* ocupa su lugar: un objeto de trabajo que se comparte, se reutiliza y se ajusta a los procedimientos internos de la firma.
+
+Este desarrollo tiene antecedentes. En mayo de 2026 Anthropic lanzó Claude for Legal con veinte conectores basados en el Model Context Protocol y doce *plugins* por área de práctica (5). La galería de octubre consolida el cambio: del asistente conversacional genérico al entorno de trabajo configurado y trazable.
+
+El desplazamiento plantea cuatro preguntas concretas: cómo se documenta ahora el razonamiento jurídico, qué ocurre con el privilegio de confidencialidad, quién asume la responsabilidad profesional del resultado y quién controla los datos que alimentan el sistema. Las fuentes disponibles permiten responderlas sin atribuir al sistema capacidades que Anthropic no ha declarado.
+
+## 2. Contexto de mercado y de adopción: el posicionamiento de Claude for Legal en 2026
+
+Anthropic lanzó Claude for Legal en mayo de 2026 y lo amplió con la galería de *artifacts* en octubre. El momento coincide con una subida clara del uso de IA generativa en el sector. El informe de FTI Consulting y Relativity de 2026, que cita Anthropic, indica que el 87 % de los *general counsel* ya usaba IA generativa en sus equipos, frente al 44 % del año anterior (3). Los usos más frecuentes eran la síntesis de documentos (83 %), la identificación de cláusulas (63 %) y la transcripción (53 %) (3).
+
+Claude despertó interés. La encuesta de 2026 de la International Legal Technology Association (ILTA), que recoge Bloomberg Law, indica que el 44 % de los despachos usaba o exploraba Claude. Empató con Thomson Reuters CoCounsel y solo quedó por detrás de Microsoft Copilot (15). El mismo dato marca el límite: solo el 7 % de esas firmas había desplegado la herramienta entre todos sus abogados (15).
+
+El interés supera a la adopción real. Anthropic presenta Claude for Legal como solución para la revisión de contratos, la diligencia en operaciones de M&A, las evaluaciones de privacidad, el seguimiento regulatorio y la supervisión de abogados externos. Lo combina con el chat, Claude Cowork, las integraciones con Microsoft 365 y la plataforma de desarrollo (3). Las entrevistas de Bloomberg Law con responsables de innovación muestran otra realidad: muchas firmas mantienen Claude en piloto o lo usan junto a herramientas especializadas de *legal tech*. Las dudas sobre seguridad, gobernanza de datos y responsabilidad profesional frenan el despliegue masivo (15).
+
+Anthropic sigue dos caminos a la vez. Ofrece un motor generalista que el despacho configura con conectores, *plugins* y *artifacts*. Al mismo tiempo aspira a ser la puerta de entrada del *workflow* legal, de modo que los sistemas de gestión documental, las plataformas de *research* y las soluciones de *contract lifecycle* alimenten a Claude en lugar de competir con él (4). Esa ambición explica el ritmo de incorporación de conectores (más de sesenta desde mayo) y la apertura de la galería a desarrollos de Goodwin, Foley & Lardner, Harvey y PwC (1).
+
+El mercado reúne tres tipos de actores: las plataformas generalistas de inteligencia artificial, las soluciones verticales de *legal tech* y los proveedores tradicionales de información jurídica que añaden capacidades de IA. En octubre de 2026 ninguno había consolidado un despliegue dominante. Claude figuraba entre las opciones más exploradas (15).
+
+## 3. Arquitectura técnica del sistema: artifacts, Model Context Protocol, plugins y Claude for Microsoft 365
+
+Claude for Legal combina varios componentes para pasar del chat genérico al entorno de trabajo orientado a tareas: los *artifacts*, el Model Context Protocol (MCP), los *plugins* por área de práctica y las integraciones con Microsoft 365.
+
+Los *artifacts* forman la capa de interfaz más reciente. Anthropic los describe como tablas, tableros y paneles que el usuario adapta con sus documentos y conectores (1). Cada *artifact* abre con un ejemplo. El abogado carga los datos o activa los conectores, y Claude genera el primer análisis y vincula cada resultado con su fuente. El diseño exige que el abogado aplique su juicio sobre ese resultado (1).
+
+Los conectores basados en MCP dan acceso a los sistemas de la organización. Anthropic presenta el MCP como un estándar abierto que permite a Claude consultar las fuentes de datos del despacho en lugar de trabajar solo con copias subidas a mano (3). Desde mayo de 2026 Anthropic añadió más de sesenta conectores específicos del sector legal. Entre los citados figuran Bloomberg Law, Filevine, Ivo, Legora, Patlytics, iManage, NetDocuments, Ironclad, DocuSign, Everlaw, Relativity, Box y Datasite (1)(5). Análisis contemporáneos del directorio legal elevan el total a más de un centenar (4).
+
+Los *plugins* por área de práctica configuran el comportamiento del sistema. En mayo de 2026 Anthropic presentó doce *plugins* para roles concretos, entre ellos Commercial Legal, Corporate Legal, Employment Legal, Privacy Legal, Product Legal, Regulatory Legal, AI Governance Legal, IP Legal y Litigation Legal (5). Cada *plugin* arranca con una entrevista de configuración que recoge el *playbook* de la organización, la cadena de escalado, la calibración del riesgo y el estilo de redacción. El objetivo es que las respuestas dejen de ser genéricas y sigan los criterios internos de la firma (5). Anthropic distribuye algunos *plugins* como código abierto en su repositorio público (6).
+
+Claude for Microsoft 365 completa el conjunto. Los complementos del Microsoft Marketplace sitúan las capacidades del modelo dentro de Word, Outlook, Excel y PowerPoint. En Word el sistema aplica *redlining* con control de cambios, compara documentos y revisa contratos marco (MSA) sin salir del procesador de textos (3). Puede incorporar contexto de versiones anteriores, escritos procesales o mensajes de Outlook y conserva el registro de los cambios (3).
+
+La arquitectura une tres capas: interfaz estructurada (*artifacts*), acceso a datos (conectores MCP) y especialización por dominio (*plugins*). Las superficies de ejecución son el chat, Cowork, Microsoft 365 y la API. El mismo motor se configura de forma distinta según la tarea y el entorno del profesional.
+
+La calidad del resultado sigue dependiendo de los datos de entrada y de la configuración de conectores y *plugins*. La trazabilidad que anuncia Anthropic solo funciona si los sistemas conectados suministran información completa, actualizada y con los permisos correctos.
+
+## 4. Los artifacts como nueva interfaz de trabajo: catálogo, funcionamiento y modelo de revisión humana
+
+Los *artifacts* son el elemento más distintivo de la actualización de octubre de 2026. Anthropic los define como herramientas interactivas que los equipos jurídicos usan y comparten dentro de Claude (1). El chat produce una respuesta. El *artifact* ofrece una representación estructurada y persistente del trabajo, pensada para tareas recurrentes.
+
+El catálogo inicial incluye seis *artifacts* desarrollados por Anthropic, varios desarrollos de *partners* y un conjunto orientado al acceso a la justicia. Los seis principales son (1):
+
+- **Cite check**: compara un documento jurídico con las fuentes que cita y marca las citas que no coinciden, los números de página incorrectos y las fuentes que no respaldan la afirmación.
+- **Jurisdiction survey matrix**: presenta en una tabla un mismo tema jurídico a través de distintos estados o países, con enlaces a la norma.
+- **Matter board**: convierte cartas de encargo, correos u hojas de cálculo en un tablero de asuntos abiertos con responsable, siguiente paso y plazo.
+- **Playbook deviation board**: confronta los contratos con los términos estándar de la organización, identifica las cláusulas que se desvían del *playbook* y las envía a quien autoriza excepciones.
+- **Regulatory horizon scan**: sitúa en una línea temporal las regulaciones próximas relevantes para el negocio y las jurisdicciones de la entidad, ordenadas por impacto estimado y con enlaces a las fuentes.
+- **Tabular review**: genera una tabla a partir de un conjunto de contratos y extrae los términos solicitados, con vínculos al lenguaje contractual exacto.
+
+La galería incorpora *artifacts* de terceros. El anuncio oficial menciona el AI Governance Benchmark de Goodwin, el Harvey Intake de Harvey, el Obligations Checker de Foley & Lardner y el Subpoena Response Tool de PwC (1). Anthropic indicó que espera contribuciones de Legora y Orrick. Incluyó además nueve *artifacts* de acceso a la justicia, cinco de ellos desarrollados por organizaciones sin ánimo de lucro con créditos de Claude (1).
+
+Cada *artifact* funciona del mismo modo. Abre con un ejemplo completo, el profesional incorpora documentos o activa conectores, y Claude realiza la primera pasada y presenta los resultados con vínculos a las fuentes. El diseño exige que el abogado aplique su juicio sobre ese resultado (1).
+
+La revisión humana es estructural. Anthropic presenta los *artifacts* como instrumentos que aceleran la preparación del trabajo y dejan la responsabilidad en el profesional. La trazabilidad facilita esa revisión. Las fuentes no afirman que el sistema sustituya el criterio jurídico ni que garantice la corrección automática.
+
+El *artifact* crea una unidad intermedia entre el documento individual y el expediente completo. Permite compartir un estado de análisis estructurado con colegas o, en ciertos casos, con clientes, dentro de los controles de permisos y de *ethical walls* que la organización haya configurado (1).
+
+## 5. Conectores, datos y sistemas de registro: el problema de la fuente y de la trazabilidad
+
+La utilidad de los *artifacts* depende de la calidad, la actualidad y la accesibilidad de las fuentes de datos. Anthropic construyó esa capa con el Model Context Protocol, un estándar abierto que permite a Claude consultar los sistemas de la organización en lugar de trabajar solo con documentos subidos a mano (1)(3).
+
+Los más de sesenta conectores que Anthropic añadió desde mayo cubren la gestión documental, el ciclo de vida de contratos, el *e-discovery*, las salas de datos, la investigación jurídica y el *matter management* (1)(5).
+
+El diseño intenta resolver dos fricciones habituales: la necesidad de subir los mismos documentos una y otra vez y la pérdida de contexto entre sesiones o entre profesionales. Al conectar el sistema de registro o la plataforma de *research*, el *artifact* trabaja sobre la información viva de la organización, siempre que los permisos lo permitan (1).
+
+Anthropic afirma que cada resultado de un *artifact* incluye un vínculo a la fuente (1). Esa trazabilidad facilita la revisión humana. Su efectividad depende de dos factores: la calidad de los metadatos y del contenido que suministran los sistemas conectados, y la correcta configuración de los permisos de acceso.
+
+Las limitaciones de compartición añaden un matiz. El análisis de eWeek de la documentación de Anthropic indica que los *artifacts* que dependen de Claude o de sistemas conectados no se pueden distribuir mediante enlaces públicos abiertos. Las invitaciones a destinatarios externos tienen restricciones adicionales: los usuarios externos no pueden usar las funciones que dependen de Claude o de las aplicaciones conectadas (7). Un *artifact* de revisión contractual vinculado a un gestor documental interno puede estar al alcance de colegas con los permisos adecuados, pero quizá no de un cliente externo. Los datos introducidos en un tablero compartido pueden resultar visibles para usuarios que no tengan acceso a los documentos de origen (7).
+
+La arquitectura desplaza el problema de la fuente desde el modelo de lenguaje hacia los sistemas de registro de la organización. La calidad del primer análisis depende de que los conectores suministren información completa, actualizada y con los permisos correctos. Si el gestor documental contiene versiones desactualizadas o los permisos no reflejan con precisión las *ethical walls*, la trazabilidad anunciada no garantiza la fiabilidad del resultado.
+
+## 6. Riesgos jurídicos estructurales: privilegio abogado-cliente, work product y discovery tras *United States v. Heppner*
+
+El uso de sistemas de IA generativa de terceros plantea riesgos concretos para el privilegio abogado-cliente y para la doctrina del *work product*. Esos riesgos adquirieron dimensión judicial en febrero de 2026, cuando el juez Jed S. Rakoff, del Tribunal de Distrito de los Estados Unidos para el Distrito Sur de Nueva York, resolvió *United States v. Heppner* (No. 25-cr-503 (JSR)). Rakoff falló de viva voz el 10 de febrero y publicó su opinión escrita el 17 de febrero (8)(9)(17).
+
+El tribunal examinó treinta y un documentos que un acusado generó con Claude. Rakoff concluyó que ni el privilegio abogado-cliente ni la doctrina del *work product* los protegían (8)(16). Los análisis del caso identifican tres motivos. Claude no es abogado, y entre un usuario y un sistema de IA no existe la “relación humana de confianza” que presupone el privilegio. La política de privacidad de la plataforma autoriza a Anthropic a recopilar las entradas y las salidas, a usarlas para entrenar el modelo y a revelarlas a terceros, y eso excluía una expectativa razonable de confidencialidad. Por último, el acusado actuó por iniciativa propia, sin dirección de su abogado (16)(18).
+
+El acusado había usado la versión de consumo de Claude y no un plan empresarial (17). Rakoff dejó además una puerta entreabierta: si el abogado hubiera dirigido al acusado a usar Claude, este “might arguably be said to have functioned in a manner akin to a highly trained professional who may act as a lawyer’s agent within the protection of the attorney-client privilege” (18). Si un despliegue empresarial dirigido por abogados alcanzaría esa protección es una pregunta que la resolución no contesta.
+
+La doctrina del *work product* protege los materiales que se preparan en previsión de litigio. En el proceso civil federal la regula la Rule 26(b)(3) de las Federal Rules of Civil Procedure. En el proceso penal, como en *Heppner*, descansa en *Hickman v. Taylor*, 329 U.S. 495 (1947), y en la Rule 16 de las Federal Rules of Criminal Procedure. El análisis crítico sostiene que el tribunal importó un requisito de “dirección del abogado” que la doctrina no exige con tanto rigor, y que tratar la política de privacidad de un proveedor de IA como elemento decisivo de la confidencialidad no encaja con el análisis de expectativas razonables de ámbitos análogos (8). El comentario de la *Harvard Law Review* añade que el tribunal asumió sin decirlo que Claude se parece más a un tercero humano que a una herramienta, y recuerda que, el mismo día de la decisión oral, el Tribunal de Distrito del Distrito Este de Míchigan afirmó en un asunto civil con un litigante *pro se* que los programas de IA generativa “are tools, not persons” (16)(18). El resultado práctico en *Heppner* es claro: unos documentos generados con una plataforma comercial de IA quedaron sin protección frente al Gobierno.
+
+El precedente abre una vulnerabilidad. Cuando un abogado o un cliente interactúa con un sistema alojado en servidores de un tercero, las consultas, los documentos cargados y las respuestas pasan por infraestructuras que el despacho no controla. La mayoría de las plataformas comerciales de IA generativa introducen a un tercero en el circuito de la información, y esa circunstancia puede comprometer la confidencialidad que exigen tanto el privilegio como el *work product*.
+
+Anthropic publicó orientación sobre el uso de Claude en el trabajo jurídico en relación con el privilegio y la confidencialidad (10). En los planes Team y Enterprise afirma que no entrena con el contenido de los clientes por defecto y que los administradores de Enterprise pueden configurar los periodos de retención (3). Estas medidas no eliminan la cuestión de fondo de *Heppner*: si usar una plataforma de terceros rompe la confidencialidad a efectos de las protecciones procesales.
+
+Los análisis académicos posteriores al caso subrayan que actualizar las políticas internas y formar al personal resulta insuficiente frente a un problema de carácter arquitectónico (9). Proponen reformar la Rule 26, desplegar modelos en entornos que controle el despacho y elaborar herramientas procesales específicas para oponerse al descubrimiento de interacciones con sistemas de IA (9).
+
+En Claude for Legal los *artifacts* y los conectores no modifican la naturaleza de esa exposición. Las interacciones con el modelo siguen pasando por la infraestructura de Anthropic, salvo que la organización despliegue el sistema en un entorno propio. Mientras se use la versión que aloja el proveedor, el riesgo de que las interacciones queden sin protección permanece abierto.
+
+### Perspectiva comparada: secreto profesional en España y en la Unión Europea
+
+El *discovery* estadounidense no tiene equivalente directo en el proceso español, y la lógica de *Heppner* no se traslada sin adaptación. El riesgo aparece por otras vías. El artículo 542.3 de la Ley Orgánica del Poder Judicial obliga a los abogados a guardar secreto de los hechos y noticias que conozcan por razón de su actuación profesional (19). El Estatuto General de la Abogacía Española, aprobado por el Real Decreto 135/2021, de 2 de marzo, dedica un capítulo al secreto profesional y lo extiende a los colaboradores y al personal que coopera con el abogado (20). Cabe sostener que el abogado que introduce información de un cliente en la plataforma de un tercero debe poder acreditar que el proveedor ofrece garantías contractuales comparables a las que se exigen a cualquier colaborador.
+
+La protección de datos añade otra capa. Los datos personales de clientes, contrapartes y terceros que un despacho cargue en un *artifact* quedan sujetos al Reglamento (UE) 2016/679 (RGPD) (21). La contratación con Anthropic exige un contrato de encargo del tratamiento conforme al artículo 28 y, si los datos salen del Espacio Económico Europeo, una base válida de transferencia conforme al capítulo V. El artículo 4 del Reglamento (UE) 2024/1689 obliga a los responsables del despliegue de sistemas de IA a adoptar medidas para que su personal tenga un nivel suficiente de alfabetización en IA (22). Los protocolos de revisión humana que este análisis recomienda sirven también a esa obligación.
+
+En el derecho de la Unión el privilegio profesional es, además, más estrecho que el de los tribunales estadounidenses para una parte de los usuarios de Claude for Legal. El Tribunal de Justicia limitó la confidencialidad de las comunicaciones entre abogado y cliente, en las investigaciones de competencia de la Comisión, a los abogados independientes que no tienen una relación laboral con el cliente, en la sentencia de 18 de mayo de 1982, *AM & S Europe/Comisión* (155/79, Rec. 1982, p. 1575) (23). La Gran Sala confirmó esa doctrina en la sentencia de 14 de septiembre de 2010, *Akzo Nobel Chemicals y Akcros Chemicals/Comisión* (C-550/07 P, EU:C:2010:512), y excluyó del privilegio las comunicaciones con los abogados internos (24). El departamento jurídico que use Claude for Legal en un asunto de competencia con dimensión europea parte, por tanto, de una protección ya limitada antes de añadir un tercero tecnológico.
+
+## 7. Límites de exactitud, citas y alucinaciones en contextos de alta responsabilidad profesional
+
+La exactitud de los resultados es una de las principales fuentes de riesgo profesional. Anthropic incorporó dos mecanismos para reducirlo: el vínculo de cada extracción con su fuente y el *artifact* de *cite check*. Las fuentes disponibles no permiten afirmar que eliminen los errores.
+
+El *cite check* compara un documento jurídico con las fuentes que suministra el propio usuario y marca las citas que no coinciden, los números de página incorrectos y las fuentes que no respaldan la afirmación (1). Verifica contra un corpus que define el profesional y no contrasta las citas con una base jurisprudencial actualizada e independiente. Los análisis técnicos señalan ese límite: el *cite check* comprueba lo que recibe y no lo que debería haberse citado (11).
+
+Los estudios empíricos refuerzan la cautela. Un estudio publicado en mayo de 2025 y revisado en agosto de 2026 evaluó la precisión de las citas según el *Bluebook* en 2.058 consultas. Los modelos de frontera producen una cita que cumple por completo la norma solo el 42,6 % de las veces, en promedio y sin ejemplos previos (*zero-shot*). Claude Opus 5 lideró la prueba con un 51,3 %, la cifra más alta entre los modelos evaluados y aun así insuficiente para un uso sin revisión humana (12). El mismo estudio situó incluso a un modelo de razonamiento muy por debajo de la puntuación media de los candidatos humanos en los procesos de selección de editores de cinco grandes revistas jurídicas (12).
+
+La experiencia judicial anterior ya había mostrado qué ocurre cuando el abogado confía en citas que genera una IA sin verificarlas. En *Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023), el tribunal sancionó a los abogados que presentaron un escrito con jurisprudencia inventada. El diseño de los *artifacts* de Claude for Legal intenta mitigar ese tipo de fallos con el vínculo a las fuentes, pero Anthropic no ha publicado tasas de error específicas (1)(11).
+
+Para los escritos procesales, los dictámenes, la *due diligence* y cualquier documento que vaya a firmarse o a presentarse ante un tribunal, Claude for Legal mantiene de forma explícita la revisión humana. Anthropic presenta los resultados de los *artifacts* como un primer análisis que el abogado debe examinar y validar (1). Los modelos de lenguaje aceleran la extracción, la comparación y la estructuración de información. No garantizan por sí solos la corrección jurídica ni la ausencia de alucinaciones o de errores de atribución.
+
+El abogado sigue siendo el responsable último de la exactitud de las citas, de la fidelidad de las extracciones y de la solidez de las conclusiones.
+
+## 8. Adopción real frente a interés declarado: datos de firmas, fricciones de seguridad y gobernanza interna
+
+Los datos de 2026 muestran una brecha entre el interés declarado y el despliegue efectivo. La encuesta de la ILTA que recoge Bloomberg Law indica que el 44 % de las firmas usaba o exploraba Claude, el mismo nivel que Thomson Reuters CoCounsel y por debajo de Microsoft Copilot. Solo el 7 % de esas firmas había completado un despliegue pleno entre sus abogados (15).
+
+Los responsables de innovación que entrevistó Bloomberg Law confirman la distancia. Muchas firmas mantienen Claude en piloto o lo combinan con soluciones verticales de *legal tech*, y las dudas sobre seguridad, gobernanza de datos y responsabilidad profesional frenan el despliegue masivo (15). Timothy Fox, *chief data and AI officer* de Ogletree Deakins, describió el despliegue de Claude en su firma como uno de los más exitosos, pero añadió: “it is not a product that is geared for legal, and so they don’t design their enterprise security like a legal platform would” (15).
+
+Las fricciones que más se repiten en las conversaciones internas de las firmas son el coste y el consumo de *tokens*, la confidencialidad y la exactitud de los resultados (13). La confidencialidad se vincula tanto con las políticas de retención y de no entrenamiento de Anthropic como con la arquitectura de terceros que caracteriza a la mayoría de los sistemas comerciales de IA generativa.
+
+Antes de desplegar Claude for Legal, una organización debe resolver cuatro asuntos: qué tipos de asuntos puede tratar con la herramienta, cómo configura los permisos de los conectores, cómo articula las *ethical walls* cuando comparte *artifacts* y quién asume la responsabilidad de la revisión humana. Anthropic ofrece controles de administración en los planes Team y Enterprise, entre ellos periodos de retención configurables y la exclusión por defecto del contenido de los clientes del entrenamiento (3). Esos controles no sustituyen unas políticas internas claras ni una supervisión profesional continua.
+
+El equipo jurídico de Anthropic documentó el uso interno de Claude en la revisión de materiales de marketing, en las evaluaciones de impacto de privacidad y en el seguimiento de asuntos de patentes y contratos (14). Esos casos ilustran el potencial de la herramienta integrada en procesos estandarizados y sujetos a revisión posterior. No prueban una adopción generalizada ni sin fricciones.
+
+En octubre de 2026 Claude for Legal ocupa una posición destacada en interés y experimentación, pero su penetración efectiva sigue siendo limitada. Las firmas que más avanzaron lo hicieron con control, mantuvieron otras herramientas especializadas en paralelo y dieron prioridad a la seguridad, la confidencialidad y la responsabilidad profesional.
+
+## 9. Acceso a la justicia y artifacts de interés público: alcance y limitaciones
+
+Anthropic incluyó en la galería de octubre de 2026 nueve herramientas de acceso a la justicia. Cinco de ellas las desarrollaron organizaciones sin ánimo de lucro y de interés público con el apoyo de créditos de Claude (1).
+
+El anuncio detalla cinco de esos *artifacts* (1):
+
+- **Criminal Charge Reality Check**, construido por Zealous: toma una acusación penal y muestra a los equipos de defensa el rango de posibles condenas, datos públicos sobre cómo suelen resolverse ese tipo de casos y *playbooks* estándar de solicitud de libertad. Se limita a Nueva York.
+- **Immigration Papers Reader**, desarrollado por Mobile Pathways: convierte la documentación migratoria de un cliente en una primera lectura en lenguaje sencillo que identifica fechas clave y documentos faltantes.
+- **Rent Ledger Reviewer**, de Rising for Justice: ayuda a los abogados a detectar errores en el libro de contabilidad de alquileres de un arrendador en un procedimiento de desahucio. Se basa en la legislación del Distrito de Columbia.
+- **Record-Sealing Screener**, también de Rising for Justice: permite evaluar si los antecedentes penales de un cliente pueden sellarse según la normativa del Distrito de Columbia.
+- **Record Clearance**, elaborado por The Access Project: asiste a los equipos de asistencia jurídica para determinar si el historial de un cliente puede cancelarse conforme a las reglas del estado correspondiente.
+
+Estos desarrollos continúan una línea previa. El lanzamiento de Claude for Legal en mayo de 2026 ya incluía colaboraciones con el Free Law Project y la Justice Technology Association para ampliar el acceso a la ayuda jurídica (5). La galería de octubre amplía esa línea con el programa Oxford Justice Innovators y con el anuncio del Legal Ambassadors Program (1).
+
+El alcance de estas herramientas es limitado y depende del contexto. Varias se acotan a una jurisdicción o a un tipo de documentación. Son instrumentos de apoyo en fases concretas del trabajo de los equipos de asistencia jurídica: la primera lectura de documentación, la detección de posibles errores en registros de arrendamiento o la evaluación preliminar de elegibilidad para el sellado o la cancelación de antecedentes.
+
+## 10. Conclusiones: implicaciones para la organización del trabajo jurídico y para la responsabilidad profesional
+
+Claude for Legal y la galería de *artifacts* de octubre de 2026 marcan un desplazamiento claro. El sistema deja de limitarse a responder consultas y ofrece unidades de trabajo estructuradas, trazables y orientadas a tareas. El cambio afecta a la organización interna de los despachos y de los departamentos jurídicos y al régimen de responsabilidad profesional de los abogados.
+
+Los *artifacts*, los conectores MCP y los *plugins* permiten estandarizar, compartir y reutilizar parte del trabajo jurídico. Partir de un ejemplo funcional, incorporar datos propios y obtener un primer análisis vinculado a las fuentes reduce la fricción de configuración del chat genérico. A cambio, la arquitectura exige una labor previa: revisar la calidad y los permisos de los sistemas de registro, definir *playbooks* y umbrales de riesgo y fijar protocolos de revisión humana.
+
+Las fuentes reiteran que el abogado conserva el control y la responsabilidad última. Los *artifacts* preparan y estructuran el trabajo, y el criterio jurídico sigue en manos del profesional. Esa formulación coincide con el estado de la tecnología y con los límites documentados de exactitud en la citación y la extracción.
+
+Los riesgos de privilegio y de *work product* siguen abiertos. *United States v. Heppner* mostró que los documentos generados con una plataforma comercial de IA pueden quedar sin protección frente al Gobierno, aunque el caso se refería a la versión de consumo y a un uso sin dirección del abogado. Las medidas contractuales y técnicas de Anthropic en los planes Team y Enterprise mitigan parte de la exposición. No alteran la condición de tercero de la infraestructura.
+
+Del análisis se derivan cinco recomendaciones operativas para un despacho o un departamento jurídico:
+
+- **Plan y contrato.** Usar solo planes empresariales (Team o Enterprise), con contrato de encargo del tratamiento y política de retención documentada, y excluir la versión de consumo del trabajo con clientes.
+- **Dirección del abogado.** Que el abogado decida y documente el uso de la herramienta en cada asunto, porque la ausencia de dirección letrada fue uno de los factores que pesaron en *Heppner*.
+- **Verificación de fuentes.** Comprobar cada cita contra la fuente primaria y no limitar la verificación al *cite check*, que solo contrasta el corpus que se le entrega.
+- **Permisos y *ethical walls*.** Auditar los permisos de los sistemas conectados antes de compartir un *artifact* con colegas o con clientes.
+- **Formación.** Formar al personal en los límites de exactitud y de confidencialidad de la herramienta, en línea con el artículo 4 del Reglamento (UE) 2024/1689.
+
+Los *artifacts* de acceso a la justicia añaden una dimensión de interés público que no equivale a una solución integral. Acotadas con frecuencia a jurisdicciones concretas y a fases preliminares, estas herramientas pueden apoyar a equipos de asistencia jurídica con recursos limitados si trabajan bajo supervisión profesional y conocen sus límites.
+
+Claude for Legal ilustra el tránsito de la IA generativa desde un apoyo puntual hacia una función operativa en los flujos de trabajo jurídicos. Ese tránsito reconfigura el juicio profesional sin eliminarlo y exige nuevas formas de organización, de verificación y de asunción de responsabilidad. La calidad del resultado depende de la diligencia con que el abogado supervise, valide y asuma como propio el trabajo asistido.
+
+## Bibliografía
+
+(1) Anthropic, “Introducing artifacts for legal work with Claude”, 28 de octubre de 2026. https://claude.com/resources/articles/introducing-artifacts-for-legal-work
+
+(2) Reuters, “Anthropic unveils additional Claude tools for lawyers”, 28 de octubre de 2026. https://www.reuters.com/legal/legalindustry/anthropic-unveils-additional-claude-tools-lawyers-2026-10-28/
+
+(3) Anthropic, “Product overview – Claude for the legal industry” y página de soluciones legales. https://claude.com/resources/guides/claude-for-the-legal-industry/product-overview y https://claude.com/solutions/legal
+
+(4) Intelligence by Intent, “Claude’s new legal artifacts put ready-made tools in front of your whole firm”, 28 de octubre de 2026. https://intelligencebyintent.com/insights/claudes-new-legal-artifacts-put-ready-made-tools-in-front-of-your-whole-firm/
+
+(5) Anthropic, “Claude for the legal industry”, 12 de mayo de 2026. https://claude.com/blog/claude-for-the-legal-industry
+
+(6) Anthropic, repositorio Claude for Legal (README). https://github.com/anthropics/claude-for-legal
+
+(7) eWeek, “Anthropic Launches Six New Claude AI Tools for Legal Work”, 29 de octubre de 2026. https://www.eweek.com/news/anthropic-claude-legal-ai-tools/
+
+(8) Cline, Stevie, “The Third Party in the Machine: Attorney-Client Privilege, Work Product Doctrine, and the AI Disclosure Problem After United States v. Heppner”, *International Journal of Law, Ethics, and Technology*, 2026. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6337600
+
+(9) Abdilla, Justin, “Discovering a Conversation with a Machine Friend: AI-Assisted Legal Research as an Unmitigated Litigation Vulnerability”, 2026. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6227600
+
+(10) Anthropic, orientación sobre privilegio y confidencialidad en el uso de Claude para trabajo jurídico, referida en la página de soluciones legales. https://claude.com/solutions/legal
+
+(11) Sansser y Petreski, Vanja, análisis técnicos sobre el funcionamiento del *cite check*, octubre de 2026.
+
+(12) Dahl, Matthew, et al., “Bye-bye, Bluebook? Automating Legal Drudgery With AI-Augmented Rule Following”, arXiv:2505.02763, v1 de 5 de mayo de 2025, v2 de 16 de agosto de 2026. https://arxiv.org/abs/2505.02763
+
+(13) Best Era, “Claude for Law Firms: The Claude Law Firm Study (2026)”, y Spellbook, “Why Lawyers are Switching to Claude AI: Costs, Capabilities and Limits (2026)”.
+
+(14) Anthropic, “How Anthropic’s Legal team uses Claude”. https://claude.com/resources/guides/claude-for-the-legal-industry/how-anthropics-legal-team-uses-claude
+
+(15) Bloomberg Law, “Anthropic’s Ambitions in Legal Technology Get a Reality Check”, 22 de octubre de 2026. https://news.bloomberglaw.com/legal-ops-and-tech/anthropics-ambitions-in-legal-technology-get-a-reality-check
+
+(16) Harvard Law Review, “United States v. Heppner”, *Harvard Law Review Blog*, 23 de marzo de 2026. https://harvardlawreview.org/blog/2026/03/united-states-v-heppner
+
+(17) American Bar Association, “Federal Court Rejects Privilege Assertion for AI-Generated Research”, que recoge *United States v. Heppner*, No. 25-cr-503 (JSR), 2026 WL 436479 (S.D.N.Y. 17 de febrero de 2026). https://americanbar.org/groups/litigation/resources/newsletters/intellectual-property/federal-court-rejects-privilege-assertion-for-ai-generated-research
+
+(18) Cleary Gottlieb, “Courts Grapple with Privilege Implications of AI”, 27 de febrero de 2026. https://clearygottlieb.com/news-and-insights/publication-listing/courts-grapple-with-privilege-implications-of-ai
+
+(19) Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial, artículo 542.3.
+
+(20) Real Decreto 135/2021, de 2 de marzo, por el que se aprueba el Estatuto General de la Abogacía Española (BOE de 24 de marzo de 2021).
+
+(21) Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales (RGPD), artículo 28 y capítulo V.
+
+(22) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial, artículo 4.
+
+(23) Sentencia del Tribunal de Justicia de 18 de mayo de 1982, *AM & S Europe Limited/Comisión*, 155/79, Rec. 1982, p. 1575.
+
+(24) Sentencia del Tribunal de Justicia (Gran Sala) de 14 de septiembre de 2010, *Akzo Nobel Chemicals Ltd y Akcros Chemicals Ltd/Comisión*, C-550/07 P, EU:C:2010:512.
