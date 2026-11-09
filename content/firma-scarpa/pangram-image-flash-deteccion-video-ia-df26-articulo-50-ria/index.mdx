@@ -1,0 +1,232 @@
+---
+title: "Detección de vídeo con IA: Pangram Flash, DF26 y el art. 50 RIA"
+description: "Pangram dice detectar vídeo sintético con un 98,7 % en DF26. Análisis de la cifra, sus límites y su encaje con el artículo 50 del Reglamento de IA."
+date: "2026-11-09"
+tags: ["Pangram", "DF26", "deepfakes", "Reglamento de IA", "prueba digital"]
+section: "firma-scarpa"
+category: "firma-scarpa"
+author: "Ricardo Scarpa"
+slug: "pangram-image-flash-deteccion-video-ia-df26-articulo-50-ria"
+readingTime: 22
+image: "/images/firma-scarpa/pangram-image-flash-deteccion-video-ia-df26-articulo-50-ria/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 4 de noviembre de 2026, Pangram Labs, una empresa estadounidense conocida por sus detectores de texto escrito con IA, lanzó dos modelos para identificar imágenes y vídeos sintéticos. Pangram Image 1.0 analiza imágenes fijas y dibuja mapas de calor sobre las zonas generadas. Pangram Image Flash 1.0, más ligero, examina vídeo fotograma a fotograma. La empresa afirma que Image Flash 1.0 obtiene un 98,7 % en DF26, un benchmark académico de septiembre en el que las personas y los detectores previos rindieron cerca del azar, y presenta esa cifra como una ventaja de 29 puntos sobre el mejor competidor.
+
+El contexto explica el alcance del anuncio. DF26, un preprint de Severyn Shykula y sus coautores (arXiv:2609.07369), reúne 271 vídeos reales y 2.420 sintéticos creados con siete modelos de generación de vídeo. Cada clip muestra a una persona que habla a cámara, en una declaración oficial, una entrevista de estudio o un discurso. Los evaluadores humanos identificaron como falsos el 52,6 % de los vídeos sintéticos, y el mejor detector académico probado alcanzó un AUROC de 69,7 %. El tipo de vídeo más sensible para la política y las instituciones quedaba, por tanto, fuera del alcance fiable de las herramientas disponibles.
+
+Las cifras de Pangram exigen cautela por cuatro razones. La empresa las obtuvo con sus propios conjuntos de prueba y no consta una auditoría independiente que las haya reproducido. El anuncio no precisa la métrica del 98,7 %, mientras que la referencia de 69,7 % que DF26 atribuye al mejor detector es un AUROC. Los conjuntos propios emparejan cada vídeo real con una réplica sintética de la misma escena, un diseño útil contra los sesgos de contenido que no garantiza el mismo rendimiento ante la variedad de material que circula en redes. Y las fuentes secundarias reproducen cifras que no coinciden entre sí: un comunicado de la empresa en X habla de un 98,57 % en vídeo frente al 84,2 % del competidor más cercano, mientras que el blog cita el 98,7 % sobre DF26.
+
+La lectura jurídica pesa tanto como la técnica. Desde el 2 de agosto de 2026 se aplica el artículo 50 del Reglamento de IA (Reglamento (UE) 2024/1689): los proveedores de sistemas generativos deben marcar sus resultados en un formato legible por máquina, y los responsables del despliegue deben revelar las ultrasuplantaciones. El Reglamento (UE) 2026/1744, el ómnibus digital de IA, dio a los proveedores cuyos sistemas ya estaban en el mercado hasta el 2 de diciembre de 2026 para cumplir el marcado. Ese régimen depende de la cooperación de quien genera el contenido. Un clasificador como el de Pangram actúa sin esa cooperación, aunque el Reglamento ni lo exige ni le atribuye valor probatorio.
+
+En un proceso civil español, el resultado de un detector entraría como indicio técnico sujeto a la sana crítica del tribunal (arts. 348 y 382.3 de la Ley de Enjuiciamiento Civil), por lo general a través de un dictamen pericial que explique la versión del modelo, el umbral de decisión, los datos de validación y las tasas de error. Una tasa de falsos positivos del 0,27 %, aplicada a 100.000 imágenes auténticas, marca 270 como sintéticas. En una redacción, un juzgado o un equipo de moderación, esa cifra equivale a 270 materiales auténticos puestos en duda.
+
+La conclusión práctica: Pangram ha situado una herramienta prometedora sobre una brecha real, y su valor dependerá de la reproducción independiente de los resultados y de su rendimiento ante generadores que aún no existen. Hasta entonces, medios, plataformas y letrados pueden usar sus resultados como una señal más dentro de un análisis que incluya la procedencia del archivo, su cadena de custodia y la verificación humana. El resultado, por sí solo, no acredita la autenticidad ni la falsedad de un vídeo.
+
+# Cuando el ojo humano ya no basta: el salto de Pangram en la detección de vídeo e imagen generados por IA
+
+*Pangram Image 1.0 e Image Flash 1.0, el benchmark DF26 y su encaje con las obligaciones de transparencia del Reglamento de IA*
+
+## 1. Introducción: un problema que la vista ya no resuelve
+
+Desde finales de 2025, los modelos generativos de vídeo producen personas que hablan a cámara con un realismo que confunde a observadores entrenados. El estudio DF26 puso a prueba a siete de ellos (Wan 2.2, Wan 2.6, HunyuanVideo 1.5, LTX 2.3, Kling 3.0, Veo 3.1 y Grok Imagine 1.0) y comprobó que los evaluadores humanos rindieron cerca del azar (2).
+
+El riesgo es concreto. Un vídeo falso de una declaración oficial, una escena de conflicto inventada o un anuncio comercial sintético circulan a bajo coste y en plazos cortos. Quien los recibe no puede apoyarse en su propia percepción, y la integridad informativa, la confianza pública y la atribución de responsabilidad quedan expuestas.
+
+DF26 midió ese problema en septiembre de 2026. Las personas y los detectores académicos probados por sus autores apenas superaron el azar al distinguir vídeos reales de vídeos generados (2).
+
+Los autores atribuyen el fallo de los detectores al desplazamiento de distribución: un sistema calibrado con generadores anteriores pierde eficacia ante los modelos recientes (2). Pangram añade que las plataformas comprimen y reescalan las imágenes, y que quienes buscan engañar a un detector introducen desenfoque y ruido (1). Cada una de esas transformaciones complica el análisis.
+
+Pangram Labs, conocida por sus detectores de texto, respondió con dos modelos de visión. Pangram Image 1.0 analiza imágenes fijas y localiza con mapas de calor las regiones sintéticas. Image Flash 1.0, más ligero, examina vídeo fotograma a fotograma e identifica los segmentos con material generado (1).
+
+El anuncio interesa por el hueco que intenta cerrar. La detección de vídeo sintético de personas que hablan dejó de ser un problema marginal en 2026, y las cifras de la empresa sugieren una mejora de 29 puntos sobre el mejor detector previo. Las secciones siguientes examinan cuánto de esa cifra resiste el análisis.
+
+## 2. El estado previo: por qué detectar vídeo sintético resultaba tan difícil
+
+Antes de noviembre de 2026, la detección de vídeo generado por IA afrontaba obstáculos distintos a los del texto o la imagen estática. Un vídeo suma la dimensión temporal, la compresión propia de cada plataforma y la posible mezcla de material real con inserciones sintéticas.
+
+El desplazamiento de distribución ocupa el centro del problema. DF26 enfrentó a detectores académicos con generadores recientes, entre ellos Veo 3.1, Kling 3.0, Wan 2.6, HunyuanVideo 1.5 y LTX 2.3, y observó un rendimiento próximo al azar (2).
+
+El escenario elegido tiene alto impacto: una sola persona que habla a cámara en una declaración oficial, una entrevista de estudio o un discurso público (2). Ese formato condensa los usos más delicados del vídeo falso en política, instituciones y situaciones de crisis.
+
+Pangram señala además un sesgo de diseño en parte de las evaluaciones anteriores. Cuando los vídeos reales y los sintéticos difieren en tema, fondo o iluminación, el detector puede aprender esas diferencias de contenido y no la procedencia generativa (1). Los autores de DF26 critican, por su parte, los protocolos de evaluación vigentes, que no miden la robustez ante generadores de última hornada (2).
+
+A mediados de 2026, el juicio humano y los detectores académicos probados operaban cerca del azar frente a los generadores más recientes. En ese terreno presentó Pangram sus modelos.
+
+## 3. El benchmark DF26: diseño, resultados y alcance
+
+DF26 apareció como preprint el 7 de septiembre de 2026 (2). Lo firman Severyn Shykula, Andrii Yermakov, Ivan Samarskyi, Dmytro Mishkin, Jan Cech y Anastasiia Mishchuk. Su título resume el diagnóstico: *We Cannot Tell Fake From Real Anymore*.
+
+El conjunto reúne 271 vídeos reales y 2.420 sintéticos, generados con siete modelos: Wan 2.2, Wan 2.6, HunyuanVideo 1.5, LTX 2.3, Kling 3.0, Veo 3.1 y Grok Imagine 1.0. Los clips duran cinco segundos, tienen una resolución de 1280×720 y muestran a una sola persona en grabaciones directas a cámara, declaraciones oficiales o entrevistas de estudio (2).
+
+Cada vídeo sintético parte de un vídeo real. Los modelos de texto a vídeo reciben descripciones derivadas de los fotogramas del original, y los modelos de imagen a vídeo de código abierto usan además el primer fotograma real (2). Así el contenido de cada pareja coincide y la diferencia reside en el proceso generativo.
+
+Los evaluadores humanos identificaron como falsos el 52,6 % de los vídeos sintéticos y como auténticos el 76,0 % de los reales (2). El mejor detector, GenD-PE, alcanzó un AUROC de 69,7 %. Otros sistemas quedaron por debajo: PwTF-DVD llegó a 61,6 % y DFD-FCG a 48,2 %, una cifra inferior al 50 % que corresponde a un clasificador aleatorio (2).
+
+El alcance del benchmark tiene un límite. Los clips de DF26 son sintéticos por completo (2). El conjunto no mide vídeos que mezclan material real con inserciones generadas, el caso que Image Flash 1.0 dice cubrir. DF26 funciona a la vez como conjunto de evaluación y como crítica metodológica: sus autores sostienen que los protocolos vigentes deben medir la robustez ante generadores recientes (2).
+
+Pangram cita DF26 de forma explícita y presenta Image Flash 1.0 como respuesta a ese diagnóstico (1).
+
+## 4. El lanzamiento de Pangram Image 1.0 e Image Flash 1.0
+
+El 4 de noviembre de 2026 Pangram Labs presentó Pangram Image 1.0 y Pangram Image Flash 1.0 (1)(3). Unos meses antes había publicado una vista previa de investigación de su detector de imágenes, y el anuncio agradece a la comunidad que probó esa versión y encontró sus puntos débiles (1).
+
+Image 1.0 trabaja con imágenes fijas. Genera mapas de calor que señalan dónde aparece contenido de IA, por ejemplo un objeto añadido a una fotografía real. La empresa afirma que resiste ediciones, compresión y baja resolución. Reduce el tamaño mínimo de entrada de 512×512 a 256×256 píxeles, con un aviso de confianza reducida por debajo de 512×512 (1).
+
+Image Flash 1.0 es el modelo ligero para vídeo. Analiza el clip fotograma a fotograma y señala qué tramos resultan detectados como IA. Engadget recoge que la empresa distingue los clips con inserciones sintéticas de los creados por completo con IA (3). Pangram ofrece subida nativa de vídeo en su web y acceso por API para imagen y vídeo. Su extensión de Chrome integra Image 1.0 y marca contenido de IA mientras el usuario recorre redes sociales, tiendas en línea o anuncios de alquiler (1).
+
+Para evaluar imágenes, Pangram tomó 100 fotografías reales y generó 1.200 versiones sintéticas con 12 generadores de vanguardia, con *prompts* que describían cada original con la mayor fidelidad posible. Sobre ese conjunto reporta una exactitud del 99,96 % (1).
+
+Para vídeo aplicó el mismo método. Partió de 129 vídeos reales de redes sociales y, con 14 generadores, produjo 100 vídeos sintéticos por generador a partir de una muestra de ese material. Los 129 reales y los 1.400 sintéticos suman los 1.529 vídeos del conjunto. Cada generador recibió el primer fotograma real y una descripción del contenido elaborada por un modelo de visión y lenguaje (1). Pangram midió además Image Flash 1.0 sobre DF26 (1)(2).
+
+Como cada vídeo real y su réplica comparten escena y sujeto, el detector carece de pistas de contenido para decidir y debe fijarse en la procedencia generativa. Pangram presenta ese diseño como una mejora frente a evaluaciones que no controlaban esa variable (1).
+
+## 5. Resultados reportados por Pangram y su lectura técnica
+
+Pangram presenta sus cifras como un avance sobre el estado del arte. Las mediciones son de la propia empresa, incluida la realizada sobre DF26, un benchmark académico externo.
+
+<table>
+  <thead>
+    <tr>
+      <th>Prueba</th>
+      <th>Cifra</th>
+      <th>Quién la midió</th>
+      <th>Observación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Imagen: 1.200 sintéticas a partir de 100 fotos reales, 12 generadores</td>
+      <td>99,96 % de exactitud</td>
+      <td>Pangram, conjunto propio</td>
+      <td>Anuncio oficial (1)</td>
+    </tr>
+    <tr>
+      <td>Imagen: detección de contenido de IA y falsos positivos</td>
+      <td>99,2 % y 0,27 %</td>
+      <td>Pangram, comunicado en X</td>
+      <td>Engadget recoge «más del 99 %» y 0,27 % (3)(5)</td>
+    </tr>
+    <tr>
+      <td>Vídeo: DF26</td>
+      <td>98,7 %</td>
+      <td>Pangram sobre un benchmark externo</td>
+      <td>Métrica no precisada; el mejor detector de DF26 marca un AUROC de 69,7 % (1)(2)</td>
+    </tr>
+    <tr>
+      <td>Vídeo: comparación con el competidor más cercano</td>
+      <td>98,57 % frente a 84,2 %</td>
+      <td>Pangram, comunicado en X</td>
+      <td>Conjunto de prueba no identificado con claridad (4)(5)</td>
+    </tr>
+  </tbody>
+</table>
+
+Cuatro precisiones condicionan la lectura de estas cifras.
+
+La primera afecta a su origen. Las evaluaciones son de la propia empresa, y no consta, al momento del anuncio, una auditoría independiente pública que las haya reproducido.
+
+La segunda concierne a la métrica. El anuncio habla de una puntuación del 98,7 % en DF26 y de una ventaja de 29 puntos sobre el siguiente detector, sin precisar qué se mide (1). DF26 informa del rendimiento de sus detectores mediante AUROC, y la diferencia entre 98,7 y 69,7 es de 29 puntos, de modo que la comparación parece apoyarse en esa cifra (2). Digital Trends llama exactitud al 98,7 % (4). Una exactitud y un AUROC miden cosas distintas, y su comparación directa exige que la empresa aclare cuál de las dos publica.
+
+La tercera se refiere al diseño de las pruebas. La metodología de réplicas sintéticas reduce el sesgo de contenido, pero mide el rendimiento sobre pares muy parecidos en escena y sujeto. No garantiza el mismo comportamiento ante la distribución real de vídeos sintéticos que circulan en plataformas, donde los autores aplican criterios creativos y posprocesados heterogéneos. Dos cifras de vídeo de la propia empresa, 98,7 % y 98,57 %, tampoco coinciden entre sí.
+
+La cuarta atañe a la robustez. El anuncio la afirma frente a compresión, ruido y baja resolución y la ilustra con un gráfico. Ninguna evaluación externa la ha confirmado hasta ahora.
+
+Si un laboratorio independiente reproduce el resultado sobre DF26 con una métrica comparable a la de sus autores, el avance sería sustancial. Hasta que esa confirmación llegue, las cifras constituyen una reivindicación técnica de la empresa y no un hecho consolidado por la comunidad científica.
+
+## 6. Comparación con otros detectores comerciales y académicos
+
+La comparación con otros sistemas descansa en las evaluaciones que Pangram publicó. No consta, al momento del anuncio, un estudio independiente que haya medido a los detectores comerciales y académicos relevantes bajo las mismas condiciones.
+
+En imagen, Digital Trends reproduce las cifras de Pangram sobre su conjunto propio de 1.200 imágenes: 99,96 % para Image 1.0, 96,33 % para TruthScan, 91,38 % para AI or Not y 88,33 % para Sightengine (4). La distancia con el competidor más cercano es de unos 3,6 puntos.
+
+En vídeo, Pangram afirma sobre DF26 un 98,7 % frente a un 69,7 % de AUROC del mejor detector del estudio original (1)(2). Digital Trends sitúa a TruthScan en el 84,2 % y a Sightengine en el 81,8 %, y el comunicado de Pangram en X compara el 98,57 % de Image Flash 1.0 con el 84,2 % del competidor más próximo (4)(5). Esa ventaja de unos 14 puntos equivale a la mitad de la que la empresa destaca sobre DF26, y las fuentes no aclaran con nitidez en qué conjunto se midió cada cifra.
+
+Pangram añade resultados de estado del arte en benchmarks académicos de imagen (X-AIGD, Mirage-Test, AIGenImages2026, Synthbuster con RAISE y Community Forensics) y de vídeo (AIGVDBench, DF26 e Ivy-Fake). El anuncio presenta esas comparaciones en gráficos, y su texto no detalla cómo se configuró cada detector rival (1).
+
+Entre los enfoques de detección figuran el análisis de artefactos residuales, de metadatos y de marcas de agua. Pangram describe un modelo entrenado para reconocer contenido sintético incluso después de compresión, desenfoque y ruido (1).
+
+Sin evaluaciones independientes contemporáneas no es posible fijar el margen real de superioridad. La posición relativa de Image 1.0 e Image Flash 1.0 sigue siendo, por ahora, una reivindicación de la empresa.
+
+## 7. Limitaciones, riesgos y aspectos no resueltos
+
+La limitación más evidente es de verificación. Las cifras de 99,96 % en el conjunto propio de imágenes y de 98,7 % en DF26 las obtuvo Pangram. En un campo donde los generadores cambian cada pocos meses, la ausencia de reproducción externa impide tratar esos resultados como consolidados.
+
+Los protocolos corresponden a escenarios controlados. DF26 contiene clips de cinco segundos, con una sola persona que habla, generados por completo con IA (2). Los conjuntos de réplicas de Pangram generan cada muestra sintética a partir de un fotograma real y de una descripción del contenido original (1). Ninguno de los dos mide el caso que Image Flash 1.0 presenta como diferencial, el vídeo real con inserciones sintéticas, ni la variedad de material que circula en redes.
+
+La propia empresa reconoce límites operativos. Los resultados sobre imágenes de menos de 512×512 píxeles llevan un aviso de confianza reducida (1). Engadget recoge un ejemplo difundido por el director ejecutivo de Pangram, Max Spero, en el que la extensión de Chrome devolvió un resultado «inseguro» ante dos imágenes que no eran fotografías genuinas (3).
+
+Las cifras elevadas generan un riesgo de sobreconfianza. Si la tasa de falsos positivos de 0,27 % de Image 1.0 se mantuviera en uso real, el análisis de 100.000 imágenes auténticas marcaría 270 como sintéticas. En periodismo, procesos electorales, investigación judicial o moderación de plataformas, un falso positivo puede socavar la credibilidad de material auténtico, y un falso negativo puede dar impulso a una desinformación.
+
+Persiste, además, la carrera entre generación y detección. Cada mejora sustancial de los detectores tiende a recibir respuesta, en plazos cortos, de nuevas técnicas de generación o de ofuscación. Según los datos de Pangram, Image 1.0 e Image Flash 1.0 superan el estado del arte de septiembre y octubre de 2026. Su vigencia dependerá de que la empresa actualice los modelos al ritmo en que aparezcan nuevos generadores.
+
+## 8. Marco jurídico: el artículo 50 del Reglamento de IA y el valor probatorio del resultado
+
+### 8.1. El régimen de transparencia
+
+El artículo 50 del Reglamento (UE) 2024/1689 (Reglamento de IA, en adelante RIA) contiene las obligaciones de transparencia para el contenido generado o manipulado por IA (6). Según el artículo 50.2, los proveedores de sistemas que generan audio, imagen, vídeo o texto sintéticos deben garantizar que los resultados se marquen en un formato legible por máquina y puedan detectarse como generados o manipulados por una IA. Según el artículo 50.4, los responsables del despliegue de un sistema que genere o manipule imágenes, audio o vídeo constitutivos de ultrasuplantación (art. 3.60 RIA, el *deepfake* de la práctica) deben revelar que el contenido es artificial. Las obligaciones se aplican desde el 2 de agosto de 2026 (8).
+
+El Reglamento (UE) 2026/1744, de 8 de julio de 2026, publicado en el Diario Oficial el 24 de julio (el ómnibus digital de IA), modificó dos aspectos relevantes (7). Añadió un artículo 111.4, que concede a los proveedores cuyos sistemas ya estaban en el mercado antes del 2 de agosto de 2026 hasta el 2 de diciembre de 2026 para cumplir el artículo 50.2. Y reformuló el artículo 50.7: la Comisión evalúa si la adhesión a los códigos de buenas prácticas basta para cumplir los apartados 2 y 4, y, si la juzga insuficiente, puede adoptar un acto de ejecución con reglas comunes. El código de buenas prácticas sobre transparencia del contenido generado por IA es de adhesión voluntaria, y las obligaciones del artículo 50 son vinculantes con independencia de él (8).
+
+Dos observaciones sobre la relación de este régimen con los detectores.
+
+La primera es que el marcado y el etiquetado dependen de la cooperación de quien genera y de quien publica el contenido. El proveedor marca, el responsable del despliegue revela. El material producido con una herramienta que incumple el artículo 50.2, o al que alguien retira la marca, queda fuera de esa salvaguardia técnica. Un clasificador entrenado sobre el contenido visual, como el de Pangram, opera sin esa cooperación y cubre una parte de ese hueco. Esto es una valoración de política regulatoria y no una exigencia del RIA.
+
+La segunda es que, conforme al derecho vigente (*lex lata*), el RIA no obliga a usar detectores ni les reconoce efecto jurídico. El resultado de un clasificador no equivale al marcado del artículo 50.2 ni acredita por sí solo el incumplimiento del artículo 50.4.
+
+### 8.2. El resultado de un detector como medio de prueba
+
+En el proceso civil español, el artículo 382 de la Ley de Enjuiciamiento Civil regula los instrumentos de filmación, grabación y semejantes, y su apartado 3 remite la valoración a las reglas de la sana crítica. El artículo 348 aplica el mismo criterio al dictamen pericial (9). Un resultado de Pangram no constituye, por tanto, prueba tasada. Llegaría al proceso como parte de un dictamen que el tribunal valoraría con arreglo a esas reglas.
+
+La parte que lo aporte deberá poder explicar la versión del modelo, la fecha del análisis, el umbral de decisión, los datos de validación y las tasas de error en condiciones comparables al caso. La contraparte podrá impugnarlo con otro dictamen. Mientras no existan evaluaciones externas, el tribunal dispondrá solo de las cifras que la empresa publica, y la ponderación de un resultado concreto dependerá de lo que el perito acredite sobre esas condiciones.
+
+## 9. Implicaciones prácticas para la integridad informativa
+
+El lanzamiento llega cuando generar vídeo sintético realista es una operación de bajo coste y fácil acceso.
+
+En periodismo y verificación de hechos, el análisis fotograma a fotograma y la localización de regiones sintéticas ofrecen una herramienta útil para examinar material audiovisual. Image Flash 1.0 se presenta como capaz de identificar segmentos manipulados, además de los clips generados por completo. Esa función pesa porque una parte del contenido problemático combina material real con inserciones generadas (1)(3).
+
+En plataformas, la extensión de navegador y la API facilitan la adopción por usuarios individuales y por sistemas de moderación a escala (1). El escenario que DF26 mide, personas que hablan en contextos de discurso público, es el más sensible en política, instituciones y crisis. Un detector que reduzca el error frente a los sistemas previos podría limitar la circulación de deepfakes de alto impacto, a condición de que su rendimiento se sostenga en uso real (1)(2).
+
+Tres factores siguen sin resolverse. El rendimiento medido sobre réplicas sintéticas y sobre DF26 no asegura el mismo nivel ante la distribución heterogénea de contenidos reales. Un detector con cifras muy elevadas invita a usuarios e instituciones a tratar su salida como prueba definitiva, cuando es un sistema probabilístico con error residual y expuesto a ataques adversariales futuros. Y la carrera entre generación y detección sigue siendo asimétrica.
+
+Hasta que existan evaluaciones independientes, la práctica prudente para medios, plataformas y letrados incluye cuatro medidas:
+
+1. Conservar el archivo original y documentar su cadena de custodia antes de analizarlo, porque cada recompresión degrada las señales sobre las que opera un detector.
+2. Registrar la versión del modelo, la fecha, el umbral y el resultado completo, incluidos los avisos de confianza reducida.
+3. Contrastar el resultado con una segunda herramienta y con la procedencia del contenido: fuente primaria, metadatos disponibles y declaración de quien lo publicó.
+4. Encargar el análisis a un perito cuando el resultado vaya a sostener una resolución, una sanción o una acusación pública de falsedad.
+
+## 10. Conclusiones
+
+El 4 de noviembre de 2026 Pangram Labs presentó Image 1.0 e Image Flash 1.0 como respuesta a una limitación que DF26 había documentado dos meses antes: las personas y los detectores académicos probados operaban cerca del azar ante vídeos recientes de personas que hablan a cámara (1)(2).
+
+Las cifras de la empresa, un 99,96 % sobre su conjunto de imágenes y un 98,7 % en DF26, supondrían un avance significativo si una reproducción independiente las confirma. Los mapas de calor, el análisis de segmentos con inserciones sintéticas y la robustez declarada frente a compresión, ruido y baja resolución amplían las herramientas de periodistas, plataformas y usuarios (1).
+
+Varias limitaciones condicionan esos resultados. Los obtuvo la propia empresa, el anuncio no precisa la métrica del 98,7 %, las pruebas corresponden a escenarios controlados y la carrera entre generación y detección sigue abierta.
+
+En el plano jurídico, el artículo 50 RIA descansa en el marcado de los proveedores y en el etiquetado de los responsables del despliegue, y no impone ni regula el uso de detectores ajenos al contenido (6)(7). Un detector aporta una señal técnica que, ante un tribunal, se valora con sana crítica y exige un dictamen que explique su funcionamiento y sus tasas de error (9).
+
+El valor real de Image 1.0 e Image Flash 1.0 se decidirá en los próximos meses. Contará la reproducción independiente de sus resultados, su rendimiento ante los generadores que aparezcan y el uso prudente de sus salidas allí donde un error cuesta caro.
+
+## Bibliografía
+
+(1) Kasahara, I. (2026, 4 de noviembre). *Introducing Pangram Image 1.0*. Pangram Labs. https://www.pangram.com/blog/introducing-pangram-image-1-0
+
+(2) Shykula, S., Yermakov, A., Samarskyi, I., Mishkin, D., Cech, J., & Mishchuk, A. (2026). *DF26: We Cannot Tell Fake From Real Anymore*. arXiv:2609.07369 [preprint, 7 de septiembre de 2026]. https://arxiv.org/abs/2609.07369
+
+(3) Bell, K. (2026, 4 de noviembre). *Pangram expands its AI detection tools to video and images*. Engadget. https://www.engadget.com/2307116/pangram-expands-its-ai-detection-tools-to-video-and-images/
+
+(4) Sarwar, N. (2026, 7 de noviembre). *Pangram, the gold standard for AI text checks, releases Image 1.0 tool to sniff fake pics and videos*. Digital Trends. https://www.digitaltrends.com/cool-tech/pangram-the-gold-standard-for-ai-text-checks-releases-image-1-0-tool-to-sniff-fake-pics-and-videos/
+
+(5) Pangram Labs [@pangram]. (2026, 4 de noviembre). *Introducing Pangram Image 1.0* [publicación en X]. https://x.com/pangram/status/2118012434040447414
+
+(6) Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial), DO L, 12.7.2024. https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+
+(7) Reglamento (UE) 2026/1744 del Parlamento Europeo y del Consejo, de 8 de julio de 2026, por el que se modifican los Reglamentos (UE) 2024/1689, (UE) 2018/1139 y (UE) 2023/1230 (Digital Omnibus on AI), DO L, 24.7.2026. https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+
+(8) Comisión Europea. *Code of Practice on Transparency of AI-generated Content*. https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content [consulta: 9/11/2026]
+
+(9) Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil, BOE núm. 7, de 8 de enero de 2000, arts. 348 y 382. https://www.boe.es/buscar/act.php?id=BOE-A-2000-323
