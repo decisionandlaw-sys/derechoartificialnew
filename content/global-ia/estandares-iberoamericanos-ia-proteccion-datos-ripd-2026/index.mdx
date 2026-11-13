@@ -1,0 +1,270 @@
+---
+title: "Estándares iberoamericanos de IA y protección de datos: análisis"
+description: "La RIPD aprobó Estándares sobre IA y datos personales: soft law, neurodatos, decisiones automatizadas y los límites de su eficacia frente al Reglamento de IA."
+date: "2026-11-13"
+tags: ["RIPD", "Estándares iberoamericanos", "protección de datos", "neurodatos", "Reglamento de IA"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "estandares-iberoamericanos-ia-proteccion-datos-ripd-2026"
+readingTime: 35
+image: "/images/global-ia/estandares-iberoamericanos-ia-proteccion-datos-ripd-2026/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+El 12 de noviembre de 2026, la Agencia Española de Protección de Datos (AEPD) comunicó que la Red Iberoamericana de Protección de Datos (RIPD) había aprobado por unanimidad los Estándares iberoamericanos sobre el uso de datos personales en sistemas de inteligencia artificial. La AEPD, que ejerce la secretaría permanente de la Red, los presenta como el primer instrumento internacional que aborda de forma integral y sistemática, con un cuerpo articulado de disposiciones, la aplicación de la protección de datos a los tratamientos con IA (2). La Red declara que el texto protege los derechos de más de 600 millones de personas.
+
+El documento no es una ley. Se define como instrumento orientador, no crea un régimen jurídico paralelo y no sustituye las legislaciones nacionales (3). Su fuerza depende de que las autoridades de control y los legisladores de cada país lo adopten. Esa es la primera conclusión de este análisis: se trata de *soft law* con ambición interpretativa, que ofrece un lenguaje común a una región con regímenes de protección de datos muy desiguales.
+
+El texto introduce cuatro novedades de peso. La primera afecta a las decisiones automatizadas: el Estándar solo excluye el carácter exclusivamente automatizado de una decisión cuando existe una intervención humana previa, real y efectiva, de modo que una supervisión de trámite no sirve como garantía (3). La segunda extiende el principio de calidad a las inferencias y predicciones que genera el sistema, y no solo a los datos de entrada. La tercera dedica un apartado propio a los neurodatos, con una evaluación reforzada de necesidad y proporcionalidad y la declaración de incompatibilidad para los tratamientos que manipulen la voluntad de las personas. La cuarta equipara las inferencias sensibles, como la salud, la ideología o la orientación sexual deducidas de datos aparentemente neutros, a los datos sensibles que la persona facilita de forma directa (2) (3).
+
+Otras previsiones tienen consecuencias prácticas inmediatas para empresas y administraciones. Que un dato esté disponible en internet no basta para utilizarlo en el entrenamiento de un sistema de IA, y hace falta una base jurídica adecuada (2). Quien usa un sistema de un tercero sigue siendo responsable de los tratamientos cuyos fines y medios esenciales determina, aunque no haya entrenado el modelo (2). Cuando un modelo ya entrenado no permite suprimir los datos de una persona, el responsable debe justificarlo, informarla y adoptar medidas como excluir esos datos de futuros entrenamientos (2) (3).
+
+La comparación con el Reglamento (UE) 2024/1689 muestra una convergencia de fondo. Ambos textos parten de un enfoque basado en el riesgo y rechazan prácticas como la manipulación y la puntuación social discriminatoria. Difieren en la técnica y en el alcance: el Reglamento europeo es directamente aplicable y sancionador, y se refiere a los sistemas de IA con independencia de que traten datos personales, mientras que el Estándar iberoamericano se limita a los tratamientos de datos personales y no cuenta con un mecanismo regional de ejecución (6) (7).
+
+El análisis identifica cinco límites. El Estándar carece de fuerza vinculante, depende de la incorporación nacional, no define qué es un riesgo elevado, corre el peligro de convertir la gobernanza algorítmica en una formalidad documental y reconoce derechos ambiciosos sin garantizar los recursos para ejercerlos. Ninguno invalida el texto, pero todos condicionan su impacto.
+
+La valoración final es positiva con reservas. Los Estándares son un paso necesario, y no un paso suficiente. Para que la protección declarada llegue a las personas hacen falta guías técnicas armonizadas, seguimiento de la incorporación nacional, autoridades con más medios, auditorías independientes con criterios previos y vías de tutela accesibles. Esas medidas exigen voluntad política y presupuesto más que reformas legales.
+
+# De la orientación a la gobernanza: los Estándares Iberoamericanos sobre IA y datos personales
+
+## Un análisis crítico del instrumento aprobado por la Red Iberoamericana de Protección de Datos en 2026
+
+---
+
+## 1. Introducción: el contexto de una actualización necesaria
+
+### 1.1. La RIPD y su función de armonización regional
+
+La Red Iberoamericana de Protección de Datos (RIPD) reúne desde hace más de dos décadas a las autoridades de control de la región. La AEPD ostenta su secretaría permanente (1) (2), lo que acerca la producción técnica de la Red a los estándares europeos de privacidad. La RIPD no dicta normas vinculantes. Aprueba instrumentos orientadores que los Estados incorporan, en todo o en parte, a sus ordenamientos internos.
+
+Conviene distinguir dos textos. El primero es la nueva versión de los Estándares de Protección de Datos para los Estados Iberoamericanos, que actualiza la de 2017 y que la RIPD aprobó por unanimidad en su Encuentro de Cartagena de Indias, según informó la AEPD el 15 de junio de 2026 (1). El segundo es el objeto de este artículo: los Estándares iberoamericanos sobre el uso de datos personales en sistemas de inteligencia artificial, que la AEPD anunció como aprobados por unanimidad el 12 de noviembre de 2026 (2) y que la Red publicó en noviembre de 2026 (3). El segundo texto desarrolla al primero en un ámbito concreto.
+
+### 1.2. Del Estándar de 2017 a los instrumentos de 2026: continuidad y ruptura
+
+La continuidad entre los textos se aprecia en la persistencia de los principios clásicos de la protección de datos: licitud, lealtad, minimización, exactitud, limitación de la finalidad y responsabilidad proactiva. Los instrumentos de 2026 no los sustituyen ni los relativizan. Los proyectan sobre un objeto distinto, los tratamientos de datos personales que incorporan sistemas de inteligencia artificial o que resultan necesarios para desarrollarlos.
+
+La ruptura es más profunda. La AEPD explica que la actualización del marco general responde a retos que el texto de 2017 no abordaba: la inteligencia artificial, las decisiones automatizadas, la biometría, los neurodatos, la protección de la infancia y la adolescencia en entornos digitales, la gobernanza algorítmica y la calidad de los datos que usan los sistemas automatizados (1). Para la AEPD, el texto refleja además un cambio de enfoque, porque la protección de datos pasa a formar parte de un modelo más amplio de gobernanza digital (1). La Secretaría General Iberoamericana (SEGIB) añade una perspectiva transversal de derechos humanos y género y unas garantías de autonomía presupuestaria y libre gestión de personal para las autoridades de control (4).
+
+El texto de 2026 sobre IA lleva esa evolución a un campo específico. La AEPD lo describe como el primer instrumento internacional que aborda de forma integral y sistemática las especialidades de la protección de datos en los tratamientos con IA (2). La lectura es técnica y política a la vez. El documento orienta a los responsables del tratamiento y, al mismo tiempo, fija una posición regional. La AEPD indicó en junio que los Estándares generales serían remitidos a la SEGIB para su posible adopción en la Cumbre Iberoamericana de Jefes de Estado y de Gobierno, prevista para los días 4 y 5 de noviembre de 2026 en Madrid (1).
+
+### 1.3. Preguntas de investigación
+
+El artículo responde a tres preguntas. La primera se refiere a la naturaleza jurídica del Estándar y a su función respecto de los regímenes nacionales: ¿es un instrumento de *soft law* con vocación interpretativa o un marco con aspiraciones de convergencia normativa material? La segunda examina las innovaciones sustantivas en materia de IA, en particular la superación de la dicotomía entre decisiones automatizadas y decisiones con intervención humana, la construcción jurídica de los neurodatos y la proyección del principio de calidad sobre los sistemas algorítmicos. La tercera sitúa al Estándar en el panorama regulatorio global, sobre todo frente al Reglamento Europeo de Inteligencia Artificial, e identifica los límites que condicionan su eficacia.
+
+---
+
+## 2. Naturaleza jurídica y función sistemática del Estándar
+
+### 2.1. Un instrumento de *soft law* con vocación interpretativa
+
+El Estándar se presenta en su preámbulo como un «instrumento orientador para favorecer una interpretación común» del régimen de protección de datos en el contexto de la inteligencia artificial. Añade que «no crea un régimen ético-jurídico paralelo para la inteligencia artificial ni pretende sustituir las legislaciones nacionales» (3). La AEPD confirma esa lectura: el texto no crea un régimen jurídico paralelo ni nuevas obligaciones generales, y desarrolla las particularidades que plantea aplicar la normativa de protección de datos a la IA (2).
+
+Estamos ante un instrumento de *soft law* en sentido estricto. No es vinculante, pero cuenta con autoridad interpretativa, que procede de la legitimidad de quienes lo emiten y de su coherencia con el marco vigente. Este tipo de instrumentos tiende a operar por presión interpretativa: los operadores jurídicos y las autoridades de control adoptan sus criterios como referencia aunque no exista obligación formal. El instrumento actúa en el plano de la interpretación y deja la creación normativa a cada Estado.
+
+### 2.2. La relación con los regímenes nacionales y con los Estándares generales
+
+El Estándar establece una relación de complementariedad con los regímenes nacionales. Su apartado 1.1.2 afirma que tiene «naturaleza orientadora y carácter complementario del régimen general de protección de datos» (3). El texto no colma las lagunas de los ordenamientos nacionales. Cuando un Estado no ha incorporado una categoría específica, por ejemplo la de neurodatos, el Estándar no la crea *ex nihilo*. Ofrece criterios para interpretar las categorías existentes, como los datos sensibles o los datos de salud, de manera coherente con la realidad tecnológica.
+
+La relación con los Estándares generales de la Red es igual de complementaria. El texto sobre IA desarrolla, en un ámbito sectorial, el marco común y no altera el catálogo de derechos del instrumento general. Explicita cómo se proyectan esos derechos cuando el tratamiento incorpora sistemas algorítmicos (2).
+
+### 2.3. El enfoque basado en el riesgo y la responsabilidad proactiva
+
+La AEPD sitúa el texto en un enfoque basado en el riesgo, la proporcionalidad y la neutralidad tecnológica (2). Evita reproducir las obligaciones generales que ya existen, distingue los tratamientos según sus riesgos y favorece medidas proporcionadas. La intensidad de las obligaciones depende de la naturaleza del tratamiento, de los datos utilizados, de las finalidades, del contexto y del impacto potencial sobre los derechos y libertades.
+
+La formulación revela una tensión que recorre todo el instrumento. Hay que garantizar una protección efectiva sin levantar barreras desproporcionadas a la innovación. El Estándar confía esa tensión a la graduación de las medidas, pero no establece una tabla de niveles ni criterios cuantitativos de riesgo. Identifica supuestos que requieren «una atención especialmente rigurosa»: las decisiones automatizadas con efectos jurídicos, la puntuación social, la identificación biométrica, el reconocimiento de emociones, los neurodatos y el tratamiento de datos de personas en situación de vulnerabilidad (apartado 7.6) (3).
+
+Identificar supuestos de riesgo elevado sin definir umbrales es una de las debilidades operativas del instrumento. Cada responsable evalúa el nivel de riesgo por su cuenta, sin una metodología armonizada. Cabe esperar que esa indeterminación genere divergencias entre Estados y sectores, y dificulte la convergencia que el texto persigue.
+
+---
+
+## 3. Innovaciones sustantivas en materia de inteligencia artificial
+
+### 3.1. La intervención humana efectiva y la superación de la dicotomía clásica
+
+La AEPD explica que el marco general de 2026 evoluciona desde la idea clásica de decisiones «exclusivamente automatizadas» hacia decisiones «exclusiva o esencialmente automatizadas» (1). El Estándar sobre IA desarrolla esa evolución en su Capítulo IV, dedicado a las decisiones automatizadas y al perfilado. El motivo es práctico. En los entornos algorítmicos actuales, la intervención humana suele ser nominal y carece de capacidad real para alterar el resultado del sistema.
+
+El apartado 4.2, relativo a la intervención humana efectiva, establece que solo se excluirá el carácter exclusivamente automatizado de una decisión «cuando exista una intervención humana previa, real y efectiva» (3). La descripción de esa intervención debe expresar su función efectiva y no puede presentar como garantía una supervisión meramente formal (3). El apartado 2.5.2, sobre transparencia, exige que la información permita comprender el alcance real de la intervención humana y no solo su existencia declarada (3).
+
+La consecuencia práctica es importante. En los ordenamientos que reconocen el derecho a no ser objeto de decisiones individuales automatizadas, la reformulación amplía el ámbito de protección. Quedan cubiertas las decisiones adoptadas sin intervención humana y también aquellas en las que la intervención existe pero no puede modificar el resultado.
+
+El Estándar no define con precisión qué es una intervención efectiva. El responsable valora cuándo una supervisión deja de ser formal y se vuelve material, y en última instancia lo interpretan las autoridades de control. Esa indeterminación encaja con la naturaleza orientadora del texto, pero introduce incertidumbre y puede dificultar una aplicación uniforme en la región.
+
+### 3.2. La calidad de los datos como garantía frente al sesgo algorítmico
+
+El Estándar refuerza el principio de calidad y exactitud y lo proyecta sobre todo el ciclo de vida de los sistemas de IA. El apartado 2.4 no se limita a exigir la exactitud de los datos personales en sentido tradicional. Extiende la exigencia a las inferencias, los perfiles y las predicciones que genera el sistema (3). La AEPD añade que las inferencias deben utilizarse con atención al grado de incertidumbre asociado, sin atribuirles una certeza superior a la justificada (2).
+
+La innovación tiene dos dimensiones. La primera es la calidad de los datos de entrenamiento. El responsable debe disponer de información suficiente sobre la procedencia, la representatividad y las condiciones de obtención de los datos, sobre las limitaciones conocidas del sistema, sobre los sesgos identificados y sobre las medidas de mitigación adoptadas (apartado 1.4.3) (3). La obligación alcanza a los tratamientos previos que haya realizado un proveedor, de modo que impone trazabilidad en la cadena de valor.
+
+La segunda dimensión es la calidad de los resultados. El apartado 2.4 exige que las inferencias y las predicciones sean exactas y que el sistema resulte idóneo para la finalidad y el contexto en que se emplea. El apartado 9.3, sobre biometría y reconocimiento de emociones, desarrolla la exigencia y requiere que «pueda acreditarse, conforme a los deberes de calidad y exactitud y de documentación del tratamiento previstos en el Estándar, la idoneidad y la fiabilidad del sistema para la finalidad y el contexto en que se emplea» (3).
+
+Esta proyección del principio de calidad sobre los resultados algorítmicos es una novedad relevante, pero plantea dificultades operativas. La exactitud de una inferencia es probabilística por definición. Los sistemas de aprendizaje automático producen resultados con márgenes de error que no siempre se pueden eliminar. El Estándar no fija umbrales de exactitud aceptables ni criterios para decidir cuándo un margen de error es compatible con la finalidad del tratamiento. Esa decisión recae en el responsable.
+
+### 3.3. Neurodatos: un régimen propio
+
+La regulación de los neurodatos es la innovación más ambiciosa del Estándar y la que más atención institucional ha recibido (1) (2). El apartado 1.6.i) los define como «datos personales obtenidos a partir de un tratamiento técnico específico (de manera directa, indirecta o inferida), en relación con las características anatómicas, fisiológicas, funcionales o conductuales de una persona física relativos a la actividad cerebral y de su sistema nervioso» (3).
+
+El apartado 3.3 desarrolla un régimen específico. El responsable debe someter los tratamientos que utilicen neurodatos o generen inferencias sobre estados cognitivos, emocionales o conductuales a una «especial evaluación de necesidad y proporcionalidad». Esa evaluación atiende a la capacidad de los datos para revelar aspectos especialmente sensibles de la persona, al contexto del tratamiento, en particular cuando existe una relación de asimetría de poder, y a los riesgos para la autonomía, la intimidad y los derechos fundamentales (3). El apartado 3.3.2 declara incompatibles con los principios de protección de datos los tratamientos que utilicen neurodatos o inferencias sobre estados cognitivos, emocionales o conductuales «para manipular indebidamente la voluntad o el comportamiento de las personas o explotar situaciones de vulnerabilidad» (3).
+
+La construcción tiene interés dogmático. El artículo 9 del RGPD no menciona los neurodatos entre las categorías especiales: no son datos de salud, ni datos genéticos, ni datos biométricos en la definición estricta de este último concepto. El Estándar les dedica un apartado propio y les aplica una protección reforzada por su capacidad de revelar aspectos reservados de la persona y por su incidencia sobre la autonomía individual. La AEPD, por su parte, señala que el marco general de 2026 incorpora por primera vez referencias específicas a los neurodatos dentro de las categorías especiales de datos sensibles (1).
+
+El régimen tiene limitaciones. El Estándar no prohíbe con carácter general el tratamiento de neurodatos. Lo somete a una evaluación reforzada. La licitud se determina según el régimen general de protección de datos, sin bases jurídicas específicas añadidas. El apartado 3.3.2 advierte que el consentimiento «no debería constituir una base legitimadora cuando el responsable del tratamiento no esté en condiciones de determinar de antemano, con razonable precisión, qué inferencias se derivarán del tratamiento de los neurodatos» (3). La fórmula «no debería» carece de fuerza prohibitiva y funciona como criterio interpretativo para las autoridades de control.
+
+### 3.4. Inferencias sensibles y grupos de protección reforzada
+
+El Estándar presta atención específica a las inferencias que revelan categorías especiales de datos y a la protección de personas o grupos en situación de vulnerabilidad. El apartado 3.1, relativo a la sensibilidad inferida, establece que las inferencias que revelan datos sensibles reciben la misma protección que los datos sensibles que facilita directamente la persona titular (3). La AEPD lo ilustra con la salud, la ideología o la orientación sexual deducidas a partir de datos aparentemente neutros (2). El régimen reforzado de las categorías especiales alcanza así a datos que la persona nunca entregó y que el sistema derivó por su cuenta.
+
+El apartado 3.2 regula la protección de personas o grupos en situación de vulnerabilidad. Su interés superior debe proyectarse sobre la determinación del tratamiento y sobre la valoración y el uso de las inferencias y los resultados del sistema (apartado 3.2.1) (3). Utilizar sus datos para desarrollar, entrenar, validar o mejorar sistemas de IA exige «una justificación especialmente rigurosa y la adopción de garantías reforzadas» (apartado 3.2.2) (3). El apartado 3.2.3 declara que el perfilado, la publicidad comportamental y las inferencias que exploten indebidamente la situación de vulnerabilidad «quedan comprendidos en la incompatibilidad con los principios de protección de datos declarada con carácter general en el Estándar» (3).
+
+La SEGIB destaca que el marco general de 2026 incorpora una perspectiva transversal de derechos humanos y género (4). Esa perspectiva informa también la protección de los grupos vulnerables en el texto sobre IA.
+
+### 3.5. Datos accesibles en internet y reparto de responsabilidades
+
+Dos previsiones que la AEPD destaca en su comunicado de 12 de noviembre afectan de lleno a quienes desarrollan y utilizan modelos. La primera aborda el entrenamiento con datos obtenidos de internet. El Estándar establece que el hecho de que un dato esté públicamente disponible no autoriza por sí solo su utilización para entrenar sistemas de IA. Hace falta una base jurídica adecuada y una valoración de lo que las personas podían esperar razonablemente al publicarlo (2).
+
+La segunda previsión reparte responsabilidades entre los actores de la cadena. Cuando un proveedor usa datos personales de sus clientes para entrenar o mejorar sus propios modelos, necesita una habilitación jurídica adecuada y debe cumplir las obligaciones correspondientes. Quien utiliza un sistema de IA de terceros sigue siendo responsable de los tratamientos cuyos fines y medios esenciales determina, aunque no haya desarrollado ni entrenado el modelo (2). Para las organizaciones que contratan herramientas de IA generativa o agéntica, esta previsión impide trasladar al proveedor toda la responsabilidad.
+
+---
+
+## 4. La arquitectura de garantías en el ciclo de vida de la IA
+
+### 4.1. Documentación, trazabilidad y gobernanza algorítmica
+
+El Estándar proyecta su sistema de garantías sobre todo el ciclo de vida del tratamiento: desarrollo, entrenamiento, evaluación, despliegue, utilización y mejora. El apartado 1.3.2 exige que el análisis de los tratamientos tenga en cuenta «las distintas fases del ciclo de vida» para identificar los cambios en las finalidades, los datos, los actores o los riesgos y determinar en cada caso las obligaciones aplicables (3). El apartado 1.3.3 precisa que las obligaciones y garantías, «en particular las relativas a la licitud, la minimización y la calidad de los datos, deberán determinarse de forma separada para cada una de ellas» (3).
+
+Es una novedad metodológica. Los regímenes tradicionales de protección de datos toman el tratamiento como unidad de análisis y no desarrollan una dogmática específica para las fases preparatorias o posteriores. El Estándar reconoce que el entrenamiento, el ajuste o el reentrenamiento de modelos constituyen «un tratamiento diferenciado cuando respondan a una finalidad propia o comporten cambios relevantes en la finalidad, los datos utilizados, los actores intervinientes o los riesgos del tratamiento» (apartado 1.5.3) (3). La calificación tiene consecuencias: cada fase puede requerir una base jurídica distinta, un análisis de compatibilidad específico y medidas de seguridad diferenciadas.
+
+El deber de documentación del apartado 1.4 es el instrumento que acredita el sistema. La documentación debe ser «suficiente, teniendo en cuenta la naturaleza, la complejidad y los riesgos del tratamiento» (apartado 1.4.1) y puede incluir «las decisiones adoptadas sobre el diseño, la configuración o la utilización del sistema de inteligencia artificial» (apartado 1.4.2) (3). Cuando intervienen encargados o proveedores, el responsable debe asegurarse de disponer de la información necesaria sobre el sistema y, «cuando resulte relevante, sobre los tratamientos previos realizados por el proveedor» (apartado 1.4.3) (3).
+
+El Capítulo VII desarrolla la gobernanza algorítmica. El apartado 7.3 exige que el responsable establezca «medidas de gobernanza algorítmica adecuadas, proporcionadas al riesgo y susceptibles de verificación». Entre ellas figuran, cuando proceda, la asignación de responsabilidades, la gestión de riesgos, la supervisión humana, la formación de las personas que intervienen en el tratamiento y la revisión periódica y la mejora continua de las medidas adoptadas (3). El apartado 7.8 recomienda, para los tratamientos de riesgo elevado, «revisiones o auditorías independientes» que deben apoyarse en «criterios de evaluación previamente definidos y proporcionados al riesgo» y acreditar la independencia, la competencia técnica y la ausencia de conflictos de interés de quienes las realicen (3).
+
+La implantación efectiva de la auditoría algorítmica dependerá de que existan metodologías armonizadas y profesionales cualificados en la región. Hoy ni unas ni otros abundan.
+
+### 4.2. Evaluación de impacto y consulta previa a la autoridad de control
+
+El apartado 7.5 regula la evaluación de impacto. Cuando la normativa aplicable la exige, el responsable debe realizarla «antes del inicio del tratamiento y de su despliegue» y revisarla «cuando se produzcan cambios relevantes en los datos, las finalidades, los modelos y los sistemas de inteligencia artificial utilizados, los proveedores o los riesgos para las personas» (3). El Estándar recomienda realizarla, «con independencia de dicha exigibilidad, cuando el tratamiento pueda entrañar un riesgo elevado para los derechos y libertades de las personas» (3).
+
+La evaluación debe prestar atención particular a los riesgos de las decisiones automatizadas, del perfilado y de los posibles efectos discriminatorios o adversos sobre las personas o grupos afectados. Cuando el tratamiento pueda producir esos efectos o afectar a grupos que requieren protección reforzada, «se procurará recabar el punto de vista de las personas o colectivos potencialmente afectados o de sus representantes» (3). La participación de los afectados es una novedad que no existe en todos los regímenes nacionales de la región.
+
+El apartado 7.6 establece la consulta previa. Cuando la evaluación identifica riesgos elevados, el responsable debe adoptar medidas adicionales para mitigarlos. Si a pesar de ellas «persiste un riesgo elevado, deberá consultar a la autoridad de protección de datos competente con anterioridad al inicio del tratamiento o al despliegue del sistema o bien abstenerse de iniciar el tratamiento» (3). El mismo apartado enumera los supuestos que requieren atención especialmente rigurosa: las decisiones automatizadas con efectos jurídicos o con afectación significativa, la puntuación social, la identificación biométrica, el reconocimiento o la inferencia de emociones, la identificación biométrica remota en espacios públicos, el tratamiento de neurodatos, el de datos de personas en situación de vulnerabilidad y la reutilización masiva de datos personales para desarrollar o entrenar sistemas de IA (3).
+
+La técnica de identificar supuestos de riesgo elevado sin definir umbrales, ya señalada en la Sección 2, reaparece aquí. El Estándar no ofrece criterios cuantitativos ni metodologías armonizadas para decidir cuándo un riesgo es «elevado».
+
+### 4.3. Derechos de las personas sobre inferencias y perfiles
+
+El Capítulo V regula el ejercicio de los derechos respecto de los datos tratados mediante sistemas de IA. El apartado 5.1 establece que los derechos reconocidos por la normativa de protección de datos «podrán ejercerse respecto de los datos personales tratados mediante sistemas de inteligencia artificial, incluidas las inferencias, perfiles y demás resultados que constituyan datos personales» (3). El texto confirma así que las inferencias son datos personales sujetos al régimen general de derechos.
+
+El apartado 5.2 permite a la persona saber «si sus datos han sido utilizados en un sistema de inteligencia artificial, si se han generado perfiles o inferencias sobre ella y si estos han influido o han sido utilizados para adoptar o apoyar decisiones que le afecten» (3). El derecho de rectificación del apartado 5.3 se adapta a la naturaleza de las inferencias. Cuando estas «no puedan rectificarse directamente por su propia naturaleza, la persona podrá solicitar la corrección de los datos utilizados para generarlas, aportar información complementaria, impugnarlas o solicitar su revisión» (3).
+
+El apartado 5.4 regula la supresión, la limitación y la oposición. El responsable «procurará seleccionar, configurar o utilizar sistemas que incorporen, siempre que resulte técnicamente viable atendiendo al estado de la tecnología y a los medios razonablemente disponibles, mecanismos que faciliten el ejercicio efectivo de estos derechos durante todo el ciclo de vida del tratamiento» (3). La cláusula «siempre que resulte técnicamente viable» reconoce las limitaciones técnicas, pero no permite invocarlas para vaciar de contenido los derechos.
+
+El apartado 5.5 aborda el caso de que esos derechos «no puedan ejercerse plenamente respecto de un modelo previamente entrenado». El responsable debe justificarlo, dejar constancia conforme al deber de documentación, informar a la persona y adoptar «las medidas razonablemente disponibles para limitar el tratamiento y reducir su impacto», entre ellas la supresión de los datos personales de los entornos en que se encuentren, como los conjuntos de datos de entrenamiento, los índices, las bases de representaciones vectoriales y las memorias persistentes, y su exclusión de futuros entrenamientos (3) (2). Es una de las aportaciones más originales del Estándar. Reconoce la dificultad técnica del derecho de supresión en modelos ya entrenados y le ofrece un régimen de garantías alternativas, que traslada el acento desde la supresión retrospectiva hacia la limitación prospectiva.
+
+---
+
+## 5. Análisis comparado con el Reglamento Europeo de Inteligencia Artificial
+
+### 5.1. Convergencias en el enfoque de riesgo y en las prácticas prohibidas
+
+La comparación entre el Estándar y el Reglamento (UE) 2024/1689 muestra una convergencia sustantiva de método. Ambos adoptan un enfoque basado en el riesgo, estructurado en niveles de intensidad creciente, y coinciden en identificar un núcleo de prácticas cuyo potencial lesivo para los derechos fundamentales justifica su prohibición o una atención especialmente rigurosa.
+
+El Reglamento europeo clasifica los sistemas de IA en cuatro categorías: riesgo inaceptable, alto riesgo, riesgo limitado, sujeto a obligaciones de transparencia, y riesgo mínimo (6). Entre las prácticas prohibidas figuran las técnicas subliminales o engañosas para manipular el comportamiento, la explotación de vulnerabilidades por edad, discapacidad o situación socioeconómica, la puntuación social, la inferencia de emociones en el trabajo o en la escuela, la categorización biométrica para inferir atributos sensibles y la identificación biométrica remota en tiempo real en espacios públicos con fines policiales, con excepciones estrictamente delimitadas (6) (8). El Reglamento (UE) 2026/1744 modificó después aspectos de las prácticas prohibidas y de las obligaciones de transparencia del artículo 50, de modo que la comparación debe hacerse con el texto consolidado (7) (8).
+
+El Estándar iberoamericano no ofrece un catálogo de prácticas prohibidas tan sistemático, pero contiene previsiones equivalentes en lo sustancial. El apartado 3.3.2 declara incompatibles con los principios de protección de datos los tratamientos de neurodatos o de inferencias sobre estados cognitivos, emocionales o conductuales «para manipular indebidamente la voluntad o el comportamiento de las personas o explotar situaciones de vulnerabilidad» (3). El apartado 3.2.3 declara comprendidos en la incompatibilidad general «el perfilado, la publicidad comportamental y las inferencias que exploten indebidamente la situación de vulnerabilidad» (3). El apartado 9.4, sobre puntuación y selección, alude a la «incompatibilidad declarada con carácter general en el Estándar para los mecanismos de puntuación social que produzcan efectos discriminatorios o restricciones injustificadas de derechos» (3). La AEPD resume el conjunto al señalar que el Estándar declara incompatibles con la protección de datos los sistemas de IA destinados a manipular de forma engañosa, explotar la vulnerabilidad de las personas o puntuarlas socialmente de manera discriminatoria (2).
+
+La convergencia de fondo no alcanza a la forma. El instrumento europeo articula las prohibiciones en un catálogo cerrado y vinculante. El iberoamericano las formula como declaraciones de incompatibilidad con los principios de protección de datos, con menor precisión taxativa. Esa diferencia de técnica refleja la distinta naturaleza de ambos textos y condiciona su eficacia, cuestión que se aborda en la Sección 6.
+
+### 5.2. Divergencias en la técnica normativa y en el alcance vinculante
+
+La divergencia más evidente se refiere a la naturaleza jurídica. El Reglamento (UE) 2024/1689 es Derecho derivado de la Unión, directamente aplicable en los Estados miembros y dotado de fuerza vinculante (6). El Estándar iberoamericano es *soft law* sin eficacia jurídica directa. Esa diferencia condiciona el alcance de las obligaciones, el régimen sancionador y las vías de tutela de las personas afectadas.
+
+Una segunda divergencia afecta al ámbito de aplicación. El Reglamento europeo se aplica a los sistemas de IA como tales, con independencia de que traten datos personales (6). El Estándar iberoamericano, por su vinculación con la protección de datos, se aplica solo a los tratamientos de datos personales que incorporan sistemas de IA. El apartado 1.3.1 declara que su objeto son «los tratamientos de datos personales y las finalidades para las que se lleven a cabo, y no los sistemas o modelos de inteligencia artificial, ni a las tecnologías en que se sustenten, considerados de forma abstracta» (3). El Estándar deja fuera los sistemas de IA que operan con datos anonimizados o sintéticos que no permiten identificar a nadie. El Reglamento europeo, en cambio, puede cubrirlos según el riesgo que generen.
+
+Una tercera divergencia se refiere a la supervisión y la ejecución. El Reglamento europeo articula autoridades nacionales de vigilancia del mercado, coordinadas por la Oficina Europea de IA y con potestades sancionadoras (6). El Estándar iberoamericano remite la supervisión a las autoridades de protección de datos de cada Estado y no crea un mecanismo regional de coordinación ejecutiva. El apartado 7.9 se limita a disponer que la documentación generada «deberá estar a disposición de la autoridad de protección de datos competente en el ejercicio de sus funciones de supervisión» (3). No prevé procedimientos de cooperación transfronteriza ni mecanismos de tutela regional.
+
+### 5.3. La influencia del modelo europeo en la región iberoamericana
+
+La convergencia sustantiva no es casual. La AEPD ejerce la secretaría permanente de la RIPD y presenta los Estándares como un instrumento que favorece una innovación tecnológica compatible con la protección de los derechos de más de 600 millones de personas (2). La SEGIB sostiene que los Estándares generales posicionan a la región como referente global en la materia (4). Es razonable pensar que la experiencia europea en protección de datos influyó en la orientación técnica del instrumento, aunque los textos publicados no documentan ese proceso de elaboración.
+
+La terminología apunta en la misma dirección. El Estándar iberoamericano aplica el enfoque de riesgo y trata las decisiones automatizadas y los datos sensibles de manera próxima al RGPD y al Reglamento de IA. En un punto va más lejos. Dedica un apartado propio a los neurodatos, que el artículo 9 del RGPD no menciona, y el legislador europeo no ha adoptado todavía esa opción.
+
+La coincidencia temporal con el calendario del Reglamento europeo de IA añade un dato. La aplicación general del Reglamento estaba prevista para el 2 de agosto de 2026. El Reglamento (UE) 2026/1744, publicado el 24 de julio de 2026, aplazó las obligaciones de los sistemas de alto riesgo hasta el 2 de diciembre de 2027 para los del anexo III y hasta el 2 de agosto de 2028 para los incorporados en productos regulados por legislación sectorial (7). Ese calendario coincide con la aprobación del Estándar y sugiere una voluntad de alineación estratégica que va más allá de la imitación técnica.
+
+Persiste una asimetría estructural. El Reglamento europeo se inscribe en un ordenamiento con integración supranacional, primacía y efecto directo. Los Estándares iberoamericanos operan en un espacio de cooperación intergubernamental sin cesión de soberanía. La convergencia sustantiva no produce, por sí sola, convergencia en la aplicación.
+
+---
+
+## 6. Límites, riesgos y condiciones de eficacia
+
+### 6.1. La ausencia de fuerza vinculante directa
+
+El primer límite deriva de la propia naturaleza jurídica del instrumento. Como se expuso en la Sección 2, el Estándar se define como orientador y complementario, y declara que «no crea un régimen ético-jurídico paralelo» ni «pretende sustituir las legislaciones nacionales» (3). Esa configuración, coherente con la tradición de *soft law* de la RIPD, impide que sus disposiciones sean exigibles directamente ante los tribunales o generen por sí mismas derechos subjetivos invocables.
+
+La eficacia del Estándar depende, por tanto, de que los ordenamientos nacionales lo incorporen, en todo o en parte. La configuración tiene una ventaja y un riesgo. La ventaja es la flexibilidad: el instrumento se adapta a las distintas tradiciones jurídicas de la región sin imponer soluciones uniformes. El riesgo es la fragmentación. Una incorporación selectiva o una interpretación divergente de las autoridades nacionales puede producir un panorama heterogéneo que dificulte la convergencia buscada.
+
+### 6.2. La dependencia de la incorporación nacional
+
+El segundo límite es la dependencia de la incorporación nacional. El Estándar no fija plazos ni procedimientos para integrarse en los ordenamientos internos ni articula un seguimiento o evaluación de esa integración. Un órgano regional de seguimiento podría asumir esa función. La AAIP argentina menciona en su comunicado sobre el Encuentro 2026 un Observatorio Iberoamericano de Protección de Datos Personales (5), pero los textos consultados no le asignan competencias de supervisión sobre este Estándar.
+
+Algunos Estados incorporarán los criterios mediante reformas legislativas. Otros los adoptarán a través de guías de sus autoridades de control. Otros los dejarán sin efecto en la práctica. Esa heterogeneidad hará difícil medir el impacto real del instrumento y puede defraudar las expectativas de los operadores y de las personas afectadas.
+
+### 6.3. El riesgo de «apariencia de cumplimiento» en la gobernanza algorítmica
+
+El tercer límite es el riesgo de que las medidas de gobernanza algorítmica se reduzcan a ejercicios formales sin incidencia real sobre los derechos. El Estándar exige documentación «suficiente» y medidas de gobernanza «susceptibles de verificación», pero no fija criterios materiales para evaluar la suficiencia ni prevé mecanismos independientes de verificación (3).
+
+El apartado 7.7 advierte que «la adhesión a códigos de conducta, normas técnicas o esquemas de certificación, así como la evaluación, la autorización, la certificación o la supervisión de un sistema de inteligencia artificial conforme a la normativa específica que le resulte aplicable, podrán facilitar la aplicación del Estándar y acreditar la adopción de buenas prácticas, pero no sustituyen la responsabilidad que corresponde al responsable» (3). La advertencia reconoce que una certificación puede convertirse en un fin en sí misma, separada de la protección efectiva.
+
+En la práctica del cumplimiento normativo, ese fenómeno se conoce como *compliance washing*: documentos y procedimientos que se adoptan sin modificar las prácticas. El Estándar solo opone a ese riesgo la recomendación de auditorías independientes en los supuestos de riesgo elevado (apartado 7.8) (3). La eficacia de esas auditorías dependerá de que existan metodologías armonizadas y profesionales cualificados, y de que quienes las realicen sean independientes de verdad.
+
+### 6.4. La indeterminación de los umbrales de riesgo
+
+El cuarto límite, anticipado en las Secciones 2 y 4, es la indeterminación de los umbrales de riesgo. El Estándar identifica supuestos que requieren atención especialmente rigurosa y recomienda realizar evaluaciones de impacto cuando el tratamiento pueda entrañar «un riesgo elevado», pero no define el riesgo elevado ni propone metodologías para determinarlo (3).
+
+Una autoridad puede considerar de riesgo elevado un tratamiento que otra considere de riesgo moderado. Las obligaciones y las garantías exigibles cambiarían entonces de un país a otro y de un sector a otro, y la convergencia que el Estándar busca quedaría comprometida. Las guías técnicas de las autoridades nacionales pueden resolver el problema, pero no serán vinculantes y cada autoridad decidirá si las adopta.
+
+### 6.5. La asimetría entre la protección declarada y los recursos disponibles
+
+El quinto límite es la distancia entre la protección declarada y los recursos para hacerla efectiva. El Estándar reconoce derechos ambiciosos, como el acceso a inferencias y perfiles, la rectificación de predicciones y la exclusión de futuros entrenamientos, pero no articula mecanismos de tutela específicos ni garantiza los recursos necesarios para ejercerlos (3).
+
+Ejercer derechos frente a sistemas algorítmicos exige capacidades técnicas y recursos económicos que la mayoría de las personas afectadas no tiene. El Estándar apenas toca la cuestión. Prevé que la información se facilite «en términos comprensibles» (apartado 3.2.3) y que se «procurará recabar el punto de vista de las personas o colectivos potencialmente afectados» en las evaluaciones de impacto (apartado 7.5) (3). Sin apoyo técnico y jurídico de las autoridades de control, los derechos reconocidos corren el riesgo de quedarse en declaraciones programáticas.
+
+---
+
+## 7. Conclusiones: un paso necesario, no suficiente
+
+El análisis permite formular cinco conclusiones sobre la naturaleza, el alcance y los límites de los Estándares iberoamericanos sobre el uso de datos personales en sistemas de inteligencia artificial, que la AEPD anunció como aprobados por la RIPD el 12 de noviembre de 2026 (2).
+
+La primera conclusión se refiere a la naturaleza jurídica. Los Estándares son *soft law* con vocación interpretativa y función complementaria del régimen general de protección de datos. No crean un régimen paralelo ni sustituyen las legislaciones nacionales. Precisan cómo aplicar los principios, derechos y obligaciones que ya existen cuando el tratamiento incorpora IA (2) (3). Esa configuración les da flexibilidad, pero limita su eficacia a la voluntad de incorporación de los Estados y a la capacidad de las autoridades nacionales para convertir sus criterios en supervisión efectiva.
+
+La segunda conclusión se refiere a las innovaciones sustantivas: la exigencia de una intervención humana previa, real y efectiva en las decisiones automatizadas, la proyección del principio de calidad sobre las inferencias y los resultados algorítmicos, el régimen propio de los neurodatos, la equiparación de las inferencias sensibles a los datos sensibles facilitados de forma directa, la regla según la cual los datos accesibles en internet no se pueden usar sin base jurídica para entrenar sistemas y la extensión de la gobernanza algorítmica a todo el ciclo de vida del tratamiento (2) (3). Estas innovaciones anticipan tendencias regulatorias que probablemente se consolidarán y sitúan a la región en una posición de vanguardia desde la perspectiva de la protección de datos.
+
+La tercera conclusión sitúa al Estándar en el panorama global. La convergencia con el Reglamento Europeo de Inteligencia Artificial es notable en el enfoque de riesgo, en la identificación de prácticas incompatibles y en el tratamiento de las decisiones automatizadas. La divergencia en la técnica normativa y en el alcance vinculante condiciona la eficacia del instrumento iberoamericano. La convergencia de fondo no se traduce en convergencia en la aplicación, y la influencia del modelo europeo no viene acompañada de los mecanismos de integración supranacional de la Unión (6) (7).
+
+La cuarta conclusión recoge los límites. El Estándar carece de fuerza vinculante directa, depende de la incorporación nacional, corre el riesgo de apariencia de cumplimiento en la gobernanza algorítmica, no define los umbrales de riesgo y declara más protección de la que tiene recursos para garantizar. Esos límites no invalidan el instrumento, pero condicionan su impacto real y exigen medidas complementarias.
+
+La quinta conclusión propone las condiciones de eficacia. El Estándar ganaría fuerza con guías técnicas armonizadas que resuelvan las indeterminaciones identificadas, con mecanismos de seguimiento de su incorporación nacional, con autoridades de control mejor dotadas, con auditorías independientes basadas en criterios previamente definidos y con vías de tutela accesibles para las personas afectadas. Estas medidas no exigen necesariamente reformas legislativas. Exigen voluntad política sostenida y presupuesto.
+
+La valoración global es positiva con reservas. Los Estándares son un paso necesario en la construcción de un marco regional de protección de datos frente a la IA. Han movilizado a las autoridades de control de la región y han situado a Iberoamérica en el debate global sobre gobernanza algorítmica. Pero un paso necesario no es un paso suficiente. El resultado dependerá de que los Estados los incorporen, de que las autoridades supervisen su cumplimiento y de que las personas afectadas por sistemas de IA obtengan una protección real.
+
+Su principal aportación no está tanto en las disposiciones concretas, que en muchos casos reproducen o desarrollan criterios del acervo europeo, como en su función de articulación regional. Un lenguaje común y un marco de referencia compartido facilitan la convergencia normativa, reducen los costes para quienes operan en varias jurisdicciones y refuerzan la posición de la región en los debates internacionales. El éxito dependerá de que los Estados iberoamericanos conviertan ese lenguaje común en prácticas de protección efectivas.
+
+---
+
+## Bibliografía
+
+(1) Agencia Española de Protección de Datos (AEPD). «La Red Iberoamericana actualiza el marco común de privacidad con especial atención a los neurodatos, la IA y las decisiones automatizadas». 15/06/2026. https://aepd.es/prensa-y-comunicacion/notas-de-prensa/red-iberoamericana-actualiza-marco-comun-privacidad
+
+(2) Agencia Española de Protección de Datos (AEPD). «La Red Iberoamericana de Protección de Datos aprueba unos Estándares internacionales pioneros sobre inteligencia artificial y protección de datos personales». 12/11/2026. https://aepd.es/prensa-y-comunicacion/notas-de-prensa/la-red-iberoamericana-de-proteccion-de-datos-aprueba-unos
+
+(3) Red Iberoamericana de Protección de Datos (RIPD). *Estándares iberoamericanos sobre el uso de datos personales en sistemas de inteligencia artificial*. Noviembre de 2026. https://www.redipd.org/documento/estandares-iberoamericanos-sobre-uso-de-datos-personales-en-sistemas-ia.pdf
+
+(4) Secretaría General Iberoamericana (SEGIB). «La SEGIB impulsa los Estándares Iberoamericanos de Protección de Datos hacia la XXX Cumbre de Madrid». 11/06/2026. https://segib.org/es/la-segib-impulsa-los-estandares-iberoamericanos-de-proteccion-de-datos-hacia-la-xxx-cumbre-de-madrid/
+
+(5) Argentina.gob.ar (AAIP). «La AAIP participó del Encuentro 2026 de la Red Iberoamericana de Protección de Datos (RIPD)». 21/06/2026. https://www.argentina.gob.ar/noticias/la-aaip-participo-del-encuentro-2026-de-la-red-iberoamericana-de-proteccion-de-datos-ripd
+
+(6) EUR-Lex. «Normas para una inteligencia artificial fiable en la Unión Europea» (resumen del Reglamento (UE) 2024/1689). https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=LEGISSUM:4762484#1
+
+(7) Reglamento (UE) 2026/1744 del Parlamento Europeo y del Consejo, de 8 de julio de 2026, por el que se modifican los Reglamentos (UE) 2024/1689, (UE) 2018/1139 y (UE) 2023/1230 (Ómnibus digital sobre IA). DOUE de 24/07/2026. https://eur-lex.europa.eu/eli/reg/2026/1744/oj/spa
+
+(8) EUR-Lex. Texto consolidado del Reglamento (UE) 2024/1689. https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:02024R1689-20260727#1
