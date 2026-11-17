@@ -1,0 +1,265 @@
+---
+title: "Caída total de Internet: efectos en cascada y dependencia digital"
+description: "Qué pasaría si Internet se apagara en todo el mundo: cables, nube, pagos, sanidad y emergencias, con cifras de la UIT, Deloitte y Lloyd’s."
+date: "2026-11-16"
+tags: ["Internet", "infraestructuras críticas", "resiliencia digital", "ciberseguridad", "NIS 2"]
+section: "global-ia"
+category: "policy"
+author: "Ricardo Scarpa"
+slug: "caida-total-internet-efectos-cascada-dependencia-digital"
+readingTime: 22
+image: "/images/global-ia/caida-total-internet-efectos-cascada-dependencia-digital/cover.jpg"
+---
+
+**Resumen ejecutivo**
+
+Nadie ha visto nunca cómo sería un apagón total de Internet, y ese vacío es el punto de partida de este análisis. Ningún dato mide un colapso simultáneo y planetario de la red. El texto reconstruye el escenario con lo que sí existe: cortes nacionales, caídas de grandes proveedores de nube, roturas de cables submarinos y los modelos económicos que han intentado ponerles precio.
+
+Internet empezó a desarrollarse en los años sesenta con una arquitectura descentralizada, diseñada para seguir funcionando aunque fallaran nodos y enlaces. Seis décadas después, buena parte de esa arquitectura se ha concentrado. Amazon, Microsoft y Google reúnen más del 60 % del mercado de la nube, según recoge The Guardian, y servicios básicos como la resolución de nombres de dominio, la autenticación o el correo dependen de unas pocas plataformas. Alrededor de 500 cables submarinos transportan más del 99 % del tráfico internacional y sufren entre 150 y 200 averías al año, según la Unión Internacional de Telecomunicaciones (UIT).
+
+La UIT, la Oficina de las Naciones Unidas para la Reducción del Riesgo de Desastres (UNDRR) y Sciences Po publicaron en mayo de 2026 un informe que resume el problema. Hasta el 89 % de las interrupciones digitales causadas por amenazas naturales proceden de efectos secundarios, y el número de personas afectadas puede multiplicarse por diez respecto a las expuestas al golpe inicial. Los autores hablan de una posible “pandemia digital”.
+
+Las cifras económicas, todas parciales, apuntan en la misma dirección. Deloitte calculó en 2016 que un corte temporal de Internet en un país muy conectado cuesta, por término medio, 23,6 millones de dólares al día por cada 10 millones de habitantes. Top10VPN estimó en 19.700 millones de dólares las pérdidas por cortes deliberados en 2025, un 156 % más que el año anterior. Lloyd’s y AIR Worldwide cifraron en 15.000 millones de dólares el coste de que uno de los grandes proveedores de nube de Estados Unidos quedara fuera de servicio entre tres y seis días. Un estudio publicado en 2024 en una revista de la ACM, con datos de 92 países, calcula 86,58 dólares por persona y día de interrupción. Como ninguna de estas cifras mide un colapso global, deben leerse como umbrales inferiores.
+
+Los servicios críticos lo notarían primero. Los pagos con tarjeta, los cajeros, las reservas de vuelos y los servicios de emergencia dan por supuesta una conexión permanente. El fallo de CrowdStrike del 19 de julio de 2024 dejó 5.078 vuelos cancelados en un solo día, según Cirium, y pérdidas directas de 5.400 millones de dólares entre las empresas del Fortune 500 estadounidense, según las aseguradoras. La caída de la red móvil de AT&T en febrero de 2024 afectó a más de 125 millones de dispositivos e impidió más de 25.000 llamadas a centros de emergencia, según la Comisión Federal de Comunicaciones (FCC). El director de la UNDRR, Kamal Kishore, recordó que la mayoría de las torres de telefonía tiene una autonomía de respaldo de unas nueve horas.
+
+El caso de Bangladesh, en julio de 2024, muestra lo que no se ve a simple vista. El Gobierno cortó Internet del 18 al 23 de julio y bloqueó redes sociales y mensajería hasta el 31. Servicios que podían haber funcionado en local fallaron porque dependían de resolutores DNS alojados en el extranjero, de componentes en la nube y de plataformas de pago móvil.
+
+La gobernanza es la laguna más visible. Según la UIT, los marcos actuales de gestión no están preparados para un fallo digital de gran escala. En la Unión Europea, la Directiva NIS 2, la Directiva CER y el Reglamento DORA alcanzan a la infraestructura digital, a las entidades críticas y a los proveedores tecnológicos del sector financiero, pero ninguno regula un fallo simultáneo de alcance planetario, que exigiría coordinación internacional.
+
+El análisis reconoce sus límites. No existen modelos empíricos de un colapso total ni un mapa completo de las cadenas de dependencia, y la investigación sobre los efectos sociales de una desconexión prolongada es escasa. Sobre esa base, las conclusiones proponen cuatro tareas: tratar la infraestructura digital crítica con el mismo rigor de análisis de riesgos que la energía o el transporte, mapear las cadenas de dependencia y ensayar modos de operación degradada, conservar capacidades de respaldo no digitales y construir marcos de coordinación internacional para disrupciones transfronterizas de gran escala.
+
+# Cuando la red se apaga: consecuencias sistémicas de una caída total de Internet a escala mundial
+
+*Dependencia digital global, efectos en cascada sobre infraestructuras críticas e impactos económicos, sociales y de gobernanza*
+
+## Índice
+
+1. Introducción: el escenario de la desconexión total y la dependencia estructural de Internet
+2. Fundamentos técnicos y de infraestructura
+3. Impactos económicos inmediatos y de medio plazo
+4. Efectos sobre servicios críticos
+5. Consecuencias sociales, comunicativas y de cohesión
+6. Dimensiones geopolíticas, de seguridad y de gobernanza
+7. Lecciones de disrupciones reales y modelizaciones
+8. Limitaciones del conocimiento actual
+9. Conclusiones
+
+---
+
+## 1. Introducción: el escenario de la desconexión total y la dependencia estructural de Internet
+
+Imagina que Internet deja de funcionar en todo el planeta al mismo tiempo. El supuesto excluye los cortes locales y los bloqueos que ordena un gobierno: se trata de una interrupción completa de la red de redes. Este escenario extremo sirve para medir hasta qué punto las sociedades actuales dependen de una infraestructura que, en pocas décadas, pasó de herramienta especializada a soporte de la actividad económica, administrativa, sanitaria, financiera y social (1)(2).
+
+Internet empezó a desarrollarse en los años sesenta con una arquitectura descentralizada, pensada para que el sistema siguiera operando aunque fallaran nodos o enlaces (1). La evolución posterior concentró el poder técnico en pocos actores. Amazon, Microsoft y Google reúnen más del 60 % del mercado mundial de servicios en la nube (3), y funciones básicas como la resolución de nombres de dominio (DNS), la autenticación o el correo electrónico se han consolidado en un puñado de plataformas globales (4). Los cables submarinos transportan más del 99 % del tráfico internacional de datos (2)(5). La distancia entre el diseño original y esta concentración explica por qué un fallo de gran escala, aunque improbable, merece un análisis serio.
+
+La UIT calcula que en 2026 unos 6.300 millones de personas, el 76 % de la población mundial, usan Internet (6). En las economías de alta conectividad, los pagos, la logística, los historiales clínicos, las transferencias y la comunicación cotidiana pasan por protocolos que exigen una conexión permanente. El Servicio de Investigación del Parlamento Europeo (EPRS) sitúa la infraestructura de Internet casi al nivel de la electricidad y del transporte en importancia para las sociedades modernas (1). Sin red, la gente no podría retirar efectivo ni pagar con tarjeta, los supermercados no podrían facturar y la gestión de certificados digitales quedaría paralizada (1).
+
+Los cortes nacionales, los fallos de grandes proveedores de nube y las roturas de cables ya han provocado pérdidas cuantificables e interrupciones de servicios críticos (7)(8)(9). Estos episodios revelan cadenas de interdependencia. El informe de la UIT, la Oficina de las Naciones Unidas para la Reducción del Riesgo de Desastres (UNDRR) y Sciences Po, publicado en mayo de 2026, advierte de una posible “pandemia digital”: un fallo local puede propagarse entre sectores y fronteras hasta afectar a muchas más personas que las expuestas al evento original (2).
+
+Los cortes nacionales dejan intacta la mayor parte de la red global. Un colapso planetario simultáneo interrumpiría la resolución de nombres, el enrutamiento entre dominios y los servicios de autenticación y de sincronización horaria. Ningún modelo empírico cubre un evento de esa magnitud. Este análisis trabaja con extrapolaciones prudentes de evidencias parciales, modelizaciones económicas y vulnerabilidades documentadas.
+
+Queda fuera de su alcance estimar la probabilidad de un apagón total. El texto usa ese caso límite para medir la profundidad de la dependencia digital, localizar los puntos frágiles y describir las consecuencias de una interrupción prolongada.
+
+---
+
+## 2. Fundamentos técnicos y de infraestructura
+
+Internet se diseñó sobre los principios de descentralización, interoperabilidad y enrutamiento dinámico. El protocolo BGP (*Border Gateway Protocol*, que intercambia rutas entre redes) permite que el tráfico busque caminos alternativos cuando cae un nodo. Esa característica da resiliencia frente a fallos parciales. La concentración posterior de funciones la ha reducido en la práctica (1)(3).
+
+Los cables submarinos transportan más del 99 % del tráfico internacional. Unos 500 cables, con más de 1,7 millones de kilómetros de trazado, sostienen ese volumen, y la UIT contabiliza entre 150 y 200 averías al año (5). Más del 80 % de ellas se deben a la pesca y al fondeo de anclas, y el resto a riesgos naturales y fallos de equipo (10). Cuando falla el único cable que conecta a un país, el aislamiento dura semanas. El 15 de enero de 2022, la erupción del volcán Hunga Tonga-Hunga Ha’apai destruyó 80 kilómetros del único cable submarino que unía el archipiélago con el resto del mundo, y Tonga permaneció cinco semanas incomunicada (2). Los enlaces satelitales y terrestres no están dimensionados para absorber el volumen de tráfico que hoy mueven los cables.
+
+La concentración alcanza también a la identidad y a los nombres. DNS, autenticación, correo y seguridad se agrupan en pocas plataformas, y lo que antes era un fallo local se convierte en un evento sistémico que afecta a miles de organizaciones a la vez (4). Cuando cae uno de esos servicios compartidos, falla la autenticación, se pierde la comunicación y sectores enteros quedan afectados al mismo tiempo (4). El 29 de octubre de 2025, un error de configuración en Microsoft Azure interrumpió durante más de cinco horas la autenticación y el acceso de millones de usuarios en todo el mundo (4).
+
+La UIT y la UNDRR describen riesgos físicos que abarcan la superficie terrestre, el lecho marino y el espacio, de las tormentas solares a las roturas de cables (2). El calor extremo añade otro: en 2022, los fallos de Oracle y Google Cloud en Londres se vincularon con la capacidad de refrigeración durante una ola de calor (2).
+
+Los fallos se propagan en cascada. Según el informe UIT-UNDRR-Sciences Po de 2026, hasta el 89 % de las interrupciones digitales causadas por amenazas naturales proceden de efectos secundarios, y el número de afectados puede multiplicarse por diez respecto a los expuestos al evento inicial (2). Energía, centros de datos, telefonía móvil, pagos, hospitales y servicios de emergencia forman una red densa de interdependencias.
+
+Bangladesh vivió entre el 18 y el 23 de julio de 2024 un corte de Internet ordenado por el Gobierno en plena ola de protestas, y entre el 24 y el 31 de ese mes un bloqueo de redes sociales y de aplicaciones de mensajería (9). El episodio sacó a la luz dependencias ocultas. Servicios que podían haber operado en el ámbito local fallaron porque necesitaban resolutores DNS alojados en el extranjero, componentes en la nube, interfaces de programación (API) remotas, sincronización horaria o plataformas de pago móvil (9). La conectividad física local no garantiza la disponibilidad de servicios diseñados con la hipótesis de una red global permanente.
+
+Un colapso global simultáneo exigiría que coincidieran múltiples fallos, o un evento capaz de afectar de forma generalizada al enrutamiento y a la resolución de nombres. La diversidad geográfica y la multiplicidad de sistemas autónomos hacen improbable un apagón total e instantáneo. La acumulación de vulnerabilidades concentradas convierte, sin embargo, los escenarios de disrupción de muy amplio alcance en objeto legítimo de análisis (2)(3).
+
+---
+
+## 3. Impactos económicos inmediatos y de medio plazo
+
+Nadie ha medido el coste de una interrupción total de Internet en todo el planeta. Las cifras disponibles proceden de tres fuentes: los cortes deliberados de Internet (*shutdowns*) nacionales o regionales, las modelizaciones de fallos prolongados de proveedores de nube y los estudios econométricos que relacionan la duración o la probabilidad de las interrupciones con el PIB, el empleo y la inversión extranjera.
+
+En 2016, Deloitte calculó el impacto diario sobre el PIB de un corte temporal de Internet. En un país de alta conectividad, la pérdida media asciende a 23,6 millones de dólares por cada 10 millones de habitantes. En una economía de conectividad media baja a 6,6 millones, y en una de conectividad baja a 0,6 millones (11). Cuanto más digitalizada está la economía, mayor es el golpe diario.
+
+Top10VPN calculó que los cortes deliberados de Internet en 28 países, con más de 120.000 horas de interrupción, costaron 19.700 millones de dólares en 2025, un 156 % más que en 2024 (8). La calculadora NetLoss de la Internet Society permite estimar el coste de un corte según el país y su duración (7).
+
+En 2018, Lloyd’s of London y AIR Worldwide modelizaron el supuesto de que un ciberincidente extremo dejara fuera de servicio, entre tres y seis días, a uno de los principales proveedores de nube de Estados Unidos. La estimación central de pérdidas económicas fue de 15.000 millones de dólares, con un intervalo de confianza del 95 % de entre 11.000 y 19.000 millones. Las empresas ajenas al Fortune 1000 asumirían el 63 % de esa cifra (12).
+
+Un estudio de Tagat, Phokeer y Kreitem, publicado en 2024 en la revista *ACM Journal on Computing and Sustainable Societies*, usa datos de 92 países y asocia cada punto de aumento en la probabilidad de un corte con una reducción media de 15,6 puntos porcentuales en el PIB per cápita. Cada día adicional de interrupción cuesta, de media, 86,58 dólares por persona (13).
+
+Cabe esperar que en las primeras horas se detengan los pagos electrónicos, el comercio en línea, las transferencias internacionales y gran parte del trabajo remoto, y que en los días siguientes el golpe alcance las cadenas de suministro, la logística, la facturación y la recaudación fiscal.
+
+Estas cifras miden sobre todo el impacto directo sobre el PIB. No recogen del todo los costes de oportunidad ni los efectos de segundo y tercer orden. Además, proceden de episodios nacionales o de un solo proveedor, y un colapso global simultáneo añadiría rigideces que esos episodios no muestran. Las estimaciones funcionan, por tanto, como umbrales inferiores.
+
+---
+
+## 4. Efectos sobre servicios críticos
+
+Una caída total de Internet golpea de inmediato a los servicios que dependen de conectividad permanente, de autenticación en red o de datos alojados en la nube.
+
+En sanidad, los hospitales trabajan con historiales electrónicos, sistemas de imagen y plataformas de laboratorio. El EPRS incluye la atención sanitaria entre los servicios clave que dependen de conexiones a Internet (1), y el informe de la UIT, la UNDRR y Sciences Po describe fallos digitales que se propagan en cascada entre finanzas, sanidad, transporte, energía y comunicaciones, a menudo de forma simultánea (2).
+
+En finanzas, la dependencia es inmediata. Los terminales de pago consultan en tiempo real al emisor de la tarjeta y, sin conexión, la autorización falla. El EPRS advierte de que, ante un fallo generalizado, la gente no podría retirar dinero ni pagar con tarjeta, y los supermercados tendrían dificultades para cobrar (1).
+
+Transporte y logística dependen de sistemas de reserva, gestión de flotas y seguimiento de mercancías. El fallo de CrowdStrike del 19 de julio de 2024 dejó 5.078 vuelos cancelados en todo el mundo en un solo día, el 4,6 % de los programados, según estimó Cirium (14).
+
+Energía y refrigeración de los centros de datos son a la vez vector de riesgo y ámbito de impacto. Las olas de calor saturan los sistemas de enfriamiento de los centros de datos (2). Si cae el suministro eléctrico, la mayoría de las torres de telefonía dispone solo de unas nueve horas de respaldo, según el director de la UNDRR, Kamal Kishore, y después los cajeros automáticos dejan de funcionar (15).
+
+Los servicios de emergencia también dependen de la red. La investigación de la FCC sobre la caída de la red móvil de AT&T en febrero de 2024 documentó una interrupción de al menos doce horas que afectó a más de 125 millones de dispositivos, bloqueó más de 92 millones de llamadas de voz e impidió más de 25.000 llamadas a centros de atención del 911 (16).
+
+En todos estos sectores, los operadores han sustituido procedimientos analógicos por sistemas digitales que dan por supuesta la conectividad continua. Cuando esa hipótesis falla, la recuperación exige personal entrenado, formularios en papel y canales alternativos que muchos operadores han reducido o eliminado. Kishore advirtió de que se da por hecho que existen sistemas analógicos de respaldo, y de que esos sistemas ya no están, porque la experiencia y el equipo asociados se han quedado obsoletos (15).
+
+---
+
+## 5. Consecuencias sociales, comunicativas y de cohesión
+
+La caída total de Internet corta los canales habituales de comunicación interpersonal, de acceso a la información y de organización colectiva.
+
+Mensajería instantánea, correo electrónico y redes sociales desaparecerían al mismo tiempo, y amplias capas de la población perderían las vías que usan a diario para hablar a distancia.
+
+Cabe inferir que el acceso a la información se restringiría de forma severa y que la documentación de crisis sobre el terreno resultaría muy difícil.
+
+La Internet Society advierte de que incluso los cortes de corta duración pueden tener consecuencias que se prolongan mucho después de restablecida la conexión, porque erosionan la confianza en Internet como plataforma fiable (7).
+
+Las plataformas de enseñanza y de evaluación en línea dejarían de funcionar, y el trabajo remoto se interrumpiría de golpe.
+
+Quienes conserven acceso a radio, satélite o redes privadas dispondrán de información que otros no tendrán. Esa asimetría puede traducirse en ventajas materiales o de influencia durante la desconexión.
+
+---
+
+## 6. Dimensiones geopolíticas, de seguridad y de gobernanza
+
+Una interrupción total de Internet altera las capacidades de comunicación, coordinación y proyección de los Estados, las organizaciones internacionales y los actores no estatales.
+
+Muchos gobiernos mantienen redes separadas para sus comunicaciones oficiales y militares. En un supuesto de caída del dominio .com, algunas infraestructuras gubernamentales, como la red segura SIPRNet de Estados Unidos, seguirían operativas, pero bancos, hospitales, servicios financieros y la mayoría de las plataformas de comunicación quedarían fuera de servicio (3). Cabe inferir que gran parte de la administración civil y de la gestión de crisis, que usa servicios comerciales apoyados en la red pública, correría la misma suerte.
+
+Los cables submarinos y los puntos de interconexión son activos geopolíticos. Cabe inferir que un corte simultáneo de varios sistemas en rutas de mucho tráfico alteraría los patrones de enrutamiento global y generaría fricciones entre países.
+
+Los gobiernos han recurrido a los apagones de Internet para limitar movilizaciones y restringir la información. El caso más citado es el de Egipto en 2011, cuando las autoridades cortaron Internet durante casi una semana para interrumpir las comunicaciones de los manifestantes (7).
+
+En un escenario de desconexión global, las organizaciones internacionales y las agencias humanitarias verían limitada su capacidad de comunicarse con el terreno y de coordinar respuestas.
+
+La UIT considera que una “pandemia digital”, un fallo a gran escala y en escalada de sistemas digitales críticos, es un escenario plausible para el que los marcos actuales de gestión aún no están diseñados (2). La restauración de la conectividad plantea, además de un problema técnico, negociaciones sobre prioridades, responsabilidad y acceso a recursos de reparación escasos.
+
+### El marco regulatorio de la Unión Europea
+
+La Unión ha aprobado tres instrumentos que tocan esta dependencia. La Directiva (UE) 2022/2555 (NIS 2) fija medidas para un nivel elevado común de ciberseguridad y alcanza, entre otros, a proveedores de DNS, de servicios en la nube y de centros de datos (17). Se aplica también a las entidades identificadas como críticas con arreglo a la Directiva (UE) 2022/2557 (CER), que regula la resiliencia de esas entidades (17)(18). El Reglamento (UE) 2022/2554 (DORA) crea un marco de supervisión de la Unión para los proveedores de servicios TIC de terceros designados como críticos para el sector financiero (19).
+
+Ninguno de los tres instrumentos regula un fallo simultáneo de alcance planetario. Son normas de la Unión, con ámbito territorial y sectorial, y una interrupción global exigiría una coordinación internacional que ninguna de ellas organiza. Aun así, su conjunto indica la dirección de la política pública: aplicar a la infraestructura digital la lógica de gestión de riesgos que la Unión ya aplica a la energía y al transporte (18).
+
+---
+
+## 7. Lecciones de disrupciones reales y modelizaciones
+
+Los cortes nacionales ofrecen la evidencia más abundante. El de Bangladesh, en julio de 2024, expuso dependencias de resolutores DNS externos y de componentes en la nube (9).
+
+El fallo de CrowdStrike del 19 de julio de 2024 tuvo su origen en una actualización defectuosa que bloqueó unos 8,5 millones de equipos Windows. Provocó la cancelación de 5.078 vuelos en un día (14) y pérdidas directas que las aseguradoras estimaron en 5.400 millones de dólares entre las empresas del Fortune 500 de Estados Unidos (20).
+
+La rotura del cable de Tonga en 2022 dejó al país cinco semanas sin conexión con el exterior (2).
+
+Las fuentes apuntan en la misma dirección, aunque miden cosas distintas. Deloitte vincula el coste con el grado de digitalización (11), el estudio de la ACM con la duración (13), Lloyd’s con la caída de un solo proveedor (12) y la UIT con los efectos en cascada (2).
+
+De estos episodios se extraen cuatro lecciones. Las dependencias ocultas convierten fallos localizados en disrupciones amplias. La recuperación exige intervención humana y recursos limitados. Los efectos se reparten de forma desigual. Y no existen protocolos internacionales claros para priorizar el restablecimiento en una crisis de alcance planetario (2).
+
+---
+
+## 8. Limitaciones del conocimiento actual
+
+Nadie ha observado un colapso total y simultáneo de Internet. Todas las evidencias proceden de disrupciones parciales.
+
+Las modelizaciones económicas de Deloitte y de la ACM capturan relaciones en contextos nacionales. No incorporan del todo las rigideces de una desconexión planetaria simultánea (11)(13).
+
+Falta un mapa exhaustivo y actualizado de las cadenas de dependencia que vinculan salud, pagos, transporte, energía y emergencias a escala global. La UNDRR reconoce que muchos de esos riesgos son invisibles porque las interdependencias no se conocen por completo (15).
+
+Tampoco existen evaluaciones comparativas sistemáticas del grado de conservación de capacidades de respaldo no digitales en hospitales, sistemas de pago o redes de emergencia.
+
+Los tiempos de recuperación en un escenario global simultáneo siguen siendo inciertos. La competencia por buques cableros, personal especializado y componentes de reposición introduciría demoras difíciles de estimar a partir de los episodios conocidos.
+
+La investigación empírica sobre los efectos sociales y psicológicos de una desconexión total prolongada es escasa.
+
+Estas limitaciones delimitan lo que se puede afirmar con respaldo documental y lo que permanece en el terreno de la extrapolación.
+
+---
+
+## 9. Conclusiones
+
+El análisis de una caída total de Internet a escala mundial muestra la profundidad de la dependencia estructural que las sociedades actuales han construido sobre esta infraestructura.
+
+La arquitectura combina resiliencia teórica con concentraciones prácticas. Los efectos económicos alcanzan órdenes de magnitud elevados incluso en disrupciones parciales. Los servicios críticos operan bajo el supuesto de conectividad continua. Las dimensiones sociales y geopolíticas alteran las capacidades de coordinación y ponen a prueba los mecanismos de cooperación internacional. Las lagunas de conocimiento son reales y conviene reconocerlas.
+
+De este diagnóstico se derivan cuatro tareas concretas:
+
+- Tratar la infraestructura digital crítica con el mismo rigor de análisis de riesgos que se aplica a la energía o al transporte, línea que ya siguen NIS 2, CER y DORA en la Unión (17)(18)(19).
+- Mapear las cadenas de dependencia y ensayar modos de operación degradada.
+- Conservar capacidades de respaldo no digitales en hospitales, sistemas de pago y redes de emergencia.
+- Construir marcos de coordinación internacional para disrupciones digitales transfronterizas de gran escala.
+
+Internet ha recuperado el servicio tras los fallos parciales conocidos, y esa recuperación pasada no garantiza la futura. La dependencia global ya existe. Queda por saber si las sociedades y los sistemas de gobernanza se preparan con rigor suficiente para gestionar una interrupción prolongada.
+
+---
+
+## Bibliografía
+
+(1) VAN WOENSEL, Lieve, con PIERER, Carl (Unidad de Prospectiva Científica, STOA), *What if the internet failed?*, Servicio de Investigación del Parlamento Europeo (EPRS), PE 690.044, 27 de septiembre de 2021.  
+https://www.europarl.europa.eu/RegData/etudes/ATAG/2021/690044/EPRS_ATA(2021)690044_EN.pdf
+
+(2) UNIÓN INTERNACIONAL DE TELECOMUNICACIONES (UIT), OFICINA DE LAS NACIONES UNIDAS PARA LA REDUCCIÓN DEL RIESGO DE DESASTRES (UNDRR) y SCIENCES PO, *When digital systems fail: The hidden risks of our digital world*, informe de expertos, mayo de 2026.  
+https://www.itu.int/dms_pub/itu-s/opb/rep/s-rep-wtisd-2026-pdf-e.pdf  
+https://www.undrr.org/publication/documents-and-publications/when-digital-systems-fail-expert-report-hidden-risks-our
+
+(3) THE GUARDIAN, *Could the internet go offline? Inside the fragile system holding the modern world together*, 26 de octubre de 2025.  
+https://www.theguardian.com/technology/2025/oct/26/internet-infrastructure-fragile-system-holding-modern-world-together
+
+(4) THE CONVERSATION, *Why cloud service outages ripple across the internet – and the economy*, 2026.  
+https://theconversation.com/why-cloud-service-outages-ripple-across-the-internet-and-the-economy-272241
+
+(5) UIT, nota de prensa sobre la cumbre de cables submarinos celebrada en Nigeria, 27 de febrero de 2025.  
+https://itu.int/en/mediacentre/Pages/PR-2025-02-27-submarine-cables-summit-nigeria.aspx
+
+(6) UIT, *Measuring digital development: Facts and Figures 2026*, noviembre de 2026.  
+https://itu.int/hub/publication/d-ind-ict_mdd-2026-2
+
+(7) INTERNET SOCIETY, *Policy Brief: Internet Shutdowns* (versión actualizada en 2025) y calculadora Pulse NetLoss.  
+https://www.internetsociety.org/resources/policybriefs/2025/internet-shutdowns/
+
+(8) TOP10VPN, *The Cost of Internet Shutdowns in 2025*, enero de 2026.  
+https://top10vpn.com/research/cost-of-internet-shutdowns
+
+(9) CHOWDHURY, Imteaz, *The Internet didn’t break; we just forgot what it was leaning on*, APNIC Blog, 5 de noviembre de 2026.  
+https://blog.apnic.net/2026/11/05/the-internet-didnt-break-we-just-forgot-what-it-was-leaning-on/
+
+(10) UIT, «The world is coming together to strengthen submarine cable resilience», ITU Hub, febrero de 2026.  
+https://itu.int/hub/2026/02/the-world-is-coming-together-to-strengthen-submarine-cable-resilience
+
+(11) DELOITTE, *The economic impact of disruptions to Internet connectivity: A report for Facebook*, octubre de 2016.  
+https://www2.deloitte.com/content/dam/Deloitte/global/Documents/Technology-Media-Telecommunications/economic-impact-disruptions-to-internet-connectivity-deloitte.pdf
+
+(12) LLOYD’S OF LONDON y AIR WORLDWIDE, *Cloud Down – The impacts on the US economy*, 2018 (nota de prensa).  
+https://lloyds.com/about-lloyds/media-centre/press-releases/failure-of-a-top-cloud-service-provider-could-cost-us-economy-15-billion-dollars
+
+(13) TAGAT, A.; PHOKEER, A.; KREITEM, H. M., «Net Loss: An econometric method to measure the impact of Internet shutdowns», *ACM Journal on Computing and Sustainable Societies*, vol. 2, núm. 2 (2024), art. 25, pp. 1-22.  
+https://doi.org/10.1145/3659466
+
+(14) ASOCIACIÓN INTERNACIONAL DE TRANSPORTE AÉREO (IATA), *Global IT Outage*, 26 de julio de 2024.  
+https://iata.org/contentassets/7eca924ee98c4b0c997cfb2f8d77b5c1/global-it-outage-20240726.pdf
+
+(15) NACIONES UNIDAS, UN News, JOHNSON, Daniel, «UN leads call to prepare ‘for when digital systems fail’», 5 de mayo de 2026.  
+https://news.un.org/en/story/2026/05/1167445
+
+(16) COMISIÓN FEDERAL DE COMUNICACIONES (FCC), Public Safety and Homeland Security Bureau, informe sobre la interrupción de la red de AT&T Mobility del 22 de febrero de 2024, 22 de julio de 2024.  
+https://docs.fcc.gov/public/attachments/DOC-404150A1.pdf
+
+(17) Directiva (UE) 2022/2555 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022 (Directiva NIS 2), DO L 333, de 27.12.2022, p. 80.
+
+(18) Directiva (UE) 2022/2557 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022, relativa a la resiliencia de las entidades críticas (Directiva CER), DO L 333, de 27.12.2022, pp. 164-198.
+
+(19) Reglamento (UE) 2022/2554 del Parlamento Europeo y del Consejo, de 14 de diciembre de 2022, sobre la resiliencia operativa digital del sector financiero (DORA), DO L 333, de 27.12.2022, pp. 1-79.
+
+(20) THE GUARDIAN, «CrowdStrike global outage to cost US Fortune 500 companies $5.4bn», 24 de julio de 2024.  
+https://theguardian.com/technology/article/2024/jul/24/crowdstrike-outage-companies-cost
